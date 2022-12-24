@@ -9,6 +9,8 @@ int main()
 	std::vector<int> real(3);
 	std::cout <<  fake.size() << std::endl;
 	std::cout <<  real.size() << std::endl;
+	std::cout <<  fake.capacity() << std::endl;
+	std::cout <<  real.capacity() << std::endl;
 }
 // #include <deque>
 // #if 1 //CREATE A REAL STL EXAMPLE
