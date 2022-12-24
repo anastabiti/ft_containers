@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2022/12/24 11:00:52 by atabiti          ###   ########.fr       */
+/*   Updated: 2022/12/24 11:12:58 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,14 @@ public:
     size_t capacity()
     {
         return this->capacity_param;
+    }
+
+    void push_back(T nb)
+    {
+        vec[0] = nb;
+    }
+    T at(T nb)
+    {
+        return vec[0];
     }
 };
