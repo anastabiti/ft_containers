@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2022/12/24 11:34:14 by atabiti          ###   ########.fr       */
+/*   Updated: 2022/12/24 11:39:43 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,26 +19,27 @@ class vector
 // class vector :public std::allocator<T>
 {
 private:
-    T *vec;
+    T* vec;
     size_t size_param;
     size_t capacity_param;
+        Allocator mine;
     /* data */
 public:
     vector(int nm)
     {
         size_param = nm;
         capacity_param = nm;
-        // Allocator mine;
         // this->vec = this->allocate ;
         // this->allocate
-        // this-vec = mine.allocate();
-        this->vec = new T[nm];
+       vec= mine.allocate(nm) ;
+        // this->vec = new T[nm];
     }
     ~vector()
     {
     }
     size_t size()
     {
+        // return mine.max_size() ;
         return this->size_param;
     }
     size_t capacity()
