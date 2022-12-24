@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2022/12/24 11:20:17 by atabiti          ###   ########.fr       */
+/*   Updated: 2022/12/24 11:34:00 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,15 @@
 
 int main()
 {
-	vector<std::string> fake(42);
-	std::vector<std::string> real(42);
+	vector<int> fake(42);
+	std::vector<int> real(42);
 	std::cout <<"fake SIZE="<<  fake.size() << std::endl;
 	std::cout<<"real SIZE=" <<  real.size() << std::endl;
 	std::cout <<"fake capacity="<<  fake.capacity() << std::endl;
 	std::cout <<"real capacity="<<  real.capacity() << std::endl;
-	fake.push_back("TTR");
+	fake.push_back(1337);
 	std::cout << fake.at(42) << std::endl;
-	real.push_back("FFF");
+	real.push_back(42);
 	std::cout << real.at(42) << std::endl;
 }
 // #include <deque>
