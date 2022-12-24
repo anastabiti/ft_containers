@@ -6,10 +6,9 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2022/12/24 11:12:58 by atabiti          ###   ########.fr       */
+/*   Updated: 2022/12/24 11:14:05 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include <iostream>
 #include <string>
@@ -31,7 +30,6 @@ public:
     }
     ~vector()
     {
-
     }
     size_t size()
     {
@@ -44,10 +42,11 @@ public:
 
     void push_back(T nb)
     {
-        vec[0] = nb;
+        vec[size_param] = nb;
     }
+
     T at(T nb)
     {
-        return vec[0];
+        return vec[nb];
     }
 };
