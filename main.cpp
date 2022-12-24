@@ -1,3 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
+/*   Updated: 2022/12/24 11:00:57 by atabiti          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
 #include <iostream>
 #include <string>
 #include "vector.hpp"
@@ -5,8 +18,8 @@
 
 int main()
 {
-	vector<int> fake(3);
-	std::vector<int> real(3);
+	vector<int> fake(42);
+	std::vector<int> real(42);
 	std::cout <<  fake.size() << std::endl;
 	std::cout <<  real.size() << std::endl;
 	std::cout <<  fake.capacity() << std::endl;
