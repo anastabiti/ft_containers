@@ -6,10 +6,9 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2022/12/24 11:15:20 by atabiti          ###   ########.fr       */
+/*   Updated: 2022/12/24 11:20:17 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include <iostream>
 #include <string>
@@ -20,16 +19,14 @@ int main()
 {
 	vector<std::string> fake(42);
 	std::vector<std::string> real(42);
-	// std::cout <<  fake.size() << std::endl;
-	// std::cout <<  real.size() << std::endl;
-	// std::cout <<  fake.capacity() << std::endl;
-	// std::cout <<  real.capacity() << std::endl;
-	 fake.push_back("TTR");
-	std::cout <<  fake.at(42)<< std::endl;
-	 real.push_back("FFF");
-	std::cout <<  real.at(42)<< std::endl;
-	 	
-	
+	std::cout <<"fake SIZE="<<  fake.size() << std::endl;
+	std::cout<<"real SIZE=" <<  real.size() << std::endl;
+	std::cout <<"fake capacity="<<  fake.capacity() << std::endl;
+	std::cout <<"real capacity="<<  real.capacity() << std::endl;
+	fake.push_back("TTR");
+	std::cout << fake.at(42) << std::endl;
+	real.push_back("FFF");
+	std::cout << real.at(42) << std::endl;
 }
 // #include <deque>
 // #if 1 //CREATE A REAL STL EXAMPLE
@@ -53,7 +50,6 @@ int main()
 // 	char buff[BUFFER_SIZE];
 // };
 
-
 // #define COUNT (MAX_RAM / (int)sizeof(Buffer))
 
 // template<typename T>
@@ -62,7 +58,7 @@ int main()
 // public:
 // 	MutantStack() {}
 // 	MutantStack(const MutantStack<T>& src) { *this = src; }
-// 	MutantStack<T>& operator=(const MutantStack<T>& rhs) 
+// 	MutantStack<T>& operator=(const MutantStack<T>& rhs)
 // 	{
 // 		this->c = rhs.c;
 // 		return *this;
@@ -118,7 +114,7 @@ int main()
 // 	{
 // 		//NORMAL ! :P
 // 	}
-	
+
 // 	for (int i = 0; i < COUNT; ++i)
 // 	{
 // 		map_int.insert(ft::make_pair(rand(), rand()));
