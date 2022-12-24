@@ -6,13 +6,13 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2022/12/24 11:39:43 by atabiti          ###   ########.fr       */
+/*   Updated: 2022/12/24 11:42:39 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <string>
-template< class T, class Allocator = std::allocator<T> > 
+template< typename T, typename Allocator = std::allocator<T> > 
 class vector
 
 // template <typename T>
