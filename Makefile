@@ -6,13 +6,13 @@
 #    By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/24 11:00:46 by atabiti           #+#    #+#              #
-#    Updated: 2022/12/25 11:53:33 by atabiti          ###   ########.fr        #
+#    Updated: 2022/12/25 13:31:14 by atabiti          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = ft_containers
-SRC = main.cpp
-OBJ = main.o 
+SRC = main.cpp vector.cpp
+OBJ = main.o vector.o
 
 all: $(NAME)
 $(NAME): $(OBJ)
