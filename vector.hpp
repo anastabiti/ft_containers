@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2022/12/25 16:22:01 by atabiti          ###   ########.fr       */
+/*   Updated: 2022/12/25 16:26:37 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,16 @@ namespace ft
             // this->vec = new T[nm];
         }
     /*______________________________________________________________________________________________________ */
+        vector()
+        {
+            size_param = 0;
+            capacity_param = 0;
+            // this->vec = this->allocate ;
+            // this->allocate
+            vec = mine.allocate(0);
+            // this->vec = new T[nm];
+        }
+    /*______________________________________________________________________________________________________ */
         ~vector()
         {
             mine.deallocate(vec, this->capacity_param);
@@ -60,6 +70,9 @@ namespace ft
         void push_back(T nb)
         {
             vec[size_param] = nb;
+            size_param++;
+            std::cout <<"size_param " << size_param << std::endl;
+
         }
     /*______________________________________________________________________________________________________*/
         T at(size_t nb)
