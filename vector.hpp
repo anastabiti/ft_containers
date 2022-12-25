@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2022/12/25 16:26:37 by atabiti          ###   ########.fr       */
+/*   Updated: 2022/12/25 16:28:36 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ namespace ft
             capacity_param = 0;
             // this->vec = this->allocate ;
             // this->allocate
-            vec = mine.allocate(0);
+            // vec = mine.allocate(0);
             // this->vec = new T[nm];
         }
     /*______________________________________________________________________________________________________ */
@@ -69,6 +69,12 @@ namespace ft
     /*______________________________________________________________________________________________________ */
         void push_back(T nb)
         {
+            if(size_param == 0)
+            {
+                vec = mine.allocate(2);
+                capacity_param = 2;
+                size_param = 0;
+            }
             vec[size_param] = nb;
             size_param++;
             std::cout <<"size_param " << size_param << std::endl;
