@@ -6,12 +6,16 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2022/12/25 13:33:44 by atabiti          ###   ########.fr       */
+/*   Updated: 2022/12/25 13:37:39 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <string>
+namespace ft
+{
+    
+
 template <typename T, typename Allocator = std::allocator<T>>
 class vector
 {
@@ -57,3 +61,5 @@ class vector
 		return (vec[nb]);
 	}
 };
+
+}
