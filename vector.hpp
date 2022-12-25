@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2022/12/25 16:28:36 by atabiti          ###   ########.fr       */
+/*   Updated: 2022/12/25 16:34:11 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,15 +69,22 @@ namespace ft
     /*______________________________________________________________________________________________________ */
         void push_back(T nb)
         {
+            //start with nothing case	ft::vector<int> fake;
             if(size_param == 0)
             {
                 vec = mine.allocate(2);
                 capacity_param = 2;
                 size_param = 0;
+                vec[size_param] = nb;
+                size_param++;
+                return;
             }
-            vec[size_param] = nb;
-            size_param++;
-            std::cout <<"size_param " << size_param << std::endl;
+            else if(size_param >  0 && size_param < capacity_param)
+            {
+                vec[size_param] = nb;
+                size_param++;
+            }
+            // std::cout <<"size_param " << size_param << std::endl;
 
         }
     /*______________________________________________________________________________________________________*/

@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2022/12/25 16:29:02 by atabiti          ###   ########.fr       */
+/*   Updated: 2022/12/25 16:33:47 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,9 @@ int main()
 
 	
 	fake.push_back(1337);
+	fake.push_back(42);
 	std::cout << fake.at(0) << std::endl;
+	std::cout << fake.at(1) << std::endl;
 	
 
 
