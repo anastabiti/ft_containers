@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2022/12/25 16:34:11 by atabiti          ###   ########.fr       */
+/*   Updated: 2022/12/26 09:26:20 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ namespace ft
     template <typename T, typename Allocator = std::allocator<T> >
     class vector
     {
-     private:
+    private:
         T *vec;
         size_t size_param;
         size_t capacity_param;
@@ -26,8 +26,8 @@ namespace ft
         /* data */
     public:
         /* The type stored in the container. */
-        typedef T value_type;
-    /*______________________________________________________________________________________________________ */
+        // typedef T value_type;
+        /*______________________________________________________________________________________________________ */
         vector(size_t nm)
         {
             size_param = nm;
@@ -37,7 +37,7 @@ namespace ft
             vec = mine.allocate(nm);
             // this->vec = new T[nm];
         }
-    /*______________________________________________________________________________________________________ */
+        /*______________________________________________________________________________________________________ */
         vector()
         {
             size_param = 0;
@@ -47,52 +47,78 @@ namespace ft
             // vec = mine.allocate(0);
             // this->vec = new T[nm];
         }
-    /*______________________________________________________________________________________________________ */
+        /*______________________________________________________________________________________________________ */
+        vector(vector const &rhs)
+        {
+           *this = rhs;
+        }
+        /*______________________________________________________________________________________________________ */
+        vector &operator=(vector const &rhs)
+        {
+                size_t i = 0;
+                while (i < this->s)
+                {
+                    /* code */
+                }
+                
+                this->vec = rhs.vec;
+                
+            return *this;
+        }
+        /*______________________________________________________________________________________________________ */
         ~vector()
         {
             mine.deallocate(vec, this->capacity_param);
             // delete[] vec;
             std::cout << "destructor is called" << std::endl;
         }
-    /*______________________________________________________________________________________________________ */
+        /*______________________________________________________________________________________________________ */
         size_t size()
         {
             // return (mine.max_size());
             return (this->size_param);
         }
-    /*______________________________________________________________________________________________________ */
+        /*______________________________________________________________________________________________________ */
         size_t capacity()
         {
             return (this->capacity_param);
         }
 
-    /*______________________________________________________________________________________________________ */
+        /*______________________________________________________________________________________________________ */
         void push_back(T nb)
         {
-            //start with nothing case	ft::vector<int> fake;
-            if(size_param == 0)
+            // start with nothing case	ft::vector<int> fake;
+            if (size_param == 0)
             {
-                vec = mine.allocate(2);
-                capacity_param = 2;
+                vec = mine.allocate(1);
+                capacity_param = 1;
                 size_param = 0;
                 vec[size_param] = nb;
                 size_param++;
+                std::cout << "size_param " << size_param << std::endl;
                 return;
             }
-            else if(size_param >  0 && size_param < capacity_param)
+            else if (size_param > 0 && size_param < capacity_param)
             {
                 vec[size_param] = nb;
                 size_param++;
+                std::cout << "size_param " << size_param << std::endl;
+                return;
             }
-            // std::cout <<"size_param " << size_param << std::endl;
-
+            else if (size_param == capacity_param)
+            {
+                // capacity_param  = capacity_param * 2;
+                // vector<T> new_vec(capacity_param);
+                // std::cout << "HERE !!!!" << std::endl;
+                return;
+            }
         }
-    /*______________________________________________________________________________________________________*/
+        /*______________________________________________________________________________________________________*/
         T at(size_t nb)
         {
             return (vec[nb]);
         }
-    /*______________________________________________________________________________________________________ */
+        /*______________________________________________________________________________________________________ */
     };
 
 }
