@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2022/12/26 09:43:11 by atabiti          ###   ########.fr       */
+/*   Updated: 2022/12/26 09:53:55 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ namespace ft
     {
     private:
         T *vec;
+        T *copY;
         size_t size_param;
         size_t capacity_param;
         Allocator mine;
@@ -105,18 +106,16 @@ namespace ft
             }
             else if (size_param == capacity_param)
             {
-                //copy 
-                    
-        //    T * new_vec(vec);
-
-                //deallocate 
-	// std::cout << "new_vec SIZE=" << new_vec.size() << std::endl;
-	// std::cout << "vec SIZE=" << vec.size() << std::endl;
-
-
-
+                capacity_param = capacity_param * 2;
+                copY = mine.allocate(capacity_param);
+                size_t i = 0;
+                while (i < size_param) 
+                {
+                    copY[i] = vec[i];
+                    i++;
+                }
                 
-                // capacity_param  = capacity_param * 2;
+                    // capacity_param  = capacity_param * 2;
                 // vector<T> new_vec(capacity_param);
                 std::cout << "HERE !!!!" << std::endl;
                 return;
