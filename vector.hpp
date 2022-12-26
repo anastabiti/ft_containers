@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2022/12/26 10:00:23 by atabiti          ###   ########.fr       */
+/*   Updated: 2022/12/26 10:06:47 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,6 @@ namespace ft
         ~vector()
         {
             mine.deallocate(vec, this->capacity_param);
-            // delete[] vec;
             std::cout << "destructor is called" << std::endl;
         }
         /*______________________________________________________________________________________________________ */
