@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2022/12/26 09:53:55 by atabiti          ###   ########.fr       */
+/*   Updated: 2022/12/26 09:59:20 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,10 +114,10 @@ namespace ft
                     copY[i] = vec[i];
                     i++;
                 }
-                
-                    // capacity_param  = capacity_param * 2;
-                // vector<T> new_vec(capacity_param);
-                std::cout << "HERE !!!!" << std::endl;
+                copY[i] = nb;
+                mine.deallocate(vec,capacity_param);
+                vec = copY;
+                size_param++;
                 return;
             }
         }
