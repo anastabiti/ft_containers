@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2022/12/26 09:59:20 by atabiti          ###   ########.fr       */
+/*   Updated: 2022/12/26 10:00:23 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,7 @@ namespace ft
             {
                 vec[size_param] = nb;
                 ++size_param;
-                // return;
+                return;
             }
             else if (size_param == capacity_param)
             {
