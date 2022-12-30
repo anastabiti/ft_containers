@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2022/12/26 10:06:47 by atabiti          ###   ########.fr       */
+/*   Updated: 2022/12/30 10:05:28 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ namespace ft
         /* data */
     public:
         /* The type stored in the container. */
-        // typedef T value_type;
+        typedef T value_type;
         /*______________________________________________________________________________________________________ */
         vector(size_t nm)
         {
@@ -85,7 +85,7 @@ namespace ft
         }
 
         /*______________________________________________________________________________________________________ */
-        void push_back(T const &nb)
+        void push_back(value_type const &nb)
         {
             // start with nothing case	ft::vector<int> fake;
             if (size_param == 0)
