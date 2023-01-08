@@ -47,6 +47,17 @@ namespace ft
 
         /* The type stored in the container. */
         // typedef T value_type;
+        
+        vector()
+        {
+            size_param = 0;
+            capacity_param = 0;
+            // this->vec = this->allocate ;
+            // this->allocate
+            // vec = mine.allocate(0);
+            // this->vec = new T[nm];
+        }
+        /*______________________________________________________________________________________________________ */
         /*______________________________________________________________________________________________________ */
         vector(size_t nm)
         {
@@ -55,16 +66,6 @@ namespace ft
             // this->vec = this->allocate ;
             // this->allocate
             vec = mine.allocate(nm);
-            // this->vec = new T[nm];
-        }
-        /*______________________________________________________________________________________________________ */
-        vector()
-        {
-            size_param = 0;
-            capacity_param = 0;
-            // this->vec = this->allocate ;
-            // this->allocate
-            // vec = mine.allocate(0);
             // this->vec = new T[nm];
         }
         /*______________________________________________________________________________________________________ */
