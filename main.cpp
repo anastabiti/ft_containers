@@ -29,7 +29,7 @@ int	main(void)
 	// 	fake.push_back(i * 3);
 	// 	real.push_back(i * 3);
 
-		std::cout << sizeof(ft::vector<int>::value_type) << std::endl;
+		std::cout << sizeof(ft::vector<double>::size_type) << std::endl;
 	// 	std::cout << "**fake =" << fake.at(i) << std::endl;
 	// 	std::cout << "**real =" << real.at(i) << std::endl;
 	// 	std::cout << "fake SIZE=" << fake.size() << std::endl;

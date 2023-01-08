@@ -39,11 +39,10 @@ namespace ft
     typedef size_t                size_type;
     typedef      const T*     const_pointer;
     typedef         const iterator    const_iterator;
+    typedef T*       reverse_iterator;
+    typedef  const T*  const_reverse_iterator;
+    typedef  ptrdiff_t         difference_type;
     
-    
-    // typedef typename __base::difference_type         difference_type;
-    // typedef _VSTD::reverse_iterator<iterator>         reverse_iterator;
-    // typedef _VSTD::reverse_iterator<const_iterator>   const_reverse_iterator;
 /*______________________________________________________________________________________________________ */
 
         /* The type stored in the container. */
