@@ -10,30 +10,32 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "vector.hpp"
 #include <iostream>
 #include <string>
-#include "vector.hpp"
 #include <vector>
 
-int main()
+int	main(void)
 {
-	ft::vector<int> fake;
+	ft::vector<int>  fake;
+	// ft::vector<int, std::allocator<int> > fake;
 	std::vector<int> real;
 	// std::vector<int>::value_type typ = real[0];
 	// std::cout << typ << std::endl;
+	// vector<int>::
+	int i = 0;
+	// while (i < 33) //real :0.056   mine:0.017
+	// {
+	// 	fake.push_back(i * 3);
+	// 	real.push_back(i * 3);
 
-	int  i = 0;
-	while (i < 333332) //real :0.056   mine:0.017
-	{
-		
-			fake.push_back(i * 3);
-			// real.push_back(i * 3);
-	// std::cout <<"**fake ="<< fake.at(i) << std::endl;
-	// std::cout << "**real ="<<real.at(i) << std::endl;
-	// std::cout << "fake SIZE=" << fake.size() << std::endl;
-	// std::cout << "real SIZE=" << real.size() << std::endl;
-	// std::cout << "fake capacity=" << fake.capacity() << std::endl;
-	// std::cout << "real capacity=" << real.capacity() << std::endl;
-		i++;
-	}
+		std::cout << sizeof(ft::vector<int>::value_type) << std::endl;
+	// 	std::cout << "**fake =" << fake.at(i) << std::endl;
+	// 	std::cout << "**real =" << real.at(i) << std::endl;
+	// 	std::cout << "fake SIZE=" << fake.size() << std::endl;
+	// 	std::cout << "real SIZE=" << real.size() << std::endl;
+	// 	std::cout << "fake capacity=" << fake.capacity() << std::endl;
+	// 	std::cout << "real capacity=" << real.capacity() << std::endl;
+	// 	i++;
+	// }
 }
