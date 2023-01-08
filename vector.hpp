@@ -32,31 +32,34 @@ namespace ft
 
     typedef T                                      value_type;
     typedef Allocator                               allocator_type; //defaults to: allocator<value_type>
-    typedef T&              reference;
-    typedef const T&        const_reference;
-    typedef T*               pointer;
-    typedef      const T*     const_pointer;
-    typedef T*              iterator;
-    typedef         const iterator    const_iterator;
-    typedef T*       reverse_iterator;
-    typedef  const T*  const_reverse_iterator;
-    typedef  ptrdiff_t         difference_type;
+
+    // typedef T&              reference;
+    // typedef const T&        const_reference;
+    // typedef T*               pointer;
+    // typedef      const T*     const_pointer;
+    // typedef T*              iterator;
+    // typedef         const iterator    const_iterator;
+    // typedef T*       reverse_iterator;
+    // typedef  const T*  const_reverse_iterator;
+    typedef typename allocator_type::difference_type       difference_type;
+    // typedef  ptrdiff_t         difference_type;
     typedef size_t                size_type;
     
 /*______________________________________________________________________________________________________ */
 
         /* The type stored in the container. */
         // typedef T value_type;
-        
-        vector()
-        {
-            size_param = 0;
-            capacity_param = 0;
-            // this->vec = this->allocate ;
-            // this->allocate
-            // vec = mine.allocate(0);
-            // this->vec = new T[nm];
-        }
+        explicit vector (const allocator_type& alloc = allocator_type())
+        {}
+        // vector()
+        // {
+        //     size_param = 0;
+        //     capacity_param = 0;
+        //     // this->vec = this->allocate ;
+        //     // this->allocate
+        //     // vec = mine.allocate(0);
+        //     // this->vec = new T[nm];
+        // }
         /*______________________________________________________________________________________________________ */
         /*______________________________________________________________________________________________________ */
         vector(size_type nm)
