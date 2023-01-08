@@ -50,7 +50,9 @@ namespace ft
         /* The type stored in the container. */
         // typedef T value_type;
         explicit vector (const allocator_type& alloc = allocator_type())
-        {}
+        {
+            std::cout << "alloc " << sizeof(alloc)<<std::endl;
+        }
         // vector()
         // {
         //     size_param = 0;
