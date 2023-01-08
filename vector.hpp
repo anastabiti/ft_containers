@@ -32,14 +32,16 @@ namespace ft
 
     typedef T                                      value_type;
     typedef Allocator                               allocator_type; //defaults to: allocator<value_type>
-    // typedef typename __base::reference               reference;
-    // typedef typename __base::const_reference         const_reference;
+    typedef T*               pointer;
+    typedef T*              iterator;
+    typedef T&              reference;
+    typedef const T&        const_reference;
     typedef size_t                size_type;
+    typedef      const T*     const_pointer;
+    typedef         const iterator    const_iterator;
+    
+    
     // typedef typename __base::difference_type         difference_type;
-    // typedef typename __base::pointer                 pointer;
-    // typedef typename __base::const_pointer           const_pointer;
-    // typedef __wrap_iter<pointer>                     iterator;
-    // typedef __wrap_iter<const_pointer>               const_iterator;
     // typedef _VSTD::reverse_iterator<iterator>         reverse_iterator;
     // typedef _VSTD::reverse_iterator<const_iterator>   const_reverse_iterator;
 /*______________________________________________________________________________________________________ */
