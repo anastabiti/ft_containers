@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2022/12/30 10:08:10 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/06 14:09:13 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,13 @@ int main()
 	// std::cout << typ << std::endl;
 
 	int  i = 0;
-	while (i < 43) //real :0.056   mine:0.017
+	while (i < 333332) //real :0.056   mine:0.017
 	{
 		
 			fake.push_back(i * 3);
-			real.push_back(i * 3);
-	std::cout <<"**fake ="<< fake.at(i) << std::endl;
-	std::cout << "**real ="<<real.at(i) << std::endl;
+			// real.push_back(i * 3);
+	// std::cout <<"**fake ="<< fake.at(i) << std::endl;
+	// std::cout << "**real ="<<real.at(i) << std::endl;
 	// std::cout << "fake SIZE=" << fake.size() << std::endl;
 	// std::cout << "real SIZE=" << real.size() << std::endl;
 	// std::cout << "fake capacity=" << fake.capacity() << std::endl;

@@ -12,6 +12,8 @@
 
 #include <iostream>
 #include <string>
+// #include <memory>
+
 namespace ft
 {
 
@@ -26,8 +28,24 @@ namespace ft
         Allocator mine;
         /* data */
     public:
+    /*________________Member types________________*/
+
+    typedef T                                      value_type;
+    typedef Allocator                               allocator_type; //defaults to: allocator<value_type>
+    // typedef typename __base::reference               reference;
+    // typedef typename __base::const_reference         const_reference;
+    typedef size_t                size_type;
+    // typedef typename __base::difference_type         difference_type;
+    // typedef typename __base::pointer                 pointer;
+    // typedef typename __base::const_pointer           const_pointer;
+    // typedef __wrap_iter<pointer>                     iterator;
+    // typedef __wrap_iter<const_pointer>               const_iterator;
+    // typedef _VSTD::reverse_iterator<iterator>         reverse_iterator;
+    // typedef _VSTD::reverse_iterator<const_iterator>   const_reverse_iterator;
+/*______________________________________________________________________________________________________ */
+
         /* The type stored in the container. */
-        typedef T value_type;
+        // typedef T value_type;
         /*______________________________________________________________________________________________________ */
         vector(size_t nm)
         {
