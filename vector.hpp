@@ -61,7 +61,8 @@ class vector
 	/* default constructor */
     /* Constructs an empty container, with no elements.*/
 
-	explicit vector() 
+	explicit vector(const allocator_type &alloc = allocator_type()) 
+	// explicit vector() 
 	{
 		size_param = 0;
 		capacity_param = 0;
