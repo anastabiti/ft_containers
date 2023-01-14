@@ -30,8 +30,7 @@ class vector
 	/*________________________________Member types________________________________*/
 
 	typedef T value_type;             /* The type stored in the container. */
-	typedef Allocator allocator_type; /*   The type of the allocator.
-	/ defaults to: allocator<value_type>   */
+	typedef Allocator allocator_type; /*   The type of the allocator. / defaults to: allocator<value_type>   */
 	typedef value_type &reference;   
 	/* A reference to the type stored in the container. 
 	/for the default allocator: value_type& */
@@ -51,7 +50,7 @@ class vector
          A signed integral type that can represent the difference in two iterators. 
             Result of pointer subtraction
             ptrdiff_t = This is the signed integer type of the result of subtracting two pointers.
-*/
+    */
 	typedef size_t size_type;
 
 
