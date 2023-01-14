@@ -24,18 +24,18 @@ int	main(void)
 	// std::cout << typ << std::endl;
 	// vector<int>::
 	int i = 0;
-	// while (i < 33) //real :0.056   mine:0.017
-	// {
-	// 	fake.push_back(i * 3);
-	// 	real.push_back(i * 3);
+	while (i < 33) //real :0.056   mine:0.017
+	{
+		fake.push_back(i * 3);
+		real.push_back(i * 3);
 
 		std::cout << sizeof(ft::vector<double>::size_type) << std::endl;
-	// 	std::cout << "**fake =" << fake.at(i) << std::endl;
-	// 	std::cout << "**real =" << real.at(i) << std::endl;
-	// 	std::cout << "fake SIZE=" << fake.size() << std::endl;
-	// 	std::cout << "real SIZE=" << real.size() << std::endl;
-	// 	std::cout << "fake capacity=" << fake.capacity() << std::endl;
-	// 	std::cout << "real capacity=" << real.capacity() << std::endl;
-	// 	i++;
-	// }
+		std::cout << "**fake =" << fake.at(i) << std::endl;
+		std::cout << "**real =" << real.at(i) << std::endl;
+		std::cout << "fake SIZE=" << fake.size() << std::endl;
+		std::cout << "real SIZE=" << real.size() << std::endl;
+		std::cout << "fake capacity=" << fake.capacity() << std::endl;
+		std::cout << "real capacity=" << real.capacity() << std::endl;
+		i++;
+	}
 }
