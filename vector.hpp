@@ -16,7 +16,7 @@
 #include <cstddef>
 namespace ft
 {
-template <typename T, typename Allocator = std::allocator<T>>
+template <typename T, typename Allocator = std::allocator<T> >
 class vector
 {
   private:
@@ -44,6 +44,7 @@ class vector
 	/* A constant iterator for the container. */
 	typedef T *reverse_iterator;
 	typedef const T *const_reverse_iterator;
+	// typedef typename allocator_type::difference_type       difference_type;
 	typedef ptrdiff_t difference_type;
 
 	/*       difference_type: What type results from writing it1 - it2? : 
@@ -53,23 +54,28 @@ class vector
 */
 	typedef size_t size_type;
 
-	// typedef typename allocator_type::difference_type       difference_type;
-	/*______________________________________________________________________________________________________ */
 
-	/**_**_**_**_**_**_**_* Member functions  **_**_**_**_**_**_**_**_**_**_*/
+/**_**_**_**_**_**_**_* Member functions  **_**_**_**_**_**_**_**_**_**_*/
+/**_**_**_**_**_**_**_*~~~~~~~~~~~~~~~~~~***_**_**_**_**_**_**_**_**_**_*/
 
 	/* default constructor */
-	explicit vector(const allocator_type &alloc = allocator_type())
-		/*Constructs an empty container, with no elements.*/
+    /* Constructs an empty container, with no elements.*/
+
+	explicit vector(const allocator_type &alloc = allocator_type()) 
 	{
-		// std::cout << "alloc " << sizeof(alloc)<<std::endl;
 		size_param = 0;
 		capacity_param = 0;
-		this->vec = this->allocate;
-		this->allocate
-			vec = mine.allocate(0);
-		// this->vec = new T[nm];
+		vec = mine.allocate(0);
+        std::cout <<"default constructor is called" << std::endl;
 	}
+
+
+
+
+
+
+
+
 	/*______________________________________________________________________________________________________ */
 	vector(size_type nm)
 	{
