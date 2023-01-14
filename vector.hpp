@@ -31,11 +31,10 @@ namespace ft
     /*________________________________Member types________________________________*/
 
     typedef T    value_type; /* The type stored in the container. */
-
     typedef Allocator  allocator_type;     /*   The type of the allocator. / defaults to: allocator<value_type>   */
+    typedef value_type&              reference; /* A reference to the type stored in the container.  /for the default allocator: value_type& */
+    typedef const T&        const_reference; /*A constant reference to the type stored in the container. */
 
-    typedef value_type&              reference; /* reference to container element /for the default allocator: value_type& */
-    // typedef const T&        const_reference;
     // typedef T*               pointer;
     // typedef      const T*     const_pointer;
     // typedef T*              iterator;
