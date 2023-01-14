@@ -37,7 +37,7 @@ namespace ft
 
     // typedef T*               pointer;
     // typedef      const T*     const_pointer;
-    // typedef T*              iterator;
+    typedef T*              iterator; /*An iterator for the container. */
     // typedef         const iterator    const_iterator;
     // typedef T*       reverse_iterator;
     // typedef  const T*  const_reverse_iterator;
