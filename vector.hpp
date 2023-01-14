@@ -34,11 +34,10 @@ namespace ft
     typedef Allocator  allocator_type;     /*   The type of the allocator. / defaults to: allocator<value_type>   */
     typedef value_type&              reference; /* A reference to the type stored in the container.  /for the default allocator: value_type& */
     typedef const T&        const_reference; /*A constant reference to the type stored in the container. */
-
-    // typedef T*               pointer;
-    // typedef      const T*     const_pointer;
-    typedef T*              iterator; /*An iterator for the container. */
-    // typedef         const iterator    const_iterator;
+    typedef T*               pointer;
+    typedef      const T*     const_pointer;
+    typedef T*              iterator; /* An iterator for the container. */
+    typedef         const iterator    const_iterator; /* A constant iterator for the container. */
     // typedef T*       reverse_iterator;
     // typedef  const T*  const_reverse_iterator;
     typedef typename allocator_type::difference_type       difference_type;
