@@ -47,16 +47,13 @@ namespace ft
             Result of pointer subtraction
 */
 
-    // typedef typename allocator_type::difference_type       difference_type;
     typedef size_t                size_type;
 
-
-    
-    
+    // typedef typename allocator_type::difference_type       difference_type;
 /*______________________________________________________________________________________________________ */
 
-        /* The type stored in the container. */
-        // typedef T value_type;
+/**_**_**_**_**_**_**_* Member functions  *_**_**_**_**_**_**_**_**_**_*/
+
         explicit vector (const allocator_type& alloc = allocator_type())
         {
             std::cout << "alloc " << sizeof(alloc)<<std::endl;
