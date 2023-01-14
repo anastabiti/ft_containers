@@ -11,8 +11,8 @@
 # **************************************************************************** #
 
 NAME = a
-SRC = main.cpp vector.cpp
-OBJ = main.o vector.o
+SRC = main.cpp 
+OBJ = main.o 
 
 all: $(NAME)
 $(NAME): $(OBJ)
