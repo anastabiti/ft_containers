@@ -20,19 +20,19 @@ int	main(void)
 	/* test 	explicit vector(const allocator_type &alloc = allocator_type()) */
 	/**/
 	// ft::vector<int, std::allocator<int> >  f1;
-	std::vector<int, std::allocator<int> >  f1real;
+	// std::vector<int, std::allocator<int> >  f1real;
 	// ft::vector<int>  f2;
 	/**/
 	
 	/* test  fill constructor*/
 	std::allocator<int> alloc;
-	// ft::vector<int> fill1(2,33, alloc );
-	// ft::vector<int> fill2(2,33);
+	ft::vector<int> fill1(2,33, alloc );
+	ft::vector<int> fill2(2,33);
 	ft::vector<int> fill3(10,1337, alloc);
-	ft::vector<std::string> fill5(10,"dsf", alloc);
+	ft::vector<std::string> fill5(10,"1337", alloc);
 	// ft::vector<std::string> fill5(10,"dsf", alloc);
-
-
+	ft::vector<int> tty = fill1;
+	// std::cout  << tty<< std::endl;
 	
 	// // ft::vector<int, std::allocator<int> > fake;
 	// std::vector<int> real;

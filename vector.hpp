@@ -89,7 +89,6 @@ Constructs a container with n elements. Each element is a copy of val.*/
 			while (i < n)
 			{
 				std::cout << vec[i]<<std::endl;
-				
 				i++;
 			}
 	}
@@ -99,14 +98,15 @@ with each element constructed from its corresponding element in that range, in t
 template <class InputIterator> vector (InputIterator first, InputIterator last,const allocator_type& alloc = allocator_type())
 {
 
+
 }
 
 /*									copy constructor
 	Constructs a container with a copy of each of the elements in x, in the same order.*/
 
 vector (const vector& x)
-{
-
+{	
+	*this = x;
 }
 /*				Assign content
 
@@ -117,7 +117,11 @@ vector (const vector& x)
 
  vector& operator= (const vector& x)
  {
-
+	this->capacity_param = x.capacity_param;
+	this->mine = x.mine;
+	this->size_param = x.size_param;
+	this->vec = x.vec;
+	return *this;
  }
 
 
