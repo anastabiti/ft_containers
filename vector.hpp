@@ -140,8 +140,14 @@ bool empty() const
 }
 
 
+reference front()
+{
+	return vec[0];
+}
+// const_reference front() const
+// {
 
-
+// }
 	// /*______________________________________________________________________________________________________ */
 	// vector(size_type nm)
 	// {
