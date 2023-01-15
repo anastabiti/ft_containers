@@ -10,14 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef VECTOR_HPP
-#define VECTOR_HPP
+# define VECTOR_HPP
 
-
-
-#include <iostream>
-#include <string>
+# include <iostream>
+# include <string>
 // #include <memory>
-#include <cstddef>
+# include <cstddef>
 namespace ft
 {
 template <typename T, typename Allocator = std::allocator<T> >
@@ -35,19 +33,14 @@ class vector
 
 	typedef T value_type;             /* The type stored in the container. */
 	typedef Allocator allocator_type; /*   The type of the allocator. / defaults to: allocator<value_type>   */
-	typedef value_type &reference;   
-	/* A reference to the type stored in the container. 
-	/for the default allocator: value_type& */
-	typedef const T &const_reference;
-	/*A constant reference to the type stored in the container. */
+	typedef value_type &reference;    /* A reference to the type stored in the container.  /for the default allocator: value_type& */
+	typedef const T &const_reference; /*A constant reference to the type stored in the container. */
 	typedef T *pointer;
 	typedef const T *const_pointer;
-	typedef T *iterator;                   /* An iterator for the container. */
-	typedef const iterator const_iterator;
-	/* A constant iterator for the container. */
+	typedef T *iterator; /* An iterator for the container. */
+	typedef const iterator const_iterator;  /* A constant iterator for the container. */
 	typedef T *reverse_iterator;
-	typedef const T *const_reverse_iterator;
-	// typedef typename allocator_type::difference_type       difference_type;
+	typedef const T *const_reverse_iterator;  // typedef typename allocator_type::difference_type       difference_type;
 	typedef ptrdiff_t difference_type;
 
 	/*       difference_type: What type results from writing it1 - it2? : 
@@ -57,21 +50,33 @@ class vector
     */
 	typedef size_t size_type;
 
+	/**_**_**_**_**_**_**_* Member functions  **_**_**_**_**_**_**_**_**_**_*/
+	/**_**_**_**_**_**_**_*~~~~~~~~~~~~~~~~~~***_**_**_**_**_**_**_**_**_**_*/
 
-/**_**_**_**_**_**_**_* Member functions  **_**_**_**_**_**_**_**_**_**_*/
-/**_**_**_**_**_**_**_*~~~~~~~~~~~~~~~~~~***_**_**_**_**_**_**_**_**_**_*/
+					/* default constructor */
+	/* The constructor initializes a new object of type "vector"
+	 using the specified allocator. If no argument is provided,
+	  the default allocator, "allocator_type()", is used.*/
+	/* Constructs an empty container, with no elements.*/
 
-	/* default constructor */
-    /* Constructs an empty container, with no elements.*/
-
-	// explicit vector(const allocator_type &alloc = allocator_type()) 
-	explicit vector() 
+	explicit vector(const allocator_type &alloc = allocator_type())
+	// explicit vector()
 	{
 		size_param = 0;
 		capacity_param = 0;
 		vec = mine.allocate(0);
-        std::cout <<"default constructor is called" << std::endl;
+		std::cout << "default constructor is called" << std::endl;
 	}
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -171,7 +176,5 @@ class vector
 };
 
 } // namespace ft
-
-
 
 #endif

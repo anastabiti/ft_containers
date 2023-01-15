@@ -17,9 +17,10 @@ OBJ = main.o
 all: $(NAME)
 $(NAME): $(OBJ)
 $(OBJ):
-	c++ -Wall -Wextra -Werror -c $(SRC) -std=c++98
+	c++  -c $(SRC) -std=c++98 
+# -Wall -Wextra -Werror
 $(NAME):
-	c++  -Wall -Wextra -Werror -g $(OBJ) -o $(NAME) -std=c++98
+	c++  $(OBJ) -o $(NAME) -std=c++98
 clean :
 	rm -f $(OBJ)
 fclean: clean
