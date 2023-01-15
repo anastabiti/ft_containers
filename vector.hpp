@@ -23,7 +23,7 @@ class vector
 {
   private:
 	T *vec;
-	T *copY;
+	// T *copY;
 	size_t size_param;
 	size_t capacity_param;
 	Allocator mine;
@@ -61,8 +61,8 @@ class vector
 
 	explicit vector(const allocator_type &alloc = allocator_type())
 	{
-		size_param = 0;
-		capacity_param = 0;
+		this->size_param = 0;
+		this->capacity_param = 0;
 		vec = mine.allocate(0);
 		std::cout << "default constructor is called" << std::endl;
 	}
