@@ -71,10 +71,27 @@ class vector
 Constructs a container with n elements. Each element is a copy of val.*/
 	explicit vector (size_type n, const value_type& val = value_type(), const allocator_type& alloc = allocator_type())
 	{
+		this->size_param = n;
+		this->capacity_param = n;
+		vec = mine.allocate(n);
+			size_t i = 0;
+			while (i < n)
+			{
+				vec[i] = val;
+				i++;
+			}
+			
 		std::cout << "fill constructor is called" << std::endl;
-		std::cout << "val  = " << val << std::endl;
-		std::cout << "size_type = " << n<< " value_type()  = " << value_type() << std::endl;
+		// std::cout << "val  = " << val << std::endl;
+		std::cout << "size_type = " << n<< " value = " << val << std::endl;
 		std::cout << "______________________________ "<< std::endl;
+		i = 0;
+			while (i < n)
+			{
+				std::cout << vec[i]<<std::endl;
+				
+				i++;
+			}
 	}
 
 
