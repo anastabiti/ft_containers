@@ -149,10 +149,11 @@ reference back()
   {
 		return vec[this->size_param -1];
   }
-//   const_reference back() const
-//   {
+  const_reference back() const
+  {
 
-//   }
+		return vec[this->size_param -1];
+  }
 // const_reference front() const
 // {
 
