@@ -16,6 +16,8 @@
 # include <string>
 // #include <memory>
 # include <cstddef>
+#include <exception>
+
 namespace ft
 {
 template <typename T, typename Allocator = std::allocator<T> >
@@ -138,8 +140,6 @@ bool empty() const
 	else
 	return false;
 }
-
-
 reference front()
 	{
 		return vec[0];
@@ -149,11 +149,15 @@ reference back()
   {
 		return vec[this->size_param -1];
   }
+
   const_reference back() const
   {
-
 		return vec[this->size_param -1];
   }
+value_type* data() throw()
+{
+	return vec;
+}
 // const_reference front() const
 // {
 
