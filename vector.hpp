@@ -26,7 +26,7 @@ class vector
 	T *copY;
 	size_t size_param;
 	size_t capacity_param;
-	// Allocator mine;
+	Allocator mine;
 	/* data */
   public:
 	/*________________________________Member types________________________________*/
