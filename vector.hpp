@@ -93,11 +93,21 @@ Constructs a container with n elements. Each element is a copy of val.*/
 				i++;
 			}
 	}
+/*								range constructor
+	Constructs a container with as many elements as the range [first,last), 
+with each element constructed from its corresponding element in that range, in the same order.*/
+template <class InputIterator> vector (InputIterator first, InputIterator last,const allocator_type& alloc = allocator_type())
+{
 
+}
 
+/*									copy constructor
+	Constructs a container with a copy of each of the elements in x, in the same order.*/
 
+vector (const vector& x)
+{
 
-
+}
 
 
 
