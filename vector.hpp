@@ -9,6 +9,10 @@
 /*   Updated: 2022/12/30 10:07:39 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#ifndef VECTOR_HPP
+#define VECTOR_HPP
+
+
 
 #include <iostream>
 #include <string>
@@ -167,3 +171,7 @@ class vector
 };
 
 } // namespace ft
+
+
+
+#endif
