@@ -25,8 +25,8 @@ int	main(void)
 	/**/
 	
 	/* test  fill constructor*/
-
-	ft::vector<int> f3(2,33);
+	std::allocator<int> alloc;
+	ft::vector<int> f3(2,33, alloc );
 
 
 	
