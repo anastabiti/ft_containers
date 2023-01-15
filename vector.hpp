@@ -73,7 +73,7 @@ explicit vector (size_type n, const value_type& val = value_type(), const alloca
 {
 	std::cout << "fill constructor is called" << std::endl;
 	std::cout << "val  = " << val << std::endl;
-	std::cout << "value_type()  = " << value_type() << std::endl;
+	std::cout << "size_type = " << n<< " value_type()  = " << value_type() << std::endl;
 }
 
 
