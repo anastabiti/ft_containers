@@ -17,7 +17,8 @@
 
 int	main(void)
 {
-	ft::vector<int, std::allocator<int> >  fake;
+	ft::vector<int, std::allocator<int> >  f1;
+	ft::vector<int>  f2;
 	// // ft::vector<int, std::allocator<int> > fake;
 	// std::vector<int> real;
 	// // std::vector<int>::value_type typ = real[0];
