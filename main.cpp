@@ -62,6 +62,6 @@ int	main(void)
 	std::cout  << fill1.front() << std::endl;
 	std::cout  << fill1.back() << std::endl;
 	int *ptr = fill1.data();
-	std::cout  << *ptr<< std::endl;
+	std::cout  << *ptr +2<< std::endl;
 
 }
