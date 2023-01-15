@@ -17,13 +17,16 @@
 
 int	main(void)
 {
-	/*test 	explicit vector(const allocator_type &alloc = allocator_type()) */
+	/* test 	explicit vector(const allocator_type &alloc = allocator_type()) */
 	/**/
 	ft::vector<int, std::allocator<int> >  f1;
 	std::vector<int, std::allocator<int> >  f1real;
 	ft::vector<int>  f2;
 	/**/
+	
+	/* test  fill constructor*/
 
+	ft::vector<int> f3(2,33);
 
 
 	

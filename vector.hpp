@@ -66,8 +66,13 @@ class vector
 		vec = mine.allocate(0);
 		std::cout << "default constructor is called" << std::endl;
 	}
+/* fill constructor
+Constructs a container with n elements. Each element is a copy of val.*/
 
-
+explicit vector (size_type n, const value_type& val = value_type(), const allocator_type& alloc = allocator_type())
+{
+	std::cout << "fill constructor is called" << std::endl;
+}
 
 
 
