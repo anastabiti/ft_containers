@@ -108,7 +108,17 @@ vector (const vector& x)
 {
 
 }
+/*				Assign content
 
+	Copies all the elements from x into the container.
+	The container preserves its current allocator,
+	 which is used to allocate storage in case of reallocation.
+*/
+
+ vector& operator= (const vector& x)
+ {
+
+ }
 
 
 
