@@ -81,16 +81,16 @@ Constructs a container with n elements. Each element is a copy of val.*/
 				i++;
 			}
 			
-		std::cout << "fill constructor is called" << std::endl;
-		// std::cout << "val  = " << val << std::endl;
-		std::cout << "size_type = " << n<< " value = " << val << std::endl;
-		std::cout << "______________________________ "<< std::endl;
-		i = 0;
-			while (i < n)
-			{
-				std::cout << vec[i]<<std::endl;
-				i++;
-			}
+		// std::cout << "fill constructor is called" << std::endl;
+		// // std::cout << "val  = " << val << std::endl;
+		// std::cout << "size_type = " << n<< " value = " << val << std::endl;
+		// std::cout << "______________________________ "<< std::endl;
+		// i = 0;
+		// 	while (i < n)
+		// 	{
+		// 		std::cout << vec[i]<<std::endl;
+		// 		i++;
+		// 	}
 	}
 /*								range constructor
 	Constructs a container with as many elements as the range [first,last), 
@@ -141,9 +141,18 @@ bool empty() const
 
 
 reference front()
-{
-	return vec[0];
-}
+	{
+		return vec[0];
+	}
+
+reference back()
+  {
+		return vec[this->size_param -1];
+  }
+//   const_reference back() const
+//   {
+
+//   }
 // const_reference front() const
 // {
 

@@ -26,7 +26,7 @@ int	main(void)
 	
 	/* test  fill constructor*/
 	std::allocator<int> alloc;
-	ft::vector<int> fill1(0,34);
+	ft::vector<int> fill1(2,34);
 	// ft::vector<int> fill2(2,33);
 	// ft::vector<int> fill3(10,1337, alloc);
 	// ft::vector<std::string> fill5(10,"1337", alloc);
@@ -34,7 +34,7 @@ int	main(void)
 	// ft::vector<int> tty = fill1;
 	// std::cout  << tty.max_size() << std::endl;
 	// std::cout  << tty.empty() << std::endl;
-	std::cout  << fill1.empty() << std::endl;
+	// std::cout  << fill1.empty() << std::endl;
 	
 	// // ft::vector<int, std::allocator<int> > fake;
 	// std::vector<int> real;
@@ -60,6 +60,7 @@ int	main(void)
 
 	//test front
 	std::cout  << fill1.front() << std::endl;
+	std::cout  << fill1.back() << std::endl;
 
 
 }
