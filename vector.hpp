@@ -95,19 +95,19 @@ Constructs a container with n elements. Each element is a copy of val.*/
 /*								range constructor
 	Constructs a container with as many elements as the range [first,last), 
 with each element constructed from its corresponding element in that range, in the same order.*/
-template <class InputIterator> vector (InputIterator first, InputIterator last,const allocator_type& alloc = allocator_type())
-{
+// template <class InputIterator> vector (InputIterator first, InputIterator last,const allocator_type& alloc = allocator_type())
+// {
 
 
-}
+// }
 
 /*									copy constructor
 	Constructs a container with a copy of each of the elements in x, in the same order.*/
 
-vector (const vector& x)
-{	
-	*this = x;
-}
+// vector (const vector& x)
+// {	
+// 	*this = x;
+// }
 /*				Assign content
 
 	Copies all the elements from x into the container.
@@ -115,20 +115,29 @@ vector (const vector& x)
 	 which is used to allocate storage in case of reallocation.
 */
 
- vector& operator= (const vector& x)
- {
-	this->capacity_param = x.capacity_param;
-	this->mine = x.mine;
-	this->size_param = x.size_param;
-	this->vec = x.vec;
-	return *this;
- }
+//  vector& operator= (const vector& x)
+//  {
+// 	this->capacity_param = x.capacity_param;
+// 	this->mine = x.mine;
+// 	this->size_param = x.size_param;
+// 	this->vec = x.vec;
+// 	return *this;
+//  }
+
+size_type max_size() const
+{
+	return this->mine.max_size();
+}
 
 
 
-
-
-
+bool empty() const
+{
+	if(size_param == 0)
+		return true;
+	else
+	return false;
+}
 
 
 
@@ -168,16 +177,16 @@ vector (const vector& x)
 	// 	std::cout << "destructor is called" << std::endl;
 	// }
 	// /*______________________________________________________________________________________________________ */
-	// size_type size()
-	// {
-	// 	// return (mine.max_size());
-	// 	return (this->size_param);
-	// }
+	size_type size() const
+	{
+		// return (mine.max_size());
+		return (this->size_param);
+	}
 	// /*______________________________________________________________________________________________________ */
-	// size_type capacity()
-	// {
-	// 	return (this->capacity_param);
-	// }
+	size_type capacity() const
+	{
+		return (this->capacity_param);
+	}
 
 	// /*______________________________________________________________________________________________________ */
 	// void push_back(value_type const &nb)
@@ -216,10 +225,10 @@ vector (const vector& x)
 	// 	}
 	// }
 	// /*______________________________________________________________________________________________________*/
-	// value_type at(size_type nb)
-	// {
-	// 	return (vec[nb]);
-	// }
+	value_type at(size_type nb)
+	{
+		return (vec[nb]);
+	}
 	/*______________________________________________________________________________________________________ */
 };
 
