@@ -62,8 +62,8 @@ class vector
 	/* Constructs an empty container, with no elements.*/
 	explicit vector(const allocator_type &alloc = allocator_type())
 	{
-		if(alloc == allocator_type())	
-		std::cout << "allocator_type ==  alloc" << std::endl;
+		// if(alloc == allocator_type())	
+		// std::cout << "allocator_type ==  alloc" << std::endl;
 
 		this->size_param = 0;
 		this->capacity_param = 0;
@@ -252,6 +252,28 @@ value_type* data() throw()
 		return (vec[nb]);
 	}
 	/*______________________________________________________________________________________________________ */
+};
+
+template <typename F> 
+class atabiti_allocator
+{
+
+	public:
+atabiti_allocator(){
+		std::cout << "zalloc constructor is called" << std::endl;
+
+}
+~atabiti_allocator()
+{
+		std::cout << "zalloc D is called" << std::endl;
+
+}
+F* allocate(int i  = 2)
+{
+		std::cout << "allocate D is called" << std::endl;
+	return NULL;
+}
+
 };
 
 } // namespace ft

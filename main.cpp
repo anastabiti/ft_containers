@@ -15,12 +15,15 @@
 #include <string>
 #include <vector>
 
+
 int	main(void)
 {
 	/* test 	explicit vector(const allocator_type &alloc = allocator_type()) */
 	/**/
-	// ft::vector<int, std::allocator<int> >  f1;
-	std::vector<int, std::allocator<int> >  f1real;
+	ft::vector<int, ft::atabiti_allocator<int> >  f1;
+
+	// std::vector<int, std::allocator<int> >  f1real;
+
 	ft::vector<int>  f2;
 	/**/
 	
