@@ -60,9 +60,11 @@ class vector
 	 using the specified allocator. If no argument is provided,
 	  the default allocator, "allocator_type()", is used.*/
 	/* Constructs an empty container, with no elements.*/
-
 	explicit vector(const allocator_type &alloc = allocator_type())
 	{
+		if(alloc == allocator_type())	
+		std::cout << "allocator_type ==  alloc" << std::endl;
+
 		this->size_param = 0;
 		this->capacity_param = 0;
 		vec = mine.allocate(0);

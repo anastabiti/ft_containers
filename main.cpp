@@ -20,17 +20,17 @@ int	main(void)
 	/* test 	explicit vector(const allocator_type &alloc = allocator_type()) */
 	/**/
 	// ft::vector<int, std::allocator<int> >  f1;
-	// std::vector<int, std::allocator<int> >  f1real;
-	// ft::vector<int>  f2;
+	std::vector<int, std::allocator<int> >  f1real;
+	ft::vector<int>  f2;
 	/**/
 	
 	/* test  fill constructor*/
-	std::allocator<int> alloc;
-	ft::vector<int> fill1(2,34);
+	// std::allocator<int> alloc;
+	// ft::vector<int> fill1(2,34);
 	// ft::vector<int> fill2(2,33);
 	// ft::vector<int> fill3(10,1337, alloc);
 	// ft::vector<std::string> fill5(10,"1337", alloc);
-	// ft::vector<std::string> fill5(10,"dsf", alloc);
+	// // ft::vector<std::string> fill5(10,"dsf", alloc);
 	// ft::vector<int> tty = fill1;
 	// std::cout  << tty.max_size() << std::endl;
 	// std::cout  << tty.empty() << std::endl;
@@ -38,9 +38,9 @@ int	main(void)
 	
 	// // ft::vector<int, std::allocator<int> > fake;
 	// std::vector<int> real;
-	// // std::vector<int>::value_type typ = real[0];
-	// // std::cout << typ << std::endl;
-	// // vector<int>::
+	// std::vector<int>::value_type typ = real[0];
+	// std::cout << typ << std::endl;
+	// vector<int>::
 	// int i = 0;
 	// while (i < 33) //real :0.056   mine:0.017
 	// {
@@ -59,9 +59,9 @@ int	main(void)
 
 
 	//test front
-	std::cout  << fill1.front() << std::endl;
-	std::cout  << fill1.back() << std::endl;
-	int *ptr = fill1.data();
-	std::cout  << *ptr +2<< std::endl;
+	// std::cout  << fill1.front() << std::endl;
+	// std::cout  << fill1.back() << std::endl;
+	// int *ptr = fill1.data();
+	// std::cout  << *ptr<< std::endl;
 
 }
