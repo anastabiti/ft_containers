@@ -62,12 +62,10 @@ class vector
 	/* Constructs an empty container, with no elements.*/
 	explicit vector(const allocator_type &alloc = allocator_type())
 	{
-		// if(alloc == allocator_type())	
-		// std::cout << "allocator_type ==  alloc" << std::endl;
-
 		this->size_param = 0;
 		this->capacity_param = 0;
 		vec = allocating.allocate(0);
+		// allocating.construct(vec, 0);
 		std::cout << "default constructor is called" << std::endl;
 	}
 
@@ -75,6 +73,9 @@ class vector
 Constructs a container with n elements. Each element is a copy of val.*/
 	explicit vector (size_type n, const value_type& val = value_type(), const allocator_type& alloc = allocator_type())
 	{
+		
+		// allocating = alloc;
+		
 		this->size_param = n;
 		this->capacity_param = n;
 		vec = allocating.allocate(n);
@@ -84,17 +85,6 @@ Constructs a container with n elements. Each element is a copy of val.*/
 				vec[i] = val;
 				i++;
 			}
-			
-		// std::cout << "fill constructor is called" << std::endl;
-		// // std::cout << "val  = " << val << std::endl;
-		// std::cout << "size_type = " << n<< " value = " << val << std::endl;
-		// std::cout << "______________________________ "<< std::endl;
-		// i = 0;
-		// 	while (i < n)
-		// 	{
-		// 		std::cout << vec[i]<<std::endl;
-		// 		i++;
-		// 	}
 	}
 /*								range constructor
 	Constructs a container with as many elements as the range [first,last), 
@@ -130,7 +120,7 @@ with each element constructed from its corresponding element in that range, in t
 
 size_type max_size() const
 {
-	return this->alloc.max_size();
+	return this->allocating.max_size();
 }
 
 
@@ -273,6 +263,12 @@ F* allocate(int i  = 2)
 		std::cout << "allocate D is called" << std::endl;
 	return NULL;
 }
+
+};
+class iterator
+{
+	
+	public:
 
 };
 
