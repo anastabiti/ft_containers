@@ -28,7 +28,7 @@ class vector
 	// T *copY;
 	size_t size_param;
 	size_t capacity_param;
-	Allocator mine;
+	Allocator allocating ;
 	/* data */
   public:
 	/*________________________________Member types________________________________*/
@@ -67,7 +67,7 @@ class vector
 
 		this->size_param = 0;
 		this->capacity_param = 0;
-		vec = mine.allocate(0);
+		vec = allocating.allocate(0);
 		std::cout << "default constructor is called" << std::endl;
 	}
 
@@ -77,7 +77,7 @@ Constructs a container with n elements. Each element is a copy of val.*/
 	{
 		this->size_param = n;
 		this->capacity_param = n;
-		vec = mine.allocate(n);
+		vec = allocating.allocate(n);
 			size_t i = 0;
 			while (i < n)
 			{
@@ -122,7 +122,7 @@ with each element constructed from its corresponding element in that range, in t
 //  vector& operator= (const vector& x)
 //  {
 // 	this->capacity_param = x.capacity_param;
-// 	this->mine = x.mine;
+// 	this->alloc = x.alloc;
 // 	this->size_param = x.size_param;
 // 	this->vec = x.vec;
 // 	return *this;
@@ -130,7 +130,7 @@ with each element constructed from its corresponding element in that range, in t
 
 size_type max_size() const
 {
-	return this->mine.max_size();
+	return this->alloc.max_size();
 }
 
 
@@ -171,7 +171,7 @@ value_type* data() throw()
 	// 	capacity_param = nm;
 	// 	// this->vec = this->allocate ;
 	// 	// this->allocate
-	// 	vec = mine.allocate(nm);
+	// 	vec = alloc.allocate(nm);
 	// 	// this->vec = new T[nm];
 	// }
 	// /*______________________________________________________________________________________________________ */
@@ -195,13 +195,13 @@ value_type* data() throw()
 	// /*______________________________________________________________________________________________________ */
 	// ~vector()
 	// {
-	// 	mine.deallocate(vec, this->capacity_param);
+	// 	alloc.deallocate(vec, this->capacity_param);
 	// 	std::cout << "destructor is called" << std::endl;
 	// }
 	// /*______________________________________________________________________________________________________ */
 	size_type size() const
 	{
-		// return (mine.max_size());
+		// return (alloc.max_size());
 		return (this->size_param);
 	}
 	// /*______________________________________________________________________________________________________ */
@@ -216,7 +216,7 @@ value_type* data() throw()
 	// 	// start with nothing case	ft::vector<int> fake;
 	// 	if (size_param == 0)
 	// 	{
-	// 		vec = mine.allocate(1);
+	// 		vec = alloc.allocate(1);
 	// 		capacity_param = 1;
 	// 		size_param = 0;
 	// 		vec[size_param] = nb;
@@ -232,7 +232,7 @@ value_type* data() throw()
 	// 	else if (size_param == capacity_param)
 	// 	{
 	// 		capacity_param = capacity_param * 2;
-	// 		copY = mine.allocate(capacity_param);
+	// 		copY = alloc.allocate(capacity_param);
 	// 		size_t i = 0;
 	// 		while (i < size_param)
 	// 		{
@@ -240,7 +240,7 @@ value_type* data() throw()
 	// 			i++;
 	// 		}
 	// 		copY[i] = nb;
-	// 		mine.deallocate(vec, capacity_param);
+	// 		alloc.deallocate(vec, capacity_param);
 	// 		vec = copY;
 	// 		size_param++;
 	// 		return ;

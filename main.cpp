@@ -20,11 +20,12 @@ int	main(void)
 {
 	/* test 	explicit vector(const allocator_type &alloc = allocator_type()) */
 	/**/
-	ft::vector<int, ft::atabiti_allocator<int> >  f1;
-
+	// ft::vector<int, ft::atabiti_allocator<int> >  f1;
+	ft::vector<int, std::allocator<int> >  f1;
+	std::cout << f1.at(0) << std::endl;
 	// std::vector<int, std::allocator<int> >  f1real;
 
-	ft::vector<int>  f2;
+	// ft::vector<int>  f2;
 	/**/
 	
 	/* test  fill constructor*/
