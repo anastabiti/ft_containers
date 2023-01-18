@@ -29,11 +29,11 @@ int	main(void)
 	/**/
 	
 	/* test  fill constructor*/
-	// std::allocator<int> alloc;
-	// ft::vector<int> fill1(2,34);
-	// ft::vector<int> fill2(2,33);
-	// ft::vector<int> fill3(10,1337, alloc);
-	// ft::vector<std::string> fill5(10,"1337", alloc);
+	std::allocator<int> alloc;
+	ft::vector<int> fill1(2,34);
+	ft::vector<int> fill2(2,33);
+	ft::vector<int> fill3(10,1337, alloc);
+	ft::vector<std::string> fill5(10,"1337", alloc);
 	// // ft::vector<std::string> fill5(10,"dsf", alloc);
 	// ft::vector<int> tty = fill1;
 	// std::cout  << tty.max_size() << std::endl;
@@ -62,10 +62,10 @@ int	main(void)
 	// }
 
 
-	//test front
-	// std::cout  << fill1.front() << std::endl;
-	// std::cout  << fill1.back() << std::endl;
-	// int *ptr = fill1.data();
-	// std::cout  << *ptr<< std::endl;
+	//// test front
+	std::cout  << fill1.front() << std::endl;
+	std::cout  << fill1.back() << std::endl;
+	int *ptr = fill1.data();
+	std::cout  << *ptr<< std::endl;
 
 }
