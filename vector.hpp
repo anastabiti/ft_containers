@@ -17,6 +17,7 @@
 // #include <memory>
 # include <cstddef>
 #include <exception>
+#include <iterator>
 
 namespace ft
 {
@@ -267,30 +268,50 @@ F* allocate(int i  = 2)
 
 };
 
-template <class Category, class T, class Distance = ptrdiff_t,
-          class Pointer = T*, class Reference = T&>
-  class iterator {
+// template <class Category, class T, class Distance = ptrdiff_t,
+//           class Pointer = T*, class Reference = T&>
+//   class iterator {
 
-	  public:
-    typedef T         value_type; //value _type is of type T, the class of objects that the iterator is pointing.
-    typedef Distance  difference_type;//difference_type has a default value of ptrdiff_t which is used to represent the difference between two iterators.
-    typedef Pointer   pointer;//pointer has a default Pointer to type T.
-    typedef Reference reference;//reference has a default Reference to type T.
-    typedef Category  iterator_category; 
-	/* The iterator type defined by an iterator tag of the most specific iterator
-	behavior. These are the five iterator tags which represent the five types of
-iterators:
- 	input_iterator_tag
- 	output_iterator_tag
- 	forward_iterator_tag
- 	bidirectional_iterator_tag
- 	random_access_iterator_tag*/
-  };
+// 	  public:
+//     typedef T         value_type; //value _type is of type T, the class of objects that the iterator is pointing.
+//     typedef Distance  difference_type;//difference_type has a default value of ptrdiff_t which is used to represent the difference between two iterators.
+//     typedef Pointer   pointer;//pointer has a default Pointer to type T.
+//     typedef Reference reference;//reference has a default Reference to type T.
+//     typedef Category  iterator_category; 
+// 	/* The iterator type defined by an iterator tag of the most specific iterator
+// 	behavior. These are the five iterator tags which represent the five types of
+// iterators:
+//  	input_iterator_tag
+//  	output_iterator_tag
+//  	forward_iterator_tag
+//  	bidirectional_iterator_tag
+//  	random_access_iterator_tag*/
+//   };
 
 
+template <typename Iterator>
 
+struct iterator_traits {
+    typedef typename Iterator::difference_type difference_type;
+    typedef typename Iterator::value_type value_type;
+    typedef typename Iterator::pointer pointer;
+    typedef typename Iterator::reference reference;
+    typedef typename Iterator::iterator_category iterator_category;
+};
+
+template<typename T>
+struct iterator_traits<T*>{
+    typedef ptrdiff_t difference_type;
+    typedef T value_type;
+    typedef T* pointer;
+    typedef T& reference;
+    // typedef random_access_iterator_tag iterator_category;
+};
 
 
 } // namespace ft
+
+
+
 
 #endif
