@@ -6,10 +6,10 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2022/12/30 10:07:39 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/20 12:34:07 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#ifndef VECTOR_HPP
+
 # define VECTOR_HPP
 
 # include <iostream>
@@ -268,45 +268,13 @@ F* allocate(int i  = 2)
 
 };
 
-// template <class Category, class T, class Distance = ptrdiff_t,
-//           class Pointer = T*, class Reference = T&>
-//   class iterator {
-
-// 	  public:
-//     typedef T         value_type; //value _type is of type T, the class of objects that the iterator is pointing.
-//     typedef Distance  difference_type;//difference_type has a default value of ptrdiff_t which is used to represent the difference between two iterators.
-//     typedef Pointer   pointer;//pointer has a default Pointer to type T.
-//     typedef Reference reference;//reference has a default Reference to type T.
-//     typedef Category  iterator_category; 
-// 	/* The iterator type defined by an iterator tag of the most specific iterator
-// 	behavior. These are the five iterator tags which represent the five types of
-// iterators:
-//  	input_iterator_tag
-//  	output_iterator_tag
-//  	forward_iterator_tag
-//  	bidirectional_iterator_tag
-//  	random_access_iterator_tag*/
-//   };
 
 
-template <typename Iterator>
+/*std::reverse_iterator*/
 
-struct iterator_traits {
-    typedef typename Iterator::difference_type difference_type;
-    typedef typename Iterator::value_type value_type;
-    typedef typename Iterator::pointer pointer;
-    typedef typename Iterator::reference reference;
-    typedef typename Iterator::iterator_category iterator_category;
-};
 
-template<typename T>
-struct iterator_traits<T*>{
-    typedef ptrdiff_t difference_type;
-    typedef T value_type;
-    typedef T* pointer;
-    typedef T& reference;
-    // typedef random_access_iterator_tag iterator_category;
-};
+/*• std::enable_if */
+
 
 
 } // namespace ft
