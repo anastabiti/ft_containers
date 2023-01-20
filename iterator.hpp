@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 09:45:02 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/20 12:36:10 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/20 12:37:51 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,8 +96,8 @@ struct iterator_traits<T*> // definitions that are appropriate for pointers.
 
     /* Category tags */
     struct input_iterator_tag {};
-    struct output_iterator_tag :public input_iterator_tag { };
-    struct forward_iterator_tag :public output_iterator_tag {};
+    struct output_iterator_tag {};
+    struct forward_iterator_tag :public input_iterator_tag {};
     struct bidirectional_iterator_tag :public forward_iterator_tag {};
     struct random_access_iterator_tag  :public bidirectional_iterator_tag{};
  
