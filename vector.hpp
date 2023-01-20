@@ -6,10 +6,12 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/20 12:34:07 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/20 13:57:14 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
+#ifndef VECTOR_HPP
 # define VECTOR_HPP
 
 # include <iostream>

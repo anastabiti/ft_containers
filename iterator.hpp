@@ -6,11 +6,11 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 09:45:02 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/20 12:37:51 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/20 13:56:48 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ITERATOR_HPP 
+# ifndef ITERATOR_HPP 
 #define ITERATOR_HPP
 
 #include <iterator>
@@ -94,7 +94,12 @@ struct iterator_traits<T*> // definitions that are appropriate for pointers.
     // typedef random_access_iterator_tag iterator_category;
 };
 
-    /* Category tags */
+/* 
+        ---------------------------- Category tags/Standard iterator tags---------------------------- 
+    It is often desirable for a template function to find out what is the most specific category of its iterator argument,
+    so that the function can select the most efficient algorithm at compile time. To facilitate this, the
+    library introduces category tag classes which are used as compile time tags for algorithm selection. T
+*/
     struct input_iterator_tag {};
     struct output_iterator_tag {};
     struct forward_iterator_tag :public input_iterator_tag {};
