@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 09:45:02 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/22 14:39:58 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/22 14:41:42 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,16 +29,8 @@ namespace ft
     typedef Reference reference;//reference has a default Reference to type T.
     typedef Category  iterator_category; 
       private:
-    public:
     T *ptr;
-	/* The iterator type defined by an iterator tag of the most specific iterator
-	behavior. These are the five iterator tags which represent the five types of
-iterators:
- 	input_iterator_tag
- 	output_iterator_tag
- 	forward_iterator_tag
- 	bidirectional_iterator_tag
- 	random_access_iterator_tag*/
+    public:
     iterator()
     {
         ptr = nullptr;
@@ -48,13 +40,13 @@ iterators:
         ptr = vec;
     }
     
-    //  reference  operator*() const
-    //  {
-    //     std::cout <<"iterator operator* is called " << std::endl;
-    //     // return nullptr ;
-    //     return *ptr ;
-    //  }
-    //  
+     reference  operator*() const
+     {
+        std::cout <<"iterator operator* is called " << std::endl;
+        return *ptr ;
+     }
+
+
     };
     
        
@@ -96,6 +88,10 @@ struct iterator_traits<T*> // definitions that are appropriate for pointers.
     It is often desirable for a template function to find out what is the most specific category of its iterator argument,
     so that the function can select the most efficient algorithm at compile time. To facilitate this, the
     library introduces category tag classes which are used as compile time tags for algorithm selection. T
+*/
+	/* The iterator type defined by an iterator tag of the most specific iterator
+	behavior. These are the five iterator tags which represent the five types of
+
 */
     struct input_iterator_tag {};
     struct output_iterator_tag {};

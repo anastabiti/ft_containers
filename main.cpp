@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/22 14:38:05 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/22 14:43:06 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,16 +30,15 @@ int	main(void)
 	
 	/* test  fill constructor*/
 	// std::allocator<int> alloc;
-	std::vector<int>::iterator it;	
+	// std::vector<int>::iterator it;	
+	// ft::vector<int>::iterator it2;	
 	std::vector<int> fill1real(2,34);
-	ft::vector<int>::iterator it2;	
 	ft::vector<int> fill1(2,34);
 	
-	std::vector<int>::iterator::value_type t;
-	ft::vector<int>::iterator::value_type tf;
+	// std::vector<int>::iterator::value_type t;
+	// ft::vector<int>::iterator::value_type tf;
 	// ft::vector<int>::iterator::reference tfr;
 	
-	fill1real.push_back(98);
 	// fill1real.push_back(31);
 	// fill1real.push_back(2231);
 	// fill1real.push_back(27651);
@@ -51,9 +50,9 @@ int	main(void)
 	// }
 	
 	// std::cout << fill1.begin() << std::endl;
-	
-	std::cout << *fill1real.begin()<< std::endl;
-	std::cout << *fill1.begin() << std::endl;
+	// /     reference  operator*() const
+	std::cout << *fill1real.end()<< std::endl;
+	std::cout << *fill1.end() << std::endl;
 	// std::cout << *fill1.begin() << std::endl;
 	
 	// for(it2  = fill1.begin() ; it2 != fill1.end() ; it2++)
