@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 09:45:02 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/22 11:56:32 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/22 12:30:56 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,17 +37,7 @@ iterators:
  	bidirectional_iterator_tag
  	random_access_iterator_tag*/
     
-  };
-  
-    // iterator::iterator(/* args */)
-    // {
-    // }
-    
-    // iterator::~iterator()
-    // {
-    // }
-    
-    
+  };   
 /* 								iterator_traits 
 	iterator_traits is a structure that contains basic information on iterators
 	that can be used by generic algorithms to determine key attributes of an iterator
