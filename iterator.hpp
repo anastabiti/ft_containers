@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 09:45:02 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/22 14:41:42 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/22 14:51:42 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,32 @@ namespace ft
         std::cout <<"iterator operator* is called " << std::endl;
         return *ptr ;
      }
-
+     iterator &operator++()
+     {
+        ptr++;
+        return *this;
+     }
+     iterator &operator++(int)
+     {
+        ptr++;
+        return *this;
+     }
+    friend bool operator==(iterator const &x,iterator const &y)
+    {
+        // if(*this == rhs)
+        // return true;
+        // else
+        // return false;
+        return(x.ptr == y.ptr);
+    }
+    friend bool operator!=(iterator const &x,iterator const &y)
+    {
+        // if(*this == rhs)
+        // return false;
+        // else
+        // return true;
+        return(x.ptr != y.ptr);
+    }
 
     };
     
