@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/22 13:34:24 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/22 13:47:42 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -155,9 +155,9 @@ value_type* data() throw()
 	return vec;
 }
 
-// iterator begin()
+// iterator begin()  
 // {
-// 		return  itera;
+// 		return  iterator(this->vec[0]);
 // }
 // const_reference front() const
 // {
