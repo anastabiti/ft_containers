@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 09:45:02 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/22 14:51:42 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/22 14:52:22 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ namespace ft
     
      reference  operator*() const
      {
-        std::cout <<"iterator operator* is called " << std::endl;
+        // std::cout <<"iterator operator* is called " << std::endl;
         return *ptr ;
      }
      iterator &operator++()

@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/22 14:44:08 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/22 14:54:37 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class vector
 
   private:
 	T *vec;
-	// T *copY;
+	T *copY;
 	size_t size_param;
 	size_t capacity_param;
 	Allocator allocating ;
@@ -220,41 +220,41 @@ iterator end()
 	}
 
 	// /*______________________________________________________________________________________________________ */
-	// void push_back(value_type const &nb)
-	// {
-	// 	// start with nothing case	ft::vector<int> fake;
-	// 	if (size_param == 0)
-	// 	{
-	// 		vec = alloc.allocate(1);
-	// 		capacity_param = 1;
-	// 		size_param = 0;
-	// 		vec[size_param] = nb;
-	// 		size_param++;
-	// 		return ;
-	// 	}
-	// 	else if (size_param > 0 && size_param < capacity_param)
-	// 	{
-	// 		vec[size_param] = nb;
-	// 		++size_param;
-	// 		return ;
-	// 	}
-	// 	else if (size_param == capacity_param)
-	// 	{
-	// 		capacity_param = capacity_param * 2;
-	// 		copY = alloc.allocate(capacity_param);
-	// 		size_t i = 0;
-	// 		while (i < size_param)
-	// 		{
-	// 			copY[i] = vec[i];
-	// 			i++;
-	// 		}
-	// 		copY[i] = nb;
-	// 		alloc.deallocate(vec, capacity_param);
-	// 		vec = copY;
-	// 		size_param++;
-	// 		return ;
-	// 	}
-	// }
+	void push_back(value_type const &nb)
+	{
+		// start with nothing case	ft::vector<int> fake;
+		if (size_param == 0)
+		{
+			vec = allocating.allocate(1);
+			capacity_param = 1;
+			size_param = 0;
+			vec[size_param] = nb;
+			size_param++;
+			return ;
+		}
+		else if (size_param > 0 && size_param < capacity_param)
+		{
+			vec[size_param] = nb;
+			++size_param;
+			return ;
+		}
+		else if (size_param == capacity_param)
+		{
+			capacity_param = capacity_param * 2;
+			copY = allocating.allocate(capacity_param);
+			size_t i = 0;
+			while (i < size_param)
+			{
+				copY[i] = vec[i];
+				i++;
+			}
+			copY[i] = nb;
+			allocating.deallocate(vec, capacity_param);
+			vec = copY;
+			size_param++;
+			return ;
+		}
+	}
 	// /*______________________________________________________________________________________________________*/
 	value_type at(size_type nb)
 	{
