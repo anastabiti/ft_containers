@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/22 14:55:22 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/22 14:56:38 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	main(void)
 	ft::vector<int>::iterator it2;	
 	std::vector<int> fill1real;
 	fill1real.push_back(123);
-	fill1real.push_back(13);
+	fill1real.push_back(712);
 	fill1real.push_back(987);
 	fill1real.push_back(544);
 	
@@ -58,7 +58,7 @@ int	main(void)
 		std::cout << *it << std::endl;
 	}
 	std::cout <<"___________________________________________" << std::endl;
-	for(it2  = fill1.begin() ; it2 != fill1.end() ; ++it2)
+	for(it2  = fill1.begin() ; it2 != fill1.end() ; it2++)
 	{
 		std::cout << *it2 << std::endl;
 	}

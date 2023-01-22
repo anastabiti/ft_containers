@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 09:45:02 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/22 14:52:22 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/22 15:35:40 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,10 @@ namespace ft
      }
      iterator &operator++(int)
      {
+        // iterator tmp;
+        // tmp++;
+        // *this = tmp;
+        
         ptr++;
         return *this;
      }
