@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/20 13:57:14 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/22 11:53:06 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,15 @@
 // #include <memory>
 # include <cstddef>
 #include <exception>
-#include <iterator>
+#include "iterator.hpp"
+// #include <iterator>
 
 namespace ft
 {
 template <typename T, typename Allocator = std::allocator<T> >
 class vector
 {
+
   private:
 	T *vec;
 	// T *copY;
@@ -42,7 +44,7 @@ class vector
 	typedef const T &const_reference; /*A constant reference to the type stored in the container. */
 	typedef T *pointer;
 	typedef const T *const_pointer;
-	typedef T *iterator; /* An iterator for the container. */
+	typedef ft::iterator<ft::random_access_iterator_tag,T>  iterator; /* An iterator for the container. */
 	typedef const iterator const_iterator;  /* A constant iterator for the container. */
 	typedef T *reverse_iterator;
 	typedef const T *const_reverse_iterator;  // typedef typename allocator_type::difference_type       difference_type;
@@ -248,27 +250,27 @@ value_type* data() throw()
 };
 
 
-template <typename F> 
-class atabiti_allocator
-{
+// template <typename F> 
+// class atabiti_allocator
+// {
 
-	public:
-atabiti_allocator(){
-		std::cout << "zalloc constructor is called" << std::endl;
+// 	public:
+// atabiti_allocator(){
+// 		std::cout << "zalloc constructor is called" << std::endl;
 
-}
-~atabiti_allocator()
-{
-		std::cout << "zalloc D is called" << std::endl;
+// }
+// ~atabiti_allocator()
+// {
+// 		std::cout << "zalloc D is called" << std::endl;
 
-}
-F* allocate(int i  = 2)
-{
-		std::cout << "allocate D is called" << std::endl;
-	return NULL;
-}
+// }
+// F* allocate(int i  = 2)
+// {
+// 		std::cout << "allocate D is called" << std::endl;
+// 	return NULL;
+// }
 
-};
+// };
 
 
 
@@ -278,7 +280,7 @@ F* allocate(int i  = 2)
 /*• std::enable_if */
 
 
-
+  
 } // namespace ft
 
 

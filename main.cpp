@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/06 14:09:13 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/22 11:45:03 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
-
+// #include "iterator.hpp"
 
 int	main(void)
 {
@@ -30,12 +30,41 @@ int	main(void)
 	
 	/* test  fill constructor*/
 	// std::allocator<int> alloc;
-	ft::vector<ft::vector<int> > fill1(2);
-	ft::vector<int>::iterator  ggh;
-	// ft::vector<std::string> fill1real(4, "asd");
-
+	std::vector<int>::iterator it;	
 	std::vector<int> fill1real(2,34);
-	std::vector<int>::iterator g;
+	ft::vector<int>::iterator it2;	
+	ft::vector<int> fill1(2,34);
+	
+	std::vector<int>::iterator::value_type t;
+	ft::vector<int>::iterator::value_type tf;
+	
+	fill1real.push_back(98);
+	fill1real.push_back(31);
+	fill1real.push_back(2231);
+	fill1real.push_back(27651);
+	fill1real.push_back(221);
+		
+	for(it  = fill1real.begin() ; it != fill1real.end() ; it++)
+	{
+		std::cout << *it << std::endl;
+	}
+	
+	// for(it2  = fill1.begin() ; it2 != fill1.end() ; it2++)
+	// {
+	// 	std::cout << *it2 << std::endl;
+	// }
+	
+	
+	
+	
+
+	
+	// ft::vector<ft::vector<int> > fill1(2);
+	// ft::vector<int>::iterator  ggh;
+	// // ft::vector<std::string> fill1real(4, "asd");
+	// std::vector<int>::iterator g;
+	// ft::vector<int>::iterator df;
+
 	// ft::vector<int> fill2(2,33);
 	// ft::vector<int> fill3(10,1337, alloc);
 	// ft::vector<std::string> fill5(10,"1337", alloc);

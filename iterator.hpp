@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 09:45:02 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/20 13:56:48 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/22 11:44:21 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,15 @@
 namespace ft
 {
     template <class Category, class T, class Distance = ptrdiff_t, class Pointer = T*, class Reference = T&>
-  class iterator 
+  class iterator  :public std::iterator<std::random_access_iterator_tag, T>
   {
 
 	  public:
-    typedef T         value_type; //value _type is of type T, the class of objects that the iterator is pointing.
-    typedef Distance  difference_type;//difference_type has a default value of ptrdiff_t which is used to represent the difference between two iterators.
-    typedef Pointer   pointer;//pointer has a default Pointer to type T.
-    typedef Reference reference;//reference has a default Reference to type T.
-    typedef Category  iterator_category; 
+    // typedef T         value_type; //value _type is of type T, the class of objects that the iterator is pointing.
+    // typedef Distance  difference_type;//difference_type has a default value of ptrdiff_t which is used to represent the difference between two iterators.
+    // typedef Pointer   pointer;//pointer has a default Pointer to type T.
+    // typedef Reference reference;//reference has a default Reference to type T.
+    // typedef Category  iterator_category; 
 	/* The iterator type defined by an iterator tag of the most specific iterator
 	behavior. These are the five iterator tags which represent the five types of
 iterators:
@@ -36,23 +36,9 @@ iterators:
  	forward_iterator_tag
  	bidirectional_iterator_tag
  	random_access_iterator_tag*/
+    
   };
-
-
-    template <typename T>
-    class iterator :public std::iterator<std::random_access_iterator_tag, T >
-    {
-    private:
-        /* data */
-    public:
-        iterator(/* args */)
-        {
-        
-        }
-        ~iterator();
-    
-    };
-    
+  
     // iterator::iterator(/* args */)
     // {
     // }
@@ -72,9 +58,10 @@ iterators:
 	there is a problem with this technique since a pointer 
 	will not have a value_type or any of the other attributes associated with an iterator. 
 	1- It ensures that an iterator provides all type definitions.
+    -> you can’t just do something like int*::value_type, since pointer don’t have nested types!
 */
 
-template <typename Iterator> //he definition of iterator_traits for iterators
+template <typename Iterator> //the definition of iterator_traits for iterators
 
 struct iterator_traits {
     typedef typename Iterator::value_type value_type;
