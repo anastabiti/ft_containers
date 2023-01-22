@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 09:45:02 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/22 14:32:14 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/22 14:39:37 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ namespace ft
     typedef Reference reference;//reference has a default Reference to type T.
     typedef Category  iterator_category; 
       private:
-    pointer *ptr;
     public:
+    T *ptr;
 	/* The iterator type defined by an iterator tag of the most specific iterator
 	behavior. These are the five iterator tags which represent the five types of
 iterators:
@@ -45,12 +45,14 @@ iterators:
     }
     iterator(pointer vec)
     {
-        ptr = &vec;
+        ptr = vec;
     }
     
      reference  operator*() const
      {
-        return *ptr;
+        std::cout <<"iterator operator* is called " << std::endl;
+        // return nullptr ;
+        return *ptr ;
      }
     //  
     };

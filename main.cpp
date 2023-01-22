@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/22 14:31:18 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/22 14:38:05 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int	main(void)
 	
 	// std::cout << fill1.begin() << std::endl;
 	
-	std::cout << *fill1real.begin() << std::endl;
+	std::cout << *fill1real.begin()<< std::endl;
 	std::cout << *fill1.begin() << std::endl;
 	// std::cout << *fill1.begin() << std::endl;
 	

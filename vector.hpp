@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/22 14:31:01 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/22 14:35:28 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,10 @@ Constructs a container with n elements. Each element is a copy of val.*/
 				vec[i] = val;
 				i++;
 			}
+	}
+	vector operator*() const
+	{
+			return *vec;
 	}
 /*								range constructor
 	Constructs a container with as many elements as the range [first,last), 
