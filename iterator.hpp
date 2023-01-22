@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 09:45:02 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/22 14:39:37 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/22 14:39:58 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,12 +48,12 @@ iterators:
         ptr = vec;
     }
     
-     reference  operator*() const
-     {
-        std::cout <<"iterator operator* is called " << std::endl;
-        // return nullptr ;
-        return *ptr ;
-     }
+    //  reference  operator*() const
+    //  {
+    //     std::cout <<"iterator operator* is called " << std::endl;
+    //     // return nullptr ;
+    //     return *ptr ;
+    //  }
     //  
     };
     
