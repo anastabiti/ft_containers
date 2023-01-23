@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 09:45:02 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/23 10:31:39 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/23 10:45:04 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,16 @@ namespace ft
         --(*this);
         return tmp;
      }
+
+
+      iterator operator+ (difference_type n) 
+      {
+        		std::cout << "      iterator operator+ (difference_type n) is called" << std::endl;
+
+            iterator cp(*this) ;
+            cp = cp + n;
+            return cp; 
+      }
    
  friend bool operator==(iterator const &x,iterator const &y)
     {
