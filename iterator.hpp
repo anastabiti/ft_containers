@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 09:45:02 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/23 13:28:11 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/23 13:37:57 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -193,7 +193,8 @@ struct iterator_traits<T*> // definitions that are appropriate for pointers.
  
 
 template <class Iterator>
-class reverse_iterator : public iterator<typename iterator_traits<Iterator>::iterator_category,
+class reverse_iterator 
+: public iterator<typename iterator_traits<Iterator>::iterator_category,
 typename iterator_traits<Iterator>::value_type,
 typename iterator_traits<Iterator>::difference_type,
 typename iterator_traits<Iterator>::pointer,
@@ -206,13 +207,16 @@ typename iterator_traits<Iterator>::reference>
         typedef typename iterator_traits<Iterator>::difference_type difference_type;
         typedef typename iterator_traits<Iterator>::reference reference;
         typedef typename iterator_traits<Iterator>::pointer   pointer;
-    reverse_iterator()
-    {
-        // current = nullptr;
-    }
+    reverse_iterator() : current() {}
+    // {
+
+    //     		std::cout << "    reverse_iterator() is called" << std::endl;
+    //     current = NULL;
+    // }
     
     explicit reverse_iterator(Iterator x)
     {
+     std::cout << "       explicit reverse_iterator(Iterator x)  is called" << std::endl;    
         current = x;
     }
     

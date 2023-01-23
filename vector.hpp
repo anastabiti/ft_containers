@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/23 13:19:05 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/23 13:39:47 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,15 +68,15 @@ class vector
 			return  iterator(&vec[this->size_param]);
 		}
 		
-	      reverse_iterator rbegin() 
+	      reverse_iterator  rbegin() 
 		  {
-			return reverse_iterator(end());
+				return reverse_iterator(end());
 		  }
-		  const_reverse_iterator rbegin() const
-		  {
-			return reverse_iterator(end());
+		//   const_reverse_iterator rbegin() const
+		//   {
+		// 	return reverse_iterator(end());
 			
-		  }
+		//   }
 
 	
 	/**_**_**_**_**_**_**_*~~~~~~~~~~~~~~~~~~***_**_**_**_**_**_**_**_**_**_*/
