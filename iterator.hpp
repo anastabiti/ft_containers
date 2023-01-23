@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 09:45:02 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/23 11:36:16 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/23 11:37:14 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 #include <iterator>
 /*: Iterators are used by algorithms to move through containers. T*/
-
 namespace ft
 {
     template <class Category, class T, class Distance = ptrdiff_t, class Pointer = T*, class Reference = T&>
@@ -23,13 +22,15 @@ namespace ft
   {
   
     private:
-    T *ptr;
+        T *ptr;
+    
 	public:
-    typedef T         value_type; //value _type is of type T, the class of objects that the iterator is pointing.
-    typedef Distance  difference_type;//difference_type has a default value of ptrdiff_t which is used to represent the difference between two iterators.
-    typedef Pointer   pointer;//pointer has a default Pointer to type T.
-    typedef Reference reference;//reference has a default Reference to type T.
-    typedef Category  iterator_category; 
+        typedef T         value_type; //value _type is of type T, the class of objects that the iterator is pointing.
+        typedef Distance  difference_type;//difference_type has a default value of ptrdiff_t which is used to represent the difference between two iterators.
+        typedef Pointer   pointer;//pointer has a default Pointer to type T.
+        typedef Reference reference;//reference has a default Reference to type T.
+        typedef Category  iterator_category; 
+    
     iterator()
     {
         ptr = nullptr;

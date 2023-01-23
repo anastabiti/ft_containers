@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/23 11:35:40 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/23 11:43:23 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,8 +73,8 @@ int	main(void)
 	// std::cout << *it2+2 << std::endl;
 	
 	/*      iterator  operator+ (difference_type n)   */
-	real = fill1real.end();
-	mine = fill1.end();
+	// real = fill1real.end();
+	// mine = fill1.end();
 
 	// real1 = real + 2;
 	
@@ -82,14 +82,14 @@ int	main(void)
 	// mine1 = mine + 1;
 	// std::cout << *real1<< std::endl;
 	// std::cout << *mine1 << std::endl;
-	std::cout << *real<< std::endl;
-		real -= 2;
-	std::cout << *real<< std::endl;
+	// std::cout << *real<< std::endl;
+	// 	real -= 2;
+	// std::cout << *real<< std::endl;
 
 	
-	std::cout << *mine<< std::endl;
-		mine -= 2;
-	std::cout << *mine<< std::endl;
+	// std::cout << *mine<< std::endl;
+	// 	mine -= 2;
+	// std::cout << *mine<< std::endl;
 	// std::cout << mine[33] << std::endl;
 	/*-----------------------------------------*/
 
@@ -172,5 +172,26 @@ int	main(void)
 	// std::cout  << fill1.back() << std::endl;
 	// int *ptr = fill1.data();
 	// std::cout  << *ptr<< std::endl;
+	/* operator!=*/
+
+	std::vector<int>::iterator testit;
+	std::vector<int>::iterator testit1;
+	ft::vector<int>::iterator no;
+	ft::vector<int>::iterator no1;
+	
+	testit = fill1real.begin();
+	testit1 = fill1real.end();
+	if(testit1 != testit)
+	std::cout << " testit1 != testit"<< std::endl;
+	else
+	std::cout << " testit1 == testit"<< std::endl;
+	std::cout << "____________________________________________"<< std::endl;
+	
+	no = fill1.begin();
+	no1 = fill1.end();
+	if(no != no1)
+	std::cout << " no != no1"<< std::endl;
+	else
+	std::cout << " no == no1"<< std::endl;
 
 }
