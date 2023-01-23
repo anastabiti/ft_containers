@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 09:45:02 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/23 14:39:48 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/23 14:56:46 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ namespace ft
   
     private:
         T *ptr;
-    
 	public:
         typedef T         value_type; //value _type is of type T, the class of objects that the iterator is pointing.
         typedef Distance  difference_type;//difference_type has a default value of ptrdiff_t which is used to represent the difference between two iterators.
@@ -226,8 +225,16 @@ typename iterator_traits<Iterator>::reference>
     {
         return *current;
     }
-    // pointer operator->() const;
-    // reverse_iterator& operator++();
+    pointer operator->() const
+    {
+        return &current;
+    }
+    reverse_iterator& operator++()
+    {
+        std::cout << "    reverse_iterator& operator++() is called"<< std::endl;
+        --current;
+        return *this;
+    }
     // reverse_iterator operator++(int);
     // reverse_iterator& operator--();
     // reverse_iterator operator--(int);

@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/23 14:44:41 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/23 14:54:53 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -206,13 +206,10 @@ int	main(void)
 	
 	std::cout << *revreal<< std::endl;
 	std::cout << *revmine<< std::endl;
-	
-	std::vector<int>::iterator n1;
-	ft::vector<int>::iterator n2;
-	n1 = fill1real.end();
-	n2 = fill1.end();
-
+	++revreal;
+	++revmine;
 	std::cout << *revreal<< std::endl;
 	std::cout << *revmine<< std::endl;
+
 	
 }
