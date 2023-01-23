@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 09:45:02 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/23 12:34:22 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/23 12:36:05 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -213,8 +213,9 @@ typename iterator_traits<Iterator>::reference>
     
     explicit reverse_iterator(Iterator x)
     {
-        
+        this->current = x;
     }
+    
     template <class U> reverse_iterator(const reverse_iterator<U>& u);
     Iterator base() const; // explicit
     reference operator*() const;

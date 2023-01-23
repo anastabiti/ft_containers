@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/23 12:35:27 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/23 12:37:57 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,16 +58,16 @@ int	main(void)
 	// fill1real.push_back(27651);
 	// fill1real.push_back(221);
 		
-	for(real  = fill1real.end() ; real != fill1real.begin() ; real--)
-	{
-		std::cout << *real << std::endl;
+	// for(real  = fill1real.end() ; real != fill1real.begin() ; real--)
+	// {
+	// 	std::cout << *real << std::endl;
 	
-	}
-	std::cout <<"___________________________________________" << std::endl;
-	for(mine  = fill1.end() ; mine != fill1.begin() ; mine--)
-	{
-		std::cout << *mine << std::endl;
-	}
+	// }
+	// std::cout <<"___________________________________________" << std::endl;
+	// for(mine  = fill1.end() ; mine != fill1.begin() ; mine--)
+	// {
+	// 	std::cout << *mine << std::endl;
+	// }
 	
 	// std::cout << *it+2 << std::endl;
 	// std::cout << *it2+2 << std::endl;
@@ -176,24 +176,31 @@ int	main(void)
 
 
 	/* operator!=  | operator== */
-	std::vector<int>::iterator testit;
-	std::vector<int>::iterator testit1;
-	ft::vector<int>::iterator no;
-	ft::vector<int>::iterator no1;
+	// std::vector<int>::iterator testit;
+	// std::vector<int>::iterator testit1;
+	// ft::vector<int>::iterator no;
+	// ft::vector<int>::iterator no1;
 	
-	testit = fill1real.begin();
-	testit1 = fill1real.end();
-	if(testit1 != testit)
-	std::cout << " testit1 != testit"<< std::endl;
-	else
-	std::cout << " testit1 == testit"<< std::endl;
-	std::cout << "____________________________________________"<< std::endl;
+	// testit = fill1real.begin();
+	// testit1 = fill1real.end();
+	// if(testit1 != testit)
+	// std::cout << " testit1 != testit"<< std::endl;
+	// else
+	// std::cout << " testit1 == testit"<< std::endl;
+	// std::cout << "____________________________________________"<< std::endl;
 	
-	no = fill1.begin();
-	no1 = fill1.begin();
-	if(no != no1)
-	std::cout << " no != no1"<< std::endl;
-	else 
-	std::cout << " no == no1"<< std::endl;
+	// no = fill1.begin();
+	// no1 = fill1.begin();
+	// if(no != no1)
+	// std::cout << " no != no1"<< std::endl;
+	// else 
+	// std::cout << " no == no1"<< std::endl;
 	/*________________*/
+
+
+	/*reverse_iterator*/
+	std::vector<int>::reverse_iterator revreal;
+	ft::vector<int>::reverse_iterator revmine;
+	
+	
 }
