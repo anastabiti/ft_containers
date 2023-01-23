@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 09:45:02 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/23 11:37:14 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/23 11:44:30 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,20 +121,20 @@ namespace ft
    
  friend bool operator==(iterator const &x,iterator const &y)
     {
-        // if(*this == rhs)
-        // return true;
-        // else
-        // return false;
-        return(x.ptr == y.ptr);
+        if(*x == *y)
+        return true;
+        else
+        return false;
+        // return(x.ptr == y.ptr);
     }
 
   friend    bool operator!=(iterator const &x,iterator const &y)
     {
-        // if(*this == rhs)
-        // return false;
-        // else
-        // return true;
-        return(x.ptr != y.ptr);
+        if(*x == *y)
+        return false;
+        else
+        return true;
+        // return(x.ptr != y.ptr);
     }
 
 

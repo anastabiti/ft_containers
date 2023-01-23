@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/23 11:43:23 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/23 11:44:54 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -188,7 +188,7 @@ int	main(void)
 	std::cout << "____________________________________________"<< std::endl;
 	
 	no = fill1.begin();
-	no1 = fill1.end();
+	no1 = fill1.begin();
 	if(no != no1)
 	std::cout << " no != no1"<< std::endl;
 	else
