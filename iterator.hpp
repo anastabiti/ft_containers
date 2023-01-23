@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 09:45:02 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/23 12:27:31 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/23 12:33:26 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -193,34 +193,34 @@ struct iterator_traits<T*> // definitions that are appropriate for pointers.
  
 
 template <class Iterator>
-class reverse_iterator : public
-iterator<typename iterator_traits<Iterator>::iterator_category,
+class reverse_iterator : public iterator<typename iterator_traits<Iterator>::iterator_category,
 typename iterator_traits<Iterator>::value_type,
 typename iterator_traits<Iterator>::difference_type,
 typename iterator_traits<Iterator>::pointer,
-typename iterator_traits<Iterator>::reference> {
-protected:
-Iterator current;
-public:
-typedef Iterator iterator_type;
-typedef typename iterator_traits<Iterator>::difference_type difference_type;
-typedef typename iterator_traits<Iterator>::reference reference;
-typedef typename iterator_traits<Iterator>::pointer   pointer;
-reverse_iterator();
-explicit reverse_iterator(Iterator x);
-template <class U> reverse_iterator(const reverse_iterator<U>& u);
-Iterator base() const; // explicit
-reference operator*() const;
-pointer operator->() const;
-reverse_iterator& operator++();
-reverse_iterator operator++(int);
-reverse_iterator& operator--();
-reverse_iterator operator--(int);
-reverse_iterator operator+ (difference_type n) const;
-reverse_iterator& operator+=(difference_type n);
-reverse_iterator operator- (difference_type n) const;
-reverse_iterator& operator-=(difference_type n);
-reference operator[](difference_type n) const;
+typename iterator_traits<Iterator>::reference>
+ {
+    protected:
+        Iterator current;
+    public:
+        typedef Iterator iterator_type;
+        typedef typename iterator_traits<Iterator>::difference_type difference_type;
+        typedef typename iterator_traits<Iterator>::reference reference;
+        typedef typename iterator_traits<Iterator>::pointer   pointer;
+    reverse_iterator();
+    explicit reverse_iterator(Iterator x);
+    template <class U> reverse_iterator(const reverse_iterator<U>& u);
+    Iterator base() const; // explicit
+    reference operator*() const;
+    pointer operator->() const;
+    reverse_iterator& operator++();
+    reverse_iterator operator++(int);
+    reverse_iterator& operator--();
+    reverse_iterator operator--(int);
+    reverse_iterator operator+ (difference_type n) const;
+    reverse_iterator& operator+=(difference_type n);
+    reverse_iterator operator- (difference_type n) const;
+    reverse_iterator& operator-=(difference_type n);
+    reference operator[](difference_type n) const;
 };
 
 };
