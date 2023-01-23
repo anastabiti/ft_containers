@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/23 13:39:47 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/23 14:41:40 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ class vector
 		}
 	iterator end()  //Return iterator to end (public member function)
 		{
-			return  iterator(&vec[this->size_param]);
+			return  iterator(&vec[this->size_param - 1]);
 		}
 		
 	      reverse_iterator  rbegin() 
