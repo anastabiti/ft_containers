@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 09:45:02 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/23 14:58:51 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/23 15:04:14 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -240,7 +240,6 @@ typename iterator_traits<Iterator>::reference>
         std::cout << "    reverse_iterator operator++(int)  is called"<< std::endl;
         current--;
         return *this;
-    
  }
     reverse_iterator& operator--()
     {
@@ -257,7 +256,13 @@ typename iterator_traits<Iterator>::reference>
         return *this;
         
     }
-    // reverse_iterator operator+ (difference_type n) const;
+    reverse_iterator operator+ (difference_type n) const
+    {
+        std::cout << "     reverse_iterator operator+ (difference_type n) const  is called"<< std::endl;
+        reverse_iterator tmp(*this);
+        tmp = tmp + n;
+        return tmp;
+    }
     // reverse_iterator& operator+=(difference_type n);
     // reverse_iterator operator- (difference_type n) const;
     // reverse_iterator& operator-=(difference_type n);

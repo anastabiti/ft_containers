@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/23 14:59:09 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/23 15:06:19 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -222,6 +222,13 @@ int	main(void)
 	--revmine;
 	std::cout << *revreal<< std::endl;
 	std::cout << *revmine<< std::endl;
+	std::vector<int>::reverse_iterator ree;
+	ft::vector<int>::reverse_iterator ree1;
+	ree = revreal + 1;
+	ree1 = revmine + 1;
+
+	std::cout << *ree<< std::endl;
+	std::cout << *ree1<< std::endl;
 
 	
 }
