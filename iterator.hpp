@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 09:45:02 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/23 12:43:46 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/23 13:28:11 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -208,7 +208,7 @@ typename iterator_traits<Iterator>::reference>
         typedef typename iterator_traits<Iterator>::pointer   pointer;
     reverse_iterator()
     {
-        // current = NULL;
+        // current = nullptr;
     }
     
     explicit reverse_iterator(Iterator x)
