@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 09:45:02 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/23 12:36:05 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/23 12:43:46 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -208,27 +208,27 @@ typename iterator_traits<Iterator>::reference>
         typedef typename iterator_traits<Iterator>::pointer   pointer;
     reverse_iterator()
     {
-        this->current = nullptr;
+        // current = NULL;
     }
     
     explicit reverse_iterator(Iterator x)
     {
-        this->current = x;
+        current = x;
     }
     
-    template <class U> reverse_iterator(const reverse_iterator<U>& u);
-    Iterator base() const; // explicit
-    reference operator*() const;
-    pointer operator->() const;
-    reverse_iterator& operator++();
-    reverse_iterator operator++(int);
-    reverse_iterator& operator--();
-    reverse_iterator operator--(int);
-    reverse_iterator operator+ (difference_type n) const;
-    reverse_iterator& operator+=(difference_type n);
-    reverse_iterator operator- (difference_type n) const;
-    reverse_iterator& operator-=(difference_type n);
-    reference operator[](difference_type n) const;
+    // template <class U> reverse_iterator(const reverse_iterator<U>& u);
+    // Iterator base() const; // explicit
+    // reference operator*() const;
+    // pointer operator->() const;
+    // reverse_iterator& operator++();
+    // reverse_iterator operator++(int);
+    // reverse_iterator& operator--();
+    // reverse_iterator operator--(int);
+    // reverse_iterator operator+ (difference_type n) const;
+    // reverse_iterator& operator+=(difference_type n);
+    // reverse_iterator operator- (difference_type n) const;
+    // reverse_iterator& operator-=(difference_type n);
+    // reference operator[](difference_type n) const;
 };
 
 };
