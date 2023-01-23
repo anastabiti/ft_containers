@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/23 11:37:37 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/23 11:57:58 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,19 @@ class vector
 	typedef size_t size_type;
 
 	/**_**_**_**_**_**_**_* Member functions  **_**_**_**_**_**_**_**_**_**_*/
+
+	/* Iterators:                   */
+	iterator begin()  //Return iterator to beginning (public member function)
+		{
+			return  iterator(&vec[0]);
+		}
+	iterator end()  //Return iterator to end (public member function)
+		{
+			return  iterator(&vec[this->size_param]);
+		}
+		
+	
+	
 	/**_**_**_**_**_**_**_*~~~~~~~~~~~~~~~~~~***_**_**_**_**_**_**_**_**_**_*/
 
 					/* default constructor */
@@ -127,6 +140,7 @@ with each element constructed from its corresponding element in that range, in t
 // 	return *this;
 //  }
 
+
 size_type max_size() const
 {
 	return this->allocating.max_size();
@@ -155,19 +169,9 @@ reference back()
   {
 		return vec[this->size_param -1];
   }
-value_type* data() throw()
-{
-	return vec;
-}
 
-iterator begin()  
-{
-		return  iterator(&vec[0]);
-}
-iterator end()  
-{
-		return  iterator(&vec[this->size_param]);
-}
+
+
 
 // const_reference front() const
 // {
