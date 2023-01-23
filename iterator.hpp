@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 09:45:02 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/23 11:30:23 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/23 11:32:17 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,6 +109,11 @@ namespace ft
       iterator operator+=(difference_type n) 
       {
          ptr = ptr + n;
+         return *this;
+      }
+      iterator operator-=(difference_type n) 
+      {
+         ptr = ptr - n;
          return *this;
       }
       
