@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/23 11:44:54 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/23 11:46:40 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -172,8 +172,10 @@ int	main(void)
 	// std::cout  << fill1.back() << std::endl;
 	// int *ptr = fill1.data();
 	// std::cout  << *ptr<< std::endl;
-	/* operator!=*/
+	
 
+
+	/* operator!=  | operator== */
 	std::vector<int>::iterator testit;
 	std::vector<int>::iterator testit1;
 	ft::vector<int>::iterator no;
@@ -193,5 +195,5 @@ int	main(void)
 	std::cout << " no != no1"<< std::endl;
 	else
 	std::cout << " no == no1"<< std::endl;
-
+	/*________________*/
 }
