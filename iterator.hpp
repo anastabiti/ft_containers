@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 09:45:02 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/23 10:45:04 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/23 10:54:18 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,11 +90,15 @@ namespace ft
         return tmp;
      }
 
-
-      iterator operator+ (difference_type n) 
+    //   iterator  operator= (difference_type n) 
+    //   {
+        
+    //     		std::cout << "          iterator  operator= (difference_type n)  is called" << std::endl;
+    //             return *this;
+    //   }
+      iterator  operator+ (difference_type n) 
       {
         		std::cout << "      iterator operator+ (difference_type n) is called" << std::endl;
-
             iterator cp(*this) ;
             cp = cp + n;
             return cp; 

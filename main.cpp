@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/23 10:50:50 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/23 10:55:45 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,11 @@ int	main(void)
 	
 	/* test  fill constructor*/
 	// std::allocator<int> alloc;
-	std::vector<int>::iterator it;	
-	std::vector<int>::iterator it1;	
+	std::vector<int>::iterator real;	
+	std::vector<int>::iterator real1;	
 	
-	ft::vector<int>::iterator it2;	
-	ft::vector<int>::iterator it4;	
+	ft::vector<int>::iterator mine;	
+	ft::vector<int>::iterator mine1;	
 	std::vector<int> fill1real;
 	fill1real.push_back(123);
 	fill1real.push_back(712);
@@ -68,17 +68,18 @@ int	main(void)
 	// {
 	// 	std::cout << *it2 << std::endl;
 	// }
-		it = fill1real.begin();
-		it2 = fill1.begin();
+		real = fill1real.begin();
+		mine = fill1.begin();
+		
 		// it2 = fill1real.begin(); problem
 	
 	// std::cout << *it+2 << std::endl;
 	// std::cout << *it2+2 << std::endl;
-	// it4 = it2 + 1;
 	
-	it1 = it + 2;
-		std::cout << *it1<< std::endl;
-	// std::cout << *it1 << std::endl;
+	real1 = real + 2;
+	mine1 = mine + 1;
+	std::cout << *real1<< std::endl;
+	std::cout << *mine1 << std::endl;
 
 	// it2  = fill1.begin();
 	// std::cout << fill1.begin() << std::endl;
