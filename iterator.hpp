@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 09:45:02 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/23 10:28:01 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/23 10:31:39 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,23 @@ namespace ft
         std::cout << " Post-increment , called for      iterator operator++(int)" << std::endl;
         iterator tmp(*this);
         ++(*this);
+        return tmp;
+     }
+    /*
+        Pre-decrement, called for --ptr
+    */ 
+     iterator &operator--()
+     {
+        --ptr;
+        return *this;
+     }
+    /*    
+            Post-decrement
+    */
+     iterator operator--(int)
+     {
+        iterator tmp(*this);
+        --(*this);
         return tmp;
      }
    
