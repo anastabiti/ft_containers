@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 09:45:02 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/23 09:04:57 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/23 09:21:35 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,10 @@ namespace ft
         // std::cout <<"iterator operator* is called " << std::endl;
         return *ptr ;
      }
+     pointer operator->()
+     {
+        return &ptr;
+     }
      iterator &operator++()
      {
         ptr++;
@@ -54,14 +58,12 @@ namespace ft
      }
      iterator &operator++(int)
      {
-        // iterator tmp;
-        // tmp++;
-        // *this = tmp;
-        
-        ptr++;
-        return *this;
+        iterator tmp(*this);
+        ++(*this);
+        return *tmp;
      }
-    friend bool operator==(iterator const &x,iterator const &y)
+   
+ friend bool operator==(iterator const &x,iterator const &y)
     {
         // if(*this == rhs)
         // return true;
@@ -69,7 +71,7 @@ namespace ft
         // return false;
         return(x.ptr == y.ptr);
     }
-    friend bool operator!=(iterator const &x,iterator const &y)
+  friend    bool operator!=(iterator const &x,iterator const &y)
     {
         // if(*this == rhs)
         // return false;
@@ -77,7 +79,7 @@ namespace ft
         // return true;
         return(x.ptr != y.ptr);
     }
-
+    
     };
     
        
