@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 09:45:02 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/23 09:21:35 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/23 10:28:01 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ namespace ft
     iterator(pointer vec)
     {
         ptr = vec;
-        std::cout << "    iterator(pointer vec) is called" << std::endl;
+        // std::cout << "    iterator(pointer vec) is called" << std::endl;
     }
     
      reference  operator*() const
@@ -47,20 +47,30 @@ namespace ft
         // std::cout <<"iterator operator* is called " << std::endl;
         return *ptr ;
      }
+
      pointer operator->()
      {
         return &ptr;
      }
+     
+    /*
+        Pre-increment, called for ++ptr
+    */ 
      iterator &operator++()
      {
-        ptr++;
+        std::cout << "Pre-increment, called for ++ptr iterator &operator++()" << std::endl;
+        ++ptr;
         return *this;
      }
-     iterator &operator++(int)
+    /*    
+            Post-increment
+    */
+     iterator operator++(int)
      {
+        std::cout << " Post-increment , called for      iterator operator++(int)" << std::endl;
         iterator tmp(*this);
         ++(*this);
-        return *tmp;
+        return tmp;
      }
    
  friend bool operator==(iterator const &x,iterator const &y)
@@ -71,6 +81,7 @@ namespace ft
         // return false;
         return(x.ptr == y.ptr);
     }
+
   friend    bool operator!=(iterator const &x,iterator const &y)
     {
         // if(*this == rhs)
@@ -79,9 +90,11 @@ namespace ft
         // return true;
         return(x.ptr != y.ptr);
     }
-    
-    };
-    
+
+
+};
+
+
        
 /* 								iterator_traits 
 	iterator_traits is a structure that contains basic information on iterators
