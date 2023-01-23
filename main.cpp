@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/23 10:55:45 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/23 10:56:57 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,19 +68,24 @@ int	main(void)
 	// {
 	// 	std::cout << *it2 << std::endl;
 	// }
-		real = fill1real.begin();
-		mine = fill1.begin();
-		
-		// it2 = fill1real.begin(); problem
 	
 	// std::cout << *it+2 << std::endl;
 	// std::cout << *it2+2 << std::endl;
 	
+	/*      iterator  operator+ (difference_type n)   */
 	real1 = real + 2;
+	real = fill1real.begin();
+	mine = fill1.begin();
+	// it2 = fill1real.begin(); problem
 	mine1 = mine + 1;
 	std::cout << *real1<< std::endl;
 	std::cout << *mine1 << std::endl;
+	/*-----------------------------------------*/
 
+
+
+
+	
 	// it2  = fill1.begin();
 	// std::cout << fill1.begin() << std::endl;
 	// /     reference  operator*() const
