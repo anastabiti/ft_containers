@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/22 14:56:38 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/23 09:06:39 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,14 @@ int	main(void)
 	fill1real.push_back(712);
 	fill1real.push_back(987);
 	fill1real.push_back(544);
+	fill1real.push_back(5);
 	
 	ft::vector<int> fill1;
 	fill1.push_back(123);
 	fill1.push_back(712);
 	fill1.push_back(987);
 	fill1.push_back(544);
+	fill1.push_back(5);
 	
 	// std::vector<int>::iterator::value_type t;
 	// ft::vector<int>::iterator::value_type tf;
@@ -58,11 +60,12 @@ int	main(void)
 		std::cout << *it << std::endl;
 	}
 	std::cout <<"___________________________________________" << std::endl;
-	for(it2  = fill1.begin() ; it2 != fill1.end() ; it2++)
-	{
-		std::cout << *it2 << std::endl;
-	}
+	// for(it2  = fill1.begin() ; it2 != fill1.end() ; it2++)
+	// {
+	// 	std::cout << *it2 << std::endl;
+	// }
 	
+	it2  = fill1.begin();
 	// std::cout << fill1.begin() << std::endl;
 	// /     reference  operator*() const
 	// std::cout << *fill1real.end()<< std::endl;

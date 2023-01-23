@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 09:45:02 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/22 15:35:40 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/23 09:04:57 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,11 @@ namespace ft
     {
         ptr = nullptr;
     }
+    
     iterator(pointer vec)
     {
         ptr = vec;
+        std::cout << "    iterator(pointer vec) is called" << std::endl;
     }
     
      reference  operator*() const
