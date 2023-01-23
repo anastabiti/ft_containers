@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 09:45:02 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/23 10:57:28 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/23 11:21:25 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,11 @@ namespace ft
         --(*this);
         return tmp;
      }
-
+    reference operator[] (difference_type n)
+    {
+        
+            return ptr[n]; 
+    }
     //   iterator  operator= (difference_type n) 
     //   {
         

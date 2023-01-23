@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/23 10:56:57 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/23 11:22:06 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,9 +77,11 @@ int	main(void)
 	real = fill1real.begin();
 	mine = fill1.begin();
 	// it2 = fill1real.begin(); problem
-	mine1 = mine + 1;
-	std::cout << *real1<< std::endl;
-	std::cout << *mine1 << std::endl;
+	// mine1 = mine + 1;
+	// std::cout << *real1<< std::endl;
+	// std::cout << *mine1 << std::endl;
+	std::cout << real[33]<< std::endl;
+	std::cout << mine[33] << std::endl;
 	/*-----------------------------------------*/
 
 
