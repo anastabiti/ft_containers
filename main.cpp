@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/23 14:57:51 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/23 14:59:09 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -212,6 +212,14 @@ int	main(void)
 	std::cout << *revmine<< std::endl;
 	revreal++;
 	revmine++;
+	std::cout << *revreal<< std::endl;
+	std::cout << *revmine<< std::endl;
+	revreal--;
+	revmine--;
+	std::cout << *revreal<< std::endl;
+	std::cout << *revmine<< std::endl;
+	--revreal;
+	--revmine;
 	std::cout << *revreal<< std::endl;
 	std::cout << *revmine<< std::endl;
 
