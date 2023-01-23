@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/23 12:45:09 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/23 12:47:56 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -202,8 +202,9 @@ int	main(void)
 	std::vector<int>::reverse_iterator revreal;
 	ft::vector<int>::reverse_iterator revmine;
 	revreal = fill1real.rbegin();
-	// revmine = fill1real.begin();
+	revmine = fill1real.rbegin();
 	
 	std::cout << *revreal<< std::endl;
+	std::cout << *revmine<< std::endl;
 	
 }
