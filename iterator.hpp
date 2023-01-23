@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 09:45:02 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/23 12:33:26 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/23 12:34:22 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ namespace ft
         ptr = nullptr;
     }
     
-    iterator(pointer vec)
+   explicit iterator(pointer vec)
     {
         ptr = vec;
         // std::cout << "    iterator(pointer vec) is called" << std::endl;
@@ -206,8 +206,15 @@ typename iterator_traits<Iterator>::reference>
         typedef typename iterator_traits<Iterator>::difference_type difference_type;
         typedef typename iterator_traits<Iterator>::reference reference;
         typedef typename iterator_traits<Iterator>::pointer   pointer;
-    reverse_iterator();
-    explicit reverse_iterator(Iterator x);
+    reverse_iterator()
+    {
+        this->current = nullptr;
+    }
+    
+    explicit reverse_iterator(Iterator x)
+    {
+        
+    }
     template <class U> reverse_iterator(const reverse_iterator<U>& u);
     Iterator base() const; // explicit
     reference operator*() const;
