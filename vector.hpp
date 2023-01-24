@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/24 14:56:00 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/24 15:01:18 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -217,6 +217,10 @@ Constructs a container with n elements. Each element is a copy of val.*/
 		else if(n < size())
 		{
 			std::cout <<  size() << " n < this->vec.size() is called" <<std::endl;
+			// this->allocating.destroy(vec);
+			allocating.deallocate(vec,size_param);
+			this->size_param = n;
+			this->capacity_param = n;
 		}
 		/* If n is greater than the current container size, 
 		the content is expanded by inserting at the end as many elements as needed to reach a size of n. 
