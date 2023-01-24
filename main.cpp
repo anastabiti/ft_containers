@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/24 13:52:56 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/24 14:50:11 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,29 +19,24 @@ using namespace std;
 
 int main(void) {
 	
-   vector<int> v1(5);
-   ft::vector<int> v1beta(5);
+
+
+   ft::vector<int> myvec;
+
+   int i = 0 ;
+   while (i < 7)
+   {
+         myvec.push_back(i + 1);
+         i++;
+   }
+   i = 0 ;
+   while (i < 7)
+   {
+      std::cout << myvec[i++] << std::endl;
+   }
    
 
-   /* assigned value to vector v1 */
-   for (int i = 0; i < v1.size(); ++i)
-      v1[i] = i + 1;
-
-   /* create a range constructor v2 from v1 */
-   vector<int> v2(v1.begin(), v1.end());
-   for (int i = 0; i < v2.size(); ++i)
-      cout << v2[i] << endl;
-      cout << "_______________________________-" << endl;
    
-	  
-   for (int i = 0; i < v1beta.size(); ++i)
-      v1beta[i] = i + 1; //	 reference  operator[](size_type n)
-    ft::vector<int> v2beta(v1beta.begin(), v1beta.end());
-   for (int i = 0; i < v2beta.size(); ++i)
-      cout << v2beta[i] << endl;
-   
-//    for (int i = 0; i < v1beta.size(); ++i)
-//       cout << v1beta[i] << endl;
 
    return 0;
 }

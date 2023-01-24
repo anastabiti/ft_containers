@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/24 14:04:51 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/24 14:46:09 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -205,7 +205,28 @@ Constructs a container with n elements. Each element is a copy of val.*/
 	}
 	void resize (size_type n, value_type val = value_type())
 	{
-		
+		/*If n is smaller than the current container size,
+		the content is reduced to its first n elements, removing those beyond (and destroying them).*/
+
+		if(n < this->vec.size())
+		{
+			std::cout << "n < this->vec.size() is called" <<std::endl;
+		}
+		/* If n is greater than the current container size, 
+		the content is expanded by inserting at the end as many elements as needed to reach a size of n. 
+		If val is specified, the new elements are initialized as copies of val, otherwise, they are value-initialized.
+		*/
+		if(n > this->vec.size())
+		{
+			std::cout << "n > this->vec.size()is called" <<std::endl;
+			
+		}
+		/*If n is also greater than the current container capacity, an automatic reallocation of the allocated storage space takes place.*/
+		if(n > this->vec.capacity())
+		{
+			std::cout << " > this->vec.capacity() is called" <<std::endl;
+			
+		}
 	}
 	size_type capacity() const
 	{
