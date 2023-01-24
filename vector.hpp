@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/24 10:24:58 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/24 10:25:37 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ class vector
 	typedef T value_type;             /* The type stored in the container. */
 	typedef Allocator allocator_type; /*   The type of the allocator. / defaults to: allocator<value_type>   */
 	typedef typename Allocator::reference reference;    /* A reference to the type stored in the container.  /for the default allocator: value_type& */
-	typedef const T &const_reference; /*A constant reference to the type stored in the container. */
+	typedef typename Allocator::const_reference const_reference; /*A constant reference to the type stored in the container. */
 	typedef T *pointer;
 	typedef const T *const_pointer;
 	typedef 		ft::iterator<ft::random_access_iterator_tag,T>  iterator; /* An iterator for the container. */
