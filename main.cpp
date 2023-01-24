@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/24 14:55:27 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/24 14:56:25 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int main(void) {
    }
    
       std::cout << "____________________"<< std::endl;
-      myvec.resize(68);
+      myvec.resize(2);
    
 
    return 0;
