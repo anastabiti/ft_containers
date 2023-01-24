@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/24 13:54:11 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/24 14:04:51 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -194,11 +194,22 @@ Constructs a container with n elements. Each element is a copy of val.*/
 		return (const_reverse_iterator(--(begin())));
 	}
 	/* Capacity-----------------------:                   */
-
-	/**_**_**_**_**_**_**_*~~~~~~~~~~~~~~~~~~***_**_**_**_**_**_**_**_**_**_*/
+	size_type size() const
+	{
+		// return (alloc.max_size());
+		return (this->size_param);
+	}
 	size_type max_size() const
 	{
 		return (this->allocating.max_size());
+	}
+	void resize (size_type n, value_type val = value_type())
+	{
+		
+	}
+	size_type capacity() const
+	{
+		return (this->capacity_param);
 	}
 
 	bool empty() const
@@ -208,6 +219,9 @@ Constructs a container with n elements. Each element is a copy of val.*/
 		else
 			return (false);
 	}
+	
+	/**_**_**_**_**_**_**_*~~~~~~~~~~~~~~~~~~***_**_**_**_**_**_**_**_**_**_*/
+
 	reference front()
 	{
 		return (vec[0]);
@@ -267,17 +281,8 @@ Constructs a container with n elements. Each element is a copy of val.*/
 	// }
 	//
 	/*______________________________________________________________________________________________________ */
-	size_type size() const
-	{
-		// return (alloc.max_size());
-		return (this->size_param);
-	}
 	//
 	/*______________________________________________________________________________________________________ */
-	size_type capacity() const
-	{
-		return (this->capacity_param);
-	}
 
 	//
 	/*______________________________________________________________________________________________________ */
