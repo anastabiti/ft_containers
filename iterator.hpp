@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 09:45:02 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/23 15:04:14 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/24 10:05:18 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ namespace ft
     
     iterator()
     {
-        ptr = nullptr;
+        ptr = NULL;
     }
     
    explicit iterator(pointer vec)
@@ -88,8 +88,9 @@ namespace ft
         --(*this);
         return tmp;
      }
-    reference operator[] (difference_type n)
+    reference operator[] (difference_type n) const
     {
+                std::cout << "   1 reference operator[](difference_type n) const  is called"<< std::endl;
             return ptr[n]; 
     }
     //   iterator  operator= (difference_type n) 
@@ -256,6 +257,7 @@ typename iterator_traits<Iterator>::reference>
         return *this;
         
     }
+    
     reverse_iterator operator+ (difference_type n) const
     {
         std::cout << "     reverse_iterator operator+ (difference_type n) const  is called"<< std::endl;
@@ -266,7 +268,11 @@ typename iterator_traits<Iterator>::reference>
     // reverse_iterator& operator+=(difference_type n);
     // reverse_iterator operator- (difference_type n) const;
     // reverse_iterator& operator-=(difference_type n);
-    // reference operator[](difference_type n) const;
+    reference operator[](difference_type n) const
+    {
+        std::cout << "   2 reference operator[](difference_type n) const  is called"<< std::endl;
+        return current[n]; //will call iterator  operator[]
+    }
 };
 
 };
