@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 09:45:02 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/24 11:04:29 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/24 11:41:56 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -181,6 +181,7 @@ struct iterator_traits<T *> // definitions that are appropriate for pointers.
 	the
     library introduces category tag classes which are used as compile time tags for algorithm selection. T
 */
+
 /* The iterator type defined by an iterator tag of the most specific iterator
 	behavior. These are the five iterator tags which represent the five types of
 
@@ -202,8 +203,7 @@ struct random_access_iterator_tag : public bidirectional_iterator_tag
 };
 
 template <class Iterator>
-class reverse_iterator
-	: public iterator<typename iterator_traits<Iterator>::iterator_category,
+class reverse_iterator : public iterator<typename iterator_traits<Iterator>::iterator_category,
 						typename iterator_traits<Iterator>::value_type,
 						typename iterator_traits<Iterator>::difference_type,
 						typename iterator_traits<Iterator>::pointer,
@@ -217,11 +217,8 @@ class reverse_iterator
 	typedef typename iterator_traits<Iterator>::difference_type difference_type;
 	typedef typename iterator_traits<Iterator>::reference reference;
 	typedef typename iterator_traits<Iterator>::pointer pointer;
-	reverse_iterator()
-		: current()
-	{
-	}
-	// {
+	reverse_iterator() : current() {}
+
 
 	//     		std::cout << "    reverse_iterator() is called" << std::endl;
 	//     current = NULL;

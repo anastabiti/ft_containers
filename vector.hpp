@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/24 11:23:29 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/24 13:07:05 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,12 +101,13 @@ Constructs a container with n elements. Each element is a copy of val.*/
 	// 		return (*vec);
 	// }
 	/*								range constructor
-	Constructs a container with as many elements as the range [first,last), 
-with each element constructed from its corresponding element in that range,
-	in the same order.*/
+			Constructs a container with as many elements as the range [first,last), 
+			with each element constructed from its corresponding element in that range,
+		in the same order.
+	*/
 	template <class InputIterator> vector (InputIterator first, InputIterator last,const allocator_type& alloc = allocator_type())
 	{
-		
+		        
 	}
 
 	/*									copy constructor
@@ -135,26 +136,46 @@ with each element constructed from its corresponding element in that range,
 
 	/**_**_**_**_**_**_**_* Member functions  **_**_**_**_**_**_**_**_**_**_*/
 
-	/* Iterators:                   */
+	/* Iterators-----------------------:                   */
 	iterator begin() //Return iterator to beginning (public member function)
 	{
-		return (iterator(&vec[0]));
+		return (iterator(vec));
+	}
+	const_iterator begin() const
+	{
+		return (const_iterator(&vec[0]));
 	}
 	iterator end() //Return iterator to end (public member function)
 	{
-		return (iterator(&vec[this->size_param - 1]));
+		return (iterator(&vec[this->size_param]));
 	}
-
+	const_iterator end() const
+	{
+			return (const_iterator(&vec[this->size_param ]));
+	}
 	reverse_iterator rbegin()
 	{
 		return (reverse_iterator(end()));
 	}
-	//   const_reverse_iterator rbegin() const
-	//   {
-	// 	return (reverse_iterator(end()));
 
-	//   }
+	  const_reverse_iterator rbegin() const
+	  {
+		return const_reverse_iterator(end());
+	  }
+	reverse_iterator rend()
+	{
+		return (reverse_iterator(--(begin())));
+	}
+	const_reverse_iterator rend() const
+	{
+		return (const_reverse_iterator(begin()));
+	}
+	/* Capacity-----------------------:                   */
 
+
+
+
+	
 	/**_**_**_**_**_**_**_*~~~~~~~~~~~~~~~~~~***_**_**_**_**_**_**_**_**_**_*/
 	size_type max_size() const
 	{
