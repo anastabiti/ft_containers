@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/24 11:16:53 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/24 11:23:29 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,10 @@ Constructs a container with n elements. Each element is a copy of val.*/
 			i++;
 		}
 	}
-
+	 reference  operator[](size_type n)
+	{
+		return vec[n];
+	}
 	// vector operator*() const
 	// {
 	// 		return (*vec);
@@ -103,7 +106,7 @@ with each element constructed from its corresponding element in that range,
 	in the same order.*/
 	template <class InputIterator> vector (InputIterator first, InputIterator last,const allocator_type& alloc = allocator_type())
 	{
-
+		
 	}
 
 	/*									copy constructor
