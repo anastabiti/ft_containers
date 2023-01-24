@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/24 13:07:05 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/24 13:53:12 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,26 @@ Constructs a container with n elements. Each element is a copy of val.*/
 	*/
 	template <class InputIterator> vector (InputIterator first, InputIterator last,const allocator_type& alloc = allocator_type())
 	{
-		        
+				iterator it = first;
+				iterator cp = first;
+				size_t n = 0;
+		        while (it != last)
+				{
+
+					n++;
+					it++;
+				}
+					vec = allocating.allocate(n);
+						this->size_param = n;
+						this->capacity_param = n;
+						size_t i = 0;
+						while (i < n)
+						{
+							vec[i] = *cp;
+							i++;
+							cp++; 
+						}
+							
 	}
 
 	/*									copy constructor
@@ -116,7 +135,7 @@ Constructs a container with n elements. Each element is a copy of val.*/
 
 	// vector (const vector& x)
 	// {
-	// 	*this = x;
+	// 	*this = x; 
 	// }
 	/*				Assign content
 
@@ -168,7 +187,7 @@ Constructs a container with n elements. Each element is a copy of val.*/
 	}
 	const_reverse_iterator rend() const
 	{
-		return (const_reverse_iterator(begin()));
+		return (const_reverse_iterator(--(begin())));
 	}
 	/* Capacity-----------------------:                   */
 
