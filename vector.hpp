@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/24 10:25:37 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/24 10:28:47 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,12 @@ class vector
 	typedef 		ft::iterator<ft::random_access_iterator_tag,T>  iterator; /* An iterator for the container. */
 	typedef const 	ft::iterator<ft::random_access_iterator_tag,T>  const_iterator;  /* A constant iterator for the container. */
 	typedef			ft::reverse_iterator<iterator>  reverse_iterator;
-	typedef const T *const_reverse_iterator;  // typedef typename allocator_type::difference_type       difference_type;
+	// typedef const T *const_reverse_iterator;  // typedef typename allocator_type::difference_type       difference_type;
+	typedef typename ft::reverse_iterator<const_iterator> const_reverse_iterator ;  // typedef typename allocator_type::difference_type       difference_type;
+	
+	
+	
+	
 	typedef ptrdiff_t difference_type;
 	/*       difference_type: What type results from writing it1 - it2? : 
          A signed integral type that can represent the difference in two iterators. 
