@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/24 11:03:07 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/24 11:16:53 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,10 +47,8 @@ class vector
 	/*A constant reference to the type stored in the container. */
 	typedef typename Allocator::pointer pointer;
 	typedef typename Allocator::const_pointer const_pointer;
-	typedef ft::iterator<ft::random_access_iterator_tag,
-	T> iterator;             /* An iterator for the container. */
-	typedef const ft::iterator<ft::random_access_iterator_tag,
-	T> const_iterator; /* A constant iterator for the container. */
+	typedef ft::iterator<ft::random_access_iterator_tag, T> iterator;             /* An iterator for the container. */
+	typedef const ft::iterator<ft::random_access_iterator_tag, T> const_iterator; /* A constant iterator for the container. */
 	typedef ft::reverse_iterator<iterator> reverse_iterator;
 	typedef typename ft::reverse_iterator<const_iterator> const_reverse_iterator;
 	typedef ptrdiff_t difference_type;
@@ -74,14 +72,14 @@ class vector
 		this->size_param = 0;
 		this->capacity_param = 0;
 		vec = allocating.allocate(0);
-		allocating.construct(vec, 0);
+		// allocating.construct(vec, 0);
 		std::cout << "default constructor is called" << std::endl;
 	}
 
 	/* fill constructor
 Constructs a container with n elements. Each element is a copy of val.*/
-	explicit vector(size_type n, const value_type &val = value_type(),
-			const allocator_type &alloc = allocator_type())
+	explicit vector(size_type n, const value_type &val = value_type(), const allocator_type &alloc = allocator_type())
+	// explicit vector(size_type n, const T& value = T(), const Allocator& = Allocator())	
 	{
 		// allocating = alloc;
 		this->size_param = n;
@@ -103,10 +101,10 @@ Constructs a container with n elements. Each element is a copy of val.*/
 	Constructs a container with as many elements as the range [first,last), 
 with each element constructed from its corresponding element in that range,
 	in the same order.*/
-	// template <class InputIterator> vector (InputIterator first, InputIterator last,const allocator_type& alloc = allocator_type())
-	// {
+	template <class InputIterator> vector (InputIterator first, InputIterator last,const allocator_type& alloc = allocator_type())
+	{
 
-	// }
+	}
 
 	/*									copy constructor
 	Constructs a container with a copy of each of the elements in x,
