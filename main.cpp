@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/24 10:07:42 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/24 10:31:42 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,16 +58,16 @@ int	main(void)
 	// fill1real.push_back(27651);
 	// fill1real.push_back(221);
 		
-	// for(real  = fill1real.end() ; real != fill1real.begin() ; real--)
-	// {
-	// 	std::cout << *real << std::endl;
+	for(real  = fill1real.end() ; real != fill1real.begin() ; real--)
+	{
+		std::cout << *real << std::endl;
 	
-	// }
-	// std::cout <<"___________________________________________" << std::endl;
-	// for(mine  = fill1.end() ; mine != fill1.begin() ; mine--)
-	// {
-	// 	std::cout << *mine << std::endl;
-	// }
+	}
+	std::cout <<"___________________________________________" << std::endl;
+	for(mine  = fill1.end() ; mine != fill1.begin() ; mine--)
+	{
+		std::cout << *mine << std::endl;
+	}
 	
 	// std::cout << *it+2 << std::endl;
 	// std::cout << *it2+2 << std::endl;
@@ -134,13 +134,13 @@ int	main(void)
 
 
 
-		// size_t i = 0;
-		// 	while (i < fill1.size())
-		// 	{
-		// 		std::cout << "mine "<< fill1.at(i)<<std::endl;
-		// 		// std::cout << "real "  <<fill1real.at(i)<<std::endl;
-		// 		i++;
-		// 	}
+		size_t i = 0;
+			while (i < fill1.size())
+			{
+				std::cout << "mine "<< fill1.at(i)<<std::endl;
+				// std::cout << "real "  <<fill1real.at(i)<<std::endl;
+				i++;
+			}
 
 
 
@@ -204,24 +204,24 @@ int	main(void)
 	revreal = fill1real.rbegin();
 	revmine = fill1.rbegin();
 	
-	// std::cout << *revreal<< std::endl;
-	// std::cout << *revmine<< std::endl;
-	// ++revreal;
-	// ++revmine;
-	// std::cout << *revreal<< std::endl;
-	// std::cout << *revmine<< std::endl;
-	// revreal++;
-	// revmine++;
-	// std::cout << *revreal<< std::endl;
-	// std::cout << *revmine<< std::endl;
-	// revreal--;
-	// revmine--;
-	// std::cout << *revreal<< std::endl;
-	// std::cout << *revmine<< std::endl;
-	// --revreal;
-	// --revmine;
-	// std::cout << *revreal<< std::endl;
-	// std::cout << *revmine<< std::endl;
+	std::cout << *revreal<< std::endl;
+	std::cout << *revmine<< std::endl;
+	++revreal;
+	++revmine;
+	std::cout << *revreal<< std::endl;
+	std::cout << *revmine<< std::endl;
+	revreal++;
+	revmine++;
+	std::cout << *revreal<< std::endl;
+	std::cout << *revmine<< std::endl;
+	revreal--;
+	revmine--;
+	std::cout << *revreal<< std::endl;
+	std::cout << *revmine<< std::endl;
+	--revreal;
+	--revmine;
+	std::cout << *revreal<< std::endl;
+	std::cout << *revmine<< std::endl;
 	std::cout << revreal[0]<< std::endl;
 	std::cout << revmine[0]<< std::endl;
 	

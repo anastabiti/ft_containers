@@ -6,10 +6,9 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/24 10:29:39 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/24 11:03:07 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #ifndef VECTOR_HPP
 # define VECTOR_HPP
@@ -17,9 +16,9 @@
 # include <iostream>
 # include <string>
 // #include <memory>
+# include "iterator.hpp"
 # include <cstddef>
-#include <exception>
-#include "iterator.hpp"
+# include <exception>
 // #include <iterator>
 
 namespace ft
@@ -27,169 +26,168 @@ namespace ft
 template <typename T, typename Allocator = std::allocator<T> >
 class vector
 {
-
   private:
 	T *vec;
 	T *copY;
 	size_t size_param;
 	size_t capacity_param;
-	Allocator allocating ;
+	Allocator allocating;
 	/* data */
   public:
 	/*________________________________Member types________________________________*/
 
-	typedef T value_type;             /* The type stored in the container. */
-	typedef Allocator allocator_type; /*   The type of the allocator. / defaults to: allocator<value_type>   */
-	typedef typename Allocator::reference reference;    /* A reference to the type stored in the container.  /for the default allocator: value_type& */
-	typedef typename Allocator::const_reference const_reference; /*A constant reference to the type stored in the container. */
-	typedef  typename Allocator::pointer pointer;
-	typedef  typename Allocator::const_pointer const_pointer;
-	typedef 		ft::iterator<ft::random_access_iterator_tag,T>  iterator; /* An iterator for the container. */
-	typedef const 	ft::iterator<ft::random_access_iterator_tag,T>  const_iterator;  /* A constant iterator for the container. */
-	typedef			ft::reverse_iterator<iterator>  reverse_iterator;
-	// typedef const T *const_reverse_iterator;  // typedef typename allocator_type::difference_type       difference_type;
-	typedef typename ft::reverse_iterator<const_iterator> const_reverse_iterator ;  // typedef typename allocator_type::difference_type       difference_type;
-	
-	
-	
-	
+	typedef T value_type;                                       
+	/* The type stored in the container. */
+	typedef Allocator allocator_type;                           
+	/* The type of the allocator. / defaults to: allocator<value_type>   */
+	typedef typename Allocator::reference reference;            
+	/* A reference to the type stored in the container. 
+	/for the default allocator: value_type& */
+	typedef typename Allocator::const_reference const_reference;
+	/*A constant reference to the type stored in the container. */
+	typedef typename Allocator::pointer pointer;
+	typedef typename Allocator::const_pointer const_pointer;
+	typedef ft::iterator<ft::random_access_iterator_tag,
+	T> iterator;             /* An iterator for the container. */
+	typedef const ft::iterator<ft::random_access_iterator_tag,
+	T> const_iterator; /* A constant iterator for the container. */
+	typedef ft::reverse_iterator<iterator> reverse_iterator;
+	typedef typename ft::reverse_iterator<const_iterator> const_reverse_iterator;
 	typedef ptrdiff_t difference_type;
-	/*       difference_type: What type results from writing it1 - it2? : 
-         A signed integral type that can represent the difference in two iterators. 
-            Result of pointer subtraction
-            ptrdiff_t = This is the signed integer type of the result of subtracting two pointers.
-    */
+	/*     							difference_type: What type results from writing it1
+									- it2? : 
+   									   A signed integral type that can represent the difference in two iterators. 
+          								Result of pointer subtraction
+       								  ptrdiff_t = This is the signed integer type of the result of subtracting two pointers.
+   				*/
 	typedef size_t size_type;
-
-	/**_**_**_**_**_**_**_* Member functions  **_**_**_**_**_**_**_**_**_**_*/
-
-	/* Iterators:                   */
-	iterator begin()  //Return iterator to beginning (public member function)
-		{
-			return  iterator(&vec[0]);
-		}
-	iterator end()  //Return iterator to end (public member function)
-		{
-			return  iterator(&vec[this->size_param - 1]);
-		}
-		
-	      reverse_iterator  rbegin() 
-		  {
-				return reverse_iterator(end());
-		  }
-		//   const_reverse_iterator rbegin() const
-		//   {
-		// 	return reverse_iterator(end());
-			
-		//   }
-
-	
+	/**_**_**_**_**_**_**_*~~~~~~~~~~~~~~~~~~***_**_**_**_**_**_**_**_**_**_*/
 	/**_**_**_**_**_**_**_*~~~~~~~~~~~~~~~~~~***_**_**_**_**_**_**_**_**_**_*/
 
-					/* default constructor */
+	/* default constructor */
 	/* The constructor initializes a new object of type "vector"
-	 using the specified allocator. If no argument is provided,
-	  the default allocator, "allocator_type()", is used.*/
+		using the specified allocator. If no argument is provided,
+		the default allocator, "allocator_type()", is used.*/
 	/* Constructs an empty container, with no elements.*/
-	explicit vector(const allocator_type &alloc = allocator_type())
+	explicit vector(const Allocator & = Allocator())
 	{
 		this->size_param = 0;
 		this->capacity_param = 0;
 		vec = allocating.allocate(0);
-		// allocating.construct(vec, 0);
+		allocating.construct(vec, 0);
 		std::cout << "default constructor is called" << std::endl;
 	}
 
-/* fill constructor
+	/* fill constructor
 Constructs a container with n elements. Each element is a copy of val.*/
-	explicit vector (size_type n, const value_type& val = value_type(), const allocator_type& alloc = allocator_type())
+	explicit vector(size_type n, const value_type &val = value_type(),
+			const allocator_type &alloc = allocator_type())
 	{
-		// allocating = alloc;	
+		// allocating = alloc;
 		this->size_param = n;
 		this->capacity_param = n;
 		vec = allocating.allocate(n);
-			size_t i = 0;
-			while (i < n)
-			{
-				vec[i] = val;
-				i++;
-			}
+		size_t i = 0;
+		while (i < n)
+		{
+			vec[i] = val;
+			i++;
+		}
 	}
 
 	// vector operator*() const
 	// {
-	// 		return *vec;
+	// 		return (*vec);
 	// }
-/*								range constructor
+	/*								range constructor
 	Constructs a container with as many elements as the range [first,last), 
-with each element constructed from its corresponding element in that range, in the same order.*/
-// template <class InputIterator> vector (InputIterator first, InputIterator last,const allocator_type& alloc = allocator_type())
-// {
+with each element constructed from its corresponding element in that range,
+	in the same order.*/
+	// template <class InputIterator> vector (InputIterator first, InputIterator last,const allocator_type& alloc = allocator_type())
+	// {
 
+	// }
 
-// }
+	/*									copy constructor
+	Constructs a container with a copy of each of the elements in x,
+		in the same order.*/
 
-/*									copy constructor
-	Constructs a container with a copy of each of the elements in x, in the same order.*/
-
-// vector (const vector& x)
-// {	
-// 	*this = x;
-// }
-/*				Assign content
+	// vector (const vector& x)
+	// {
+	// 	*this = x;
+	// }
+	/*				Assign content
 
 	Copies all the elements from x into the container.
 	The container preserves its current allocator,
-	 which is used to allocate storage in case of reallocation.
+		which is used to allocate storage in case of reallocation.
 */
 
-//  vector& operator= (const vector& x)
-//  {
-// 	this->capacity_param = x.capacity_param;
-// 	this->alloc = x.alloc;
-// 	this->size_param = x.size_param;
-// 	this->vec = x.vec;
-// 	return *this;
-//  }
+	//  vector& operator= (const vector& x)
+	//  {
+	// 	this->capacity_param = x.capacity_param;
+	// 	this->alloc = x.alloc;
+	// 	this->size_param = x.size_param;
+	// 	this->vec = x.vec;
+	// 	return (*this);
+	//  }
 
+	/**_**_**_**_**_**_**_* Member functions  **_**_**_**_**_**_**_**_**_**_*/
 
-size_type max_size() const
-{
-	return this->allocating.max_size();
-}
-
-
-
-bool empty() const
-{
-	if(size_param == 0)
-		return true;
-	else
-	return false;
-}
-reference front()
+	/* Iterators:                   */
+	iterator begin() //Return iterator to beginning (public member function)
 	{
-		return vec[0];
+		return (iterator(&vec[0]));
+	}
+	iterator end() //Return iterator to end (public member function)
+	{
+		return (iterator(&vec[this->size_param - 1]));
 	}
 
-reference back()
-  {
-		return vec[this->size_param -1];
-  }
+	reverse_iterator rbegin()
+	{
+		return (reverse_iterator(end()));
+	}
+	//   const_reverse_iterator rbegin() const
+	//   {
+	// 	return (reverse_iterator(end()));
 
-  const_reference back() const
-  {
-		return vec[this->size_param -1];
-  }
+	//   }
 
+	/**_**_**_**_**_**_**_*~~~~~~~~~~~~~~~~~~***_**_**_**_**_**_**_**_**_**_*/
+	size_type max_size() const
+	{
+		return (this->allocating.max_size());
+	}
 
+	bool empty() const
+	{
+		if (size_param == 0)
+			return (true);
+		else
+			return (false);
+	}
+	reference front()
+	{
+		return (vec[0]);
+	}
 
+	reference back()
+	{
+		return (vec[this->size_param - 1]);
+	}
 
-// const_reference front() const
-// {
+	const_reference back() const
+	{
+		return (vec[this->size_param - 1]);
+	}
 
-// }
-	// /*______________________________________________________________________________________________________ */
+	// const_reference front() const
+	// {
+
+	// }
+	//
+		/*______________________________________________________________________________________________________ */
 	// vector(size_type nm)
 	// {
 	// 	size_param = nm;
@@ -199,12 +197,14 @@ reference back()
 	// 	vec = alloc.allocate(nm);
 	// 	// this->vec = new T[nm];
 	// }
-	// /*______________________________________________________________________________________________________ */
+	//
+		/*______________________________________________________________________________________________________ */
 	// vector(vector const &rhs)
 	// {
 	// 	*this = rhs;
 	// }
-	// /*______________________________________________________________________________________________________ */
+	//
+		/*______________________________________________________________________________________________________ */
 	// vector &operator=(vector const &rhs)
 	// {
 	// 	size_t i = 0;
@@ -217,25 +217,29 @@ reference back()
 
 	// 	return (*this);
 	// }
-	// /*______________________________________________________________________________________________________ */
+	//
+		/*______________________________________________________________________________________________________ */
 	// ~vector()
 	// {
 	// 	alloc.deallocate(vec, this->capacity_param);
 	// 	std::cout << "destructor is called" << std::endl;
 	// }
-	// /*______________________________________________________________________________________________________ */
+	//
+		/*______________________________________________________________________________________________________ */
 	size_type size() const
 	{
 		// return (alloc.max_size());
 		return (this->size_param);
 	}
-	// /*______________________________________________________________________________________________________ */
+	//
+		/*______________________________________________________________________________________________________ */
 	size_type capacity() const
 	{
 		return (this->capacity_param);
 	}
 
-	// /*______________________________________________________________________________________________________ */
+	//
+		/*______________________________________________________________________________________________________ */
 	void push_back(value_type const &nb)
 	{
 		// start with nothing case	ft::vector<int> fake;
@@ -271,7 +275,8 @@ reference back()
 			return ;
 		}
 	}
-	// /*______________________________________________________________________________________________________*/
+	//
+		/*______________________________________________________________________________________________________*/
 	value_type at(size_type nb)
 	{
 		return (vec[nb]);
@@ -279,8 +284,7 @@ reference back()
 	/*______________________________________________________________________________________________________ */
 };
 
-
-// template <typename F> 
+// template <typename F>
 // class atabiti_allocator
 // {
 
@@ -297,23 +301,15 @@ reference back()
 // F* allocate(int i  = 2)
 // {
 // 		std::cout << "allocate D is called" << std::endl;
-// 	return NULL;
+// 	return (NULL);
 // }
 
 // };
 
-
-
 /*std::reverse_iterator*/
-
 
 /*• std::enable_if */
 
-
-  
 } // namespace ft
-
-
-
 
 #endif
