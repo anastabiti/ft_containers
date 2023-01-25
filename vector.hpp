@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/25 09:07:58 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/25 09:33:49 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,13 +85,13 @@ class vector
 		this->capacity_param = n;
 		// allocating(alloc);
 		vec = allocating.allocate(n);
+		//allocating.deallocate(vec, n); is not deallocating 
 		size_t i = 0;
 		while (i < n)
 		{
 			vec[i] = val;
 			i++;
 		}
-					allocating.deallocate(vec, this->capacity_param);
 		std::cout << "vector(size_type n, const value_type &val = value_type(),const allocator_type &alloc = allocator_type())is called" << std::endl;
 	}
 	reference operator[](size_type n)
@@ -207,7 +207,28 @@ class vector
 		/*If n is also greater than the current container capacity, an automatic reallocation of the allocated storage space takes place.*/
 		if(n > capacity())
 		{
+			
+			vector copy(*this);
 			allocating.deallocate(vec, this->capacity_param);
+			vec = allocating.allocate(n);
+			
+			size_t  i = 0 ; 
+			while(i < this->size_param)
+			{
+				vec[i] = copy[i];
+				i++;
+			}
+			this->size_param = n;
+			this->capacity_param = n;	
+			
+			while(i < this->size_param)
+			{
+				vec[i] = 0;
+				i++;
+			}
+			
+
+			
 			std::cout << " > this->vec.capacity() is called" <<std::endl;	
 		}
 		/*If n is smaller than the current container size,

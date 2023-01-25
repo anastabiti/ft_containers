@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/25 09:07:04 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/25 09:35:27 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,39 +17,39 @@
 // #include "iterator.hpp"
 using namespace std;
 
-// int main(void) {
+int main(void) {
 	
 
 
-//    ft::vector<int> myvec;
+   ft::vector<int> myvec;
 
-//    int i = 0 ;
-//    while (i < 7)
-//    {
-//          myvec.push_back(i + 1);
-//          i++;
-//    }
-//    i = 0 ;
-//    while (i < myvec.size())
-//    {
-//       std::cout << myvec[i++] << std::endl;
-//    }
+   int i = 0 ;
+   while (i < 7)
+   {
+         myvec.push_back(i + 1);
+         i++;
+   }
+   i = 0 ;
+   while (i < myvec.size())
+   {
+      std::cout << myvec[i++] << std::endl;
+   }
    
-//       std::cout << "____________________"<< std::endl;
-//       myvec.resize(24);
-//       std::cout << "____________________"<< std::endl;
-//    i = 0 ;
-//    while (i < myvec.size())
-//    // while (i < 7)
-//    {
-//       std::cout << myvec[i++] << std::endl;
-//    }
+      std::cout << "____________________"<< std::endl;
+      myvec.resize(92);
+      std::cout << "____________________"<< std::endl;
+   i = 0 ;
+   while (i < myvec.size())
+   // while (i < 7)
+   {
+      std::cout << myvec[i++] << std::endl;
+   }
    
 
-//    return 0;
-// }
+   return 0;
+}
 
-// int	main(void)
+// int	main(void) 
 // {
 // 	/* test 	explicit vector(const allocator_type &alloc = allocator_type()) */
 // 	/**/
@@ -270,38 +270,38 @@ using namespace std;
 	
 // }
 
-int main()
-{
+// int main()
+// {
    
-   std::allocator<int> alloc;
-   // std::vector<int> vec1(3,43, alloc); // problem it does use range template
-   // std::vector<int>::iterator iter;      
-   // for (iter =  vec1.begin(); iter !=  vec1.end(); iter++)
-   // {
-   //    std::cout << *iter << std::endl;
-   // }
-   //    std::cout << "___________________________________" << std::endl;
+//    std::allocator<int> alloc;
+//    // std::vector<int> vec1(3,43, alloc); // problem it does use range template
+//    // std::vector<int>::iterator iter;      
+//    // for (iter =  vec1.begin(); iter !=  vec1.end(); iter++)
+//    // {
+//    //    std::cout << *iter << std::endl;
+//    // }
+//    //    std::cout << "___________________________________" << std::endl;
    
    
-   std::vector<int> real(3333333,43, alloc); // problem it does use range template
-   // for (trator =  fake.begin(); trator !=  fake.end(); trator++)
-   // {
-   //    std::cout << *trator << std::endl;
-   // }
+//    std::vector<int> real(3333333,43, alloc); // problem it does use range template
+//    // for (trator =  fake.begin(); trator !=  fake.end(); trator++)
+//    // {
+//    //    std::cout << *trator << std::endl;
+//    // }
    
-   for (size_t  i = 0; i !=  real.size(); i++)
-   {
-      // std::cout << real[i] << std::endl;
-   }
-   ft::vector<int> fake(3333333,43, alloc); // problem it does use range template
-   // for (trator =  fake.begin(); trator !=  fake.end(); trator++)
-   // {
-   //    // std::cout << *trator << std::endl;
-   // }
+//    for (size_t  i = 0; i !=  real.size(); i++)
+//    {
+//       // std::cout << real[i] << std::endl;
+//    }
+//    ft::vector<int> fake(1,43, alloc); // problem it does use range template
+//    // for (trator =  fake.begin(); trator !=  fake.end(); trator++)
+//    // {
+//    //    // std::cout << *trator << std::endl;
+//    // }
    
-   for (size_t  i = 0; i !=  fake.size(); i++)
-   {
-      // std::cout << fake[i] << std::endl;
-   }
+//    for (size_t  i = 0; i !=  fake.size(); i++)
+//    {
+//       // std::cout << fake[i] << std::endl;
+//    }
    
-}
+// }
