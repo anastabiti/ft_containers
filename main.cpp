@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/25 14:10:34 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/25 14:44:36 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,24 @@ int main(void) {
 	
 
 
-   ft::vector<int> myvec(2,2);
+   ft::vector<int> myvec(2,23);
 
    int i = 0 ;
-      std::cout << "size = "  << myvec.size()<< std::endl;
-      std::cout << "capacity =" << myvec.capacity()<< std::endl;
+ 
    while (i < 6)
    {
-         myvec.push_back(i + 1);
+         // myvec.push_back(4);
       std::cout << myvec.at(i) << std::endl;
+         i++;
+   }
+   std::vector<int> real(2,23);
+
+   i = 0 ;
+ 
+   while (i < 6)
+   {
+         // myvec.push_back(4);
+      std::cout << real.at(i) << std::endl;
          i++;
    }
    // i = 0 ;
