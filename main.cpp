@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/25 06:37:36 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/25 08:26:22 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -274,20 +274,34 @@ int main()
 {
    
    std::allocator<int> alloc;
-   std::vector<int> vec1(3,43, alloc); // problem it does use range template
-   std::vector<int>::iterator iter;      
-   for (iter =  vec1.begin(); iter !=  vec1.end(); iter++)
-   {
-      std::cout << *iter << std::endl;
-   }
-      std::cout << "___________________________________" << std::endl;
+   // std::vector<int> vec1(3,43, alloc); // problem it does use range template
+   // std::vector<int>::iterator iter;      
+   // for (iter =  vec1.begin(); iter !=  vec1.end(); iter++)
+   // {
+   //    std::cout << *iter << std::endl;
+   // }
+   //    std::cout << "___________________________________" << std::endl;
    
    
-   ft::vector<int> fake(3,43, alloc); // problem it does use range template
-   ft::vector<int>::iterator trator;      
-   for (trator =  fake.begin(); trator !=  fake.end(); trator++)
+   std::vector<int> real(3333333,43, alloc); // problem it does use range template
+   // for (trator =  fake.begin(); trator !=  fake.end(); trator++)
+   // {
+   //    std::cout << *trator << std::endl;
+   // }
+   
+   for (size_t  i = 0; i !=  real.size(); i++)
    {
-      std::cout << *trator << std::endl;
+      // std::cout << real[i] << std::endl;
    }
+   ft::vector<int> fake(3333333,43, alloc); // problem it does use range template
+   // for (trator =  fake.begin(); trator !=  fake.end(); trator++)
+   // {
+   //    std::cout << *trator << std::endl;
+   // }
+   
+   // for (size_t  i = 0; i !=  fake.size(); i++)
+   // {
+   //    std::cout << fake[i] << std::endl;
+   // }
    
 }

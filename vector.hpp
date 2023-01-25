@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/25 06:36:48 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/25 08:26:30 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,11 +77,10 @@ class vector
 	}
 /* 							fill constructor
 	Constructs a container with n elements. Each element is a copy of val.*/
-	explicit vector(size_type n, const value_type &val = value_type(),
-			const allocator_type &alloc = allocator_type())
+	explicit vector(size_type n, const value_type &val = value_type(), const allocator_type &alloc = allocator_type())
 	// explicit vector(size_type n, const T& value = T(),	const Allocator& = Allocator())
 	{
-		allocating = alloc;
+		// allocating = alloc;
 		this->size_param = n;
 		this->capacity_param = n;
 		// allocating(alloc);
