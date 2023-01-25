@@ -26,7 +26,7 @@ int main(void) {
    int i = 0 ;
       std::cout << "size = "  << myvec.size()<< std::endl;
       std::cout << "capacity =" << myvec.capacity()<< std::endl;
-   while (i < myvec.size())
+   while (i < 6)
    {
          myvec.push_back(i + 1);
       std::cout << myvec.at(i) << std::endl;
