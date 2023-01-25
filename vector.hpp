@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/25 06:01:31 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/25 06:36:48 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,7 @@ class vector
 		allocating = alloc;
 		this->size_param = n;
 		this->capacity_param = n;
+		// allocating(alloc);
 		vec = allocating.allocate(n);
 		size_t i = 0;
 		while (i < n)

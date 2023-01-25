@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/25 06:03:00 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/25 06:37:36 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -272,7 +272,22 @@ using namespace std;
 
 int main()
 {
-   ft::vector<int> vec;
-   ft::vector<int> vec1(3,43,std::allocator); // problem it does use range template
+   
+   std::allocator<int> alloc;
+   std::vector<int> vec1(3,43, alloc); // problem it does use range template
+   std::vector<int>::iterator iter;      
+   for (iter =  vec1.begin(); iter !=  vec1.end(); iter++)
+   {
+      std::cout << *iter << std::endl;
+   }
+      std::cout << "___________________________________" << std::endl;
+   
+   
+   ft::vector<int> fake(3,43, alloc); // problem it does use range template
+   ft::vector<int>::iterator trator;      
+   for (trator =  fake.begin(); trator !=  fake.end(); trator++)
+   {
+      std::cout << *trator << std::endl;
+   }
    
 }
