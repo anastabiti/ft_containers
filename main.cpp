@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/25 10:09:35 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/25 10:22:34 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ int main(void) {
 	
 
 
-   ft::vector<int> myvec;
+   ft::vector<int> myvec(20,2);
 
    int i = 0 ;
-   while (i < 7)
+   while (i < myvec.size())
    {
          myvec.push_back(i + 1);
          i++;
@@ -36,7 +36,7 @@ int main(void) {
    }
    
       std::cout << "____________________"<< std::endl;
-      myvec.resize(2);
+      // myvec.resize(9);
       std::cout << "____________________"<< std::endl;
    i = 0 ;
    while (i < myvec.size())
@@ -44,7 +44,7 @@ int main(void) {
    {
       std::cout << myvec[i++] << std::endl;
    }
-      std::cout << "wrong  " <<myvec[4] << std::endl;
+
    
 
    return 0;
