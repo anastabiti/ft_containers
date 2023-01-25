@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/25 06:00:48 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/25 06:03:00 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -273,6 +273,6 @@ using namespace std;
 int main()
 {
    ft::vector<int> vec;
-   ft::vector<int> vec1(3,43); // problem it does use range template
+   ft::vector<int> vec1(3,43,std::allocator); // problem it does use range template
    
 }
