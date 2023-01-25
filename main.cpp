@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/25 10:22:34 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/25 10:23:38 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int main(void) {
    ft::vector<int> myvec(20,2);
 
    int i = 0 ;
-   while (i < myvec.size())
+   while (i < 33)
    {
          myvec.push_back(i + 1);
          i++;
