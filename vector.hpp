@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/24 15:01:18 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/25 06:01:31 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,18 +73,15 @@ class vector
 	{
 		this->size_param = 0;
 		this->capacity_param = 0;
-		vec = allocating.allocate(0);
-		// allocating.construct(vec, 0);
 		std::cout << "default constructor is called" << std::endl;
 	}
-
-	/* fill constructor
-Constructs a container with n elements. Each element is a copy of val.*/
+/* 							fill constructor
+	Constructs a container with n elements. Each element is a copy of val.*/
 	explicit vector(size_type n, const value_type &val = value_type(),
 			const allocator_type &alloc = allocator_type())
 	// explicit vector(size_type n, const T& value = T(),	const Allocator& = Allocator())
 	{
-		// allocating = alloc;
+		allocating = alloc;
 		this->size_param = n;
 		this->capacity_param = n;
 		vec = allocating.allocate(n);
@@ -94,6 +91,7 @@ Constructs a container with n elements. Each element is a copy of val.*/
 			vec[i] = val;
 			i++;
 		}
+		std::cout << "vector(size_type n, const value_type &val = value_type(),const allocator_type &alloc = allocator_type())is called" << std::endl;
 	}
 	reference operator[](size_type n)
 	{
@@ -109,29 +107,29 @@ Constructs a container with n elements. Each element is a copy of val.*/
 			with each element constructed from its corresponding element in that range,
 		in the same order.
 	*/
-	template <class InputIterator>
-	vector(InputIterator first, InputIterator last,
-			const allocator_type &alloc = allocator_type())
-	{
-		iterator it = first;
-		iterator cp = first;
-		size_t n = 0;
-		while (it != last)
-		{
-			n++;
-			it++;
-		}
-		vec = allocating.allocate(n);
-		this->size_param = n;
-		this->capacity_param = n;
-		size_t i = 0;
-		while (i < n)
-		{
-			vec[i] = *cp;
-			i++;
-			cp++;
-		}
-	}
+	// template <class InputIterator>
+	//  vector(InputIterator first, InputIterator last,
+	// 		const allocator_type &alloc = allocator_type())
+	// {
+	// 	iterator it = first;
+	// 	iterator cp = first;
+	// 	size_t n = 0;
+	// 	while (it != last)
+	// 	{
+	// 		n++;
+	// 		it++;
+	// 	}
+	// 	vec = allocating.allocate(n);
+	// 	this->size_param = n;
+	// 	this->capacity_param = n;
+	// 	size_t i = 0;
+	// 	while (i < n)
+	// 	{
+	// 		vec[i] = *cp;
+	// 		i++;
+	// 		cp++;
+	// 	}
+	// }
 
 	/*									copy constructor
 	Constructs a container with a copy of each of the elements in x,

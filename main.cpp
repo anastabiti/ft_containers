@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/24 14:59:21 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/25 06:00:48 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,37 +17,37 @@
 // #include "iterator.hpp"
 using namespace std;
 
-int main(void) {
+// int main(void) {
 	
 
 
-   ft::vector<int> myvec;
+//    ft::vector<int> myvec;
 
-   int i = 0 ;
-   while (i < 7)
-   {
-         myvec.push_back(i + 1);
-         i++;
-   }
-   i = 0 ;
-   while (i < myvec.size())
-   {
-      std::cout << myvec[i++] << std::endl;
-   }
+//    int i = 0 ;
+//    while (i < 7)
+//    {
+//          myvec.push_back(i + 1);
+//          i++;
+//    }
+//    i = 0 ;
+//    while (i < myvec.size())
+//    {
+//       std::cout << myvec[i++] << std::endl;
+//    }
    
-      std::cout << "____________________"<< std::endl;
-      myvec.resize(2);
-      std::cout << "____________________"<< std::endl;
-   i = 0 ;
-   while (i < myvec.size())
-   // while (i < 7)
-   {
-      std::cout << myvec[i++] << std::endl;
-   }
+//       std::cout << "____________________"<< std::endl;
+//       myvec.resize(2);
+//       std::cout << "____________________"<< std::endl;
+//    i = 0 ;
+//    while (i < myvec.size())
+//    // while (i < 7)
+//    {
+//       std::cout << myvec[i++] << std::endl;
+//    }
    
 
-   return 0;
-}
+//    return 0;
+// }
 
 // int	main(void)
 // {
@@ -269,3 +269,10 @@ int main(void) {
 
 	
 // }
+
+int main()
+{
+   ft::vector<int> vec;
+   ft::vector<int> vec1(3,43); // problem it does use range template
+   
+}
