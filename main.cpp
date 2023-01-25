@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/25 09:35:27 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/25 10:09:35 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int main(void) {
    }
    
       std::cout << "____________________"<< std::endl;
-      myvec.resize(92);
+      myvec.resize(2);
       std::cout << "____________________"<< std::endl;
    i = 0 ;
    while (i < myvec.size())
@@ -44,6 +44,7 @@ int main(void) {
    {
       std::cout << myvec[i++] << std::endl;
    }
+      std::cout << "wrong  " <<myvec[4] << std::endl;
    
 
    return 0;

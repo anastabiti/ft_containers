@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/25 09:33:49 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/25 10:17:22 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -202,9 +202,14 @@ class vector
 	{
 		return (this->allocating.max_size());
 	}
-	void resize (size_type n, value_type val = value_type())
+	
+void resize (size_type n, value_type val = value_type())
 	{
-		/*If n is also greater than the current container capacity, an automatic reallocation of the allocated storage space takes place.*/
+	
+	/*
+		If n is also greater than the current container capacity, 
+		an automatic reallocation of the allocated storage space takes place.
+	*/
 		if(n > capacity())
 		{
 			
@@ -225,22 +230,37 @@ class vector
 			{
 				vec[i] = 0;
 				i++;
-			}
-			
-
-			
+			}			
 			std::cout << " > this->vec.capacity() is called" <<std::endl;	
 		}
-		/*If n is smaller than the current container size,
-		the content is reduced to its first n elements, removing those beyond (and destroying them).*/
+	/*
+		If n is smaller than the current container size,
+		the content is reduced to its first n elements, 
+		removing those beyond (and destroying them).
+	*/
 
 		else if(n < size())
 		{
-			std::cout <<  size() << " n < this->vec.size() is called" <<std::endl;
-			// this->allocating.destroy(vec);
-			allocating.deallocate(vec,size_param);
+			
+			std::cout <<  size() << " n < size() is called" <<std::endl;
+			vector copy;
+			size_t i = 0 ; 
+			while(i < n)
+			{
+				copy[i]  = vec[i];
+				i++;
+			}
+			
+			allocating.deallocate(vec, this->capacity_param);
 			this->size_param = n;
 			this->capacity_param = n;
+			vec = allocating.allocate(this->capacity_param);
+			i= 0 ;
+			while(i < n)
+			{
+				vec[i]  = copy[i];
+				i++;
+			}
 		}
 		/* If n is greater than the current container size, 
 		the content is expanded by inserting at the end as many elements as needed to reach a size of n. 
@@ -319,11 +339,11 @@ class vector
 	// }
 	//
 	/*______________________________________________________________________________________________________ */
-	// ~vector()
-	// {
-	// 	alloc.deallocate(vec, this->capacity_param);
-	// 	std::cout << "destructor is called" << std::endl;
-	// }
+	~vector()
+	{
+		std::cout << "destructor is called" << std::endl;
+		// allocating.deallocate(vec, this->capacity_param);
+	}
 	//
 	/*______________________________________________________________________________________________________ */
 	//
