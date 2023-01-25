@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/25 08:26:22 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/25 08:35:02 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -296,12 +296,12 @@ int main()
    ft::vector<int> fake(3333333,43, alloc); // problem it does use range template
    // for (trator =  fake.begin(); trator !=  fake.end(); trator++)
    // {
-   //    std::cout << *trator << std::endl;
+   //    // std::cout << *trator << std::endl;
    // }
    
-   // for (size_t  i = 0; i !=  fake.size(); i++)
-   // {
-   //    std::cout << fake[i] << std::endl;
-   // }
+   for (size_t  i = 0; i !=  fake.size(); i++)
+   {
+      // std::cout << fake[i] << std::endl;
+   }
    
 }

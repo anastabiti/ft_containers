@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/25 08:26:30 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/25 08:35:19 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,11 +80,11 @@ class vector
 	explicit vector(size_type n, const value_type &val = value_type(), const allocator_type &alloc = allocator_type())
 	// explicit vector(size_type n, const T& value = T(),	const Allocator& = Allocator())
 	{
-		// allocating = alloc;
+		// allocating = alloc; 
 		this->size_param = n;
 		this->capacity_param = n;
 		// allocating(alloc);
-		vec = allocating.allocate(n);
+		// vec = allocating.allocate(n);
 		size_t i = 0;
 		while (i < n)
 		{
