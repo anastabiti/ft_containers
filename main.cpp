@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/26 10:33:25 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/26 10:42:11 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,26 +18,58 @@
 using namespace std;
 
 
+// int main ()
+// {
+//   std::vector<int> myvector (3,100);
+//   std::vector<int>::iterator it;
 
+//   it = myvector.begin();
+//   it = myvector.insert ( it , 200 );
+
+//   myvector.insert (it,2,300);
+
+//   // "it" no longer valid, get a new one:
+//   it = myvector.begin();
+
+//   std::vector<int> anothervector (2,400);
+//   myvector.insert (it+2,anothervector.begin(),anothervector.end());
+
+//   int myarray [] = { 501,502,503 };
+//   myvector.insert (myvector.begin(), myarray, myarray+3);
+
+//   std::cout << "myvector contains:";
+//   for (it=myvector.begin(); it<myvector.end(); it++)
+//     std::cout << ' ' << *it;
+//   std::cout << '\n';
+
+//   return 0;
+// }
 
 int main()
 {
-  std::vector<int> vec;
-  ft::vector<int> vec1;
-  std::vector<int>::iterator it;
-  ft::vector<int>::iterator it1;
-  vec.push_back(23);
-  vec1.push_back(23);
-  vec.push_back(523);
-  vec1.push_back(523);
+  std::vector<int> vec(10,22);
+//   ft::vector<int> vec1;
+  std::vector<int>::iterator it = vec.begin();
+//   ft::vector<int>::iterator it1 = vec1.begin();
+//   vec.push_back(23);
+//   vec1.push_back(23);
+//   vec.push_back(523);
+//   vec1.push_back(523);
   
-        std::cout << "vec back: " << vec.back() << '\n';
-        std::cout << "vec back: " << vec1.back() << '\n';
-//   vec.insert(it,3);
+      //   std::cout << "vec back: " << vec1.back() << '\n';
+ it = vec.insert(it,3, 565);
+
+
+ for (size_t i = 0; i < vec.size(); i++)
+ {
+              std::cout << "vec : " << vec.at(i) << '\n';
+
+ }
+ 
 //   vec1.insert(it1,3);
   
-        std::cout << "vec back: " << vec.back() << '\n';
-        std::cout << "vec back: " << vec1.back() << '\n';
+      //   std::cout << "vec back: " << vec.back() << '\n';
+      //   std::cout << "vec back: " << vec1.back() << '\n';
 //   vec.pop_back();
 //   vec1.pop_back();
       //   std::cout << "_____________________" <<'\n';
