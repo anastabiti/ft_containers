@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/26 10:42:11 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/26 10:43:18 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int main()
 //   vec1.push_back(523);
   
       //   std::cout << "vec back: " << vec1.back() << '\n';
- it = vec.insert(it,3, 565);
+ it = vec.insert(it+3,3);
 
 
  for (size_t i = 0; i < vec.size(); i++)
