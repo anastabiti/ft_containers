@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/26 11:19:50 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/26 11:27:44 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,9 @@ using namespace std;
 
 int main()
 {
-  std::vector<int> vec(10,22);
+  std::vector<int> vec(10,99);
   std::vector<int>::iterator it = vec.begin();
- it = vec.insert(it+3,3);
+ it = vec.insert(it+3,1337);
 
 
  for (size_t i = 0; i < vec.size(); i++)
@@ -57,11 +57,11 @@ int main()
               std::cout << "vec : " << vec.at(i) << '\n';
 
  }
- 
-        std::cout << "_____________________" <<'\n';
-  ft::vector<int> vec1(10,22);
+
+ std::cout << "_____________________" <<'\n';
+  ft::vector<int> vec1(10,99);
   ft::vector<int>::iterator it1 = vec1.begin();
-      it1 = vec1.insert(it1,3);
+      it1 = vec1.insert(it1,1337);
 
 
  for (size_t i = 0; i < vec1.size(); i++)

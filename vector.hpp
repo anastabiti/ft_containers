@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/26 11:23:27 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/26 11:24:52 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -414,7 +414,7 @@ void pop_back()
 		std::cout <<"	iterator insert (iterator position, const value_type& val) is called" << std::endl;
 		std::cout << *position << std::endl;
 		*position = val;
-		return iterator(begin());
+		return iterator(vec);
 	}
 
 // void insert (iterator position, size_type n, const value_type& val);
