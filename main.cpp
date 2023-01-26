@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/26 10:43:18 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/26 11:09:59 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,15 +48,7 @@ using namespace std;
 int main()
 {
   std::vector<int> vec(10,22);
-//   ft::vector<int> vec1;
   std::vector<int>::iterator it = vec.begin();
-//   ft::vector<int>::iterator it1 = vec1.begin();
-//   vec.push_back(23);
-//   vec1.push_back(23);
-//   vec.push_back(523);
-//   vec1.push_back(523);
-  
-      //   std::cout << "vec back: " << vec1.back() << '\n';
  it = vec.insert(it+3,3);
 
 
@@ -66,16 +58,18 @@ int main()
 
  }
  
-//   vec1.insert(it1,3);
-  
-      //   std::cout << "vec back: " << vec.back() << '\n';
-      //   std::cout << "vec back: " << vec1.back() << '\n';
-//   vec.pop_back();
-//   vec1.pop_back();
-      //   std::cout << "_____________________" <<'\n';
+        std::cout << "_____________________" <<'\n';
+  ft::vector<int> vec1(10,22);
+  ft::vector<int>::iterator it1 = vec1.begin();
+      it1 = vec.insert(it+3,3);
 
-      //   std::cout << "vec back: " << vec.back() << '\n';
-      //   std::cout << "vec back: " << vec1.back() << '\n';
+
+ for (size_t i = 0; i < vec.size(); i++)
+ {
+              std::cout << "vec : " << vec.at(i) << '\n';
+
+ }
+ 
   
 }
 // int main ()
