@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/26 11:32:17 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/26 11:39:55 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,11 @@ class vector
 	typedef typename Allocator::pointer pointer;
 	typedef typename Allocator::const_pointer const_pointer;
 	typedef ft::iterator<ft::random_access_iterator_tag,
-	T> iterator;             /* An iterator for the container. */
+							T>
+		iterator; /* An iterator for the container. */
 	typedef const ft::iterator<ft::random_access_iterator_tag,
-	T> const_iterator; /* A constant iterator for the container. */
+								T>
+		const_iterator; /* A constant iterator for the container. */
 	typedef ft::reverse_iterator<iterator> reverse_iterator;
 	typedef typename ft::reverse_iterator<const_iterator> const_reverse_iterator;
 	typedef ptrdiff_t difference_type;
@@ -75,18 +77,20 @@ class vector
 		this->capacity_param = 0;
 		std::cout << "default constructor is called" << std::endl;
 	}
-/* 							fill constructor
+	/* 							fill constructor
 	Constructs a container with n elements. Each element is a copy of val.*/
-	explicit vector(size_type n, const value_type &val = value_type(), const allocator_type &alloc = allocator_type())
-	// explicit vector(size_type n, const T& value = T(),	const Allocator& = Allocator())
+	explicit vector(size_type n, const value_type &val = value_type(),
+			const allocator_type &alloc = allocator_type())
+	/* explicit vector(size_type n,
+				const T& value = T(),	const Allocator& = Allocator()) */
 	{
-		// allocating = alloc; 
+		// allocating = alloc;
 		this->size_param = n;
 		this->capacity_param = n;
 		// allocating(alloc);
 		vec = allocating.allocate(n);
 		// vec = allocating.construct(vec, val);
-		//allocating.deallocate(vec, n); is not deallocating 
+		//allocating.deallocate(vec, n); is not deallocating
 		size_t i = 0;
 		while (i < n)
 		{
@@ -95,17 +99,16 @@ class vector
 		}
 		std::cout << "vector(size_type n, const value_type &val = value_type(),const allocator_type &alloc = allocator_type())is called" << std::endl;
 	}
-
+	/*
 	// vector operator*() const
 	// {
 	// 		return (*vec);
 	// }
-	/*								range constructor
+							range constructor
 			Constructs a container with as many elements as the range [first,last),
 			
 			with each element constructed from its corresponding element in that range,
 		in the same order.
-	*/
 	// template <class InputIterator>
 	//  vector(InputIterator first, InputIterator last,
 	// 		const allocator_type &alloc = allocator_type())
@@ -130,20 +133,20 @@ class vector
 	// 	}
 	// }
 
-	/*									copy constructor
+									copy constructor
 	Constructs a container with a copy of each of the elements in x,
-		in the same order.*/
+		in the same order.
 
 	// vector (const vector& x)
 	// {
-	// 	*this = x;
+	// 	this = x;
 	// }
-	/*				Assign content
+					Assign content
 
 	Copies all the elements from x into the container.
 	The container preserves its current allocator,
 		which is used to allocate storage in case of reallocation.
-*/
+
 
 	//  vector& operator= (const vector& x)
 	//  {
@@ -153,7 +156,7 @@ class vector
 	// 	this->vec = x.vec;
 	// 	return (*this);
 	//  }
-
+*/
 	/**_**_**_**_**_**_**_* Member functions  **_**_**_**_**_**_**_**_**_**_*/
 
 	/* Iterators-----------------------:                   */
@@ -167,7 +170,7 @@ class vector
 	}
 	iterator end() //Return iterator to end (public member function)
 	{
-		return (iterator(&vec[this->size_param - 1] )); // - 1 ?
+		return (iterator(&vec[this->size_param - 1])); // - 1 ?
 	}
 	const_iterator end() const
 	{
@@ -200,75 +203,73 @@ class vector
 	{
 		return (this->allocating.max_size());
 	}
-	
-void resize (size_type n, value_type val = value_type())
+
+	void resize(size_type n, value_type val = value_type())
 	{
-	/*
+		/*
 		If n is also greater than the current container capacity, 
 		an automatic reallocation of the allocated storage space takes place.
 	*/
-		if(n > capacity())
+		if (n > capacity())
 		{
-			
 			vector copy(*this);
 			allocating.deallocate(vec, this->capacity_param);
 			vec = allocating.allocate(n);
-			
-			size_t  i = 0 ; 
-			while(i < this->size_param)
+
+			size_t i = 0;
+			while (i < this->size_param)
 			{
 				vec[i] = copy[i];
 				i++;
 			}
 			this->size_param = n;
-			this->capacity_param = n;	
-			
-			while(i < this->size_param)
+			this->capacity_param = n;
+
+			while (i < this->size_param)
 			{
 				vec[i] = 0;
 				i++;
-			}			
-			std::cout << " > this->vec.capacity() is called" <<std::endl;	
+			}
+			std::cout << " > this->vec.capacity() is called" << std::endl;
 		}
-	/*
+		/*
 		If n is smaller than the current container size,
 		the content is reduced to its first n elements, 
 		removing those beyond (and destroying them).
 	*/
 
-		else if(n < size())
+		else if (n < size())
 		{
-			
-			std::cout <<  size() << " n < size() is called" <<std::endl;
+			std::cout << size() << " n < size() is called" << std::endl;
 			vector copy;
-			size_t i = 0 ; 
-			while(i < n)
+			size_t i = 0;
+			while (i < n)
 			{
-				copy[i]  = vec[i];
+				copy[i] = vec[i];
 				i++;
 			}
-			
+
 			allocating.deallocate(vec, this->capacity_param);
 			this->size_param = n;
 			this->capacity_param = n;
 			vec = allocating.allocate(this->capacity_param);
-			i= 0 ;
-			while(i < n)
+			i = 0;
+			while (i < n)
 			{
-				vec[i]  = copy[i];
+				vec[i] = copy[i];
 				i++;
 			}
 		}
 		/* If n is greater than the current container size, 
 		the content is expanded by inserting at the end as many elements as needed to reach a size of n. 
-		If val is specified, the new elements are initialized as copies of val, otherwise, they are value-initialized.
+		If val is specified, the new elements are initialized as copies of val,
+			otherwise, they are value-initialized.
 		*/
-		else if(n > size())
+		else if (n > size())
 		{
-			
-			std::cout << "n > this->vec.size()is called" <<std::endl;
-			std::cout << "n  = " << n <<" size = " << size() << " capacity " << capacity() <<std::endl;
-			
+			std::cout << "n > this->vec.size()is called" << std::endl;
+			std::cout << "n  = " << n << " size = " << size() << " capacity " << capacity() << std::endl;
+
 			size_t i = size_param;
 			while (i < n)
 			{
@@ -278,7 +279,7 @@ void resize (size_type n, value_type val = value_type())
 			}
 		}
 	}
-	
+
 	size_type capacity() const //Request a change in capacity
 	{
 		return (this->capacity_param);
@@ -291,20 +292,19 @@ void resize (size_type n, value_type val = value_type())
 		else
 			return (false);
 	}
-	
+
 	void reserve(size_type n)
 	{
-		if(n > max_size())
+		if (n > max_size())
 		{
-		 throw std::length_error("Length error: The size requested is greater than the maximum size ");
+			throw std::length_error("Length error: The size requested is greater than the maximum size ");
 		}
-		
-			capacity_param = n;
-			vec = allocating.allocate(n);
-		     std::cout << "capacity :inside    " << capacity() << '\n';
 
+		capacity_param = n;
+		vec = allocating.allocate(n);
+		std::cout << "capacity :inside    " << capacity() << '\n';
 	}
-	
+
 	/* Element access:-----------------------:                   */
 	reference operator[](size_type n)
 	{
@@ -325,18 +325,17 @@ void resize (size_type n, value_type val = value_type())
 	// 	return (vec[nb]);
 	// }
 
-reference at(size_type n)
-{
-		if(n >= this->size_param)
-		throw("out of range");
-		return (vec[n]);
-	
-}
-
-const_reference at(size_type n) const
+	reference at(size_type n)
 	{
-		if(n >= this->size_param)
-		throw("out of range");
+		if (n >= this->size_param)
+			throw("out of range");
+		return (vec[n]);
+	}
+
+	const_reference at(size_type n) const
+	{
+		if (n >= this->size_param)
+			throw("out of range");
 		return (vec[n]);
 	}
 
@@ -354,12 +353,12 @@ const_reference at(size_type n) const
 		return (vec[this->size_param - 1]);
 	}
 	/*
-const_reference front() const;
-reference back();
-const_reference back() const;
+const_reference	front(void) const;
+reference		back(void);
+const_reference	back(void) const;
 */
 
-/* Element Modifiers:-----------------------:                   */
+	/* Element Modifiers:-----------------------:                   */
 	void push_back(value_type const &nb)
 	{
 		// start with nothing case	ft::vector<int> fake;
@@ -367,8 +366,9 @@ const_reference back() const;
 		{
 			// std::cout << "void push_back(		if (size_param == 0))"<< std::endl;
 			vec = allocating.allocate(1);
-			if(capacity_param == 0) //why? in case of resize (it create problem ) 
-			capacity_param = 1;
+			if (capacity_param == 0)
+			//why? in case of resize (it create problem )
+				capacity_param = 1;
 			size_param = 0;
 			vec[size_param] = nb;
 			size_param++;
@@ -376,7 +376,7 @@ const_reference back() const;
 		}
 		else if (size_param > 0 && size_param < capacity_param)
 		{
-			// std::cout << "		else if (size_param > 0 && size_param < capacity_param)"<< std::endl;
+			// std::cout << "		else if (size_param > 0	&& size_param < capacity_param)"<< std::endl;
 			vec[size_param] = nb;
 			++size_param;
 			return ;
@@ -384,7 +384,7 @@ const_reference back() const;
 		else if (size_param == capacity_param)
 		{
 			// std::cout << "		else if (size_param == capacity_param)"<< std::endl;
-			
+
 			capacity_param = capacity_param * 2;
 			copY = allocating.allocate(capacity_param);
 			size_t i = 0;
@@ -400,8 +400,8 @@ const_reference back() const;
 			return ;
 		}
 	}
-	
-void pop_back()
+
+	void pop_back()
 	{
 		// allocating.deallocate(vec +size_param, 1);
 		vec[this->size_param - 1] = 0;
@@ -409,25 +409,25 @@ void pop_back()
 		size_param--;
 	}
 
-	iterator insert (iterator position, const value_type& val)
+	iterator insert(iterator position, const value_type &val)
 	{
-		std::cout <<"	iterator insert (iterator position, const value_type& val) is called" << std::endl;
+		std::cout << "	iterator insert (iterator position,	const value_type& val) is called" << std::endl;
 		std::cout << *position << std::endl;
 		*position = val;
-		return iterator(vec);
+		return (iterator(vec));
 	}
 
-// void insert (iterator position, size_type n, const value_type& val);
-// template <class InputIterator>    void insert (iterator position, InputIterator first, InputIterator last);
-/*
-iterator insert(iterator position, const T& x);
-void insert(iterator position, size_type n, const T& x);
+	// void insert (iterator position, size_type n, const value_type& val);
+	/* template <class InputIterator>    void insert (iterator position,	InputIterator first, InputIterator last); */
+	/*
+iterator		insert(iterator position, const T& x);
+void			insert(iterator position, size_type n, const T& x);
 template <class InputIterator>
-void insert(iterator position,
+void	insert(iterator position,
 InputIterator first, InputIterator last);
-iterator erase(iterator position);
-iterator erase(iterator first, iterator last);
-void swap(vector<T,Allocator>&);
+iterator		erase(iterator position);
+iterator		erase(iterator first, iterator last);
+void			swap(vector<T,Allocator>&);
 */
 	/*______________________________________________________________________________________________________*/
 	~vector()
