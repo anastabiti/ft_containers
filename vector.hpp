@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/26 09:08:11 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/26 09:12:16 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -327,14 +327,13 @@ reference at(size_type n)
 		return (vec[n]);
 	
 }
-	/*
-	const_reference at(size_type n) const;
-reference front();
-const_reference front() const;
-reference back();
-const_reference back() const;
-	*/
-	/**_**_**_**_**_**_**_*~~~~~~~~~~~~~~~~~~***_**_**_**_**_**_**_**_**_**_*/
+
+const_reference at(size_type n) const
+	{
+		if(n >= this->size_param)
+		throw("out of range");
+		return (vec[n]);
+	}
 
 	reference front()
 	{
@@ -345,6 +344,13 @@ const_reference back() const;
 	{
 		return (vec[this->size_param - 1]);
 	}
+	/*
+const_reference front() const;
+reference back();
+const_reference back() const;
+	*/
+	/**_**_**_**_**_**_**_*~~~~~~~~~~~~~~~~~~***_**_**_**_**_**_**_**_**_**_*/
+
 
 	const_reference back() const
 	{

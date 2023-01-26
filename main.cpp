@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/26 09:08:21 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/26 09:14:09 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,25 @@
 // #include "iterator.hpp"
 using namespace std;
 
+
+
+
+int main()
+{
+  std::vector<int> vec;
+  ft::vector<int> vec1;
+  // vec.push_back(23);
+  // vec1.push_back(23);
+  // vec.push_back(523);
+  // vec1.push_back(523);
+  // vec.push_back(3);
+  // vec1.push_back(3);
+  
+        std::cout << "vec front: " << vec.front() << '\n';
+        std::cout << "vec front: " << vec1.front() << '\n';
+
+
+}
 // int main ()
 // {
 //   std::vector<int>::size_type sz;
@@ -49,55 +68,55 @@ using namespace std;
 //   return 0;
 // }
 
-int main ()
-{
-  std::vector<int>::size_type sz;
+// int main ()
+// {
+//   std::vector<int>::size_type sz;
 
-//   ft::vector<int> foo;
-//   sz = foo.capacity();
-//   std::cout << "making foo grow:\n";
-//   for (int i=0; i<100; ++i) {
-//     foo.push_back(i);
-//     if (sz!=foo.capacity()) {
-//       sz = foo.capacity();
-//       std::cout << "capacity changed: " << sz << '\n';
-//     }
-//   }
-  // std::vector<int> bar;
-  // sz = bar.capacity();
-  //  std::cout << "capacity : " << bar.capacity() << '\n';
-  // bar.reserve(100);   // this is the only difference with foo above
-  //  std::cout << "capacity : " << bar.capacity() << '\n';
-  // std::cout << "making bar grow:\n";
-  // for (int i=0; i<100; ++i) {
-  //   bar.push_back(i);
-  //   if (sz!=bar.capacity()) {
-  //     sz = bar.capacity();
-  //     std::cout << "capacity changed: " << sz << '\n';
-  //   }
-  // }
-//   sz= 0;
+// //   ft::vector<int> foo;
+// //   sz = foo.capacity();
+// //   std::cout << "making foo grow:\n";
+// //   for (int i=0; i<100; ++i) {
+// //     foo.push_back(i);
+// //     if (sz!=foo.capacity()) {
+// //       sz = foo.capacity();
+// //       std::cout << "capacity changed: " << sz << '\n';
+// //     }
+// //   }
+//   // std::vector<int> bar;
+//   // sz = bar.capacity();
+//   //  std::cout << "capacity : " << bar.capacity() << '\n';
+//   // bar.reserve(100);   // this is the only difference with foo above
+//   //  std::cout << "capacity : " << bar.capacity() << '\n';
+//   // std::cout << "making bar grow:\n";
+//   // for (int i=0; i<100; ++i) {
+//   //   bar.push_back(i);
+//   //   if (sz!=bar.capacity()) {
+//   //     sz = bar.capacity();
+//   //     std::cout << "capacity changed: " << sz << '\n';
+//   //   }
+//   // }
+// //   sz= 0;
   
-      std::cout << "+++++++++++++++++++++++++++++ "  << '\n';
-  ft::vector<int> bar1;
+//       std::cout << "+++++++++++++++++++++++++++++ "  << '\n';
+//   ft::vector<int> bar1;
   
  
-  std::cout << "making bar grow:\n";
-  for (int i=0; i<100; ++i) 
-  {
-    bar1.push_back(i);
-    // if (sz!=bar1.capacity()) 
-    // {
-      sz = bar1.capacity();
-      // std::cout << "capacity changed: " << sz << '\n';
-      std::cout << "capacity changed: " << bar1.at(i) << '\n';
-    // }
-  }
-       std::cout << "capacity : " << bar1.capacity() << '\n';
+//   std::cout << "making bar grow:\n";
+//   for (int i=0; i<100; ++i) 
+//   {
+//     bar1.push_back(i);
+//     // if (sz!=bar1.capacity()) 
+//     // {
+//       sz = bar1.capacity();
+//       // std::cout << "capacity changed: " << sz << '\n';
+//       std::cout << "capacity changed: " << bar1.at(i) << '\n';
+//     // }
+//   }
+//        std::cout << "capacity : " << bar1.capacity() << '\n';
 
 
-  return 0;
-}
+//   return 0;
+// }
 
 
 
