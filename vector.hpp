@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/26 08:42:17 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/26 08:52:25 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -378,7 +378,9 @@ void resize (size_type n, value_type val = value_type())
 		// start with nothing case	ft::vector<int> fake;
 		if (size_param == 0)
 		{
+			std::cout << "void push_back(		if (size_param == 0))"<< std::endl;
 			vec = allocating.allocate(1);
+			if(capacity_param == 0)
 			capacity_param = 1;
 			size_param = 0;
 			vec[size_param] = nb;
@@ -387,12 +389,15 @@ void resize (size_type n, value_type val = value_type())
 		}
 		else if (size_param > 0 && size_param < capacity_param)
 		{
+			std::cout << "		else if (size_param > 0 && size_param < capacity_param)"<< std::endl;
 			vec[size_param] = nb;
 			++size_param;
 			return ;
 		}
 		else if (size_param == capacity_param)
 		{
+			std::cout << "		else if (size_param == capacity_param)"<< std::endl;
+			exit(1);
 			capacity_param = capacity_param * 2;
 			copY = allocating.allocate(capacity_param);
 			size_t i = 0;
