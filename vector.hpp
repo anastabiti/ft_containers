@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/25 14:41:41 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/26 07:56:40 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -268,8 +268,17 @@ void resize (size_type n, value_type val = value_type())
 		*/
 		else if(n > size())
 		{
-			std::cout << "n > this->vec.size()is called" <<std::endl;
 			
+			std::cout << "n > this->vec.size()is called" <<std::endl;
+			std::cout << "n  = " << n <<" size = " << size() << " capacity " << capacity() <<std::endl;
+			
+			size_t i = size_param;
+			while (i < n)
+			{
+				vec[i] = val;
+				this->size_param++;
+				i++;
+			}
 		}
 	}
 	size_type capacity() const

@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/25 14:47:19 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/26 07:55:41 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,34 +21,45 @@ int main(void) {
 	
 
 
-   ft::vector<int> myvec(2,23);
+   // ft::vector<int> myvec(10,23);
 
    int i = 0 ;
  
-   while (i < myvec.size())
-   {
-         // myvec.push_back(4);
-      std::cout << myvec.at(i) << std::endl;
-         i++;
-   }
-   std::vector<int> real(2,23);
-
-   i = 0 ;
- 
-   while (i < real.size())
-   {
-         // myvec.push_back(4);
-      std::cout << real.at(i) << std::endl;
-         i++;
-   }
-   // i = 0 ;
    // while (i < myvec.size())
    // {
-   //    std::cout << myvec[i++] << std::endl;
+   //       // myvec.push_back(4);
+   //    std::cout << " myvec.at(i)="<<myvec.at(i) << std::endl;
+   //       i++;
    // }
+   //    std::cout << "________________________________"<< std::endl;
+   // std::vector<int> real(2,23);
+
+   // i = 0 ;
+ 
+   // while (i < real.size())
+   // {
+   //       // myvec.push_back(4);
+   //    std::cout << real.at(i) << std::endl;
+   //       i++;
+   // }
+   // // i = 0 ;
+   // // while (i < myvec.size())
+   // // {
+   // //    std::cout << myvec[i++] << std::endl;
+   // // }
    
-   //    std::cout << "____________________"<< std::endl;
-      myvec.resize(9);
+   // //    std::cout << "____________________"<< std::endl;
+   //    // myvec.resize(1);
+   //    std::cout << myvec.size() << std::endl;
+   //    std::cout << myvec.capacity() << std::endl;
+   //    i = 0 ;
+ 
+   // while (i < myvec.size())
+   // {
+   //       // myvec.push_back(4);
+   //    std::cout << " myvec.at(i)="<<myvec.at(i) << std::endl;
+   //       i++;
+   // }
    //    std::cout << "____________________"<< std::endl;
    // i = 0 ;
    // while (i < myvec.size())
@@ -56,9 +67,36 @@ int main(void) {
    // {
    //    std::cout << myvec[i++] << std::endl;
    // }
+      std::cout << "_+_+_+_+_+_+_+_+_+_+_+_+_+_"<< std::endl;
 
-   
+   ft::vector<int> myvec1;
+   myvec1.push_back(32);
+   myvec1.push_back(54);
+   myvec1.push_back(144);
+   // myvec1.push_back(720);
 
+       i = 0 ;
+ 
+   while (i < myvec1.size())
+   {
+         // myvec.push_back(4);
+      std::cout  << "at = \t"<<myvec1.at(i) << std::endl;
+      std::cout  << "size= \t"<< myvec1.size() << std::endl;
+      std::cout  << "capacity=\t"<< myvec1.capacity() << std::endl;
+         i++;
+   }
+   myvec1.resize(4);
+      std::cout  << "   myvec1.resize(4); \t "<< std::endl;
+        i = 0 ;
+ 
+   while (i < myvec1.size())
+   {
+         // myvec.push_back(4);
+      std::cout  << "at = \t"<<myvec1.at(i) << std::endl;
+      // std::cout  << "size= \t"<< myvec1.size() << std::endl;
+      // std::cout  << "capacity=\t"<< myvec1.capacity() << std::endl;
+         i++;
+   }
    return 0;
 }
 
