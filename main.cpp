@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/26 08:53:00 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/26 08:53:42 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,19 +63,19 @@ int main ()
 //       std::cout << "capacity changed: " << sz << '\n';
 //     }
 //   }
-//   std::vector<int> bar;
-//   sz = bar.capacity();
-//    std::cout << "capacity : " << bar.capacity() << '\n';
-//   bar.reserve(100);   // this is the only difference with foo above
-//    std::cout << "capacity : " << bar.capacity() << '\n';
-//   std::cout << "making bar grow:\n";
-//   for (int i=0; i<100; ++i) {
-//     bar.push_back(i);
-//     if (sz!=bar.capacity()) {
-//       sz = bar.capacity();
-//       std::cout << "capacity changed: " << sz << '\n';
-//     }
-//   }
+  std::vector<int> bar;
+  sz = bar.capacity();
+   std::cout << "capacity : " << bar.capacity() << '\n';
+  bar.reserve(100);   // this is the only difference with foo above
+   std::cout << "capacity : " << bar.capacity() << '\n';
+  std::cout << "making bar grow:\n";
+  for (int i=0; i<100; ++i) {
+    bar.push_back(i);
+    if (sz!=bar.capacity()) {
+      sz = bar.capacity();
+      std::cout << "capacity changed: " << sz << '\n';
+    }
+  }
 //   sz= 0;
   
       std::cout << "+++++++++++++++++++++++++++++ "  << '\n';
