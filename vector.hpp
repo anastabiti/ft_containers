@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/26 07:56:40 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/26 08:25:18 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -205,7 +205,6 @@ class vector
 	
 void resize (size_type n, value_type val = value_type())
 	{
-	
 	/*
 		If n is also greater than the current container capacity, 
 		an automatic reallocation of the allocated storage space takes place.
@@ -281,7 +280,8 @@ void resize (size_type n, value_type val = value_type())
 			}
 		}
 	}
-	size_type capacity() const
+	
+	size_type capacity() const //Request a change in capacity
 	{
 		return (this->capacity_param);
 	}
@@ -294,6 +294,15 @@ void resize (size_type n, value_type val = value_type())
 			return (false);
 	}
 	
+	void reserve(size_type n)
+	{
+		if(n > max_size())
+		{
+		 throw std::length_error("Length error: The size requested is greater than the maximum size ");
+		}
+		capacity_param = n;
+		vec = allocating.allocate(n);
+	}
 	/**_**_**_**_**_**_**_*~~~~~~~~~~~~~~~~~~***_**_**_**_**_**_**_**_**_**_*/
 
 	reference front()

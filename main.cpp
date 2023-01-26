@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/26 07:57:33 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/26 08:24:10 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,89 +17,164 @@
 // #include "iterator.hpp"
 using namespace std;
 
-int main(void) {
+// int main ()
+// {
+//   std::vector<int>::size_type sz;
+
+// //   std::vector<int> foo;
+// //   sz = foo.capacity();
+// //   std::cout << "making foo grow:\n";
+// //   for (int i=0; i<100; ++i) {
+// //     foo.push_back(i);
+// //     if (sz!=foo.capacity()) {
+// //       sz = foo.capacity();
+// //       std::cout << "capacity changed: " << sz << '\n';
+// //     }
+// //   }
+
+//   std::vector<int> bar;
+//   sz = bar.capacity();
+//    std::cout << "capacity : " << bar.capacity() << '\n';
+//    std::cout << "max_size : " << bar.max_size() << '\n';
+//   bar.reserve(bar.max_size()+1);   // this is the only difference with foo above
+//    std::cout << "capacity : " << bar.capacity() << '\n';
+//   std::cout << "making bar grow:\n";
+//   for (int i=0; i<100; ++i) {
+//     bar.push_back(i);
+//     if (sz!=bar.capacity()) {
+//       sz = bar.capacity();
+//       std::cout << "capacity changed: " << sz << '\n';
+//     }
+//   }
+//   return 0;
+// }
+
+int main ()
+{
+  std::vector<int>::size_type sz;
+
+//   ft::vector<int> foo;
+//   sz = foo.capacity();
+//   std::cout << "making foo grow:\n";
+//   for (int i=0; i<100; ++i) {
+//     foo.push_back(i);
+//     if (sz!=foo.capacity()) {
+//       sz = foo.capacity();
+//       std::cout << "capacity changed: " << sz << '\n';
+//     }
+//   }
+try
+{
+   /* code */
+  ft::vector<int> bar;
+  sz = bar.capacity();
+  bar.reserve(bar.max_size() +1);   // this is the only difference with foo above
+  std::cout << "making bar grow:\n";
+  for (int i=0; i<100; ++i) 
+  {
+    bar.push_back(i);
+    if (sz!=bar.capacity()) 
+    {
+      sz = bar.capacity();
+      std::cout << "capacity changed: " << sz << '\n';
+    }
+  }
+}
+catch(const std::exception& e)
+{
+   std::cerr << e.what() << '\n';
+}
+
+  return 0;
+}
+
+
+
+
+
+// int main(void) {
 	
 
 
-   // ft::vector<int> myvec(10,23);
+//    // ft::vector<int> myvec(10,23);
 
-   int i = 0 ;
+//    int i = 0 ;
  
-   // while (i < myvec.size())
-   // {
-   //       // myvec.push_back(4);
-   //    std::cout << " myvec.at(i)="<<myvec.at(i) << std::endl;
-   //       i++;
-   // }
-   //    std::cout << "________________________________"<< std::endl;
-   // std::vector<int> real(2,23);
+//    // while (i < myvec.size())
+//    // {
+//    //       // myvec.push_back(4);
+//    //    std::cout << " myvec.at(i)="<<myvec.at(i) << std::endl;
+//    //       i++;
+//    // }
+//    //    std::cout << "________________________________"<< std::endl;
+//    // std::vector<int> real(2,23);
 
-   // i = 0 ;
+//    // i = 0 ;
  
-   // while (i < real.size())
-   // {
-   //       // myvec.push_back(4);
-   //    std::cout << real.at(i) << std::endl;
-   //       i++;
-   // }
-   // // i = 0 ;
-   // // while (i < myvec.size())
-   // // {
-   // //    std::cout << myvec[i++] << std::endl;
-   // // }
+//    // while (i < real.size())
+//    // {
+//    //       // myvec.push_back(4);
+//    //    std::cout << real.at(i) << std::endl;
+//    //       i++;
+//    // }
+//    // // i = 0 ;
+//    // // while (i < myvec.size())
+//    // // {
+//    // //    std::cout << myvec[i++] << std::endl;
+//    // // }
    
-   // //    std::cout << "____________________"<< std::endl;
-   //    // myvec.resize(1);
-   //    std::cout << myvec.size() << std::endl;
-   //    std::cout << myvec.capacity() << std::endl;
-   //    i = 0 ;
+//    // //    std::cout << "____________________"<< std::endl;
+//    //    // myvec.resize(1);
+//    //    std::cout << myvec.size() << std::endl;
+//    //    std::cout << myvec.capacity() << std::endl;
+//    //    i = 0 ;
  
-   // while (i < myvec.size())
-   // {
-   //       // myvec.push_back(4);
-   //    std::cout << " myvec.at(i)="<<myvec.at(i) << std::endl;
-   //       i++;
-   // }
-   //    std::cout << "____________________"<< std::endl;
-   // i = 0 ;
-   // while (i < myvec.size())
-   // // while (i < 7)
-   // {
-   //    std::cout << myvec[i++] << std::endl;
-   // }
-      std::cout << "_+_+_+_+_+_+_+_+_+_+_+_+_+_"<< std::endl;
+//    // while (i < myvec.size())
+//    // {
+//    //       // myvec.push_back(4);
+//    //    std::cout << " myvec.at(i)="<<myvec.at(i) << std::endl;
+//    //       i++;
+//    // }
+//    //    std::cout << "____________________"<< std::endl;
+//    // i = 0 ;
+//    // while (i < myvec.size())
+//    // // while (i < 7)
+//    // {
+//    //    std::cout << myvec[i++] << std::endl;
+//    // }
+//       std::cout << "_+_+_+_+_+_+_+_+_+_+_+_+_+_"<< std::endl;
 
-   ft::vector<int> myvec1;
-   myvec1.push_back(32);
-   myvec1.push_back(54);
-   myvec1.push_back(144);
-   // myvec1.push_back(720);
+//    ft::vector<int> myvec1;
+//    myvec1.push_back(32);
+//    myvec1.push_back(54);
+//    myvec1.push_back(144);
+//    // myvec1.push_back(720);
 
-       i = 0 ;
+//        i = 0 ;
  
-   while (i < myvec1.size())
-   {
-         // myvec.push_back(4);
-      std::cout  << "at = \t"<<myvec1.at(i) << std::endl;
-      std::cout  << "size= \t"<< myvec1.size() << std::endl;
-      std::cout  << "capacity=\t"<< myvec1.capacity() << std::endl;
-         i++;
-   }
-   myvec1.resize(4, 1337);
-      std::cout  << "   myvec1.resize(4); \t "<< std::endl;
-        i = 0 ;
+//    while (i < myvec1.size())
+//    {
+//          // myvec.push_back(4);
+//       std::cout  << "at = \t"<<myvec1.at(i) << std::endl;
+//       std::cout  << "size= \t"<< myvec1.size() << std::endl;
+//       std::cout  << "capacity=\t"<< myvec1.capacity() << std::endl;
+//          i++;
+//    }
+//    myvec1.resize(4, 1337);
+//       std::cout  << "   myvec1.resize(4); \t "<< std::endl;
+//         i = 0 ;
  
-   while (i < myvec1.size())
-   {
-         // myvec.push_back(4);
-      std::cout  << "at = \t"<<myvec1.at(i) << std::endl;
-      // std::cout  << "size= \t"<< myvec1.size() << std::endl;
-      // std::cout  << "capacity=\t"<< myvec1.capacity() << std::endl;
-         i++;
+//    while (i < myvec1.size())
+//    {
+//          // myvec.push_back(4);
+//       std::cout  << "at = \t"<<myvec1.at(i) << std::endl;
+//       // std::cout  << "size= \t"<< myvec1.size() << std::endl;
+//       // std::cout  << "capacity=\t"<< myvec1.capacity() << std::endl;
+//          i++;
          
-   }
-   return 0;
-}
+//    }
+//    return 0;
+// }
 
 // int	main(void) 
 // {
