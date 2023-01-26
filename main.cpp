@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/26 08:53:42 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/26 09:08:21 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,38 +63,35 @@ int main ()
 //       std::cout << "capacity changed: " << sz << '\n';
 //     }
 //   }
-  std::vector<int> bar;
-  sz = bar.capacity();
-   std::cout << "capacity : " << bar.capacity() << '\n';
-  bar.reserve(100);   // this is the only difference with foo above
-   std::cout << "capacity : " << bar.capacity() << '\n';
-  std::cout << "making bar grow:\n";
-  for (int i=0; i<100; ++i) {
-    bar.push_back(i);
-    if (sz!=bar.capacity()) {
-      sz = bar.capacity();
-      std::cout << "capacity changed: " << sz << '\n';
-    }
-  }
+  // std::vector<int> bar;
+  // sz = bar.capacity();
+  //  std::cout << "capacity : " << bar.capacity() << '\n';
+  // bar.reserve(100);   // this is the only difference with foo above
+  //  std::cout << "capacity : " << bar.capacity() << '\n';
+  // std::cout << "making bar grow:\n";
+  // for (int i=0; i<100; ++i) {
+  //   bar.push_back(i);
+  //   if (sz!=bar.capacity()) {
+  //     sz = bar.capacity();
+  //     std::cout << "capacity changed: " << sz << '\n';
+  //   }
+  // }
 //   sz= 0;
   
       std::cout << "+++++++++++++++++++++++++++++ "  << '\n';
   ft::vector<int> bar1;
-     std::cout << "capacity : " << bar1.capacity() << '\n';
-  sz = bar1.capacity();
-  bar1.reserve(100);   // this is the only difference with foo above
-     std::cout << "capacity : " << bar1.capacity() << '\n';
-
   
+ 
   std::cout << "making bar grow:\n";
   for (int i=0; i<100; ++i) 
   {
     bar1.push_back(i);
-    if (sz!=bar1.capacity()) 
-    {
+    // if (sz!=bar1.capacity()) 
+    // {
       sz = bar1.capacity();
-      std::cout << "capacity changed: " << sz << '\n';
-    }
+      // std::cout << "capacity changed: " << sz << '\n';
+      std::cout << "capacity changed: " << bar1.at(i) << '\n';
+    // }
   }
        std::cout << "capacity : " << bar1.capacity() << '\n';
 

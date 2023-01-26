@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/26 08:54:26 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/26 09:08:11 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,10 +94,7 @@ class vector
 		}
 		std::cout << "vector(size_type n, const value_type &val = value_type(),const allocator_type &alloc = allocator_type())is called" << std::endl;
 	}
-	reference operator[](size_type n)
-	{
-		return (vec[n]);
-	}
+
 	// vector operator*() const
 	// {
 	// 		return (*vec);
@@ -307,6 +304,36 @@ void resize (size_type n, value_type val = value_type())
 
 	}
 	
+	/* Element access:-----------------------:                   */
+	reference operator[](size_type n)
+	{
+		return (vec[n]);
+	}
+	const_reference operator[](size_type n) const
+	{
+		return (vec[n]);
+	}
+	// 	value_type at(size_type nb)
+	// {
+	// 	if(nb >= this->size_param)
+	// 	throw("out of range");
+	// 	return (vec[nb]);
+	// }
+
+reference at(size_type n)
+{
+		if(n >= this->size_param)
+		throw("out of range");
+		return (vec[n]);
+	
+}
+	/*
+	const_reference at(size_type n) const;
+reference front();
+const_reference front() const;
+reference back();
+const_reference back() const;
+	*/
 	/**_**_**_**_**_**_**_*~~~~~~~~~~~~~~~~~~***_**_**_**_**_**_**_**_**_**_*/
 
 	reference front()
@@ -378,7 +405,7 @@ void resize (size_type n, value_type val = value_type())
 		// start with nothing case	ft::vector<int> fake;
 		if (size_param == 0)
 		{
-			// std::cout << "void push_back(		if (size_param == 0))"<< std::endl;
+			std::cout << "void push_back(		if (size_param == 0))"<< std::endl;
 			vec = allocating.allocate(1);
 			if(capacity_param == 0) //why? in case of resize (it create problem ) 
 			capacity_param = 1;
@@ -389,15 +416,15 @@ void resize (size_type n, value_type val = value_type())
 		}
 		else if (size_param > 0 && size_param < capacity_param)
 		{
-			// std::cout << "		else if (size_param > 0 && size_param < capacity_param)"<< std::endl;
+			std::cout << "		else if (size_param > 0 && size_param < capacity_param)"<< std::endl;
 			vec[size_param] = nb;
 			++size_param;
 			return ;
 		}
 		else if (size_param == capacity_param)
 		{
-			// std::cout << "		else if (size_param == capacity_param)"<< std::endl;
-			exit(1);
+			std::cout << "		else if (size_param == capacity_param)"<< std::endl;
+			
 			capacity_param = capacity_param * 2;
 			copY = allocating.allocate(capacity_param);
 			size_t i = 0;
@@ -415,12 +442,7 @@ void resize (size_type n, value_type val = value_type())
 	}
 	//
 	/*______________________________________________________________________________________________________*/
-	value_type at(size_type nb)
-	{
-		if(nb >= this->size_param)
-		throw("out of range");
-		return (vec[nb]);
-	}
+
 	/*______________________________________________________________________________________________________ */
 };
 
