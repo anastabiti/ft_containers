@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/26 07:57:03 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/26 07:57:33 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,7 @@ int main(void) {
       // std::cout  << "size= \t"<< myvec1.size() << std::endl;
       // std::cout  << "capacity=\t"<< myvec1.capacity() << std::endl;
          i++;
+         
    }
    return 0;
 }
