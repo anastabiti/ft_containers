@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/26 08:51:35 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/26 08:53:00 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,8 +90,6 @@ int main ()
   for (int i=0; i<100; ++i) 
   {
     bar1.push_back(i);
-     std::cout << "capacity : " << bar1.capacity() << '\n';
-    std::cout<< "value : " << bar1[i] << std::endl;
     if (sz!=bar1.capacity()) 
     {
       sz = bar1.capacity();
