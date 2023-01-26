@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/26 09:52:03 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/26 09:56:02 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -400,6 +400,7 @@ void pop_back()
 	{
 		// allocating.deallocate(vec +size_param, 1);
 		vec[this->size_param - 1] = 0;
+		// allocating.destroy(vec - (this->size_param - 1));
 		size_param--;
 	}
 /*
