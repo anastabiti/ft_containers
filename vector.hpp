@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/26 09:14:27 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/26 09:52:03 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -344,74 +344,23 @@ const_reference at(size_type n) const
 	{
 		return (vec[this->size_param - 1]);
 	}
-	/*
-const_reference front() const;
-reference back();
-const_reference back() const;
-	*/
-/**_**_**_**_**_**_**_*~~~~~~~~~~~~~~~~~~***_**_**_**_**_**_**_**_**_**_*/
-
-
 	const_reference back() const
 	{
 		return (vec[this->size_param - 1]);
 	}
+	/*
+const_reference front() const;
+reference back();
+const_reference back() const;
+*/
 
-	// const_reference front() const
-	// {
-
-	// }
-	//
-	/*______________________________________________________________________________________________________ */
-	// vector(size_type nm)
-	// {
-	// 	size_param = nm;
-	// 	capacity_param = nm;
-	// 	// this->vec = this->allocate ;
-	// 	// this->allocate
-	// 	vec = alloc.allocate(nm);
-	// 	// this->vec = new T[nm];
-	// }
-	//
-	/*______________________________________________________________________________________________________ */
-	// vector(vector const &rhs)
-	// {
-	// 	*this = rhs;
-	// }
-	//
-	/*______________________________________________________________________________________________________ */
-	// vector &operator=(vector const &rhs)
-	// {
-	// 	size_t i = 0;
-	// 	while (i < this->s)
-	// 	{
-	// 		this->vec[i] = rhs.vec[i];
-	// 		i++;
-	// 	}
-	// 	this->vec = rhs.vec;
-
-	// 	return (*this);
-	// }
-	//
-	/*______________________________________________________________________________________________________ */
-	~vector()
-	{
-		std::cout << "destructor is called" << std::endl;
-		// allocating.deallocate(vec, this->capacity_param);
-	}
-	//
-	/*______________________________________________________________________________________________________ */
-	//
-	/*______________________________________________________________________________________________________ */
-
-	//
-	/*______________________________________________________________________________________________________ */
+/* Element Modifiers:-----------------------:                   */
 	void push_back(value_type const &nb)
 	{
 		// start with nothing case	ft::vector<int> fake;
 		if (size_param == 0)
 		{
-			std::cout << "void push_back(		if (size_param == 0))"<< std::endl;
+			// std::cout << "void push_back(		if (size_param == 0))"<< std::endl;
 			vec = allocating.allocate(1);
 			if(capacity_param == 0) //why? in case of resize (it create problem ) 
 			capacity_param = 1;
@@ -422,14 +371,14 @@ const_reference back() const;
 		}
 		else if (size_param > 0 && size_param < capacity_param)
 		{
-			std::cout << "		else if (size_param > 0 && size_param < capacity_param)"<< std::endl;
+			// std::cout << "		else if (size_param > 0 && size_param < capacity_param)"<< std::endl;
 			vec[size_param] = nb;
 			++size_param;
 			return ;
 		}
 		else if (size_param == capacity_param)
 		{
-			std::cout << "		else if (size_param == capacity_param)"<< std::endl;
+			// std::cout << "		else if (size_param == capacity_param)"<< std::endl;
 			
 			capacity_param = capacity_param * 2;
 			copY = allocating.allocate(capacity_param);
@@ -446,10 +395,30 @@ const_reference back() const;
 			return ;
 		}
 	}
-	//
+	
+void pop_back()
+	{
+		// allocating.deallocate(vec +size_param, 1);
+		vec[this->size_param - 1] = 0;
+		size_param--;
+	}
+/*
+void push_back(const T& x);
+iterator insert(iterator position, const T& x);
+void insert(iterator position, size_type n, const T& x);
+template <class InputIterator>
+void insert(iterator position,
+InputIterator first, InputIterator last);
+iterator erase(iterator position);
+iterator erase(iterator first, iterator last);
+void swap(vector<T,Allocator>&);
+*/
 	/*______________________________________________________________________________________________________*/
-
-	/*______________________________________________________________________________________________________ */
+	~vector()
+	{
+		std::cout << "destructor is called" << std::endl;
+		// allocating.deallocate(vec, this->capacity_param);
+	}
 };
 
 // template <typename F>
