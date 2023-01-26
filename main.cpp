@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/26 11:09:59 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/26 11:19:50 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,12 +61,12 @@ int main()
         std::cout << "_____________________" <<'\n';
   ft::vector<int> vec1(10,22);
   ft::vector<int>::iterator it1 = vec1.begin();
-      it1 = vec.insert(it+3,3);
+      it1 = vec1.insert(it1,3);
 
 
- for (size_t i = 0; i < vec.size(); i++)
+ for (size_t i = 0; i < vec1.size(); i++)
  {
-              std::cout << "vec : " << vec.at(i) << '\n';
+              std::cout << "vec : " << vec1.at(i) << '\n';
 
  }
  

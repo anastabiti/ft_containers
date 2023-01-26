@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/26 11:08:27 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/26 11:20:13 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ class vector
 		this->capacity_param = n;
 		// allocating(alloc);
 		vec = allocating.allocate(n);
-		vec = allocating.construct(vec, val);
+		// vec = allocating.construct(vec, val);
 		//allocating.deallocate(vec, n); is not deallocating 
 		size_t i = 0;
 		while (i < n)
@@ -310,6 +310,10 @@ void resize (size_type n, value_type val = value_type())
 	{
 		return (vec[n]);
 	}
+	// reference operator=(value_type n)
+	// {
+	// 	return (vec[n]);
+	// }
 	const_reference operator[](size_type n) const
 	{
 		return (vec[n]);
@@ -433,32 +437,8 @@ void swap(vector<T,Allocator>&);
 	}
 };
 
-// template <typename F>
-// class atabiti_allocator
-// {
-
-// 	public:
-// atabiti_allocator(){
-// 		std::cout << "zalloc constructor is called" << std::endl;
-
-// }
-// ~atabiti_allocator()
-// {
-// 		std::cout << "zalloc D is called" << std::endl;
-
-// }
-// F* allocate(int i  = 2)
-// {
-// 		std::cout << "allocate D is called" << std::endl;
-// 	return (NULL);
-// }
-
-// };
-
-/*std::reverse_iterator*/
-
 /*• std::enable_if */
 
-} // namespace ft
+} /* namespace ft */
 
 #endif
