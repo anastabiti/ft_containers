@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/26 09:51:33 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/26 10:33:25 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,21 +24,26 @@ int main()
 {
   std::vector<int> vec;
   ft::vector<int> vec1;
+  std::vector<int>::iterator it;
+  ft::vector<int>::iterator it1;
   vec.push_back(23);
   vec1.push_back(23);
   vec.push_back(523);
   vec1.push_back(523);
-  vec.push_back(3);
-  vec1.push_back(3);
   
         std::cout << "vec back: " << vec.back() << '\n';
         std::cout << "vec back: " << vec1.back() << '\n';
-  vec.pop_back();
-  vec1.pop_back();
-        std::cout << "_____________________" <<'\n';
-
+//   vec.insert(it,3);
+//   vec1.insert(it1,3);
+  
         std::cout << "vec back: " << vec.back() << '\n';
         std::cout << "vec back: " << vec1.back() << '\n';
+//   vec.pop_back();
+//   vec1.pop_back();
+      //   std::cout << "_____________________" <<'\n';
+
+      //   std::cout << "vec back: " << vec.back() << '\n';
+      //   std::cout << "vec back: " << vec1.back() << '\n';
   
 }
 // int main ()

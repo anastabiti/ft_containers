@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/26 09:56:02 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/26 10:32:56 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,7 @@ class vector
 		this->capacity_param = n;
 		// allocating(alloc);
 		vec = allocating.allocate(n);
+		vec = allocating.construct(vec, val);
 		//allocating.deallocate(vec, n); is not deallocating 
 		size_t i = 0;
 		while (i < n)
@@ -403,8 +404,15 @@ void pop_back()
 		// allocating.destroy(vec - (this->size_param - 1));
 		size_param--;
 	}
+
+	iterator insert (iterator position, const value_type& val)
+	{
+		return iterator(begin());
+	}
+
+// void insert (iterator position, size_type n, const value_type& val);
+// template <class InputIterator>    void insert (iterator position, InputIterator first, InputIterator last);
 /*
-void push_back(const T& x);
 iterator insert(iterator position, const T& x);
 void insert(iterator position, size_type n, const T& x);
 template <class InputIterator>
