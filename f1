@@ -1,0 +1,23 @@
+ vec : 99 size : 10 capacity : 10
+ vec : 99 size : 10 capacity : 10
+ vec : 99 size : 10 capacity : 10
+ vec : 99 size : 10 capacity : 10
+ vec : 99 size : 10 capacity : 10
+ vec : 99 size : 10 capacity : 10
+ vec : 99 size : 10 capacity : 10
+ vec : 99 size : 10 capacity : 10
+ vec : 99 size : 10 capacity : 10
+ vec : 99 size : 10 capacity : 10
+
+_____________________
+ vec : 99 size : 10 capacity : 10
+ vec : 99 size : 10 capacity : 10
+ vec : 99 size : 10 capacity : 10
+ vec : 99 size : 10 capacity : 10
+ vec : 99 size : 10 capacity : 10
+ vec : 99 size : 10 capacity : 10
+ vec : 99 size : 10 capacity : 10
+ vec : 99 size : 10 capacity : 10
+ vec : 99 size : 10 capacity : 10
+ vec : 99 size : 10 capacity : 10
+destructor is called

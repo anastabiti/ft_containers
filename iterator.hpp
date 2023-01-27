@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 09:45:02 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/27 09:36:18 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/27 09:44:14 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ class iterator : public std::iterator<std::random_access_iterator_tag, T>
 	}
 	reference operator[](difference_type n) const
 	{
-		std::cout << "   1 reference operator[](difference_type n) const  is called" << std::endl;
+		// std::cout << "   1 reference operator[](difference_type n) const  is called" << std::endl;
 		return (ptr[n]);
 	}
 	//   iterator  operator= (difference_type n)
@@ -103,7 +103,7 @@ class iterator : public std::iterator<std::random_access_iterator_tag, T>
 	//   }
 	iterator operator+(difference_type n) //not working
 	{
-		std::cout << "      iterator operator+ (difference_type n) is called" << std::endl;
+		// std::cout << "      iterator operator+ (difference_type n) is called" << std::endl;
 		iterator cp(*this);
 		cp += n;
 		// return (*this = *this + n); // cause infinit loop
@@ -113,13 +113,13 @@ class iterator : public std::iterator<std::random_access_iterator_tag, T>
 
 	iterator operator+=(difference_type n)
 	{
-		std::cout << "	iterator operator+=(difference_type n) is called" << std::endl;
+		// std::cout << "	iterator operator+=(difference_type n) is called" << std::endl;
 		ptr = ptr + n;
 		return (*this);
 	}
 	iterator operator-=(difference_type n)
 	{
-		std::cout << "	iterator operator-=(difference_type n) is called" << std::endl;
+		// std::cout << "	iterator operator-=(difference_type n) is called" << std::endl;
 		ptr = ptr - n;
 		return (*this);
 	}

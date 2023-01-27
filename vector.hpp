@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/27 09:36:58 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/27 09:45:08 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ class vector
 			vec[i] = val;
 			i++;
 		}
-		std::cout << "vector(size_type n, const value_type &val = value_type(),const allocator_type &alloc = allocator_type())is called" << std::endl;
+		// std::cout << "vector(size_type n, const value_type &val = value_type(),const allocator_type &alloc = allocator_type())is called" << std::endl;
 	}
 	/*
 	// vector operator*() const
@@ -411,7 +411,7 @@ const_reference	back(void) const;
 
 	iterator insert(iterator position, const value_type &val)
 	{
-		std::cout << "	iterator insert (iterator position,	const value_type& val) is called" << std::endl;
+		// std::cout << "	iterator insert (iterator position,	const value_type& val) is called" << std::endl;
 		// std::cout << *position << std::endl;
 		*position = val;
 		return (iterator(vec));

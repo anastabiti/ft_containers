@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/27 09:42:51 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/27 09:49:34 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,14 +49,15 @@ int main()
 {
   std::vector<int> vec(10,99);
   std::vector<int>::iterator it = vec.end();
- it = vec.insert(vec.begin()+7,1337);
+ it = vec.begin();
+//  it = vec.insert(vec.begin(),1337);
 
 
  for (size_t i = 0; i < vec.size(); i++)
  {
     std::cout << " vec : " << vec.at(i);
     std::cout << " size : " << vec.size();
-    std::cout << " size : " << vec.capacity();
+    std::cout << " capacity : " << vec.capacity() << "\n";
  }
 
  std::cout << "\n_____________________" <<'\n';
@@ -64,12 +65,13 @@ int main()
   ft::vector<int>::iterator it1 = vec1.end(); 
 
 
-it1 = vec1.insert(vec1.begin()+7,1337); // problem in iterator + operator
+// it1 = vec1.insert(vec1.begin(),1337); // problem in iterator + operator
+it1 = vec1.begin(); // problem in iterator + operator
  for (size_t i = 0; i < vec1.size(); i++)
  {
-              std::cout << "vec : " << vec1.at(i) ;
+              std::cout << " vec : " << vec1.at(i) ;
             std::cout << " size : " << vec1.size();
-            std::cout << " size : " << vec1.capacity();
+            std::cout << " capacity : " << vec1.capacity()<< "\n";
  }
  
   
