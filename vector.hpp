@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/27 11:38:09 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/27 11:57:31 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -433,6 +433,7 @@ const_reference	back(void) const;
 		// {
 		// 	std::cout <<"it = "<< *it << std::endl;
 		// }
+			// std::cout <<"it = "<< it - begin() << std::endl;
 	}
 	else
 	{

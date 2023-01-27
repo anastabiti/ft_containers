@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/27 11:50:40 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/27 12:44:12 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 #include <vector>
 // #include "iterator.hpp"
 using namespace	std;
-
 
 int	main(void)
 {
@@ -37,7 +36,7 @@ int	main(void)
 	ft::vector<int> vec1(10, 459);
 	ft::vector<int>::iterator iteratormain;
 	// vec1.push_back(1222);
-	iteratormain = vec1.insert(vec1.begin()+12, 1337); // problem in iterator + operator
+	iteratormain = vec1.insert(vec1.begin()+1, 1337); // problem in iterator + operator
 												// it1 = vec1.begin();
 													// problem in iterator	+ operator
 	// for (size_t i = 0; i < vec1.size(); i++)
