@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/26 11:41:10 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/26 11:44:51 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -180,7 +180,6 @@ class vector
 	{
 		return (reverse_iterator(end()));
 	}
-
 	const_reverse_iterator rbegin() const
 	{
 		return (const_reverse_iterator(end()));
@@ -199,11 +198,12 @@ class vector
 		// return (alloc.max_size());
 		return (this->size_param);
 	}
+	
 	size_type max_size() const
 	{
 		return (this->allocating.max_size());
 	}
-
+	
 	void resize(size_type n, value_type val = value_type())
 	{
 		/*
