@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/26 11:44:51 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/27 09:36:58 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -412,7 +412,7 @@ const_reference	back(void) const;
 	iterator insert(iterator position, const value_type &val)
 	{
 		std::cout << "	iterator insert (iterator position,	const value_type& val) is called" << std::endl;
-		std::cout << *position << std::endl;
+		// std::cout << *position << std::endl;
 		*position = val;
 		return (iterator(vec));
 	}
