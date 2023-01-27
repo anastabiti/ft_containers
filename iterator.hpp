@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 09:45:02 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/25 08:39:54 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/27 09:23:28 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,7 @@ class iterator : public std::iterator<std::random_access_iterator_tag, T>
 	{
 		std::cout << "      iterator operator+ (difference_type n) is called" << std::endl;
 		iterator cp(*this);
-		cp = cp + n;
+		cp += n;
 		return (cp);
 	}
 
