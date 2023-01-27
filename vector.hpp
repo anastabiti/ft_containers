@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/27 09:45:08 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/27 11:00:32 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -162,7 +162,7 @@ class vector
 	/* Iterators-----------------------:                   */
 	iterator begin() //Return iterator to beginning (public member function)
 	{
-		return (iterator(vec));
+		return (iterator(&vec[0]));
 	}
 	const_iterator begin() const
 	{
@@ -413,7 +413,36 @@ const_reference	back(void) const;
 	{
 		// std::cout << "	iterator insert (iterator position,	const value_type& val) is called" << std::endl;
 		// std::cout << *position << std::endl;
+/*
+This causes an automatic reallocation of the allocated storage space if -and only if- 
+the new vector size surpasses the current vector capacity.
+*/
+	if(size() + 1 > capacity())
+	{
+		std::cout << "	if(size() + 1 > capacity())" << std::endl;
+		//copy until pos
+		vector cp;
+		iterator it =  this->begin();
+		size_t i = 0;
+		
+		// for (i = 0; i != size(); i++)
+		// {
+		// 	std::cout <<"i = "<< i << std::endl;
+		// }
+		
+		while (it !=  position)
+		{
+			std::cout <<"it = "<< *it << std::endl;
+		 	it++;
+		}
+		
+	}
+	else
+	{
+		std::cout << "_+_+_+_" << std::endl;
 		*position = val;
+
+	}
 		return (iterator(vec));
 	}
 

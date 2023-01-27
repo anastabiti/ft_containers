@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/27 09:49:34 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/27 10:59:25 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,7 @@
 #include <string>
 #include <vector>
 // #include "iterator.hpp"
-using namespace std;
-
+using namespace	std;
 
 // int main ()
 // {
@@ -42,40 +41,51 @@ using namespace std;
 //     std::cout << ' ' << *it;
 //   std::cout << '\n';
 
-//   return 0;
+//   return (0);
 // }
 
-int main()
+
+int	main(void)
 {
-  std::vector<int> vec(10,99);
-  std::vector<int>::iterator it = vec.end();
- it = vec.begin();
-//  it = vec.insert(vec.begin(),1337);
+	std::vector<int> real(10, 459);
+	std::vector<int>::iterator it;
+	real.push_back(1222);
+	it = real.insert(real.begin() + 7, 1337);
+	for (size_t i = 0; i < real.size(); i++)
+	{
+		std::cout << " vec : " << real.at(i);
+		std::cout << " size : " << real.size();
+		std::cout << " capacity : " << real.capacity() << "\n";
+	}
+	std::cout << "\n_____________________" << '\n';
+	std::cout << "\n_____________________" << '\n';
 
-
- for (size_t i = 0; i < vec.size(); i++)
- {
-    std::cout << " vec : " << vec.at(i);
-    std::cout << " size : " << vec.size();
-    std::cout << " capacity : " << vec.capacity() << "\n";
- }
-
- std::cout << "\n_____________________" <<'\n';
-  ft::vector<int> vec1(10,99);
-  ft::vector<int>::iterator it1 = vec1.end(); 
-
-
-// it1 = vec1.insert(vec1.begin(),1337); // problem in iterator + operator
-it1 = vec1.begin(); // problem in iterator + operator
- for (size_t i = 0; i < vec1.size(); i++)
- {
-              std::cout << " vec : " << vec1.at(i) ;
-            std::cout << " size : " << vec1.size();
-            std::cout << " capacity : " << vec1.capacity()<< "\n";
- }
- 
   
+	ft::vector<int> vec1(10, 459);
+	ft::vector<int>::iterator it1;
+	vec1.push_back(1222);
+	it1 = vec1.insert(vec1.begin() + 7, 1337); // problem in iterator + operator
+												// it1 = vec1.begin();
+													// problem in iterator	+ operator
+	for (size_t i = 0; i < vec1.size(); i++)
+	{
+		std::cout << " vec : " << vec1.at(i);
+		std::cout << " size : " << vec1.size();
+		std::cout << " capacity : " << vec1.capacity() << "\n";
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
 // int main ()
 // {
 //   std::vector<int>::size_type sz;
@@ -95,7 +105,8 @@ it1 = vec1.begin(); // problem in iterator + operator
 //   sz = bar.capacity();
 //    std::cout << "capacity : " << bar.capacity() << '\n';
 //    std::cout << "max_size : " << bar.max_size() << '\n';
-//   bar.reserve(bar.max_size()+1);   // this is the only difference with foo above
+//   bar.reserve(bar.max_size()+1);  
+	// this is the only difference with foo above
 //    std::cout << "capacity : " << bar.capacity() << '\n';
 //   std::cout << "making bar grow:\n";
 //   for (int i=0; i<100; ++i) {
@@ -105,7 +116,7 @@ it1 = vec1.begin(); // problem in iterator + operator
 //       std::cout << "capacity changed: " << sz << '\n';
 //     }
 //   }
-//   return 0;
+//   return (0);
 // }
 
 // int main ()
@@ -136,16 +147,15 @@ it1 = vec1.begin(); // problem in iterator + operator
 //   //   }
 //   // }
 // //   sz= 0;
-  
+
 //       std::cout << "+++++++++++++++++++++++++++++ "  << '\n';
 //   ft::vector<int> bar1;
-  
- 
+
 //   std::cout << "making bar grow:\n";
-//   for (int i=0; i<100; ++i) 
+//   for (int i=0; i<100; ++i)
 //   {
 //     bar1.push_back(i);
-//     // if (sz!=bar1.capacity()) 
+//     // if (sz!=bar1.capacity())
 //     // {
 //       sz = bar1.capacity();
 //       // std::cout << "capacity changed: " << sz << '\n';
@@ -154,22 +164,15 @@ it1 = vec1.begin(); // problem in iterator + operator
 //   }
 //        std::cout << "capacity : " << bar1.capacity() << '\n';
 
-
-//   return 0;
+//   return (0);
 // }
 
-
-
-
-
 // int main(void) {
-	
-
 
 //    // ft::vector<int> myvec(10,23);
 
 //    int i = 0 ;
- 
+
 //    // while (i < myvec.size())
 //    // {
 //    //       // myvec.push_back(4);
@@ -180,7 +183,7 @@ it1 = vec1.begin(); // problem in iterator + operator
 //    // std::vector<int> real(2,23);
 
 //    // i = 0 ;
- 
+
 //    // while (i < real.size())
 //    // {
 //    //       // myvec.push_back(4);
@@ -192,13 +195,13 @@ it1 = vec1.begin(); // problem in iterator + operator
 //    // // {
 //    // //    std::cout << myvec[i++] << std::endl;
 //    // // }
-   
+
 //    // //    std::cout << "____________________"<< std::endl;
 //    //    // myvec.resize(1);
 //    //    std::cout << myvec.size() << std::endl;
 //    //    std::cout << myvec.capacity() << std::endl;
 //    //    i = 0 ;
- 
+
 //    // while (i < myvec.size())
 //    // {
 //    //       // myvec.push_back(4);
@@ -221,7 +224,7 @@ it1 = vec1.begin(); // problem in iterator + operator
 //    // myvec1.push_back(720);
 
 //        i = 0 ;
- 
+
 //    while (i < myvec1.size())
 //    {
 //          // myvec.push_back(4);
@@ -233,7 +236,7 @@ it1 = vec1.begin(); // problem in iterator + operator
 //    myvec1.resize(4, 1337);
 //       std::cout  << "   myvec1.resize(4); \t "<< std::endl;
 //         i = 0 ;
- 
+
 //    while (i < myvec1.size())
 //    {
 //          // myvec.push_back(4);
@@ -241,12 +244,12 @@ it1 = vec1.begin(); // problem in iterator + operator
 //       // std::cout  << "size= \t"<< myvec1.size() << std::endl;
 //       // std::cout  << "capacity=\t"<< myvec1.capacity() << std::endl;
 //          i++;
-         
+
 //    }
-//    return 0;
+//    return (0);
 // }
 
-// int	main(void) 
+// int	main(void)
 // {
 // 	/* test 	explicit vector(const allocator_type &alloc = allocator_type()) */
 // 	/**/
@@ -257,57 +260,57 @@ it1 = vec1.begin(); // problem in iterator + operator
 
 // 	// ft::vector<int>  f2;
 // 	/**/
-	
+
 // 	/* test  fill constructor*/
 // 	// std::allocator<int> alloc;
-// 	std::vector<int>::iterator real;	
-// 	std::vector<int>::iterator real1;	
-	
-// 	ft::vector<int>::iterator mine;	
-// 	ft::vector<int>::iterator mine1;	
+// 	std::vector<int>::iterator real;
+// 	std::vector<int>::iterator real1;
+
+// 	ft::vector<int>::iterator mine;
+// 	ft::vector<int>::iterator mine1;
 // 	std::vector<int> fill1real;
 // 	fill1real.push_back(123);
 // 	fill1real.push_back(712);
 // 	fill1real.push_back(987);
 // 	fill1real.push_back(544);
 // 	fill1real.push_back(5);
-	
+
 // 	ft::vector<int> fill1;
 // 	fill1.push_back(123);
 // 	fill1.push_back(712);
 // 	fill1.push_back(987);
 // 	fill1.push_back(544);
 // 	fill1.push_back(5);
-	
+
 // 	// std::vector<int>::iterator::value_type t;
 // 	// ft::vector<int>::iterator::value_type tf;
 // 	// ft::vector<int>::iterator::reference tfr;
-	
+
 // 	// fill1real.push_back(31);
 // 	// fill1real.push_back(2231);
 // 	// fill1real.push_back(27651);
 // 	// fill1real.push_back(221);
-		
+
 // 	// for(real  = fill1real.end() ; real != fill1real.begin() ; real--)
 // 	// {
 // 	// 	std::cout << *real << std::endl;
-	
+
 // 	// }
 // 	// std::cout <<"___________________________________________" << std::endl;
 // 	// for(mine  = fill1.end() ; mine != fill1.begin() ; mine--)
 // 	// {
 // 	// 	std::cout << *mine << std::endl;
 // 	// }
-	
+
 // 	// std::cout << *it+2 << std::endl;
 // 	// std::cout << *it2+2 << std::endl;
-	
+
 // 	/*      iterator  operator+ (difference_type n)   */
 // 	// real = fill1real.end();
 // 	// mine = fill1.end();
 
 // 	// real1 = real + 2;
-	
+
 // 	// it2 = fill1real.begin(); problem
 // 	// mine1 = mine + 1;
 // 	// std::cout << *real1<< std::endl;
@@ -316,34 +319,24 @@ it1 = vec1.begin(); // problem in iterator + operator
 // 	// 	real -= 2;
 // 	// std::cout << *real<< std::endl;
 
-	
 // 	// std::cout << *mine<< std::endl;
 // 	// 	mine -= 2;
 // 	// std::cout << *mine<< std::endl;
 // 	// std::cout << mine[33] << std::endl;
 // 	/*-----------------------------------------*/
 
-
-
-
-	
 // 	// it2  = fill1.begin();
 // 	// std::cout << fill1.begin() << std::endl;
 // 	// /     reference  operator*() const
 // 	// std::cout << *fill1real.end()<< std::endl;
 // 	// std::cout << *fill1.end()<< std::endl;
 // 	// std::cout << *fill1.begin() << std::endl;
-	
+
 // 	// for(it2  = fill1.begin() ; it2 != fill1.end() ; it2++)
 // 	// {
 // 	// 	std::cout << *it2 << std::endl;
 // 	// }
-	
-	
-	
-	
 
-	
 // 	// ft::vector<ft::vector<int> > fill1(2);
 // 	// ft::vector<int>::iterator  ggh;
 // 	// // ft::vector<std::string> fill1real(4, "asd");
@@ -358,11 +351,6 @@ it1 = vec1.begin(); // problem in iterator + operator
 // 	// std::cout  << tty.max_size() << std::endl;
 // 	// std::cout  << tty.empty() << std::endl;
 // 	// std::cout  << fill1.empty() << std::endl;
-	
-
-
-
-
 
 // 		// size_t i = 0;
 // 		// 	while (i < fill1.size())
@@ -371,9 +359,6 @@ it1 = vec1.begin(); // problem in iterator + operator
 // 		// 		// std::cout << "real "  <<fill1real.at(i)<<std::endl;
 // 		// 		i++;
 // 		// 	}
-
-
-
 
 // 	// ft::vector<int, std::allocator<int> > fake;
 // 	// std::vector<int> real;
@@ -396,21 +381,18 @@ it1 = vec1.begin(); // problem in iterator + operator
 // 	// 	i++;
 // 	// }
 
-
 // 	//// test front
 // 	// std::cout  << fill1.front() << std::endl;
 // 	// std::cout  << fill1.back() << std::endl;
 // 	// int *ptr = fill1.data();
 // 	// std::cout  << *ptr<< std::endl;
-	
-
 
 // 	/* operator!=  | operator== */
 // 	// std::vector<int>::iterator testit;
 // 	// std::vector<int>::iterator testit1;
 // 	// ft::vector<int>::iterator no;
 // 	// ft::vector<int>::iterator no1;
-	
+
 // 	// testit = fill1real.begin();
 // 	// testit1 = fill1real.end();
 // 	// if(testit1 != testit)
@@ -418,23 +400,22 @@ it1 = vec1.begin(); // problem in iterator + operator
 // 	// else
 // 	// std::cout << " testit1 == testit"<< std::endl;
 // 	// std::cout << "____________________________________________"<< std::endl;
-	
+
 // 	// no = fill1.begin();
 // 	// no1 = fill1.begin();
 // 	// if(no != no1)
 // 	// std::cout << " no != no1"<< std::endl;
-// 	// else 
+// 	// else
 // 	// std::cout << " no == no1"<< std::endl;
 // 	/*________________*/
-
 
 // 	/*reverse_iterator*/
 // 	std::vector<int>::reverse_iterator revreal;
 // 	ft::vector<int>::reverse_iterator revmine;
 // 	revreal = fill1real.rend();
 // 	revmine = fill1.rend();
-// 	revreal--; 
-// 	revmine--; 
+// 	revreal--;
+// 	revmine--;
 // 	std::cout << *revreal<< std::endl;
 // 	std::cout << *revmine<< std::endl;
 // 	// ++revreal;
@@ -455,7 +436,7 @@ it1 = vec1.begin(); // problem in iterator + operator
 // 	// std::cout << *revmine<< std::endl;
 // 	// std::cout << revreal[0]<< std::endl;
 // 	// std::cout << revmine[0]<< std::endl;
-	
+
 // 	// std::vector<int>::reverse_iterator ree;
 // 	// ft::vector<int>::reverse_iterator ree1;
 // 	// ree = revreal + 1;
@@ -464,28 +445,28 @@ it1 = vec1.begin(); // problem in iterator + operator
 // 	// std::cout << *ree<< std::endl;
 // 	// std::cout << *ree1<< std::endl;
 
-	
 // }
 
 // int main()
 // {
-   
+
 //    std::allocator<int> alloc;
-//    // std::vector<int> vec1(3,43, alloc); // problem it does use range template
-//    // std::vector<int>::iterator iter;      
+//    // std::vector<int> vec1(3,43, alloc);
+	// problem it does use range template
+//    // std::vector<int>::iterator iter;
 //    // for (iter =  vec1.begin(); iter !=  vec1.end(); iter++)
 //    // {
 //    //    std::cout << *iter << std::endl;
 //    // }
 //    //    std::cout << "___________________________________" << std::endl;
-   
-   
-//    std::vector<int> real(3333333,43, alloc); // problem it does use range template
+
+//    std::vector<int> real(3333333,43, alloc);
+	// problem it does use range template
 //    // for (trator =  fake.begin(); trator !=  fake.end(); trator++)
 //    // {
 //    //    std::cout << *trator << std::endl;
 //    // }
-   
+
 //    for (size_t  i = 0; i !=  real.size(); i++)
 //    {
 //       // std::cout << real[i] << std::endl;
@@ -495,10 +476,10 @@ it1 = vec1.begin(); // problem in iterator + operator
 //    // {
 //    //    // std::cout << *trator << std::endl;
 //    // }
-   
+
 //    for (size_t  i = 0; i !=  fake.size(); i++)
 //    {
 //       // std::cout << fake[i] << std::endl;
 //    }
-   
+
 // }

@@ -1,15 +1,19 @@
- vec : 99 size : 10 capacity : 10
- vec : 99 size : 10 capacity : 10
- vec : 99 size : 10 capacity : 10
- vec : 99 size : 10 capacity : 10
- vec : 99 size : 10 capacity : 10
- vec : 99 size : 10 capacity : 10
- vec : 99 size : 10 capacity : 10
- vec : 99 size : 10 capacity : 10
- vec : 99 size : 10 capacity : 10
- vec : 99 size : 10 capacity : 10
+ vec : 1337 size : 12 capacity : 20
+ vec : 1337 size : 12 capacity : 20
+ vec : 99 size : 12 capacity : 20
+ vec : 99 size : 12 capacity : 20
+ vec : 99 size : 12 capacity : 20
+ vec : 99 size : 12 capacity : 20
+ vec : 99 size : 12 capacity : 20
+ vec : 99 size : 12 capacity : 20
+ vec : 99 size : 12 capacity : 20
+ vec : 99 size : 12 capacity : 20
+ vec : 99 size : 12 capacity : 20
+ vec : 99 size : 12 capacity : 20
 
 _____________________
+	if(size() + 1 > capacity())
+destructor is called
  vec : 99 size : 10 capacity : 10
  vec : 99 size : 10 capacity : 10
  vec : 99 size : 10 capacity : 10
