@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/27 14:41:17 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/27 14:43:00 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	main(void)
 	std::vector<int> real(10, 459);
 	std::vector<int>::iterator it;
 	// real.push_back(1222);
-	it = real.insert(real.begin()+2, 1337);
+	it = real.insert(real.begin()+2, 69);
 	for (size_t i = 0; i < real.size(); i++)
 	{
 		std::cout << " vec : " << real.at(i);
@@ -33,7 +33,7 @@ int	main(void)
 	std::cout << "\n_____________________" << '\n';
 
   
-	ft::vector<int> vec1(10, 459);
+	ft::vector<int> vec1(10, 69);
 	ft::vector<int>::iterator iteratormain;
 	// vec1.push_back(1222);
 	iteratormain = vec1.insert(vec1.begin()+2, 1337); // problem in iterator + operator

@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/27 14:41:51 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/27 14:42:23 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -425,15 +425,11 @@ const_reference	back(void) const;
 		iterator it;
 		size_t i = 0;
 		size_t k = 0;
-		// for (it = begin(); it != position;it++)
-		// {
-		// 	std::cout <<"it = "<< *it << std::endl;
-		// }
+		
 		for (it = position; it != end();it++) // from position to end
 		{
 			// std::cout <<"it = "<< *it << std::endl;
 			i++;
-
 		}
 			// std::cout <<"i total = "<< i << std::endl;
 			// std::cout <<" there are "<<  size() - i << " before i " << std::endl;
@@ -449,15 +445,9 @@ const_reference	back(void) const;
 				cp.push_back(vec[k]);
 				k++;
 			}
-			// size_param++;
-			// capacity_param++;
 			allocating.deallocate(vec, capacity_param);
 			*this = cp;
 			return (iterator(vec));
-
-			// *position = val;
-			
-			// std::cout <<"it = "<< it - begin() << std::endl;
 	}
 	else
 	{
