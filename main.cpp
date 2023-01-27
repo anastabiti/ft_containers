@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/27 11:19:07 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/27 11:20:22 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,60 @@
 #include <vector>
 // #include "iterator.hpp"
 using namespace	std;
+
+
+int	main(void)
+{
+	std::vector<int> real(10, 459);
+	std::vector<int>::iterator it;
+	// real.push_back(1222);
+	it = real.insert(real.begin(), 1337);
+	// for (size_t i = 0; i < real.size(); i++)
+	// {
+	// 	std::cout << " vec : " << real.at(i);
+	// 	std::cout << " size : " << real.size();
+	// 	std::cout << " capacity : " << real.capacity() << "\n";
+	// }
+	std::cout << "\n_____________________" << '\n';
+	std::cout << "\n_____________________" << '\n';
+
+  
+	ft::vector<int> vec1(10, 459);
+	ft::vector<int>::iterator it1;
+	// vec1.push_back(1222);
+	it1 = vec1.insert(vec1.begin()+3, 1337); // problem in iterator + operator
+												// it1 = vec1.begin();
+													// problem in iterator	+ operator
+	// for (size_t i = 0; i < vec1.size(); i++)
+	// {
+	// 	std::cout << " vec : " << vec1.at(i);
+	// 	std::cout << " size : " << vec1.size();
+	// 	std::cout << " capacity : " << vec1.capacity() << "\n";
+	// }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // int main ()
 // {
@@ -65,39 +119,6 @@ using namespace	std;
 
 
 
-
-
-
-
-int	main(void)
-{
-	std::vector<int> real(10, 459);
-	std::vector<int>::iterator it;
-	// real.push_back(1222);
-	it = real.insert(real.begin(), 1337);
-	// for (size_t i = 0; i < real.size(); i++)
-	// {
-	// 	std::cout << " vec : " << real.at(i);
-	// 	std::cout << " size : " << real.size();
-	// 	std::cout << " capacity : " << real.capacity() << "\n";
-	// }
-	std::cout << "\n_____________________" << '\n';
-	std::cout << "\n_____________________" << '\n';
-
-  
-	ft::vector<int> vec1(10, 459);
-	ft::vector<int>::iterator it1;
-	// vec1.push_back(1222);
-	it1 = vec1.insert(vec1.begin(), 1337); // problem in iterator + operator
-												// it1 = vec1.begin();
-													// problem in iterator	+ operator
-	// for (size_t i = 0; i < vec1.size(); i++)
-	// {
-	// 	std::cout << " vec : " << vec1.at(i);
-	// 	std::cout << " size : " << vec1.size();
-	// 	std::cout << " capacity : " << vec1.capacity() << "\n";
-	// }
-}
 
 
 
