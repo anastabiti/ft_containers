@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/27 11:25:19 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/27 11:38:09 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -425,16 +425,11 @@ const_reference	back(void) const;
 		// vector cp;
 		iterator it;
 		size_t i = 0;
-		
-		// for (i = 0; i != size(); i++)
-		// {
-		// 	std::cout <<"i = "<< i << std::endl;
-		// }
-		for (it = position; it != end();it++)
+		for (it = begin(); it != position;it++)
 		{
 			std::cout <<"it = "<< *it << std::endl;
 		}
-		// for (it = position; it != end(); it++)
+		// for (it = position; it != end();it++)
 		// {
 		// 	std::cout <<"it = "<< *it << std::endl;
 		// }
