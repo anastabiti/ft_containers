@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/27 11:00:32 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/27 11:19:14 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -170,7 +170,8 @@ class vector
 	}
 	iterator end() //Return iterator to end (public member function)
 	{
-		return (iterator(&vec[this->size_param - 1])); // - 1 ?
+		// return (iterator(&vec[this->size_param - 1])); // - 1 ?
+		return (iterator(&vec[this->size_param ])); // - 1 ?
 	}
 	const_iterator end() const
 	{
@@ -414,37 +415,36 @@ const_reference	back(void) const;
 		// std::cout << "	iterator insert (iterator position,	const value_type& val) is called" << std::endl;
 		// std::cout << *position << std::endl;
 /*
-This causes an automatic reallocation of the allocated storage space if -and only if- 
-the new vector size surpasses the current vector capacity.
+	This causes an automatic reallocation of the allocated storage space if -and only if- 
+	the new vector size surpasses the current vector capacity.
 */
 	if(size() + 1 > capacity())
 	{
-		std::cout << "	if(size() + 1 > capacity())" << std::endl;
+		std::cout << "hna	if(size() + 1 > capacity())" << std::endl;
 		//copy until pos
-		vector cp;
-		iterator it =  this->begin();
+		// vector cp;
+		iterator it;
 		size_t i = 0;
 		
 		// for (i = 0; i != size(); i++)
 		// {
 		// 	std::cout <<"i = "<< i << std::endl;
 		// }
-		
-		while (it !=  position)
+		for (it = begin(); it != end(); it++)
 		{
 			std::cout <<"it = "<< *it << std::endl;
-		 	it++;
 		}
-		
 	}
 	else
 	{
-		std::cout << "_+_+_+_" << std::endl;
+		std::cout << "_+_+_+_*position = val;" << std::endl;
 		*position = val;
 
 	}
 		return (iterator(vec));
 	}
+
+
 
 	// void insert (iterator position, size_type n, const value_type& val);
 	/* template <class InputIterator>    void insert (iterator position,	InputIterator first, InputIterator last); */

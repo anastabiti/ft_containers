@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 09:45:02 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/27 09:44:14 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/27 11:16:12 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ class iterator : public std::iterator<std::random_access_iterator_tag, T>
     */
 	iterator &operator++()
 	{
-		std::cout << "Pre-increment,		called for ++ptr iterator &operator++()" << std::endl;
+		// std::cout << "Pre-increment,		called for ++ptr iterator &operator++()" << std::endl;
 		++ptr;
 		return (*this);
 	}
@@ -68,7 +68,7 @@ class iterator : public std::iterator<std::random_access_iterator_tag, T>
     */
 	iterator operator++(int)
 	{
-		std::cout << " Post-increment ,		called for      iterator operator++(int)" << std::endl;
+		// std::cout << " Post-increment ,		called for      iterator operator++(int)" << std::endl;
 		iterator tmp(*this);
 		++(*this);
 		return (tmp);
