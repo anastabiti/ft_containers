@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/28 11:47:21 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/28 11:52:45 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -428,7 +428,7 @@ const_reference	back(void) const;
 */
 	if(size() + 1 > capacity())
 	{
-		// std::cout << "hna	if(size() + 1 > capacity())" << std::endl;
+		std::cout << "______-----_________   _-----_-__-___- size() + 1 > capacity())" << std::endl;
 		//copy until pos
 		iterator it;
 		size_t i = 0;
@@ -436,6 +436,7 @@ const_reference	back(void) const;
 			
 		for (it = position; it != end();it++) // from position to end
 		{
+			std::cout << "______-----_________   _-----_-__-___- size() + 1 > capacity())" << std::endl;
 			i++;
 		}
 		size_t pos_to_start = size_param - i;
@@ -489,7 +490,7 @@ const_reference	back(void) const;
 	}
 	else
 	{
-		// std::cout << "_+_+_+_*position = val;" << std::endl;
+		std::cout << "_+_+_+_*position = val;" << std::endl;
 		*position = val;
 		this->size_param++;
 	}
