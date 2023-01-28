@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/28 12:26:40 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/28 12:36:37 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -426,18 +426,17 @@ const_reference	back(void) const;
 	This causes an automatic reallocation of the allocated storage space if -and only if- 
 	the new vector size surpasses the current vector capacity.
 */
-	if(size() + 1 > capacity())
+	if(size() + 1 > capacity() && position != end())
 	{
 		std::cout << "______-----_________   _-----_-__-___- size() + 1 > capacity())" << std::endl;
 		//copy until pos
 		iterator it;
 		size_t i = 0;
 		// size_t k = 0;
-			
 		for (it = position; it != end();it++) // from position to end
 		{
-			std::cout << "______-----_________   _-----_-__-___- size() + 1 > capacity())" << std::endl;
-			std::cout << "distance  = " << std::distance(position, end())<< std::endl;
+			
+			std::cout << "______-----_________   _-----_-__-___- size() + 1 > capacity())" << std::endl;	
 			i++;
 		}
 		size_t pos_to_start = size_param - i;
