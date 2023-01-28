@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/27 14:43:00 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/28 11:25:13 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,17 @@ using namespace	std;
 int	main(void)
 {
 	std::vector<int> real(10, 459);
+		std::cout << " (size) : " << real.size();
+		std::cout << " (capacity) : " << real.capacity() << "\n";
 	std::vector<int>::iterator it;
 	// real.push_back(1222);
-	it = real.insert(real.begin()+2, 69);
+	it = real.insert(real.begin()+2, 1337);
 	for (size_t i = 0; i < real.size(); i++)
 	{
 		std::cout << " vec : " << real.at(i);
 		std::cout << " size : " << real.size();
 		std::cout << " capacity : " << real.capacity() << "\n";
+		std::cout << " i : " << i << "\n";
 	}
 	std::cout << "\n_____________________" << '\n';
 	std::cout << "\n_____________________" << '\n';
@@ -35,6 +38,8 @@ int	main(void)
   
 	ft::vector<int> vec1(10, 69);
 	ft::vector<int>::iterator iteratormain;
+		std::cout << " (size) : " << vec1.size();
+		std::cout << " (capacity) : " << vec1.capacity() << "\n";
 	// vec1.push_back(1222);
 	iteratormain = vec1.insert(vec1.begin()+2, 1337); // problem in iterator + operator
 												// it1 = vec1.begin();
@@ -44,6 +49,7 @@ int	main(void)
 		std::cout << " vec : " << vec1.at(i);
 		std::cout << " size : " << vec1.size();
 		std::cout << " capacity : " << vec1.capacity() << "\n";
+		std::cout << " i : " << i << "\n";
 	}
 }
 

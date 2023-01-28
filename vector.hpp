@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/28 10:12:22 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/28 11:45:38 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ class vector
 		// 	Allocator te = alloc;
 		// T * v =te.allocate(2);
 		// v = nullptr;
-		// allocating = alloc;
+		allocating = alloc;
 		this->size_param = n;
 		this->capacity_param = n;
 		// allocating(alloc);
@@ -226,7 +226,7 @@ class vector
 				vec[i] = copy[i];
 				i++;
 			}
-			this->size_param = n;
+			// this->size_param = n; ??(off in insert i should resize without increasing size_param)
 			this->capacity_param = n;
 
 			while (i < this->size_param)
@@ -432,36 +432,66 @@ const_reference	back(void) const;
 		//copy until pos
 		iterator it;
 		size_t i = 0;
-		size_t k = 0;
-		
+		// size_t k = 0;
+			
 		for (it = position; it != end();it++) // from position to end
 		{
-			// std::cout <<"it = "<< *it << std::endl;
 			i++;
 		}
-			// std::cout <<"i total = "<< i << std::endl;
-			// std::cout <<" there are "<<  size() - i << " before i " << std::endl;
-			vector cp;
-			while (k < size() - i)
-			{
-				cp.push_back(vec[k]);
-				k++;
-			}
-			cp.push_back(val);
-			while (k < size())
-			{
-				cp.push_back(vec[k]);
-				k++;
-			}
-			allocating.deallocate(vec, capacity_param);
-			*this = cp;
+		size_t pos_to_start = size_param - i;
+		std::cout <<"pos_to_start = "<< pos_to_start << std::endl;
+		vector cp;
+		size_t y =  pos_to_start;
+		size_t x =  0;
+		while (y < size_param)
+		{
+			
+			cp.push_back(vec[y]);
+			y++;
+			x++;
+		}
+		
+		std::cout << "x  = " <<  x<<std::endl;
+		resize(capacity_param *2);
+		// *position = val;
+		vec[y] = val;
+		// std::cout<< "here = " <<*position << std::endl;
+		std::cout<< "vec here = " <<vec[y] << "y = " << y << std::endl;
+		
+		y =  pos_to_start+1;
+		x = 0;
+		while (y < size_param)
+		{
+			vec[y] = cp[x];
+			y++;
+			x++;
+		}
+		++size_param;
+		
+		
+				
+		// 	// std::cout <<" there are "<<  size() - i << " before i " << std::endl;
+		// 	vector cp;
+		// 	while (k < size() - i)
+		// 	{
+		// 		cp.push_back(vec[k]);
+		// 		k++;
+		// 	}
+		// 	cp.push_back(val);
+		// 	while (k < size())
+		// 	{
+		// 		cp.push_back(vec[k]);
+		// 		k++;
+		// 	}
+		// 	allocating.deallocate(vec, capacity_param);
+		// 	*this = cp;
 			return (iterator(vec));
 	}
 	else
 	{
 		// std::cout << "_+_+_+_*position = val;" << std::endl;
 		*position = val;
-
+		this->size_param++;
 	}
 		return (iterator(vec));
 	}

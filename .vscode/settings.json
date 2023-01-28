@@ -67,6 +67,9 @@
         "__functional_03": "cpp",
         "memory_resource": "cpp",
         "__memory": "cpp",
-        "compare": "cpp"
+        "compare": "cpp",
+        "list": "cpp",
+        "queue": "cpp",
+        "set": "cpp"
     }
 }
