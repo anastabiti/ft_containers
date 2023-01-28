@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/28 12:43:40 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/28 12:48:32 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	main(void)
 		std::cout << " (capacity) : " << real.capacity() << "\n";
 	std::vector<int>::iterator it;
 	// real.push_back(1222);
-	it = real.insert(real.end(), 1337);
+	it = real.insert(real.begin()+4, 1337);
 	for (size_t i = 0; i < real.size(); i++)
 	{
 		std::cout << " vec : " << real.at(i);
@@ -41,7 +41,7 @@ int	main(void)
 		std::cout << " (size) : " << vec1.size();
 		std::cout << " (capacity) : " << vec1.capacity() << "\n";
 	// vec1.push_back(1222);
-	iteratormain = vec1.insert(vec1.end(), 1337); // problem in iterator + operator  problem if position beyond capacity
+	iteratormain = vec1.insert(vec1.begin()+4, 1337); // problem in iterator + operator  problem if position beyond capacity
 												// it1 = vec1.begin();
 
 	for (size_t i = 0; i < vec1.size(); i++)

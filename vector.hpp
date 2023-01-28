@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/28 12:43:25 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/28 12:47:59 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -434,8 +434,7 @@ const_reference	back(void) const;
 		size_t i = 0;
 		// size_t k = 0;
 		for (it = position; it != end();it++) // from position to end
-		{
-			
+		{	
 			// std::cout << "______-----_________   _-----_-__-___- size() + 1 > capacity())" << std::endl;	
 			i++;
 		}
@@ -446,14 +445,13 @@ const_reference	back(void) const;
 		size_t x =  0;
 		while (y < size_param)
 		{
-			
 			cp.push_back(vec[y]);
 			y++;
 			x++;
 		}
-		
 		// std::cout << "x  = " <<  x<<std::endl;
 		resize(capacity_param *2);
+	
 		// *position = val;
 		vec[pos_to_start] = val;
 		// std::cout<< "here = " <<*position << std::endl;
