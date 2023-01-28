@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/28 11:47:02 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/28 11:47:21 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -439,7 +439,7 @@ const_reference	back(void) const;
 			i++;
 		}
 		size_t pos_to_start = size_param - i;
-		std::cout <<"pos_to_start = "<< pos_to_start << std::endl;
+		// std::cout <<"pos_to_start = "<< pos_to_start << std::endl;
 		vector cp;
 		size_t y =  pos_to_start;
 		size_t x =  0;
@@ -451,12 +451,12 @@ const_reference	back(void) const;
 			x++;
 		}
 		
-		std::cout << "x  = " <<  x<<std::endl;
+		// std::cout << "x  = " <<  x<<std::endl;
 		resize(capacity_param *2);
 		// *position = val;
 		vec[pos_to_start] = val;
 		// std::cout<< "here = " <<*position << std::endl;
-		std::cout<< "vec here = " <<vec[pos_to_start] << "pos_to_start = " << pos_to_start << std::endl;
+		// std::cout<< "vec here = " <<vec[pos_to_start] << "pos_to_start = " << pos_to_start << std::endl;
 		
 		y =  pos_to_start+1;
 		++size_param; 

@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/28 11:25:13 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/28 11:48:02 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	main(void)
 		std::cout << " vec : " << real.at(i);
 		std::cout << " size : " << real.size();
 		std::cout << " capacity : " << real.capacity() << "\n";
-		std::cout << " i : " << i << "\n";
+		// std::cout << " i : " << i << "\n";
 	}
 	std::cout << "\n_____________________" << '\n';
 	std::cout << "\n_____________________" << '\n';
@@ -49,7 +49,7 @@ int	main(void)
 		std::cout << " vec : " << vec1.at(i);
 		std::cout << " size : " << vec1.size();
 		std::cout << " capacity : " << vec1.capacity() << "\n";
-		std::cout << " i : " << i << "\n";
+		// std::cout << " i : " << i << "\n";
 	}
 }
 
