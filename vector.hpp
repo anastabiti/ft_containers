@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/28 11:52:45 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/28 12:26:40 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -437,6 +437,7 @@ const_reference	back(void) const;
 		for (it = position; it != end();it++) // from position to end
 		{
 			std::cout << "______-----_________   _-----_-__-___- size() + 1 > capacity())" << std::endl;
+			std::cout << "distance  = " << std::distance(position, end())<< std::endl;
 			i++;
 		}
 		size_t pos_to_start = size_param - i;

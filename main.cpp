@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/28 11:51:51 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/28 12:25:36 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	main(void)
 		std::cout << " (size) : " << vec1.size();
 		std::cout << " (capacity) : " << vec1.capacity() << "\n";
 	// vec1.push_back(1222);
-	iteratormain = vec1.insert(vec1.begin()+24, 1337); // problem in iterator + operator
+	iteratormain = vec1.insert(vec1.begin()+24, 1337); // problem in iterator + operator  problem if position beyond capacity
 												// it1 = vec1.begin();
 
 	for (size_t i = 0; i < vec1.size(); i++)
