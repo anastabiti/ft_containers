@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/27 14:42:23 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/28 10:12:22 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ class vector
 	{
 		this->size_param = 0;
 		this->capacity_param = 0;
-		std::cout << "default constructor is called" << std::endl;
+		// std::cout << "default constructor is called" << std::endl;
 	}
 	/* 							fill constructor
 	Constructs a container with n elements. Each element is a copy of val.*/
@@ -84,6 +84,9 @@ class vector
 	/* explicit vector(size_type n,
 				const T& value = T(),	const Allocator& = Allocator()) */
 	{
+		// 	Allocator te = alloc;
+		// T * v =te.allocate(2);
+		// v = nullptr;
 		// allocating = alloc;
 		this->size_param = n;
 		this->capacity_param = n;
@@ -231,7 +234,7 @@ class vector
 				vec[i] = 0;
 				i++;
 			}
-			std::cout << " > this->vec.capacity() is called" << std::endl;
+			// std::cout << " > this->vec.capacity() is called" << std::endl;
 		}
 		/*
 		If n is smaller than the current container size,
@@ -241,7 +244,7 @@ class vector
 
 		else if (n < size())
 		{
-			std::cout << size() << " n < size() is called" << std::endl;
+			// std::cout << size() << " n < size() is called" << std::endl;
 			vector copy;
 			size_t i = 0;
 			while (i < n)
@@ -268,8 +271,8 @@ class vector
 		*/
 		else if (n > size())
 		{
-			std::cout << "n > this->vec.size()is called" << std::endl;
-			std::cout << "n  = " << n << " size = " << size() << " capacity " << capacity() << std::endl;
+			// std::cout << "n > this->vec.size()is called" << std::endl;
+			// std::cout << "n  = " << n << " size = " << size() << " capacity " << capacity() << std::endl;
 
 			size_t i = size_param;
 			while (i < n)
@@ -303,7 +306,7 @@ class vector
 
 		capacity_param = n;
 		vec = allocating.allocate(n);
-		std::cout << "capacity :inside    " << capacity() << '\n';
+		// std::cout << "capacity :inside    " << capacity() << '\n';
 	}
 
 	/* Element access:-----------------------:                   */
@@ -344,6 +347,11 @@ class vector
 	{
 		return (vec[0]);
 	}
+	
+const_reference	front(void) const
+{
+		return (vec[0]);	
+}
 
 	reference back()
 	{
@@ -353,8 +361,8 @@ class vector
 	{
 		return (vec[this->size_param - 1]);
 	}
+
 	/*
-const_reference	front(void) const;
 reference		back(void);
 const_reference	back(void) const;
 */
@@ -420,7 +428,7 @@ const_reference	back(void) const;
 */
 	if(size() + 1 > capacity())
 	{
-		std::cout << "hna	if(size() + 1 > capacity())" << std::endl;
+		// std::cout << "hna	if(size() + 1 > capacity())" << std::endl;
 		//copy until pos
 		iterator it;
 		size_t i = 0;
@@ -451,7 +459,7 @@ const_reference	back(void) const;
 	}
 	else
 	{
-		std::cout << "_+_+_+_*position = val;" << std::endl;
+		// std::cout << "_+_+_+_*position = val;" << std::endl;
 		*position = val;
 
 	}
@@ -475,7 +483,7 @@ void			swap(vector<T,Allocator>&);
 	/*______________________________________________________________________________________________________*/
 	~vector()
 	{
-		std::cout << "destructor is called" << std::endl;
+		// std::cout << "destructor is called" << std::endl;
 		// allocating.deallocate(vec, this->capacity_param);
 	}
 };
