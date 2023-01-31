@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/31 09:03:44 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/31 09:06:39 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,8 @@ class vector
 
 		this->size_param = n;
 		start_iter = allocating.allocate(n);
+		end_iter  = start_iter + n;
+		
 		this->capacity_param = n;
 		vec = allocating.allocate(n);
 		// vec = allocating.construct(vec, val);
@@ -96,7 +98,7 @@ class vector
 			vec[i] = val;
 			i++;
 		}
-		// std::cout << "vector(size_type n, const value_type &val = value_type(),const allocator_type &alloc = allocator_type())is called" << std::endl;
+		std::cout << "	fill constructor" << std::endl;
 	}
 	/*
 	// vector operator*() const
@@ -161,20 +163,20 @@ class vector
 	/* Iterators-----------------------:                   */
 	iterator begin() //Return iterator to beginning (public member function)
 	{
-		return (iterator(&vec[0]));
+		return (iterator(start_iter));
 	}
 	const_iterator begin() const
 	{
-		return (const_iterator(&vec[0]));
+		return (const_iterator(start_iter));
 	}
 	iterator end() //Return iterator to end (public member function)
 	{
 		// return (iterator(&vec[this->size_param - 1])); // - 1 ?
-		return (iterator(&vec[this->size_param ])); // - 1 ?
+		return (iterator(end_iter)); // - 1 ?
 	}
 	const_iterator end() const
 	{
-		return (const_iterator(&vec[this->size_param]));
+		return (const_iterator(end_iter));
 	}
 	reverse_iterator rbegin()
 	{

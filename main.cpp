@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/28 12:48:32 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/31 09:05:37 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	main(void)
 	std::cout << "\n_____________________" << '\n';
 
   
-	ft::vector<int> vec1(10, 69);
+	ft::vector<int> vec1(10, 459);
 	ft::vector<int>::iterator iteratormain;
 		std::cout << " (size) : " << vec1.size();
 		std::cout << " (capacity) : " << vec1.capacity() << "\n";
