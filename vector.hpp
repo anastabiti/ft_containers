@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/31 09:47:02 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/31 09:48:38 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -341,12 +341,12 @@ class vector
 
 	reference front()
 	{
-		return (start_iter[0]);
+		return (*start_iter);
 	}
 	
 const_reference	front(void) const
 {
-		return (start_iter[0]);	
+		return (*start_iter);	
 }
 
 	reference back()
