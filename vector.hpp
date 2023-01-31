@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/31 09:06:39 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/31 09:10:28 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,15 +81,17 @@ class vector
 	Constructs a container with n elements. Each element is a copy of val.*/
 	explicit vector(size_type n, const value_type &val = value_type(), const allocator_type &alloc = allocator_type()) : start_iter(0) , end_iter(0)
 	{
+		/*	The allocator parameter is copied into a protected member of the container. 
+			This private copy can then be used for all subsequent storage management. */
+			
 		allocating = alloc;    // Copy the argument to our internal object
-		/*	   buffer_start = the_allocator.allocate(buffer_size);  */
-
-		this->size_param = n;
 		start_iter = allocating.allocate(n);
+		
+		this->size_param = n;
 		end_iter  = start_iter + n;
 		
 		this->capacity_param = n;
-		vec = allocating.allocate(n);
+		vec = start_iter;
 		// vec = allocating.construct(vec, val);
 		//allocating.deallocate(vec, n); is not deallocating
 		size_t i = 0;
