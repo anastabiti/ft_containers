@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/31 10:35:12 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/31 10:39:53 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,25 +111,19 @@ class vector
 
 template <class InputIterator>
 	vector(InputIterator first, InputIterator last, const allocator_type &alloc = allocator_type())
-	{
-		// iterator i = start_iter;
-		// iterator i = first;
-		
-		// while(i < last)
-		// {
-		// 	allocating.construct(i , 0);
-		// 	i++;	
-		// }
-		
+	{		
 		allocating = alloc;
 		iterator it = first;
 		iterator cp = first;
 		size_t n = 0;
-		while (it != last)
-		{
-			n++;
-			it++;
-		}
+		/* Distance from first to last */
+		// while (it != last)
+		// {
+		// 	n++;
+		// 	it++;
+		// }
+		 n = std::distance(first, last);
+		 std::cout <<" n = std::distance(first, last); = "  << n << std::endl;
 		start_iter = allocating.allocate(n);
 		this->size_param = n;
 		end_iter = start_iter + size_param;
