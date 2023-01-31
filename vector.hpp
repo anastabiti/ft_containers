@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/31 09:48:52 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/31 09:54:15 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -161,6 +161,7 @@ class vector
 	/* Iterators-----------------------:                   */
 	iterator begin() //Return iterator to beginning (public member function)
 	{
+		std::cout << " I am in  begin() :  \n";
 		return (iterator(start_iter));
 	}
 	const_iterator begin() const
@@ -420,6 +421,7 @@ const_reference	back(void) const;
 
 	iterator insert(iterator position, const value_type &val)
 	{
+		std::cout << " I am in  insert() :  \n";
 		// std::cout << "	iterator insert (iterator position,	const value_type& val) is called" << std::endl;
 		// std::cout << *position << std::endl;
 /*
