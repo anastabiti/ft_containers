@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/31 10:41:25 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/31 10:45:17 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -543,23 +543,24 @@ using namespace	std;
 int main()
 {
 /*      range constructor      */
-	// std::allocator<int> alloc; 
-	// std::vector<int> vec1;
-	// vec1.push_back(1);
-	// vec1.push_back(2);
-	// vec1.push_back(3);
-	// vec1.push_back(4);
-	// vec1.push_back(5);
-	// vec1.push_back(6);
-	// std::vector<int> vec2(vec1.begin()+ 2,vec1.end());
+	std::allocator<int> alloc; 
+	std::vector<int> vec1;
+	vec1.push_back(1);
+	vec1.push_back(2);
+	vec1.push_back(3);
+	vec1.push_back(4);
+	vec1.push_back(5);
+	vec1.push_back(6);
+	std::vector<int> vec2(vec1.begin()+ 2,vec1.end());
 	size_t i = 0 ;
-	// while (i < vec2.size())
-	// {
+	while (i < vec2.size())
+	{
 
-	// 	   std::cout << vec2[i] << std::endl;
-	// 	i++;
-	// }
+		   std::cout << vec2[i] << std::endl;
+		i++;
+	}
 	
+		   std::cout << "___+_+_+_++_+_+_+_+_+_+_-_____" << std::endl;
 	
 	ft::vector<int> f1;
 	f1.push_back(1);
