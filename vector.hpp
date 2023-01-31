@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/28 12:47:59 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/31 08:53:00 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,15 @@
 
 # include <iostream>
 # include <string>
-// #include <memory>
+#include <memory>
 # include "iterator.hpp"
 # include <cstddef>
 # include <exception>
-// #include <iterator>
 
 namespace ft
 {
-template <typename T, typename Allocator = std::allocator<T> >
+	
+	template <typename T, typename Allocator = std::allocator<T> >
 class vector
 {
   private:
@@ -31,7 +31,10 @@ class vector
 	T *copY;
 	size_t size_param;
 	size_t capacity_param;
-	Allocator allocating;
+	ft::iterator<ft::random_access_iterator_tag,T> start_iter;
+	ft::iterator<ft::random_access_iterator_tag,T> end_iter;
+	protected:
+	Allocator allocating; // copy of the allocator
 	/* data */
   public:
 	/*________________________________Member types________________________________*/
@@ -50,8 +53,7 @@ class vector
 	typedef ft::iterator<ft::random_access_iterator_tag,
 							T>
 		iterator; /* An iterator for the container. */
-	typedef const ft::iterator<ft::random_access_iterator_tag,
-								T>
+	typedef const ft::iterator<ft::random_access_iterator_tag,T>
 		const_iterator; /* A constant iterator for the container. */
 	typedef ft::reverse_iterator<iterator> reverse_iterator;
 	typedef typename ft::reverse_iterator<const_iterator> const_reverse_iterator;
@@ -71,7 +73,7 @@ class vector
 		using the specified allocator. If no argument is provided,
 		the default allocator, "allocator_type()", is used.*/
 	/* Constructs an empty container, with no elements.*/
-	explicit vector(const Allocator & = Allocator())
+	explicit vector(const Allocator & = Allocator()) : start_iter(0) , end_iter(0)
 	{
 		this->size_param = 0;
 		this->capacity_param = 0;
@@ -79,18 +81,11 @@ class vector
 	}
 	/* 							fill constructor
 	Constructs a container with n elements. Each element is a copy of val.*/
-	explicit vector(size_type n, const value_type &val = value_type(),
-			const allocator_type &alloc = allocator_type())
-	/* explicit vector(size_type n,
-				const T& value = T(),	const Allocator& = Allocator()) */
+	explicit vector(size_type n, const value_type &val = value_type(), const allocator_type &alloc = allocator_type()) : start_iter(0) , end_iter(0)
 	{
-		// 	Allocator te = alloc;
-		// T * v =te.allocate(2);
-		// v = nullptr;
 		allocating = alloc;
 		this->size_param = n;
 		this->capacity_param = n;
-		// allocating(alloc);
 		vec = allocating.allocate(n);
 		// vec = allocating.construct(vec, val);
 		//allocating.deallocate(vec, n); is not deallocating
