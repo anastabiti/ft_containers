@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/31 09:57:07 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/31 09:57:49 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -161,7 +161,7 @@ class vector
 	/* Iterators-----------------------:                   */
 	iterator begin() //Return iterator to beginning (public member function)
 	{
-		std::cout << " I am in  begin() :  \n";
+		// std::cout << " I am in  begin() :  \n";
 		return (iterator(start_iter));
 	}
 	const_iterator begin() const
@@ -207,7 +207,7 @@ class vector
 	
 	void resize(size_type n, value_type val = value_type())
 	{
-						std::cout << " I am in  resize() :  \n";
+						// std::cout << " I am in  resize() :  \n";
 
 		/*
 		If n is also greater than the current container capacity, 
@@ -369,7 +369,7 @@ const_reference	back(void) const;
 	/* Element Modifiers:-----------------------:                   */
 	void push_back(value_type const &nb)
 	{
-				std::cout << " I am in  push_back() :  \n";
+				// std::cout << " I am in  push_back() :  \n";
 
 		// start with nothing case	ft::vector<int> fake;
 		if (size_param == 0)
@@ -425,7 +425,7 @@ const_reference	back(void) const;
 
 	iterator insert(iterator position, const value_type &val)
 	{
-		std::cout << " I am in  insert() :  \n";
+		// std::cout << " I am in  insert() :  \n";
 		// std::cout << "	iterator insert (iterator position,	const value_type& val) is called" << std::endl;
 		// std::cout << *position << std::endl;
 /*
