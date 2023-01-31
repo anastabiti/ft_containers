@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/31 09:30:04 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/31 09:37:18 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -214,12 +214,12 @@ class vector
 		{
 			vector copy(*this);
 			allocating.deallocate(vec, this->capacity_param);
-			vec = allocating.allocate(n);
+			start_iter = allocating.allocate(n);
 
 			size_t i = 0;
 			while (i < this->size_param)
 			{
-				vec[i] = copy[i];
+				start_iter[i] = copy[i];
 				i++;
 			}
 			// this->size_param = n; ??(off in insert i should resize without increasing size_param)
@@ -227,7 +227,7 @@ class vector
 
 			while (i < this->size_param)
 			{
-				vec[i] = 0;
+				start_iter[i] = 0;
 				i++;
 			}
 			// std::cout << " > this->vec.capacity() is called" << std::endl;
@@ -245,18 +245,18 @@ class vector
 			size_t i = 0;
 			while (i < n)
 			{
-				copy[i] = vec[i];
+				copy[i] = start_iter[i];
 				i++;
 			}
 
-			allocating.deallocate(vec, this->capacity_param);
+			allocating.deallocate(start_iter, this->capacity_param);
 			this->size_param = n;
 			this->capacity_param = n;
-			vec = allocating.allocate(this->capacity_param);
+			start_iter = allocating.allocate(this->capacity_param);
 			i = 0;
 			while (i < n)
 			{
-				vec[i] = copy[i];
+				start_iter[i] = copy[i];
 				i++;
 			}
 		}
@@ -273,7 +273,7 @@ class vector
 			size_t i = size_param;
 			while (i < n)
 			{
-				vec[i] = val;
+				start_iter[i] = val;
 				this->size_param++;
 				i++;
 			}
@@ -301,14 +301,14 @@ class vector
 		}
 
 		capacity_param = n;
-		vec = allocating.allocate(n);
+		start_iter = allocating.allocate(n);
 		// std::cout << "capacity :inside    " << capacity() << '\n';
 	}
 
 	/* Element access:-----------------------:                   */
 	reference operator[](size_type n)
 	{
-		return (vec[n]);
+		return (start_iter[n]);
 	}
 	// reference operator=(value_type n)
 	// {
@@ -316,7 +316,7 @@ class vector
 	// }
 	const_reference operator[](size_type n) const
 	{
-		return (vec[n]);
+		return (start_iter[n]);
 	}
 	// 	value_type at(size_type nb)
 	// {
@@ -341,21 +341,21 @@ class vector
 
 	reference front()
 	{
-		return (vec[0]);
+		return (start_iter[0]);
 	}
 	
 const_reference	front(void) const
 {
-		return (vec[0]);	
+		return (start_iter[0]);	
 }
 
 	reference back()
 	{
-		return (vec[this->size_param - 1]);
+		return (start_iter[this->size_param - 1]);
 	}
 	const_reference back() const
 	{
-		return (vec[this->size_param - 1]);
+		return (start_iter[this->size_param - 1]);
 	}
 
 	/*
@@ -370,19 +370,19 @@ const_reference	back(void) const;
 		if (size_param == 0)
 		{
 			// std::cout << "void push_back(		if (size_param == 0))"<< std::endl;
-			vec = allocating.allocate(1);
+			start_iter = allocating.allocate(1);
 			if (capacity_param == 0)
 			//why? in case of resize (it create problem )
 				capacity_param = 1;
 			size_param = 0;
-			vec[size_param] = nb;
+			start_iter[size_param] = nb;
 			size_param++;
 			return ;
 		}
 		else if (size_param > 0 && size_param < capacity_param)
 		{
 			// std::cout << "		else if (size_param > 0	&& size_param < capacity_param)"<< std::endl;
-			vec[size_param] = nb;
+			start_iter[size_param] = nb;
 			++size_param;
 			return ;
 		}
@@ -395,12 +395,12 @@ const_reference	back(void) const;
 			size_t i = 0;
 			while (i < size_param)
 			{
-				copY[i] = vec[i];
+				copY[i] = start_iter[i];
 				i++;
 			}
 			copY[i] = nb;
-			allocating.deallocate(vec, capacity_param);
-			vec = copY;
+			allocating.deallocate(start_iter, capacity_param);
+			start_iter = copY;
 			size_param++;
 			return ;
 		}
@@ -409,7 +409,7 @@ const_reference	back(void) const;
 	void pop_back()
 	{
 		// allocating.deallocate(vec +size_param, 1);
-		vec[this->size_param - 1] = 0;
+		start_iter[this->size_param - 1] = 0;
 		// allocating.destroy(vec - (this->size_param - 1));
 		size_param--;
 	}
@@ -441,7 +441,7 @@ const_reference	back(void) const;
 		size_t x =  0;
 		while (y < size_param)
 		{
-			cp.push_back(vec[y]);
+			cp.push_back(start_iter[y]);
 			y++;
 			x++;
 		}
@@ -449,7 +449,7 @@ const_reference	back(void) const;
 		resize(capacity_param *2);
 	
 		// *position = val;
-		vec[pos_to_start] = val;
+		start_iter[pos_to_start] = val;
 		// std::cout<< "here = " <<*position << std::endl;
 		// std::cout<< "vec here = " <<vec[pos_to_start] << "pos_to_start = " << pos_to_start << std::endl;
 		
@@ -458,7 +458,7 @@ const_reference	back(void) const;
 		x = 0;
 		while (y < size_param)
 		{
-			vec[y] = cp[x];
+			start_iter[y] = cp[x];
 			y++;
 			x++;
 		}
@@ -480,7 +480,7 @@ const_reference	back(void) const;
 		// 	}
 		// 	allocating.deallocate(vec, capacity_param);
 		// 	*this = cp;
-			return (iterator(vec));
+			return (iterator(start_iter));
 	}
 	else
 	{
@@ -488,7 +488,7 @@ const_reference	back(void) const;
 		*position = val;
 		this->size_param++;
 	}
-		return (iterator(vec));
+		return (iterator(start_iter));
 	}
 
 
