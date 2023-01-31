@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/31 08:53:00 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/31 08:59:55 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,10 @@
 # include <string>
 #include <memory>
 # include "iterator.hpp"
+# include <iterator>
 # include <cstddef>
 # include <exception>
-
+#include <vector>
 namespace ft
 {
 	
@@ -31,8 +32,8 @@ class vector
 	T *copY;
 	size_t size_param;
 	size_t capacity_param;
-	ft::iterator<ft::random_access_iterator_tag,T> start_iter;
-	ft::iterator<ft::random_access_iterator_tag,T> end_iter;
+	std::iterator start_iter;
+	std::iterator end_iter;
 	protected:
 	Allocator allocating; // copy of the allocator
 	/* data */
@@ -83,8 +84,11 @@ class vector
 	Constructs a container with n elements. Each element is a copy of val.*/
 	explicit vector(size_type n, const value_type &val = value_type(), const allocator_type &alloc = allocator_type()) : start_iter(0) , end_iter(0)
 	{
-		allocating = alloc;
+		allocating = alloc;    // Copy the argument to our internal object
+		/*	   buffer_start = the_allocator.allocate(buffer_size);  */
+
 		this->size_param = n;
+		start_iter = allocating.allocate(n);
 		this->capacity_param = n;
 		vec = allocating.allocate(n);
 		// vec = allocating.construct(vec, val);
