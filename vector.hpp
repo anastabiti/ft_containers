@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/31 09:10:28 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/31 09:10:40 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ class vector
 		end_iter  = start_iter + n;
 		
 		this->capacity_param = n;
-		vec = start_iter;
+		vec = NULL;
 		// vec = allocating.construct(vec, val);
 		//allocating.deallocate(vec, n); is not deallocating
 		size_t i = 0;
