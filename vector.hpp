@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/31 10:39:53 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/31 10:42:07 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,7 +123,7 @@ template <class InputIterator>
 		// 	it++;
 		// }
 		 n = std::distance(first, last);
-		 std::cout <<" n = std::distance(first, last); = "  << n << std::endl;
+		//  std::cout <<" n = std::distance(first, last); = "  << n << std::endl;
 		start_iter = allocating.allocate(n);
 		this->size_param = n;
 		end_iter = start_iter + size_param;
