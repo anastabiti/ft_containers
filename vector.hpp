@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/31 09:44:44 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/31 09:47:02 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -351,11 +351,11 @@ const_reference	front(void) const
 
 	reference back()
 	{
-		return (*end_iter);
+		return (*end_iter); // this
 	}
 	const_reference back() const
 	{
-		return (end_iter);
+		return (*end_iter);
 	}
 
 	/*
