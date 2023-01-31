@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/31 09:11:19 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/31 09:25:09 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,15 +91,24 @@ class vector
 		end_iter  = start_iter + n;
 		
 		this->capacity_param = n;
-		vec = start_iter;
+		// vec = start_iter;
 		// vec = allocating.construct(vec, val);
 		//allocating.deallocate(vec, n); is not deallocating
-		size_t i = 0;
-		while (i < n)
+		/*      the_allocator.construct(current_end,*start);  */
+
+		iterator i = start_iter;
+		while(i < end_iter)
 		{
-			vec[i] = val;
-			i++;
+			allocating.construct(i , val);
+			i++;	
 		}
+		
+		// size_t i = 0;
+		// while (i < n)
+		// {
+		// 	vec[i] = val;
+		// 	i++;
+		// }
 		std::cout << "	fill constructor" << std::endl;
 	}
 	/*
@@ -333,14 +342,14 @@ class vector
 	{
 		if (n >= this->size_param)
 			throw("out of range");
-		return (vec[n]);
+		return (start_iter[n]);
 	}
 
 	const_reference at(size_type n) const
 	{
 		if (n >= this->size_param)
 			throw("out of range");
-		return (vec[n]);
+		return (start_iter[n]);
 	}
 
 	reference front()
