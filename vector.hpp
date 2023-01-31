@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/31 08:59:55 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/31 09:03:44 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,26 +17,15 @@
 # include <string>
 #include <memory>
 # include "iterator.hpp"
-# include <iterator>
 # include <cstddef>
 # include <exception>
-#include <vector>
 namespace ft
 {
 	
 	template <typename T, typename Allocator = std::allocator<T> >
 class vector
 {
-  private:
-	T *vec;
-	T *copY;
-	size_t size_param;
-	size_t capacity_param;
-	std::iterator start_iter;
-	std::iterator end_iter;
-	protected:
-	Allocator allocating; // copy of the allocator
-	/* data */
+ 
   public:
 	/*________________________________Member types________________________________*/
 
@@ -51,11 +40,9 @@ class vector
 	/*A constant reference to the type stored in the container. */
 	typedef typename Allocator::pointer pointer;
 	typedef typename Allocator::const_pointer const_pointer;
-	typedef ft::iterator<ft::random_access_iterator_tag,
-							T>
-		iterator; /* An iterator for the container. */
-	typedef const ft::iterator<ft::random_access_iterator_tag,T>
-		const_iterator; /* A constant iterator for the container. */
+	// typedef ft::iterator<ft::random_access_iterator_tag, T> iterator; /* An iterator for the container. */
+	typedef typename Allocator::pointer iterator; /* An iterator for the container. simple pionter  ->><><><><> */  
+	typedef const ft::iterator<ft::random_access_iterator_tag,T> const_iterator; /* A constant iterator for the container. */
 	typedef ft::reverse_iterator<iterator> reverse_iterator;
 	typedef typename ft::reverse_iterator<const_iterator> const_reverse_iterator;
 	typedef ptrdiff_t difference_type;
@@ -68,7 +55,17 @@ class vector
 	typedef size_t size_type;
 	/**_**_**_**_**_**_**_*~~~~~~~~~~~~~~~~~~***_**_**_**_**_**_**_**_**_**_*/
 	/**_**_**_**_**_**_**_*~~~~~~~~~~~~~~~~~~***_**_**_**_**_**_**_**_**_**_*/
-
+ private:
+	T *vec;
+	T *copY;
+	size_t size_param;
+	size_t capacity_param;
+	iterator start_iter;
+	iterator end_iter;
+	protected:
+	Allocator allocating; // copy of the allocator
+	/* data */
+	public:
 	/* default constructor */
 	/* The constructor initializes a new object of type "vector"
 		using the specified allocator. If no argument is provided,
