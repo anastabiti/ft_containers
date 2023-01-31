@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/31 09:37:18 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/31 09:44:44 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -351,11 +351,11 @@ const_reference	front(void) const
 
 	reference back()
 	{
-		return (start_iter[this->size_param - 1]);
+		return (*end_iter);
 	}
 	const_reference back() const
 	{
-		return (start_iter[this->size_param - 1]);
+		return (end_iter);
 	}
 
 	/*
@@ -371,6 +371,7 @@ const_reference	back(void) const;
 		{
 			// std::cout << "void push_back(		if (size_param == 0))"<< std::endl;
 			start_iter = allocating.allocate(1);
+			end_iter = start_iter + 1;
 			if (capacity_param == 0)
 			//why? in case of resize (it create problem )
 				capacity_param = 1;
@@ -383,6 +384,7 @@ const_reference	back(void) const;
 		{
 			// std::cout << "		else if (size_param > 0	&& size_param < capacity_param)"<< std::endl;
 			start_iter[size_param] = nb;
+			end_iter = start_iter + size_param;
 			++size_param;
 			return ;
 		}
@@ -401,7 +403,9 @@ const_reference	back(void) const;
 			copY[i] = nb;
 			allocating.deallocate(start_iter, capacity_param);
 			start_iter = copY;
+			end_iter = start_iter + size_param;
 			size_param++;
+					
 			return ;
 		}
 	}
