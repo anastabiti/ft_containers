@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/31 10:33:42 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/31 10:33:58 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -568,7 +568,7 @@ int main()
 	f1.push_back(4);
 	f1.push_back(5);
 	f1.push_back(6);
-	std::vector<int> f2(f1.begin()+ 2,f1.end());
+	ft::vector<int> f2(f1.begin()+ 2,f1.end());
 	i = 0 ;
 	while (i < f2.size())
 	{
