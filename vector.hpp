@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/31 09:54:48 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/31 09:57:07 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -207,6 +207,8 @@ class vector
 	
 	void resize(size_type n, value_type val = value_type())
 	{
+						std::cout << " I am in  resize() :  \n";
+
 		/*
 		If n is also greater than the current container capacity, 
 		an automatic reallocation of the allocated storage space takes place.
@@ -214,7 +216,7 @@ class vector
 		if (n > capacity())
 		{
 			vector copy(*this);
-			allocating.deallocate(vec, this->capacity_param);
+			allocating.deallocate(start_iter, this->capacity_param);
 			start_iter = allocating.allocate(n);
 
 			size_t i = 0;
@@ -367,6 +369,8 @@ const_reference	back(void) const;
 	/* Element Modifiers:-----------------------:                   */
 	void push_back(value_type const &nb)
 	{
+				std::cout << " I am in  push_back() :  \n";
+
 		// start with nothing case	ft::vector<int> fake;
 		if (size_param == 0)
 		{
@@ -437,7 +441,7 @@ const_reference	back(void) const;
 		// size_t k = 0;
 		for (it = position; it != end();it++) // from position to end
 		{	
-			// std::cout << "______-----_________   _-----_-__-___- size() + 1 > capacity())" << std::endl;	
+			std::cout << "______-----_________   _-----_-__-___- size() + 1 > capacity())" << std::endl;	
 			i++;
 		}
 		size_t pos_to_start = size_param - i;
