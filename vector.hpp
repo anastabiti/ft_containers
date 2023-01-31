@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/31 10:27:19 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/31 10:35:12 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,33 +113,34 @@ template <class InputIterator>
 	vector(InputIterator first, InputIterator last, const allocator_type &alloc = allocator_type())
 	{
 		// iterator i = start_iter;
-		iterator i = first;
+		// iterator i = first;
 		
-		while(i < last)
+		// while(i < last)
+		// {
+		// 	allocating.construct(i , 0);
+		// 	i++;	
+		// }
+		
+		allocating = alloc;
+		iterator it = first;
+		iterator cp = first;
+		size_t n = 0;
+		while (it != last)
 		{
-			allocating.construct(i , 0);
-			i++;	
+			n++;
+			it++;
 		}
-		
-		// allocating = alloc;
-		// iterator it = first;
-		// iterator cp = first;
-		// size_t n = 0;
-		// while (it != last)
-		// {
-		// 	n++;
-		// 	it++;
-		// }
-		// vec = allocating.allocate(n);
-		// this->size_param = n;
-		// this->capacity_param = n;
-		// size_t i = 0;
-		// while (i < n)
-		// {
-		// 	vec[i] = *cp;
-		// 	i++;
-		// 	cp++;
-		// }
+		start_iter = allocating.allocate(n);
+		this->size_param = n;
+		end_iter = start_iter + size_param;
+		this->capacity_param = n;
+		size_t i = 0;
+		while (i < n)
+		{
+			start_iter[i] = *cp;
+			i++;
+			cp++;
+		}
 	}
 
 /*
