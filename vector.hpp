@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/31 09:25:09 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/31 09:30:04 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,29 +86,16 @@ class vector
 			
 		allocating = alloc;    // Copy the argument to our internal object
 		start_iter = allocating.allocate(n);
-		
 		this->size_param = n;
 		end_iter  = start_iter + n;
-		
 		this->capacity_param = n;
-		// vec = start_iter;
-		// vec = allocating.construct(vec, val);
-		//allocating.deallocate(vec, n); is not deallocating
-		/*      the_allocator.construct(current_end,*start);  */
-
+		/*The contents of the buffer are initialized using the value val*/
 		iterator i = start_iter;
 		while(i < end_iter)
 		{
 			allocating.construct(i , val);
 			i++;	
 		}
-		
-		// size_t i = 0;
-		// while (i < n)
-		// {
-		// 	vec[i] = val;
-		// 	i++;
-		// }
 		std::cout << "	fill constructor" << std::endl;
 	}
 	/*
