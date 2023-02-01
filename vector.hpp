@@ -326,9 +326,33 @@ template <class InputIterator>
 
 	void reserve(size_type n) // working on this
 	{
+
+
 		if (n > max_size())
 		{
 			throw std::length_error("Length error: The size requested is greater than the maximum size ");
+		}
+		if(n > capacity_param)
+		{
+			iterator tmp = allocating.allocate(n);
+			size_t i = 0;
+			while (i < size_param)
+			{
+				allocating.construct(tmp+i, *(start_iter+i));
+				allocating.destroy(start_iter +i);
+					i++;
+			}
+			// i = 0;
+			while (i < capacity_param)
+			{
+				allocating.destroy(start_iter +i);
+					i++;
+			}
+			if(capacity_param)
+			allocating.deallocate(start_iter,capacity_param);
+			capacity_param = n;
+			start_iter = tmp;
+			
 		}
 
 		capacity_param = n;
