@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/01 12:35:13 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/01 12:47:13 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -569,27 +569,24 @@ int main()
 	f1.push_back(4);
 	f1.push_back(5);
 	f1.push_back(6);
-	ft::vector<int> f2(f1.begin()+ 2,f1.end());
-	ft::vector<int> f3(10,4); //  wiht no enable_if: candidate template ignored: substitution failure 
-	ft::vector<int> f4(f1.begin()+ 2,f1.end());
+	ft::vector<int> f2(f1.begin()+ 7,f1.end());
+	// std::vector<int> f3(10,4); //  wiht no enable_if: candidate template ignored: substitution failure 
+	// std::vector<int> f4(f1.begin()+ 8,f1.end());
 
-	i = 0 ;
-	while (i < f2.size())
-	{
+	// i = 0 ;
+	// while (i < f2.size())
+	// {
 
-		   std::cout << f2[i] << std::endl;
-		i++;
-	}
-	i = 0 ;
-	while (i < f3.size())
-	{
-
-		   std::cout << i << " i "<< f3[i] << std::endl;
-		i++;
-	}
+	// 	   std::cout << f2[i] << std::endl;
+	// 	i++;
+	// }
+	// i = 0 ;
+	// while (i < f3.size())
+	// {
+	// 	std::cout << i << " i "<< f3[i] << std::endl;
+	// 	i++;
+	// }
 	
-	
-   
 // 	//problem it does use range template
 // //    std::vector<int>::iterator iter;
 //    // for (iter =  vec1.begin(); iter !=  vec1.end(); iter++)
