@@ -570,15 +570,16 @@ int main()
 	f1.push_back(1);
 	f1.push_back(5);
 	f1.push_back(2);
-	ft::vector<int> f2(f1.begin(),f1.end());
+	// ft::vector<int> f2(f1.begin(),f1.end());
+	ft::vector<int> f2(f1);
 	i = 0 ;
-	while (i < f2.size())
-	{
+	// while (i < f2.size())
+	// {
 
-		   std::cout<< "before sorintg  " << f2[i] << std::endl;
-		i++;
-	}
-	std::sort(f2.begin(),f2.end());
+	// 	   std::cout<< "before sorintg  " << f2[i] << std::endl;
+	// 	i++;
+	// }
+	// std::sort(f2.begin(),f2.end());
 
 	
 	// std::vector<int> f3(10,4); //  wiht no enable_if: candidate template ignored: substitution failure 

@@ -29,8 +29,7 @@ class vector
   public:
 	/*________________________________Member types________________________________*/
 
-	typedef T value_type;
-	/* The type stored in the container. */
+	typedef T value_type; /* The type stored in the container. */
 	typedef Allocator allocator_type;
 	/* The type of the allocator. / defaults to: allocator<value_type>   */
 	typedef typename Allocator::reference reference;
@@ -76,6 +75,25 @@ class vector
 		this->size_param = 0;
 		this->capacity_param = 0;
 		// std::cout << "default constructor is called" << std::endl;
+	}
+
+	/* 							copy constructor */
+	vector (vector const &rhs)
+	{
+		this->allocating = rhs.allocating;
+		this->capacity_param = rhs.capacity_param;
+		this->size_param = rhs.size_param;
+				if(capacity_param)
+		this->start_iter = allocating.allocate(capacity_param);
+		this->end_iter = start_iter + size_param;
+		size_type i = 0;
+	while (i < size_param)
+	{
+		allocating.construct(start_iter+i,*(rhs.start_iter+i));
+		i++;
+	}
+	
+
 	}
 	/* 							fill constructor
 	Constructs a container with n elements. Each element is a copy of val.*/
@@ -157,6 +175,7 @@ template <class InputIterator>
 		which is used to allocate storage in case of reallocation.
 
 
+*/
 	//  vector& operator= (const vector& x)
 	//  {
 	// 	this->capacity_param = x.capacity_param;
@@ -165,7 +184,6 @@ template <class InputIterator>
 	// 	this->vec = x.vec;
 	// 	return (*this);
 	//  }
-*/
 	/**_**_**_**_**_**_**_* Member functions  **_**_**_**_**_**_**_**_**_**_*/
 
 	/* Iterators-----------------------:                   */
