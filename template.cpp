@@ -6,13 +6,31 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 09:33:11 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/01 09:57:56 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/01 10:22:01 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <vector>
 #include <type_traits>
+template <typename T>
+ struct is_integral_impl
+{
+    static const bool value = false;
+};
+template<>
+struct is_integral_impl<int>
+{
+    static const bool value = true;
+    
+};
+
+template <typename T>
+struct is_integral {
+  static const bool value = is_integral_impl<typename std::remove_cv<T>::type>::value;
+};
+
+
 template <bool B, typename T = void>
 struct enable_if {
     typedef T argument_type;
@@ -27,7 +45,7 @@ struct enable_if<false, T> {};
 //     return g;
 // }
 template <typename T>
-typename enable_if<std::is_integral<T>::value, T>::argument_type
+typename enable_if<is_integral<T>::value, T>::argument_type
 foo(T g)
 {
     return g;
