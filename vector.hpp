@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/31 10:52:41 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/31 11:00:27 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,7 +110,8 @@ class vector
 */
 
 template <class InputIterator>
-	vector(InputIterator first, InputIterator last, const allocator_type &alloc = allocator_type())
+	vector(InputIterator first, InputIterator last, const allocator_type &alloc = allocator_type()) 
+	//	ft::vector<int> f3(2,4); range constructor will be called
 	{		
 		allocating = alloc;
 		iterator it = first;
@@ -123,7 +124,7 @@ template <class InputIterator>
 		// 	it++;
 		// }
 		 n = std::distance(first, last) + 1;
-		 std::cout <<" n = std::distance(first, last); = "  << n << std::endl;
+		//  std::cout <<" n = std::distance(first, last); = "  << n << std::endl;
 		start_iter = allocating.allocate(n);
 		this->size_param = n;
 		end_iter = start_iter + size_param;

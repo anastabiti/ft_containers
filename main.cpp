@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/31 10:45:17 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/31 13:43:33 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -570,6 +570,7 @@ int main()
 	f1.push_back(5);
 	f1.push_back(6);
 	ft::vector<int> f2(f1.begin()+ 2,f1.end());
+	ft::vector<int> f3(2,4); //  wiht no enable_if: candidate template ignored: substitution failure 
 	i = 0 ;
 	while (i < f2.size())
 	{

@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 09:45:02 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/31 08:50:19 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/01/31 13:59:24 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define ITERATOR_HPP
 #include <stddef.h>
 # include <iterator>
+#include <type_traits>
 /*: Iterators are used by algorithms to move through containers. T*/
 namespace ft
 {
