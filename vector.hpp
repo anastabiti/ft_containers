@@ -389,6 +389,10 @@ const_reference	front(void) const
 		return (*end_iter);
 	}
 
+allocator_type get_allocator() const
+{
+	return allocating;
+}
 	/*
 reference		back(void);
 const_reference	back(void) const;
@@ -446,8 +450,8 @@ const_reference	back(void) const;
 	void pop_back()
 	{
 		// allocating.deallocate(vec +size_param, 1);
-		start_iter[this->size_param - 1] = 0;
-		// allocating.destroy(vec - (this->size_param - 1));
+		// start_iter[this->size_param - 1] = 0;
+		allocating.destroy(start_iter + this->size_param);
 		size_param--;
 	}
 
@@ -529,7 +533,16 @@ const_reference	back(void) const;
 		return (iterator(start_iter));
 	}
 
-
+void  clear()
+{
+	size_type i = 0;
+	while (i < size_param)
+	{
+		allocating.destroy(start_iter+i);
+		i++;
+	}
+	
+}
 
 	// void insert (iterator position, size_type n, const value_type& val);
 	/* template <class InputIterator>    void insert (iterator position,	InputIterator first, InputIterator last); */
