@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 09:33:11 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/01 10:39:22 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/01 10:40:17 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,90 +14,91 @@
 #include <vector>
 #include <type_traits>
 template <typename T>
- struct is_integral_impl
+ struct is_it_integral
 {
    static   const bool value = false; //in-class initialization of non-static data member is a C++11 extension with no static
 };
 template<>
-struct is_integral_impl<bool>
+struct is_it_integral<bool>
 {
     static const bool value = true;
 };
 template<>
-struct is_integral_impl<char>
+struct is_it_integral<char>
 {
     static const bool value = true;
 };
 template<>
-struct is_integral_impl<signed char>
+struct is_it_integral<signed char>
 {
     static const bool value = true;
 };
 template<>
-struct is_integral_impl<unsigned char>
+struct is_it_integral<unsigned char>
 {
     static const bool value = true;
 };
 template<>
-struct is_integral_impl<wchar_t>
+struct is_it_integral<wchar_t>
 {
     static const bool value = true;
 };
 template<>
-struct is_integral_impl<short>
+struct is_it_integral<short>
 {
     static const bool value = true;
 };
 
 template<>
-struct is_integral_impl<unsigned short>
+struct is_it_integral<unsigned short>
 {
     static const bool value = true;
 };
 template<>
-struct is_integral_impl<int>
+struct is_it_integral<int>
 {
    static  const bool value = true;
     
 };
 template<>
-struct is_integral_impl<unsigned int>
+struct is_it_integral<unsigned int>
 {
    static  const bool value = true;
     
 };
 
 template<>
-struct is_integral_impl<long>
+struct is_it_integral<long>
 {
     static const bool value = true;
 };
 template<>
-struct is_integral_impl<unsigned long>
+struct is_it_integral<unsigned long>
 {
     static const bool value = true;
 };
 template<>
-struct is_integral_impl<long long>
+struct is_it_integral<long long>
 {
     static const bool value = true;
 };
 template<>
-struct is_integral_impl<unsigned long long>
+struct is_it_integral<unsigned long long>
 {
     static const bool value = true;
 };
 
 // template<>
-// struct is_integral_impl<short>
+// struct is_it_integral<short>
 // {
 //     static const bool value = true;
 // };
 
 
 template <typename T>
-struct is_integral {
-      static const bool value = is_integral_impl<typename std::remove_cv<T>::type>::value;
+struct is_integral
+    {
+         static const bool value = is_it_integral<typename std::remove_cv<T>::type>::value;
     };
 
 
