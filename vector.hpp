@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/31 11:00:27 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/01 12:28:55 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,7 +110,8 @@ class vector
 */
 
 template <class InputIterator>
-	vector(InputIterator first, InputIterator last, const allocator_type &alloc = allocator_type()) 
+	// vector( InputIterator  first, InputIterator last, const allocator_type &alloc = allocator_type()) //candidate template ignored: substitution failure 
+	vector(typename ft::enable_if<!ft::is_integral<InputIterator>::value, T >::argument_type *  first, InputIterator last, const allocator_type &alloc = allocator_type()) 
 	//	ft::vector<int> f3(2,4); range constructor will be called
 	{		
 		allocating = alloc;
