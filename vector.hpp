@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/01 12:47:39 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/01 12:50:28 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,7 +116,7 @@ template <class InputIterator>
 	{		
 		 std::cout <<"range constructor is called" << std::endl;
 		allocating = alloc;
-		iterator it = first;
+		// iterator it = first;
 		iterator cp = first;
 		size_t n = 0;
 		/* Distance from first to last */

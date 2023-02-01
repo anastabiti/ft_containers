@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/01 12:47:13 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/01 13:04:20 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <algorithm>
 // #include "iterator.hpp"
 using namespace	std;
 
@@ -563,23 +564,33 @@ int main()
 // 		   std::cout << "___+_+_+_++_+_+_+_+_+_+_-_____" << std::endl;
 	
 	ft::vector<int> f1;
-	f1.push_back(1);
-	f1.push_back(2);
+	f1.push_back(6);
 	f1.push_back(3);
 	f1.push_back(4);
+	f1.push_back(1);
 	f1.push_back(5);
-	f1.push_back(6);
-	ft::vector<int> f2(f1.begin()+ 7,f1.end());
+	f1.push_back(2);
+	ft::vector<int> f2(f1.begin(),f1.end());
+	i = 0 ;
+	while (i < f2.size())
+	{
+
+		   std::cout<< "before sorintg  " << f2[i] << std::endl;
+		i++;
+	}
+	std::sort(f2.begin(),f2.end());
+
+	
 	// std::vector<int> f3(10,4); //  wiht no enable_if: candidate template ignored: substitution failure 
 	// std::vector<int> f4(f1.begin()+ 8,f1.end());
 
-	// i = 0 ;
-	// while (i < f2.size())
-	// {
+	i = 0 ;
+	while (i < f2.size())
+	{
 
-	// 	   std::cout << f2[i] << std::endl;
-	// 	i++;
-	// }
+		   std::cout << f2[i] << std::endl;
+		i++;
+	}
 	// i = 0 ;
 	// while (i < f3.size())
 	// {
