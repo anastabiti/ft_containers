@@ -20,7 +20,7 @@ $(OBJ):
 	c++  -g -c $(SRC) -std=c++98  
 	# -Wall -Wextra -Werror
 $(NAME):
-	g++ -g $(OBJ) -o $(NAME) -std=c++98
+	c++ -g $(OBJ) -o $(NAME) -std=c++98
 clean :
 	rm -f $(OBJ)
 fclean: clean

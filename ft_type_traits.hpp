@@ -95,7 +95,7 @@ struct is_it_integral<unsigned long long>
 template <typename T>
 struct is_integral
     {
-         static const bool value = is_it_integral<typename std::remove_cv<T>::type>::value;
+         static const bool value = is_it_integral<T>::value;
     };
 
 /*+__________________________________________________________________________+*/
