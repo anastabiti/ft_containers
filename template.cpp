@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 09:33:11 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/01 10:40:17 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/01 10:42:20 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,19 +88,11 @@ struct is_it_integral<unsigned long long>
     static const bool value = true;
 };
 
-// template<>
-// struct is_it_integral<short>
-// {
-//     static const bool value = true;
-// };
-
-
 template <typename T>
 struct is_integral
     {
          static const bool value = is_it_integral<typename std::remove_cv<T>::type>::value;
     };
-
 
 /*+__________________________________________________________________________+*/
 template <bool B, typename T = void>
@@ -117,7 +109,7 @@ struct enable_if<false, T> {};
 //     return g;
 // }
 template <typename T>
-typename enable_if<std::is_integral<T>::value, T>::argument_type
+typename enable_if<is_integral<T>::value, T>::argument_type
 foo(T g)
 {
     return g;
