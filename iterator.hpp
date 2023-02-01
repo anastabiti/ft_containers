@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 09:45:02 by atabiti           #+#    #+#             */
-/*   Updated: 2023/01/31 13:59:24 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/01 10:46:03 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include <stddef.h>
 # include <iterator>
 #include <type_traits>
+#include "ft_type_traits.hpp"
 /*: Iterators are used by algorithms to move through containers. T*/
 namespace ft
 {

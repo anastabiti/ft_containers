@@ -1,18 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   template.cpp                                       :+:      :+:    :+:   */
+/*   ft_type_traits.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 09:33:11 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/01 10:42:34 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/01 10:48:07 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <vector>
-#include <type_traits>
+
+#ifndef  FT_TYPE_TRAITS_HPP  
+#define FT_TYPE_TRAITS_HPP  
+namespace ft
+{
+    
+    
 template <typename T>
  struct is_it_integral
 {
@@ -103,30 +107,6 @@ struct enable_if {
 template <typename T>
 struct enable_if<false, T> {};
 
-// template <typename T>
-// T foo(T g)
-// {
-//     return g;
-// }
-template <typename T>
-typename enable_if<std::is_integral<T>::value, T>::argument_type
-foo(T g)
-{
-    return g;
-}
-// template <typename T>
-// typename enable_if<!std::is_integral<T>::value, T>::type
-// foo(T g)
-// {
-//     return g;
-// }
 
-int main()
-{
-    std::string f("SsSS");
-    std::vector<short int> f1(1,4);
-wchar_t  x = 'd';
-    // std::cout << foo(f) << std::endl;
-    std::cout << foo(x) << std::endl;
-    // std::cout << foo(f1.at(0)) << std::endl;
-}
+};
+#endif
