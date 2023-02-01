@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/01 12:30:43 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/01 12:35:13 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -542,25 +542,25 @@ using namespace	std;
 
 int main()
 {
-/*      range constructor      */
-	std::allocator<int> alloc; 
-	std::vector<int> vec1;
-	vec1.push_back(1);
-	vec1.push_back(2);
-	vec1.push_back(3);
-	vec1.push_back(4);
-	vec1.push_back(5);
-	vec1.push_back(6);
-	std::vector<int> vec2(vec1.begin()+ 2,vec1.end());
+// /*      range constructor      */
+// 	std::allocator<int> alloc; 
+// 	std::vector<int> vec1;
+// 	vec1.push_back(1);
+// 	vec1.push_back(2);
+// 	vec1.push_back(3);
+// 	vec1.push_back(4);
+// 	vec1.push_back(5);
+// 	vec1.push_back(6);
+// 	std::vector<int> vec2(vec1.begin()+ 2,vec1.end());
 	size_t i = 0 ;
-	while (i < vec2.size())
-	{
+// 	while (i < vec2.size())
+// 	{
 
-		   std::cout << vec2[i] << std::endl;
-		i++;
-	}
+// 		   std::cout << vec2[i] << std::endl;
+// 		i++;
+// 	}
 	
-		   std::cout << "___+_+_+_++_+_+_+_+_+_+_-_____" << std::endl;
+// 		   std::cout << "___+_+_+_++_+_+_+_+_+_+_-_____" << std::endl;
 	
 	ft::vector<int> f1;
 	f1.push_back(1);
@@ -571,6 +571,8 @@ int main()
 	f1.push_back(6);
 	ft::vector<int> f2(f1.begin()+ 2,f1.end());
 	ft::vector<int> f3(10,4); //  wiht no enable_if: candidate template ignored: substitution failure 
+	ft::vector<int> f4(f1.begin()+ 2,f1.end());
+
 	i = 0 ;
 	while (i < f2.size())
 	{

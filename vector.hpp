@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/01 12:28:55 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/01 12:34:38 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,6 +114,7 @@ template <class InputIterator>
 	vector(typename ft::enable_if<!ft::is_integral<InputIterator>::value, T >::argument_type *  first, InputIterator last, const allocator_type &alloc = allocator_type()) 
 	//	ft::vector<int> f3(2,4); range constructor will be called
 	{		
+		 std::cout <<"range constructor is called" << std::endl;
 		allocating = alloc;
 		iterator it = first;
 		iterator cp = first;
