@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 09:33:11 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/01 10:29:46 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/01 10:29:56 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,11 @@ struct is_integral_impl<int>
     static const bool value = true;
     
 };
-template<>
-struct is_integral_impl<short int>
-{
-    static const bool value = true;
-};
+// template<>
+// struct is_integral_impl<short int>
+// {
+//     static const bool value = true;
+// };
 
 
 template <typename T>
