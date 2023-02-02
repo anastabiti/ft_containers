@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/02 11:36:45 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/02 11:38:54 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -575,11 +575,11 @@ const_reference	back(void) const;
 			// 			std::cout << " start from: i  " <<  i<<std::endl;
 			
 			int j = 0;
-			// while (j < start_from)
-			// {
+			while (j < start_from)
+			{
 				start_iter[j] = *(start_iter+i+j);
-			// 	j++;
-			// }
+				j++;
+			}
 			
 			
 				std::cout << " start_from= " << start_from<<std::endl;
