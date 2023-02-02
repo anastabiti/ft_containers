@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/02 10:11:01 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/02 10:20:52 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -217,6 +217,12 @@ void assign (size_type n, const value_type& val) //
 	}
 	
 }
+
+allocator_type get_allocator() const
+{
+	return allocating;
+}
+
 /*
 									copy constructor
 	Constructs a container with a copy of each of the elements in x,
@@ -471,10 +477,7 @@ const_reference	front(void) const
 		return (*end_iter);
 	}
 
-allocator_type get_allocator() const
-{
-	return allocating;
-}
+
 	/*
 reference		back(void);
 const_reference	back(void) const;

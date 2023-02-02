@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/02 09:22:06 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/02 10:25:55 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -594,47 +594,51 @@ int main()
 	}
 
 		std::cout  <<  "std _+_+__+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_"<< std::endl;
+	//std ./program  7.59s user 0.39s system 99% cpu 7.998 total
 	//test assing 
 	std::vector<int> assign1;
-	assign1.push_back(12);
-	assign1.push_back(13);
-	assign1.push_back(1);
-	assign1.push_back(4);
-	assign1.push_back(14);
+	int h = 0;
+	while (h < 34)
+	{
+		
+	assign1.push_back(h+1*3);
+		h++;
+	}
+
 	std::vector<int> assing2;
 	assing2.push_back(7654);
-	assing2.assign(2 , 42);
-	// assing2.assign(assign1.begin() , assign1.end());
+	// assing2.assign(2 , 42);
+	assing2.assign(assign1.begin() , assign1.end());
 	size_t j = 0;
 	while(j < assing2.size())
 	{
 		std::cout  << assing2.at(j) << std::endl;
 		j++;
 	}
-	std::cout  <<  "ft _+_+__+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_"<< std::endl;
+	int *ptr = assing2.get_allocator().allocate(5);
+	
+	// std::cout  <<  "ft _+_+__+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_"<< std::endl;
+	// mine ./program  2.10s user 0.37s system 99% cpu 2.471 total
 	ft::vector<int> a1;
-	a1.push_back(12);
-	a1.push_back(13);
-	a1.push_back(1);
-	a1.push_back(4);
-	a1.push_back(14);
+	 h = 0 ;
+	 	while (h < 34)
+	{
+		
+		a1.push_back(h+1*3);
+		h++;
+	}
+	
 	ft::vector<int> a2;
 	a2.push_back(7654);
-	a2.assign(2, 42);
-	// a2.assign(a1.begin() , a1.end());
+	// a2.assign(2, 42);
+	a2.assign(a1.begin() , a1.end());
 	 j = 0;
 	while(j < a2.size())
 	{
-		std::cout  << a2.at(j) << std::endl;
+		// std::cout  << a2.at(j) << std::endl;
 		j++;
 	}
-	
-	// i = 0 ;
-	// while (i < f3.size())
-	// {
-	// 	std::cout << i << " i "<< f3[i] << std::endl;
-	// 	i++;
-	// }
+	 int *pptr = a2.get_allocator().allocate(5);
 	
 // 	//problem it does use range template
 // //    std::vector<int>::iterator iter;
