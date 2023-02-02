@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/02 11:42:26 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/02 11:56:37 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -282,7 +282,7 @@ allocator_type get_allocator() const
 		return (reverse_iterator(--(begin())));
 	}
 	const_reverse_iterator rend() const
-	{
+	{ 
 		return (const_reverse_iterator(--(begin())));
 	}
 	/* Capacity-----------------------:                   */
@@ -586,7 +586,10 @@ const_reference	back(void) const;
 			return start_iter;
 	}
 
-
+	void swap (vector& x)
+	{
+		
+	}
 
 
 

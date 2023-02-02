@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/02 11:43:26 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/02 11:58:19 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -597,6 +597,8 @@ int main()
 	//std ./program  7.59s user 0.39s system 99% cpu 7.998 total
 	//test assing 
 	std::vector<int> assign1;
+	std::vector<int> toswap;
+	
 	int h = 0;
 	// while (h < 34)
 	// {
@@ -608,6 +610,10 @@ int main()
 		assign1.push_back(2);
 		assign1.push_back(3);
 		assign1.push_back(4);
+		toswap.push_back(11);
+		toswap.push_back(22);
+		toswap.push_back(33);
+		toswap.push_back(44);
 	std::vector<int> assing2;
 	// assing2.push_back(7654);
 	// assing2.assign(2 , 42);
@@ -625,6 +631,16 @@ int main()
 		std::cout <<"after erase : " << assing2.at(j) << std::endl;
 		j++;
 	}
+	assing2.swap(toswap);
+	
+	j = 0;
+	while(j < assing2.size())
+	{
+		std::cout <<"after swap : " << assing2.at(j) << std::endl;
+		j++;
+	}
+	// assing2.swap();
+	
 	// int *ptr = assing2.get_allocator().allocate(5);
 	// ptr[0] = 33;
 		//  std::cout << *ptr<< std::endl;
