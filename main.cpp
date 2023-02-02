@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/02 09:06:55 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/02 09:12:35 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -602,6 +602,7 @@ int main()
 	assign1.push_back(4);
 	assign1.push_back(14);
 	std::vector<int> assing2;
+	assing2.push_back(7654);
 	assing2.assign(assign1.begin() , assign1.end());
 	size_t j = 0;
 	while(j < assing2.size())
@@ -617,6 +618,7 @@ int main()
 	a1.push_back(4);
 	a1.push_back(14);
 	ft::vector<int> a2;
+	a2.push_back(7654);
 	a2.assign(a1.begin() , a1.end());
 	 j = 0;
 	while(j < a2.size())

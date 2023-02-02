@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/02 09:11:04 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/02 09:16:27 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -161,6 +161,14 @@ template <class InputIterator>
 template <class InputIterator> 
 void assign (InputIterator first, InputIterator last)
 {
+	
+	size_t i = 0;
+	while (i < this->capacity_param)
+	{
+		allocating.destroy(start_iter+i);
+		i++;
+	}
+	allocating.deallocate(start_iter, this->capacity_param);
 	size_t dist = std::distance(first, last) + 1;
 	// std::cout  << dist << std::endl;
 	std::cout  << "void assign (InputIterator first, InputIterator last) is called " << std::endl;
@@ -168,7 +176,7 @@ void assign (InputIterator first, InputIterator last)
 	end_iter = start_iter + dist;
 	this->size_param = dist;
 	this->capacity_param = dist;
-	size_t i = 0;
+	 i = 0;
 	while (i < dist)
 	{
 		start_iter[i] = *first;
@@ -179,9 +187,14 @@ void assign (InputIterator first, InputIterator last)
 	
 }
 
+
+
+
+
+
 // void assign (size_type n, const value_type& val)
 // {
-	
+		
 // }
 /*
 									copy constructor
