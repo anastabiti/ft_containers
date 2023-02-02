@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/02 10:20:52 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/02 10:43:57 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -539,6 +539,18 @@ const_reference	back(void) const;
 		allocating.destroy(start_iter + this->size_param);
 		size_param--;
 	}
+
+	iterator erase (iterator position)
+	{
+		std::cout <<"position:  "<<*position << std::endl;
+		allocating.destroy(position);
+		size_param--;
+		return start_iter;
+	}
+	// iterator erase (iterator first, iterator last)
+	// {
+		
+	// }
 
 	iterator insert(iterator position, const value_type &val)
 	{

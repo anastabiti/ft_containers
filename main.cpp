@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/02 10:27:00 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/02 10:42:04 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -563,15 +563,15 @@ int main()
 	
 // 		   std::cout << "___+_+_+_++_+_+_+_+_+_+_-_____" << std::endl;
 	
-	ft::vector<int> f1;
-	f1.push_back(6);
-	f1.push_back(3);
-	f1.push_back(4);
-	f1.push_back(1);
-	f1.push_back(5);
-	f1.push_back(2);
+	// ft::vector<int> f1;
+	// f1.push_back(6);
+	// f1.push_back(3);
+	// f1.push_back(4);
+	// f1.push_back(1);
+	// f1.push_back(5);
+	// f1.push_back(2);
 	// ft::vector<int> f2(f1.begin(),f1.end());
-	ft::vector<int> f2(f1);
+	// ft::vector<int> f2(f1);
 	i = 0 ;
 	// while (i < f2.size())
 	// {
@@ -585,28 +585,31 @@ int main()
 	// std::vector<int> f3(10,4); //  wiht no enable_if: candidate template ignored: substitution failure 
 	// std::vector<int> f4(f1.begin()+ 8,f1.end());
 
-	i = 0 ;
-	while (i < f2.size())
-	{
+	// i = 0 ;
+	// while (i < f2.size())
+	// {
 
-		   std::cout << f2[i] << std::endl;
-		i++;
-	}
+	// 	   std::cout << f2[i] << std::endl;
+	// 	i++;
+	// }
 
-		std::cout  <<  "std _+_+__+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_"<< std::endl;
+	std::cout  <<  "std _+_+__+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_"<< std::endl;
 	//std ./program  7.59s user 0.39s system 99% cpu 7.998 total
 	//test assing 
 	std::vector<int> assign1;
 	int h = 0;
-	while (h < 34)
-	{
+	// while (h < 34)
+	// {
 		
-	assign1.push_back(h+1*3);
-		h++;
-	}
-
+	// assign1.push_back(h+1*3);
+	// 	h++;
+	// }
+		assign1.push_back(1);
+		assign1.push_back(2);
+		assign1.push_back(3);
+		assign1.push_back(4);
 	std::vector<int> assing2;
-	assing2.push_back(7654);
+	// assing2.push_back(7654);
 	// assing2.assign(2 , 42);
 	assing2.assign(assign1.begin() , assign1.end());
 	size_t j = 0;
@@ -615,35 +618,65 @@ int main()
 		std::cout  << assing2.at(j) << std::endl;
 		j++;
 	}
-	int *ptr = assing2.get_allocator().allocate(5);
-	ptr[0] = 33;
-		 std::cout << *ptr<< std::endl;
+	assing2.erase(assing2.begin()+1);
+	j = 0;
+	while(j < assing2.size())
+	{
+		std::cout <<"after erase : " << assing2.at(j) << std::endl;
+		j++;
+	}
+	// int *ptr = assing2.get_allocator().allocate(5);
+	// ptr[0] = 33;
+		//  std::cout << *ptr<< std::endl;
 
 	
 	// std::cout  <<  "ft _+_+__+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_"<< std::endl;
 	// mine ./program  2.10s user 0.37s system 99% cpu 2.471 total
 	ft::vector<int> a1;
 	 h = 0 ;
-	 	while (h < 34)
-	{
-		
-		a1.push_back(h+1*3);
-		h++;
-	}
+	 	a1.push_back(1);
+		a1.push_back(2);
+		a1.push_back(3);
+		a1.push_back(4);
 	
 	ft::vector<int> a2;
-	a2.push_back(7654);
+	// a2.push_back(7654);
 	// a2.assign(2, 42);
 	a2.assign(a1.begin() , a1.end());
 	 j = 0;
 	while(j < a2.size())
 	{
-		// std::cout  << a2.at(j) << std::endl;
+		std::cout  << a2.at(j) << std::endl;
 		j++;
 	}
-	 int *pptr = a2.get_allocator().allocate(5);
-	 pptr[0] = 33;
-	 std::cout << *pptr<< std::endl;
+	a2.erase(a2.begin()+1);
+	 j = 0;
+	while(j < a2.size())
+	{
+		std::cout <<"after erase : " << a2.at(j) << std::endl;
+		j++;
+	}
+
+	//  int *pptr = a2.get_allocator().allocate(5);
+	//  pptr[0] = 33;
+	//  std::cout << *pptr<< std::endl;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
 	
 // 	//problem it does use range template
 // //    std::vector<int>::iterator iter;
