@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/02 11:25:47 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/02 11:36:45 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -569,15 +569,21 @@ const_reference	back(void) const;
 				start_from++;
 			}
 			start_from = size_param  - i ;
-			while (start_from < i)
-			{
-				start_iter[start_from] = start_iter+i;
-				start_from++;
-			}
+						std::cout << " start from:   " <<  start_from<<std::endl;
+
+			// i= i + 1;
+			// 			std::cout << " start from: i  " <<  i<<std::endl;
+			
+			int j = 0;
+			// while (j < start_from)
+			// {
+				start_iter[j] = *(start_iter+i+j);
+			// 	j++;
+			// }
 			
 			
 				std::cout << " start_from= " << start_from<<std::endl;
-			
+			size_param =size_param - i ;
 			// while (tmp != last)
 			// {
 			// 	std::cout << " to be removed= " << *(++tmp)<<std::endl;
