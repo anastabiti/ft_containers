@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/02 11:38:54 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/02 11:39:50 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -559,9 +559,9 @@ const_reference	back(void) const;
 	{
 			size_t i =  std::distance(first, last);
 			iterator tmp =first;
-			std::cout << " to be removed= " << *tmp<<std::endl;
-			std::cout << " remove i items " <<  i<<std::endl;
-			std::cout << " start from:   " <<  size_param - i<<std::endl;
+			// std::cout << " to be removed= " << *tmp<<std::endl;
+			// std::cout << " remove i items " <<  i<<std::endl;
+			// std::cout << " start from:   " <<  size_param - i<<std::endl;
 			size_t  start_from = size_param  - i ;
 			while (start_from < i)
 			{
@@ -569,10 +569,10 @@ const_reference	back(void) const;
 				start_from++;
 			}
 			start_from = size_param  - i ;
-						std::cout << " start from:   " <<  start_from<<std::endl;
+						// std::cout << " start from:   " <<  start_from<<std::endl;
 
-			// i= i + 1;
 			// 			std::cout << " start from: i  " <<  i<<std::endl;
+			
 			
 			int j = 0;
 			while (j < start_from)
@@ -582,14 +582,8 @@ const_reference	back(void) const;
 			}
 			
 			
-				std::cout << " start_from= " << start_from<<std::endl;
+				// std::cout << " start_from= " << start_from<<std::endl;
 			size_param =size_param - i ;
-			// while (tmp != last)
-			// {
-			// 	std::cout << " to be removed= " << *(++tmp)<<std::endl;
-				
-			// }
-			allocating.destroy(start_iter+i);
 			return start_iter;
 	}
 
