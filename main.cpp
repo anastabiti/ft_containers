@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/02 11:58:19 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/02 11:58:41 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -632,6 +632,7 @@ int main()
 		j++;
 	}
 	assing2.swap(toswap);
+	
 	
 	j = 0;
 	while(j < assing2.size())
