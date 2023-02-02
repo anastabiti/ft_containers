@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/02 10:55:57 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/02 11:25:47 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -546,21 +546,51 @@ const_reference	back(void) const;
 		std::cout <<"position:  "<<*position << " dist= " << i<<std::endl;
 		allocating.destroy(start_iter+i);
 		size_t j = i +1;
-		// size_t ii = position;
 		while (i < size_param-1)
 		{
 			start_iter[i] = *(start_iter +j);
 			i++;
 			j++;
 		}
-		
 		size_param--;
 		return start_iter;
 	}
-	// iterator erase (iterator first, iterator last)
-	// {
-		
-	// }
+	iterator erase (iterator first, iterator last)
+	{
+			size_t i =  std::distance(first, last);
+			iterator tmp =first;
+			std::cout << " to be removed= " << *tmp<<std::endl;
+			std::cout << " remove i items " <<  i<<std::endl;
+			std::cout << " start from:   " <<  size_param - i<<std::endl;
+			size_t  start_from = size_param  - i ;
+			while (start_from < i)
+			{
+				allocating.destroy(start_iter+start_from);
+				start_from++;
+			}
+			start_from = size_param  - i ;
+			while (start_from < i)
+			{
+				start_iter[start_from] = start_iter+i;
+				start_from++;
+			}
+			
+			
+				std::cout << " start_from= " << start_from<<std::endl;
+			
+			// while (tmp != last)
+			// {
+			// 	std::cout << " to be removed= " << *(++tmp)<<std::endl;
+				
+			// }
+			allocating.destroy(start_iter+i);
+			return start_iter;
+	}
+
+
+
+
+
 
 	iterator insert(iterator position, const value_type &val)
 	{
