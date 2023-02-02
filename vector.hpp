@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/02 09:18:37 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/02 09:22:28 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -195,15 +195,28 @@ void assign (InputIterator first, InputIterator last)
 	
 }
 
-
-
-
-
-
-// void assign (size_type n, const value_type& val)
-// {
+void assign (size_type n, const value_type& val)
+{
+	std::cout <<"void assign (size_type n, const value_type& val) is called" <<std::endl;
+			size_t i = 0;
+	while (i < this->capacity_param)
+	{
+		allocating.destroy(start_iter+i);
+		i++;
+	}
+	allocating.deallocate(start_iter, this->capacity_param);
+	start_iter = allocating.allocate(n);
+	size_param = n;
+	capacity_param = n;
+	i = 0;
+	while (i < n)
+	{
 		
-// }
+		allocating.construct(start_iter+i , *val);
+		i++;
+	}
+	
+}
 /*
 									copy constructor
 	Constructs a container with a copy of each of the elements in x,
