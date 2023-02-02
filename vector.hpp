@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/02 11:39:50 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/02 11:42:26 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -558,7 +558,6 @@ const_reference	back(void) const;
 	iterator erase (iterator first, iterator last)
 	{
 			size_t i =  std::distance(first, last);
-			iterator tmp =first;
 			// std::cout << " to be removed= " << *tmp<<std::endl;
 			// std::cout << " remove i items " <<  i<<std::endl;
 			// std::cout << " start from:   " <<  size_param - i<<std::endl;
