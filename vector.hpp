@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/02 10:08:15 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/02 10:11:01 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -652,7 +652,7 @@ void			swap(vector<T,Allocator>&);
 		
 	}
 };
-
+ 
 /*• std::enable_if */
 
 } /* namespace ft */
