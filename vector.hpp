@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/02 09:26:38 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/02 10:08:15 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -641,8 +641,15 @@ void			swap(vector<T,Allocator>&);
 	/*______________________________________________________________________________________________________*/
 	~vector()
 	{
-		// std::cout << "destructor is called" << std::endl;
-		// allocating.deallocate(vec, this->capacity_param);
+		size_t  i =  0;
+		while (i < this->capacity_param)
+		{
+			allocating.destroy(start_iter+i);
+			i++;
+		}
+		allocating.deallocate(start_iter, this->capacity_param);
+		std::cout << "destructor is called" << std::endl;
+		
 	}
 };
 
