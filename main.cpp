@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/02 11:58:41 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/02 11:59:41 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -650,11 +650,16 @@ int main()
 	// std::cout  <<  "ft _+_+__+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_"<< std::endl;
 	// mine ./program  2.10s user 0.37s system 99% cpu 2.471 total
 	ft::vector<int> a1;
+	ft::vector<int> aswap;
 	 h = 0 ;
 	 	a1.push_back(1);
 		a1.push_back(2);
 		a1.push_back(3);
 		a1.push_back(4);
+	 	aswap.push_back(11);
+		aswap.push_back(2331);
+		aswap.push_back(3232);
+		aswap.push_back(456);
 	
 	ft::vector<int> a2;
 	// a2.push_back(7654);
@@ -671,6 +676,13 @@ int main()
 	while(j < a2.size())
 	{
 		std::cout <<"after erase : " << a2.at(j) << std::endl;
+		j++;
+	}
+	a2.swap(aswap);
+	 j = 0;
+	while(j < a2.size())
+	{
+		std::cout <<"after swap  : " << a2.at(j) << std::endl;
 		j++;
 	}
 
