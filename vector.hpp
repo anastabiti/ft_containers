@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/01 13:14:17 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/02 09:09:37 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -158,7 +158,30 @@ template <class InputIterator>
 			cp++;
 		}
 	}
+template <class InputIterator> 
+void assign (InputIterator first, InputIterator last)
+{
+	size_t dist = std::distance(first, last);
+	std::cout  << dist << std::endl;
+	start_iter = allocating.allocate(dist);
+	end_iter = start_iter + dist;
+	this->size_param = dist;
+	this->capacity_param = dist;
+	size_t i = 0;
+	while (i < dist)
+	{
+		start_iter[i] = *first;
+		first++;
+		i++;
+	}
+	
+	
+}
 
+// void assign (size_type n, const value_type& val)
+// {
+	
+// }
 /*
 									copy constructor
 	Constructs a container with a copy of each of the elements in x,

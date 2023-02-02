@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/02 09:02:21 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/02 09:06:55 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -593,7 +593,7 @@ int main()
 		i++;
 	}
 
-		std::cout  <<  "_+_+__+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_"<< std::endl;
+		std::cout  <<  "std _+_+__+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_"<< std::endl;
 	//test assing 
 	std::vector<int> assign1;
 	assign1.push_back(12);
@@ -607,6 +607,21 @@ int main()
 	while(j < assing2.size())
 	{
 		std::cout  << assing2.at(j) << std::endl;
+		j++;
+	}
+	std::cout  <<  "ft _+_+__+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_"<< std::endl;
+	ft::vector<int> a1;
+	a1.push_back(12);
+	a1.push_back(13);
+	a1.push_back(1);
+	a1.push_back(4);
+	a1.push_back(14);
+	ft::vector<int> a2;
+	a2.assign(a1.begin() , a1.end());
+	 j = 0;
+	while(j < a2.size())
+	{
+		std::cout  << a2.at(j) << std::endl;
 		j++;
 	}
 	
