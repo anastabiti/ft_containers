@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/02 11:56:37 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/02 12:47:12 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -588,6 +588,25 @@ const_reference	back(void) const;
 
 	void swap (vector& x)
 	{
+		/* copy them*/
+		
+		iterator tmp_start = start_iter;
+		iterator tmp_end = end_iter;
+		size_t tmp_size = size_param;
+		size_t tmp_capacity = capacity_param;
+		Allocator tmp_allocating =  allocating;
+		/*swap them from x and replace *this*/
+		start_iter = x.start_iter;
+		end_iter = x.end_iter;
+		size_param = x.size_param;
+		capacity_param = x.capacity_param;
+		allocating = x.allocating;
+		/*replcae x values*/
+		x.start_iter = tmp_start;
+		x.end_iter = tmp_end;
+		x.size_param = tmp_size;
+		x.capacity_param = tmp_capacity;
+		x.allocating = tmp_allocating;
 		
 	}
 

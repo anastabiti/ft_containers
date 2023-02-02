@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/02 11:59:41 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/02 12:32:05 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -624,7 +624,7 @@ int main()
 		std::cout  << assing2.at(j) << std::endl;
 		j++;
 	}
-	assing2.erase(assing2.begin(), assing2.begin()+1);
+	// assing2.erase(assing2.begin(), assing2.begin()+1);
 	j = 0;
 	while(j < assing2.size())
 	{
@@ -671,7 +671,7 @@ int main()
 		std::cout  << a2.at(j) << std::endl;
 		j++;
 	}
-	a2.erase(a2.begin(),a2.begin()+1);
+	// a2.erase(a2.begin(),a2.begin()+1);
 	 j = 0;
 	while(j < a2.size())
 	{
