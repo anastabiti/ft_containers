@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/02 10:26:27 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/02 10:27:00 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -616,6 +616,7 @@ int main()
 		j++;
 	}
 	int *ptr = assing2.get_allocator().allocate(5);
+	ptr[0] = 33;
 		 std::cout << *ptr<< std::endl;
 
 	
@@ -641,6 +642,7 @@ int main()
 		j++;
 	}
 	 int *pptr = a2.get_allocator().allocate(5);
+	 pptr[0] = 33;
 	 std::cout << *pptr<< std::endl;
 	
 // 	//problem it does use range template
