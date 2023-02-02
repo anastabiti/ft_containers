@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/02 09:22:28 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/02 09:26:38 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -159,7 +159,7 @@ template <class InputIterator>
 		}
 	}
 template <class InputIterator> 
-void assign (InputIterator first, InputIterator last)
+void assign (typename ft::enable_if<!ft::is_integral<InputIterator>::value, T >::argument_type *   first, InputIterator last) //candidate template ignored: substitution failure [with _InputIter = int]
 {
 	
 	size_t i = 0;
@@ -195,7 +195,7 @@ void assign (InputIterator first, InputIterator last)
 	
 }
 
-void assign (size_type n, const value_type& val)
+void assign (size_type n, const value_type& val) //
 {
 	std::cout <<"void assign (size_type n, const value_type& val) is called" <<std::endl;
 			size_t i = 0;
@@ -212,7 +212,7 @@ void assign (size_type n, const value_type& val)
 	while (i < n)
 	{
 		
-		allocating.construct(start_iter+i , *val);
+		allocating.construct(start_iter+i , val);
 		i++;
 	}
 	
