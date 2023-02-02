@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/02 09:16:27 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/02 09:18:37 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -179,10 +179,18 @@ void assign (InputIterator first, InputIterator last)
 	 i = 0;
 	while (i < dist)
 	{
-		start_iter[i] = *first;
+		allocating.construct(start_iter+i , *first);
+		// start_iter[i] = *first;
 		first++;
 		i++;
 	}
+	//  i = 0;
+	// while (i < dist)
+	// {
+	// 	start_iter[i] = *first;
+	// 	first++;
+	// 	i++;
+	// }
 	
 	
 }
