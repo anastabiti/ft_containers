@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/02 10:53:19 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/02 10:55:57 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -547,7 +547,7 @@ const_reference	back(void) const;
 		allocating.destroy(start_iter+i);
 		size_t j = i +1;
 		// size_t ii = position;
-		while (i < size_param)
+		while (i < size_param-1)
 		{
 			start_iter[i] = *(start_iter +j);
 			i++;
@@ -555,7 +555,6 @@ const_reference	back(void) const;
 		}
 		
 		size_param--;
-		// capacity_param--;
 		return start_iter;
 	}
 	// iterator erase (iterator first, iterator last)
