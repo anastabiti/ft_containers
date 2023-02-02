@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/02 10:25:55 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/02 10:26:27 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -616,6 +616,8 @@ int main()
 		j++;
 	}
 	int *ptr = assing2.get_allocator().allocate(5);
+		 std::cout << *ptr<< std::endl;
+
 	
 	// std::cout  <<  "ft _+_+__+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_"<< std::endl;
 	// mine ./program  2.10s user 0.37s system 99% cpu 2.471 total
@@ -639,6 +641,7 @@ int main()
 		j++;
 	}
 	 int *pptr = a2.get_allocator().allocate(5);
+	 std::cout << *pptr<< std::endl;
 	
 // 	//problem it does use range template
 // //    std::vector<int>::iterator iter;
