@@ -109,10 +109,16 @@ class iterator
 		ptr = NULL;
 	}
 
+
 	explicit iterator(pointer vec)
 	{
 		ptr = vec;
 		// std::cout << "    iterator(pointer vec) is called" << std::endl;
+	}
+	pointer base() const
+
+	{
+		return ptr;
 	}
 
 	reference operator*() const
@@ -176,12 +182,13 @@ class iterator
 	iterator operator+(difference_type n) //not working
 	{
 		// std::cout << "      iterator operator+ (difference_type n) is called" << std::endl;
-		iterator cp(*this);
-		cp += n;
+		// iterator cp(*this);
+		// cp += n;
 		// return (*this = *this + n); // cause infinit loop
 		// return (*this += n); // cause infinit loop
 		// return *this+n;
-		return cp;
+		// return cp;
+		return (&(*ptr)+n);
 	}
 	iterator operator-(difference_type n) //not working
 	{
@@ -219,11 +226,11 @@ class iterator
 
 	friend bool operator!=(iterator const &x, iterator const &y)
 	{
-		if (*x == *y)
-			return (false);
-		else
-			return (true);
-		// return(x.ptr != y.ptr);
+		// if (*x == *y)
+		// 	return (false);
+		// else
+		// 	return (true);
+		return(x.base() != y.base());
 	}
 	/*relational operators  */
 	// friend bool operator== (const iterator& lhs , const iterator& rhs)
@@ -285,9 +292,12 @@ class reverse_iterator : public iterator<typename iterator_traits<Iterator>::ite
 	}
 	reverse_iterator operator++(int)
 	{
-		// std::cout << "    reverse_iterator operator++(int)  is called" << std::endl;
-		current--;
-		return *this;
+		// // std::cout << "    reverse_iterator operator++(int)  is called" << std::endl;
+		// current--;
+		// return *this;
+		reverse_iterator tmp(*this);
+		++(*this);
+		return tmp;
 	}
 	reverse_iterator &operator--()
 	{
@@ -310,9 +320,11 @@ class reverse_iterator : public iterator<typename iterator_traits<Iterator>::ite
 	}
 	reverse_iterator &operator+=(difference_type n)
 	{
-		reverse_iterator tmp(*this);
-		tmp = tmp + n;
-		return tmp;
+		// reverse_iterator tmp(*this);
+		// tmp = tmp + n;
+		// return tmp;
+		current = current - n;
+		return *this;
 	}
 	// reverse_iterator operator- (difference_type n) const;
 	reverse_iterator &operator-=(difference_type n)
