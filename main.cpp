@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/04 11:29:02 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/04 11:31:35 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,17 @@
 int main()
 {
 	std::vector<int> t1;
+	t1.push_back(44);
 	std::vector<int> t2;
 	if(t1 == t2)
 	std::cout <<"are equal" << std::endl;
 	else
 	std::cout <<"not equal" << std::endl;
+
+	std::cout <<"____________________________________" << std::endl;
+
 	ft::vector<int> r1;
+	r1.push_back(44);
 	ft::vector<int> r2;
 	if(r1 == r2)
 	std::cout <<"are equal" << std::endl;
