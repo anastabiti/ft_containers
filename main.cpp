@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/04 11:32:25 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/04 11:35:35 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int main()
 	std::cout <<"are equal" << std::endl;
 	else
 	std::cout <<"not equal" << std::endl;
-	if(r1.begin() == r2.begin())
+	if(r1.rbegin() == r2.rbegin())
 	std::cout <<"iter are equal" << std::endl;
 	else
 	std::cout <<"iter not equal" << std::endl;
