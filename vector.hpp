@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/04 10:57:39 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/04 11:26:39 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -731,7 +731,8 @@ void			swap(vector<T,Allocator>&);
 	template <class Alloc>  
 	friend bool operator== (const vector<T,Alloc>& lhs, const vector<T,Alloc>& rhs)
 	{
-		if(lhs.size == rhs.size)
+		std::cout << "operator == vector is called"<< std::endl;
+		if(lhs.size() == rhs.size())
 			return  true;
 		else
 			return  false;
