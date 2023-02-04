@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/04 09:54:27 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/04 10:18:04 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -727,6 +727,16 @@ void			swap(vector<T,Allocator>&);
 		// std::cout << "destructor is called" << std::endl;
 		
 	}
+	template <class Alloc>  
+	friend bool operator== (const vector<T,Alloc>& lhs, const vector<T,Alloc>& rhs)
+	{
+		// if(lhs.size == rhs.size)
+		// 	return  true;
+		// else
+		// 	return  false;
+		return(lhs.size() == rhs.size() && std::equal(lhs.begin(),lhs.end(), rhs.begin() ));
+	}
+	
 };
  
 /*• std::enable_if */

@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/02 12:32:05 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/04 10:20:10 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -640,6 +640,12 @@ int main()
 		std::cout <<"after swap : " << assing2.at(j) << std::endl;
 		j++;
 	}
+
+		if(assing2 == assign1)
+		std::cout <<"are equal " << std::endl;
+		else 
+		std::cout <<"not equal " << std::endl;
+
 	// assing2.swap();
 	
 	// int *ptr = assing2.get_allocator().allocate(5);
@@ -685,6 +691,11 @@ int main()
 		std::cout <<"after swap  : " << a2.at(j) << std::endl;
 		j++;
 	}
+
+		if(a2 == aswap)
+		std::cout <<"are equal " << std::endl;
+		else 
+		std::cout <<"not equal " << std::endl;
 
 	//  int *pptr = a2.get_allocator().allocate(5);
 	//  pptr[0] = 33;
