@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/04 10:41:51 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/04 11:01:21 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -614,6 +614,8 @@ int main()
 		toswap.push_back(22);
 		toswap.push_back(33);
 		toswap.push_back(44);
+		    toswap.push_back(*++toswap.begin());
+
 	std::vector<int> assing2;
 	// assing2.push_back(7654);
 	// assing2.assign(2 , 42);
@@ -666,7 +668,8 @@ int main()
 		aswap.push_back(2331);
 		aswap.push_back(3232);
 		aswap.push_back(456);
-	
+			    aswap.push_back(*++aswap.begin());
+
 	ft::vector<int> a2;
 	// a2.push_back(7654);
 	// a2.assign(2, 42);
@@ -691,7 +694,7 @@ int main()
 		std::cout <<"after swap  : " << a2.at(j) << std::endl;
 		j++;
 	}
-	ft::iterator_traits<int *>::value_type t;
+	// ft::iterator_traits<int *>::value_type t;
 
 		// if(a2 == aswap)
 		// std::cout <<"are equal " << std::endl;

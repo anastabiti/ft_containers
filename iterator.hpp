@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 09:45:02 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/04 10:58:05 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/04 11:12:30 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,7 +121,7 @@ class iterator
 		return (*ptr);
 	}
 
-	pointer operator->()
+	pointer operator->() const
 	{
 		return (&ptr);
 	}
@@ -138,7 +138,7 @@ class iterator
 	/*    
             Post-increment
     */
-	iterator operator++(int)
+	iterator & operator++(int)
 	{
 		// std::cout << " Post-increment ,		called for      iterator operator++(int)" << std::endl;
 		iterator tmp(*this);
@@ -198,7 +198,7 @@ class iterator
 		ptr = ptr + n;
 		return (*this);
 	}
-	iterator operator-=(difference_type n)
+	iterator & operator-=(difference_type n)
 	{
 		// std::cout << "	iterator operator-=(difference_type n) is called" << std::endl;
 		ptr = ptr - n;
@@ -262,6 +262,7 @@ class reverse_iterator : public iterator<typename iterator_traits<Iterator>::ite
 	{
 		return (*current);
 	}
+	
 	pointer operator->() const
 	{
 		return &current;
@@ -314,6 +315,14 @@ class reverse_iterator : public iterator<typename iterator_traits<Iterator>::ite
 	{
 		// std::cout << "   2 reference operator[](difference_type n) const  is called" << std::endl;
 		return current[n]; //will call iterator  operator[]
+	}
+	reverse_iterator operator- (difference_type n) const
+	{
+		reverse_iterator cp(*this);
+		cp -= n;
+		// return (*this = *this + n); // cause infinit loop
+		// return (*this += n); // cause infinit loop
+		return cp;
 	}
 };
 
