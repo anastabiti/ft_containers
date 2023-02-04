@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/04 10:37:44 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/04 10:57:39 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -279,8 +279,9 @@ allocator_type get_allocator() const
 	}
 	reverse_iterator rend()
 	{
-		return (reverse_iterator(--(begin())));
+		return (reverse_iterator(begin()));
 	}
+	
 	const_reverse_iterator rend() const
 	{ 
 		return (const_reverse_iterator(--(begin())));
