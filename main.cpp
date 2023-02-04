@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/04 10:20:10 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/04 10:30:41 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -692,10 +692,10 @@ int main()
 		j++;
 	}
 
-		if(a2 == aswap)
-		std::cout <<"are equal " << std::endl;
-		else 
-		std::cout <<"not equal " << std::endl;
+		// if(a2 == aswap)
+		// std::cout <<"are equal " << std::endl;
+		// else 
+		// std::cout <<"not equal " << std::endl;
 
 	//  int *pptr = a2.get_allocator().allocate(5);
 	//  pptr[0] = 33;

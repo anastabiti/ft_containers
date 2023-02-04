@@ -71,6 +71,9 @@
         "list": "cpp",
         "queue": "cpp",
         "set": "cpp",
-        "filesystem": "cpp"
+        "filesystem": "cpp",
+        "csignal": "cpp",
+        "fstream": "cpp",
+        "iomanip": "cpp"
     }
 }

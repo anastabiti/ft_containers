@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 09:45:02 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/04 10:29:27 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/04 10:32:38 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,42 +15,6 @@
 #include <stddef.h>
 # include <iterator>
 #include "ft_type_traits.hpp"
-/* 								iterator_traits 
-	iterator_traits is a structure that contains basic information on iterators
-	that can be used by generic algorithms to determine key attributes of an iterator
-	so that the algorithms can use the iterator effectively. 
-	----------> why iterator_traits is required?
-	If the iterator passed to a function is a an iterator rather than a pointer,
-		the function can get the information directly from the iterator. If a pointer is passed,
-	there is a problem with this technique since a pointer 
-	will not have a value_type or any of the other attributes associated with an iterator. 
-	1- It ensures that an iterator provides all type definitions.
-    -> you can’t just do something like int*::value_type,
-	since pointer don’t have nested types!
-*/
-
-template <typename Iterator> //the definition of iterator_traits for iterators
-
-struct	iterator_traits
-{
-	typedef typename Iterator::value_type value_type;
-	typedef typename Iterator::difference_type difference_type;
-	typedef typename Iterator::pointer pointer;
-	typedef typename Iterator::reference reference;
-	typedef typename Iterator::iterator_category iterator_category;
-};
-
-template <typename T>
-struct iterator_traits<T *> // definitions that are appropriate for pointers.
-{
-	
-	typedef ptrdiff_t difference_type;
-	typedef T value_type;
-	typedef T *pointer;
-	typedef T &reference;
-	// typedef random_access_iterator_tag iterator_category;
-};
-
 /*: Iterators are used by algorithms to move through containers. T*/
 namespace ft
 {
@@ -63,7 +27,6 @@ class iterator
 	T *ptr;
 
   public:
-  	// typename iterator_traits<T>::value_type value_type;
 	typedef T value_type;             //value _type is of type T, the class of objects that the iterator is pointing.
     typedef Distance difference_type; //difference_type has a default value of ptrdiff_t which is used to represent the difference between two iterators.
 	typedef Pointer pointer;          //pointer has a default Pointer to type T.
@@ -137,7 +100,7 @@ class iterator
 	//   iterator  operator= (difference_type n)
 	//   {
 
-	//     		std::cout << "          iterator  operator= (difference_type n)  is called" << std::endl;
+	    		// std::cout << "          iterator  operator= (difference_type n)  is called" << std::endl;
 	//             return (*this);
 	//   }
 	iterator operator+(difference_type n) //not working
@@ -167,7 +130,7 @@ class iterator
 	}
 	iterator operator-=(difference_type n)
 	{
-		// std::cout << "	iterator operator-=(difference_type n) is called" << std::endl;
+		std::cout << "	iterator operator-=(difference_type n) is called" << std::endl;
 		ptr = ptr - n;
 		return (*this);
 	}
@@ -191,7 +154,40 @@ class iterator
 	}
 };
 
+/* 								iterator_traits 
+	iterator_traits is a structure that contains basic information on iterators
+	that can be used by generic algorithms to determine key attributes of an iterator
+	so that the algorithms can use the iterator effectively. 
+	----------> why iterator_traits is required?
+	If the iterator passed to a function is a an iterator rather than a pointer,
+		the function can get the information directly from the iterator. If a pointer is passed,
+	there is a problem with this technique since a pointer 
+	will not have a value_type or any of the other attributes associated with an iterator. 
+	1- It ensures that an iterator provides all type definitions.
+    -> you can’t just do something like int*::value_type,
+	since pointer don’t have nested types!
+*/
 
+template <typename Iterator> //the definition of iterator_traits for iterators
+
+struct	iterator_traits
+{
+	typedef typename Iterator::value_type value_type;
+	typedef typename Iterator::difference_type difference_type;
+	typedef typename Iterator::pointer pointer;
+	typedef typename Iterator::reference reference;
+	typedef typename Iterator::iterator_category iterator_category;
+};
+
+template <typename T>
+struct iterator_traits<T *> // definitions that are appropriate for pointers.
+{
+	typedef ptrdiff_t difference_type;
+	typedef T value_type;
+	typedef T *pointer;
+	typedef T &reference;
+	// typedef random_access_iterator_tag iterator_category;
+};
 
 /* 
         ---------------------------- Category tags/Standard iterator tags---------------------------- 
@@ -239,7 +235,7 @@ class reverse_iterator : public iterator<typename iterator_traits<Iterator>::ite
 	reverse_iterator() : current() {}
 
 
-	//     		std::cout << "    reverse_iterator() is called" << std::endl;
+	    		// std::cout << "    reverse_iterator() is called" << std::endl;
 	//     current = NULL;
 	// }
 
