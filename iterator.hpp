@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 09:45:02 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/04 10:22:36 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/04 10:24:52 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ class iterator
 	T *ptr;
 
   public:
-	typedef T value_type;             //value _type is of type T, the class of objects that the iterator is pointing.
+  	typename iterator_traits<T>::value_type value_type;
+	// typedef T value_type;             //value _type is of type T, the class of objects that the iterator is pointing.
     typedef Distance difference_type; //difference_type has a default value of ptrdiff_t which is used to represent the difference between two iterators.
 	typedef Pointer pointer;          //pointer has a default Pointer to type T.
 	typedef Reference reference;     
