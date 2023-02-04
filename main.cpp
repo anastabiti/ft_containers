@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/04 11:35:35 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/04 11:47:05 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,14 @@
 int main()
 {
 	std::vector<int> t1;
-	t1.push_back(44);
 	std::vector<int> t2;
+	t1.push_back(44);
+	t2.push_back(44);
 	if(t1 == t2)
 	std::cout <<"are equal" << std::endl;
 	else
 	std::cout <<"not equal" << std::endl;
-	if(t1.begin() == t2.begin())
+	if(t1.rbegin() == t1.rbegin())
 	std::cout <<"iter are equal" << std::endl;
 	else
 	std::cout <<"iter not equal" << std::endl;
@@ -36,13 +37,14 @@ int main()
 	std::cout <<"____________________________________" << std::endl;
 
 	ft::vector<int> r1;
-	r1.push_back(44);
 	ft::vector<int> r2;
+	r1.push_back(44);
+	r2.push_back(44);
 	if(r1 == r2)
 	std::cout <<"are equal" << std::endl;
 	else
 	std::cout <<"not equal" << std::endl;
-	if(r1.rbegin() == r2.rbegin())
+	if(r1.begin() == r1.begin())
 	std::cout <<"iter are equal" << std::endl;
 	else
 	std::cout <<"iter not equal" << std::endl;
