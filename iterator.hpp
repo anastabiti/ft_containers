@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 09:45:02 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/04 11:20:02 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/04 11:21:45 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -332,6 +332,22 @@ class reverse_iterator : public iterator<typename iterator_traits<Iterator>::ite
 	friend bool operator!= (const reverse_iterator<Iterator>& lhs , const reverse_iterator<Iterator>& rhs)
 	 {
 		return (lhs() != rhs());
+	 }
+	friend bool operator< (const reverse_iterator<Iterator>& lhs , const reverse_iterator<Iterator>& rhs)
+	 {
+		return (lhs() > rhs());//reverse here
+	 }
+	friend bool operator<= (const reverse_iterator<Iterator>& lhs , const reverse_iterator<Iterator>& rhs)
+	 {
+		return (lhs() >= rhs());//reverse here
+	 }
+	friend bool operator> (const reverse_iterator<Iterator>& lhs , const reverse_iterator<Iterator>& rhs)
+	 {
+		return (lhs() < rhs());//reverse here
+	 }
+	friend bool operator>= (const reverse_iterator<Iterator>& lhs , const reverse_iterator<Iterator>& rhs)
+	 {
+		return (lhs() <= rhs());//reverse here
 	 }
 };
 
