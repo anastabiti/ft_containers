@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 09:45:02 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/04 10:26:18 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/04 10:29:27 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -245,7 +245,7 @@ class reverse_iterator : public iterator<typename iterator_traits<Iterator>::ite
 
 	explicit reverse_iterator(Iterator x)
 	{
-		std::cout << "       explicit reverse_iterator(Iterator x)  is called" << std::endl;
+		// std::cout << "       explicit reverse_iterator(Iterator x)  is called" << std::endl;
 		current = x;
 	}
 
@@ -261,31 +261,31 @@ class reverse_iterator : public iterator<typename iterator_traits<Iterator>::ite
 	}
 	reverse_iterator &operator++()
 	{
-		std::cout << "    reverse_iterator& operator++() is called" << std::endl;
+		// std::cout << "    reverse_iterator& operator++() is called" << std::endl;
 		--current;
 		return *this;
 	}
 	reverse_iterator operator++(int)
 	{
-		std::cout << "    reverse_iterator operator++(int)  is called" << std::endl;
+		// std::cout << "    reverse_iterator operator++(int)  is called" << std::endl;
 		current--;
 		return *this;
 	}
 	reverse_iterator &operator--()
 	{
-		std::cout << "        reverse_iterator& operator--()  is called" << std::endl;
+		// std::cout << "        reverse_iterator& operator--()  is called" << std::endl;
 		++current;
 		return *this;
 	}
 	reverse_iterator operator--(int)
 	{
-		std::cout << "           reverse_iterator operator--(int)  is called" << std::endl;
+		// std::cout << "           reverse_iterator operator--(int)  is called" << std::endl;
 		current++;
 		return *this;
 	}
 	reverse_iterator operator+(difference_type n) const
 	{
-		std::cout << "     reverse_iterator operator+ (difference_type n) const  is called" << std::endl;
+		// std::cout << "     reverse_iterator operator+ (difference_type n) const  is called" << std::endl;
 		reverse_iterator tmp(*this);
 		tmp = tmp + n;
 		return tmp;
@@ -305,7 +305,7 @@ class reverse_iterator : public iterator<typename iterator_traits<Iterator>::ite
 	}
 	reference operator[](difference_type n) const
 	{
-		std::cout << "   2 reference operator[](difference_type n) const  is called" << std::endl;
+		// std::cout << "   2 reference operator[](difference_type n) const  is called" << std::endl;
 		return current[n]; //will call iterator  operator[]
 	}
 };
