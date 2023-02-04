@@ -1,29 +1,42 @@
-In file included from ../vector_tests/begin().cpp:2:
+In file included from ../vector_tests/rend().cpp:2:
 In file included from ../vector_tests/__service.ipp:3:
 In file included from ../vector_tests/../../../vector.hpp:19:
-../vector_tests/../../../iterator.hpp:103:13: error: no type named 'cout' in namespace 'std'
-                        std::cout << "          iterator  operator= (difference_type n)  is called" << std::endl;
-                        ~~~~~^
-../vector_tests/../../../iterator.hpp:103:18: error: expected member name or ';' after declaration specifiers
-                        std::cout << "          iterator  operator= (difference_type n)  is called" << std::endl;
-                        ~~~~~~~~~ ^
-../vector_tests/begin().cpp:21:18: error: expression is not assignable
-    v.push_back(*++vector.begin());
-                 ^ ~~~~~~~~~~~~~~
-../vector_tests/begin().cpp:28:59: note: in instantiation of function template specialization 'begin_test<int>' requested here
-    exit(run_vector_unit_test<int>("begin()", begin_test, begin_test));
-                                                          ^
-3 errors generated.
-r<int, std::__1::allocator<int> >::iterator' (aka '__wrap_iter<int *>') to 'typename ft::enable_if<!ft::is_integral<__wrap_iter<int *> >::value, int>::argument_type *' (aka 'int *') for 1st argument
-        vector(typename ft::enable_if<!ft::is_integral<InputIterator>::value, T >::argument_type *  first, InputIterator last, const allocator_type &alloc = allocator_type()) 
-        ^
-../vector_tests/../../../vector.hpp:100:11: note: candidate constructor not viable: no known conversion from 'std::__1::vector<int, std::__1::allocator<int> >::iterator' (aka '__wrap_iter<int *>') to 'ft::vector::size_type' (aka 'unsigned long') for 1st argument
-        explicit vector(size_type n, const value_type &val = value_type(), const allocator_type &alloc = allocator_type()) : start_iter(0) , end_iter(0)
-                 ^
-../vector_tests/../../../vector.hpp:73:11: note: candidate constructor not viable: requires at most 1 argument, but 2 were provided
-        explicit vector(const Allocator & = Allocator()) : start_iter(0) , end_iter(0)
-                 ^
-../vector_tests/../../../vector.hpp:81:2: note: candidate constructor not viable: requires single argument 'rhs', but 2 arguments were provided
-        vector (vector const &rhs)
-        ^
+../vector_tests/../../../iterator.hpp:230:78: error: no type named 'iterator_category' in 'ft::iterator_traits<int *>'
+class reverse_iterator : public iterator<typename iterator_traits<Iterator>::iterator_category,
+                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+../vector_tests/rend().cpp:20:26: note: in instantiation of template class 'ft::reverse_iterator<int *>' requested here
+    v.push_back(*(vector.rend() - 1));
+                         ^
+../vector_tests/rend().cpp:28:57: note: in instantiation of function template specialization 'rend_test<int>' requested here
+    exit(run_vector_unit_test<int>("rend()", rend_test, rend_test));
+                                                        ^
+../vector_tests/rend().cpp:21:33: error: invalid operands to binary expression ('ft::vector<int, std::__1::allocator<int> >::reverse_iterator' (aka 'reverse_iterator<int *>') and 'int')
+    v.push_back(*(vector.rend() - 2));
+                  ~~~~~~~~~~~~~ ^ ~
+../vector_tests/rend().cpp:28:57: note: in instantiation of function template specialization 'rend_test<int>' requested here
+    exit(run_vector_unit_test<int>("rend()", rend_test, rend_test));
+                                                        ^
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/iterator:770:1: note: candidate template ignored: could not match 'std::__1::reverse_iterator' against 'ft::reverse_iterator'
+operator-(const reverse_iterator<_Iter1>& __x, const reverse_iterator<_Iter2>& __y)
+^
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/iterator:1211:1: note: candidate template ignored: could not match 'move_iterator' against 'reverse_iterator'
+operator-(const move_iterator<_Iter1>& __x, const move_iterator<_Iter2>& __y)
+^
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/iterator:1623:1: note: candidate template ignored: could not match '__wrap_iter' against 'reverse_iterator'
+operator-(const __wrap_iter<_Iter1>& __x, const __wrap_iter<_Iter2>& __y) _NOEXCEPT_DEBUG
+^
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/string:559:11: note: candidate template ignored: could not match 'fpos' against 'reverse_iterator'
+streamoff operator-(const fpos<_StateT>& __x, const fpos<_StateT>& __y)
+          ^
+In file included from ../vector_tests/rend().cpp:2:
+In file included from ../vector_tests/__service.ipp:3:
+../vector_tests/../../../vector.hpp:282:28: error: expression is not assignable
+                return (reverse_iterator(--(begin())));
+                                         ^ ~~~~~~~~~
+../vector_tests/rend().cpp:20:26: note: in instantiation of member function 'ft::vector<int, std::__1::allocator<int> >::rend' requested here
+    v.push_back(*(vector.rend() - 1));
+                         ^
+../vector_tests/rend().cpp:28:57: note: in instantiation of function template specialization 'rend_test<int>' requested here
+    exit(run_vector_unit_test<int>("rend()", rend_test, rend_test));
+                                                        ^
 3 errors generated.

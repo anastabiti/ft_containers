@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/04 10:30:41 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/04 10:41:51 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -691,6 +691,7 @@ int main()
 		std::cout <<"after swap  : " << a2.at(j) << std::endl;
 		j++;
 	}
+	ft::iterator_traits<int *>::value_type t;
 
 		// if(a2 == aswap)
 		// std::cout <<"are equal " << std::endl;
