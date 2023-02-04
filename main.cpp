@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/04 11:47:05 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/04 12:54:12 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,12 @@ int main()
 {
 	std::vector<int> t1;
 	std::vector<int> t2;
+
 	t1.push_back(44);
 	t2.push_back(44);
+			std::vector<int>::iterator ttw =  t1.begin() +1;
+				t1.insert(t1.begin(), t2.begin(), t2.end());
+
 	if(t1 == t2)
 	std::cout <<"are equal" << std::endl;
 	else
@@ -38,8 +42,10 @@ int main()
 
 	ft::vector<int> r1;
 	ft::vector<int> r2;
+
 	r1.push_back(44);
 	r2.push_back(44);
+		ft::vector<int>::iterator tt =  r1.begin()+1;
 	if(r1 == r2)
 	std::cout <<"are equal" << std::endl;
 	else

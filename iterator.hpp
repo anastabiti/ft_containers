@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 09:45:02 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/04 11:46:47 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/04 12:48:19 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -180,6 +180,7 @@ class iterator
 		cp += n;
 		// return (*this = *this + n); // cause infinit loop
 		// return (*this += n); // cause infinit loop
+		// return *this+n;
 		return cp;
 	}
 	iterator operator-(difference_type n) //not working
@@ -303,9 +304,9 @@ class reverse_iterator : public iterator<typename iterator_traits<Iterator>::ite
 	reverse_iterator operator+(difference_type n) const
 	{
 		// std::cout << "     reverse_iterator operator+ (difference_type n) const  is called" << std::endl;
-		reverse_iterator tmp(*this);
-		tmp = tmp + n;
-		return tmp;
+		// reverse_iterator tmp(*this);
+		// tmp = tmp + n;
+		return *this +n;
 	}
 	reverse_iterator &operator+=(difference_type n)
 	{
@@ -316,9 +317,10 @@ class reverse_iterator : public iterator<typename iterator_traits<Iterator>::ite
 	// reverse_iterator operator- (difference_type n) const;
 	reverse_iterator &operator-=(difference_type n)
 	{
-		reverse_iterator tmp(*this);
-		tmp = tmp - n;
-		return tmp;
+		// reverse_iterator tmp(*this);
+		// tmp = tmp - n;
+		// return tmp;
+		return (*this = *this- n);
 	}
 	reference operator[](difference_type n) const
 	{
@@ -336,12 +338,12 @@ class reverse_iterator : public iterator<typename iterator_traits<Iterator>::ite
 	/* relational operators */
 	friend bool operator== (const reverse_iterator<Iterator>& lhs , const reverse_iterator<Iterator>& rhs)
 	 {
-		std::cout << " operator==  is called for reverse_iterator" << std::endl;
+		// std::cout << " operator==  is called for reverse_iterator" << std::endl;
 		std::cout <<  *lhs << std::endl;
 		std::cout <<  *rhs << std::endl;
 		if(&lhs == &rhs)
 		{
-		std::cout << " operator==  is called for reverse_iterator" << std::endl;
+		// std::cout << " operator==  is called for reverse_iterator" << std::endl;
 			
 		return true;
 		}
