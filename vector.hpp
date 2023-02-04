@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/04 10:18:04 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/04 10:28:03 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -735,6 +735,7 @@ void			swap(vector<T,Allocator>&);
 		// else
 		// 	return  false;
 		return(lhs.size() == rhs.size() && std::equal(lhs.begin(),lhs.end(), rhs.begin() ));
+		 //problem here :      typedef typename iterator_traits<_InputIterator1>::value_type __v1;
 	}
 	
 };
