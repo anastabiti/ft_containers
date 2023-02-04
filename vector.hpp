@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/02 12:47:12 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/04 09:54:27 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -171,7 +171,7 @@ void assign (typename ft::enable_if<!ft::is_integral<InputIterator>::value, T >:
 	allocating.deallocate(start_iter, this->capacity_param);
 	size_t dist = std::distance(first, last) + 1;
 	// std::cout  << dist << std::endl;
-	std::cout  << "void assign (InputIterator first, InputIterator last) is called " << std::endl;
+	// std::cout  << "void assign (InputIterator first, InputIterator last) is called " << std::endl;
 	start_iter = allocating.allocate(dist);
 	end_iter = start_iter + dist;
 	this->size_param = dist;
@@ -197,7 +197,7 @@ void assign (typename ft::enable_if<!ft::is_integral<InputIterator>::value, T >:
 
 void assign (size_type n, const value_type& val) //
 {
-	std::cout <<"void assign (size_type n, const value_type& val) is called" <<std::endl;
+	// std::cout <<"void assign (size_type n, const value_type& val) is called" <<std::endl;
 			size_t i = 0;
 	while (i < this->capacity_param)
 	{
@@ -543,7 +543,7 @@ const_reference	back(void) const;
 	iterator erase (iterator position)
 	{
 		size_t  i = std::distance(begin(), position);
-		std::cout <<"position:  "<<*position << " dist= " << i<<std::endl;
+		// std::cout <<"position:  "<<*position << " dist= " << i<<std::endl;
 		allocating.destroy(start_iter+i);
 		size_t j = i +1;
 		while (i < size_param-1)
@@ -724,7 +724,7 @@ void			swap(vector<T,Allocator>&);
 			i++;
 		}
 		allocating.deallocate(start_iter, this->capacity_param);
-		std::cout << "destructor is called" << std::endl;
+		// std::cout << "destructor is called" << std::endl;
 		
 	}
 };
