@@ -17,6 +17,7 @@ namespace ft
 {
     
     
+    
 template <typename T>
  struct is_it_integral
 {
