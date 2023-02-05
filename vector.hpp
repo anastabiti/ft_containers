@@ -734,92 +734,65 @@ void			swap(vector<T,Allocator>&);
 	 bool operator== (const vector<T,Alloc>& lhs, const vector<T,Alloc>& rhs)
 	{
 		std::cout << "operator == vector is called"<< std::endl;
-		// if(lhs.size() == rhs.size())
-		// 	return  true;
-		// else
-		// 	return  false;
 		return(lhs.size() == rhs.size() && std::equal(lhs.begin(),lhs.end(), rhs.begin() ));
 		 //problem here :      typedef typename iterator_traits<_InputIterator1>::value_type __v1;
 	}
+	template <class T,class Alloc>  
+	 bool operator< (const vector<T,Alloc>& lhs, const vector<T,Alloc>& rhs)
+	{
+		std::cout << "operator < vector is called"<< std::endl;
+		return std::lexicographical_compare(lhs.begin(), lhs.end(),rhs.begin(), rhs.end());
+	}
+	
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	template <class T,class Alloc>  
+	 bool operator> (const vector<T,Alloc>& lhs, const vector<T,Alloc>& rhs)
+	{
+		std::cout << "operator > vector is called"<< std::endl;
+		return rhs < lhs; // use < 
+		
+	}
 
 
 
 	template <class T,class Alloc>  
 	 bool operator>= (const vector<T,Alloc>& lhs, const vector<T,Alloc>& rhs)
 	{
-		// std::cout << "operator == vector is called"<< std::endl;
-		if(lhs.size() >= rhs.size())
-			return  true;
-		else
-			return  false;
-		// return(lhs.size() == rhs.size() && std::equal(lhs.begin(),lhs.end(), rhs.begin() ));
-		 //problem here :      typedef typename iterator_traits<_InputIterator1>::value_type __v1;
+		std::cout << "operator >= vector is called"<< std::endl;
+		return !(lhs < rhs);
 	}
+
 	template <class T,class Alloc>  
 	 bool operator<= (const vector<T,Alloc>& lhs, const vector<T,Alloc>& rhs)
 	{
-		// std::cout << "operator == vector is called"<< std::endl;
-		if(lhs.size() <= rhs.size())
-			return  true;
-		else
-			return  false;
-		// return(lhs.size() == rhs.size() && std::equal(lhs.begin(),lhs.end(), rhs.begin() ));
-		 //problem here :      typedef typename iterator_traits<_InputIterator1>::value_type __v1;
+		std::cout << "operator <= vector is called"<< std::endl;
+		return !(rhs < lhs);
+		
 	}
 	
-	template <class T,class Alloc>  
-	 bool operator> (const vector<T,Alloc>& lhs, const vector<T,Alloc>& rhs)
-	{
-		// std::cout << "operator == vector is called"<< std::endl;
-		if(lhs.size() > rhs.size())
-			return  true;
-		else
-			return  false;
-		// return(lhs.size() == rhs.size() && std::equal(lhs.begin(),lhs.end(), rhs.begin() ));
-		 //problem here :      typedef typename iterator_traits<_InputIterator1>::value_type __v1;
-	}
-	template <class T,class Alloc>  
-	 bool operator< (const vector<T,Alloc>& lhs, const vector<T,Alloc>& rhs)
-	{
-		// std::cout << "operator == vector is called"<< std::endl;
-		if(lhs.size() < rhs.size())
-			return  true;
-		else
-			return  false;
-		// return(lhs.size() == rhs.size() && std::equal(lhs.begin(),lhs.end(), rhs.begin() ));
-		 //problem here :      typedef typename iterator_traits<_InputIterator1>::value_type __v1;
-	}
-	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	template <class T,class Alloc>  
 	 bool operator!= (const vector<T,Alloc>& lhs, const vector<T,Alloc>& rhs)
 	{
 		// std::cout << "operator == vector is called"<< std::endl;
-		if(lhs.size() != rhs.size())
-			return  true;
-		else
-			return  false;
-		// return(lhs.size() == rhs.size() && std::equal(lhs.begin(),lhs.end(), rhs.begin() ));
-		 //problem here :      typedef typename iterator_traits<_InputIterator1>::value_type __v1;
+		return !(lhs == rhs);
 	}
  
 /*• std::enable_if */

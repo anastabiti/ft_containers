@@ -54,7 +54,7 @@ int main()
 	std::cout <<"iter are equal" << std::endl;
 	else
 	std::cout <<"iter not equal" << std::endl;
-	if(r1 >= r2)
+	if(r1 < r2)
 	std::cout <<"are equal" << std::endl;
 	else
 	std::cout <<"not equal" << std::endl;
