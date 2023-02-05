@@ -786,6 +786,13 @@ void			swap(vector<T,Allocator>&);
 		// std::cout << "operator == vector is called"<< std::endl;
 		return !(lhs == rhs);
 	}
+
+	template <class T, class Alloc>  
+	void swap (vector<T,Alloc>& x, vector<T,Alloc>& y)
+	{
+	x.swap(y); 	
+	}
+
  
 /*• std::enable_if */
 
