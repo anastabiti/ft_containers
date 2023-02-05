@@ -115,6 +115,24 @@ class iterator
 		ptr = vec;
 		// std::cout << "    iterator(pointer vec) is called" << std::endl;
 	}
+
+	 iterator(const iterator &rhs)//copy
+	{
+		ptr = rhs.ptr;
+	}
+	 iterator &operator=(const iterator &rhs)
+	{
+		if(this == &rhs)
+		return *this;
+		this->ptr = rhs.ptr;
+		return *this;
+
+	}
+	~iterator()
+	{
+	}
+
+
 	pointer base() const
 
 	{
@@ -129,7 +147,8 @@ class iterator
 
 	pointer operator->() const
 	{
-		return (&ptr);
+		// return (&ptr);
+		return &(this->operator*());
 	}
 
 	/*
