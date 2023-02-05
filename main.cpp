@@ -63,7 +63,7 @@ int main()
 	else
 	std::cout <<"iter not equal" << std::endl;
 
-
+	r1.push_back(*++r2.begin());
 	
 
 	
