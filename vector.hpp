@@ -471,12 +471,12 @@ const_reference	front(void) const
 
 	reference back()
 	{
-		return (*end_iter); // this
+		return *(end() -1); // this
 	}
 	const_reference back() const
 	{
-		return (*end_iter);
-	}
+	return *(end() -1); // this
+		}
 
 
 	/*
