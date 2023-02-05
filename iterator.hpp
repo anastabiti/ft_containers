@@ -221,34 +221,56 @@ class iterator
 		ptr = ptr - n;
 		return (*this);
 	}
-
-	friend bool operator==(iterator const &x, iterator const &y)
+};
+	template <class iterator> 
+bool operator==(iterator const &x, iterator const &y)
 	{
-			std::cout <<" operator==(iterator) is called" << std::endl;
-
-		if (*x == *y)
-			return (true);
-		else
-			return (false);
-		// return(x.ptr == y.ptr);
+			return (x.base() == y.base());		
 	}
-
-	friend bool operator!=(iterator const &x, iterator const &y)
+	template <class iterator> 
+bool operator!=(iterator const &x, iterator const &y)
 	{
-		// if (*x == *y)
-		// 	return (false);
-		// else
-		// 	return (true);
+
 		return(x.base() != y.base());
 	}
-	/*relational operators  */
-	// friend bool operator== (const iterator& lhs , const iterator& rhs)
-	//  {
-	// 	std::cout << " operator==  is called base" << std::endl;
-	// 	return (lhs  == rhs);
-		
-	//  }
-};
+		template <class iterator> 
+bool operator<(iterator const &x, iterator const &y)
+{
+			return(x.base() < y.base());
+
+}
+
+		template <class iterator> 
+bool operator<=(iterator const &x, iterator const &y)
+{
+			return(x.base() <= y.base());
+
+}
+		template <class iterator> 
+bool operator>(iterator const &x, iterator const &y)
+{
+			return(x.base() > y.base());
+
+}
+		template <class iterator> 
+bool operator>=(iterator const &x, iterator const &y)
+{
+			return(x.base() >= y.base());
+
+}
+// 		template <class iterator> 
+// bool operator>(iterator const &x, iterator const &y)
+// {
+// 			return(x.base() > y.base());
+
+// }
+
+
+
+
+
+
+
 
 
 
@@ -359,26 +381,15 @@ class reverse_iterator : public iterator<typename iterator_traits<Iterator>::ite
 	}
 };
 	/* relational operators */
-	template <typename Iterator>
+	template <typename Iterator> //change typename to class
 	 bool operator== (const reverse_iterator<Iterator>& lhs , const reverse_iterator<Iterator>& rhs)
 	 {
-		// std::cout << " operator==  is called for reverse_iterator" << std::endl;
-		std::cout <<  *lhs << std::endl;
-		std::cout <<  *rhs << std::endl;
-		if(&lhs == &rhs)
-		{
-		// std::cout << " operator==  is called for reverse_iterator" << std::endl;
-			
-		return true;
-		}
-			else
-		return false;
-		// return (&lhs == &rhs);
+		return (lhs.base() == rhs.base());
 	 }
 	 template <typename Iterator>
 	 bool operator!= (const reverse_iterator<Iterator>& lhs , const reverse_iterator<Iterator>& rhs)
 	 {
-		return (lhs() != rhs());
+		return (lhs.base() != rhs.base());
 	 }
 	 template <typename Iterator>
 	 bool operator< (const reverse_iterator<Iterator>& lhs , const reverse_iterator<Iterator>& rhs)
