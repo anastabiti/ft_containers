@@ -741,7 +741,7 @@ void			swap(vector<T,Allocator>&);
 	 bool operator< (const vector<T,Alloc>& lhs, const vector<T,Alloc>& rhs)
 	{
 		std::cout << "operator < vector is called"<< std::endl;
-		return std::lexicographical_compare(lhs.begin(), lhs.end(),rhs.begin(), rhs.end());
+		return std::lexicographical_compare(lhs.begin(), lhs.end(),rhs.begin(), rhs.end());//i must use mine ft::lex...
 	}
 	
 
@@ -773,14 +773,6 @@ void			swap(vector<T,Allocator>&);
 		
 	}
 	
-
-
-
-
-
-
-
-
 
 
 
