@@ -304,18 +304,40 @@ class reverse_iterator : public iterator<typename iterator_traits<Iterator>::ite
 		current = x;
 	}
 
+pointer base() const
+
+	{
+		return current;
+	}
+
 	// template <class U> reverse_iterator(const reverse_iterator<U>& u);
 	// Iterator base() const; // explicit
 	reference operator*() const
 	{
-		return (*current);
+		
+	Iterator __tmp = current;
+	return *--__tmp;
 	}
+
+
+
+
+
+
 	
 	pointer operator->() const
 	{
-		// return &current;
-		return current;
+				return &(this->operator*());
+
 	}
+
+
+
+
+
+
+
+
 	reverse_iterator &operator++()
 	{
 		// std::cout << "    reverse_iterator& operator++() is called" << std::endl;
@@ -328,7 +350,7 @@ class reverse_iterator : public iterator<typename iterator_traits<Iterator>::ite
 		// current--;
 		// return *this;
 		reverse_iterator tmp(*this);
-		++(*this);
+		--current;
 		return tmp;
 	}
 	reverse_iterator &operator--()
@@ -340,15 +362,16 @@ class reverse_iterator : public iterator<typename iterator_traits<Iterator>::ite
 	reverse_iterator operator--(int)
 	{
 		// std::cout << "           reverse_iterator operator--(int)  is called" << std::endl;
-		current++;
-		return *this;
+		// reverse_iterator tmp = *this;
+				reverse_iterator tmp (*this);
+
+		++current;
+		return tmp;
 	}
 	reverse_iterator operator+(difference_type n) const
 	{
 		// std::cout << "     reverse_iterator operator+ (difference_type n) const  is called" << std::endl;
-		// reverse_iterator tmp(*this);
-		// tmp = tmp + n;
-		return *this +n;
+		return reverse_iterator(current - n);
 	}
 	reverse_iterator &operator+=(difference_type n)
 	{
@@ -361,23 +384,23 @@ class reverse_iterator : public iterator<typename iterator_traits<Iterator>::ite
 	// reverse_iterator operator- (difference_type n) const;
 	reverse_iterator &operator-=(difference_type n)
 	{
-		// reverse_iterator tmp(*this);
-		// tmp = tmp - n;
-		// return tmp;
-		return (*this = *this- n);
+		current = current + n;
+		return *this;
 	}
+
+
+
 	reference operator[](difference_type n) const
 	{
+		// return *(*this + __n); stl std
 		// std::cout << "   2 reference operator[](difference_type n) const  is called" << std::endl;
 		return current[n]; //will call iterator  operator[]
 	}
 	reverse_iterator operator- (difference_type n) const
 	{
-		reverse_iterator cp(*this);
-		cp -= n;
-		// return (*this = *this + n); // cause infinit loop
-		// return (*this += n); // cause infinit loop
-		return cp;
+		return reverse_iterator (current + n);
+		
+		
 	}
 };
 	/* relational operators */
@@ -394,22 +417,24 @@ class reverse_iterator : public iterator<typename iterator_traits<Iterator>::ite
 	 template <typename Iterator>
 	 bool operator< (const reverse_iterator<Iterator>& lhs , const reverse_iterator<Iterator>& rhs)
 	 {
-		return (lhs() > rhs());//reverse here
+				return (lhs.base() > rhs.base());//reverse here
 	 }
 	 template <typename Iterator>
 	 bool operator<= (const reverse_iterator<Iterator>& lhs , const reverse_iterator<Iterator>& rhs)
 	 {
-		return (lhs() >= rhs());//reverse here
+				return (lhs.base() >= rhs.base());//reverse here
 	 }
 	 template <typename Iterator>
 	 bool operator> (const reverse_iterator<Iterator>& lhs , const reverse_iterator<Iterator>& rhs)
 	 {
-		return (lhs() < rhs());//reverse here
+			return (lhs.base() < rhs.base());
+//reverse here
 	 }
 	 template <typename Iterator>
 	 bool operator>= (const reverse_iterator<Iterator>& lhs , const reverse_iterator<Iterator>& rhs)
 	 {
-		return (lhs() <= rhs());//reverse here
+				return (lhs.base() <= rhs.base());
+//reverse here
 	 }
 
 
