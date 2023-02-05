@@ -167,7 +167,7 @@ class iterator
 	{
 		// std::cout << " Post-increment ,		called for      iterator operator++(int)" << std::endl;
 		iterator tmp(*this);
-		++(*this);
+		++ptr;
 		return (tmp);
 	}
 	/*
@@ -192,31 +192,21 @@ class iterator
 		// std::cout << "   1 reference operator[](difference_type n) const  is called" << std::endl;
 		return (ptr[n]);
 	}
-	//   iterator  operator= (difference_type n)
-	//   {
 
-	    		// std::cout << "          iterator  operator= (difference_type n)  is called" << std::endl;
-	//             return (*this);
-	//   }
 	iterator operator+(difference_type n) //not working
 	{
-		// std::cout << "      iterator operator+ (difference_type n) is called" << std::endl;
-		// iterator cp(*this);
-		// cp += n;
-		// return (*this = *this + n); // cause infinit loop
-		// return (*this += n); // cause infinit loop
-		// return *this+n;
-		// return cp;
-		return (&(*ptr)+n);
+		return (ptr+n);
+		// return (&(*ptr)+n);
 	}
 	iterator operator-(difference_type n) //not working
 	{
 		// std::cout << "      iterator operator+ (difference_type n) is called" << std::endl;
-		iterator cp(*this);
-		cp -= n;
+		// iterator cp(*this);
+		// cp -= n;
 		// return (*this = *this + n); // cause infinit loop
 		// return (*this += n); // cause infinit loop
-		return cp;
+		// return cp;
+		return ptr - n;
 	}
 
 	iterator operator+=(difference_type n)
@@ -301,7 +291,8 @@ class reverse_iterator : public iterator<typename iterator_traits<Iterator>::ite
 	
 	pointer operator->() const
 	{
-		return &current;
+		// return &current;
+		return current;
 	}
 	reverse_iterator &operator++()
 	{
@@ -366,8 +357,10 @@ class reverse_iterator : public iterator<typename iterator_traits<Iterator>::ite
 		// return (*this += n); // cause infinit loop
 		return cp;
 	}
+};
 	/* relational operators */
-	friend bool operator== (const reverse_iterator<Iterator>& lhs , const reverse_iterator<Iterator>& rhs)
+	template <typename Iterator>
+	 bool operator== (const reverse_iterator<Iterator>& lhs , const reverse_iterator<Iterator>& rhs)
 	 {
 		// std::cout << " operator==  is called for reverse_iterator" << std::endl;
 		std::cout <<  *lhs << std::endl;
@@ -382,27 +375,32 @@ class reverse_iterator : public iterator<typename iterator_traits<Iterator>::ite
 		return false;
 		// return (&lhs == &rhs);
 	 }
-	friend bool operator!= (const reverse_iterator<Iterator>& lhs , const reverse_iterator<Iterator>& rhs)
+	 template <typename Iterator>
+	 bool operator!= (const reverse_iterator<Iterator>& lhs , const reverse_iterator<Iterator>& rhs)
 	 {
 		return (lhs() != rhs());
 	 }
-	friend bool operator< (const reverse_iterator<Iterator>& lhs , const reverse_iterator<Iterator>& rhs)
+	 template <typename Iterator>
+	 bool operator< (const reverse_iterator<Iterator>& lhs , const reverse_iterator<Iterator>& rhs)
 	 {
 		return (lhs() > rhs());//reverse here
 	 }
-	friend bool operator<= (const reverse_iterator<Iterator>& lhs , const reverse_iterator<Iterator>& rhs)
+	 template <typename Iterator>
+	 bool operator<= (const reverse_iterator<Iterator>& lhs , const reverse_iterator<Iterator>& rhs)
 	 {
 		return (lhs() >= rhs());//reverse here
 	 }
-	friend bool operator> (const reverse_iterator<Iterator>& lhs , const reverse_iterator<Iterator>& rhs)
+	 template <typename Iterator>
+	 bool operator> (const reverse_iterator<Iterator>& lhs , const reverse_iterator<Iterator>& rhs)
 	 {
 		return (lhs() < rhs());//reverse here
 	 }
-	friend bool operator>= (const reverse_iterator<Iterator>& lhs , const reverse_iterator<Iterator>& rhs)
+	 template <typename Iterator>
+	 bool operator>= (const reverse_iterator<Iterator>& lhs , const reverse_iterator<Iterator>& rhs)
 	 {
 		return (lhs() <= rhs());//reverse here
 	 }
-};
+
 
 }; // namespace ft
 
