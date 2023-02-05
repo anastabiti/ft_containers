@@ -44,7 +44,9 @@ int main()
 	ft::vector<int> r2;
 
 	r1.push_back(44);
-	r2.push_back(44);
+	// r1.push_back(4343);
+		r2.push_back(112);
+
 		ft::vector<int>::iterator tt =  r1.begin()+1;
 	if(r1 == r2)
 	std::cout <<"are equal" << std::endl;
@@ -64,6 +66,7 @@ int main()
 	std::cout <<"iter not equal" << std::endl;
 
 	r1.push_back(*++r2.begin());
+	std::cout << r1.back()<<std::endl;
 	
 
 	

@@ -195,7 +195,7 @@ class iterator
 
 	iterator operator+(difference_type n) //not working
 	{
-		return (ptr+n);
+		return iterator(ptr+n);
 		// return (&(*ptr)+n);
 	}
 	iterator operator-(difference_type n) //not working
@@ -206,7 +206,7 @@ class iterator
 		// return (*this = *this + n); // cause infinit loop
 		// return (*this += n); // cause infinit loop
 		// return cp;
-		return ptr - n;
+		return iterator(ptr - n);
 	}
 
 	iterator operator+=(difference_type n)
