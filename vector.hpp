@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/06 09:36:49 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/06 09:39:29 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ class vector
    										A signed integral type that can represent the difference in two iterators. 
           								Result of pointer subtraction
        									ptrdiff_t = This is the signed integer type of the result of subtracting two pointers.
-   				*/
+   				*/ 
 	typedef size_t size_type;
 	/**_**_**_**_**_**_**_*~~~~~~~~~~~~~~~~~~***_**_**_**_**_**_**_**_**_**_*/
 	/**_**_**_**_**_**_**_*~~~~~~~~~~~~~~~~~~***_**_**_**_**_**_**_**_**_**_*/
