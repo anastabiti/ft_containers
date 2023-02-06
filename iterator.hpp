@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 09:45:02 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/06 09:09:18 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/06 09:16:19 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -457,7 +457,12 @@ pointer base() const
 	}
 	return true;
   }
-
+  /*if a < b returnn true*/
+	template <class InputIterator1, class InputIterator2>  
+bool lexicographical_compare (InputIterator1 first1, InputIterator1 last1, InputIterator2 first2, InputIterator2 last2)
+{
+	
+}
 }; // namespace ft
 
 #endif
