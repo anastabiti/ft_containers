@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/06 11:13:39 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/06 11:27:18 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int main()
 
 	r1.push_back(44);
 	// r1.push_back(4343);
-		r2.push_back(112);
+		r2.push_back(1337);
 
 		ft::vector<int>::iterator tt =  r1.begin()+1;
 	if(r1 == r2)
@@ -69,15 +69,18 @@ int main()
 	r1.push_back(1531);
 	r1.push_back(121);
 	r1.push_back(14);
-	r1.at(0);
 	r1.push_back(*++r2.begin());
 	r1.push_back(*++r2.end());
-	// r1.push_back(*++t2.begin());
-	// std::cout << r1.at(0)<<std::endl;
-
-	 r1.erase(r1.begin() , r1.begin()+3);
-	 t1.erase(t1.begin() , t1.begin()+3);
+	r1.push_back(*(r2.rbegin()));
 	
+	// r1.push_back(*++t2.begin());
+	std::cout << r1.back()<<std::endl;
+
+	//  r1.erase(r1.begin() , r1.begin()+3);
+	//  t1.erase(t1.begin() , t1.begin()+3);
+	
+	// std::cout <<"end "  << *t1.rbegin()-1<< std::endl;
+	// std::cout <<"end "  << *r1.rbegin()-1<< std::endl;
 
 	
 }
