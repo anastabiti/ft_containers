@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/06 13:04:41 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/06 13:41:06 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include <iostream>
 // #include <string>
 #include <vector>
+#include <map>
 // #include <algorithm>
 // #include "iterator.hpp"
 
@@ -81,10 +82,11 @@ int main()
 	    r2.resize(5000 * 10000);
 	std::cout <<"r2 capacity : " << r2.capacity() << std::endl;
 	    // r1.reserve(5000 * 10000);
-
-	
 	// r1.push_back(*++t2.begin());
 	std::cout << r1.back()<<std::endl;
+	    std::vector<std::map<char, int> > mp;
+	    ft::vector<std::map<char, int> > mpe;
+
 
 	//  r1.erase(r1.begin() , r1.begin()+3);
 	//  t1.erase(t1.begin() , t1.begin()+3);
@@ -94,7 +96,7 @@ int main()
   ft::vector<int> tmp(1000 * 333, 4);
   std::vector<int> tmp2(33,33);
 //   ft::vector<int> tmp11(tmp2);
-  ft::vector<int> tmp11(tmp.begin(), tmp.begin()+3);
+//   ft::vector<int> tmp11(tmp.begin(), tmp.begin()+3);
   
     // tmp = tmp2;
 	
