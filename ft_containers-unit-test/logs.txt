@@ -1,29 +1,28 @@
-../vector_tests/insert(std iterators).cpp:28:45: error: too many arguments to function call, expected 2, have 3
-        vector.insert(vector.begin(), tmp.begin(), tmp.end());
-        ~~~~~~~~~~~~~                              ^~~~~~~~~
-../vector_tests/insert(std iterators).cpp:40:75: note: in instantiation of function template specialization 'insert_std_test<int>' requested here
-        exit(run_vector_unit_test<int>("insert(std iterators)", insert_std_test, insert_std_test));
-                                                                                 ^
-../vector_tests/../../../vector.hpp:624:2: note: 'insert' declared here
-        iterator insert(iterator position, const value_type &val)
+In file included from ../vector_tests/swap().cpp:2:
+In file included from ../vector_tests/__service.ipp:3:
+../vector_tests/../../../vector.hpp:254:9: error: no member named 'alloc' in 'ft::vector<int, std::__1::allocator<int> >'
+                this->alloc = x.alloc;
+                ~~~~  ^
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/type_traits:4527:9: note: in instantiation of member function 'ft::vector<int, std::__1::allocator<int> >::operator=' requested here
+    __x = _VSTD::move(__y);
         ^
+../vector_tests/swap().cpp:58:10: note: in instantiation of function template specialization 'std::__1::swap<ft::vector<int, std::__1::allocator<int> > >' requested here
+    std::swap(vector, tmp2);
+         ^
+../vector_tests/swap().cpp:72:57: note: in instantiation of function template specialization 'swap_test<int>' requested here
+    exit(run_vector_unit_test<int>("swap()", swap_test, swap_test));
+                                                        ^
 1 error generated.
-equested here
-    exit(run_vector_unit_test<int>("insert(range)", insert_test_3, insert_test_3));
-                                                                   ^
-../vector_tests/../../../vector.hpp:624:2: note: 'insert' declared here
-        iterator insert(iterator position, const value_type &val)
-        ^
-2 errors generated.
+errors generated.
  = int]
      ^
-../vector_tests/../../../vector.hpp:205:6: note: candidate function not viable: no known conversion from 'std::__1::vector<int, std::__1::allocator<int> >::iterator' (aka '__wrap_iter<int *>') to 'ft::vector::size_type' (aka 'unsigned long') for 1st argument
+../vector_tests/../../../vector.hpp:206:6: note: candidate function not viable: no known conversion from 'std::__1::vector<int, std::__1::allocator<int> >::iterator' (aka '__wrap_iter<int *>') to 'ft::vector::size_type' (aka 'unsigned long') for 1st argument
 void assign (size_type n, const value_type& val) //
      ^
 1 error generated.
 ter(0) , end_iter(0)
                  ^
-../vector_tests/../../../vector.hpp:89:2: note: candidate constructor not viable: requires single argument 'rhs', but 2 arguments were provided
+../vector_tests/../../../vector.hpp:90:2: note: candidate constructor not viable: requires single argument 'rhs', but 2 arguments were provided
         vector (vector const &rhs)
         ^
 1 error generated.

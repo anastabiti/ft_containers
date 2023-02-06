@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 09:45:02 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/06 09:36:17 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/06 09:51:02 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,8 @@ template <class Category, class T, class Distance = ptrdiff_t, class Pointer = T
 class iterator
 //  : public std::iterator<std::random_access_iterator_tag, T>
 {
+  private:
+Pointer ptr;
 
   public:
 	typedef T value_type;             //value _type is of type T, the class of objects that the iterator is pointing.
@@ -101,9 +103,7 @@ class iterator
 	typedef Reference reference;     
 	//reference has a default Reference to type T.
 	typedef  Category iterator_category;
-  private:
-	pointer ptr;
-  public:
+
 	iterator()
 	{
 		ptr = NULL;
@@ -469,7 +469,6 @@ bool lexicographical_compare (InputIterator1 first1, InputIterator1 last1, Input
   }
   return (first2!=last2);
 }
-
 }; // namespace ft
 
 #endif

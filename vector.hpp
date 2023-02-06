@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/06 09:39:29 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/06 10:02:55 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,16 +38,10 @@ class vector
 	typedef typename Allocator::const_reference const_reference;
 	/*A constant reference to the type stored in the container. */
 	typedef typename Allocator::pointer pointer;
-	typedef typename Allocator::const_pointer const_pointer;
-	// typedef ft::iterator<ft::random_access_iterator_tag, T> iterator; /* An iterator for the container. */ working
-	typedef typename ft::iterator<ft::random_access_iterator_tag, T>::pointer iterator; /* An iterator for the container. */
-
-
-
-
-
-
 	
+	typedef typename Allocator::const_pointer const_pointer;
+	// typedef  ft::iterator<ft::random_access_iterator_tag, T> iterator; /* An iterator for the container. */
+	typedef typename ft::iterator<ft::random_access_iterator_tag, T>::pointer iterator; /* An iterator for the container. */
 	// typedef typename Allocator::pointer iterator; /* An iterator for the container. simple pionter  ->><><><><> */  
 	typedef const ft::iterator<ft::random_access_iterator_tag,T> const_iterator; /* A constant iterator for the container. */
 	typedef ft::reverse_iterator<iterator> reverse_iterator;
@@ -63,8 +57,8 @@ class vector
 	/**_**_**_**_**_**_**_*~~~~~~~~~~~~~~~~~~***_**_**_**_**_**_**_**_**_**_*/
 	/**_**_**_**_**_**_**_*~~~~~~~~~~~~~~~~~~***_**_**_**_**_**_**_**_**_**_*/
  private:
-	T *vec;
-	T *copY;
+	pointer vec;
+	pointer copY;
 	size_t size_param;
 	size_t capacity_param;
 	pointer start_iter;
@@ -247,14 +241,14 @@ allocator_type get_allocator() const
 
 
 */
-	//  vector& operator= (const vector& x)
-	//  {
-	// 	this->capacity_param = x.capacity_param;
-	// 	this->alloc = x.alloc;
-	// 	this->size_param = x.size_param;
-	// 	this->vec = x.vec;
-	// 	return (*this);
-	//  }
+	 vector& operator= (const vector& x)
+	 {
+		this->capacity_param = x.capacity_param;
+		this->alloc = x.alloc;
+		this->size_param = x.size_param;
+		this->vec = x.vec;
+		return (*this);
+	 }
 	/**_**_**_**_**_**_**_* Member functions  **_**_**_**_**_**_**_**_**_**_*/
 
 	/* Iterators-----------------------:                   */
@@ -578,13 +572,14 @@ const_reference	back(void) const;
 			start_from = size_param  - i ;
 						
 
-			// 
+			// // 
 			
 			
 			int j = 0;
 			while (j < start_from)
 			{
 				start_iter[j] = *(start_iter+i+j);
+				// std::cout << << std::
 				j++;
 			}
 			
@@ -706,6 +701,9 @@ void  clear()
 		allocating.destroy(start_iter+i);
 		i++;
 	}
+
+			allocating.deallocate(start_iter, this->capacity_param);
+
 	
 }
 
