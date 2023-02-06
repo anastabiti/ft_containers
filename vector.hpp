@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/06 11:07:20 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/06 11:10:46 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,19 +41,17 @@ class vector
 	/*A constant reference to the type stored in the container. */
 	
 	typedef typename Allocator::const_pointer const_pointer;
-	typedef  ft::iterator<ft::random_access_iterator_tag, T> iterator; /* An iterator for the container. */
+	typedef  ft::iterator<ft::random_access_iterator_tag, T> iterator; /* An iterator for the container. */ //problem here
+
+
+
+
+	
 	// typedef typename Allocator::pointer iterator; /* An iterator for the container. simple pionter  ->><><><><> */  
 	typedef const ft::iterator<ft::random_access_iterator_tag,T> const_iterator; /* A constant iterator for the container. */
-	
 	/*problem here */
-	typedef typename Allocator::pointer pointer;
-	// typedef typename ft::iterator<ft::random_access_iterator_tag, T>::pointer iterator; /* An iterator for the container. */
-
-
-
-
-
-	
+	typedef typename Allocator::pointer pointer; //working
+	// typedef typename ft::iterator<ft::random_access_iterator_tag, T>::pointer pointer; /* An iterator for the container. */
 	typedef ft::reverse_iterator<iterator> reverse_iterator;
 	typedef typename ft::reverse_iterator<const_iterator> const_reverse_iterator;
 	typedef ptrdiff_t difference_type;
@@ -571,9 +569,6 @@ const_reference	back(void) const;
 	iterator erase (iterator first, iterator last)
 	{
 			size_t i =  std::distance(first, last);
-			
-			
-			
 			size_t  start_from = size_param  - i ;
 			while (start_from < i)
 			{
