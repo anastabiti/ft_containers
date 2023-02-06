@@ -1,20 +1,42 @@
-../vector_tests/begin().cpp:21:18: error: expression is not assignable
-    v.push_back(*++vector.begin());
-                 ^ ~~~~~~~~~~~~~~
-../vector_tests/begin().cpp:28:59: note: in instantiation of function template specialization 'begin_test<int>' requested here
-    exit(run_vector_unit_test<int>("begin()", begin_test, begin_test));
-                                                          ^
-1 error generated.
-llocator<int> >::iterator' (aka '__wrap_iter<int *>') to 'typename ft::enable_if<!ft::is_integral<__wrap_iter<int *> >::value, int>::argument_type *' (aka 'int *') for 1st argument
-        vector(typename ft::enable_if<!ft::is_integral<InputIterator>::value, T >::argument_type *  first, InputIterator last, const allocator_type &alloc = allocator_type()) 
-        ^
-../vector_tests/../../../vector.hpp:112:11: note: candidate constructor not viable: no known conversion from 'std::__1::vector<int, std::__1::allocator<int> >::iterator' (aka '__wrap_iter<int *>') to 'ft::vector::size_type' (aka 'unsigned long') for 1st argument
-        explicit vector(size_type n, const value_type &val = value_type(), const allocator_type &alloc = allocator_type()) : start_iter(0) , end_iter(0)
-                 ^
-../vector_tests/../../../vector.hpp:85:11: note: candidate constructor not viable: requires at most 1 argument, but 2 were provided
-        explicit vector(const Allocator & = Allocator()) : start_iter(0) , end_iter(0)
-                 ^
-../vector_tests/../../../vector.hpp:93:2: note: candidate constructor not viable: requires single argument 'rhs', but 2 arguments were provided
-        vector (vector const &rhs)
-        ^
+In file included from ../vector_tests/erase(range).cpp:2:
+In file included from ../vector_tests/__service.ipp:3:
+../vector_tests/../../../vector.hpp:573:16: error: no matching function for call to 'distance'
+                        size_t i =  std::distance(first, last);
+                                    ^~~~~~~~~~~~~
+../vector_tests/erase(range).cpp:24:26: note: in instantiation of member function 'ft::vector<int, std::__1::allocator<int> >::erase' requested here
+    v.push_back(*(vector.erase(vector.begin() + 8 * _ratio, vector.end() - 1500 * _ratio)));
+                         ^
+../vector_tests/erase(range).cpp:34:66: note: in instantiation of function template specialization 'erase_test_2<int>' requested here
+    exit(run_vector_unit_test<int>("erase(range)", erase_test_2, erase_test_2));
+                                                                 ^
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/iterator:608:1: note: candidate template ignored: substitution failure [with _InputIter = ft::iterator<ft::random_access_iterator_tag, int, long, int *, int &>]: no type named 'difference_type' in 'std::__1::iterator_traits<ft::iterator<ft::random_access_iterator_tag, int, long, int *, int &> >'
+distance(_InputIter __first, _InputIter __last)
+^
+In file included from ../vector_tests/erase(range).cpp:2:
+In file included from ../vector_tests/__service.ipp:3:
+../vector_tests/../../../vector.hpp:600:11: error: no viable conversion from returned value of type 'ft::vector<int, std::__1::allocator<int> >::pointer' (aka 'int *') to function return type 'ft::vector<int, std::__1::allocator<int> >::iterator' (aka 'iterator<ft::random_access_iterator_tag, int>')
+                        return start_iter;
+                               ^~~~~~~~~~
+../vector_tests/../../../iterator.hpp:119:3: note: candidate constructor not viable: no known conversion from 'ft::vector<int, std::__1::allocator<int> >::pointer' (aka 'int *') to 'const ft::iterator<ft::random_access_iterator_tag, int, long, int *, int &> &' for 1st argument
+         iterator(const iterator &rhs)//copy
+         ^
+2 errors generated.
+t, InputIterator last) //candidate template ignored: substitution failure [with _InputIter = int]
+     ^
+../vector_tests/../../../vector.hpp:209:6: note: candidate function not viable: no known conversion from 'ft::vector<int, std::__1::allocator<int> >::iterator' (aka 'iterator<ft::random_access_iterator_tag, int>') to 'ft::vector::size_type' (aka 'unsigned long') for 1st argument
+void assign (size_type n, const value_type& val) //
+     ^
+2 errors generated.
+Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/string:4049:1: note: candidate template ignored: could not match 'const _CharT *' against 'ft::iterator<ft::random_access_iterator_tag, int, long, int *, int &>'
+operator+(const _CharT* __lhs , const basic_string<_CharT,_Traits,_Allocator>& __rhs)
+^
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/string:4061:1: note: candidate template ignored: could not match 'basic_string<type-parameter-0-0, type-parameter-0-1, type-parameter-0-2>' against 'long'
+operator+(_CharT __lhs, const basic_string<_CharT,_Traits,_Allocator>& __rhs)
+^
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/string:4073:1: note: candidate template ignored: could not match 'basic_string' against 'iterator'
+operator+(const basic_string<_CharT, _Traits, _Allocator>& __lhs, const _CharT* __rhs)
+^
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/string:4085:1: note: candidate template ignored: could not match 'basic_string' against 'iterator'
+operator+(const basic_string<_CharT, _Traits, _Allocator>& __lhs, _CharT __rhs)
+^
 1 error generated.

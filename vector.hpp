@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/06 11:02:51 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/06 11:07:20 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -273,8 +273,9 @@ allocator_type get_allocator() const
 	}
 	iterator end() //Return iterator to end (public member function)
 	{
-		// return (iterator(&vec[this->size_param - 1])); // - 1 ?
-		return (iterator(end_iter)); // - 1 ?
+		return (iterator(&start_iter[this->size_param])); // - 1 ?
+		
+		// return (iterator(end_iter)); // - 1 ?
 	}
 	const_iterator end() const
 	{
