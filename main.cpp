@@ -95,7 +95,10 @@ int main()
 	// std::cout <<"end "  << *t1.rbegin()-1<< std::endl;
 	// std::cout <<"end "  << *r1.rbegin()-1<< std::endl;
   ft::vector<int> tmp(1000 * 333, 4);
+  tmp.insert(tmp.begin()+1 , 3);
+
   std::vector<int> tmp2(33,33);
+  
 //   ft::vector<int> tmp11(tmp2);
 //   ft::vector<int> tmp11(tmp.begin(), tmp.begin()+3);
   

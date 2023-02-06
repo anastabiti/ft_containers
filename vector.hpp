@@ -643,81 +643,66 @@ const_reference	back(void) const;
 
 
 	iterator insert(iterator position, const value_type &val)
-	{
-		
-		
-		
+	{	
 /*
 	This causes an automatic reallocation of the allocated storage space if -and only if- 
 	the new vector size surpasses the current vector capacity.
 */
-	if(size() + 1 > capacity() && position != end())
-	{
-		
-		//copy until pos
-		iterator it;
-		size_t i = 0;
-		// size_t k = 0;
-		for (it = position; it != end();it++) // from position to end
+	/*
+	
+	
+	
+	
+	[ 1 ] [ 2 ] [ 3 ] [ 4 ] [ 5 ] [ 6 ] [ 7 ] [ 8 ] [ 9 ] [ 10 ] [ 11 ] [ 12 ] [ 13 ]  [  ]
+
+	                          |                                                   |
+							  													from_end
+	[ 1 ] [ 2 ] [ 3 ] [ 4 ] [   ] [ 5 ] [ 6 ] [ 7 ] [ 8 ] [ 9 ] [ 10 ] [ 11 ] [ 12 ] [ 13 ]
+	
+	
+	
+	
+	
+	
+	*/
+size_t n = 0;
+
+for (iterator it = position; it != end();it++) // from position to end
 		{	
 			
-			i++;
+			n++;
 		}
-		size_t pos_to_start = size_param - i;
-		
-		vector cp;
-		size_t y =  pos_to_start;
-		size_t x =  0;
-		while (y < size_param)
+
+		if(size() + 1 > capacity_param)
 		{
-			cp.push_back(start_iter[y]);
-			y++;
-			x++;
+			reserve(capacity_param * 2);
+
 		}
-		
-		resize(capacity_param *2);
-	
-		// *position = val;
-		start_iter[pos_to_start] = val;
-		// std::cout<< "here = " <<*position << std::endl;
-		// std::cout<< "vec here = " <<vec[pos_to_start] << "pos_to_start = " << pos_to_start << std::endl;
-		
-		y =  pos_to_start+1;
-		++size_param; 
-		x = 0;
-		while (y < size_param)
+		iterator from_end = this->end() - 1;
+		while (n > 0)
 		{
-			start_iter[y] = cp[x];
-			y++;
-			x++;
+		*(from_end +1) = *from_end;
+
+		from_end--;
+		n--;
 		}
+
+		from_end++;
+		*from_end = val;
+		size_param++;
 		
+		return from_end;
 		
-				
-		// 	
-		// 	vector cp;
-		// 	while (k < size() - i)
-		// 	{
-		// 		cp.push_back(vec[k]);
-		// 		k++;
-		// 	}
-		// 	cp.push_back(val);
-		// 	while (k < size())
-		// 	{
-		// 		cp.push_back(vec[k]);
-		// 		k++;
-		// 	}
-		// 	allocating.deallocate(vec, capacity_param);
-		// 	*this = cp;
-			return (iterator(start_iter));
-	}
-	else
-	{
-		*position = val;
-		this->size_param++;
-	}
-		return (iterator(start_iter));
-	}
+
+
+
+}
+
+template <class InputIterator>    
+void insert (iterator position,	InputIterator first, InputIterator last)
+{
+
+}
 
 void  clear()
 {
@@ -733,7 +718,7 @@ void  clear()
 }
 
 	// void insert (iterator position, size_type n, const value_type& val);
-	/* template <class InputIterator>    void insert (iterator position,	InputIterator first, InputIterator last); */
+	/* */
 	/*
 iterator		insert(iterator position, const T& x);
 void			insert(iterator position, size_type n, const T& x);
