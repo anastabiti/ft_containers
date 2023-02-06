@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/06 13:02:27 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/06 13:10:04 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -725,8 +725,10 @@ void  clear()
 	while (i < size_param)
 	{
 		allocating.destroy(start_iter+i);
+		
 		i++;
 	}
+	size_param = 0;
 			// allocating.deallocate(start_iter, this->capacity_param);
 }
 
