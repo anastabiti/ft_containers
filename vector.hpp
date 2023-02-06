@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/06 12:51:25 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/06 13:02:27 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ class vector
 
 	
 	typedef typename Allocator::pointer iterator; /* An iterator for the container. simple pionter  ->><><><><> */  
+	// typedef  typenameft::iterator<ft::random_access_iterator_tag,T> iterator; /* A constant iterator for the container. */
 	typedef const ft::iterator<ft::random_access_iterator_tag,T> const_iterator; /* A constant iterator for the container. */
 	/*problem here */
 	typedef typename Allocator::pointer pointer; //working
@@ -314,78 +315,78 @@ allocator_type get_allocator() const
 	{
 						
 
-	// 	/*
-	// 	If n is also greater than the current container capacity, 
-	// 	an automatic reallocation of the allocated storage space takes place.
-	// */
-	// 	if (n > capacity())
-	// 	{
-	// 		vector copy(*this);
-	// 		allocating.deallocate(start_iter, this->capacity_param);
-	// 		start_iter = allocating.allocate(n);
+		/*
+		If n is also greater than the current container capacity, 
+		an automatic reallocation of the allocated storage space takes place.
+	*/
+		if (n > capacity())
+		{
+			vector copy(*this);
+			allocating.deallocate(start_iter, this->capacity_param);
+			start_iter = allocating.allocate(n);
 
-	// 		size_t i = 0;
-	// 		while (i < this->size_param)
-	// 		{
-	// 			start_iter[i] = copy[i];
-	// 			i++;
-	// 		}
-	// 		// this->size_param = n; ??(off in insert i should resize without increasing size_param)
-	// 		this->capacity_param = n;
+			size_t i = 0;
+			while (i < this->size_param)
+			{
+				start_iter[i] = copy[i];
+				i++;
+			}
+			// this->size_param = n; ??(off in insert i should resize without increasing size_param)
+			this->capacity_param = n;
 
-	// 		while (i < this->size_param)
-	// 		{
-	// 			start_iter[i] = 0;
-	// 			i++;
-	// 		}
+			while (i < this->size_param)
+			{
+				start_iter[i] = 0;
+				i++;
+			}
 			
-	// 	}
-	// 	/*
-	// 	If n is smaller than the current container size,
-	// 	the content is reduced to its first n elements, 
-	// 	removing those beyond (and destroying them).
-	// */
+		}
+		/*
+		If n is smaller than the current container size,
+		the content is reduced to its first n elements, 
+		removing those beyond (and destroying them).
+	*/
 
-	// 	else if (n < size())
-	// 	{
+		else if (n < size())
+		{
 			
-	// 		vector copy;
-	// 		size_t i = 0;
-	// 		while (i < n)
-	// 		{
-	// 			copy[i] = start_iter[i];
-	// 			i++;
-	// 		}
+			vector copy;
+			size_t i = 0;
+			while (i < n)
+			{
+				copy[i] = start_iter[i];
+				i++;
+			}
 
-	// 		allocating.deallocate(start_iter, this->capacity_param);
-	// 		this->size_param = n;
-	// 		this->capacity_param = n;
-	// 		start_iter = allocating.allocate(this->capacity_param);
-	// 		i = 0;
-	// 		while (i < n)
-	// 		{
-	// 			start_iter[i] = copy[i];
-	// 			i++;
-	// 		}
-	// 	}
-	// 	/* If n is greater than the current container size, 
-	// 	the content is expanded by inserting at the end as many elements as needed to reach a size of n. 
-	// 	If val is specified, the new elements are initialized as copies of val,
-	// 		otherwise, they are value-initialized.
-	// 	*/
-	// 	else if (n > size())
-	// 	{
+			allocating.deallocate(start_iter, this->capacity_param);
+			this->size_param = n;
+			this->capacity_param = n;
+			start_iter = allocating.allocate(this->capacity_param);
+			i = 0;
+			while (i < n)
+			{
+				start_iter[i] = copy[i];
+				i++;
+			}
+		}
+		/* If n is greater than the current container size, 
+		the content is expanded by inserting at the end as many elements as needed to reach a size of n. 
+		If val is specified, the new elements are initialized as copies of val,
+			otherwise, they are value-initialized.
+		*/
+		else if (n > size())
+		{
 			
 			
 
-	// 		size_t i = size_param;
-	// 		while (i < n)
-	// 		{
-	// 			start_iter[i] = val;
-	// 			this->size_param++;
-	// 			i++;
-	// 		}
-	// 	}
+			size_t i = size_param;
+			while (i < n)
+			{
+				start_iter[i] = val;
+				this->size_param++;
+				i++;
+			}
+		}
 	}
 
 	size_type capacity() const //Request a change in capacity

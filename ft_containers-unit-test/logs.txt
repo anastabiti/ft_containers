@@ -4,26 +4,26 @@
 ../vector_tests/insert(std iterators).cpp:40:75: note: in instantiation of function template specialization 'insert_std_test<int>' requested here
         exit(run_vector_unit_test<int>("insert(std iterators)", insert_std_test, insert_std_test));
                                                                                  ^
-../vector_tests/../../../vector.hpp:644:2: note: 'insert' declared here
+../vector_tests/../../../vector.hpp:645:2: note: 'insert' declared here
         iterator insert(iterator position, const value_type &val)
         ^
 1 error generated.
 equested here
     exit(run_vector_unit_test<int>("insert(range)", insert_test_3, insert_test_3));
                                                                    ^
-../vector_tests/../../../vector.hpp:644:2: note: 'insert' declared here
+../vector_tests/../../../vector.hpp:645:2: note: 'insert' declared here
         iterator insert(iterator position, const value_type &val)
         ^
 2 errors generated.
  = int]
      ^
-../vector_tests/../../../vector.hpp:208:6: note: candidate function not viable: no known conversion from 'std::__1::vector<int, std::__1::allocator<int> >::iterator' (aka '__wrap_iter<int *>') to 'ft::vector::size_type' (aka 'unsigned long') for 1st argument
+../vector_tests/../../../vector.hpp:209:6: note: candidate function not viable: no known conversion from 'std::__1::vector<int, std::__1::allocator<int> >::iterator' (aka '__wrap_iter<int *>') to 'ft::vector::size_type' (aka 'unsigned long') for 1st argument
 void assign (size_type n, const value_type& val) //
      ^
 1 error generated.
 iter(0) , end_iter(0)
                  ^
-../vector_tests/../../../vector.hpp:91:2: note: candidate constructor not viable: requires single argument 'rhs', but 2 arguments were provided
+../vector_tests/../../../vector.hpp:92:2: note: candidate constructor not viable: requires single argument 'rhs', but 2 arguments were provided
         vector (vector const &rhs)
         ^
 1 error generated.
