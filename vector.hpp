@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/06 13:52:36 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/06 14:26:32 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,12 +41,12 @@ class vector
 	/*A constant reference to the type stored in the container. */
 	
 	typedef typename Allocator::const_pointer const_pointer;
-	typedef  ft::iterator<ft::random_access_iterator_tag, T> iterator; /* An iterator for the container. */ //problem here working but range con not working
+	// typedef  ft::iterator<ft::random_access_iterator_tag, T> iterator; /* An iterator for the container. */ //problem here working but range con not working
 
 
 
 	
-	// typedef typename Allocator::pointer iterator; /* An iterator for the container. simple pionter  ->><><><><> */  
+	typedef typename Allocator::pointer iterator; /* An iterator for the container. simple pionter  ->><><><><> */  
 	// typedef  typenameft::iterator<ft::random_access_iterator_tag,T> iterator; /* A constant iterator for the container. */
 	typedef const ft::iterator<ft::random_access_iterator_tag,T> const_iterator; /* A constant iterator for the container. */
 	/*problem here */
@@ -164,6 +164,7 @@ template <class InputIterator>
 		}
 	}
 template <class InputIterator> 
+// void assign (InputIterator first, InputIterator last) //candidate template ignored: substitution failure [with _InputIter = int]
 void assign (typename ft::enable_if<!ft::is_integral<InputIterator>::value, T >::argument_type *   first, InputIterator last) //candidate template ignored: substitution failure [with _InputIter = int]
 {
 	
@@ -175,6 +176,7 @@ void assign (typename ft::enable_if<!ft::is_integral<InputIterator>::value, T >:
 	}
 	allocating.deallocate(start_iter, this->capacity_param);
 	size_t dist = std::distance(first, last) + 1;
+	
 	start_iter = allocating.allocate(dist);
 	end_iter = start_iter + dist;
 	this->size_param = dist;

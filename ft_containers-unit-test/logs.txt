@@ -1,25 +1,29 @@
-../vector_tests/assign(std iterators).cpp:27:9: error: no matching member function for call to 'assign'
-        vector.assign(tmp.begin(), tmp.end());
-        ~~~~~~~^~~~~~
-../vector_tests/assign(std iterators).cpp:38:75: note: in instantiation of function template specialization 'assign_std_test<int>' requested here
-        exit(run_vector_unit_test<int>("assign(std iterators)", assign_std_test, assign_std_test));
+../vector_tests/insert(std iterators).cpp:28:45: error: too many arguments to function call, expected 2, have 3
+        vector.insert(vector.begin(), tmp.begin(), tmp.end());
+        ~~~~~~~~~~~~~                              ^~~~~~~~~
+../vector_tests/insert(std iterators).cpp:40:75: note: in instantiation of function template specialization 'insert_std_test<int>' requested here
+        exit(run_vector_unit_test<int>("insert(std iterators)", insert_std_test, insert_std_test));
                                                                                  ^
-../vector_tests/../../../vector.hpp:172:6: note: candidate function [with InputIterator = std::__1::__wrap_iter<int *>] not viable: no known conversion from 'std::__1::vector<int, std::__1::allocator<int> >::iterator' (aka '__wrap_iter<int *>') to 'typename ft::enable_if<!ft::is_integral<__wrap_iter<int *> >::value, int>::argument_type *' (aka 'int *') for 1st argument
-void assign (typename ft::enable_if<!ft::is_integral<InputIterator>::value, T >::argument_type *   first, InputIterator last) //candidate template ignored: substitution failure [with _InputIter = int]
+../vector_tests/../../../vector.hpp:639:2: note: 'insert' declared here
+        iterator insert(iterator position, const value_type &val)
+        ^
+1 error generated.
+equested here
+    exit(run_vector_unit_test<int>("insert(range)", insert_test_3, insert_test_3));
+                                                                   ^
+../vector_tests/../../../vector.hpp:639:2: note: 'insert' declared here
+        iterator insert(iterator position, const value_type &val)
+        ^
+2 errors generated.
+ = int]
      ^
-../vector_tests/../../../vector.hpp:208:6: note: candidate function not viable: no known conversion from 'std::__1::vector<int, std::__1::allocator<int> >::iterator' (aka '__wrap_iter<int *>') to 'ft::vector::size_type' (aka 'unsigned long') for 1st argument
+../vector_tests/../../../vector.hpp:203:6: note: candidate function not viable: no known conversion from 'std::__1::vector<int, std::__1::allocator<int> >::iterator' (aka '__wrap_iter<int *>') to 'ft::vector::size_type' (aka 'unsigned long') for 1st argument
 void assign (size_type n, const value_type& val) //
      ^
 1 error generated.
-ue_type& val) //
-     ^
-../vector_tests/assign().cpp:36:12: error: no matching member function for call to 'assign'
-    vector.assign(tmp2.begin(), tmp2.end());
-    ~~~~~~~^~~~~~
-../vector_tests/../../../vector.hpp:172:6: note: candidate function [with InputIterator = ft::iterator<ft::random_access_iterator_tag, int, long, int *, int &>] not viable: no known conversion from 'ft::vector<int, std::__1::allocator<int> >::iterator' (aka 'iterator<ft::random_access_iterator_tag, int>') to 'typename ft::enable_if<!ft::is_integral<iterator<random_access_iterator_tag, int, long, int *, int &> >::value, int>::argument_type *' (aka 'int *') for 1st argument
-void assign (typename ft::enable_if<!ft::is_integral<InputIterator>::value, T >::argument_type *   first, InputIterator last) //candidate template ignored: substitution failure [with _InputIter = int]
-     ^
-../vector_tests/../../../vector.hpp:208:6: note: candidate function not viable: no known conversion from 'ft::vector<int, std::__1::allocator<int> >::iterator' (aka 'iterator<ft::random_access_iterator_tag, int>') to 'ft::vector::size_type' (aka 'unsigned long') for 1st argument
-void assign (size_type n, const value_type& val) //
-     ^
-2 errors generated.
+iter(0) , end_iter(0)
+                 ^
+../vector_tests/../../../vector.hpp:91:2: note: candidate constructor not viable: requires single argument 'rhs', but 2 arguments were provided
+        vector (vector const &rhs)
+        ^
+1 error generated.

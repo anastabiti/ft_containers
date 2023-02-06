@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/06 13:41:06 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/06 14:24:20 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,7 @@ int main()
 	std::cout << r1.back()<<std::endl;
 	    std::vector<std::map<char, int> > mp;
 	    ft::vector<std::map<char, int> > mpe;
+		r1.assign(r2.begin(), r2.end());
 
 
 	//  r1.erase(r1.begin() , r1.begin()+3);
