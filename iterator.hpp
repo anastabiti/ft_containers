@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 09:45:02 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/06 10:56:09 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/06 11:33:23 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -198,7 +198,7 @@ Pointer ptr;
 		return iterator(ptr+n);
 		// return (&(*ptr)+n);
 	}
-	iterator operator-(difference_type n) //not working
+	iterator operator-(difference_type n) const//not working
 	{
 		// std::cout << "      iterator operator+ (difference_type n) is called" << std::endl;
 		// iterator cp(*this);
@@ -399,7 +399,6 @@ pointer base() const
 	reverse_iterator operator- (difference_type n) const
 	{
 		return reverse_iterator (current + n);
-		
 		
 	}
 };
