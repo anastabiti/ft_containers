@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/06 11:36:39 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/06 11:46:30 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,12 @@ int main()
 	r1.push_back(*++r2.end());
 	r1.push_back(*(r2.rend()+1));
 	r1.push_back(*(r1.rend() - 1));
+	    r1.resize(5000 * 10000);
+	    // r1.resize(5000 * 10000, ft::vector<int>::value_type);
+		 std::vector<int>::value_type T;
+	    t1.resize(5000 * 10000, int());
+		 ft::vector<int>::value_type TT;
+	    r2.resize(5000 * 10000, int());
 
 	
 	// r1.push_back(*++t2.begin());
