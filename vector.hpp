@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/06 09:20:34 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/06 09:21:47 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -787,7 +787,7 @@ void			swap(vector<T,Allocator>&);
 	template <class T,class Alloc>  
 	 bool operator!= (const vector<T,Alloc>& lhs, const vector<T,Alloc>& rhs)
 	{
-		// std::cout << "operator == vector is called"<< std::endl;
+		std::cout << "operator != vector is called"<< std::endl;
 		return !(lhs == rhs);
 	}
 
