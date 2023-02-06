@@ -4,14 +4,14 @@
 ../vector_tests/insert(std iterators).cpp:40:75: note: in instantiation of function template specialization 'insert_std_test<int>' requested here
         exit(run_vector_unit_test<int>("insert(std iterators)", insert_std_test, insert_std_test));
                                                                                  ^
-../vector_tests/../../../vector.hpp:643:2: note: 'insert' declared here
+../vector_tests/../../../vector.hpp:644:2: note: 'insert' declared here
         iterator insert(iterator position, const value_type &val)
         ^
 1 error generated.
 equested here
     exit(run_vector_unit_test<int>("insert(range)", insert_test_3, insert_test_3));
                                                                    ^
-../vector_tests/../../../vector.hpp:643:2: note: 'insert' declared here
+../vector_tests/../../../vector.hpp:644:2: note: 'insert' declared here
         iterator insert(iterator position, const value_type &val)
         ^
 2 errors generated.
@@ -33,16 +33,3 @@ void assign (typename ft::enable_if<!ft::is_integral<InputIterator>::value, T >:
 void assign (size_type n, const value_type& val) //
      ^
 2 errors generated.
-Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/string:4049:1: note: candidate template ignored: could not match 'const _CharT *' against 'ft::iterator<ft::random_access_iterator_tag, int, long, int *, int &>'
-operator+(const _CharT* __lhs , const basic_string<_CharT,_Traits,_Allocator>& __rhs)
-^
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/string:4061:1: note: candidate template ignored: could not match 'basic_string<type-parameter-0-0, type-parameter-0-1, type-parameter-0-2>' against 'long'
-operator+(_CharT __lhs, const basic_string<_CharT,_Traits,_Allocator>& __rhs)
-^
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/string:4073:1: note: candidate template ignored: could not match 'basic_string' against 'iterator'
-operator+(const basic_string<_CharT, _Traits, _Allocator>& __lhs, const _CharT* __rhs)
-^
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/string:4085:1: note: candidate template ignored: could not match 'basic_string' against 'iterator'
-operator+(const basic_string<_CharT, _Traits, _Allocator>& __lhs, _CharT __rhs)
-^
-1 error generated.

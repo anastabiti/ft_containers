@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/06 11:27:31 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/06 11:36:39 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,9 @@ int main()
 	r1.push_back(14);
 	r1.push_back(*++r2.begin());
 	r1.push_back(*++r2.end());
-	r1.push_back(*(r2.rbegin()+1));
+	r1.push_back(*(r2.rend()+1));
+	r1.push_back(*(r1.rend() - 1));
+
 	
 	// r1.push_back(*++t2.begin());
 	std::cout << r1.back()<<std::endl;
