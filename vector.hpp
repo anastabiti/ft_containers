@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/04 13:05:26 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/06 08:59:59 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -734,14 +734,16 @@ void			swap(vector<T,Allocator>&);
 	 bool operator== (const vector<T,Alloc>& lhs, const vector<T,Alloc>& rhs)
 	{
 		std::cout << "operator == vector is called"<< std::endl;
-		return(lhs.size() == rhs.size() && std::equal(lhs.begin(),lhs.end(), rhs.begin() ));
+		return(lhs.size() == rhs.size() && ft::equal(lhs.begin(),lhs.end(), rhs.begin() ));
 		 //problem here :      typedef typename iterator_traits<_InputIterator1>::value_type __v1;
+		//  return (lhs== rhs);
 	}
 	template <class T,class Alloc>  
 	 bool operator< (const vector<T,Alloc>& lhs, const vector<T,Alloc>& rhs)
 	{
 		std::cout << "operator < vector is called"<< std::endl;
-		return std::lexicographical_compare(lhs.begin(), lhs.end(),rhs.begin(), rhs.end());//i must use mine ft::lex...
+		// return std::lexicographical_compare(lhs.begin(), lhs.end(),rhs.begin(), rhs.end());//i must use mine ft::lex...
+		 return (lhs<rhs);
 	}
 	
 
