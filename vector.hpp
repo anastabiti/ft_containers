@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/06 11:10:46 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/06 11:20:50 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -153,7 +153,8 @@ template <class InputIterator>
 		// 	n++;
 		// 	it++;
 		// }
-		 n = std::distance(first, last) + 1;
+		n = std::distance(first, last) + 1;
+
 		start_iter = allocating.allocate(n);
 		this->size_param = n;
 		end_iter = start_iter + size_param;
@@ -553,8 +554,14 @@ const_reference	back(void) const;
 
 	iterator erase (iterator position)
 	{
-		size_t  i = std::distance(begin(), position);
-		
+		// size_t  i = std::distance(begin(), position);
+		size_t i = 0 ;
+			iterator it  = begin();
+			while (it != position)
+		{
+			i++;
+			it++;
+		}
 		allocating.destroy(start_iter+i);
 		size_t j = i +1;
 		while (i < size_param-1)
@@ -564,11 +571,22 @@ const_reference	back(void) const;
 			j++;
 		}
 		size_param--;
-		return start_iter;
+		// return start_iter;
+					return iterator(&start_iter[j]);
 	}
+
+
+	
 	iterator erase (iterator first, iterator last)
 	{
-			size_t i =  std::distance(first, last);
+		size_t i = 0 ;
+			// size_t i =  std::distance(first, last);
+			iterator it  = first;
+			while (it != last)
+		{
+			i++;
+			it++;
+		}
 			size_t  start_from = size_param  - i ;
 			while (start_from < i)
 			{
@@ -592,7 +610,7 @@ const_reference	back(void) const;
 			
 				
 			size_param =size_param - i ;
-			return start_iter;
+			return iterator(&start_iter[j]);
 	}
 
 	void swap (vector& x)
