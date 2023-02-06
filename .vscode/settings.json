@@ -75,6 +75,8 @@
         "csignal": "cpp",
         "fstream": "cpp",
         "iomanip": "cpp",
-        "*.tcc": "cpp"
+        "*.tcc": "cpp",
+        "numeric": "cpp",
+        "*.ipp": "cpp"
     }
 }

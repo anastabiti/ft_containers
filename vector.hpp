@@ -48,7 +48,7 @@ class vector
 	
 	typedef typename Allocator::pointer iterator; /* An iterator for the container. simple pionter  ->><><><><> */  
 	// typedef  typenameft::iterator<ft::random_access_iterator_tag,T> iterator; /* A constant iterator for the container. */
-	typedef const ft::iterator<ft::random_access_iterator_tag,T> const_iterator; /* A constant iterator for the container. */
+	typedef const iterator const_iterator; /* A constant iterator for the container. */
 	/*problem here */
 	typedef typename Allocator::pointer pointer; //working
 	// typedef typename ft::iterator<ft::random_access_iterator_tag, T>::pointer pointer; /* An iterator for the container. */
@@ -169,18 +169,20 @@ void assign (typename ft::enable_if<!ft::is_integral<InputIterator>::value, T >:
 {
 	
 	size_t i = 0;
-	while (i < this->capacity_param)
-	{
-		allocating.destroy(start_iter+i);
-		i++;
-	}
-	allocating.deallocate(start_iter, this->capacity_param);
-	size_t dist = std::distance(first, last) + 1;
+	// while (i < this->capacity_param)
+	// {
+	// 	allocating.destroy(start_iter+i);
+	// 	i++;
+	// }
+	// allocating.deallocate(start_iter, this->capacity_param);
+	clear();
+	size_t dist = std::distance(first, last);
 	
-	start_iter = allocating.allocate(dist);
-	end_iter = start_iter + dist;
-	this->size_param = dist;
-	this->capacity_param = dist;
+
+	if(dist > capacity_param)
+	reserve(dist);
+	// end_iter = start_iter + dist;
+	// this->capacity_param = dist;
 	 i = 0;
 	while (i < dist)
 	{
@@ -189,6 +191,7 @@ void assign (typename ft::enable_if<!ft::is_integral<InputIterator>::value, T >:
 		first++;
 		i++;
 	}
+	this->size_param = dist;
 	//  i = 0;
 	// while (i < dist)
 	// {
@@ -204,15 +207,17 @@ void assign (size_type n, const value_type& val) //
 {
 	
 			size_t i = 0;
-	while (i < this->capacity_param)
-	{
-		allocating.destroy(start_iter+i);
-		i++;
-	}
-	allocating.deallocate(start_iter, this->capacity_param);
-	start_iter = allocating.allocate(n);
-	size_param = n;
-	capacity_param = n;
+	// while (i < this->capacity_param)
+	// {
+	// 	allocating.destroy(start_iter+i);
+	// 	i++;
+	// }
+	clear();
+	if(n > capacity_param)
+		reserve(n);
+	// allocating.deallocate(start_iter, this->capacity_param);
+	// start_iter = allocating.allocate(n);
+	// capacity_param = n;
 	i = 0;
 	while (i < n)
 	{
@@ -220,6 +225,7 @@ void assign (size_type n, const value_type& val) //
 		allocating.construct(start_iter+i , val);
 		i++;
 	}
+	size_param = n;
 	
 }
 

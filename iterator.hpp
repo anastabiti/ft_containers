@@ -30,11 +30,11 @@ namespace ft
 	behavior. These are the five iterator tags which represent the five types of
 
 */
-struct	input_iterator_tag{};
-struct	output_iterator_tag{};
-struct forward_iterator_tag : public input_iterator_tag{};
-struct bidirectional_iterator_tag : public forward_iterator_tag{};
-struct random_access_iterator_tag : public bidirectional_iterator_tag{};
+// struct	input_iterator_tag{};
+// struct	output_iterator_tag{};
+// struct forward_iterator_tag : public input_iterator_tag{};
+// struct bidirectional_iterator_tag : public forward_iterator_tag{};
+// struct random_access_iterator_tag : public bidirectional_iterator_tag{};
 
 /* 								iterator_traits 
 	iterator_traits is a structure that contains basic information on iterators
@@ -67,7 +67,7 @@ struct iterator_traits<T *> // definitions that are appropriate for pointers.
 	typedef T value_type;
 	typedef T *pointer;
 	typedef T &reference;
-	typedef ft::random_access_iterator_tag iterator_category;
+	typedef std::random_access_iterator_tag iterator_category;
 	// no type named 'iterator_category' in 'ft::iterator_traits<int *>'
 	//     class reverse_iterator : public iterator<typename iterator_traits<Iterator>::iterator_category,
 };
