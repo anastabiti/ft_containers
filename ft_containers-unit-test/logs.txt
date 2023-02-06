@@ -1,28 +1,20 @@
-In file included from ../vector_tests/swap().cpp:2:
-In file included from ../vector_tests/__service.ipp:3:
-../vector_tests/../../../vector.hpp:254:9: error: no member named 'alloc' in 'ft::vector<int, std::__1::allocator<int> >'
-                this->alloc = x.alloc;
-                ~~~~  ^
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/type_traits:4527:9: note: in instantiation of member function 'ft::vector<int, std::__1::allocator<int> >::operator=' requested here
-    __x = _VSTD::move(__y);
+../vector_tests/begin().cpp:21:18: error: expression is not assignable
+    v.push_back(*++vector.begin());
+                 ^ ~~~~~~~~~~~~~~
+../vector_tests/begin().cpp:28:59: note: in instantiation of function template specialization 'begin_test<int>' requested here
+    exit(run_vector_unit_test<int>("begin()", begin_test, begin_test));
+                                                          ^
+1 error generated.
+llocator<int> >::iterator' (aka '__wrap_iter<int *>') to 'typename ft::enable_if<!ft::is_integral<__wrap_iter<int *> >::value, int>::argument_type *' (aka 'int *') for 1st argument
+        vector(typename ft::enable_if<!ft::is_integral<InputIterator>::value, T >::argument_type *  first, InputIterator last, const allocator_type &alloc = allocator_type()) 
         ^
-../vector_tests/swap().cpp:58:10: note: in instantiation of function template specialization 'std::__1::swap<ft::vector<int, std::__1::allocator<int> > >' requested here
-    std::swap(vector, tmp2);
-         ^
-../vector_tests/swap().cpp:72:57: note: in instantiation of function template specialization 'swap_test<int>' requested here
-    exit(run_vector_unit_test<int>("swap()", swap_test, swap_test));
-                                                        ^
-1 error generated.
-errors generated.
- = int]
-     ^
-../vector_tests/../../../vector.hpp:206:6: note: candidate function not viable: no known conversion from 'std::__1::vector<int, std::__1::allocator<int> >::iterator' (aka '__wrap_iter<int *>') to 'ft::vector::size_type' (aka 'unsigned long') for 1st argument
-void assign (size_type n, const value_type& val) //
-     ^
-1 error generated.
-ter(0) , end_iter(0)
+../vector_tests/../../../vector.hpp:112:11: note: candidate constructor not viable: no known conversion from 'std::__1::vector<int, std::__1::allocator<int> >::iterator' (aka '__wrap_iter<int *>') to 'ft::vector::size_type' (aka 'unsigned long') for 1st argument
+        explicit vector(size_type n, const value_type &val = value_type(), const allocator_type &alloc = allocator_type()) : start_iter(0) , end_iter(0)
                  ^
-../vector_tests/../../../vector.hpp:90:2: note: candidate constructor not viable: requires single argument 'rhs', but 2 arguments were provided
+../vector_tests/../../../vector.hpp:85:11: note: candidate constructor not viable: requires at most 1 argument, but 2 were provided
+        explicit vector(const Allocator & = Allocator()) : start_iter(0) , end_iter(0)
+                 ^
+../vector_tests/../../../vector.hpp:93:2: note: candidate constructor not viable: requires single argument 'rhs', but 2 arguments were provided
         vector (vector const &rhs)
         ^
 1 error generated.

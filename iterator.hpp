@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 09:45:02 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/06 09:51:02 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/06 10:56:09 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -142,7 +142,7 @@ Pointer ptr;
 	reference operator*() const
 	{
 		// std::cout <<"iterator operator* is called " << std::endl;
-		return (*ptr);
+		return reference(*ptr);
 	}
 
 	pointer operator->() const
