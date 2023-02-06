@@ -21,15 +21,9 @@ equested here
 void assign (size_type n, const value_type& val) //
      ^
 1 error generated.
-ue_type& val) //
-     ^
-../vector_tests/assign().cpp:36:12: error: no matching member function for call to 'assign'
-    vector.assign(tmp2.begin(), tmp2.end());
-    ~~~~~~~^~~~~~
-../vector_tests/../../../vector.hpp:172:6: note: candidate function [with InputIterator = ft::iterator<ft::random_access_iterator_tag, int, long, int *, int &>] not viable: no known conversion from 'ft::vector<int, std::__1::allocator<int> >::iterator' (aka 'iterator<ft::random_access_iterator_tag, int>') to 'typename ft::enable_if<!ft::is_integral<iterator<random_access_iterator_tag, int, long, int *, int &> >::value, int>::argument_type *' (aka 'int *') for 1st argument
-void assign (typename ft::enable_if<!ft::is_integral<InputIterator>::value, T >::argument_type *   first, InputIterator last) //candidate template ignored: substitution failure [with _InputIter = int]
-     ^
-../vector_tests/../../../vector.hpp:208:6: note: candidate function not viable: no known conversion from 'ft::vector<int, std::__1::allocator<int> >::iterator' (aka 'iterator<ft::random_access_iterator_tag, int>') to 'ft::vector::size_type' (aka 'unsigned long') for 1st argument
-void assign (size_type n, const value_type& val) //
-     ^
-2 errors generated.
+iter(0) , end_iter(0)
+                 ^
+../vector_tests/../../../vector.hpp:91:2: note: candidate constructor not viable: requires single argument 'rhs', but 2 arguments were provided
+        vector (vector const &rhs)
+        ^
+1 error generated.

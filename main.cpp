@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/06 11:46:30 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/06 12:46:50 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,16 +69,18 @@ int main()
 	r1.push_back(1531);
 	r1.push_back(121);
 	r1.push_back(14);
-	r1.push_back(*++r2.begin());
-	r1.push_back(*++r2.end());
-	r1.push_back(*(r2.rend()+1));
-	r1.push_back(*(r1.rend() - 1));
+	// r1.push_back(*++r2.begin());
+	// r1.push_back(*++r2.end());
+	// r1.push_back(*(r2.rend()+1));
+	// r1.push_back(*(r1.rend() - 1));
 	    r1.resize(5000 * 10000);
 	    // r1.resize(5000 * 10000, ft::vector<int>::value_type);
 		 std::vector<int>::value_type T;
 	    t1.resize(5000 * 10000, int());
 		 ft::vector<int>::value_type TT;
-	    r2.resize(5000 * 10000, int());
+	    r2.resize(5000 * 10000);
+	std::cout <<"r2 capacity : " << r2.capacity() << std::endl;
+	    // r1.reserve(5000 * 10000);
 
 	
 	// r1.push_back(*++t2.begin());
@@ -89,7 +91,12 @@ int main()
 	
 	// std::cout <<"end "  << *t1.rbegin()-1<< std::endl;
 	// std::cout <<"end "  << *r1.rbegin()-1<< std::endl;
-
+  ft::vector<int> tmp(1000 * 333, 4);
+  std::vector<int> tmp2(33,33);
+//   ft::vector<int> tmp11(tmp2);
+  ft::vector<int> tmp11(tmp.begin(), tmp.begin()+3);
+  
+    // tmp = tmp2;
 	
 }
 
