@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/06 13:10:04 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/06 13:13:29 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,13 +41,12 @@ class vector
 	/*A constant reference to the type stored in the container. */
 	
 	typedef typename Allocator::const_pointer const_pointer;
-	// typedef  ft::iterator<ft::random_access_iterator_tag, T> iterator; /* An iterator for the container. */ //problem here working but range con not working
-
+	typedef  ft::iterator<ft::random_access_iterator_tag, T> iterator; /* An iterator for the container. */ //problem here working but range con not working
 
 
 
 	
-	typedef typename Allocator::pointer iterator; /* An iterator for the container. simple pionter  ->><><><><> */  
+	// typedef typename Allocator::pointer iterator; /* An iterator for the container. simple pionter  ->><><><><> */  
 	// typedef  typenameft::iterator<ft::random_access_iterator_tag,T> iterator; /* A constant iterator for the container. */
 	typedef const ft::iterator<ft::random_access_iterator_tag,T> const_iterator; /* A constant iterator for the container. */
 	/*problem here */
