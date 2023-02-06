@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/06 09:21:47 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/06 09:22:47 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ class vector
 	{
 		this->size_param = 0;
 		this->capacity_param = 0;
-		// std::cout << "default constructor is called" << std::endl;
+		
 	}
 
 	/* 							copy constructor */
@@ -114,7 +114,7 @@ class vector
 			allocating.construct(i , val);
 			i++;	
 		}
-		// std::cout << "	fill constructor" << std::endl;
+		
 	}
 	
 	// vector operator*() const
@@ -132,7 +132,7 @@ template <class InputIterator>
 	vector(typename ft::enable_if<!ft::is_integral<InputIterator>::value, T >::argument_type *  first, InputIterator last, const allocator_type &alloc = allocator_type()) 
 	//	ft::vector<int> f3(2,4); range constructor will be called
 	{		
-		//  std::cout <<"range constructor is called" << std::endl;
+		
 		allocating = alloc;
 		// iterator it = first;
 		iterator cp = first;
@@ -144,7 +144,6 @@ template <class InputIterator>
 		// 	it++;
 		// }
 		 n = std::distance(first, last) + 1;
-		//  std::cout <<" n = std::distance(first, last); = "  << n << std::endl;
 		start_iter = allocating.allocate(n);
 		this->size_param = n;
 		end_iter = start_iter + size_param;
@@ -197,7 +196,7 @@ void assign (typename ft::enable_if<!ft::is_integral<InputIterator>::value, T >:
 
 void assign (size_type n, const value_type& val) //
 {
-	// std::cout <<"void assign (size_type n, const value_type& val) is called" <<std::endl;
+	
 			size_t i = 0;
 	while (i < this->capacity_param)
 	{
@@ -253,7 +252,7 @@ allocator_type get_allocator() const
 	/* Iterators-----------------------:                   */
 	iterator begin() //Return iterator to beginning (public member function)
 	{
-		// std::cout << " I am in  begin() :  \n";
+		
 		return (iterator(start_iter));
 	}
 	const_iterator begin() const
@@ -300,7 +299,7 @@ allocator_type get_allocator() const
 	
 	void resize(size_type n, value_type val = value_type())
 	{
-						// std::cout << " I am in  resize() :  \n";
+						
 
 		/*
 		If n is also greater than the current container capacity, 
@@ -326,7 +325,7 @@ allocator_type get_allocator() const
 				start_iter[i] = 0;
 				i++;
 			}
-			// std::cout << " > this->vec.capacity() is called" << std::endl;
+			
 		}
 		/*
 		If n is smaller than the current container size,
@@ -336,7 +335,7 @@ allocator_type get_allocator() const
 
 		else if (n < size())
 		{
-			// std::cout << size() << " n < size() is called" << std::endl;
+			
 			vector copy;
 			size_t i = 0;
 			while (i < n)
@@ -363,8 +362,8 @@ allocator_type get_allocator() const
 		*/
 		else if (n > size())
 		{
-			// std::cout << "n > this->vec.size()is called" << std::endl;
-			// std::cout << "n  = " << n << " size = " << size() << " capacity " << capacity() << std::endl;
+			
+			
 
 			size_t i = size_param;
 			while (i < n)
@@ -422,7 +421,7 @@ allocator_type get_allocator() const
 
 		capacity_param = n;
 		start_iter = allocating.allocate(n);
-		// std::cout << "capacity :inside    " << capacity() << '\n';
+		
 	}
 
 	/* Element access:-----------------------:                   */
@@ -487,12 +486,12 @@ const_reference	back(void) const;
 	/* Element Modifiers:-----------------------:                   */
 	void push_back(value_type const &nb)
 	{
-				// std::cout << " I am in  push_back() :  \n";
+				
 
 		// start with nothing case	ft::vector<int> fake;
 		if (size_param == 0)
 		{
-			// std::cout << "void push_back(		if (size_param == 0))"<< std::endl;
+			
 			start_iter = allocating.allocate(1);
 			end_iter = start_iter + 1;
 			if (capacity_param == 0)
@@ -505,7 +504,7 @@ const_reference	back(void) const;
 		}
 		else if (size_param > 0 && size_param < capacity_param)
 		{
-			// std::cout << "		else if (size_param > 0	&& size_param < capacity_param)"<< std::endl;
+			
 			start_iter[size_param] = nb;
 			end_iter = start_iter + size_param;
 			++size_param;
@@ -513,7 +512,7 @@ const_reference	back(void) const;
 		}
 		else if (size_param == capacity_param)
 		{
-			// std::cout << "		else if (size_param == capacity_param)"<< std::endl;
+			
 
 			capacity_param = capacity_param * 2;
 			copY = allocating.allocate(capacity_param);
@@ -544,7 +543,7 @@ const_reference	back(void) const;
 	iterator erase (iterator position)
 	{
 		size_t  i = std::distance(begin(), position);
-		// std::cout <<"position:  "<<*position << " dist= " << i<<std::endl;
+		
 		allocating.destroy(start_iter+i);
 		size_t j = i +1;
 		while (i < size_param-1)
@@ -559,9 +558,9 @@ const_reference	back(void) const;
 	iterator erase (iterator first, iterator last)
 	{
 			size_t i =  std::distance(first, last);
-			// std::cout << " to be removed= " << *tmp<<std::endl;
-			// std::cout << " remove i items " <<  i<<std::endl;
-			// std::cout << " start from:   " <<  size_param - i<<std::endl;
+			
+			
+			
 			size_t  start_from = size_param  - i ;
 			while (start_from < i)
 			{
@@ -569,9 +568,9 @@ const_reference	back(void) const;
 				start_from++;
 			}
 			start_from = size_param  - i ;
-						// std::cout << " start from:   " <<  start_from<<std::endl;
+						
 
-			// 			std::cout << " start from: i  " <<  i<<std::endl;
+			// 
 			
 			
 			int j = 0;
@@ -582,7 +581,7 @@ const_reference	back(void) const;
 			}
 			
 			
-				// std::cout << " start_from= " << start_from<<std::endl;
+				
 			size_param =size_param - i ;
 			return start_iter;
 	}
@@ -616,27 +615,27 @@ const_reference	back(void) const;
 
 	iterator insert(iterator position, const value_type &val)
 	{
-		// std::cout << " I am in  insert() :  \n";
-		// std::cout << "	iterator insert (iterator position,	const value_type& val) is called" << std::endl;
-		// std::cout << *position << std::endl;
+		
+		
+		
 /*
 	This causes an automatic reallocation of the allocated storage space if -and only if- 
 	the new vector size surpasses the current vector capacity.
 */
 	if(size() + 1 > capacity() && position != end())
 	{
-		// std::cout << "____size() + 1 > capacity())" << std::endl;
+		
 		//copy until pos
 		iterator it;
 		size_t i = 0;
 		// size_t k = 0;
 		for (it = position; it != end();it++) // from position to end
 		{	
-			// std::cout << "______-----_________   _-----_-__-___- size() + 1 > capacity())" << std::endl;	
+			
 			i++;
 		}
 		size_t pos_to_start = size_param - i;
-		// std::cout <<"pos_to_start = "<< pos_to_start << std::endl;
+		
 		vector cp;
 		size_t y =  pos_to_start;
 		size_t x =  0;
@@ -646,7 +645,7 @@ const_reference	back(void) const;
 			y++;
 			x++;
 		}
-		// std::cout << "x  = " <<  x<<std::endl;
+		
 		resize(capacity_param *2);
 	
 		// *position = val;
@@ -666,7 +665,7 @@ const_reference	back(void) const;
 		
 		
 				
-		// 	// std::cout <<" there are "<<  size() - i << " before i " << std::endl;
+		// 	
 		// 	vector cp;
 		// 	while (k < size() - i)
 		// 	{
@@ -685,7 +684,6 @@ const_reference	back(void) const;
 	}
 	else
 	{
-		std::cout << "_+_+_+_*position = val;" << std::endl;
 		*position = val;
 		this->size_param++;
 	}
@@ -725,7 +723,7 @@ void			swap(vector<T,Allocator>&);
 		// 	i++;
 		// }
 		// allocating.deallocate(start_iter, this->capacity_param);
-		// std::cout << "destructor is called" << std::endl;
+		
 		
 	}
 	
@@ -755,7 +753,6 @@ void			swap(vector<T,Allocator>&);
 	template <class T,class Alloc>  
 	 bool operator> (const vector<T,Alloc>& lhs, const vector<T,Alloc>& rhs)
 	{
-		std::cout << "operator > vector is called"<< std::endl;
 		return rhs < lhs; // use < 
 		
 	}
@@ -765,14 +762,12 @@ void			swap(vector<T,Allocator>&);
 	template <class T,class Alloc>  
 	 bool operator>= (const vector<T,Alloc>& lhs, const vector<T,Alloc>& rhs)
 	{
-		std::cout << "operator >= vector is called"<< std::endl;
 		return !(lhs < rhs);
 	}
 
 	template <class T,class Alloc>  
 	 bool operator<= (const vector<T,Alloc>& lhs, const vector<T,Alloc>& rhs)
 	{
-		std::cout << "operator <= vector is called"<< std::endl;
 		return !(rhs < lhs);
 		
 	}
@@ -787,7 +782,6 @@ void			swap(vector<T,Allocator>&);
 	template <class T,class Alloc>  
 	 bool operator!= (const vector<T,Alloc>& lhs, const vector<T,Alloc>& rhs)
 	{
-		std::cout << "operator != vector is called"<< std::endl;
 		return !(lhs == rhs);
 	}
 
