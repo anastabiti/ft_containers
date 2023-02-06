@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/06 13:13:29 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/06 13:52:36 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,11 +126,6 @@ class vector
 		}
 		
 	}
-	
-	// vector operator*() const
-	// {
-	// 		return (*vec);
-	// }
 /*							range constructor
 			Constructs a container with as many elements as the range [first,last),
 			with each element constructed from its corresponding element in that range,
@@ -180,8 +175,6 @@ void assign (typename ft::enable_if<!ft::is_integral<InputIterator>::value, T >:
 	}
 	allocating.deallocate(start_iter, this->capacity_param);
 	size_t dist = std::distance(first, last) + 1;
-	// std::cout  << dist << std::endl;
-	// std::cout  << "void assign (InputIterator first, InputIterator last) is called " << std::endl;
 	start_iter = allocating.allocate(dist);
 	end_iter = start_iter + dist;
 	this->size_param = dist;
