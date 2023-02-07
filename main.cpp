@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/07 12:57:48 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/07 13:07:00 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,24 +70,24 @@ int main()
 		// }
 std::cout << "_+_+_+__+_+_+__+_+_+__+_+_+__+_+_+_"<< std::endl;
 int h = 0 ;
-	// while (h < 22)
-	// {
-	// 	ftvec.insert(ftvec.begin()+2 , 1337 ); 
-	// 	h++;
-	// }
+	while (h < 3332)
+	{
+		ftvec.insert(ftvec.begin() , 1337 ); 
+		h++;
+	}
 	
 		
-		ftvec.insert(ftvec.end() , 1 );
-		ftvec.insert(ftvec.end() , 2  );
-		ftvec.insert(ftvec.end() , 3  );
-		ftvec.insert(ftvec.end() , 4  );
-		ftvec.insert(ftvec.end() , 5  );
-		ftvec.insert(ftvec.end() , 6  );
-		ftvec.insert(ftvec.end() , 22121221  ); //here there is a problem
-		ftvec.insert(ftvec.end() , 770 );
-		ftvec.insert(ftvec.end() , 19 );
-		ftvec.insert(ftvec.end() , 1337 );
-		ftvec.insert(ftvec.end() , 43  );
+		// ftvec.insert(ftvec.end() , 1 );
+		// ftvec.insert(ftvec.end() , 2  );
+		// ftvec.insert(ftvec.end() , 3  );
+		// ftvec.insert(ftvec.end() , 4  );
+		// ftvec.insert(ftvec.end() , 5  );
+		// ftvec.insert(ftvec.end() , 6  );
+		// ftvec.insert(ftvec.end() , 22121221  ); //here there is a problem
+		// ftvec.insert(ftvec.end() , 770 );
+		// ftvec.insert(ftvec.end() , 19 );
+		// ftvec.insert(ftvec.end() , 1337 );
+		// ftvec.insert(ftvec.end() , 43  );
 			i = 0;
 		while (i < ftvec.size())
 		{

@@ -4,7 +4,7 @@
 ../vector_tests/insert(std iterators).cpp:40:75: note: in instantiation of function template specialization 'insert_std_test<int>' requested here
         exit(run_vector_unit_test<int>("insert(std iterators)", insert_std_test, insert_std_test));
                                                                                  ^
-../vector_tests/../../../vector.hpp:688:7: note: candidate function not viable: no known conversion from 'std::__1::vector<int, std::__1::allocator<int> >::iterator' (aka '__wrap_iter<int *>') to 'ft::vector::size_type' (aka 'unsigned long') for 2nd argument
+../vector_tests/../../../vector.hpp:693:7: note: candidate function not viable: no known conversion from 'std::__1::vector<int, std::__1::allocator<int> >::iterator' (aka '__wrap_iter<int *>') to 'ft::vector::size_type' (aka 'unsigned long') for 2nd argument
  void insert (iterator position, size_type n, const value_type& val)
       ^
 ../vector_tests/../../../vector.hpp:641:11: note: candidate function not viable: requires 2 arguments, but 3 were provided
@@ -13,7 +13,7 @@
 1 error generated.
 test_3, insert_test_3));
                                                                    ^
-../vector_tests/../../../vector.hpp:688:7: note: candidate function not viable: no known conversion from 'ft::vector<int, std::__1::allocator<int> >::iterator' (aka 'int *') to 'ft::vector::size_type' (aka 'unsigned long') for 2nd argument; dereference the argument with *
+../vector_tests/../../../vector.hpp:693:7: note: candidate function not viable: no known conversion from 'ft::vector<int, std::__1::allocator<int> >::iterator' (aka 'int *') to 'ft::vector::size_type' (aka 'unsigned long') for 2nd argument; dereference the argument with *
  void insert (iterator position, size_type n, const value_type& val)
       ^
 ../vector_tests/../../../vector.hpp:641:11: note: candidate function not viable: requires 2 arguments, but 3 were provided
