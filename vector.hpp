@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/07 11:44:00 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/07 11:55:57 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -638,10 +638,6 @@ const_reference	back(void) const;
 		x.allocating = tmp_allocating;
 		
 	}
-
-
-
-
 	iterator insert(iterator position, const value_type &val)
 	{	
 /*
@@ -657,9 +653,9 @@ const_reference	back(void) const;
 	
 	*/
 
-size_t n = 0;
+	size_t n = 0;
 
-for (iterator it = position; it != end();it++) // from position to end
+		for (iterator it = position; it != end();it++) // from position to end
 		{	
 			
 			n++;
@@ -670,11 +666,10 @@ for (iterator it = position; it != end();it++) // from position to end
 		{
 			reserve(capacity_param * 2);// problem here
 			from_end++;
-			std::cout << "from_end : "<<*from_end<< std::endl;
-			
 			*from_end = val;
-			std::cout << "from_end : "<<*from_end<< std::endl;
 			size_param++;
+			// std::cout << "size_param : "<< size_param<< std::endl;
+			// std::cout << "capa : "<< capacity_param << std::endl;
 			return from_end;
 		}
 		
@@ -704,6 +699,8 @@ for (iterator it = position; it != end();it++) // from position to end
 
 	// std::cout << "before "<< capacity() <<std::endl;
 	// std::cout << "before "<< size() <<std::endl;
+	if( n > max_size() || n <= 0)
+	return;
 	size_t  i = 0;
 	while (i < n)
 	{
@@ -770,18 +767,6 @@ void  clear()
 			// allocating.deallocate(start_iter, this->capacity_param);
 }
 
-	// void insert (iterator position, size_type n, const value_type& val);
-	/* */
-	/*
-iterator		insert(iterator position, const T& x);
-void			insert(iterator position, size_type n, const T& x);
-template <class InputIterator>
-void	insert(iterator position,
-InputIterator first, InputIterator last);
-iterator		erase(iterator position);
-iterator		erase(iterator first, iterator last);
-void			swap(vector<T,Allocator>&);
-*/
 	/*______________________________________________________________________________________________________*/
 	~vector()
 	{

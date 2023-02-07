@@ -7,7 +7,7 @@
 ../vector_tests/../../../vector.hpp:688:7: note: candidate function not viable: no known conversion from 'std::__1::vector<int, std::__1::allocator<int> >::iterator' (aka '__wrap_iter<int *>') to 'ft::vector::size_type' (aka 'unsigned long') for 2nd argument
  void insert (iterator position, size_type n, const value_type& val)
       ^
-../vector_tests/../../../vector.hpp:645:11: note: candidate function not viable: requires 2 arguments, but 3 were provided
+../vector_tests/../../../vector.hpp:641:11: note: candidate function not viable: requires 2 arguments, but 3 were provided
         iterator insert(iterator position, const value_type &val)
                  ^
 1 error generated.
@@ -16,7 +16,7 @@ test_3, insert_test_3));
 ../vector_tests/../../../vector.hpp:688:7: note: candidate function not viable: no known conversion from 'ft::vector<int, std::__1::allocator<int> >::iterator' (aka 'int *') to 'ft::vector::size_type' (aka 'unsigned long') for 2nd argument; dereference the argument with *
  void insert (iterator position, size_type n, const value_type& val)
       ^
-../vector_tests/../../../vector.hpp:645:11: note: candidate function not viable: requires 2 arguments, but 3 were provided
+../vector_tests/../../../vector.hpp:641:11: note: candidate function not viable: requires 2 arguments, but 3 were provided
         iterator insert(iterator position, const value_type &val)
                  ^
 2 errors generated.
