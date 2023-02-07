@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/07 09:23:43 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/07 10:02:48 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -696,22 +696,20 @@ for (iterator it = position; it != end();it++) // from position to end
 									
 	
 	*/
-	if(size_param+n >= capacity_param )
-		reserve(capacity_param*2);
+	if(n <= 0)
+	return;
+
+	if(size_param+n > capacity_param )
+		this->reserve(capacity_param*2+n);
 	iterator from_end = end() - 1;
 	iterator last_elem = (end() - 1) +n;
-	size_t i = 0;
-	for (iterator it = position; it != end();it++) // from position to end
-		{
-			i++;
-		}
+	size_param +=n;
+	// difference_type i = end()  - position;
+	difference_type i =    position - end();
+	//  std::distance(position, end());
+	std::cout << "i "<< i<< std::endl;
 		
-			std::cout << "i "<< i<< std::endl;
-
-
-size_param +=n;
-		
-	while (i > 0)
+	while (i > 0 && position != end())
 	{
 		*last_elem = *from_end;
 		i--;

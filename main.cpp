@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/07 09:22:25 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/07 10:03:14 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int main()
 			vec1.push_back(i*2);
 			i++;
 		}
-ft::vector<int> ftvec;
+	ft::vector<int> ftvec;
 	  i = 0 ; 
 		while (i <10)
 		{
@@ -49,22 +49,22 @@ ft::vector<int> ftvec;
 			std::cout << "ftvec: "<< ftvec.at(i)<< std::endl;
 			i++;
 		}
-							std::cout << "_+_+_+__+_+_+__+_+_+__+_+_+__+_+_+_"<< std::endl;
+std::cout << "_+_+_+__+_+_+__+_+_+__+_+_+__+_+_+_"<< std::endl;
 
-		vec1.insert(vec1.begin()+4 , 4,1337);
-		ftvec.insert(ftvec.begin()+4 , 4,1337);
-		// vec1.insert();
+		vec1.insert(vec1.end() , 3,1337);
+
 			i = 0;
 		while (i < vec1.size())
 		{
 			std::cout << "new vec1 : "<< vec1.at(i)<< std::endl;
 			i++;
 		}
-							std::cout << "_+_+_+__+_+_+__+_+_+__+_+_+__+_+_+_"<< std::endl;
+std::cout << "_+_+_+__+_+_+__+_+_+__+_+_+__+_+_+_"<< std::endl;
+		ftvec.insert(ftvec.end() , 3,42);
 			i = 0;
 		while (i < ftvec.size())
 		{
-			std::cout << "new ftvec : "<< ftvec.at(i)<< std::endl;
+			std::cout << "new ->>>> : "<< ftvec.at(i)<< std::endl;
 			i++;
 		}
 			
