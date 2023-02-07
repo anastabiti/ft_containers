@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/07 11:19:53 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/07 11:36:47 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -420,7 +420,7 @@ allocator_type get_allocator() const
 				allocating.destroy(start_iter +i);
 					i++;
 			}
-			// i = 0;
+			i = 0;
 			while (i < capacity_param)
 			{
 				allocating.destroy(start_iter +i);
@@ -433,8 +433,8 @@ allocator_type get_allocator() const
 			
 		}
 
-		capacity_param = n;
-		start_iter = allocating.allocate(n);
+		// capacity_param = n;
+		// start_iter = allocating.allocate(n);
 		
 	}
 
@@ -665,12 +665,19 @@ for (iterator it = position; it != end();it++) // from position to end
 			n++;
 		}
 	// difference_type n = end() - position; 
-	std::cout<< "n : " << n << std::endl;
+		std::cout<< "n : " << n << std::endl;
+	
+	
 		iterator from_end = this->end() - 1;
-		if(size() + 1 > capacity_param) // problem here
+		if(size() + 1 > capacity_param) 
 		{
-			reserve(capacity_param * 2);
+			reserve(capacity_param * 2);// problem here
+			*from_end = val;
+			std::cout << "val : "<<val<< std::endl;
+			size_param++;
+			return from_end;
 		}
+		
 		while (n > 0)
 		{
 		*(from_end +1) = *from_end;

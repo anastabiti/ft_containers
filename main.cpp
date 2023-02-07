@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/07 11:19:34 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/07 11:35:50 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,20 +62,23 @@ int main()
 		vec1.insert(vec1.end() ,1337);
 		vec1.insert(vec1.end() ,1337);
 
-			i = 0;
-		while (i < vec1.size())
-		{
-			std::cout << "new vec1 : "<< vec1.at(i)<< std::endl;
-			i++;
-		}
+		// 	i = 0;
+		// while (i < vec1.size())
+		// {
+		// 	std::cout << "new vec1 : "<< vec1.at(i)<< std::endl;
+		// 	i++;
+		// }
 std::cout << "_+_+_+__+_+_+__+_+_+__+_+_+__+_+_+_"<< std::endl;
-		ftvec.insert(ftvec.end() , 1998  );
-		ftvec.insert(ftvec.end() , 1998  );
-		ftvec.insert(ftvec.end() , 1998  );
-		ftvec.insert(ftvec.end() , 1998  );
-		ftvec.insert(ftvec.end() , 1998  );
-		ftvec.insert(ftvec.end() , 1998  );
-		// ftvec.insert(ftvec.end() , 1998  ); //here there is a problem
+		ftvec.insert(ftvec.end() , 1  );
+		ftvec.insert(ftvec.end() , 2  );
+		ftvec.insert(ftvec.end() , 3  );
+		ftvec.insert(ftvec.end() , 4  );
+		ftvec.insert(ftvec.end() , 5  );
+		ftvec.insert(ftvec.end() , 6  );
+		ftvec.insert(ftvec.end() , 7  ); //here there is a problem
+		// ftvec.insert(ftvec.end() , 1998  );
+		// ftvec.insert(ftvec.end() , 1998  );
+		// ftvec.insert(ftvec.end() , 1998  );
 		// ftvec.insert(ftvec.end() , 1998  );
 			i = 0;
 		while (i < ftvec.size())
