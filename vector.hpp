@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/06 14:26:32 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/07 09:11:52 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -648,23 +648,15 @@ const_reference	back(void) const;
 	This causes an automatic reallocation of the allocated storage space if -and only if- 
 	the new vector size surpasses the current vector capacity.
 */
-	/*
-	
-	
-	
-	
+	/*	
 	[ 1 ] [ 2 ] [ 3 ] [ 4 ] [ 5 ] [ 6 ] [ 7 ] [ 8 ] [ 9 ] [ 10 ] [ 11 ] [ 12 ] [ 13 ]  [  ]
 
 	                          |                                                   |
 							  													from_end
 	[ 1 ] [ 2 ] [ 3 ] [ 4 ] [   ] [ 5 ] [ 6 ] [ 7 ] [ 8 ] [ 9 ] [ 10 ] [ 11 ] [ 12 ] [ 13 ]
 	
-	
-	
-	
-	
-	
 	*/
+
 size_t n = 0;
 
 for (iterator it = position; it != end();it++) // from position to end
@@ -682,27 +674,59 @@ for (iterator it = position; it != end();it++) // from position to end
 		while (n > 0)
 		{
 		*(from_end +1) = *from_end;
-
 		from_end--;
 		n--;
 		}
-
 		from_end++;
 		*from_end = val;
 		size_param++;
 		
 		return from_end;
-		
-
-
 
 }
 
-template <class InputIterator>    
-void insert (iterator position,	InputIterator first, InputIterator last)
+ void insert (iterator position, size_type n, const value_type& val)
 {
+/*	
+	[ 1 ] [ 2 ] [ 3 ] [ 4 ] [ 5 ] [ 6 ] [ 7 ] [ 8 ] [ 9 ] [ 10 ] [ 11 ] [ 12 ] [ 13 ]  [  ] [  ] [  ] 
 
+	                          |                                                   |                |
+						insert here			          						from_end           last_elem
+	[ 1 ] [ 2 ] [ 3 ] [ 4 ] [   ] [  ][   ][ 5 ] [ 6 ] [ 7 ] [ 8 ] [ 9 ] [ 10 ] [ 11 ] [ 12 ] [ 13 ]
+									
+	
+	*/
+	if(size_param+n >= capacity_param )
+		reserve(capacity_param*2);
+	iterator from_end = end() - 1;
+	iterator last_elem = (end() - 1) +n;
+	size_t i = 0;
+	for (iterator it = position; it != end();it++) // from position to end
+		{
+			i++;
+		}
+
+
+		
+	// while ()
+	// {
+		
+	// }
+	
+
+
+
+
+	
 }
+
+
+// template <class InputIterator>  
+// void insert (iterator position, InputIterator first, InputIterator last)
+// {
+	
+// }
+
 
 void  clear()
 {

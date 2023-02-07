@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/06 14:24:20 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/07 09:15:45 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,96 +15,144 @@
 // #include <string>
 #include <vector>
 #include <map>
+
+
+
+
+int main()
+{
+
+	std::vector<int> vec1;
+	size_t  i = 0 ; 
+		while (i <10)
+		{
+			vec1.push_back(i*2);
+			i++;
+		}
+ft::vector<int> ftvec;
+	  i = 0 ; 
+		while (i <10)
+		{
+			ftvec.push_back(i*4+4);
+			i++;
+		}
+		i = 0;
+		while (i < vec1.size())
+		{
+			std::cout << "vec1 : "<< vec1.at(i)<< std::endl;
+			i++;
+		}
+					std::cout << "_+_+_+__+_+_+__+_+_+__+_+_+__+_+_+_"<< std::endl;
+		i = 0;
+		while (i < ftvec.size())
+		{
+			std::cout << "ftvec: "<< ftvec.at(i)<< std::endl;
+			i++;
+		}
+		// vec1.insert();
+}
+
+
+
+
+
+
+
+
+
+
+
+
 // #include <algorithm>
 // #include "iterator.hpp"
 
 
 //== != < > ...
-int main()
-{
-	std::vector<int> t1;
-	std::vector<int> t2;
+// int main()
+// {
+// 	std::vector<int> t1;
+// 	std::vector<int> t2;
 
-	t1.push_back(44);
-	t2.push_back(44);
-			std::vector<int>::iterator ttw =  t1.begin() +1;
-				t1.insert(t1.begin(), t2.begin(), t2.end());
+// 	t1.push_back(44);
+// 	t2.push_back(44);
+// 			std::vector<int>::iterator ttw =  t1.begin() +1;
+// 				t1.insert(t1.begin(), t2.begin(), t2.end());
 
-	if(t1 == t2)
-	std::cout <<"are equal" << std::endl;
-	else
-	std::cout <<"not equal" << std::endl;
-	if(t1.rbegin() == t1.rbegin())
-	std::cout <<"iter are equal" << std::endl;
-	else
-	std::cout <<"iter not equal" << std::endl;
+// 	if(t1 == t2)
+// 	std::cout <<"are equal" << std::endl;
+// 	else
+// 	std::cout <<"not equal" << std::endl;
+// 	if(t1.rbegin() == t1.rbegin())
+// 	std::cout <<"iter are equal" << std::endl;
+// 	else
+// 	std::cout <<"iter not equal" << std::endl;
 
-	std::cout <<"____________________________________" << std::endl;
+// 	std::cout <<"____________________________________" << std::endl;
 
-	ft::vector<int> r1;
-	ft::vector<int> r2;
+// 	ft::vector<int> r1;
+// 	ft::vector<int> r2;
 
-	r1.push_back(44);
-	// r1.push_back(4343);
-		r2.push_back(1337);
+// 	r1.push_back(44);
+// 	// r1.push_back(4343);
+// 		r2.push_back(1337);
 
-		ft::vector<int>::iterator tt =  r1.begin()+1;
-	if(r1 == r2)
-	std::cout <<"are equal" << std::endl;
-	else
-	std::cout <<"not equal" << std::endl;
-	if(r1.begin() == r1.begin())
-	std::cout <<"iter are equal" << std::endl;
-	else
-	std::cout <<"iter not equal" << std::endl;
-	if(r1 < r2)
-	std::cout <<"are equal" << std::endl;
-	else
-	std::cout <<"not equal" << std::endl;
-	if(r1.begin() >= r1.begin())
-	std::cout <<"iter are equal" << std::endl;
-	else
-	std::cout <<"iter not equal" << std::endl;
-	r1.push_back(12121);
-	r1.push_back(1642);
-	r1.push_back(1531);
-	r1.push_back(121);
-	r1.push_back(14);
-	// r1.push_back(*++r2.begin());
-	// r1.push_back(*++r2.end());
-	// r1.push_back(*(r2.rend()+1));
-	// r1.push_back(*(r1.rend() - 1));
-	    r1.resize(5000 * 10000);
-	    // r1.resize(5000 * 10000, ft::vector<int>::value_type);
-		 std::vector<int>::value_type T;
-	    t1.resize(5000 * 10000, int());
-		 ft::vector<int>::value_type TT;
-	    r2.resize(5000 * 10000);
-	std::cout <<"r2 capacity : " << r2.capacity() << std::endl;
-	    // r1.reserve(5000 * 10000);
-	// r1.push_back(*++t2.begin());
-	std::cout << r1.back()<<std::endl;
-	    std::vector<std::map<char, int> > mp;
-	    ft::vector<std::map<char, int> > mpe;
-		r1.assign(r2.begin(), r2.end());
+// 		ft::vector<int>::iterator tt =  r1.begin()+1;
+// 	if(r1 == r2)
+// 	std::cout <<"are equal" << std::endl;
+// 	else
+// 	std::cout <<"not equal" << std::endl;
+// 	if(r1.begin() == r1.begin())
+// 	std::cout <<"iter are equal" << std::endl;
+// 	else
+// 	std::cout <<"iter not equal" << std::endl;
+// 	if(r1 < r2)
+// 	std::cout <<"are equal" << std::endl;
+// 	else
+// 	std::cout <<"not equal" << std::endl;
+// 	if(r1.begin() >= r1.begin())
+// 	std::cout <<"iter are equal" << std::endl;
+// 	else
+// 	std::cout <<"iter not equal" << std::endl;
+// 	r1.push_back(12121);
+// 	r1.push_back(1642);
+// 	r1.push_back(1531);
+// 	r1.push_back(121);
+// 	r1.push_back(14);
+// 	// r1.push_back(*++r2.begin());
+// 	// r1.push_back(*++r2.end());
+// 	// r1.push_back(*(r2.rend()+1));
+// 	// r1.push_back(*(r1.rend() - 1));
+// 	    r1.resize(5000 * 10000);
+// 	    // r1.resize(5000 * 10000, ft::vector<int>::value_type);
+// 		 std::vector<int>::value_type T;
+// 	    t1.resize(5000 * 10000, int());
+// 		 ft::vector<int>::value_type TT;
+// 	    r2.resize(5000 * 10000);
+// 	std::cout <<"r2 capacity : " << r2.capacity() << std::endl;
+// 	    // r1.reserve(5000 * 10000);
+// 	// r1.push_back(*++t2.begin());
+// 	std::cout << r1.back()<<std::endl;
+// 	    std::vector<std::map<char, int> > mp;
+// 	    ft::vector<std::map<char, int> > mpe;
+// 		r1.assign(r2.begin(), r2.end());
 
 
-	//  r1.erase(r1.begin() , r1.begin()+3);
-	//  t1.erase(t1.begin() , t1.begin()+3);
+// 	//  r1.erase(r1.begin() , r1.begin()+3);
+// 	//  t1.erase(t1.begin() , t1.begin()+3);
 	
-	// std::cout <<"end "  << *t1.rbegin()-1<< std::endl;
-	// std::cout <<"end "  << *r1.rbegin()-1<< std::endl;
-  ft::vector<int> tmp(1000 * 333, 4);
-  tmp.insert(tmp.begin()+1 , 3);
+// 	// std::cout <<"end "  << *t1.rbegin()-1<< std::endl;
+// 	// std::cout <<"end "  << *r1.rbegin()-1<< std::endl;
+//   ft::vector<int> tmp(1000 * 333, 4);
+//   tmp.insert(tmp.begin()+1 , 3);
 
-  std::vector<int> tmp2(33,33);
+//   std::vector<int> tmp2(33,33);
   
-//   ft::vector<int> tmp11(tmp2);
-//   ft::vector<int> tmp11(tmp.begin(), tmp.begin()+3);
+// //   ft::vector<int> tmp11(tmp2);
+// //   ft::vector<int> tmp11(tmp.begin(), tmp.begin()+3);
   
-    // tmp = tmp2;
+//     // tmp = tmp2;
 	
-}
+// }
 
 // using namespace	std;
 
