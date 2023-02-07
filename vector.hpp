@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/07 11:59:48 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/07 13:03:37 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -426,7 +426,7 @@ allocator_type get_allocator() const
 				allocating.destroy(start_iter +i);
 					i++;
 			}
-			if(capacity_param)
+			// if(capacity_param)
 			allocating.deallocate(start_iter,capacity_param);
 			capacity_param = n;
 			start_iter = tmp;
@@ -640,113 +640,118 @@ const_reference	back(void) const;
 	}
 	iterator insert(iterator position, const value_type &val)
 	{	
-/*
-	This causes an automatic reallocation of the allocated storage space if -and only if- 
-	the new vector size surpasses the current vector capacity.
-*/
-	/*	
+	/*
+		This causes an automatic reallocation of the allocated storage space if -and only if- 
+		the  new vector size surpasses the current vector capacity.
+	*/
+
+/*	
 	[ 1 ] [ 2 ] [ 3 ] [ 4 ] [ 5 ] [ 6 ] [ 7 ] [ 8 ] [ 9 ] [ 10 ] [ 11 ] [ 12 ] [ 13 ]  [  ]
 
 	                          |                                                   |
-							  													from_end
+							insert											from_end
 	[ 1 ] [ 2 ] [ 3 ] [ 4 ] [   ] [ 5 ] [ 6 ] [ 7 ] [ 8 ] [ 9 ] [ 10 ] [ 11 ] [ 12 ] [ 13 ]
 	
-	*/
+*/
 
-	size_t n = 0;
-
+		size_t n = 0;
 		for (iterator it = position; it != end();it++) // from position to end
 		{	
 			
 			n++;
 		}
-	// difference_type n = end() - position; 
 		iterator from_end = this->end() - 1;
 		if(size() + 1 > capacity_param) 
 		{
-			
-			std::cout << "capa : "<< capacity_param  << " val : " << val <<  std::endl;
-			std::cout << "size() : "<< size()  << " val : " << val <<  std::endl;
 			reserve(capacity_param * 2);// problem here
-			from_end++;
-			*from_end = val;
-			size_param++;
-			// std::cout << "size_param : "<< size_param<< std::endl;
-			return from_end;
+			
 		}
+			std::cout <<  " n  " << n <<"|||||| "<<  std::endl;
 		
 		while (n > 0)
 		{
 			*(from_end +1) = *from_end;
 			from_end--;
 			n--;
-		}
+		}		
+		 from_end = this->end() - 1;
 		from_end++;
 		*from_end = val;
 		size_param++;
 		return from_end;
 }
 
- void insert (iterator position, size_type n, const value_type& val)
-{
-/*	
-	[ 1 ] [ 2 ] [ 3 ] [ 4 ] [ 5 ] [ 6 ] [ 7 ] [ 8 ] [ 9 ] [ 10 ] [ 11 ] [ 12 ] [ 13 ]  [  ] [  ] [  ] 
 
-	                          |                                                   |                |
-						insert here			          						from_end           last_elem
-	[ 1 ] [ 2 ] [ 3 ] [ 4 ] [   ] [  ][   ][ 5 ] [ 6 ] [ 7 ] [ 8 ] [ 9 ] [ 10 ] [ 11 ] [ 12 ] [ 13 ]
+
+
+
+
+
+
+
+
+
+
+//  void insert (iterator position, size_type n, const value_type& val)
+// {
+// /*	
+// 	[ 1 ] [ 2 ] [ 3 ] [ 4 ] [ 5 ] [ 6 ] [ 7 ] [ 8 ] [ 9 ] [ 10 ] [ 11 ] [ 12 ] [ 13 ]  [  ] [  ] [  ] 
+
+// 	                          |                                                   |                |
+// 						insert here			          						from_end           last_elem
+// 	[ 1 ] [ 2 ] [ 3 ] [ 4 ] [   ] [  ][   ][ 5 ] [ 6 ] [ 7 ] [ 8 ] [ 9 ] [ 10 ] [ 11 ] [ 12 ] [ 13 ]
 									
 	
-	// */
+// 	// */
 
-	// std::cout << "before "<< capacity() <<std::endl;
-	// std::cout << "before "<< size() <<std::endl;
-	if( n > max_size() || n <= 0)
-	return;
-	size_t  i = 0;
-	while (i < n)
-	{
-		insert(position, val);
-		i++;
-	}
-	// std::cout << "after "<< capacity() <<std::endl;
-	// std::cout << "after "<< size() <<std::endl;
+// 	// std::cout << "before "<< capacity() <<std::endl;
+// 	// std::cout << "before "<< size() <<std::endl;
+// 	if( n > max_size() || n <= 0)
+// 	return;
+// 	size_t  i = 0;
+// 	while (i < n)
+// 	{
+// 		insert(position, val);
+// 		i++;
+// 	}
+// 	// std::cout << "after "<< capacity() <<std::endl;
+// 	// std::cout << "after "<< size() <<std::endl;
 	
-	// // if(n <= 0)
-	// return;
-		// else
-		// {
+// 	// // if(n <= 0)
+// 	// return;
+// 		// else
+// 		// {
 			
-	// iterator from_end = end() - 1;
-	// iterator last_elem = (end() - 1) +n;
-	// // difference_type i = end()  - position;
-	// size_param +=n;
-	// difference_type i =    position - end();
-	// //  std::distance(position, end());
-	// // std::cout << "i "<< i<< std::endl;
+// 	// iterator from_end = end() - 1;
+// 	// iterator last_elem = (end() - 1) +n;
+// 	// // difference_type i = end()  - position;
+// 	// size_param +=n;
+// 	// difference_type i =    position - end();
+// 	// //  std::distance(position, end());
+// 	// // std::cout << "i "<< i<< std::endl;
 		
-	// while (i > 0 && position != end())
-	// {
-	// 	*last_elem = *from_end;
-	// 	i--;
-	// 	last_elem--;
-	// 	from_end--;
-	// }
-	// while ( n > 0)
-	// {
+// 	// while (i > 0 && position != end())
+// 	// {
+// 	// 	*last_elem = *from_end;
+// 	// 	i--;
+// 	// 	last_elem--;
+// 	// 	from_end--;
+// 	// }
+// 	// while ( n > 0)
+// 	// {
 		
-	// 	*last_elem = val;
-	// 	last_elem--;
-	// 	n--;
-	// }
-	// std::cout << capacity() <<std::endl;
-	// std::cout << size() <<std::endl;
-		// }
+// 	// 	*last_elem = val;
+// 	// 	last_elem--;
+// 	// 	n--;
+// 	// }
+// 	// std::cout << capacity() <<std::endl;
+// 	// std::cout << size() <<std::endl;
+// 		// }
 
 
 
 	
-}
+// }
 
 
 // template <class InputIterator>  

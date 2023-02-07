@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/07 11:43:12 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/07 12:57:48 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,13 @@
 int main()
 {
 
-	std::vector<int> vec1;
+	// std::vector<int> vec1;
 	size_t  i = 0 ; 
-		while (i <10)
-		{
-			vec1.push_back(i*2);
-			i++;
-		}
+	// 	while (i <10)
+	// 	{
+	// 		vec1.push_back(i*2);
+	// 		i++;
+	// 	}
 	ft::vector<int> ftvec;
 	  i = 0 ; 
 		while (i <10)
@@ -51,16 +51,16 @@ int main()
 		}
 // std::cout << "_+_+_+__+_+_+__+_+_+__+_+_+__+_+_+_"<< std::endl;
 
-		vec1.insert(vec1.end() ,1337);
-		vec1.insert(vec1.end() ,1337);
-		vec1.insert(vec1.end() ,1337);
-		vec1.insert(vec1.end() ,1337);
-		vec1.insert(vec1.end() ,1337);
-		vec1.insert(vec1.end() ,1337);
-		vec1.insert(vec1.end() ,1337);
-		vec1.insert(vec1.end() ,1337);
-		vec1.insert(vec1.end() ,1337);
-		vec1.insert(vec1.end() ,1337);
+		// vec1.insert(vec1.end() ,1337);
+		// vec1.insert(vec1.end() ,1337);
+		// vec1.insert(vec1.end() ,1337);
+		// vec1.insert(vec1.end() ,1337);
+		// vec1.insert(vec1.end() ,1337);
+		// vec1.insert(vec1.end() ,1337);
+		// vec1.insert(vec1.end() ,1337);
+		// vec1.insert(vec1.end() ,1337);
+		// vec1.insert(vec1.end() ,1337);
+		// vec1.insert(vec1.end() ,1337);
 
 		// 	i = 0;
 		// while (i < vec1.size())
@@ -69,13 +69,21 @@ int main()
 		// 	i++;
 		// }
 std::cout << "_+_+_+__+_+_+__+_+_+__+_+_+__+_+_+_"<< std::endl;
-		ftvec.insert(ftvec.end() , 1  );
+int h = 0 ;
+	// while (h < 22)
+	// {
+	// 	ftvec.insert(ftvec.begin()+2 , 1337 ); 
+	// 	h++;
+	// }
+	
+		
+		ftvec.insert(ftvec.end() , 1 );
 		ftvec.insert(ftvec.end() , 2  );
 		ftvec.insert(ftvec.end() , 3  );
 		ftvec.insert(ftvec.end() , 4  );
 		ftvec.insert(ftvec.end() , 5  );
 		ftvec.insert(ftvec.end() , 6  );
-		ftvec.insert(ftvec.end() , 900  ); //here there is a problem
+		ftvec.insert(ftvec.end() , 22121221  ); //here there is a problem
 		ftvec.insert(ftvec.end() , 770 );
 		ftvec.insert(ftvec.end() , 19 );
 		ftvec.insert(ftvec.end() , 1337 );
@@ -83,10 +91,29 @@ std::cout << "_+_+_+__+_+_+__+_+_+__+_+_+__+_+_+_"<< std::endl;
 			i = 0;
 		while (i < ftvec.size())
 		{
-			std::cout << "new ->>>> : "<< ftvec.at(i)<< std::endl;
+			std::cout << "["<< ftvec.at(i) <<  "]"<< std::endl;
 			i++;
 		}			
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
