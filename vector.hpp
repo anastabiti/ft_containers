@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/07 11:16:34 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/07 11:19:53 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -657,27 +657,20 @@ const_reference	back(void) const;
 	
 	*/
 
-// size_t n = 0;
+size_t n = 0;
 
-// for (iterator it = position; it != end();it++) // from position to end
-// 		{	
+for (iterator it = position; it != end();it++) // from position to end
+		{	
 			
-// 			n++;
-// 		}
-	difference_type n = end() - position; 
+			n++;
+		}
+	// difference_type n = end() - position; 
 	std::cout<< "n : " << n << std::endl;
-		if(size() + 1 > capacity_param)
+		iterator from_end = this->end() - 1;
+		if(size() + 1 > capacity_param) // problem here
 		{
 			reserve(capacity_param * 2);
-
 		}
-		iterator from_end = this->end() - 1;
-		// if(n <= 0)
-		// {
-		// 				*from_end = val;
-		// 					std::cout<< "last herer " << n << std::endl;
-		// 				return from_end;
-		// }
 		while (n > 0)
 		{
 		*(from_end +1) = *from_end;
