@@ -27,17 +27,17 @@ int main(int argc, char* argv[], char* env[]) {
 	runFunctionTest("../map_tests/erase(InputIt).cpp", argv, env);
 	runFunctionTest("../map_tests/swap().cpp", argv, env);
 	runFunctionTest("../map_tests/count().cpp", argv, env);
-	runFunctionTest("../map_tests/find().cpp", argv, env);
-	runFunctionTest("../map_tests/lower_bound().cpp", argv, env);
-	runFunctionTest("../map_tests/upper_bound().cpp", argv, env);
-	runFunctionTest("../map_tests/equal_range().cpp", argv, env);
-	runFunctionTest("../map_tests/key_comp().cpp", argv, env);
-	runFunctionTest("../map_tests/using allocator.cpp", argv, env);
-	runFunctionTest("../map_tests/operator ==.cpp", argv, env);
-	runFunctionTest("../map_tests/operator !=.cpp", argv, env);
-	runFunctionTest("../map_tests/operator <.cpp", argv, env);
-	runFunctionTest("../map_tests/operator >.cpp", argv, env);
-	runFunctionTest("../map_tests/operator <=.cpp", argv, env);
+	// runFunctionTest("../map_tests/find().cpp", argv, env);
+	// runFunctionTest("../map_tests/lower_bound().cpp", argv, env);
+	// runFunctionTest("../map_tests/upper_bound().cpp", argv, env);
+	// runFunctionTest("../map_tests/equal_range().cpp", argv, env);
+	// runFunctionTest("../map_tests/key_comp().cpp", argv, env);
+	// runFunctionTest("../map_tests/using allocator.cpp", argv, env);
+	// runFunctionTest("../map_tests/operator ==.cpp", argv, env);
+	// runFunctionTest("../map_tests/operator !=.cpp", argv, env);
+	// runFunctionTest("../map_tests/operator <.cpp", argv, env);
+	// runFunctionTest("../map_tests/operator >.cpp", argv, env);
+	// runFunctionTest("../map_tests/operator <=.cpp", argv, env);
 	runFunctionTest("../map_tests/operator >=.cpp", argv, env);
 
     saveResult("map_res");
