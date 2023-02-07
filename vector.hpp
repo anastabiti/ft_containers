@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/07 10:02:48 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/07 10:27:23 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -696,15 +696,24 @@ for (iterator it = position; it != end();it++) // from position to end
 									
 	
 	*/
+	std::cout << "before "<< capacity() <<std::endl;
+	std::cout << "before "<< size() <<std::endl;
 	if(n <= 0)
 	return;
 
-	if(size_param+n > capacity_param )
-		this->reserve(capacity_param*2+n);
+		if(size_param+n > capacity_param )
+		{
+			this->reserve(capacity_param*2);
+				std::cout << capacity() <<std::endl;
+				std::cout << size() <<std::endl;
+		}
+		else
+		{
+			
 	iterator from_end = end() - 1;
 	iterator last_elem = (end() - 1) +n;
-	size_param +=n;
 	// difference_type i = end()  - position;
+	size_param +=n;
 	difference_type i =    position - end();
 	//  std::distance(position, end());
 	std::cout << "i "<< i<< std::endl;
@@ -723,7 +732,9 @@ for (iterator it = position; it != end();it++) // from position to end
 		last_elem--;
 		n--;
 	}
-	
+	std::cout << capacity() <<std::endl;
+	std::cout << size() <<std::endl;
+		}
 
 
 

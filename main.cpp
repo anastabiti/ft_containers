@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/07 10:03:14 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/07 10:27:44 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,12 @@ int main()
 			ftvec.push_back(i*44+12);
 			i++;
 		}
-		i = 0;
-		while (i < vec1.size())
-		{
-			std::cout << "vec1 : "<< vec1.at(i)<< std::endl;
-			i++;
-		}
+		// i = 0;
+		// while (i < vec1.size())
+		// {
+		// 	std::cout << "vec1 : "<< vec1.at(i)<< std::endl;
+		// 	i++;
+		// }
 					std::cout << "_+_+_+__+_+_+__+_+_+__+_+_+__+_+_+_"<< std::endl;
 		i = 0;
 		while (i < ftvec.size())
@@ -49,18 +49,18 @@ int main()
 			std::cout << "ftvec: "<< ftvec.at(i)<< std::endl;
 			i++;
 		}
-std::cout << "_+_+_+__+_+_+__+_+_+__+_+_+__+_+_+_"<< std::endl;
+// std::cout << "_+_+_+__+_+_+__+_+_+__+_+_+__+_+_+_"<< std::endl;
 
-		vec1.insert(vec1.end() , 3,1337);
+// 		vec1.insert(vec1.end() , 6,1337);
 
-			i = 0;
-		while (i < vec1.size())
-		{
-			std::cout << "new vec1 : "<< vec1.at(i)<< std::endl;
-			i++;
-		}
+// 			i = 0;
+// 		while (i < vec1.size())
+// 		{
+// 			std::cout << "new vec1 : "<< vec1.at(i)<< std::endl;
+// 			i++;
+// 		}
 std::cout << "_+_+_+__+_+_+__+_+_+__+_+_+__+_+_+_"<< std::endl;
-		ftvec.insert(ftvec.end() , 3,42);
+		ftvec.insert(ftvec.end() , 7,42);
 			i = 0;
 		while (i < ftvec.size())
 		{
