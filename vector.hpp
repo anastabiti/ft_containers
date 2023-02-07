@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/07 13:55:56 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/07 14:07:28 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -702,21 +702,25 @@ const_reference	back(void) const;
 									
 	
 	// */
-std::cout << "_____________________________________________"<< std::endl;
+// std::cout << "_____________________________________________"<< std::endl;
 	// if( n > max_size() || n <= 0)
 	// return;	
 	// if(n <= 0)
 	// return;
 	// 	else
 	// 	{
-			
+			if(size_param+n > capacity_param)
+			{
+				reserve(capacity_param+n+1);
+				from_end = this->end() - 1;
+			}
 	size_t i = 0;
 		for (iterator it = position; it != end();it++) // from position to end
 		{	
 			
 			i++;
 		}
-	iterator from_end = end() - 1;
+	iterator from_end = end()  - 1;
 	iterator last_elem = (end() - 1) +n;
 	size_param +=n;
 	
