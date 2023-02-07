@@ -1,1 +1,9 @@
-
+clang: error: no such file or directory: '../vector_tests/operator >=.cpp'
+clang: error: no input files
+or_allocator_unit_test<int, Alloc<int> >("using allocator", allocator_test));
+                                             ^
+1 error generated.
+requested here
+    exit(run_vector_unit_test<int>("data()", data_test, data_test));
+                                                        ^
+1 error generated.
