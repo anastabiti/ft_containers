@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/07 11:39:56 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/07 11:43:12 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,10 +76,10 @@ std::cout << "_+_+_+__+_+_+__+_+_+__+_+_+__+_+_+_"<< std::endl;
 		ftvec.insert(ftvec.end() , 5  );
 		ftvec.insert(ftvec.end() , 6  );
 		ftvec.insert(ftvec.end() , 900  ); //here there is a problem
-		ftvec.insert(ftvec.end() , 400 );
-		// ftvec.insert(ftvec.end() , 1998  );
-		// ftvec.insert(ftvec.end() , 1998  );
-		// ftvec.insert(ftvec.end() , 1998  );
+		ftvec.insert(ftvec.end() , 770 );
+		ftvec.insert(ftvec.end() , 19 );
+		ftvec.insert(ftvec.end() , 1337 );
+		ftvec.insert(ftvec.end() , 43  );
 			i = 0;
 		while (i < ftvec.size())
 		{

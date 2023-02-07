@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/07 11:41:01 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/07 11:42:50 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -673,6 +673,7 @@ for (iterator it = position; it != end();it++) // from position to end
 			std::cout << "from_end : "<<*from_end<< std::endl;
 			
 			*from_end = val;
+			std::cout << "from_end : "<<*from_end<< std::endl;
 			size_param++;
 			return from_end;
 		}
