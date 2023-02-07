@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/07 09:15:45 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/07 09:22:25 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ ft::vector<int> ftvec;
 	  i = 0 ; 
 		while (i <10)
 		{
-			ftvec.push_back(i*4+4);
+			ftvec.push_back(i*44+12);
 			i++;
 		}
 		i = 0;
@@ -49,7 +49,25 @@ ft::vector<int> ftvec;
 			std::cout << "ftvec: "<< ftvec.at(i)<< std::endl;
 			i++;
 		}
+							std::cout << "_+_+_+__+_+_+__+_+_+__+_+_+__+_+_+_"<< std::endl;
+
+		vec1.insert(vec1.begin()+4 , 4,1337);
+		ftvec.insert(ftvec.begin()+4 , 4,1337);
 		// vec1.insert();
+			i = 0;
+		while (i < vec1.size())
+		{
+			std::cout << "new vec1 : "<< vec1.at(i)<< std::endl;
+			i++;
+		}
+							std::cout << "_+_+_+__+_+_+__+_+_+__+_+_+__+_+_+_"<< std::endl;
+			i = 0;
+		while (i < ftvec.size())
+		{
+			std::cout << "new ftvec : "<< ftvec.at(i)<< std::endl;
+			i++;
+		}
+			
 }
 
 

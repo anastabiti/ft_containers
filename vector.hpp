@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/07 09:11:52 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/07 09:23:43 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -705,15 +705,27 @@ for (iterator it = position; it != end();it++) // from position to end
 		{
 			i++;
 		}
+		
+			std::cout << "i "<< i<< std::endl;
 
 
+size_param +=n;
 		
-	// while ()
-	// {
+	while (i > 0)
+	{
+		*last_elem = *from_end;
+		i--;
+		last_elem--;
+		from_end--;
+	}
+	while ( n > 0)
+	{
 		
-	// }
+		*last_elem = val;
+		last_elem--;
+		n--;
+	}
 	
-
 
 
 
