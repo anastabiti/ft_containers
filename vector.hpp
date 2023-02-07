@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/07 11:55:57 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/07 11:59:48 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -664,12 +664,14 @@ const_reference	back(void) const;
 		iterator from_end = this->end() - 1;
 		if(size() + 1 > capacity_param) 
 		{
+			
+			std::cout << "capa : "<< capacity_param  << " val : " << val <<  std::endl;
+			std::cout << "size() : "<< size()  << " val : " << val <<  std::endl;
 			reserve(capacity_param * 2);// problem here
 			from_end++;
 			*from_end = val;
 			size_param++;
 			// std::cout << "size_param : "<< size_param<< std::endl;
-			// std::cout << "capa : "<< capacity_param << std::endl;
 			return from_end;
 		}
 		
