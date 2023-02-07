@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/07 10:27:23 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/07 11:16:34 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -657,20 +657,27 @@ const_reference	back(void) const;
 	
 	*/
 
-size_t n = 0;
+// size_t n = 0;
 
-for (iterator it = position; it != end();it++) // from position to end
-		{	
+// for (iterator it = position; it != end();it++) // from position to end
+// 		{	
 			
-			n++;
-		}
-
+// 			n++;
+// 		}
+	difference_type n = end() - position; 
+	std::cout<< "n : " << n << std::endl;
 		if(size() + 1 > capacity_param)
 		{
 			reserve(capacity_param * 2);
 
 		}
 		iterator from_end = this->end() - 1;
+		// if(n <= 0)
+		// {
+		// 				*from_end = val;
+		// 					std::cout<< "last herer " << n << std::endl;
+		// 				return from_end;
+		// }
 		while (n > 0)
 		{
 		*(from_end +1) = *from_end;
@@ -695,46 +702,49 @@ for (iterator it = position; it != end();it++) // from position to end
 	[ 1 ] [ 2 ] [ 3 ] [ 4 ] [   ] [  ][   ][ 5 ] [ 6 ] [ 7 ] [ 8 ] [ 9 ] [ 10 ] [ 11 ] [ 12 ] [ 13 ]
 									
 	
-	*/
-	std::cout << "before "<< capacity() <<std::endl;
-	std::cout << "before "<< size() <<std::endl;
-	if(n <= 0)
-	return;
+	// */
 
-		if(size_param+n > capacity_param )
-		{
-			this->reserve(capacity_param*2);
-				std::cout << capacity() <<std::endl;
-				std::cout << size() <<std::endl;
-		}
-		else
-		{
+	// std::cout << "before "<< capacity() <<std::endl;
+	// std::cout << "before "<< size() <<std::endl;
+	size_t  i = 0;
+	while (i < n)
+	{
+		insert(position, val);
+		i++;
+	}
+	// std::cout << "after "<< capacity() <<std::endl;
+	// std::cout << "after "<< size() <<std::endl;
+	
+	// // if(n <= 0)
+	// return;
+		// else
+		// {
 			
-	iterator from_end = end() - 1;
-	iterator last_elem = (end() - 1) +n;
-	// difference_type i = end()  - position;
-	size_param +=n;
-	difference_type i =    position - end();
-	//  std::distance(position, end());
-	std::cout << "i "<< i<< std::endl;
+	// iterator from_end = end() - 1;
+	// iterator last_elem = (end() - 1) +n;
+	// // difference_type i = end()  - position;
+	// size_param +=n;
+	// difference_type i =    position - end();
+	// //  std::distance(position, end());
+	// // std::cout << "i "<< i<< std::endl;
 		
-	while (i > 0 && position != end())
-	{
-		*last_elem = *from_end;
-		i--;
-		last_elem--;
-		from_end--;
-	}
-	while ( n > 0)
-	{
+	// while (i > 0 && position != end())
+	// {
+	// 	*last_elem = *from_end;
+	// 	i--;
+	// 	last_elem--;
+	// 	from_end--;
+	// }
+	// while ( n > 0)
+	// {
 		
-		*last_elem = val;
-		last_elem--;
-		n--;
-	}
-	std::cout << capacity() <<std::endl;
-	std::cout << size() <<std::endl;
-		}
+	// 	*last_elem = val;
+	// 	last_elem--;
+	// 	n--;
+	// }
+	// std::cout << capacity() <<std::endl;
+	// std::cout << size() <<std::endl;
+		// }
 
 
 
