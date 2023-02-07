@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/07 11:36:47 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/07 11:41:01 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -665,31 +665,28 @@ for (iterator it = position; it != end();it++) // from position to end
 			n++;
 		}
 	// difference_type n = end() - position; 
-		std::cout<< "n : " << n << std::endl;
-	
-	
 		iterator from_end = this->end() - 1;
 		if(size() + 1 > capacity_param) 
 		{
 			reserve(capacity_param * 2);// problem here
+			from_end++;
+			std::cout << "from_end : "<<*from_end<< std::endl;
+			
 			*from_end = val;
-			std::cout << "val : "<<val<< std::endl;
 			size_param++;
 			return from_end;
 		}
 		
 		while (n > 0)
 		{
-		*(from_end +1) = *from_end;
-		from_end--;
-		n--;
+			*(from_end +1) = *from_end;
+			from_end--;
+			n--;
 		}
 		from_end++;
 		*from_end = val;
 		size_param++;
-		
 		return from_end;
-
 }
 
  void insert (iterator position, size_type n, const value_type& val)
