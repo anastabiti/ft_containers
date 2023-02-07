@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/07 13:07:00 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/07 13:49:38 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,11 +70,11 @@ int main()
 		// }
 std::cout << "_+_+_+__+_+_+__+_+_+__+_+_+__+_+_+_"<< std::endl;
 int h = 0 ;
-	while (h < 3332)
-	{
-		ftvec.insert(ftvec.begin() , 1337 ); 
-		h++;
-	}
+	// while (h < 3332)
+	// {
+		ftvec.insert(ftvec.begin()+2,3, 1337 ); 
+	// 	h++;
+	// }
 	
 		
 		// ftvec.insert(ftvec.end() , 1 );

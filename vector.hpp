@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/07 13:10:11 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/07 13:51:17 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -665,11 +665,7 @@ const_reference	back(void) const;
 		if(size() + 1 > capacity_param) 
 		{
 			reserve(capacity_param * 2);
-			from_end = this->end() - 1;
-		// 	from_end++;
-		// 	*from_end = val;
-		// 	size_param++;
-		// return from_end;
+			from_end = this->end() - 1; /* recalculate it*/
 		}		
 		while (n > 0)
 		{
@@ -678,7 +674,6 @@ const_reference	back(void) const;
 			n--;
 		}
 		
-		// from_end = this->end() - 1;
 		from_end++;
 		*from_end = val;
 		size_param++;
@@ -696,66 +691,45 @@ const_reference	back(void) const;
 
 
 
-//  void insert (iterator position, size_type n, const value_type& val)
-// {
-// /*	
-// 	[ 1 ] [ 2 ] [ 3 ] [ 4 ] [ 5 ] [ 6 ] [ 7 ] [ 8 ] [ 9 ] [ 10 ] [ 11 ] [ 12 ] [ 13 ]  [  ] [  ] [  ] 
+ void insert (iterator position, size_type n, const value_type& val)
+{
+/*	
+	[ 1 ] [ 2 ] [ 3 ] [ 4 ] [ 5 ] [ 6 ] [ 7 ] [ 8 ] [ 9 ] [ 10 ] [ 11 ] [ 12 ] [ 13 ]  [  ] [  ] [  ] 
 
-// 	                          |                                                   |                |
-// 						insert here			          						from_end           last_elem
-// 	[ 1 ] [ 2 ] [ 3 ] [ 4 ] [   ] [  ][   ][ 5 ] [ 6 ] [ 7 ] [ 8 ] [ 9 ] [ 10 ] [ 11 ] [ 12 ] [ 13 ]
+	                          |                                                   |                |
+						insert here			          						from_end           last_elem
+	[ 1 ] [ 2 ] [ 3 ] [ 4 ] [   ] [  ][   ][ 5 ] [ 6 ] [ 7 ] [ 8 ] [ 9 ] [ 10 ] [ 11 ] [ 12 ] [ 13 ]
 									
 	
-// 	// */
-
-// 	// std::cout << "before "<< capacity() <<std::endl;
-// 	// std::cout << "before "<< size() <<std::endl;
-// 	if( n > max_size() || n <= 0)
-// 	return;
-// 	size_t  i = 0;
-// 	while (i < n)
-// 	{
-// 		insert(position, val);
-// 		i++;
-// 	}
-// 	// std::cout << "after "<< capacity() <<std::endl;
-// 	// std::cout << "after "<< size() <<std::endl;
-	
-// 	// // if(n <= 0)
-// 	// return;
-// 		// else
-// 		// {
+	// */
+std::cout << "_____________________________________________"<< std::endl;
+	if( n > max_size() || n <= 0)
+	return;	
+	if(n <= 0)
+	return;
+		else
+		{
 			
-// 	// iterator from_end = end() - 1;
-// 	// iterator last_elem = (end() - 1) +n;
-// 	// // difference_type i = end()  - position;
-// 	// size_param +=n;
-// 	// difference_type i =    position - end();
-// 	// //  std::distance(position, end());
-// 	// // std::cout << "i "<< i<< std::endl;
+	iterator from_end = end() - 1;
+	iterator last_elem = (end() - 1) +n;
+	size_param +=n;
+	difference_type i =    position - end();
+	while (i > 0 ) //&& position != end()
+	{
+		*last_elem = *from_end;
+		i--;
+		last_elem--;
+		from_end--;
+	}
+	while ( n > 0)
+	{
 		
-// 	// while (i > 0 && position != end())
-// 	// {
-// 	// 	*last_elem = *from_end;
-// 	// 	i--;
-// 	// 	last_elem--;
-// 	// 	from_end--;
-// 	// }
-// 	// while ( n > 0)
-// 	// {
-		
-// 	// 	*last_elem = val;
-// 	// 	last_elem--;
-// 	// 	n--;
-// 	// }
-// 	// std::cout << capacity() <<std::endl;
-// 	// std::cout << size() <<std::endl;
-// 		// }
-
-
-
-	
-// }
+		*last_elem = val;
+		last_elem--;
+		n--;
+	}
+		}
+}
 
 
 // template <class InputIterator>  
