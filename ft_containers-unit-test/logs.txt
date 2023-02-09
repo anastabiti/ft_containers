@@ -1,1 +1,12 @@
-
+In file included from ../vector_tests/insert(std iterators).cpp:2:
+In file included from ../vector_tests/__service.ipp:3:
+../vector_tests/../../../vector.hpp:722:17: error: no viable conversion from 'std::__1::__wrap_iter<int *>' to 'ft::vector<int, std::__1::allocator<int> >::iterator' (aka 'int *')
+                for (iterator it = first; it != last;it++) // from position to end
+                              ^    ~~~~~
+../vector_tests/insert(std iterators).cpp:28:9: note: in instantiation of function template specialization 'ft::vector<int, std::__1::allocator<int> >::insert<std::__1::__wrap_iter<int *> >' requested here
+        vector.insert(vector.begin(), tmp.begin(), tmp.end());
+               ^
+../vector_tests/insert(std iterators).cpp:40:75: note: in instantiation of function template specialization 'insert_std_test<int>' requested here
+        exit(run_vector_unit_test<int>("insert(std iterators)", insert_std_test, insert_std_test));
+                                                                                 ^
+1 error generated.

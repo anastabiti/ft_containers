@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/09 09:33:24 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/09 10:20:35 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -326,13 +326,13 @@ allocator_type get_allocator() const
 			}
 			
 		}
-		/*
-		If n is also greater than the current container capacity, 
-		an automatic reallocation of the allocated storage space takes place.
+	/*
+			If n is also greater than the current container capacity,
+				an automatic reallocation of the allocated storage space takes place.
 	*/
 		else if (n > capacity())
 		{
-			reserve(n*2);
+			reserve(n);
 			int x = size_param;
 			size_param = n;
 			for (size_t i = size_param; i >= x; i--)
@@ -347,14 +347,15 @@ allocator_type get_allocator() const
 		*/
 		else if (n > size_param)
 		{
-			std::cout <<  " (n > size_param) : "<< std::endl;
+			// std::cout <<  " (n > size_param) : "<< std::endl;
 			size_t i = size_param;
 			while (i < n)
 			{
 				start_iter[i] = val;
-				this->size_param++;
 				i++;
+				
 			}
+				size_param = n;
 		}
 	}
 
@@ -456,14 +457,14 @@ const_reference	front(void) const
 		return (*start_iter);	
 }
 
-	reference back()
-	{
-		return *(end() -1); // this
-	}
-	const_reference back() const
-	{
+reference back()
+{
 	return *(end() -1); // this
-		}
+}
+	const_reference back() const
+{
+	return *(end() -1); // this
+}
 
 
 	/*
@@ -706,64 +707,59 @@ if ((this->size() + n) > this->capacity())
 }
 
 
-// template <class InputIterator>  
-// void insert ( InputIterator position, InputIterator first, InputIterator last)
-// {
+template <class InputIterator>  
+void insert ( InputIterator position, InputIterator first, InputIterator last)
+{
 	
-// 	size_t t =  0;
-// 		for (iterator it = position; it != end();it++) // from position to end
-// 		{	
+	size_t t =  0;
+		for (iterator it = position; it != end();it++) // from position to end
+		{	
 			
-// 			t++;
-// 		}
-// 		size_t t1 =  0;
+			t++;
+		}
+		size_t t1 =  0;
 
-// 		for (iterator it = first; it != last;it++) // from position to end
-// 		{	
+		for (iterator it = first; it != last;it++) // from position to end
+		{	
 			
-// 			t1++;
-// 		}
+			t1++;
+		}
 
 
 
-// 		if ((this->size() + t1) > this->capacity()) 
-// {
-//     if ((this->size() + t1) < (this->capacity() * 2)) 
-// 	{
-//         this->reserve(this->capacity() * 2);
+		if ((this->size() + t1) > this->capacity()) 
+{
+    if ((this->size() + t1) < (this->capacity() * 2)) 
+	{
+        this->reserve(this->capacity() * 2);
 		
-//     }
-// 	 else {
-//         this->reserve(this->size() + t1);
-//     }
-// iterator last_eleme = end() - 1;
-// while (t >0)
-// {
-// 	*(last_eleme+t1) = *last_eleme;
-// t--;
-// last_eleme--;
-// }
-// last_eleme++;
-// size_t x = 0;
-// while (x < t1)
-// {
-// 	*last_eleme = *(first+x);
-// 	x++;
-// }
+    }
+	 else {
+        this->reserve(this->size() + t1);
+    }
+iterator last_eleme = end() - 1;
+while (t >0)
+{
+	*(last_eleme+t1) = *last_eleme;
+t--;
+last_eleme--;
+}
+last_eleme++;
+size_t x = 0;
+while (x < t1)
+{
+	*last_eleme = *(first+x);
+	x++;
+}
 
-// size_param = size_param + t1;
-
-
-
-
-// }
+size_param = size_param + t1;
 
 
 
 
+}
 
-
-// }
+}
 
 
 void  clear()
@@ -782,13 +778,13 @@ void  clear()
 	/*______________________________________________________________________________________________________*/
 	~vector()
 	{
-		size_t  i =  0;
-		while (i < this->capacity_param)
-		{
-			allocating.destroy(start_iter+i);
-			i++;
-		}
-		allocating.deallocate(start_iter, this->capacity_param);
+		// size_t  i =  0;
+		// while (i < this->capacity_param)
+		// {
+		// 	allocating.destroy(start_iter+i);
+		// 	i++;
+		// }
+		// allocating.deallocate(start_iter, this->capacity_param);
 					// std::cout <<  " 	~vector() is called  : " << std::endl;
 	}
 	
