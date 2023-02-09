@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/07 14:07:28 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/09 08:46:16 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -313,13 +313,23 @@ allocator_type get_allocator() const
 	
 	void resize(size_type n, value_type val = value_type())
 	{
-						
+	
+		/*
+		If n is smaller than the current container size,
+		the content is reduced to its first n elements, 
+		removing those beyond (and destroying them).
+	*/
 
+		 if (n < size_param)
+		{
+			size_t elem_to_remove = size_param - n;
+			std::cout <<  " elem_to_remove= " << elem_to_remove << std::endl;
+		}
 		/*
 		If n is also greater than the current container capacity, 
 		an automatic reallocation of the allocated storage space takes place.
 	*/
-		if (n > capacity())
+		else if (n > capacity())
 		{
 			vector copy(*this);
 			allocating.deallocate(start_iter, this->capacity_param);
@@ -339,35 +349,8 @@ allocator_type get_allocator() const
 				start_iter[i] = 0;
 				i++;
 			}
+			// reserve(n);
 			
-		}
-		/*
-		If n is smaller than the current container size,
-		the content is reduced to its first n elements, 
-		removing those beyond (and destroying them).
-	*/
-
-		else if (n < size())
-		{
-			
-			vector copy;
-			size_t i = 0;
-			while (i < n)
-			{
-				copy[i] = start_iter[i];
-				i++;
-			}
-
-			allocating.deallocate(start_iter, this->capacity_param);
-			this->size_param = n;
-			this->capacity_param = n;
-			start_iter = allocating.allocate(this->capacity_param);
-			i = 0;
-			while (i < n)
-			{
-				start_iter[i] = copy[i];
-				i++;
-			}
 		}
 		/* If n is greater than the current container size, 
 		the content is expanded by inserting at the end as many elements as needed to reach a size of n. 
@@ -388,6 +371,11 @@ allocator_type get_allocator() const
 			}
 		}
 	}
+
+
+
+
+
 
 	size_type capacity() const //Request a change in capacity
 	{
