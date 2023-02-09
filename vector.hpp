@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/09 08:46:16 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/09 09:16:45 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,8 @@ class vector
 	// typedef  typenameft::iterator<ft::random_access_iterator_tag,T> iterator; /* A constant iterator for the container. */
 	typedef const iterator const_iterator; /* A constant iterator for the container. */
 	/*problem here */
-	typedef typename Allocator::pointer pointer; //working
-	// typedef typename ft::iterator<ft::random_access_iterator_tag, T>::pointer pointer; /* An iterator for the container. */
+	// typedef typename Allocator::pointer pointer; //working
+	typedef typename ft::iterator<std::random_access_iterator_tag, T>::pointer pointer; /* An iterator for the container. */
 	typedef ft::reverse_iterator<iterator> reverse_iterator;
 	typedef typename ft::reverse_iterator<const_iterator> const_reverse_iterator;
 	typedef ptrdiff_t difference_type;
@@ -207,11 +207,7 @@ void assign (size_type n, const value_type& val) //
 {
 	
 			size_t i = 0;
-	// while (i < this->capacity_param)
-	// {
-	// 	allocating.destroy(start_iter+i);
-	// 	i++;
-	// }
+
 	clear();
 	if(n > capacity_param)
 		reserve(n);
@@ -322,8 +318,15 @@ allocator_type get_allocator() const
 
 		 if (n < size_param)
 		{
-			size_t elem_to_remove = size_param - n;
-			std::cout <<  " elem_to_remove= " << elem_to_remove << std::endl;
+			// size_t elem_to_remove = size_param - n;
+			std::cout <<  "**********  remove n= " << n << std::endl;
+			for (size_t i = 0; i < n; i++)
+			{
+				allocating.destroy(end_iter);
+				end_iter--;
+				size_param--;
+			}
+			
 		}
 		/*
 		If n is also greater than the current container capacity, 
@@ -790,21 +793,20 @@ void  clear()
 		i++;
 	}
 	size_param = 0;
-			// allocating.deallocate(start_iter, this->capacity_param);
+			allocating.deallocate(start_iter, this->capacity_param);
 }
 
 	/*______________________________________________________________________________________________________*/
 	~vector()
 	{
-		// size_t  i =  0;
-		// while (i < this->capacity_param)
-		// {
-		// 	allocating.destroy(start_iter+i);
-		// 	i++;
-		// }
-		// allocating.deallocate(start_iter, this->capacity_param);
-		
-		
+		size_t  i =  0;
+		while (i < this->capacity_param)
+		{
+			allocating.destroy(start_iter+i);
+			i++;
+		}
+		allocating.deallocate(start_iter, this->capacity_param);
+					// std::cout <<  " 	~vector() is called  : " << std::endl;
 	}
 	
 };

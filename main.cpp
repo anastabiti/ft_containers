@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/09 08:49:22 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/09 09:16:59 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 // #include <string>
 #include <vector>
 #include <map>
+#include <stdlib.h>
 
 
 int main()
@@ -28,7 +29,12 @@ int main()
 			int x = i;
 			std::cout <<  " vector : " << vector.at(i) <<" [ " << x+1 << " ]"<< std::endl;
 		}
-		
+		vector.resize(9);
+		for (size_t i = 0; i < vector.size(); i++)
+		{
+			int x = i;
+			std::cout <<  " after vector : " << vector.at(i) <<" [ " << x+1 << " ]"<< std::endl;
+		}
 		
 }
 
