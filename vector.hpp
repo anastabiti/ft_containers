@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/09 09:16:45 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/09 09:17:16 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -316,7 +316,7 @@ allocator_type get_allocator() const
 		removing those beyond (and destroying them).
 	*/
 
-		 if (n < size_param)
+		 if (n <= size_param)
 		{
 			// size_t elem_to_remove = size_param - n;
 			std::cout <<  "**********  remove n= " << n << std::endl;
