@@ -1,16 +1,22 @@
-../vector_tests/constructor(std iterators).cpp:26:15: error: no matching constructor for initialization of 'ft::vector<int>'
-        _vector<int> tmp2(tmp.begin(), tmp.end());
-                     ^    ~~~~~~~~~~~~~~~~~~~~~~
-../vector_tests/../../../vector.hpp:137:2: note: candidate constructor [with InputIterator = __gnu_cxx::__normal_iterator<int *, std::vector<int>>] not viable: no known conversion from 'std::vector<int>::iterator' (aka '__normal_iterator<int *, std::vector<int, std::allocator<int>>>') to 'typename ft::enable_if<!ft::is_integral<__normal_iterator<int *, vector<int>>>::value, int>::argument_type *' (aka 'int *') for 1st argument
-        vector( typename ft::enable_if<!ft::is_integral<InputIterator>::value, T >::argument_type *  first, InputIterator last, const allocator_type &alloc = allocator_type()) 
-        ^
-../vector_tests/../../../vector.hpp:110:11: note: candidate constructor not viable: no known conversion from 'std::vector<int>::iterator' (aka '__normal_iterator<int *, std::vector<int, std::allocator<int>>>') to 'ft::vector::size_type' (aka 'unsigned long') for 1st argument
-        explicit vector(size_type n, const value_type &val = value_type(), const allocator_type &alloc = allocator_type()) : start_iter(0) , end_iter(0)
+../vector_tests/insert(std iterators).cpp:28:9: error: no matching member function for call to 'insert'
+        vector.insert(vector.begin(), tmp.begin(), tmp.end());
+        ~~~~~~~^~~~~~
+../vector_tests/insert(std iterators).cpp:40:75: note: in instantiation of function template specialization 'insert_std_test<int>' requested here
+        exit(run_vector_unit_test<int>("insert(std iterators)", insert_std_test, insert_std_test));
+                                                                                 ^
+../vector_tests/../../../vector.hpp:693:7: note: candidate function not viable: no known conversion from 'std::__1::vector<int, std::__1::allocator<int> >::iterator' (aka '__wrap_iter<int *>') to 'ft::vector::size_type' (aka 'unsigned long') for 2nd argument
+ void insert (iterator position, size_type n, const value_type& val)
+      ^
+../vector_tests/../../../vector.hpp:640:11: note: candidate function not viable: requires 2 arguments, but 3 were provided
+        iterator insert(iterator position, const value_type &val)
                  ^
-../vector_tests/../../../vector.hpp:83:11: note: candidate constructor not viable: requires at most 1 argument, but 2 were provided
-        explicit vector(const Allocator & = Allocator()) : start_iter(0) , end_iter(0)
-                 ^
-../vector_tests/../../../vector.hpp:91:2: note: candidate constructor not viable: requires single argument 'rhs', but 2 arguments were provided
-        vector (vector const &rhs)
-        ^
 1 error generated.
+test_3, insert_test_3));
+                                                                   ^
+../vector_tests/../../../vector.hpp:693:7: note: candidate function not viable: no known conversion from 'ft::vector<int, std::__1::allocator<int> >::iterator' (aka 'int *') to 'ft::vector::size_type' (aka 'unsigned long') for 2nd argument; dereference the argument with *
+ void insert (iterator position, size_type n, const value_type& val)
+      ^
+../vector_tests/../../../vector.hpp:640:11: note: candidate function not viable: requires 2 arguments, but 3 were provided
+        iterator insert(iterator position, const value_type &val)
+                 ^
+2 errors generated.
