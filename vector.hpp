@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/09 09:17:16 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/09 09:28:41 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -334,25 +334,34 @@ allocator_type get_allocator() const
 	*/
 		else if (n > capacity())
 		{
-			vector copy(*this);
-			allocating.deallocate(start_iter, this->capacity_param);
-			start_iter = allocating.allocate(n);
+			// vector copy(*this);
+			// allocating.deallocate(start_iter, this->capacity_param);
+			// start_iter = allocating.allocate(n);
 
-			size_t i = 0;
-			while (i < this->size_param)
-			{
-				start_iter[i] = copy[i];
-				i++;
-			}
-			// this->size_param = n; ??(off in insert i should resize without increasing size_param)
-			this->capacity_param = n;
+			// size_t i = 0;
+			// while (i < this->size_param)
+			// {
+			// 	start_iter[i] = copy[i];
+			// 	i++;
+			// }
+			// // this->size_param = n; ??(off in insert i should resize without increasing size_param)
+			// this->capacity_param = n;
 
-			while (i < this->size_param)
+			// while (i < this->size_param)
+			// {
+			// 	start_iter[i] = 0;
+			// 	i++;
+			// }
+			reserve(n*2);
+			int x = size_param;
+			size_param = n;
+			for (size_t i = size_param; i >= x; i--)
 			{
-				start_iter[i] = 0;
-				i++;
+				start_iter[i] = val;
 			}
-			// reserve(n);
+			
+			std::cout <<  "n > capacity() x = " <<  x<<std::endl;			
+			
 			
 		}
 		/* If n is greater than the current container size, 

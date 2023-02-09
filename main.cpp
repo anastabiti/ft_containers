@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/09 09:16:59 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/09 09:27:34 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@
 int main()
 {
 	ft::vector<int> vector;
-	ft::vector<int> v;
 	// ft::vector<int>::value_type T;
 	    vector.assign(10, 1337);
 		for (size_t i = 0; i < vector.size(); i++)
@@ -29,11 +28,28 @@ int main()
 			int x = i;
 			std::cout <<  " vector : " << vector.at(i) <<" [ " << x+1 << " ]"<< std::endl;
 		}
-		vector.resize(9);
+		vector.resize(23, 42);
 		for (size_t i = 0; i < vector.size(); i++)
 		{
 			int x = i;
 			std::cout <<  " after vector : " << vector.at(i) <<" [ " << x+1 << " ]"<< std::endl;
+		}
+
+			std::cout <<  "_______________________"<< std::endl;
+		
+		
+		std::vector<int> vectorreal;
+	    vectorreal.assign(10, 1337);
+		for (size_t i = 0; i < vectorreal.size(); i++)
+		{
+			int x = i;
+			std::cout <<  " vector : " << vectorreal.at(i) <<" [ " << x+1 << " ]"<< std::endl;
+		}
+		vectorreal.resize(23,42);
+		for (size_t i = 0; i < vectorreal.size(); i++)
+		{
+			int x = i;
+			std::cout <<  " after vector : " << vectorreal.at(i) <<" [ " << x+1 << " ]"<< std::endl;
 		}
 		
 }
