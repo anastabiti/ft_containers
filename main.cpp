@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/09 09:27:34 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/09 09:33:00 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ int main()
 			int x = i;
 			std::cout <<  " vector : " << vector.at(i) <<" [ " << x+1 << " ]"<< std::endl;
 		}
+		vector.reserve(40);
 		vector.resize(23, 42);
 		for (size_t i = 0; i < vector.size(); i++)
 		{
@@ -45,6 +46,7 @@ int main()
 			int x = i;
 			std::cout <<  " vector : " << vectorreal.at(i) <<" [ " << x+1 << " ]"<< std::endl;
 		}
+		vectorreal.reserve(40);
 		vectorreal.resize(23,42);
 		for (size_t i = 0; i < vectorreal.size(); i++)
 		{

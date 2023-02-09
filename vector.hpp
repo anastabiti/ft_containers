@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/09 09:28:41 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/09 09:33:24 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -318,8 +318,6 @@ allocator_type get_allocator() const
 
 		 if (n <= size_param)
 		{
-			// size_t elem_to_remove = size_param - n;
-			std::cout <<  "**********  remove n= " << n << std::endl;
 			for (size_t i = 0; i < n; i++)
 			{
 				allocating.destroy(end_iter);
@@ -334,24 +332,6 @@ allocator_type get_allocator() const
 	*/
 		else if (n > capacity())
 		{
-			// vector copy(*this);
-			// allocating.deallocate(start_iter, this->capacity_param);
-			// start_iter = allocating.allocate(n);
-
-			// size_t i = 0;
-			// while (i < this->size_param)
-			// {
-			// 	start_iter[i] = copy[i];
-			// 	i++;
-			// }
-			// // this->size_param = n; ??(off in insert i should resize without increasing size_param)
-			// this->capacity_param = n;
-
-			// while (i < this->size_param)
-			// {
-			// 	start_iter[i] = 0;
-			// 	i++;
-			// }
 			reserve(n*2);
 			int x = size_param;
 			size_param = n;
@@ -359,21 +339,15 @@ allocator_type get_allocator() const
 			{
 				start_iter[i] = val;
 			}
-			
-			std::cout <<  "n > capacity() x = " <<  x<<std::endl;			
-			
-			
 		}
 		/* If n is greater than the current container size, 
 		the content is expanded by inserting at the end as many elements as needed to reach a size of n. 
 		If val is specified, the new elements are initialized as copies of val,
 			otherwise, they are value-initialized.
 		*/
-		else if (n > size())
+		else if (n > size_param)
 		{
-			
-			
-
+			std::cout <<  " (n > size_param) : "<< std::endl;
 			size_t i = size_param;
 			while (i < n)
 			{
