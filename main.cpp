@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/09 08:47:51 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/09 08:49:22 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ int main()
 	    vector.assign(10, 1337);
 		for (size_t i = 0; i < vector.size(); i++)
 		{
-			std::cout <<  " vector : " << vector.at(i) <<" [ " << i << " ]"<< std::endl;
+			int x = i;
+			std::cout <<  " vector : " << vector.at(i) <<" [ " << x+1 << " ]"<< std::endl;
 		}
 		
 		
