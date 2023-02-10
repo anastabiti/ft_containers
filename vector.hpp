@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/10 09:09:12 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/10 09:26:24 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -652,46 +652,40 @@ const_reference	back(void) const;
 	void insert(typename ft::enable_if<!ft::is_integral<InputIterator>::value, T>::argument_type *  position, InputIterator first, InputIterator last)
 	{
 		
-		// size_t t = 0;
 		size_t t = std::distance(position, end());
-		// for (iterator it = position; it != end(); it++) // from position to end
-		// {
-		// 	t++;
-		// }
-		size_t t1 = std::distance(first, last);
+		std::cout << " t " << t<< std::endl;
+		size_t to_be_inserted = std::distance(first, last);
+		std::cout << " t " << to_be_inserted<< std::endl;
 
-		// for (iterator it = first; it != last; it++) // from position to end
-		// {
-		// 	t1++;
-		// }
-
-		if ((this->size() + t1) > this->capacity())
+		if ((this->size() + to_be_inserted) > this->capacity())
 		{
-			if ((this->size() + t1) < (this->capacity() * 2))
+			if ((this->size() + to_be_inserted) < (this->capacity() * 2))
 			{
 				this->reserve(this->capacity() * 2);
 			}
 			else
 			{
-				this->reserve(this->size() + t1);
+				this->reserve(this->size() + to_be_inserted);
 			}
 		}
 			iterator last_eleme = end() - 1;
 			while (t > 0)
 			{
-				*(last_eleme + t1) = *last_eleme;
+				*(last_eleme + to_be_inserted) = *last_eleme;
 				t--;
 				last_eleme--;
 			}
 			last_eleme++;
 			size_t x = 0;
-			while (x < t1)
+			while (x < to_be_inserted)
 			{
-				*last_eleme = *(first + x);
+				// *last_eleme = *(first + x);
+				*last_eleme = *(first+x);
+				last_eleme++;
 				x++;
 			}
 
-			size_param = size_param + t1;
+			size_param = size_param + to_be_inserted;
 		
 	}
 

@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/10 09:04:56 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/10 09:21:43 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,42 +21,58 @@
 int main()
 {
 	ft::vector<int> vector;
+	ft::vector<int> tmp;
 	// ft::vector<int>::value_type T;
-	    vector.assign(10, 1337);
+	    // vector.assign(10, 1337);
+		vector.push_back(1);
+		vector.push_back(2);
+		vector.push_back(3);
+		vector.push_back(4);
+		vector.push_back(5);
+		vector.push_back(6);
+	    tmp.assign(4, 1998);
 		for (size_t i = 0; i < vector.size(); i++)
 		{
 			int x = i;
 			std::cout <<  " vector : " << vector.at(i) <<" [ " << x+1 << " ]"<< std::endl;
 		}
-		vector.reserve(40);
-		vector.resize(23, 42);
-		for (size_t i = 0; i < vector.size(); i++)
+		// vector.reserve(40);
+		// tmp.resize(5, 42);
+		for (size_t i = 0; i < tmp.size(); i++)
 		{
 			int x = i;
-			std::cout <<  " after vector : " << vector.at(i) <<" [ " << x+1 << " ]"<< std::endl;
+			std::cout <<  " tmp : " << tmp.at(i) <<" [ " << x+1 << " ]"<< std::endl;
 		}
 
 			std::cout <<  "_______________________"<< std::endl;
-		
-		
-		std::vector<int> vectorreal;
-	    vectorreal.assign(10, 1337);
-		for (size_t i = 0; i < vectorreal.size(); i++)
+		tmp.insert(tmp.begin()+1 ,vector.begin(),vector.end());
+		for (size_t i = 0; i < tmp.size(); i++)
 		{
 			int x = i;
-			std::cout <<  " vector : " << vectorreal.at(i) <<" [ " << x+1 << " ]"<< std::endl;
+			std::cout <<  " after tmp : " << tmp.at(i) <<" [ " << x+1 << " ]"<< std::endl;
 		}
-		vectorreal.reserve(40);
-		vectorreal.resize(23,42);
-		for (size_t i = 0; i < vectorreal.size(); i++)
-		{
-			int x = i;
-			std::cout <<  " after vector : " << vectorreal.at(i) <<" [ " << x+1 << " ]"<< std::endl;
-		}
-		    ft::vector<int> tmp;
-    tmp.assign(2600 * 4, 1);
-    vector.assign(4200 * 4, 1);
-    vector.insert(vector.end() , vectorreal.begin(), vectorreal.end());
+			std::cout <<  "_______________________"<< std::endl;
+
+		
+		
+		// std::vector<int> vectorreal;
+	    // vectorreal.assign(10, 1337);
+		// for (size_t i = 0; i < vectorreal.size(); i++)
+		// {
+		// 	int x = i;
+		// 	std::cout <<  " vector : " << vectorreal.at(i) <<" [ " << x+1 << " ]"<< std::endl;
+		// }
+		// vectorreal.reserve(40);
+		// vectorreal.resize(23,42);
+		// for (size_t i = 0; i < vectorreal.size(); i++)
+		// {
+		// 	int x = i;
+		// 	std::cout <<  " after vector : " << vectorreal.at(i) <<" [ " << x+1 << " ]"<< std::endl;
+		// }
+		    // ft::vector<int> tmp;
+    // tmp.assign(2600 * 4, 1);
+    // vector.assign(4200 * 4, 1);
+    // vector.insert(vector.end() , vectorreal.begin(), vectorreal.end());
 		
 }
 
