@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/10 09:33:34 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/10 10:32:06 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define VECTOR_HPP
 
 # include "iterator.hpp"
-# include <cstddef>  /*ptrdiff_t*/
+# include <cstddef> /*ptrdiff_t*/
 # include <exception>
 # include <iostream>
 # include <memory>
@@ -29,29 +29,26 @@ class vector
 	typedef T value_type; /* The type stored in the container. */
 	typedef Allocator allocator_type;
 	/* The type of the allocator. / defaults to: allocator<value_type>   */
-	typedef typename Allocator::reference reference; /* A reference to the type stored in the container.  /for the default allocator: value_type& */
-	
-/*			implementation defined  :
+	typedef typename Allocator::reference reference;
+	/* A reference to the type stored in the container. 
+	/for the default allocator: value_type& */
+
+	/*			implementation defined  :
 	implementation is free to do what it likes
 */
-		typedef typename Allocator::pointer iterator;
-		typedef const iterator const_iterator;
-		typedef size_t size_type;
-		typedef ptrdiff_t difference_type;
-	
-	
-	
-	typedef typename Allocator::const_reference const_reference; /*A constant reference to the type stored in the container. */
-// typedef  typenameft::iterator<ft::random_access_iterator_tag,T> iterator;
+	typedef typename Allocator::pointer iterator;
+	typedef const iterator const_iterator;
+	typedef size_t size_type;
+	typedef ptrdiff_t difference_type;
+
+	typedef typename Allocator::const_reference const_reference;
+	/*A constant reference to the type stored in the container. */
+																	// typedef  typenameft::iterator<ft::random_access_iterator_tag,T> iterator;
 	typedef typename Allocator::const_pointer const_pointer;
 	typedef typename Allocator::pointer pointer; //working
 	typedef ft::reverse_iterator<iterator> reverse_iterator;
 	typedef typename ft::reverse_iterator<const_iterator> const_reverse_iterator;
 
-
-
-	
-	
   private:
 	pointer vec;
 	pointer copY;
@@ -98,7 +95,7 @@ class vector
 			const allocator_type &alloc = allocator_type())
 		: start_iter(0), end_iter(0)
 	{
-		/*	The allocator parameter is copied into a protected member of the container. 
+		/*	The allocator parameter is copied into a protected member of the container.
 			This private copy can then be used for all subsequent storage management. */
 
 		allocating = alloc; // Copy the argument to our internal object
@@ -114,7 +111,7 @@ class vector
 			i++;
 		}
 	}
-/*							range constructor
+	/*							range constructor
 				Constructs a container with as many elements as the range [first,last),
 				with each element constructed from its corresponding element in that range,
 			in the same order.
@@ -122,7 +119,9 @@ class vector
 
 	template <class InputIterator>
 	vector(InputIterator first, InputIterator last,
-			const allocator_type &alloc = allocator_type() ,typename ft::enable_if<!ft::is_integral<InputIterator>::value, int>::argument_type * = 0)
+			const allocator_type &alloc = allocator_type(),
+			typename ft::enable_if<!ft::is_integral<InputIterator>::value,
+			int>::argument_type * = 0)
 	{
 		allocating = alloc;
 		InputIterator it = first;
@@ -152,7 +151,9 @@ class vector
 	template <class InputIterator>
 	// void assign (InputIterator first, InputIterator last)
 	//candidate template ignored: substitution failure [with _InputIter = int]
-	void assign(InputIterator first, InputIterator last,typename ft::enable_if<!ft::is_integral<InputIterator>::value, int>::argument_type * = 0)
+	void assign(InputIterator first, InputIterator last,
+			typename ft::enable_if<!ft::is_integral<InputIterator>::value,
+			int>::argument_type * = 0)
 	//candidate template ignored: substitution failure [with _InputIter = int]
 	{
 		size_t i = 0;
@@ -239,7 +240,7 @@ class vector
 	/**_**_**_**_**_**_**_* Member functions  **_**_**_**_**_**_**_**_**_**_*/
 
 	/* Iterators-----------------------:                   */
-	iterator begin() //Return iterator to beginning (public member function)
+	iterator begin()
 	{
 		return (iterator(&start_iter[0]));
 	}
@@ -247,11 +248,9 @@ class vector
 	{
 		return (const_iterator(start_iter));
 	}
-	iterator end() //Return iterator to end (public member function)
+	iterator end()
 	{
-		return (iterator(&start_iter[this->size_param])); // - 1 ?
-
-		// return (iterator(end_iter)); // - 1 ?
+		return (iterator(&start_iter[this->size_param]));
 	}
 	const_iterator end() const
 	{
@@ -261,7 +260,6 @@ class vector
 	{
 		return (reverse_iterator(end()));
 	}
-
 	const_reverse_iterator rbegin() const
 	{
 		return (const_reverse_iterator(end()));
@@ -270,7 +268,6 @@ class vector
 	{
 		return (reverse_iterator(begin()));
 	}
-
 	const_reverse_iterator rend() const
 	{
 		return (const_reverse_iterator(--(begin())));
@@ -278,7 +275,6 @@ class vector
 	/* Capacity-----------------------:                   */
 	size_type size() const
 	{
-		// return (alloc.max_size());
 		return (this->size_param);
 	}
 
@@ -291,7 +287,7 @@ class vector
 	{
 		/*
 		If n is smaller than the current container size,
-		the content is reduced to its first n elements, 
+		the content is reduced to its first n elements,
 		removing those beyond (and destroying them).
 	*/
 
@@ -318,8 +314,8 @@ class vector
 				start_iter[i] = val;
 			}
 		}
-		/* If n is greater than the current container size, 
-		the content is expanded by inserting at the end as many elements as needed to reach a size of n. 
+		/* If n is greater than the current container size,
+		the content is expanded by inserting at the end as many elements as needed to reach a size of n.
 		If val is specified, the new elements are initialized as copies of val,
 			otherwise, they are value-initialized.
 		*/
@@ -570,17 +566,17 @@ const_reference	back(void) const;
 	{
 		/*
 		This causes an automatic reallocation of the allocated storage space if
-			-and only if- 
+			-and only if-
 		the  new vector size surpasses the current vector capacity.
 	*/
 
-		/*	
+		/*
 	[ 1 ] [ 2 ] [ 3 ] [ 4 ] [ 5 ] [ 6 ] [ 7 ] [ 8 ] [ 9 ] [ 10 ] [ 11 ] [ 12 ] [ 13 ]  [  ]
 
-			                    |                                                   |
+								|                                                   |
 							insert											from_end
 	[ 1 ] [ 2 ] [ 3 ] [ 4 ] [   ] [ 5 ] [ 6 ] [ 7 ] [ 8 ] [ 9 ] [ 10 ] [ 11 ] [ 12 ] [ 13 ]
-	
+
 */
 
 		size_t n = 0;
@@ -649,9 +645,10 @@ const_reference	back(void) const;
 	}
 
 	template <class InputIterator>
-	void insert(typename ft::enable_if<!ft::is_integral<InputIterator>::value, T>::argument_type *  position, InputIterator first, InputIterator last)
+	void insert(typename ft::enable_if<!ft::is_integral<InputIterator>::value,
+			T>::argument_type *position, InputIterator first,
+			InputIterator last)
 	{
-		
 		size_t t = std::distance(position, end());
 		// std::cout << " t " << t<< std::endl;
 		size_t to_be_inserted = std::distance(first, last);
@@ -668,23 +665,23 @@ const_reference	back(void) const;
 				this->reserve(this->size() + to_be_inserted);
 			}
 		}
-			iterator last_eleme = end() - 1;
-			while (t > 0)
-			{
-				*(last_eleme + to_be_inserted) = *last_eleme;
-				t--;
-				last_eleme--;
-			}
+		iterator last_eleme = end() - 1;
+		while (t > 0)
+		{
+			*(last_eleme + to_be_inserted) = *last_eleme;
+			t--;
+			last_eleme--;
+		}
+		last_eleme++;
+		size_t x = 0;
+		while (x < to_be_inserted)
+		{
+			*last_eleme = *(first + x);
 			last_eleme++;
-			size_t x = 0;
-			while (x < to_be_inserted)
-			{
-				*last_eleme = *(first+x);
-				last_eleme++;
-				x++;
-			}
+			x++;
+		}
 
-			size_param = size_param + to_be_inserted;
+		size_param = size_param + to_be_inserted;
 	}
 
 	void clear()
@@ -722,7 +719,6 @@ bool operator==(const vector<T, Alloc> &lhs, const vector<T, Alloc> &rhs)
 	}
 	else
 		return (false);
-	// return(lhs.size() == rhs.size() && ft::equal(lhs.begin(),lhs.end(),rhs.begin() ));
 }
 template <class T, class Alloc>
 bool operator<(const vector<T, Alloc> &lhs, const vector<T, Alloc> &rhs)
@@ -761,8 +757,7 @@ void	swap(vector<T, Alloc> &x, vector<T, Alloc> &y)
 	x.swap(y);
 }
 
-/*• std::enable_if */
 
-} /* namespace ft */
+}
 
 #endif
