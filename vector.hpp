@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/10 11:15:00 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/10 11:27:39 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ class vector
 	implementation is free to do what it likes
 */
 	// typedef typename Allocator::pointer iterator;
-	typedef typename  ft::iterator<T>::pointer iterator;
+	typedef typename  ft::iterator<T>::pointer iterator;// problem here	
 	typedef const  ft::iterator<T> const_iterator;
 	typedef size_t size_type;
 	typedef ptrdiff_t difference_type;
@@ -252,7 +252,7 @@ class vector
 	/* Iterators-----------------------:                   */
 	iterator begin()
 	{
-		return (iterator(&start_iter[0]));
+		return (&start_iter[0]);
 	}
 	const_iterator begin() const
 	{

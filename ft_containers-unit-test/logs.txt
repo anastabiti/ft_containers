@@ -1,7 +1,7 @@
-../vector_tests/begin().cpp:21:18: error: expression is not assignable
-    v.push_back(*++vector.begin());
-                 ^ ~~~~~~~~~~~~~~
-../vector_tests/begin().cpp:28:59: note: in instantiation of function template specialization 'begin_test<int>' requested here
-    exit(run_vector_unit_test<int>("begin()", begin_test, begin_test));
-                                                          ^
+../vector_tests/data().cpp:22:22: error: no member named 'data' in 'ft::vector<int, std::__1::allocator<int> >'
+    oss << &*(vector.data());
+              ~~~~~~ ^
+../vector_tests/data().cpp:32:57: note: in instantiation of function template specialization 'data_test<int>' requested here
+    exit(run_vector_unit_test<int>("data()", data_test, data_test));
+                                                        ^
 1 error generated.

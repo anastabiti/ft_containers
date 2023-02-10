@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 09:45:02 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/10 11:18:35 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/10 11:30:23 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,16 +68,21 @@ namespace ft
 		typedef T *pointer;
 		typedef T &reference;
 		typedef std::random_access_iterator_tag iterator_category;
-		// no type named 'iterator_category' in 'ft::iterator_traits<int *>'
-		//     class reverse_iterator : public iterator<typename iterator_traits<Iterator>::iterator_category,
+	};
+	template <typename T>
+	struct iterator_traits<const T *> // definitions that are appropriate for pointers.
+	{
+		typedef ptrdiff_t difference_type;
+		typedef T value_type;
+		typedef T *pointer;
+		typedef T &reference;
+		typedef std::random_access_iterator_tag iterator_category;
 	};
 
 	/*template <class Category, class T, class Distance = ptrdiff_t,class Pointer = T *, class Reference = T &>*/
 	template <class T>
 	class iterator
 	{
-	private:
-		T * ptr;
 
 	public:
 		typedef T value_type;
@@ -89,6 +94,10 @@ namespace ft
 		// reference has a default Reference to type T.
 		typedef std::random_access_iterator_tag iterator_category;
 
+	private:
+		pointer ptr;
+		
+	public:
 		iterator()
 		{
 			ptr = NULL;
