@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/10 09:35:43 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/10 10:43:25 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@
 
 int main()
 {
-	ft::vector<int> vector;
+	
+	std::vector<int> vector;
 	ft::vector<int> tmp;
 	// ft::vector<int>::value_type T;
 	    // vector.assign(10, 1337);
@@ -52,7 +53,13 @@ int main()
 			std::cout <<  " after tmp : " << tmp.at(i) <<" [ " << x+1 << " ]"<< std::endl;
 		}
 			std::cout <<  "_______________________"<< std::endl;
-
+		ft::vector<int> copy_from_tmp(tmp);
+		for (size_t i = 0; i < copy_from_tmp.size(); i++)
+		{
+			int x = i;
+			std::cout <<  " copy : " << copy_from_tmp.at(i) <<" [ " << x+1 << " ]"<< std::endl;
+		}
+			std::cout <<  "_______________________"<< std::endl;
 		
 		
 		// std::vector<int> vectorreal;

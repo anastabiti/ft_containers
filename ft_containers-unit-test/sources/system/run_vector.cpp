@@ -7,10 +7,10 @@ int main(int argc, char* argv[], char* env[]) {
 	printElement("FUNCTION"); printElement(WHITE + "RESULT" + RESET); printElement(WHITE + "FT TIME" + RESET); printElement(WHITE + "STD TIME" + RESET);
 	printElement(WHITE + "LEAKS" + RESET); cout << endl;
 
-	// runFunctionTest("../vector_tests/constructor.cpp", argv, env);
-	// runFunctionTest("../vector_tests/constructor(std iterators).cpp", argv, env);
-	// runFunctionTest("../vector_tests/iterators.cpp", argv, env);
-	// runFunctionTest("../vector_tests/begin().cpp", argv, env);
+	runFunctionTest("../vector_tests/constructor.cpp", argv, env);
+	runFunctionTest("../vector_tests/constructor(std iterators).cpp", argv, env);
+	runFunctionTest("../vector_tests/iterators.cpp", argv, env);
+	runFunctionTest("../vector_tests/begin().cpp", argv, env);
 	runFunctionTest("../vector_tests/end().cpp", argv, env);
 	runFunctionTest("../vector_tests/rbegin().cpp", argv, env);
 	runFunctionTest("../vector_tests/rend().cpp", argv, env);

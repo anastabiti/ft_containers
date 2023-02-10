@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/10 10:32:06 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/10 10:55:36 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,19 +76,36 @@ class vector
 	/* 							copy constructor */
 	vector(vector const &rhs)
 	{
-		this->allocating = rhs.allocating;
-		this->capacity_param = rhs.capacity_param;
-		this->size_param = rhs.size_param;
-		if (capacity_param)
-			this->start_iter = allocating.allocate(capacity_param);
-		this->end_iter = start_iter + size_param;
-		size_type i = 0;
-		while (i < size_param)
-		{
-			allocating.construct(start_iter + i, *(rhs.start_iter + i));
-			i++;
-		}
+			// std::cout <<"	vector(vector const &rhs) is called" << std::endl;
+		// this->allocating = rhs.allocating;
+		// this->capacity_param = rhs.capacity_param;
+		// this->size_param = rhs.size_param;
+		// if (capacity_param)
+		// 	this->start_iter = allocating.allocate(capacity_param);
+		// this->end_iter = start_iter + size_param;
+		// size_type i = 0;
+		// while (i < size_param)
+		// {
+		// 	allocating.construct(start_iter + i, *(rhs.start_iter + i));
+		// 	i++;
+		// }
+		 *this = rhs;
 	}
+		// vector<T,Allocator>& operator=(const vector<T,Allocator>& x)
+		vector& operator=(const vector & x)
+	{
+		// std::cout <<"	vector<T,Allocator>& operator=(const vector<T,Allocator>& x) is called" << std::endl;
+			if(this == &x)
+			return *this;
+			this->allocating = x.allocating;
+			this->size_param = x.size_param;
+			this->capacity_param = x.capacity_param;
+			this->start_iter = x.start_iter;
+			this->end_iter = x.end_iter;
+			
+					return *this;
+	}
+	
 	/* 							fill constructor
 	Constructs a container with n elements. Each element is a copy of val.*/
 	explicit vector(size_type n, const value_type &val = value_type(),
@@ -148,6 +165,9 @@ class vector
 			cp++;
 		}
 	}
+
+
+	
 	template <class InputIterator>
 	// void assign (InputIterator first, InputIterator last)
 	//candidate template ignored: substitution failure [with _InputIter = int]
@@ -217,11 +237,7 @@ class vector
 	Constructs a container with a copy of each of the elements in x,
 		in the same order.
 
-	// vector (const vector& x)
-	// {
-	// 	this = x;
-	// }
-					Assign content
+		Assign content
 
 	Copies all the elements from x into the container.
 	The container preserves its current allocator,
@@ -229,14 +245,7 @@ class vector
 
 
 */
-	//  vector& operator= (const vector& x)
-	//  {
-	// 	this->capacity_param = x.capacity_param;
-	// 	this->allocating = x.allocating;
-	// 	this->size_param = x.size_param;
-	// 	this->vec = x.vec;
-	// 	return (*this);
-	//  }
+	
 	/**_**_**_**_**_**_**_* Member functions  **_**_**_**_**_**_**_**_**_**_*/
 
 	/* Iterators-----------------------:                   */
@@ -382,21 +391,10 @@ class vector
 	{
 		return (start_iter[n]);
 	}
-	// reference operator=(value_type n)
-	// {
-	// 	return (vec[n]);
-	// }
 	const_reference operator[](size_type n) const
 	{
 		return (start_iter[n]);
 	}
-	// 	value_type at(size_type nb)
-	// {
-	// 	if(nb >= this->size_param)
-	// 	throw("out of range");
-	// 	return (vec[nb]);
-	// }
-
 	reference at(size_type n)
 	{
 		if (n >= this->size_param)
