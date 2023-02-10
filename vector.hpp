@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/10 09:07:34 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/10 09:09:12 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -675,6 +675,7 @@ const_reference	back(void) const;
 			{
 				this->reserve(this->size() + t1);
 			}
+		}
 			iterator last_eleme = end() - 1;
 			while (t > 0)
 			{
@@ -691,7 +692,7 @@ const_reference	back(void) const;
 			}
 
 			size_param = size_param + t1;
-		}
+		
 	}
 
 	void clear()
