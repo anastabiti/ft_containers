@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/10 08:49:06 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/10 09:02:52 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -649,7 +649,7 @@ const_reference	back(void) const;
 	}
 
 	template <class InputIterator>
-	void insert(InputIterator position, InputIterator first, InputIterator last)
+	void insert(InputIterator position, InputIterator first, InputIterator last,typename ft::enable_if<!ft::is_integral<InputIterator>::value, int>::argument_type * = 0)
 	{
 		size_t t = 0;
 		for (iterator it = position; it != end(); it++) // from position to end

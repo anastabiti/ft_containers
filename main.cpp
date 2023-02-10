@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/09 09:33:00 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/10 08:58:18 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,10 @@ int main()
 			int x = i;
 			std::cout <<  " after vector : " << vectorreal.at(i) <<" [ " << x+1 << " ]"<< std::endl;
 		}
+		    ft::vector<int> tmp;
+    tmp.assign(2600 * 4, 1);
+    vector.assign(4200 * 4, 1);
+    vector.insert(vector.end() , vectorreal.begin(), vectorreal.end());
 		
 }
 

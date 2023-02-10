@@ -8,7 +8,7 @@
         void insert(iterator position, size_type n, const value_type &val)
              ^
 ../vector_tests/../../../vector.hpp:652:7: note: candidate template ignored: deduced conflicting types for parameter 'InputIterator' ('int *' vs. 'std::__1::__wrap_iter<int *>')
-        void insert(InputIterator position, InputIterator first, InputIterator last)
+        void insert(InputIterator position, InputIterator first, InputIterator last,typename ft::enable_if<!ft::is_integral<InputIterator>::value, int>::argument_type * = 0)
              ^
 ../vector_tests/../../../vector.hpp:569:11: note: candidate function not viable: requires 2 arguments, but 3 were provided
         iterator insert(iterator position, const value_type &val)
