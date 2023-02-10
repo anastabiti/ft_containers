@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/10 10:55:36 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/10 11:09:54 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,9 @@ class vector
 	/*			implementation defined  :
 	implementation is free to do what it likes
 */
-	typedef typename Allocator::pointer iterator;
-	typedef const iterator const_iterator;
+	// typedef typename Allocator::pointer iterator;
+	typedef typename  ft::iterator<std::random_access_iterator_tag,T>::pointer iterator;
+	typedef const  ft::iterator<std::random_access_iterator_tag,T> const_iterator;
 	typedef size_t size_type;
 	typedef ptrdiff_t difference_type;
 
@@ -50,12 +51,12 @@ class vector
 	typedef typename ft::reverse_iterator<const_iterator> const_reverse_iterator;
 
   private:
-	pointer vec;
-	pointer copY;
+	iterator vec;
+	iterator copY;
 	size_t size_param;
 	size_t capacity_param;
-	pointer start_iter;
-	pointer end_iter;
+	iterator start_iter;
+	iterator end_iter;
 
   protected:
 	Allocator allocating; // copy of the allocator
