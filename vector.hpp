@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/09 14:15:55 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/10 08:49:06 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define VECTOR_HPP
 
 # include "iterator.hpp"
-# include <cstddef>
+# include <cstddef>  /*ptrdiff_t*/
 # include <exception>
 # include <iostream>
 # include <memory>
@@ -26,44 +26,32 @@ class vector
 {
   public:
 	/*________________________________Member types________________________________*/
-
 	typedef T value_type; /* The type stored in the container. */
 	typedef Allocator allocator_type;
 	/* The type of the allocator. / defaults to: allocator<value_type>   */
-	typedef typename Allocator::reference reference;
-	/* A reference to the type stored in the container. 
-	/for the default allocator: value_type& */
-	typedef typename Allocator::const_reference const_reference;
-	/*A constant reference to the type stored in the container. */
-
+	typedef typename Allocator::reference reference; /* A reference to the type stored in the container.  /for the default allocator: value_type& */
+	
+/*			implementation defined  :
+	implementation is free to do what it likes
+*/
+		typedef typename Allocator::pointer iterator;
+		typedef const iterator const_iterator;
+		typedef size_t size_type;
+		typedef ptrdiff_t difference_type;
+	
+	
+	
+	typedef typename Allocator::const_reference const_reference; /*A constant reference to the type stored in the container. */
+// typedef  typenameft::iterator<ft::random_access_iterator_tag,T> iterator;
 	typedef typename Allocator::const_pointer const_pointer;
-	// typedef  ft::iterator<ft::random_access_iterator_tag, T> iterator;
-	/* An iterator for the container. */
-	//problem here working but range con not working
-
-	typedef typename Allocator::pointer iterator;
-	/* An iterator for the container. simple pionter  ->><><><><> */
-	// typedef  typenameft::iterator<ft::random_access_iterator_tag,T> iterator;
-	/* A constant iterator for the container. */
-	typedef const iterator const_iterator;
-	/* A constant iterator for the container. */
-	/*problem here */
-	// typedef typename Allocator::pointer pointer; //working
-	typedef typename ft::iterator<std::random_access_iterator_tag,
-									T>::pointer pointer;
-										/* An iterator for the container. */
+	typedef typename Allocator::pointer pointer; //working
 	typedef ft::reverse_iterator<iterator> reverse_iterator;
 	typedef typename ft::reverse_iterator<const_iterator> const_reverse_iterator;
-	typedef ptrdiff_t difference_type;
-	/*     							difference_type: What type results from writing it1
-									- it2? : 
-   										A signed integral type that can represent the difference in two iterators. 
-          								Result of pointer subtraction
-       									ptrdiff_t = This is the signed integer type of the result of subtracting two pointers.
-   				*/
-	typedef size_t size_type;
-	/**_**_**_**_**_**_**_*~~~~~~~~~~~~~~~~~~***_**_**_**_**_**_**_**_**_**_*/
-	/**_**_**_**_**_**_**_*~~~~~~~~~~~~~~~~~~***_**_**_**_**_**_**_**_**_**_*/
+
+
+
+	
+	
   private:
 	pointer vec;
 	pointer copY;
@@ -126,19 +114,15 @@ class vector
 			i++;
 		}
 	}
-	/*							range constructor
-			Constructs a container with as many elements as the range [first,last),
-			with each element constructed from its corresponding element in that range,
-		in the same order.
+/*							range constructor
+				Constructs a container with as many elements as the range [first,last),
+				with each element constructed from its corresponding element in that range,
+			in the same order.
 */
 
 	template <class InputIterator>
-	// vector( InputIterator  first, InputIterator last,const allocator_type &alloc = allocator_type())
-		//candidate template ignored: substitution failure
-	vector(typename ft::enable_if<!ft::is_integral<InputIterator>::value,
-			T>::argument_type *first, InputIterator last,
-			const allocator_type &alloc = allocator_type())
-	//	ft::vector<int> f3(2,4); range constructor will be called
+	vector(InputIterator first, InputIterator last,
+			const allocator_type &alloc = allocator_type() ,typename ft::enable_if<!ft::is_integral<InputIterator>::value, int>::argument_type * = 0)
 	{
 		allocating = alloc;
 		InputIterator it = first;
@@ -168,9 +152,7 @@ class vector
 	template <class InputIterator>
 	// void assign (InputIterator first, InputIterator last)
 	//candidate template ignored: substitution failure [with _InputIter = int]
-	void assign(typename ft::enable_if<!ft::is_integral<InputIterator>::value,
-										T>::argument_type *first,
-				InputIterator last)
+	void assign(InputIterator first, InputIterator last,typename ft::enable_if<!ft::is_integral<InputIterator>::value, int>::argument_type * = 0)
 	//candidate template ignored: substitution failure [with _InputIter = int]
 	{
 		size_t i = 0;
@@ -180,7 +162,7 @@ class vector
 		// 	i++;
 		// }
 		// allocating.deallocate(start_iter, this->capacity_param);
-		clear();
+		// clear();
 		size_t dist = std::distance(first, last);
 
 		if (dist > capacity_param)
