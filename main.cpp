@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/10 09:21:43 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/10 09:35:43 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int main()
 		}
 
 			std::cout <<  "_______________________"<< std::endl;
-		tmp.insert(tmp.begin()+1 ,vector.begin(),vector.end());
+		tmp.insert(tmp.end() ,vector.end()-1,vector.end());
 		for (size_t i = 0; i < tmp.size(); i++)
 		{
 			int x = i;

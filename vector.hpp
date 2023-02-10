@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/10 09:26:24 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/10 09:33:34 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -653,15 +653,15 @@ const_reference	back(void) const;
 	{
 		
 		size_t t = std::distance(position, end());
-		std::cout << " t " << t<< std::endl;
+		// std::cout << " t " << t<< std::endl;
 		size_t to_be_inserted = std::distance(first, last);
-		std::cout << " t " << to_be_inserted<< std::endl;
+		// std::cout << " t " << to_be_inserted<< std::endl;
 
-		if ((this->size() + to_be_inserted) > this->capacity())
+		if ((size_param + to_be_inserted) > capacity_param)
 		{
-			if ((this->size() + to_be_inserted) < (this->capacity() * 2))
+			if ((size_param + to_be_inserted) < (capacity_param * 2))
 			{
-				this->reserve(this->capacity() * 2);
+				this->reserve(capacity_param * 2);
 			}
 			else
 			{
@@ -679,14 +679,12 @@ const_reference	back(void) const;
 			size_t x = 0;
 			while (x < to_be_inserted)
 			{
-				// *last_eleme = *(first + x);
 				*last_eleme = *(first+x);
 				last_eleme++;
 				x++;
 			}
 
 			size_param = size_param + to_be_inserted;
-		
 	}
 
 	void clear()
