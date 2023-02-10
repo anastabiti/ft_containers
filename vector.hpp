@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/10 11:10:38 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/10 11:15:00 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,12 @@ class vector
 	implementation is free to do what it likes
 */
 	// typedef typename Allocator::pointer iterator;
-	typedef typename  ft::iterator<std::random_access_iterator_tag,T>::pointer iterator;
-	typedef const  ft::iterator<std::random_access_iterator_tag,T> const_iterator;
+	typedef typename  ft::iterator<T>::pointer iterator;
+	typedef const  ft::iterator<T> const_iterator;
 	typedef size_t size_type;
 	typedef ptrdiff_t difference_type;
-
 	typedef typename Allocator::const_reference const_reference;
+	
 	/*A constant reference to the type stored in the container. */
 																	// typedef  typenameft::iterator<ft::random_access_iterator_tag,T> iterator;
 	typedef typename Allocator::const_pointer const_pointer;

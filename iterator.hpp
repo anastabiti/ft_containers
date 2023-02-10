@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 09:45:02 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/10 09:03:41 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/10 11:18:35 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,22 +72,22 @@ namespace ft
 		//     class reverse_iterator : public iterator<typename iterator_traits<Iterator>::iterator_category,
 	};
 
-	template <class Category, class T, class Distance = ptrdiff_t,
-			  class Pointer = T *, class Reference = T &>
+	/*template <class Category, class T, class Distance = ptrdiff_t,class Pointer = T *, class Reference = T &>*/
+	template <class T>
 	class iterator
 	{
 	private:
-		Pointer ptr;
+		T * ptr;
 
 	public:
 		typedef T value_type;
 		/*value _type is of type T,the class of objects that the iterator is pointing.*/
-		typedef Distance difference_type;
+		typedef ptrdiff_t difference_type;
 		// difference_type has a default value of ptrdiff_t which is used to represent the difference between two iterators.
-		typedef Pointer pointer; // pointer has a default Pointer to type T.
-		typedef Reference reference;
+		typedef T * pointer; // pointer has a default Pointer to type T.
+		typedef T & reference;
 		// reference has a default Reference to type T.
-		typedef Category iterator_category;
+		typedef std::random_access_iterator_tag iterator_category;
 
 		iterator()
 		{
@@ -228,11 +228,7 @@ namespace ft
 		return (x.base() >= y.base());
 	}
 	template <class Iterator>
-	class reverse_iterator : public iterator<typename iterator_traits<Iterator>::iterator_category,
-											 typename iterator_traits<Iterator>::value_type,
-											 typename iterator_traits<Iterator>::difference_type,
-											 typename iterator_traits<Iterator>::pointer,
-											 typename iterator_traits<Iterator>::reference>
+	class reverse_iterator : public iterator<Iterator>
 	{
 	protected:
 		Iterator current;
