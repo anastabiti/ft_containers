@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/11 09:39:17 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/11 09:55:30 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -187,7 +187,10 @@ class vector
 		// clear();
 		
 		difference_type dist =  std::distance(first, last);
-		// iterator it  = first;
+
+		// typename iterator_traits<InputIterator>::difference_type test;
+		// typename iterator_traits<InputIterator>::pointer it;
+		// it = first;
 		// size_t dist = 0 ;
 		// while (first < last)
 		// {
@@ -656,15 +659,25 @@ const_reference	back(void) const;
 	}
 
 	template <class InputIterator>
-	void insert(InputIterator position, InputIterator first,
-			InputIterator last,typename ft::enable_if<!ft::is_integral<InputIterator>::value,
-			T>::argument_type * = 0)
+	void insert(InputIterator position, InputIterator first, InputIterator last,typename ft::enable_if<!ft::is_integral<InputIterator>::value, T>::argument_type * = 0)
 	{
-		size_t t = std::distance(position, end());
-		// std::cout << " t " << t<< std::endl;
-		size_t to_be_inserted = std::distance(first, last);
-		// std::cout << " t " << to_be_inserted<< std::endl;
-
+		// size_t t = std::distance(position, end());
+		size_t t = 0;
+		iterator it  = position;
+		while (it < end())
+		{
+			it++; t++;	
+		}
+		
+		
+		// size_t to_be_inserted = std::distance(first, last);
+		size_t to_be_inserted = 0 ;
+		iterator it2 = first;
+		while (it2 < last)
+		{
+			it2++;to_be_inserted++;
+		}
+		
 		if ((size_param + to_be_inserted) > capacity_param)
 		{
 			if ((size_param + to_be_inserted) < (capacity_param * 2))
