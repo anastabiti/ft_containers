@@ -1,23 +1,7 @@
-../vector_tests/insert(std iterators).cpp:28:9: error: no matching member function for call to 'insert'
-        vector.insert(vector.begin(), tmp.begin(), tmp.end());
-        ~~~~~~~^~~~~~
-../vector_tests/insert(std iterators).cpp:40:75: note: in instantiation of function template specialization 'insert_std_test<int>' requested here
-        exit(run_vector_unit_test<int>("insert(std iterators)", insert_std_test, insert_std_test));
-                                                                                 ^
-../vector_tests/../../../vector.hpp:621:7: note: candidate function not viable: no known conversion from 'std::__1::vector<int, std::__1::allocator<int> >::iterator' (aka '__wrap_iter<int *>') to 'ft::vector::size_type' (aka 'unsigned long') for 2nd argument
-        void insert(iterator position, size_type n, const value_type &val)
-             ^
-../vector_tests/../../../vector.hpp:664:7: note: candidate template ignored: deduced conflicting types for parameter 'InputIterator' ('ft::iterator<int>' vs. 'std::__1::__wrap_iter<int *>')
-        void insert(InputIterator position, InputIterator first, InputIterator last,typename ft::enable_if<!ft::is_integral<InputIterator>::value, T>::argument_type * = 0)
-             ^
-../vector_tests/../../../vector.hpp:579:11: note: candidate function not viable: requires 2 arguments, but 3 were provided
-        iterator insert(iterator position, const value_type &val)
-                 ^
-1 error generated.
-/assign().cpp:46:61: note: in instantiation of function template specialization 'assign_test<int>' requested here
-    exit(run_vector_unit_test<int>("assign()", assign_test, assign_test));
-                                                            ^
-../vector_tests/../../../iterator.hpp:187:12: note: candidate function not viable: no known conversion from 'ft::iterator<int>' to 'ft::iterator::difference_type' (aka 'long') for 1st argument
-                iterator operator-(difference_type n) const // not working
-                         ^
+../vector_tests/begin().cpp:21:18: error: expression is not assignable
+    v.push_back(*++vector.begin());
+                 ^ ~~~~~~~~~~~~~~
+../vector_tests/begin().cpp:28:59: note: in instantiation of function template specialization 'begin_test<int>' requested here
+    exit(run_vector_unit_test<int>("begin()", begin_test, begin_test));
+                                                          ^
 1 error generated.

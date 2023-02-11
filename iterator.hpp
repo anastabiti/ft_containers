@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 09:45:02 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/11 09:46:59 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/11 11:58:26 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,7 +110,8 @@ namespace ft
 
 		iterator(const iterator &rhs) // copy
 		{
-			ptr = rhs.ptr;
+			// ptr = rhs.ptr;
+			 *this = rhs;
 		}
 		iterator &operator=(const iterator &rhs)
 		{

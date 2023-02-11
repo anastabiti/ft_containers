@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/11 11:07:46 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/11 12:44:55 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 # include <string>
 namespace ft
 {
+	
 template <typename T, typename Allocator = std::allocator<T> >
 class vector
 {
@@ -37,7 +38,8 @@ class vector
 	implementation is free to do what it likes
 */
 	// typedef typename Allocator::pointer iterator;
-	typedef  ft::iterator<value_type> iterator;// problem here	
+	// typedef  ft::iterator<value_type> iterator;// problem here	
+	typedef typename iterator_traits<T*>::pointer iterator;// problem here	
 	typedef const  ft::iterator<T> const_iterator;
 	typedef size_t size_type;
 	typedef ptrdiff_t difference_type;
@@ -45,8 +47,8 @@ class vector
 	
 	/*A constant reference to the type stored in the container. */
 																	// typedef  typenameft::iterator<ft::random_access_iterator_tag,T> iterator;
-	typedef typename Allocator::const_pointer const_pointer;
 	typedef typename Allocator::pointer pointer; //working
+	typedef typename Allocator::const_pointer const_pointer;
 	typedef ft::reverse_iterator<iterator> reverse_iterator;
 	typedef typename ft::reverse_iterator<const_iterator> const_reverse_iterator;
 
@@ -660,25 +662,26 @@ const_reference	back(void) const;
 		size_param = size_param + n;
 	}
 
-	template <class InputIterator>
-	void insert(InputIterator position, InputIterator first, InputIterator last,typename ft::enable_if<!ft::is_integral<InputIterator>::value, T>::argument_type * = 0)
+	template <class InputIterator , class InputIteratorr>
+	void insert(InputIterator  position, InputIteratorr first, InputIteratorr last,typename ft::enable_if<!ft::is_integral<InputIteratorr>::value,int>::argument_type * = 0)
+	// typename ft::enable_if<!ft::is_integral<InputIterator>::value, InputIterato>::argument_type * = 0)
 	{
-		// size_t t = std::distance(position, end());
-		size_t t = 0;
-		iterator it  = position;
-		while (it < end())
-		{
-			it++; t++;	
-		}
+		size_t t = std::distance(position, end());
+		// size_t t = 0;
+		// iterator it  = position;
+		// while (it < end())
+		// {
+		// 	it++; t++;	
+		// }
 		
 		
-		// size_t to_be_inserted = std::distance(first, last);
-		size_t to_be_inserted = 0 ;
-		iterator it2 = first;
-		while (it2 < last)
-		{
-			it2++;to_be_inserted++;
-		}
+		size_t to_be_inserted = std::distance(first, last);
+		// size_t to_be_inserted = 0 ;
+		// pointer it2 = first;
+		// while (it2 < last)
+		// {
+		// 	it2++;to_be_inserted++;
+		// }
 		
 		if ((size_param + to_be_inserted) > capacity_param)
 		{
