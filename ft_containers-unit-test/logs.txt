@@ -5,3 +5,33 @@
     exit(run_vector_unit_test<int>("data()", data_test, data_test));
                                                         ^
 1 error generated.
+                                                                                ^
+../vector_tests/../../../vector.hpp:606:7: note: candidate function not viable: no known conversion from 'std::__1::vector<int, std::__1::allocator<int> >::iterator' (aka '__wrap_iter<int *>') to 'ft::vector::size_type' (aka 'unsigned long') for 2nd argument
+        void insert(iterator position, size_type n, const value_type &val)
+             ^
+../vector_tests/../../../vector.hpp:649:7: note: candidate template ignored: deduced conflicting types for parameter 'InputIterator' ('ft::iterator<int>' vs. 'std::__1::__wrap_iter<int *>')
+        void insert(InputIterator position, InputIterator first,
+             ^
+../vector_tests/../../../vector.hpp:564:11: note: candidate function not viable: requires 2 arguments, but 3 were provided
+        iterator insert(iterator position, const value_type &val)
+                 ^
+1 error generated.
+ctoolchain/usr/bin/../include/c++/v1/iterator:602:19: error: invalid operands to binary expression ('ft::iterator<int>' and 'ft::iterator<int>')
+    return __last - __first;
+           ~~~~~~ ^ ~~~~~~~
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/iterator:610:12: note: in instantiation of function template specialization 'std::__1::__distance<ft::iterator<int> >' requested here
+    return __distance(__first, __last, typename iterator_traits<_InputIter>::iterator_category());
+           ^
+../vector_tests/../../../vector.hpp:653:19: note: in instantiation of function template specialization 'std::__1::distance<ft::iterator<int> >' requested here
+                size_t t = std::distance(position, end());
+                                ^
+../vector_tests/insert(range).cpp:71:12: note: in instantiation of function template specialization 'ft::vector<int, std::__1::allocator<int> >::insert<ft::iterator<int> >' requested here
+    vector.insert(vector.end() - 1000 * _ratio, tmp.begin(), tmp.end());
+           ^
+../vector_tests/insert(range).cpp:97:68: note: in instantiation of function template specialization 'insert_test_3<int>' requested here
+    exit(run_vector_unit_test<int>("insert(range)", insert_test_3, insert_test_3));
+                                                                   ^
+../vector_tests/../../../iterator.hpp:187:12: note: candidate function not viable: no known conversion from 'ft::iterator<int>' to 'ft::iterator::difference_type' (aka 'long') for 1st argument
+                iterator operator-(difference_type n) const // not working
+                         ^
+2 errors generated.

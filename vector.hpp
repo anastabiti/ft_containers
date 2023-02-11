@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/10 11:27:39 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/11 09:06:42 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ class vector
 	implementation is free to do what it likes
 */
 	// typedef typename Allocator::pointer iterator;
-	typedef typename  ft::iterator<T>::pointer iterator;// problem here	
+	typedef  ft::iterator<value_type> iterator;// problem here	
 	typedef const  ft::iterator<T> const_iterator;
 	typedef size_t size_type;
 	typedef ptrdiff_t difference_type;
@@ -51,12 +51,12 @@ class vector
 	typedef typename ft::reverse_iterator<const_iterator> const_reverse_iterator;
 
   private:
-	iterator vec;
-	iterator copY;
+	pointer vec;
+	pointer copY;
 	size_t size_param;
 	size_t capacity_param;
-	iterator start_iter;
-	iterator end_iter;
+	pointer start_iter;
+	pointer end_iter;
 
   protected:
 	Allocator allocating; // copy of the allocator
@@ -252,7 +252,7 @@ class vector
 	/* Iterators-----------------------:                   */
 	iterator begin()
 	{
-		return (&start_iter[0]);
+		return iterator(start_iter);
 	}
 	const_iterator begin() const
 	{
@@ -626,7 +626,8 @@ const_reference	back(void) const;
 		iterator from_end = this->end() - 1;
 		while (t > 0)
 		{
-			allocating.construct(from_end + n, *from_end);
+			// allocating.construct(from_end + n, *from_end);
+			*(from_end + n)= *from_end;
 
 			from_end--;
 			t--;
@@ -635,7 +636,8 @@ const_reference	back(void) const;
 		from_end++;
 		while (i < n)
 		{
-			allocating.construct(from_end, val);
+			// allocating.construct(from_end, val);
+			*from_end = val;
 			from_end++;
 
 			i++;
@@ -644,9 +646,9 @@ const_reference	back(void) const;
 	}
 
 	template <class InputIterator>
-	void insert(typename ft::enable_if<!ft::is_integral<InputIterator>::value,
-			T>::argument_type *position, InputIterator first,
-			InputIterator last)
+	void insert(InputIterator position, InputIterator first,
+			InputIterator last,typename ft::enable_if<!ft::is_integral<InputIterator>::value,
+			T>::argument_type * = 0)
 	{
 		size_t t = std::distance(position, end());
 		// std::cout << " t " << t<< std::endl;
