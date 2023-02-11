@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/11 10:54:59 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/11 11:07:46 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -331,7 +331,7 @@ class vector
 	*/
 		else if (n > capacity())
 		{
-			reserve(n);
+			reserve(capacity_param*2);
 			int x = size_param;
 			size_param = n;
 			for (size_t i = size_param; i >= x; i--)
