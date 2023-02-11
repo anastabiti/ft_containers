@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/11 13:08:24 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/11 13:37:51 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -188,7 +188,7 @@ class vector
 		// allocating.deallocate(start_iter, this->capacity_param);
 		// clear();
 		
-		difference_type dist =  std::distance(first, last);
+		size_t dist =  std::distance(first, last);
 
 		// typename iterator_traits<InputIterator>::difference_type test;
 		// typename iterator_traits<InputIterator>::pointer it;
@@ -334,7 +334,7 @@ class vector
 		else if (n > capacity())
 		{
 			reserve(capacity_param*2);
-			int x = size_param;
+			size_t x = size_param;
 			size_param = n;
 			for (size_t i = size_param; i >= x; i--)
 			{
@@ -544,7 +544,7 @@ const_reference	back(void) const;
 
 		// //
 
-		int j = 0;
+		size_t j = 0;
 		while (j < start_from)
 		{
 			start_iter[j] = *(start_iter + i + j);
@@ -706,6 +706,7 @@ const_reference	back(void) const;
 		size_t x = 0;
 		while (x < to_be_inserted)
 		{
+			// *last_eleme = *(first + x);
 			*last_eleme = *(first + x);
 			last_eleme++;
 			x++;
