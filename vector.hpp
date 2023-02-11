@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/11 09:12:06 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/11 09:39:17 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -185,14 +185,15 @@ class vector
 		// }
 		// allocating.deallocate(start_iter, this->capacity_param);
 		// clear();
-		// size_t dist = std::distance(first, last);
-		iterator it  = first;
-		size_t dist = 0 ;
-		while (it < last)
-		{
-			it++;
-			dist++;
-		}
+		
+		difference_type dist =  std::distance(first, last);
+		// iterator it  = first;
+		// size_t dist = 0 ;
+		// while (first < last)
+		// {
+		// 	dist++;
+		// 	first++;
+		// }
 		
 		
 
