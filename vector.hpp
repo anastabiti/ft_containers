@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/11 12:44:55 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/11 12:55:45 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -663,7 +663,8 @@ const_reference	back(void) const;
 	}
 
 	template <class InputIterator , class InputIteratorr>
-	void insert(InputIterator  position, InputIteratorr first, InputIteratorr last,typename ft::enable_if<!ft::is_integral<InputIteratorr>::value,int>::argument_type * = 0)
+	void insert(InputIterator  position, InputIteratorr first, InputIteratorr last,
+	typename ft::enable_if<!ft::is_integral<InputIteratorr>::value,int>::argument_type * = 0)
 	// typename ft::enable_if<!ft::is_integral<InputIterator>::value, InputIterato>::argument_type * = 0)
 	{
 		size_t t = std::distance(position, end());

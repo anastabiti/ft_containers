@@ -39,7 +39,7 @@ int main()
 	std::cout << "capacity : "<< vector.capacity() <<std::endl;
     // v.push_back(vector.size());
     // v.push_back(vector.capacity());
-    vector.resize(15300, int());
+    vector.resize(10, int());
     // v.push_back(vector.size());
     // v.push_back(vector.capacity());
     // v.push_back(vector[65]);
@@ -59,22 +59,20 @@ int main()
 	  ft::vector<int> v1;
 	  ft::vector<int> vector1;
     vector1.assign(9900, 1);
-	std::cout << "size : "<< vector1.size() <<std::endl;
-	std::cout << "capacity : "<< vector1.capacity() <<std::endl;
     vector1.resize(5000);
-	std::cout << "size : "<< vector1.size() <<std::endl;
-	std::cout << "capacity : "<< vector1.capacity() <<std::endl;
     vector1.reserve(5000);
-	std::cout << "size : "<< vector1.size() <<std::endl;
-	std::cout << "capacity : "<< vector1.capacity() <<std::endl;
     // v1.push_back(vector1.size());
     // v1.push_back(vector1.capacity());
     vector1.resize(7000); 
     // v1.push_back(vector1.size());
     // v1.push_back(vector1.capacity());
-	std::cout << "size : "<< vector1.size() <<std::endl;
-	std::cout << "capacity : "<< vector1.capacity() <<std::endl;
-    vector1.resize(15300, int());
+    vector1.resize(10, int());
+	ft::vector<int> tmp;
+	tmp.insert(tmp.begin(), vector1.begin(), vector1.end());
+	for (size_t i = 0; i < tmp.size(); i++)
+	{
+		std::cout << "v : "<< tmp.at(i)<<  std::endl;
+	}
     // v1.push_back(vector1.size());
     // v1.push_back(vector1.capacity());
     // v1.push_back(vector1[65]);
@@ -88,8 +86,6 @@ int main()
 	// 	std::cout << "v1 : "<< v1.at(i)<<  std::endl;
 	// }
 
-	std::cout << "size : "<< vector1.size() <<std::endl;
-	std::cout << "capacity : "<< vector1.capacity() <<std::endl;
 
 	
 	// std::vector<int> vector;
