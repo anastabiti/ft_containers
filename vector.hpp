@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/11 09:06:42 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/11 09:09:22 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -146,12 +146,12 @@ class vector
 		InputIterator cp = first;
 		size_t n = 0;
 		/* Distance from first to last */
-		// while (it != last)
-		// {
-		// 	n++;
-		// 	it++;
-		// }
-		n = std::distance(first, last) + 1;
+		while (it != last)
+		{
+			n++;
+			it++;
+		}
+		// n = std::distance(first, last) + 1;
 
 		start_iter = allocating.allocate(n);
 		this->size_param = n;
