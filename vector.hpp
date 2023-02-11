@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/11 09:55:30 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/11 10:54:59 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -308,19 +308,21 @@ class vector
 
 	void resize(size_type n, value_type val = value_type())
 	{
-		/*
+	/*
 		If n is smaller than the current container size,
 		the content is reduced to its first n elements,
 		removing those beyond (and destroying them).
 	*/
 
-		if (n <= size_param)
+		if (n < size_param)
 		{
 			for (size_t i = 0; i < n; i++)
 			{
 				allocating.destroy(end_iter);
 				end_iter--;
-				size_param--;
+
+				// std::cout << "here n= "<<  n <<std::endl;
+				size_param = n;
 			}
 		}
 		/*

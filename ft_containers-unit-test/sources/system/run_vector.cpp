@@ -16,7 +16,7 @@ int main(int argc, char* argv[], char* env[]) {
 	// runFunctionTest("../vector_tests/rend().cpp", argv, env);
 	// runFunctionTest("../vector_tests/size().cpp", argv, env);
 	// runFunctionTest("../vector_tests/max_size().cpp", argv, env);
-	// runFunctionTest("../vector_tests/resize().cpp", argv, env);
+	runFunctionTest("../vector_tests/resize().cpp", argv, env);
 	// runFunctionTest("../vector_tests/capacity().cpp", argv, env);
 	// runFunctionTest("../vector_tests/empty().cpp", argv, env);
 	// runFunctionTest("../vector_tests/reserve().cpp", argv, env);
@@ -30,7 +30,7 @@ int main(int argc, char* argv[], char* env[]) {
 	// runFunctionTest("../vector_tests/pop_back().cpp", argv, env);
 	// runFunctionTest("../vector_tests/insert(value).cpp", argv, env);
 	// runFunctionTest("../vector_tests/insert(fill).cpp", argv, env);
-	runFunctionTest("../vector_tests/insert(range).cpp", argv, env);
+	// runFunctionTest("../vector_tests/insert(range).cpp", argv, env);
 	// runFunctionTest("../vector_tests/insert(std iterators).cpp", argv, env);
 	// runFunctionTest("../vector_tests/erase(value).cpp", argv, env);
 	// runFunctionTest("../vector_tests/erase(range).cpp", argv, env);

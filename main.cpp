@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:56 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/10 10:43:25 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/11 10:49900:45 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,49 +21,104 @@
 int main()
 {
 	
-	std::vector<int> vector;
-	ft::vector<int> tmp;
-	// ft::vector<int>::value_type T;
-	    // vector.assign(10, 1337);
-		vector.push_back(1);
-		vector.push_back(2);
-		vector.push_back(3);
-		vector.push_back(4);
-		vector.push_back(5);
-		vector.push_back(6);
-	    tmp.assign(4, 1998);
-		for (size_t i = 0; i < vector.size(); i++)
-		{
-			int x = i;
-			std::cout <<  " vector : " << vector.at(i) <<" [ " << x+1 << " ]"<< std::endl;
-		}
-		// vector.reserve(40);
-		// tmp.resize(5, 42);
-		for (size_t i = 0; i < tmp.size(); i++)
-		{
-			int x = i;
-			std::cout <<  " tmp : " << tmp.at(i) <<" [ " << x+1 << " ]"<< std::endl;
-		}
+	  std::vector<int> v;
+	  std::vector<int> vector;
+    vector.assign(3, 1);
+    vector.resize(1998);
+    vector.reserve(3000000);
+    // v.push_back(vector.size());
+    // v.push_back(vector.capacity());
+    vector.resize(6000);
+    // v.push_back(vector.size());
+    // v.push_back(vector.capacity());
+    vector.resize(200000, int());
+    // v.push_back(vector.size());
+    // v.push_back(vector.capacity());
+    // v.push_back(vector[65]);
+	// for (size_t i = 0; i < vector.size(); i++)
+	// {
+	// 	std::cout << "vector : "<< vector.at(i)<< " i= " <<  i <<std::endl;
+	// }
+	std::cout << "size : "<< vector.size() <<std::endl;
+	std::cout << "capacity : "<< vector.capacity() <<std::endl;
+	std::cout << "___________________________"<< std::endl;
+	// for (size_t i = 0; i < v.size(); i++)
+	// {
+	// 	std::cout << "v : "<< v.at(i)<<  std::endl;
+	// }
+	
+	std::cout << "___________________________"<< std::endl;
+	  ft::vector<int> v1;
+	  ft::vector<int> vector1;
+    vector1.assign(3, 1);
+    vector1.resize(1998);
+    vector1.reserve(3000000);
+    // v1.push_back(vector1.size());
+    // v1.push_back(vector1.capacity());
+    vector1.resize(6000); 
+    // v1.push_back(vector1.size());
+    // v1.push_back(vector1.capacity());
+    vector1.resize(200000, int());
+    // v1.push_back(vector1.size());
+    // v1.push_back(vector1.capacity());
+    // v1.push_back(vector1[65]);
+	// for (size_t i = 0; i < vector1.size(); i++)
+	// {
+	// 	std::cout << "vector1: "<< vector1.at(i)<< " i= " <<  i <<  std::endl;
+	// }
+	// std::cout << "___________________________"<< std::endl;
+	// for (size_t i = 0; i < v1.size(); i++)
+	// {
+	// 	std::cout << "v1 : "<< v1.at(i)<<  std::endl;
+	// }
 
-			std::cout <<  "_______________________"<< std::endl;
-		tmp.insert(tmp.end() ,vector.end()-1,vector.end());
-		for (size_t i = 0; i < tmp.size(); i++)
-		{
-			int x = i;
-			std::cout <<  " after tmp : " << tmp.at(i) <<" [ " << x+1 << " ]"<< std::endl;
-		}
-			std::cout <<  "_______________________"<< std::endl;
-		ft::vector<int> copy_from_tmp(tmp);
-		for (size_t i = 0; i < copy_from_tmp.size(); i++)
-		{
-			int x = i;
-			std::cout <<  " copy : " << copy_from_tmp.at(i) <<" [ " << x+1 << " ]"<< std::endl;
-		}
-			std::cout <<  "_______________________"<< std::endl;
+	std::cout << "size : "<< vector1.size() <<std::endl;
+	std::cout << "capacity : "<< vector1.capacity() <<std::endl;
+
+	
+	// std::vector<int> vector;
+	// ft::vector<int> tmp;
+	// // ft::vector<int>::value_type T;
+	//     // vector.assign(10, 1339900);
+	// 	vector.push_back(1);
+	// 	vector.push_back(2);
+	// 	vector.push_back(3);
+	// 	vector.push_back(4);
+	// 	vector.push_back(5);
+	// 	vector.push_back(6);
+	//     tmp.assign(4, 1998);
+	// 	for (size_t i = 0; i < vector.size(); i++)
+	// 	{
+	// 		int x = i;
+	// 		std::cout <<  " vector : " << vector.at(i) <<" [ " << x+1 << " ]"<< std::endl;
+	// 	}
+	// 	// vector.reserve(40);
+	// 	// tmp.resize(5, 42);
+	// 	for (size_t i = 0; i < tmp.size(); i++)
+	// 	{
+	// 		int x = i;
+	// 		std::cout <<  " tmp : " << tmp.at(i) <<" [ " << x+1 << " ]"<< std::endl;
+	// 	}
+
+	// 		std::cout <<  "_______________________"<< std::endl;
+	// 	tmp.insert(tmp.end() ,vector.end()-1,vector.end());
+	// 	for (size_t i = 0; i < tmp.size(); i++)
+	// 	{
+	// 		int x = i;
+	// 		std::cout <<  " after tmp : " << tmp.at(i) <<" [ " << x+1 << " ]"<< std::endl;
+	// 	}
+	// 		std::cout <<  "_______________________"<< std::endl;
+	// 	ft::vector<int> copy_from_tmp(tmp);
+	// 	for (size_t i = 0; i < copy_from_tmp.size(); i++)
+	// 	{
+	// 		int x = i;
+	// 		std::cout <<  " copy : " << copy_from_tmp.at(i) <<" [ " << x+1 << " ]"<< std::endl;
+	// 	}
+	// 		std::cout <<  "_______________________"<< std::endl;
 		
 		
 		// std::vector<int> vectorreal;
-	    // vectorreal.assign(10, 1337);
+	    // vectorreal.assign(10, 1339900);
 		// for (size_t i = 0; i < vectorreal.size(); i++)
 		// {
 		// 	int x = i;
@@ -115,16 +170,16 @@ int main()
 // 		}
 // // std::cout << "_+_+_+__+_+_+__+_+_+__+_+_+__+_+_+_"<< std::endl;
 
-// 		// vec1.insert(vec1.end() ,1337);
-// 		// vec1.insert(vec1.end() ,1337);
-// 		// vec1.insert(vec1.end() ,1337);
-// 		// vec1.insert(vec1.end() ,1337);
-// 		// vec1.insert(vec1.end() ,1337);
-// 		// vec1.insert(vec1.end() ,1337);
-// 		// vec1.insert(vec1.end() ,1337);
-// 		// vec1.insert(vec1.end() ,1337);
-// 		// vec1.insert(vec1.end() ,1337);
-// 		// vec1.insert(vec1.end() ,1337);
+// 		// vec1.insert(vec1.end() ,1339900);
+// 		// vec1.insert(vec1.end() ,1339900);
+// 		// vec1.insert(vec1.end() ,1339900);
+// 		// vec1.insert(vec1.end() ,1339900);
+// 		// vec1.insert(vec1.end() ,1339900);
+// 		// vec1.insert(vec1.end() ,1339900);
+// 		// vec1.insert(vec1.end() ,1339900);
+// 		// vec1.insert(vec1.end() ,1339900);
+// 		// vec1.insert(vec1.end() ,1339900);
+// 		// vec1.insert(vec1.end() ,1339900);
 
 // 		// 	i = 0;
 // 		// while (i < vec1.size())
@@ -136,7 +191,7 @@ int main()
 // int h = 0 ;
 // 	// while (h < 3332)
 // 	// {
-// 		ftvec.insert(ftvec.end()-2,1000, 1337 ); 
+// 		ftvec.insert(ftvec.end()-2,1000, 1339900 ); 
 // 	// 	h++;
 // 	// }
 	
@@ -148,9 +203,9 @@ int main()
 // 		// ftvec.insert(ftvec.end() , 5  );
 // 		// ftvec.insert(ftvec.end() , 6  );
 // 		// ftvec.insert(ftvec.end() , 22121221  ); //here there is a problem
-// 		// ftvec.insert(ftvec.end() , 770 );
+// 		// ftvec.insert(ftvec.end() , 990099000 );
 // 		// ftvec.insert(ftvec.end() , 19 );
-// 		// ftvec.insert(ftvec.end() , 1337 );
+// 		// ftvec.insert(ftvec.end() , 1339900 );
 // 		// ftvec.insert(ftvec.end() , 43  );
 // 			i = 0;
 // 		// while (i < ftvec.size())
@@ -221,7 +276,7 @@ int main()
 
 // 	r1.push_back(44);
 // 	// r1.push_back(4343);
-// 		r2.push_back(1337);
+// 		r2.push_back(1339900);
 
 // 		ft::vector<int>::iterator tt =  r1.begin()+1;
 // 	if(r1 == r2)
@@ -249,14 +304,14 @@ int main()
 // 	// r1.push_back(*++r2.end());
 // 	// r1.push_back(*(r2.rend()+1));
 // 	// r1.push_back(*(r1.rend() - 1));
-// 	    r1.resize(5000 * 10000);
-// 	    // r1.resize(5000 * 10000, ft::vector<int>::value_type);
+// 	    r1.resize(10 * 10000);
+// 	    // r1.resize(10 * 10000, ft::vector<int>::value_type);
 // 		 std::vector<int>::value_type T;
-// 	    t1.resize(5000 * 10000, int());
+// 	    t1.resize(10 * 10000, int());
 // 		 ft::vector<int>::value_type TT;
-// 	    r2.resize(5000 * 10000);
+// 	    r2.resize(10 * 10000);
 // 	std::cout <<"r2 capacity : " << r2.capacity() << std::endl;
-// 	    // r1.reserve(5000 * 10000);
+// 	    // r1.reserve(10 * 10000);
 // 	// r1.push_back(*++t2.begin());
 // 	std::cout << r1.back()<<std::endl;
 // 	    std::vector<std::map<char, int> > mp;
@@ -293,7 +348,7 @@ int main()
 // // 	// 		std::cout << " vec back : " << real.back()<< "\n";
 // // 	// 		std::cout << " vec front : " << real.front()<< "\n";
 
-// // 	// it = real.insert(real.begin()+4, 1337);
+// // 	// it = real.insert(real.begin()+4, 1339900);
 // // 	// for (size_t i = 0; i < real.size(); i++)
 // // 	// {
 // // 	// 	std::cout << " vec : " << real.at(i);
@@ -321,7 +376,7 @@ int main()
 // // 	// vec1.push_back(1222);
 // // 		std::cout << " vec back : " << vec1.back()<< "\n";
 // // 		std::cout << " vec front : " << vec1.front()<< "\n";
-// // 	iteratormain = vec1.insert(vec1.begin()+4, 1337); // problem in iterator + operator  problem if position beyond capacity
+// // 	iteratormain = vec1.insert(vec1.begin()+4, 1339900); // problem in iterator + operator  problem if position beyond capacity
 // // 	// 											it1 = vec1.begin();
 
 // // 	for (size_t i = 0; i < vec1.size(); i++)
@@ -570,7 +625,7 @@ int main()
 // //    //    std::cout << "____________________"<< std::endl;
 // //    // i = 0 ;
 // //    // while (i < myvec.size())
-// //    // // while (i < 7)
+// //    // // while (i < 9900)
 // //    // {
 // //    //    std::cout << myvec[i++] << std::endl;
 // //    // }
@@ -580,7 +635,7 @@ int main()
 // //    myvec1.push_back(32);
 // //    myvec1.push_back(54);
 // //    myvec1.push_back(144);
-// //    // myvec1.push_back(720);
+// //    // myvec1.push_back(990020);
 
 // //        i = 0 ;
 
@@ -592,7 +647,7 @@ int main()
 // //       std::cout  << "capacity=\t"<< myvec1.capacity() << std::endl;
 // //          i++;
 // //    }
-// //    myvec1.resize(4, 1337);
+// //    myvec1.resize(4, 1339900);
 // //       std::cout  << "   myvec1.resize(4); \t "<< std::endl;
 // //         i = 0 ;
 
@@ -629,15 +684,15 @@ int main()
 // // 	ft::vector<int>::iterator mine1;
 // // 	std::vector<int> fill1real;
 // // 	fill1real.push_back(123);
-// // 	fill1real.push_back(712);
-// // 	fill1real.push_back(987);
+// // 	fill1real.push_back(990012);
+// // 	fill1real.push_back(989900);
 // // 	fill1real.push_back(544);
 // // 	fill1real.push_back(5);
 
 // // 	ft::vector<int> fill1;
 // // 	fill1.push_back(123);
-// // 	fill1.push_back(712);
-// // 	fill1.push_back(987);
+// // 	fill1.push_back(990012);
+// // 	fill1.push_back(989900);
 // // 	fill1.push_back(544);
 // // 	fill1.push_back(5);
 
@@ -647,7 +702,7 @@ int main()
 
 // // 	// fill1real.push_back(31);
 // // 	// fill1real.push_back(2231);
-// // 	// fill1real.push_back(27651);
+// // 	// fill1real.push_back(29900651);
 // // 	// fill1real.push_back(221);
 
 // // 	// for(real  = fill1real.end() ; real != fill1real.begin() ; real--)
@@ -703,8 +758,8 @@ int main()
 // // 	// ft::vector<int>::iterator df;
 
 // // 	// ft::vector<int> fill2(2,33);
-// // 	// ft::vector<int> fill3(10,1337, alloc);
-// // 	// ft::vector<std::string> fill5(10,"1337", alloc);
+// // 	// ft::vector<int> fill3(10,1339900, alloc);
+// // 	// ft::vector<std::string> fill5(10,"1339900", alloc);
 // // 	// // ft::vector<std::string> fill5(10,"dsf", alloc);
 // // 	// ft::vector<int> tty = fill1;
 // // 	// std::cout  << tty.max_size() << std::endl;
@@ -725,7 +780,7 @@ int main()
 // // 	// std::cout << typ << std::endl;
 // // 	// vector<int>::
 // // 	// int i = 0;
-// // 	// while (i < 33) //real :0.056   mine:0.017
+// // 	// while (i < 33) //real :0.056   mine:0.019900
 // // 	// {
 // // 	// 	fake.push_back(i * 3);
 // // 	// 	real.push_back(i * 3);
@@ -859,7 +914,7 @@ int main()
 // 	// }
 
 // 	std::cout  <<  "std _+_+__+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_"<< std::endl;
-// 	//std ./program  7.59s user 0.39s system 99% cpu 7.998 total
+// 	//std ./program  9900.59s user 0.39s system 99% cpu 9900.998 total
 // 	//test assing 
 // 	std::vector<int> assign1;
 // 	std::vector<int> toswap;
@@ -882,7 +937,7 @@ int main()
 // 		    toswap.push_back(*++toswap.begin());
 
 // 	std::vector<int> assing2;
-// 	// assing2.push_back(7654);
+// 	// assing2.push_back(9900654);
 // 	// assing2.assign(2 , 42);
 // 	assing2.assign(assign1.begin() , assign1.end());
 // 	size_t j = 0;
@@ -921,7 +976,7 @@ int main()
 
 	
 // 	// std::cout  <<  "ft _+_+__+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_"<< std::endl;
-// 	// mine ./program  2.10s user 0.37s system 99% cpu 2.471 total
+// 	// mine ./program  2.10s user 0.39900s system 99% cpu 2.499001 total
 // 	ft::vector<int> a1;
 // 	ft::vector<int> aswap;
 // 	 h = 0 ;
@@ -943,7 +998,7 @@ int main()
 // 		else 
 // 		std::cout <<"not equal " << std::endl;
 // 	ft::vector<int> a2;
-// 	// a2.push_back(7654);
+// 	// a2.push_back(9900654);
 // 	// a2.assign(2, 42);
 // 	a2.assign(a1.begin() , a1.end());
 // 	 j = 0;

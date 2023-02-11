@@ -1,13 +1,1 @@
-../vector_tests/insert(range).cpp:86:14: error: no matching member function for call to 'insert'
-    try { vv.insert(vv.begin(), v1.begin(), v1.end()); }
-          ~~~^~~~~~
-../vector_tests/../../../vector.hpp:619:7: note: candidate function not viable: no known conversion from 'ft::vector<B *, std::__1::allocator<B *> >::iterator' (aka 'iterator<B *>') to 'ft::vector::size_type' (aka 'unsigned long') for 2nd argument
-        void insert(iterator position, size_type n, const value_type &val)
-             ^
-../vector_tests/../../../vector.hpp:662:7: note: candidate template ignored: deduced conflicting types for parameter 'InputIterator' ('iterator<A>' vs. 'iterator<B *>')
-        void insert(InputIterator position, InputIterator first, InputIterator last,typename ft::enable_if<!ft::is_integral<InputIterator>::value, value_type>::argument_type  = 0)
-             ^
-../vector_tests/../../../vector.hpp:577:11: note: candidate function not viable: requires 2 arguments, but 3 were provided
-        iterator insert(iterator position, const value_type &val)
-                 ^
-1 error generated.
+
