@@ -39,7 +39,6 @@ class vector
 */
 	// typedef typename Allocator::pointer iterator;
 	// typedef  ft::iterator<value_type> iterator;// problem here	
-	typedef const  ft::iterator<T> const_iterator;
 	typedef size_t size_type;
 	typedef ptrdiff_t difference_type;
 	typedef typename Allocator::const_reference const_reference;
@@ -47,18 +46,21 @@ class vector
 	/*A constant reference to the type stored in the container. */
 																	// typedef  typenameft::iterator<ft::random_access_iterator_tag,T> iterator;
 	typedef typename Allocator::pointer pointer; //working
-	typedef typename iterator_traits<pointer>::pointer iterator;// problem here	
 	typedef typename Allocator::const_pointer const_pointer;
+	// typedef typename iterator_traits<pointer>::pointer iterator;// problem here	
+	typedef  ft::iterator<pointer> iterator;// problem here	
+	typedef  ft::iterator<const_pointer> const_iterator;
+	// typedef const  ft::iterator<T> const_iterator;
 	typedef ft::reverse_iterator<iterator> reverse_iterator;
 	typedef typename ft::reverse_iterator<const_iterator> const_reverse_iterator;
 
   private:
-	iterator vec;
-	iterator copY;
+	 value_type * vec;
+	value_type * copY;
 	size_t size_param;
 	size_t capacity_param;
-	iterator start_iter;
-	iterator end_iter;
+	 value_type * start_iter;
+	 value_type * end_iter;
 
   protected:
 	Allocator allocating; // copy of the allocator
@@ -188,17 +190,17 @@ class vector
 		// allocating.deallocate(start_iter, this->capacity_param);
 		// clear();
 		
-		size_t dist =  std::distance(first, last);
+		// size_t dist =  std::distance(first, last);
 
 		// typename iterator_traits<InputIterator>::difference_type test;
 		// typename iterator_traits<InputIterator>::pointer it;
-		// it = first;
-		// size_t dist = 0 ;
-		// while (first < last)
-		// {
-		// 	dist++;
-		// 	first++;
-		// }
+	InputIterator it = first;
+		size_t dist = 0 ;
+		while (first < last)
+		{
+			dist++;
+			first++;
+		}
 		
 		
 
@@ -667,22 +669,22 @@ const_reference	back(void) const;
 	typename ft::enable_if<!ft::is_integral<InputIteratorr>::value,int>::argument_type * = 0)
 	// typename ft::enable_if<!ft::is_integral<InputIterator>::value, InputIterato>::argument_type * = 0)
 	{
-		size_t t = std::distance(position, end());
-		// size_t t = 0;
-		// iterator it  = position;
-		// while (it < end())
-		// {
-		// 	it++; t++;	
-		// }
+		// size_t t = std::distance(position, end());
+		size_t t = 0;
+		InputIterator it  = position;
+		while (it < end())
+		{
+			it++; t++;	
+		}
 		
 		
-		size_t to_be_inserted = std::distance(first, last);
-		// size_t to_be_inserted = 0 ;
-		// pointer it2 = first;
-		// while (it2 < last)
-		// {
-		// 	it2++;to_be_inserted++;
-		// }
+		// size_t to_be_inserted = std::distance(first, last);
+		size_t to_be_inserted = 0 ;
+		InputIteratorr it2 = first;
+		while (it2 < last)
+		{
+			it2++;to_be_inserted++;
+		}
 		
 		if ((size_param + to_be_inserted) > capacity_param)
 		{

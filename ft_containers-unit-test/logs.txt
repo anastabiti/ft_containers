@@ -1,7 +1,4 @@
-../vector_tests/begin().cpp:21:18: error: expression is not assignable
-    v.push_back(*++vector.begin());
-                 ^ ~~~~~~~~~~~~~~
-../vector_tests/begin().cpp:28:59: note: in instantiation of function template specialization 'begin_test<int>' requested here
-    exit(run_vector_unit_test<int>("begin()", begin_test, begin_test));
-                                                          ^
+../vector_tests/using allocator.cpp:14:46: error: use of undeclared identifier 'Alloc'
+    exit(run_vector_allocator_unit_test<int, Alloc<int> >("using allocator", allocator_test));
+                                             ^
 1 error generated.

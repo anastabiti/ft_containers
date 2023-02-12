@@ -50,7 +50,7 @@ namespace ft
 			since pointer don’t have nested types!
 		*/
 
-	template <typename Iterator> // the definition of iterator_traits for iterators
+	template <class Iterator> // the definition of iterator_traits for iterators
 	struct iterator_traits
 	{
 		typedef typename Iterator::value_type value_type;
@@ -60,47 +60,45 @@ namespace ft
 		typedef typename Iterator::iterator_category iterator_category;
 	};
 
-	template <typename T>
+	template <class T>
 	struct iterator_traits<T *> // definitions that are appropriate for pointers.
 	{
-		typedef ptrdiff_t difference_type;
+		typedef std::ptrdiff_t difference_type;
 		typedef T value_type;
 		typedef T *pointer;
 		typedef T &reference;
-		typedef std::random_access_iterator_tag iterator_category;
+		// typedef std::random_access_iterator_tag iterator_category;
 	};
-	template <typename T>
+	template <class T>
 	struct iterator_traits<const T *> // definitions that are appropriate for pointers.
 	{
 		typedef ptrdiff_t difference_type;
 		typedef T value_type;
 		typedef T *pointer;
 		typedef T &reference;
-		typedef std::random_access_iterator_tag iterator_category;
+		// typedef std::random_access_iterator_tag iterator_category;
 	};
 
 	/*template <class Category, class T, class Distance = ptrdiff_t,class Pointer = T *, class Reference = T &>*/
 	template <class T>
-	class iterator
+	class iterator 
 	{
 
 	public:
-		typedef T value_type;
-		/*value _type is of type T,the class of objects that the iterator is pointing.*/
+		typedef T iterator_type;
+		typedef typename iterator_traits<T>::value_type value_type;
+		typedef typename iterator_traits<T>::pointer pointer;
+		typedef typename iterator_traits<T>::reference reference;
 		typedef ptrdiff_t difference_type;
-		// difference_type has a default value of ptrdiff_t which is used to represent the difference between two iterators.
-		typedef T * pointer; // pointer has a default Pointer to type T.
-		typedef T & reference;
-		// reference has a default Reference to type T.
 		typedef std::random_access_iterator_tag iterator_category;
 
 	private:
-		pointer ptr;
+		iterator_type ptr;
 		
 	public:
-		iterator()
+		iterator() : ptr()
 		{
-			ptr = NULL;
+			// ptr = NULL;
 		}
 
 		explicit iterator(pointer vec)
@@ -124,7 +122,7 @@ namespace ft
 		{
 		}
 
-		pointer base() const
+		iterator_type base() const
 
 		{
 			return (ptr);

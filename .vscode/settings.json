@@ -77,6 +77,10 @@
         "iomanip": "cpp",
         "*.tcc": "cpp",
         "numeric": "cpp",
-        "*.ipp": "cpp"
+        "*.ipp": "cpp",
+        "clocale": "cpp",
+        "concepts": "cpp",
+        "random": "cpp",
+        "numbers": "cpp"
     }
 }
