@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 09:45:02 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/13 14:58:57 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/13 15:00:13 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include "ft_type_traits.hpp"
 # include <iterator>
 # include <stddef.h>
+#include "reverse_iterator.hpp" 
 /*: Iterators are used by algorithms to move through containers. T*/
 namespace ft
 {
@@ -167,134 +168,7 @@ bool operator>=(iterator const &x, iterator const &y)
 {
 	return (x.base() >= y.base());
 }
-template <class Iterator>
-class reverse_iterator : public iterator<Iterator>
-{
-  protected:
-	Iterator current;
 
-  public:
-	typedef Iterator iterator_type;
-	typedef typename ft::iterator_traits<Iterator>::difference_type difference_type;
-	typedef typename ft::iterator_traits<Iterator>::reference reference;
-	typedef typename ft::iterator_traits<Iterator>::pointer pointer;
-	reverse_iterator()
-		: current()
-	{
-	}
-	explicit reverse_iterator(Iterator x)
-	{
-		current = x;
-	}
-
-	reverse_iterator &operator=(const reverse_iterator &__x)
-	{
-		current = __x.current;
-		return (*this);
-	}
-
-	iterator_type base() const
-	{
-		return (current);
-	}
-	reference operator*() const
-	{
-		Iterator __tmp = current;
-		return (*--__tmp);
-	}
-
-	pointer operator->() const
-	{
-		return (&(this->operator*()));
-	}
-
-	reverse_iterator &operator++()
-	{
-		--current;
-		return (*this);
-	}
-	reverse_iterator operator++(int)
-	{
-		reverse_iterator tmp(*this);
-		--current;
-		return (tmp);
-	}
-	reverse_iterator &operator--()
-	{
-		++current;
-		return (*this);
-	}
-	reverse_iterator operator--(int)
-	{
-		reverse_iterator tmp(*this);
-
-		++current;
-		return (tmp);
-	}
-	reverse_iterator operator+(difference_type n) const
-	{
-		return (reverse_iterator(current - n));
-	}
-	reverse_iterator &operator+=(difference_type n)
-	{
-		current = current - n;
-		return (*this);
-	}
-	reverse_iterator &operator-=(difference_type n)
-	{
-		current = current + n;
-		return (*this);
-	}
-
-	reference operator[](difference_type n) const
-	{
-		// return (*(*this + n));
-		return (current[n]); // will call iterator  operator[]
-	}
-	reverse_iterator operator-(difference_type n) const
-	{
-		return (reverse_iterator(current + n));
-	}
-};
-/* relational operators */
-template <typename Iterator> // change typename to class
-bool operator==(const reverse_iterator<Iterator> &lhs,
-				const reverse_iterator<Iterator> &rhs)
-{
-	return (lhs.base() == rhs.base());
-}
-template <typename Iterator>
-bool operator!=(const reverse_iterator<Iterator> &lhs,
-				const reverse_iterator<Iterator> &rhs)
-{
-	return (lhs.base() != rhs.base());
-}
-template <typename Iterator>
-bool operator<(const reverse_iterator<Iterator> &lhs,
-				const reverse_iterator<Iterator> &rhs)
-{
-	return (lhs.base() > rhs.base()); // reverse here
-}
-template <typename Iterator>
-bool operator<=(const reverse_iterator<Iterator> &lhs,
-				const reverse_iterator<Iterator> &rhs)
-{
-	return (lhs.base() >= rhs.base()); // reverse here
-}
-template <typename Iterator>
-bool operator>(const reverse_iterator<Iterator> &lhs,
-				const reverse_iterator<Iterator> &rhs)
-{
-	return (lhs.base() < rhs.base());
-	// reverse here
-}
-template <typename Iterator>
-bool operator>=(const reverse_iterator<Iterator> &lhs,
-				const reverse_iterator<Iterator> &rhs)
-{
-	return (lhs.base() <= rhs.base());
-	// reverse here
-}
 
 // ft_equal
 template <class InputIterator1, class InputIterator2>
