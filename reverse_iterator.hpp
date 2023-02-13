@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 14:59:18 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/13 15:02:22 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/13 15:03:23 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@
 
 namespace ft
 {
+    
 template <class Iterator>
 class reverse_iterator 
-// : public ft::iterator<Iterator>
 {
   protected:
 	Iterator current;
