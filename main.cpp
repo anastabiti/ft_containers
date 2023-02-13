@@ -185,7 +185,7 @@ std::cout<< "_____________________________"<< std::endl;
 	t1.swap(filler);
 	for (size_t i = 0; i < t1.size(); i++)
 		{
-			std::cout<< "after swap : "<< t1[i]<< std::endl;
+			std::cout<< "after swap from filler: "<< t1[i]<< std::endl;
 		}
 	
 	// std::cout<< "t1 max_size after resize    "<< t1.max_size()<< std::endl;

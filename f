@@ -100,3 +100,10 @@ _____________________________
 erase  : 1500
 erase  : 42
 erase  : 1
+_____________________________
+after swap : 1000
+after swap : 1100
+after swap : 1200
+after swap : 1300
+after swap : 1400
+after swap : 1500
