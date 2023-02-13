@@ -24,7 +24,7 @@
 
 int main()
 {
-	/* constructors */
+	/* constructors*/
 	vec<int> vec1;
 	std::cout<< "vec1 capacity "<< vec1.capacity()<< std::endl;
 	std::cout<< "vec1 size      "<< vec1.size()<< std::endl;
@@ -77,6 +77,25 @@ int main()
 	}
 	std::cout<< "_____________________________"<< std::endl;
 
+
+	/* iterators */
+	vec<int> t1;
+	t1.push_back(1);
+	t1.push_back(2);
+	t1.push_back(3);
+	t1.push_back(4);
+	t1.push_back(5);
+	for (vec<int>::iterator it =  t1.begin(); it < t1.end(); it++)
+	{
+		std::cout<< "normal iterator it = "<< *it<< std::endl;
+	}
+	std::cout<< "_____________________________"<< std::endl;
+
+	for (vec<int>::reverse_iterator it =  t1.rbegin(); it < t1.rend(); it++)
+	{
+		std::cout<< "reverse_iterator it = "<< *it<< std::endl;
+	}
+	
 
 	// vec<int> copy_from();
 	// std::cout<< "copy_from capacity "<< copy_from.capacity()<< std::endl;

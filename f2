@@ -33,14 +33,3 @@ after range assign  1337
 after range assign  1337
 after range assign  1337
 _____________________________
-normal iterator it = 1
-normal iterator it = 2
-normal iterator it = 3
-normal iterator it = 4
-normal iterator it = 5
-_____________________________
-reverse_iterator it = 5
-reverse_iterator it = 4
-reverse_iterator it = 3
-reverse_iterator it = 2
-reverse_iterator it = 1
