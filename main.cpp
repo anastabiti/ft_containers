@@ -193,7 +193,31 @@ std::cout<< "_____________________________"<< std::endl;
 		{
 			std::cout<< "after clear: "<< t1[i]<< std::endl;
 		}
+	std::cout<< "_____________________________"<< std::endl;
+	/* compare */
+	vec<int> compare_1;
+	compare_1.push_back(13);
+	compare_1.push_back(56);
+	compare_1.push_back(23);
+	compare_1.push_back(53);
+	compare_1.push_back(541);
+	vec<int> compare_2;
+	compare_2.push_back(1);
+	compare_2.push_back(56);
+	compare_2.push_back(23);
+	compare_2.push_back(53);
+	compare_2.push_back(541);
+	if(compare_1 == compare_2)
+	std::cout<< "compare_1 == compare_2 are equal"<< std::endl;
+	else if(compare_1 != compare_2)
+	std::cout<< "compare_1 != compare_2 are not equal"<< std::endl;
+	 if(compare_1 > compare_2)
+	std::cout<< "compare_1 > compare_2 "<< std::endl;
+	 if(compare_1 < compare_2)
+	std::cout<< "compare_1 < compare_2 "<< std::endl;
 	
+	
+
 	// std::cout<< "t1 max_size after resize    "<< t1.max_size()<< std::endl;
 	// vec<int> copy_from();
 	// std::cout<< "copy_from capacity "<< copy_from.capacity()<< std::endl;

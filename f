@@ -108,3 +108,6 @@ after swap from filler: 1300
 after swap from filler: 1400
 after swap from filler: 1500
 _____________________________
+_____________________________
+compare_1 != compare_2 are not equal
+compare_1 > compare_2 
