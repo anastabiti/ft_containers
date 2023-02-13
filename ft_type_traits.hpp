@@ -6,12 +6,14 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 09:33:11 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/10 09:02:00 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/13 14:58:15 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_TYPE_TRAITS_HPP
 # define FT_TYPE_TRAITS_HPP
+# include <iterator>
+
 namespace ft
 {
 template <typename T>
@@ -104,6 +106,35 @@ struct			enable_if
 template <typename T>
 struct enable_if<false, T>
 {
+};
+template <class Iterator> // the definition of iterator_traits for iterators
+struct	iterator_traits
+{
+	typedef typename Iterator::value_type value_type;
+	typedef typename Iterator::difference_type difference_type;
+	typedef typename Iterator::pointer pointer;
+	typedef typename Iterator::reference reference;
+	typedef typename Iterator::iterator_category iterator_category;
+};
+
+template <class T>
+struct iterator_traits<T *> // definitions that are appropriate for pointers.
+{
+	typedef std::ptrdiff_t difference_type;
+	typedef T value_type;
+	typedef T *pointer;
+	typedef T &reference;
+	// typedef std::random_access_iterator_tag iterator_category;
+};
+template <class T>
+struct iterator_traits<const T *>
+	// definitions that are appropriate for pointers.
+{
+	typedef ptrdiff_t difference_type;
+	typedef T value_type;
+	typedef T *pointer;
+	typedef T &reference;
+	// typedef std::random_access_iterator_tag iterator_category;
 };
 
 }; // namespace ft
