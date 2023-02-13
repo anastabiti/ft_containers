@@ -85,7 +85,7 @@ int main()
 	t1.push_back(3);
 	t1.push_back(4);
 	t1.push_back(5);
-	for (vec<int>::iterator it =  t1.begin(); it < t1.end(); it++)
+	for (vec<int>::const_iterator it =  t1.begin(); it < t1.end(); it++)
 	{
 		std::cout<< "normal iterator it = "<< *it<< std::endl;
 	}
