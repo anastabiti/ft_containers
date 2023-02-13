@@ -52,17 +52,38 @@ int main()
 	std::cout<< "copy_from size     "<< copy_from.size()<< std::endl;
 	std::cout<< "_____________________________"<< std::endl;
 	
-	copy_from = vec1;
+	copy_from = fill;
 	std::cout<< "copy_from capacity "<< copy_from.capacity()<< std::endl;
 	std::cout<< "copy_from size     "<< copy_from.size()<< std::endl;
 	std::cout<< "_____________________________"<< std::endl;
-
+	
+	
+		/* assign  */
 	for (size_t i = 0; i < copy_from.size(); i++)
 	{
-		std::cout<< "at  "<< copy_from.at(i)<< std::endl;
+		std::cout<< "before assign  "<< copy_from.at(i)<< std::endl;
 	}
+	std::cout<< "_____________________________"<< std::endl;
+	copy_from.assign(4,44);
+	for (size_t i = 0; i < copy_from.size(); i++)
+	{
+		std::cout<< "after assign  "<< copy_from.at(i)<< std::endl;
+	}
+	std::cout<< "_____________________________"<< std::endl;
+	copy_from.assign(fill.begin(), fill.end());
+	for (size_t i = 0; i < copy_from.size(); i++)
+	{
+		std::cout<< "after range assign  "<< copy_from.at(i)<< std::endl;
+	}
+	std::cout<< "_____________________________"<< std::endl;
 
 
+	// vec<int> copy_from();
+	// std::cout<< "copy_from capacity "<< copy_from.capacity()<< std::endl;
+	// std::cout<< "copy_from size     "<< copy_from.size()<< std::endl;
+	// std::cout<< "_____________________________"<< std::endl;
+
+// ft::vector<int>::iterator it = 
 
 
 
