@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/13 11:59:30 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/13 12:52:22 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,9 +70,9 @@ class vector
 	/* The constructor initializes a new object of type "vector"
 		using the specified allocator. If no argument is provided,
 		the default allocator, "allocator_type()", is used.*/
-	/* Constructs an empty container, with no elements.*/
-	explicit vector(const Allocator & = Allocator()) 
-	// : start_iter(), end_iter() ,
+		/* Constructs an empty container, with no elements.*/
+
+	explicit vector(const Allocator & = Allocator())
 	{
 		this->size_param = 0;
 		this->capacity_param = 0;
@@ -80,29 +80,6 @@ class vector
 		end_iter   =  NULL;
 	}
 
-	/* 							copy constructor */
-	vector(vector const &rhs)
-	{
-		 *this = rhs;
-	}
-		vector& operator=(const vector & x)
-	{
-			// clear();
-			if(this == &x)
-			return *this;
-			this->allocating = x.allocating;
-			this->size_param = x.size_param;
-			this->capacity_param = x.capacity_param;
-			this->start_iter = allocating.allocate(capacity_param);
-			this->end_iter = start_iter+size_param;
-			size_t i = 0 ;
-			while(i < size_param)
-			{
-				this->allocating.construct(this->start_iter+i, *(x.start_iter+i));
-				i++;
-			}
-			return *this;
-	}
 	
 	/* 							fill constructor
 	Constructs a container with n elements. Each element is a copy of val.*/
@@ -125,6 +102,29 @@ class vector
 			allocating.construct(i, val);
 			i++;
 		}
+	}
+	/* 							copy constructor */
+	vector(vector const &rhs)
+	{
+		 *this = rhs;
+	}
+		vector& operator=(const vector & x)
+	{
+			// clear();
+			if(this == &x)
+			return *this;
+			this->allocating = x.allocating;
+			this->size_param = x.size_param;
+			this->capacity_param = x.capacity_param;
+			this->start_iter = allocating.allocate(capacity_param);
+			this->end_iter = start_iter+size_param;
+			size_t i = 0 ;
+			while(i < size_param)
+			{
+				this->allocating.construct(this->start_iter+i, *(x.start_iter+i));
+				i++;
+			}
+			return *this;
 	}
 	/*							range constructor
 				Constructs a container with as many elements as the range [first,last),
@@ -171,9 +171,6 @@ void assign(size_type n, const value_type &val) //
 		clear();
 		if (n > this->capacity_param)
 			reserve(n);
-		// allocating.deallocate(start_iter, this->capacity_param);
-		// start_iter = allocating.allocate(n);
-		// capacity_param = n;
 		i = 0;
 		while (i < n)
 		{
@@ -206,24 +203,10 @@ void assign(size_type n, const value_type &val) //
 	{
 		return (allocating);
 	}
-
-	/*
-									copy constructor
-	Constructs a container with a copy of each of the elements in x,
-		in the same order.
-
-		Assign content
-
-	Copies all the elements from x into the container.
-	The container preserves its current allocator,
-		which is used to allocate storage in case of reallocation.
-
-
-*/
 	
 	/**_**_**_**_**_**_**_* Member functions  **_**_**_**_**_**_**_**_**_**_*/
 
-	/* Iterators-----------------------:                   */
+	/* -----------------------:----------------------- { Iterators }-----------------------:-----------------------:*/
 	iterator begin()
 	{
 		return iterator(start_iter);
@@ -240,7 +223,6 @@ void assign(size_type n, const value_type &val) //
 	const_iterator end() const
 	{
 		return (const_iterator(&start_iter[this->size_param]));
-		// return (const_iterator(end_iter));
 	}
 	reverse_iterator rbegin()
 	{
@@ -258,7 +240,7 @@ void assign(size_type n, const value_type &val) //
 	{
 		return (const_reverse_iterator(--(begin())));
 	}
-	/* Capacity-----------------------:                   */
+	/* -----------------------:-----------------------: { Capacity } -----------------------:-----------------------:*/
 	size_type size() const
 	{
 		return (this->size_param);
@@ -288,7 +270,7 @@ void assign(size_type n, const value_type &val) //
 				size_param = n;
 			}
 		}
-		/*
+	/*
 			If n is also greater than the current container capacity,
 				an automatic reallocation of the allocated storage space takes place.
 	*/
@@ -309,7 +291,6 @@ void assign(size_type n, const value_type &val) //
 		*/
 		else if (n > size_param)
 		{
-			// std::cout <<  " (n > size_param) : "<< std::endl;
 			size_t i = size_param;
 			while (i < n)
 			{
@@ -320,7 +301,7 @@ void assign(size_type n, const value_type &val) //
 		}
 	}
 
-	size_type capacity() const //Request a change in capacity
+	size_type capacity() const
 	{
 		return (this->capacity_param);
 	}
@@ -333,7 +314,7 @@ void assign(size_type n, const value_type &val) //
 			return (false);
 	}
 
-	void reserve(size_type n) // working on this
+	void reserve(size_type n) 
 	{
 		if (n > max_size())
 		{
@@ -365,7 +346,7 @@ void assign(size_type n, const value_type &val) //
 		// start_iter = allocating.allocate(n);
 	}
 
-	/* Element access:-----------------------:                   */
+	/* -----------------------:-----------------------:{ Element access }:-----------------------:-----------------------:*/
 	reference operator[](size_type n)
 	{
 		return (start_iter[n]);

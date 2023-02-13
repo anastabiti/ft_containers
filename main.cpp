@@ -16,7 +16,7 @@
 #include <vector>
 #include <map>
 #include <stdlib.h>
-
+#include <memory>
 #define vec ft::vector
 // #define vec std::vector
 
@@ -31,7 +31,12 @@ int main()
 	std::cout<< "_____________________________"<< std::endl;
 
 
-	vec<int> fill(123,1337);
+	vec<int, std::allocator<int> > vec2;
+	std::cout<< "vec1 capacity "<< vec2.capacity()<< std::endl;
+	std::cout<< "vec1 size      "<< vec2.size()<< std::endl;
+	std::cout<< "_____________________________"<< std::endl;
+
+	vec<int> fill(5,1337);
 	std::cout<< "fill capacity "<< fill.capacity()<< std::endl;
 	std::cout<< "fill size     "<< fill.size()<< std::endl;
 	std::cout<< "_____________________________"<< std::endl;
@@ -46,16 +51,18 @@ int main()
 	std::cout<< "copy_from capacity "<< copy_from.capacity()<< std::endl;
 	std::cout<< "copy_from size     "<< copy_from.size()<< std::endl;
 	std::cout<< "_____________________________"<< std::endl;
+	
+	copy_from = vec1;
+	std::cout<< "copy_from capacity "<< copy_from.capacity()<< std::endl;
+	std::cout<< "copy_from size     "<< copy_from.size()<< std::endl;
+	std::cout<< "_____________________________"<< std::endl;
+
 	for (size_t i = 0; i < copy_from.size(); i++)
 	{
-	
-	std::cout<< "at  "<< copy_from.at(i)<< std::endl;
+		std::cout<< "at  "<< copy_from.at(i)<< std::endl;
 	}
-	
-	// copy_from = vec1;
-	// std::cout<< "copy_from capacity "<< copy_from.capacity()<< std::endl;
-	// std::cout<< "copy_from size     "<< copy_from.size()<< std::endl;
-	// std::cout<< "_____________________________"<< std::endl;
+
+
 
 
 
