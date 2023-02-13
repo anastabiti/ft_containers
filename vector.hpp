@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/13 10:35:23 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/13 11:19:57 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,16 +87,23 @@ class vector
 	}
 		vector& operator=(const vector & x)
 	{
-		// std::cout <<"	vector<T,Allocator>& operator=(const vector<T,Allocator>& x) is called" << std::endl;
+			// clear();
 			if(this == &x)
 			return *this;
 			this->allocating = x.allocating;
 			this->size_param = x.size_param;
 			this->capacity_param = x.capacity_param;
-			this->start_iter = x.start_iter;
-			this->end_iter = x.end_iter;
-			
-					return *this;
+			this->start_iter = allocating.allocate(capacity_param);
+			this->end_iter = start_iter+size_param;
+			size_t i = 0 ;
+			while(i < size_param)
+			{
+				this->allocating.construct(this->start_iter+i, *(x.start_iter+i));
+				i++;
+			}
+			// this->start_iter = x.start_iter;
+			// this->end_iter = x.end_iter;
+			return *this;
 	}
 	
 	/* 							fill constructor
@@ -659,6 +666,9 @@ const_reference	back(void) const;
 
 	void clear()
 	{
+		if(capacity_param > 0)
+		{
+			
 		size_type i = 0;
 		while (i < size_param)
 		{
@@ -668,6 +678,7 @@ const_reference	back(void) const;
 		}
 		size_param = 0;
 		allocating.deallocate(start_iter, this->capacity_param);
+		}
 	}
 
 	/*______________________________________________________________________________________________________*/
