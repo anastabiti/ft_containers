@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/13 09:20:00 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/13 09:26:53 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -632,7 +632,6 @@ const_reference	back(void) const;
 	template <class InputIterator , class InputIteratorr>
 	void insert(InputIterator  position, InputIteratorr first, InputIteratorr last,
 	typename ft::enable_if<!ft::is_integral<InputIteratorr>::value,int>::argument_type * = 0)
-	// typename ft::enable_if<!ft::is_integral<InputIterator>::value, InputIterato>::argument_type * = 0)
 	{
 		// size_t t = std::distance(position.base(), this->end());
 		size_t t = 0;
@@ -644,13 +643,6 @@ const_reference	back(void) const;
 		
 		
 		size_t to_be_inserted = std::distance(first.base(), last.base());
-		// size_t to_be_inserted = 0 ;
-		// InputIteratorr it2 = first;
-		// while (it2 < last)
-		// {
-		// 	it2++;to_be_inserted++;
-		// }
-		
 		if ((size_param + to_be_inserted) > capacity_param)
 		{
 			if ((size_param + to_be_inserted) < (capacity_param * 2))
@@ -673,12 +665,10 @@ const_reference	back(void) const;
 		size_t x = 0;
 		while (x < to_be_inserted)
 		{
-			// *last_eleme = *(first + x);
 			*last_eleme = *(first + x);
 			last_eleme++;
 			x++;
 		}
-
 		size_param = size_param + to_be_inserted;
 	}
 

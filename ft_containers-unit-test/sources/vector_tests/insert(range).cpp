@@ -57,7 +57,6 @@ std::vector<int> insert_test_3(std::vector<T> vector) {
         v.push_back(vv.size());
         v.push_back(vv.capacity());
     }
-
     return v;
 }
 
