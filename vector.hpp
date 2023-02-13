@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/13 09:58:33 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/13 10:35:23 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,32 +71,20 @@ class vector
 		using the specified allocator. If no argument is provided,
 		the default allocator, "allocator_type()", is used.*/
 	/* Constructs an empty container, with no elements.*/
-	explicit vector(const Allocator & = Allocator())
-		: start_iter(0), end_iter(0)
+	explicit vector(const Allocator & = Allocator()) 
+	// : start_iter(), end_iter() ,
 	{
 		this->size_param = 0;
 		this->capacity_param = 0;
+		start_iter = NULL;
+		end_iter   =  NULL;
 	}
 
 	/* 							copy constructor */
 	vector(vector const &rhs)
 	{
-			// std::cout <<"	vector(vector const &rhs) is called" << std::endl;
-		// this->allocating = rhs.allocating;
-		// this->capacity_param = rhs.capacity_param;
-		// this->size_param = rhs.size_param;
-		// if (capacity_param)
-		// 	this->start_iter = allocating.allocate(capacity_param);
-		// this->end_iter = start_iter + size_param;
-		// size_type i = 0;
-		// while (i < size_param)
-		// {
-		// 	allocating.construct(start_iter + i, *(rhs.start_iter + i));
-		// 	i++;
-		// }
 		 *this = rhs;
 	}
-		// vector<T,Allocator>& operator=(const vector<T,Allocator>& x)
 		vector& operator=(const vector & x)
 	{
 		// std::cout <<"	vector<T,Allocator>& operator=(const vector<T,Allocator>& x) is called" << std::endl;
@@ -242,10 +230,12 @@ void assign(size_type n, const value_type &val) //
 	iterator end()
 	{
 		return (iterator(&start_iter[this->size_param]));
+				
 	}
 	const_iterator end() const
 	{
-		return (const_iterator(end_iter));
+		return (const_iterator(&start_iter[this->size_param]));
+		// return (const_iterator(end_iter));
 	}
 	reverse_iterator rbegin()
 	{
@@ -471,7 +461,6 @@ const_reference	back(void) const;
 
 	iterator erase(iterator position)
 	{
-		// size_t  i = std::distance(begin(), position);
 		size_t i = 0;
 		iterator it = begin();
 		while (it != position)
@@ -480,6 +469,7 @@ const_reference	back(void) const;
 			it++;
 		}
 		allocating.destroy(start_iter + i);
+		size_param--;
 		size_t j = i + 1;
 		while (i < size_param - 1)
 		{
@@ -487,14 +477,12 @@ const_reference	back(void) const;
 			i++;
 			j++;
 		}
-		size_param--;
 		return (iterator(position));
 	}
 
 	iterator erase(iterator first, iterator last)
 	{
 		size_t i = 0;
-		// size_t i =  std::distance(first, last);
 		iterator it = first;
 		while (it != last)
 		{
@@ -508,9 +496,6 @@ const_reference	back(void) const;
 			start_from++;
 		}
 		start_from = size_param - i;
-
-		// //
-
 		size_t j = 0;
 		while (j < start_from)
 		{
@@ -694,9 +679,11 @@ const_reference	back(void) const;
 		// 	allocating.destroy(start_iter+i);
 		// 	i++;
 		// }
-		// allocating.deallocate(start_iter, this->capacity_param);
-		// std::cout <<  " 	~vector() is called  : " << std::endl;
-	}
+		if(capacity_param > 0)
+		{
+		allocating.deallocate(start_iter, this->capacity_param);
+		}
+ 	}
 };
 template <class T, class Alloc>
 bool operator==(const vector<T, Alloc> &lhs, const vector<T, Alloc> &rhs)
