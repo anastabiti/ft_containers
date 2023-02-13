@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 09:45:02 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/13 14:38:46 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/13 14:40:58 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,8 +80,7 @@ struct iterator_traits<const T *>
 	// typedef std::random_access_iterator_tag iterator_category;
 };
 
-/*template <class Category, class T,
-	class Distance = ptrdiff_t,class Pointer = T *, class Reference = T &>*/
+
 template <class T>
 class iterator
 {
@@ -391,6 +390,6 @@ bool	lexicographical_compare(InputIterator1 first1, InputIterator1 last1,
 	}
 	return (first2 != last2);
 }
-}; // namespace ft
+} // namespace ft
 
 #endif
