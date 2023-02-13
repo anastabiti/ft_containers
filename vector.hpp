@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/13 12:52:22 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/13 13:16:21 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -253,6 +253,10 @@ void assign(size_type n, const value_type &val) //
 
 	void resize(size_type n, value_type val = value_type())
 	{
+		if(n == 0)
+		{
+			clear();
+		}
 	/*
 		If n is smaller than the current container size,
 		the content is reduced to its first n elements,

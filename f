@@ -44,3 +44,13 @@ reverse_iterator it = 4
 reverse_iterator it = 3
 reverse_iterator it = 2
 reverse_iterator it = 1
+_____________________________
+t1 capacity 8
+t1 size     5
+t1 max_size     4611686018427387903
+t1 max_size     4611686018427387903
+_____________________________
+t1 capacity after resize 8
+t1 size  after resize   0
+t1 max_size  after resize   4611686018427387903
+t1 is empty

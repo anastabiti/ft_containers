@@ -85,7 +85,7 @@ int main()
 	t1.push_back(3);
 	t1.push_back(4);
 	t1.push_back(5);
-	for (vec<int>::const_iterator it =  t1.begin(); it < t1.end(); it++)
+	for (vec<int>::iterator it =  t1.begin(); it < t1.end(); it++)
 	{
 		std::cout<< "normal iterator it = "<< *it<< std::endl;
 	}
@@ -96,7 +96,25 @@ int main()
 		std::cout<< "reverse_iterator it = "<< *it<< std::endl;
 	}
 	
+	std::cout<< "_____________________________"<< std::endl;
+	/* capacity */
 
+	std::cout<< "t1 capacity "<< t1.capacity()<< std::endl;
+	std::cout<< "t1 size     "<< t1.size()<< std::endl;
+	std::cout<< "t1 max_size     "<< t1.max_size()<< std::endl;
+	std::cout<< "t1 max_size     "<< t1.max_size()<< std::endl;
+	std::cout<< "_____________________________"<< std::endl;
+	t1.resize(0);
+	std::cout<< "t1 capacity after resize "<< t1.capacity()<< std::endl;
+	std::cout<< "t1 size  after resize   "<< t1.size()<< std::endl;
+	std::cout<< "t1 max_size  after resize   "<< t1.max_size()<< std::endl;
+		if(t1.empty() == true)
+	std::cout<< "t1 is empty"<< std::endl;
+		if(t1.empty() == false)
+	std::cout<< "t1 is not empty"<< std::endl;
+	
+
+	// std::cout<< "t1 max_size after resize    "<< t1.max_size()<< std::endl;
 	// vec<int> copy_from();
 	// std::cout<< "copy_from capacity "<< copy_from.capacity()<< std::endl;
 	// std::cout<< "copy_from size     "<< copy_from.size()<< std::endl;
