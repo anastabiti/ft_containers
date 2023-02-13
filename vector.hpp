@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/13 11:22:02 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/13 11:46:25 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ class vector
 	}
 		vector& operator=(const vector & x)
 	{
-			clear();
+			// clear();
 			if(this == &x)
 			return *this;
 			this->allocating = x.allocating;
@@ -169,7 +169,7 @@ void assign(size_type n, const value_type &val) //
 		size_t i = 0;
 
 		clear();
-		if (n > capacity_param)
+		if (n > this->capacity_param)
 			reserve(n);
 		// allocating.deallocate(start_iter, this->capacity_param);
 		// start_iter = allocating.allocate(n);
@@ -666,7 +666,6 @@ const_reference	back(void) const;
 	{
 		if(capacity_param > 0)
 		{
-			
 		size_type i = 0;
 		while (i < size_param)
 		{
@@ -682,16 +681,18 @@ const_reference	back(void) const;
 	/*______________________________________________________________________________________________________*/
 	~vector()
 	{
+
 		// size_t  i =  0;
 		// while (i < this->capacity_param)
 		// {
 		// 	allocating.destroy(start_iter+i);
 		// 	i++;
 		// }
-		if(capacity_param > 0)
-		{
-		allocating.deallocate(start_iter, this->capacity_param);
-		}
+		// if(capacity_param > 0)
+		// {
+		// 			std::cout << "test "<< capacity_param << std::endl;
+		// allocating.deallocate(start_iter, this->capacity_param);
+		// }
  	}
 };
 template <class T, class Alloc>
