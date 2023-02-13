@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/13 11:21:50 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/13 11:22:02 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ class vector
 	}
 		vector& operator=(const vector & x)
 	{
-			// clear();
+			clear();
 			if(this == &x)
 			return *this;
 			this->allocating = x.allocating;
@@ -101,8 +101,6 @@ class vector
 				this->allocating.construct(this->start_iter+i, *(x.start_iter+i));
 				i++;
 			}
-			// this->start_iter = x.start_iter;
-			// this->end_iter = x.end_iter;
 			return *this;
 	}
 	
