@@ -142,7 +142,13 @@ for (size_t i = 0; i < t1.size(); i++)
 	{
 		std::cout<< "push_back  : "<< t1[i]<< std::endl;
 	}
+	
+	t1.pop_back();
 	std::cout<< "_____________________________"<< std::endl;
+for (size_t i = 0; i < t1.size(); i++)
+	{
+		std::cout<< "push_back  : "<< t1[i]<< std::endl;
+	}
 
 
 	// std::cout<< "t1 max_size after resize    "<< t1.max_size()<< std::endl;
