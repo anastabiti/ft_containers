@@ -70,3 +70,20 @@ _____________________________
 push_back  : 1
 push_back  : 2
 push_back  : 7
+_____________________________
+push_back  : 1
+push_back  : 2
+_____________________________
+insert  : 42
+insert  : 1
+insert  : 2
+_____________________________
+insert range : 10
+insert range : 11
+insert range : 12
+insert range : 13
+insert range : 14
+insert range : 15
+insert range : 42
+insert range : 1
+insert range : 2
