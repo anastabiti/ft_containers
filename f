@@ -57,3 +57,16 @@ t1 is not empty
 _____________________________
 t1 capacity before reserve 8
 t1 capacity after reserve 100
+_____________________________
+operator [] : 1
+operator [] : 2
+_____________________________
+at  : 1
+at  : 2
+_____________________________
+front  : 1
+back  : 2
+_____________________________
+push_back  : 1
+push_back  : 2
+push_back  : 7

@@ -118,6 +118,33 @@ int main()
 	t1.reserve(100);
 	std::cout<< "t1 capacity after reserve "<< t1.capacity()<< std::endl;
 
+
+	std::cout<< "_____________________________"<< std::endl;
+	/* element access: */
+for (size_t i = 0; i < t1.size(); i++)
+{
+	std::cout<< "operator [] : "<< t1[i]<< std::endl;
+}
+	std::cout<< "_____________________________"<< std::endl;
+for (size_t i = 0; i < t1.size(); i++)
+{
+	std::cout<< "at  : "<< t1.at(i)<< std::endl;
+}
+
+	std::cout<< "_____________________________"<< std::endl;
+	std::cout<< "front  : "<< t1.front()<< std::endl;
+	std::cout<< "back  : "<< t1.back()<< std::endl;
+	std::cout<< "_____________________________"<< std::endl;
+/* modifiers */
+	t1.push_back(7);
+
+for (size_t i = 0; i < t1.size(); i++)
+	{
+		std::cout<< "push_back  : "<< t1[i]<< std::endl;
+	}
+	std::cout<< "_____________________________"<< std::endl;
+
+
 	// std::cout<< "t1 max_size after resize    "<< t1.max_size()<< std::endl;
 	// vec<int> copy_from();
 	// std::cout<< "copy_from capacity "<< copy_from.capacity()<< std::endl;
