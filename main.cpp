@@ -37,16 +37,21 @@ int main()
 	std::cout<< "_____________________________"<< std::endl;
 
 
-	// vec<int> range(fill.begin(), fill.end());
-	// std::cout<< "range capacity "<< range.capacity()<< std::endl;
-	// std::cout<< "range size     "<< range.size()<< std::endl;
-	// std::cout<< "_____________________________"<< std::endl;
+	vec<int> range(fill.begin(), fill.end());
+	std::cout<< "range capacity "<< range.capacity()<< std::endl;
+	std::cout<< "range size     "<< range.size()<< std::endl;
+	std::cout<< "_____________________________"<< std::endl;
 
 	vec<int> copy_from(fill);
 	std::cout<< "copy_from capacity "<< copy_from.capacity()<< std::endl;
 	std::cout<< "copy_from size     "<< copy_from.size()<< std::endl;
 	std::cout<< "_____________________________"<< std::endl;
-
+	for (size_t i = 0; i < copy_from.size(); i++)
+	{
+	
+	std::cout<< "at  "<< copy_from.at(i)<< std::endl;
+	}
+	
 	// copy_from = vec1;
 	// std::cout<< "copy_from capacity "<< copy_from.capacity()<< std::endl;
 	// std::cout<< "copy_from size     "<< copy_from.size()<< std::endl;
