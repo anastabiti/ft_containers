@@ -6,24 +6,24 @@
 #    By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/24 11:00:46 by atabiti           #+#    #+#              #
-#    Updated: 2023/02/11 13:33:08 by atabiti          ###   ########.fr        #
+#    Updated: 2023/02/13 15:12:01 by atabiti          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = program
-SRC = main.cpp 
-OBJ = main.o 
+NAME = ../vector/program
+SRC = ../vector/main.cpp 
+OBJ = main.o
 
 all: $(NAME)
 $(NAME): $(OBJ)
 $(OBJ):
-	c++  -g -c $(SRC) -std=c++98 -Wall -Wextra -Werror
-$(NAME): 
-	c++ -g $(OBJ) -o $(NAME) -std=c++98  -Wall -Wextra -Werror
+	cd vector && c++ -c $(SRC) -std=c++98 -Wall -Wextra -Werror
+$(NAME):
+	cd vector && c++  $(OBJ) -o $(NAME) -std=c++98  -Wall -Wextra -Werror
 clean :
-	rm -f $(OBJ)
+	cd vector &&	rm -f $(OBJ)
 fclean: clean
-	rm -f $(NAME)
+	cd vector && rm -f $(NAME)
 re: fclean all
 leak :re 
 	valgrind --leak-check=full --show-leak-kinds=all ./program
