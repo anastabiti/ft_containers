@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/13 09:26:53 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/13 09:58:33 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -192,10 +192,9 @@ void assign(size_type n, const value_type &val) //
 
 	
 	template <class InputIterator>
-	void assign(InputIterator first, InputIterator last, typename ft::enable_if<!ft::is_integral<InputIterator>::value,int>::argument_type * = 0)
+	void assign(InputIterator first, InputIterator last, typename ft::enable_if<!ft::is_integral<InputIterator>::value,int>::argument_type  = 0)
 	{
 		size_t i = 0;
-		typename ft::iterator_traits<InputIterator> it ;
 		size_t dist =  std::distance(first.base(), last.base());
 		if (dist > capacity_param)
 			reserve(dist);
@@ -407,10 +406,11 @@ void assign(size_type n, const value_type &val) //
 	reference back()
 	{
 		return (*(end() - 1)); // this
+	
 	}
 	const_reference back() const
 	{
-		return (*(end() - 1)); // this
+		return const_reference(*(end() - 1)); // this
 	}
 
 	/*

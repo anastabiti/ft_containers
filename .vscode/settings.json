@@ -81,6 +81,7 @@
         "clocale": "cpp",
         "concepts": "cpp",
         "random": "cpp",
-        "numbers": "cpp"
+        "numbers": "cpp",
+        "f": "cpp"
     }
 }

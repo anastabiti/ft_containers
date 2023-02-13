@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 09:45:02 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/13 09:10:06 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/13 10:08:21 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -251,7 +251,14 @@ namespace ft
 		{
 			current = x;
 		}
-		pointer base() const
+	
+ 	reverse_iterator & operator=(const reverse_iterator & __x)
+	{
+	  current = __x.current;
+	  return *this;
+	}
+	
+		iterator_type base() const
 		{
 			return (current);
 		}
