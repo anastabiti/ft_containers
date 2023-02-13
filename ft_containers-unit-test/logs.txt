@@ -1,4 +1,1 @@
-../vector_tests/using allocator.cpp:14:46: error: use of undeclared identifier 'Alloc'
-    exit(run_vector_allocator_unit_test<int, Alloc<int> >("using allocator", allocator_test));
-                                             ^
-1 error generated.
+

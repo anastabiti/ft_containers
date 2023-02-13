@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/11 13:37:51 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/13 09:20:00 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -171,62 +171,7 @@ class vector
 		}
 	}
 
-
-	
-	template <class InputIterator>
-	// void assign (InputIterator first, InputIterator last)
-	//candidate template ignored: substitution failure [with _InputIter = int]
-	void assign(InputIterator first, InputIterator last,
-			typename ft::enable_if<!ft::is_integral<InputIterator>::value,
-			int>::argument_type * = 0)
-	//candidate template ignored: substitution failure [with _InputIter = int]
-	{
-		size_t i = 0;
-		// while (i < this->capacity_param)
-		// {
-		// 	allocating.destroy(start_iter+i);
-		// 	i++;
-		// }
-		// allocating.deallocate(start_iter, this->capacity_param);
-		// clear();
-		
-		// size_t dist =  std::distance(first, last);
-
-		// typename iterator_traits<InputIterator>::difference_type test;
-		// typename iterator_traits<InputIterator>::pointer it;
-	InputIterator it = first;
-		size_t dist = 0 ;
-		while (first < last)
-		{
-			dist++;
-			first++;
-		}
-		
-		
-
-		if (dist > capacity_param)
-			reserve(dist);
-		// end_iter = start_iter + dist;
-		// this->capacity_param = dist;
-		i = 0;
-		while (i < dist)
-		{
-			allocating.construct(start_iter + i, *first);
-			// start_iter[i] = *first;
-			first++;
-			i++;
-		}
-		this->size_param = dist;
-		//  i = 0;
-		// while (i < dist)
-		// {
-		// 	start_iter[i] = *first;
-		// 	first++;
-		// 	i++;
-		// }
-	}
-
-	void assign(size_type n, const value_type &val) //
+void assign(size_type n, const value_type &val) //
 	{
 		size_t i = 0;
 
@@ -245,6 +190,26 @@ class vector
 		size_param = n;
 	}
 
+	
+	template <class InputIterator>
+	void assign(InputIterator first, InputIterator last, typename ft::enable_if<!ft::is_integral<InputIterator>::value,int>::argument_type * = 0)
+	{
+		size_t i = 0;
+		typename ft::iterator_traits<InputIterator> it ;
+		size_t dist =  std::distance(first.base(), last.base());
+		if (dist > capacity_param)
+			reserve(dist);
+		i = 0;
+		while (i < dist)
+		{
+			allocating.construct(start_iter + i, *first);
+			first++;
+			i++;
+		}
+		this->size_param = dist;
+	}
+
+	
 	allocator_type get_allocator() const
 	{
 		return (allocating);
@@ -669,7 +634,7 @@ const_reference	back(void) const;
 	typename ft::enable_if<!ft::is_integral<InputIteratorr>::value,int>::argument_type * = 0)
 	// typename ft::enable_if<!ft::is_integral<InputIterator>::value, InputIterato>::argument_type * = 0)
 	{
-		// size_t t = std::distance(position, end());
+		// size_t t = std::distance(position.base(), this->end());
 		size_t t = 0;
 		InputIterator it  = position;
 		while (it < end())
@@ -678,13 +643,13 @@ const_reference	back(void) const;
 		}
 		
 		
-		// size_t to_be_inserted = std::distance(first, last);
-		size_t to_be_inserted = 0 ;
-		InputIteratorr it2 = first;
-		while (it2 < last)
-		{
-			it2++;to_be_inserted++;
-		}
+		size_t to_be_inserted = std::distance(first.base(), last.base());
+		// size_t to_be_inserted = 0 ;
+		// InputIteratorr it2 = first;
+		// while (it2 < last)
+		// {
+		// 	it2++;to_be_inserted++;
+		// }
 		
 		if ((size_param + to_be_inserted) > capacity_param)
 		{

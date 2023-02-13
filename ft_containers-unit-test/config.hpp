@@ -26,4 +26,4 @@
 // #define	_pair 				ft::pair
 // #define	_make_pair 			ft::make_pair
 #define	_lexicographical	ft::lexicographical_compare
-// #define	_equal				ft::equal
+#define	_equal				ft::equal
