@@ -78,12 +78,25 @@ insert  : 42
 insert  : 1
 insert  : 2
 _____________________________
-insert range : 10
-insert range : 11
-insert range : 12
-insert range : 13
-insert range : 14
-insert range : 15
+insert range : 1000
+insert range : 1100
+insert range : 1200
+insert range : 1300
+insert range : 1400
+insert range : 1500
 insert range : 42
 insert range : 1
 insert range : 2
+_____________________________
+erase  : 1000
+erase  : 1100
+erase  : 1200
+erase  : 1300
+erase  : 1400
+erase  : 1500
+erase  : 42
+erase  : 1
+_____________________________
+erase  : 1500
+erase  : 42
+erase  : 1

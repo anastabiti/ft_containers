@@ -157,20 +157,31 @@ std::cout<< "_____________________________"<< std::endl;
 		}
 	std::cout<< "_____________________________"<< std::endl;
 	vec<int> filler;
-	filler.push_back(10);
-	filler.push_back(11);
-	filler.push_back(12);
-	filler.push_back(13);
-	filler.push_back(14);
-	filler.push_back(15);
+	filler.push_back(1000);
+	filler.push_back(1100);
+	filler.push_back(1200);
+	filler.push_back(1300);
+	filler.push_back(1400);
+	filler.push_back(1500);
 
 	t1.insert(t1.begin(), filler.begin(), filler.end());
 	for (size_t i = 0; i < t1.size(); i++)
 		{
 			std::cout<< "insert range : "<< t1[i]<< std::endl;
 		}
-
-
+	std::cout<< "_____________________________"<< std::endl;
+	t1.erase(t1.end());
+	for (size_t i = 0; i < t1.size(); i++)
+		{
+			std::cout<< "erase  : "<< t1[i]<< std::endl;
+		}
+	std::cout<< "_____________________________"<< std::endl;
+	t1.erase(t1.begin(), t1.end()-3);
+	for (size_t i = 0; i < t1.size(); i++)
+		{
+			std::cout<< "erase  : "<< t1[i]<< std::endl;
+		}
+	
 	// std::cout<< "t1 max_size after resize    "<< t1.max_size()<< std::endl;
 	// vec<int> copy_from();
 	// std::cout<< "copy_from capacity "<< copy_from.capacity()<< std::endl;
