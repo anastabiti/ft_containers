@@ -104,7 +104,7 @@ int main()
 	std::cout<< "t1 max_size     "<< t1.max_size()<< std::endl;
 	std::cout<< "t1 max_size     "<< t1.max_size()<< std::endl;
 	std::cout<< "_____________________________"<< std::endl;
-	t1.resize(0);
+	t1.resize(2);
 	std::cout<< "t1 capacity after resize "<< t1.capacity()<< std::endl;
 	std::cout<< "t1 size  after resize   "<< t1.size()<< std::endl;
 	std::cout<< "t1 max_size  after resize   "<< t1.max_size()<< std::endl;
@@ -112,7 +112,11 @@ int main()
 	std::cout<< "t1 is empty"<< std::endl;
 		if(t1.empty() == false)
 	std::cout<< "t1 is not empty"<< std::endl;
-	
+
+	std::cout<< "_____________________________"<< std::endl;
+	std::cout<< "t1 capacity before reserve "<< t1.capacity()<< std::endl;
+	t1.reserve(100);
+	std::cout<< "t1 capacity after reserve "<< t1.capacity()<< std::endl;
 
 	// std::cout<< "t1 max_size after resize    "<< t1.max_size()<< std::endl;
 	// vec<int> copy_from();

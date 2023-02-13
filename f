@@ -51,6 +51,9 @@ t1 max_size     4611686018427387903
 t1 max_size     4611686018427387903
 _____________________________
 t1 capacity after resize 8
-t1 size  after resize   0
+t1 size  after resize   2
 t1 max_size  after resize   4611686018427387903
-t1 is empty
+t1 is not empty
+_____________________________
+t1 capacity before reserve 8
+t1 capacity after reserve 100
