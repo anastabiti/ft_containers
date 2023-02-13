@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/13 11:46:25 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/13 11:59:30 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -600,7 +600,7 @@ const_reference	back(void) const;
 		iterator from_end = this->end() - 1;
 		while (t > 0)
 		{
-			// allocating.construct(from_end + n, *from_end);
+			// allocating.construct(*(from_end + n), *from_end);
 			*(from_end + n)= *from_end;
 
 			from_end--;
@@ -619,13 +619,16 @@ const_reference	back(void) const;
 		size_param = size_param + n;
 	}
 
-	template <class InputIterator , class InputIteratorr>
-	void insert(InputIterator  position, InputIteratorr first, InputIteratorr last,
-	typename ft::enable_if<!ft::is_integral<InputIteratorr>::value,int>::argument_type * = 0)
+	template <class InputIterator> 
+	void insert (iterator position, InputIterator first, InputIterator last,
+	typename ft::enable_if<!ft::is_integral<InputIterator>::value,int>::argument_type * = 0)
+	
+	// void insert(InputIterator  position, InputIteratorr first, InputIteratorr last,
+	// typename ft::enable_if<!ft::is_integral<InputIteratorr>::value,int>::argument_type * = 0)
 	{
-		// size_t t = std::distance(position.base(), this->end());
+		// size_t t = std::distance(position, this->end());
 		size_t t = 0;
-		InputIterator it  = position;
+		iterator it  = position;
 		while (it < end())
 		{
 			it++; t++;	
