@@ -1,113 +1,50 @@
-vec1 capacity 0
-vec1 size      0
-_____________________________
-vec1 capacity 0
-vec1 size      0
-_____________________________
-fill capacity 5
-fill size     5
-_____________________________
-range capacity 5
-range size     5
-_____________________________
-copy_from capacity 5
-copy_from size     5
-_____________________________
-copy_from capacity 5
-copy_from size     5
-_____________________________
-before assign  1337
-before assign  1337
-before assign  1337
-before assign  1337
-before assign  1337
-_____________________________
-after assign  44
-after assign  44
-after assign  44
-after assign  44
-_____________________________
-after range assign  1337
-after range assign  1337
-after range assign  1337
-after range assign  1337
-after range assign  1337
-_____________________________
-normal iterator it = 1
-normal iterator it = 2
-normal iterator it = 3
-normal iterator it = 4
-normal iterator it = 5
-_____________________________
-reverse_iterator it = 5
-reverse_iterator it = 4
-reverse_iterator it = 3
-reverse_iterator it = 2
-reverse_iterator it = 1
-_____________________________
-t1 capacity 8
-t1 size     5
-t1 max_size     4611686018427387903
-t1 max_size     4611686018427387903
-_____________________________
-t1 capacity after resize 8
-t1 size  after resize   2
-t1 max_size  after resize   4611686018427387903
-t1 is not empty
-_____________________________
-t1 capacity before reserve 8
-t1 capacity after reserve 100
-_____________________________
-operator [] : 1
-operator [] : 2
-_____________________________
-at  : 1
-at  : 2
-_____________________________
-front  : 1
-back  : 2
-_____________________________
-push_back  : 1
-push_back  : 2
-push_back  : 7
-_____________________________
-push_back  : 1
-push_back  : 2
-_____________________________
-insert  : 42
-insert  : 1
-insert  : 2
-_____________________________
-insert range : 1000
-insert range : 1100
-insert range : 1200
-insert range : 1300
-insert range : 1400
-insert range : 1500
-insert range : 42
-insert range : 1
-insert range : 2
-_____________________________
-erase  : 1000
-erase  : 1100
-erase  : 1200
-erase  : 1300
-erase  : 1400
-erase  : 1500
-erase  : 42
-erase  : 1
-_____________________________
-erase  : 1500
-erase  : 42
-erase  : 1
-_____________________________
-after swap from filler: 1000
-after swap from filler: 1100
-after swap from filler: 1200
-after swap from filler: 1300
-after swap from filler: 1400
-after swap from filler: 1500
-_____________________________
-_____________________________
-compare_1 != compare_2 are not equal
-compare_1 > compare_2 
+********************************************************************************************
+*                                                                                          *
+*                       FT_CONTAINERS TEST by @elaronda and @cshells                       *
+*                                                                                          *
+********************************************************************************************
+--------------------------------------------------------------------------------------------
+|                                          VECTOR                                          |
+--------------------------------------------------------------------------------------------
+FUNCTION                      [1;39mRESULT[0m             [1;39mFT TIME[0m            [1;39mSTD TIME[0m           [1;39mLEAKS[0m              
+constructor                   [1;32mOK[0m                 [1;32m0ms[0m                [1;32m0ms[0m                [1;31mLEAKS[0m              
+constructor(std iterators)    [1;32mOK[0m                 [1;32m0ms[0m                [1;32m0ms[0m                [1;31mLEAKS[0m              
+iterators                     [1;32mOK[0m                 [1;32m0ms[0m                [1;32m0ms[0m                [1;31mLEAKS[0m              
+begin()                       [1;32mOK[0m                 [1;32m0ms[0m                [1;32m0ms[0m                [1;32mCLEAR[0m              
+end()                         [1;32mOK[0m                 [1;32m0ms[0m                [1;32m0ms[0m                [1;32mCLEAR[0m              
+rbegin()                      [1;32mOK[0m                 [1;32m0ms[0m                [1;32m0ms[0m                [1;32mCLEAR[0m              
+rend()                        [1;32mOK[0m                 [1;32m0ms[0m                [1;32m0ms[0m                [1;32mCLEAR[0m              
+size()                        [1;32mOK[0m                 [1;32m0ms[0m                [1;32m0ms[0m                [1;32mCLEAR[0m              
+max_size()                    [1;32mOK[0m                 [1;32m0ms[0m                [1;32m0ms[0m                [1;32mCLEAR[0m              
+resize()                      [1;32mOK[0m                 [1;32m0ms[0m                [1;32m0ms[0m                [1;32mCLEAR[0m              
+capacity()                    [1;32mOK[0m                 [1;32m0ms[0m                [1;32m0ms[0m                [1;32mCLEAR[0m              
+empty()                       [1;32mOK[0m                 [1;32m0ms[0m                [1;32m0ms[0m                [1;32mCLEAR[0m              
+reserve()                     [1;32mOK[0m                 [1;32m0ms[0m                [1;32m0ms[0m                [1;32mCLEAR[0m              
+operator[]                    [1;32mOK[0m                 [1;32m0ms[0m                [1;32m0ms[0m                [1;32mCLEAR[0m              
+at()                          [1;32mOK[0m                 [1;32m0ms[0m                [1;32m0ms[0m                [1;32mCLEAR[0m              
+front()                       [1;32mOK[0m                 [1;32m0ms[0m                [1;32m0ms[0m                [1;32mCLEAR[0m              
+back()                        [1;32mOK[0m                 [1;32m0ms[0m                [1;32m0ms[0m                [1;32mCLEAR[0m              
+assign()                      [1;32mOK[0m                 [1;32m0ms[0m                [1;32m0ms[0m                [1;32mCLEAR[0m              
+assign(std iterators)         [1;32mOK[0m                 [1;32m0ms[0m                [1;32m0ms[0m                [1;32mCLEAR[0m              
+push_back()                   [1;32mOK[0m                 [1;32m0ms[0m                [1;32m0ms[0m                [1;32mCLEAR[0m              
+pop_back()                    [1;32mOK[0m                 [1;32m0ms[0m                [1;32m0ms[0m                [1;32mCLEAR[0m              
+insert(value)                 [1;32mOK[0m                 [1;32m0ms[0m                [1;32m0ms[0m                [1;32mCLEAR[0m              
+insert(fill)                  [1;32mOK[0m                 [1;32m0ms[0m                [1;32m0ms[0m                [1;32mCLEAR[0m              
+insert(range)                 [1;31mFAILED[0m             [1;32m0ms[0m                [1;32m0ms[0m                [1;31mLEAKS[0m              
+insert(std iterators)         [1;32mOK[0m                 [1;32m0ms[0m                [1;32m0ms[0m                [1;32mCLEAR[0m              
+erase(value)                  [1;32mOK[0m                 [1;32m0ms[0m                [1;32m0ms[0m                [1;32mCLEAR[0m              
+erase(range)                  [1;32mOK[0m                 [1;31m1ms[0m                [1;32m0ms[0m                [1;32mCLEAR[0m              
+swap()                        [1;32mOK[0m                 [1;31m1ms[0m                [1;32m0ms[0m                [1;31mLEAKS[0m              
+clear()                       [1;32mOK[0m                 [1;32m0ms[0m                [1;32m0ms[0m                [1;32mCLEAR[0m              
+using allocator               [1;32mOK[0m                 
+operator ==                   [1;32mOK[0m                 [1;32m0ms[0m                [1;32m0ms[0m                
+operator !=                   [1;32mOK[0m                 [1;32m0ms[0m                [1;32m0ms[0m                
+operator <                    [1;32mOK[0m                 [1;32m0ms[0m                [1;32m0ms[0m                
+operator >                    [1;32mOK[0m                 [1;32m0ms[0m                [1;32m0ms[0m                
+operator <=                   [1;32mOK[0m                 [1;32m0ms[0m                [1;32m0ms[0m                
+operator >=                   [1;32mOK[0m                 [1;32m0ms[0m                [1;32m0ms[0m                
+
+[1;33mVECTOR RESULT: 31/36[0m
+
+See 📄 [1mlogs.txt[0m for more information. 
+[1mWARNING:[0m it will be rewrite next execution
