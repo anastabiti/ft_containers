@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/14 11:17:32 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/14 11:19:03 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -693,29 +693,27 @@ const_reference	back(void) const;
 			i++;
 		}
 		size_param = 0;
-		allocating.deallocate(start_iter, this->capacity_param);
+		// allocating.deallocate(start_iter, this->capacity_param);
 		}
 	}
 
 	/*______________________________________________________________________________________________________*/
 	 ~vector()
 	{
-		clear();
+		
 		// std::cout <<  "~vector() is called" <<std::endl;
 
-		// size_t  i =  0;
-		// while (i < this->capacity_param)
-		// {
-		// 	allocating.destroy(start_iter+i);
-		// 	i++;
-		// }
-		// size_param = 0;
-		// capacity_param = 0;
-		// if(capacity_param > 0)
-		// {
-		// 			std::cout << "test "<< capacity_param << std::endl;
-		// allocating.deallocate(start_iter, this->capacity_param);
-		// }
+		size_t  i =  0;
+		while (i < this->capacity_param)
+		{
+			allocating.destroy(start_iter+i);
+			i++;
+		}
+		
+		if(capacity_param > 0)
+		{
+			allocating.deallocate(start_iter, this->capacity_param);
+		}
  	}
 };
 template <class T, class Alloc>
