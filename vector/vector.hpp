@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/14 10:11:04 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/14 11:17:32 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -606,7 +606,7 @@ const_reference	back(void) const;
 
 	template <class InputIterator> 
 	void insert (iterator position, InputIterator first, InputIterator last,
-	typename ft::enable_if<!ft::is_integral<InputIterator>::value,int>::argument_type * = 0)
+	typename ft::enable_if<!ft::is_integral<InputIterator>::value,int>::argument_type * = 0) 
 	{
 		
 		// size_t t = std::distance(position, this->end());
@@ -651,8 +651,9 @@ const_reference	back(void) const;
 				this->reserve(this->size() + to_be_inserted);
 			}
 		}
-		iterator last_eleme = end() - 1;
-		size_t i = 0 ;
+		try /* to avoid  stack unwinding */
+		{
+			iterator last_eleme = end() - 1;
 		while (t > 0)
 		{
 			*(last_eleme + to_be_inserted) = *last_eleme;
@@ -667,7 +668,16 @@ const_reference	back(void) const;
 			last_eleme++;
 			x++;
 		}
-		size_param = size_param + to_be_inserted;
+			size_param = size_param + to_be_inserted;
+		}
+		catch(...)
+		{	
+			this->capacity_param = 0;
+			this->size_param = 0 ;\
+			throw std::runtime_error("runtime_error");
+		}
+		
+		
 
 	}
 
@@ -688,8 +698,10 @@ const_reference	back(void) const;
 	}
 
 	/*______________________________________________________________________________________________________*/
-	~vector()
+	 ~vector()
 	{
+		clear();
+		// std::cout <<  "~vector() is called" <<std::endl;
 
 		// size_t  i =  0;
 		// while (i < this->capacity_param)
@@ -697,6 +709,8 @@ const_reference	back(void) const;
 		// 	allocating.destroy(start_iter+i);
 		// 	i++;
 		// }
+		// size_param = 0;
+		// capacity_param = 0;
 		// if(capacity_param > 0)
 		// {
 		// 			std::cout << "test "<< capacity_param << std::endl;

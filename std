@@ -1,10 +1,12 @@
+EXCEPTION 
 vv.size()|| :  0
 vv.capacity()|| :  0
-v1 :  0x7fad13c00640
-v1 :  0x7fad13c02b10
-v1 :  0x7fad13c02b40
+v1 :  0x7f9587c00640
+v1 :  0x7f9587c02b10
+v1 :  0x7f9587c02b40
+v1 :  0x7f9587c02b70
 v1.capacity() :  4
 vv.capacity() :  0
-v1.size() :  3
+v1.size() :  4
 vv.size() :  0
 vv.size() :  0
