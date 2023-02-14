@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 09:45:02 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/14 11:39:57 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/14 11:51:13 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,6 +125,10 @@ class iterator
 	{
 		return (iterator(ptr - n));
 	}
+	// 	pointer operator-(difference_type n) const // not working
+	// {
+	// 	return (pointer(ptr - n));
+	// }
 	// iterator operator-(difference_type n) const // not working
 	// {
 	// 	return (iterator(ptr - n));
