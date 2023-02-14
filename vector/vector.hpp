@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/14 09:31:57 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/14 10:11:04 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -608,14 +608,29 @@ const_reference	back(void) const;
 	void insert (iterator position, InputIterator first, InputIterator last,
 	typename ft::enable_if<!ft::is_integral<InputIterator>::value,int>::argument_type * = 0)
 	{
+		
 		// size_t t = std::distance(position, this->end());
+		/*
 		size_t t = 0;
 		iterator it  = position;
-		while (it < end())
+		while (it != begin())
 		{
-			it++; t++;	
+			it--; 
+			t++;	
 		}
-	
+		for (;first != last;++first)
+		{
+			insert(iterator(start_iter +t), *first);
+			++t;
+		}
+		*/
+		size_t t = 0;
+		iterator it  = position;
+		while (it != end())
+		{
+			it++; 
+			t++;	
+		}
 		
 		
 		size_t to_be_inserted = std::distance(first.base(), last.base());
@@ -641,7 +656,6 @@ const_reference	back(void) const;
 		while (t > 0)
 		{
 			*(last_eleme + to_be_inserted) = *last_eleme;
-			std::cout << "i  : " << i++<< std::endl;
 			t--;
 			last_eleme--;
 		}
@@ -649,7 +663,6 @@ const_reference	back(void) const;
 		size_t x = 0;
 		while (x < to_be_inserted)
 		{
-			std::cout << "i  : " << i++<< std::endl;
 			*last_eleme = *(first + x);
 			last_eleme++;
 			x++;
