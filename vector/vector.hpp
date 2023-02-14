@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/14 11:59:27 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/14 12:45:26 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -628,15 +628,15 @@ const_reference	back(void) const;
 			++t;
 		}
 		*/
+	// difference_type t = end() - position;
+	// difference_type t =  position - end(); //problem is here operator - ()
 		size_t t = 0;
 		iterator it  = position;
 		while (it != end())
 		{
 			it++; 
 			t++;	
-		}
-		
-		
+		}		
 		size_t to_be_inserted = std::distance(first.base(), last.base());
 		//  size_t to_be_inserted = 0;
 		//  while (/* condition */)
