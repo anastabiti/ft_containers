@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 09:45:02 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/14 13:19:21 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/14 13:24:44 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <iterator>
 # include <stddef.h>
 #include "reverse_iterator.hpp" 
+#include <iostream>
 /*: Iterators are used by algorithms to move through containers. T*/
 namespace ft
 {
@@ -123,6 +124,7 @@ class iterator
 	}
 	iterator operator-(difference_type n) const // not working
 	{
+			std::cout << "	iterator operator-(difference_type n) is called \n" ;
 		return (iterator(ptr - n));
 	}
 	// 	pointer operator-(difference_type n) const // not working
@@ -177,8 +179,9 @@ bool operator>=(iterator const &x, iterator const &y)
 	return (x.base() >= y.base());
 }
 template <class iterator>
-bool   operator-( const ft::iterator<iterator>& x, const ft::iterator<iterator>& y)
+ bool   operator-( const ft::iterator<iterator>& x, const ft::iterator<iterator>& y)
 {
+	std::cout << "bool   operator-( x, y) is called \n" ;
 	return (x.base() - y.base());
 }
 
