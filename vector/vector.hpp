@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/14 11:52:53 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/14 11:59:27 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -362,14 +362,17 @@ void assign(size_type n, const value_type &val) //
 	reference at(size_type n)
 	{
 		if (n > this->size_param)
-			throw std::length_error("out_of_range exception!");
+			// throw std::length_error("out_of_range exception!");
+			throw (std::out_of_range("out_of_range exception!"));
+
 		return (start_iter[n]);
 	}
 
 	const_reference at(size_type n) const
 	{
 		if (n > this->size_param)
-			throw std::length_error("out_of_range exception!");
+			// throw std::length_error("out_of_range exception!");
+			throw (std::out_of_range("out_of_range exception!"));
 		return const_reference(start_iter[n]);
 	}
 
