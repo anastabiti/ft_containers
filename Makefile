@@ -6,7 +6,7 @@
 #    By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/24 11:00:46 by atabiti           #+#    #+#              #
-#    Updated: 2023/02/13 15:12:01 by atabiti          ###   ########.fr        #
+#    Updated: 2023/02/14 11:28:04 by atabiti          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,9 +17,11 @@ OBJ = main.o
 all: $(NAME)
 $(NAME): $(OBJ)
 $(OBJ):
-	cd vector && c++ -c $(SRC) -std=c++98 -Wall -Wextra -Werror
+	cd vector && c++ -c $(SRC)
+	#  -std=c++98 -Wall -Wextra -Werror
 $(NAME):
-	cd vector && c++  $(OBJ) -o $(NAME) -std=c++98  -Wall -Wextra -Werror
+	cd vector && c++  $(OBJ) -o $(NAME)
+	#  -std=c++98  -Wall -Wextra -Werror
 clean :
 	cd vector &&	rm -f $(OBJ)
 fclean: clean

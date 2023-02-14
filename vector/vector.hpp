@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/14 11:19:03 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/14 11:39:43 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -390,7 +390,8 @@ void assign(size_type n, const value_type &val) //
 	}
 	const_reference back() const
 	{
-		return const_reference(*(end() - 1)); // this
+		// return const_reference(*(end() - 1)); // this
+		return const_reference(*(start_iter+size_param)); // this
 	}
 
 	/*
@@ -673,7 +674,7 @@ const_reference	back(void) const;
 		catch(...)
 		{	
 			this->capacity_param = 0;
-			this->size_param = 0 ;\
+			this->size_param = 0 ;
 			throw std::runtime_error("runtime_error");
 		}
 		
@@ -707,6 +708,7 @@ const_reference	back(void) const;
 		while (i < this->capacity_param)
 		{
 			allocating.destroy(start_iter+i);
+			allocating.destroy(end_iter--);
 			i++;
 		}
 		

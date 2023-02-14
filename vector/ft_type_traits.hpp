@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 09:33:11 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/13 15:03:45 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/14 11:27:26 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -165,7 +165,7 @@ template <class T>
 struct iterator_traits<const T *>
 	// definitions that are appropriate for pointers.
 {
-	typedef ptrdiff_t difference_type;
+	typedef std::ptrdiff_t difference_type;
 	typedef T value_type;
 	typedef T *pointer;
 	typedef T &reference;
