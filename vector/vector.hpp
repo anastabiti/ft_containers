@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/14 11:49:35 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/14 11:52:53 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -390,7 +390,7 @@ void assign(size_type n, const value_type &val) //
 	}
 	const_reference back() const
 	{
-		return const_reference(*(end() - 1)); // this
+		return (start_iter[size_param]); // this
 		// return const_reference(*(start_iter+size_param)); // this
 	}
 
