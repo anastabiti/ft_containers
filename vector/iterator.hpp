@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 09:45:02 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/14 12:43:25 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/14 13:19:21 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -179,7 +179,6 @@ bool operator>=(iterator const &x, iterator const &y)
 template <class iterator>
 bool   operator-( const ft::iterator<iterator>& x, const ft::iterator<iterator>& y)
 {
-	std::cout << "here " << std::endl;
 	return (x.base() - y.base());
 }
 

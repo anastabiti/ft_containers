@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/14 12:45:26 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/14 13:19:16 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,6 @@ class vector
 	typedef typename ft::reverse_iterator<const_iterator> const_reverse_iterator;
 
   private:
-	 value_type * vec;
 	value_type * copY;
 	size_t size_param;
 	size_t capacity_param;
@@ -765,6 +764,7 @@ bool operator!=(const vector<T, Alloc> &lhs, const vector<T, Alloc> &rhs)
 template <class T, class Alloc>
 void	swap(vector<T, Alloc> &x, vector<T, Alloc> &y)
 {
+	std::cout << "swap is called swap(vector<T, Alloc> &x, vector<T, Alloc> &y) " << std::endl;
 	x.swap(y);
 }
 

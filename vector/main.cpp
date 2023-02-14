@@ -77,7 +77,7 @@ int main()
     std::unique_ptr<B> k5(new B(-1));
     ft::vector<A> vv;
     ft::vector<B*> v1;
-
+    ft::vector<B*> v33;
     v1.push_back(&(*k2));
     v1.push_back(&(*k3));
     v1.push_back(&(*k4));
@@ -93,6 +93,7 @@ int main()
         // v.push_back(vv.size());
         // v.push_back(vv.capacity());
     }
+    ft::swap(v33, v1);
 	// for (size_t i = 0; i < tmp.size(); i++)
 	// {
 	// 	std::cout << "tmp :  " << tmp[i] << std::endl;
