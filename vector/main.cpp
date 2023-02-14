@@ -21,215 +21,315 @@
 // #define vec std::vector
 
 
+class B {
+public:
+    char *l;
+    int i;
+    B():l(nullptr), i(1) {};
+    B(const int &ex) {
+        this->i = ex;
+        this->l = new char('a');
+    };
+    virtual ~B() {
+        delete this->l;
+        this->l = nullptr;
+    };
+};
 
+class A : public B {
+public:
+    A():B(){};
+    A(const B* ex){
+        this->l = new char(*(ex->l));
+        this->i = ex->i;
+        if (ex->i == -1) throw "n";
+    }
+    ~A() {
+        delete this->l;
+        this->l = nullptr;
+    };
+};
+
+/*
+The reason why there is an exception is that the insertion operation in the try block is
+ performed on a vector of type A, but the elements being inserted are pointers to objects 
+ of type B. The insert function attempts to create objects of type A from the objects 
+ pointed to by the elements in the v1 vector, using the A(const B* ex) constructor.
+  However, this constructor throws an exception if the i member variable of the ex object is -1.
+   In this case, the third element of the v1 vector has i set to -1, causing the exception to
+    be thrown during the insertion operation.
+*/
 int main()
 {
-	/* constructors*/
-	vec<int> vec1;
-	std::cout<< "vec1 capacity "<< vec1.capacity()<< std::endl;
-	std::cout<< "vec1 size      "<< vec1.size()<< std::endl;
-	std::cout<< "_____________________________"<< std::endl;
+	// ft::vector<int> v;
+    // ft::vector<int> tmp;
+    // ft::vector<int> vector;
+    // tmp.assign(2600 * 10, 1);
+    // vector.assign(4200 * 10, 1);
+    // vector.insert(vector.end() - 1000 * 10, tmp.begin(), tmp.end());
+    // v.push_back(vector[3]);
+    // v.push_back(vector.size());
+    // v.push_back(vector.capacity());
 
+    std::unique_ptr<B> k2(new B(3));
+    std::unique_ptr<B> k3(new B(4));
+    std::unique_ptr<B> k4(new B(14));
+    std::unique_ptr<B> k5(new B(-1));
+    ft::vector<A> vv;
+    ft::vector<B*> v1;
 
-	vec<int, std::allocator<int> > vec2;
-	std::cout<< "vec1 capacity "<< vec2.capacity()<< std::endl;
-	std::cout<< "vec1 size      "<< vec2.size()<< std::endl;
-	std::cout<< "_____________________________"<< std::endl;
+    v1.push_back(&(*k2));
+    v1.push_back(&(*k3));
+    v1.push_back(&(*k4));
+    v1.push_back(&(*k5));
+    try { 
+			vv.insert(vv.begin(), v1.begin(), v1.end()); 
+		}
+    catch (...) 
+	{
+		std::cout << "EXCEPTION "<< std::endl;
+		std::cout << "vv.size()|| :  " <<vv.size() << std::endl;
+		std::cout << "vv.capacity()|| :  " <<vv.capacity() << std::endl;
+        // v.push_back(vv.size());
+        // v.push_back(vv.capacity());
+    }
+	// for (size_t i = 0; i < tmp.size(); i++)
+	// {
+	// 	std::cout << "tmp :  " << tmp[i] << std::endl;
+	// }
+	for (size_t i = 0; i < v1.size(); i++)
+	{
+		std::cout << "v1 :  " << v1[i] << std::endl;
+	}
+	// for (size_t i = 0; i < vector.size(); i++)
+	// {
+	// 	std::cout << "vector :  " << vector[i] << std::endl;
+	// }
+	// for (size_t i = 0; i < vv.size(); i++)
+	// {
+	// 	std::cout << "vv :  " << vv << std::endl;
+	// }
 
-	vec<int> fill(5,1337);
-	std::cout<< "fill capacity "<< fill.capacity()<< std::endl;
-	std::cout<< "fill size     "<< fill.size()<< std::endl;
-	std::cout<< "_____________________________"<< std::endl;
-
-
-	vec<int> range(fill.begin(), fill.end());
-	std::cout<< "range capacity "<< range.capacity()<< std::endl;
-	std::cout<< "range size     "<< range.size()<< std::endl;
-	std::cout<< "_____________________________"<< std::endl;
-
-	vec<int> copy_from(fill);
-	std::cout<< "copy_from capacity "<< copy_from.capacity()<< std::endl;
-	std::cout<< "copy_from size     "<< copy_from.size()<< std::endl;
-	std::cout<< "_____________________________"<< std::endl;
 	
-	copy_from = fill;
-	std::cout<< "copy_from capacity "<< copy_from.capacity()<< std::endl;
-	std::cout<< "copy_from size     "<< copy_from.size()<< std::endl;
-	std::cout<< "_____________________________"<< std::endl;
 	
-	
-		/* assign  */
-	for (size_t i = 0; i < copy_from.size(); i++)
-	{
-		std::cout<< "before assign  "<< copy_from.at(i)<< std::endl;
-	}
-	std::cout<< "_____________________________"<< std::endl;
-	copy_from.assign(4,44);
-	for (size_t i = 0; i < copy_from.size(); i++)
-	{
-		std::cout<< "after assign  "<< copy_from.at(i)<< std::endl;
-	}
-	std::cout<< "_____________________________"<< std::endl;
-	copy_from.assign(fill.begin(), fill.end());
-	for (size_t i = 0; i < copy_from.size(); i++)
-	{
-		std::cout<< "after range assign  "<< copy_from.at(i)<< std::endl;
-	}
-	std::cout<< "_____________________________"<< std::endl;
+		std::cout << "v1.capacity() :  " << v1.capacity() << std::endl;
+		std::cout << "vv.capacity() :  " << vv.capacity() << std::endl;
+		std::cout << "v1.size() :  " << v1.size() << std::endl;
+		std::cout << "vv.size() :  " << vv.size() << std::endl;
+		std::cout << "vv.size() :  " << vv.size() << std::endl;
 
-
-	/* iterators */
-	vec<int> t1;
-	t1.push_back(1);
-	t1.push_back(2);
-	t1.push_back(3);
-	t1.push_back(4);
-	t1.push_back(5);
-	for (vec<int>::iterator it =  t1.begin(); it < t1.end(); it++)
-	{
-		std::cout<< "normal iterator it = "<< *it<< std::endl;
-	}
-	std::cout<< "_____________________________"<< std::endl;
-
-	for (vec<int>::reverse_iterator it =  t1.rbegin(); it < t1.rend(); it++)
-	{
-		std::cout<< "reverse_iterator it = "<< *it<< std::endl;
-	}
-	
-	std::cout<< "_____________________________"<< std::endl;
-	/* capacity */
-
-	std::cout<< "t1 capacity "<< t1.capacity()<< std::endl;
-	std::cout<< "t1 size     "<< t1.size()<< std::endl;
-	std::cout<< "t1 max_size     "<< t1.max_size()<< std::endl;
-	std::cout<< "t1 max_size     "<< t1.max_size()<< std::endl;
-	std::cout<< "_____________________________"<< std::endl;
-	t1.resize(2);
-	std::cout<< "t1 capacity after resize "<< t1.capacity()<< std::endl;
-	std::cout<< "t1 size  after resize   "<< t1.size()<< std::endl;
-	std::cout<< "t1 max_size  after resize   "<< t1.max_size()<< std::endl;
-		if(t1.empty() == true)
-	std::cout<< "t1 is empty"<< std::endl;
-		if(t1.empty() == false)
-	std::cout<< "t1 is not empty"<< std::endl;
-
-	std::cout<< "_____________________________"<< std::endl;
-	std::cout<< "t1 capacity before reserve "<< t1.capacity()<< std::endl;
-	t1.reserve(100);
-	std::cout<< "t1 capacity after reserve "<< t1.capacity()<< std::endl;
-
-
-	std::cout<< "_____________________________"<< std::endl;
-	/* element access: */
-for (size_t i = 0; i < t1.size(); i++)
-{
-	std::cout<< "operator [] : "<< t1[i]<< std::endl;
-}
-	std::cout<< "_____________________________"<< std::endl;
-for (size_t i = 0; i < t1.size(); i++)
-{
-	std::cout<< "at  : "<< t1.at(i)<< std::endl;
+	return  0 ;
 }
 
-	std::cout<< "_____________________________"<< std::endl;
-	std::cout<< "front  : "<< t1.front()<< std::endl;
-	std::cout<< "back  : "<< t1.back()<< std::endl;
-	std::cout<< "_____________________________"<< std::endl;
-/* modifiers */
-	t1.push_back(7);
 
-for (size_t i = 0; i < t1.size(); i++)
-	{
-		std::cout<< "push_back  : "<< t1[i]<< std::endl;
-	}
+// int main()
+// {
+// 	/* constructors*/
+// 	vec<int> vec1;
+// 	std::cout<< "vec1 capacity "<< vec1.capacity()<< std::endl;
+// 	std::cout<< "vec1 size      "<< vec1.size()<< std::endl;
+// 	std::cout<< "_____________________________"<< std::endl;
+
+
+// 	vec<int, std::allocator<int> > vec2;
+// 	std::cout<< "vec1 capacity "<< vec2.capacity()<< std::endl;
+// 	std::cout<< "vec1 size      "<< vec2.size()<< std::endl;
+// 	std::cout<< "_____________________________"<< std::endl;
+
+// 	vec<int> fill(5,1337);
+// 	std::cout<< "fill capacity "<< fill.capacity()<< std::endl;
+// 	std::cout<< "fill size     "<< fill.size()<< std::endl;
+// 	std::cout<< "_____________________________"<< std::endl;
+
+
+// 	vec<int> range(fill.begin(), fill.end());
+// 	std::cout<< "range capacity "<< range.capacity()<< std::endl;
+// 	std::cout<< "range size     "<< range.size()<< std::endl;
+// 	std::cout<< "_____________________________"<< std::endl;
+
+// 	vec<int> copy_from(fill);
+// 	std::cout<< "copy_from capacity "<< copy_from.capacity()<< std::endl;
+// 	std::cout<< "copy_from size     "<< copy_from.size()<< std::endl;
+// 	std::cout<< "_____________________________"<< std::endl;
 	
-	t1.pop_back();
-	std::cout<< "_____________________________"<< std::endl;
-for (size_t i = 0; i < t1.size(); i++)
-	{
-		std::cout<< "push_back  : "<< t1[i]<< std::endl;
-	}
-std::cout<< "_____________________________"<< std::endl;
-	t1.insert(t1.begin(), 42);
-	for (size_t i = 0; i < t1.size(); i++)
-		{
-			std::cout<< "insert  : "<< t1[i]<< std::endl;
-		}
-	std::cout<< "_____________________________"<< std::endl;
-	vec<int> filler;
-	filler.push_back(1000);
-	filler.push_back(1100);
-	filler.push_back(1200);
-	filler.push_back(1300);
-	filler.push_back(1400);
-	filler.push_back(1500);
-
-	t1.insert(t1.begin(), filler.begin(), filler.end());
-	for (size_t i = 0; i < t1.size(); i++)
-		{
-			std::cout<< "insert range : "<< t1[i]<< std::endl;
-		}
-	std::cout<< "_____________________________"<< std::endl;
-	t1.erase(t1.end());
-	for (size_t i = 0; i < t1.size(); i++)
-		{
-			std::cout<< "erase  : "<< t1[i]<< std::endl;
-		}
-	std::cout<< "_____________________________"<< std::endl;
-	t1.erase(t1.begin(), t1.end()-3);
-	for (size_t i = 0; i < t1.size(); i++)
-		{
-			std::cout<< "erase  : "<< t1[i]<< std::endl;
-		}
-	std::cout<< "_____________________________"<< std::endl;
-	t1.swap(filler);
-	for (size_t i = 0; i < t1.size(); i++)
-		{
-			std::cout<< "after swap from filler: "<< t1[i]<< std::endl;
-		}
-	std::cout<< "_____________________________"<< std::endl;
-	t1.clear();
-	for (size_t i = 0; i < t1.size(); i++)
-		{
-			std::cout<< "after clear: "<< t1[i]<< std::endl;
-		}
-	std::cout<< "_____________________________"<< std::endl;
-	/* compare */
-	vec<int> compare_1;
-	compare_1.push_back(13);
-	compare_1.push_back(56);
-	compare_1.push_back(23);
-	compare_1.push_back(53);
-	compare_1.push_back(541);
-	vec<int> compare_2;
-	compare_2.push_back(1);
-	compare_2.push_back(56);
-	compare_2.push_back(23);
-	compare_2.push_back(53);
-	compare_2.push_back(541);
-	if(compare_1 == compare_2)
-	std::cout<< "compare_1 == compare_2 are equal"<< std::endl;
-	else if(compare_1 != compare_2)
-	std::cout<< "compare_1 != compare_2 are not equal"<< std::endl;
-	 if(compare_1 > compare_2)
-	std::cout<< "compare_1 > compare_2 "<< std::endl;
-	 if(compare_1 < compare_2)
-	std::cout<< "compare_1 < compare_2 "<< std::endl;
+// 	copy_from = fill;
+// 	std::cout<< "copy_from capacity "<< copy_from.capacity()<< std::endl;
+// 	std::cout<< "copy_from size     "<< copy_from.size()<< std::endl;
+// 	std::cout<< "_____________________________"<< std::endl;
 	
 	
+// 		/* assign  */
+// 	for (size_t i = 0; i < copy_from.size(); i++)
+// 	{
+// 		std::cout<< "before assign  "<< copy_from.at(i)<< std::endl;
+// 	}
+// 	std::cout<< "_____________________________"<< std::endl;
+// 	copy_from.assign(4,44);
+// 	for (size_t i = 0; i < copy_from.size(); i++)
+// 	{
+// 		std::cout<< "after assign  "<< copy_from.at(i)<< std::endl;
+// 	}
+// 	std::cout<< "_____________________________"<< std::endl;
+// 	copy_from.assign(fill.begin(), fill.end());
+// 	for (size_t i = 0; i < copy_from.size(); i++)
+// 	{
+// 		std::cout<< "after range assign  "<< copy_from.at(i)<< std::endl;
+// 	}
+// 	std::cout<< "_____________________________"<< std::endl;
 
-	// std::cout<< "t1 max_size after resize    "<< t1.max_size()<< std::endl;
-	// vec<int> copy_from();
-	// std::cout<< "copy_from capacity "<< copy_from.capacity()<< std::endl;
-	// std::cout<< "copy_from size     "<< copy_from.size()<< std::endl;
-	// std::cout<< "_____________________________"<< std::endl;
 
-// ft::vector<int>::iterator it = 
+// 	/* iterators */
+// 	vec<int> t1;
+// 	t1.push_back(1);
+// 	t1.push_back(2);
+// 	t1.push_back(3);
+// 	t1.push_back(4);
+// 	t1.push_back(5);
+// 	for (vec<int>::iterator it =  t1.begin(); it < t1.end(); it++)
+// 	{
+// 		std::cout<< "normal iterator it = "<< *it<< std::endl;
+// 	}
+// 	std::cout<< "_____________________________"<< std::endl;
+
+// 	for (vec<int>::reverse_iterator it =  t1.rbegin(); it < t1.rend(); it++)
+// 	{
+// 		std::cout<< "reverse_iterator it = "<< *it<< std::endl;
+// 	}
+	
+// 	std::cout<< "_____________________________"<< std::endl;
+// 	/* capacity */
+
+// 	std::cout<< "t1 capacity "<< t1.capacity()<< std::endl;
+// 	std::cout<< "t1 size     "<< t1.size()<< std::endl;
+// 	std::cout<< "t1 max_size     "<< t1.max_size()<< std::endl;
+// 	std::cout<< "t1 max_size     "<< t1.max_size()<< std::endl;
+// 	std::cout<< "_____________________________"<< std::endl;
+// 	t1.resize(2);
+// 	std::cout<< "t1 capacity after resize "<< t1.capacity()<< std::endl;
+// 	std::cout<< "t1 size  after resize   "<< t1.size()<< std::endl;
+// 	std::cout<< "t1 max_size  after resize   "<< t1.max_size()<< std::endl;
+// 		if(t1.empty() == true)
+// 	std::cout<< "t1 is empty"<< std::endl;
+// 		if(t1.empty() == false)
+// 	std::cout<< "t1 is not empty"<< std::endl;
+
+// 	std::cout<< "_____________________________"<< std::endl;
+// 	std::cout<< "t1 capacity before reserve "<< t1.capacity()<< std::endl;
+// 	t1.reserve(100);
+// 	std::cout<< "t1 capacity after reserve "<< t1.capacity()<< std::endl;
+
+
+// 	std::cout<< "_____________________________"<< std::endl;
+// 	/* element access: */
+// for (size_t i = 0; i < t1.size(); i++)
+// {
+// 	std::cout<< "operator [] : "<< t1[i]<< std::endl;
+// }
+// 	std::cout<< "_____________________________"<< std::endl;
+// for (size_t i = 0; i < t1.size(); i++)
+// {
+// 	std::cout<< "at  : "<< t1.at(i)<< std::endl;
+// }
+
+// 	std::cout<< "_____________________________"<< std::endl;
+// 	std::cout<< "front  : "<< t1.front()<< std::endl;
+// 	std::cout<< "back  : "<< t1.back()<< std::endl;
+// 	std::cout<< "_____________________________"<< std::endl;
+// /* modifiers */
+// 	t1.push_back(7);
+
+// for (size_t i = 0; i < t1.size(); i++)
+// 	{
+// 		std::cout<< "push_back  : "<< t1[i]<< std::endl;
+// 	}
+	
+// 	t1.pop_back();
+// 	std::cout<< "_____________________________"<< std::endl;
+// for (size_t i = 0; i < t1.size(); i++)
+// 	{
+// 		std::cout<< "push_back  : "<< t1[i]<< std::endl;
+// 	}
+// std::cout<< "_____________________________"<< std::endl;
+// 	t1.insert(t1.begin(), 42);
+// 	for (size_t i = 0; i < t1.size(); i++)
+// 		{
+// 			std::cout<< "insert  : "<< t1[i]<< std::endl;
+// 		}
+// 	std::cout<< "_____________________________"<< std::endl;
+// 	vec<int> filler;
+// 	filler.push_back(1000);
+// 	filler.push_back(1100);
+// 	filler.push_back(1200);
+// 	filler.push_back(1300);
+// 	filler.push_back(1400);
+// 	filler.push_back(1500);
+
+// 	t1.insert(t1.begin(), filler.begin(), filler.end());
+// 	for (size_t i = 0; i < t1.size(); i++)
+// 		{
+// 			std::cout<< "insert range : "<< t1[i]<< std::endl;
+// 		}
+// 	std::cout<< "_____________________________"<< std::endl;
+// 	t1.erase(t1.end());
+// 	for (size_t i = 0; i < t1.size(); i++)
+// 		{
+// 			std::cout<< "erase  : "<< t1[i]<< std::endl;
+// 		}
+// 	std::cout<< "_____________________________"<< std::endl;
+// 	t1.erase(t1.begin(), t1.end()-3);
+// 	for (size_t i = 0; i < t1.size(); i++)
+// 		{
+// 			std::cout<< "erase  : "<< t1[i]<< std::endl;
+// 		}
+// 	std::cout<< "_____________________________"<< std::endl;
+// 	t1.swap(filler);
+// 	for (size_t i = 0; i < t1.size(); i++)
+// 		{
+// 			std::cout<< "after swap from filler: "<< t1[i]<< std::endl;
+// 		}
+// 	std::cout<< "_____________________________"<< std::endl;
+// 	t1.clear();
+// 	for (size_t i = 0; i < t1.size(); i++)
+// 		{
+// 			std::cout<< "after clear: "<< t1[i]<< std::endl;
+// 		}
+// 	std::cout<< "_____________________________"<< std::endl;
+// 	/* compare */
+// 	vec<int> compare_1;
+// 	compare_1.push_back(13);
+// 	compare_1.push_back(56);
+// 	compare_1.push_back(23);
+// 	compare_1.push_back(53);
+// 	compare_1.push_back(541);
+// 	vec<int> compare_2;
+// 	compare_2.push_back(1);
+// 	compare_2.push_back(56);
+// 	compare_2.push_back(23);
+// 	compare_2.push_back(53);
+// 	compare_2.push_back(541);
+// 	if(compare_1 == compare_2)
+// 	std::cout<< "compare_1 == compare_2 are equal"<< std::endl;
+// 	else if(compare_1 != compare_2)
+// 	std::cout<< "compare_1 != compare_2 are not equal"<< std::endl;
+// 	 if(compare_1 > compare_2)
+// 	std::cout<< "compare_1 > compare_2 "<< std::endl;
+// 	 if(compare_1 < compare_2)
+// 	std::cout<< "compare_1 < compare_2 "<< std::endl;
+	
+	
+
+// 	// std::cout<< "t1 max_size after resize    "<< t1.max_size()<< std::endl;
+// 	// vec<int> copy_from();
+// 	// std::cout<< "copy_from capacity "<< copy_from.capacity()<< std::endl;
+// 	// std::cout<< "copy_from size     "<< copy_from.size()<< std::endl;
+// 	// std::cout<< "_____________________________"<< std::endl;
+
+// // ft::vector<int>::iterator it = 
 
 
 
 
-}
+// }
 
 
 
