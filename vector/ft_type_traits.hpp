@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 09:33:11 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/14 11:27:26 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/15 08:39:58 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -150,7 +150,8 @@ struct	iterator_traits
 	typedef typename Iterator::difference_type difference_type;
 	typedef typename Iterator::pointer pointer;
 	typedef typename Iterator::reference reference;
-	typedef typename Iterator::iterator_category iterator_category;
+	// typedef typename Iterator::iterator_category iterator_category;
+	typedef std::random_access_iterator_tag iterator_category;
 };
 
 template <class T>
@@ -160,6 +161,7 @@ struct iterator_traits<T *> // definitions that are appropriate for pointers.
 	typedef T value_type;
 	typedef T *pointer;
 	typedef T &reference;
+	typedef std::random_access_iterator_tag iterator_category;
 };
 template <class T>
 struct iterator_traits<const T *>
@@ -169,6 +171,7 @@ struct iterator_traits<const T *>
 	typedef T value_type;
 	typedef T *pointer;
 	typedef T &reference;
+	typedef std::random_access_iterator_tag iterator_category;
 };
 
 }; // namespace ft

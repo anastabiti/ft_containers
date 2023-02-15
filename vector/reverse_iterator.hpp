@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 14:59:18 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/13 15:03:23 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/15 08:37:44 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -147,6 +147,19 @@ bool operator>=(const reverse_iterator<Iterator> &lhs,
 {
 	return (lhs.base() <= rhs.base());
 	// reverse here
+}
+
+template <class Iterator>
+typename reverse_iterator<Iterator>::difference_type operator-( const reverse_iterator<Iterator>& x, const reverse_iterator<Iterator>& y)
+{
+	
+}
+
+
+template <class Iterator>
+reverse_iterator<Iterator> operator+( typename reverse_iterator<Iterator>::difference_type n, const reverse_iterator<Iterator>& x)
+{
+	
 }
 
     

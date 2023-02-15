@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 09:45:02 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/14 13:24:44 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/15 08:40:24 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,7 +124,7 @@ class iterator
 	}
 	iterator operator-(difference_type n) const // not working
 	{
-			std::cout << "	iterator operator-(difference_type n) is called \n" ;
+			// std::cout << "	iterator operator-(difference_type n) is called \n" ;
 		return (iterator(ptr - n));
 	}
 	// 	pointer operator-(difference_type n) const // not working
