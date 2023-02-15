@@ -5,7 +5,7 @@
 /*				or comment #include				  */
 /*		if you haven't yet some container		  */
 /**************************************************/
-#define VECTOR			"/Users/atabiti/Desktop/shared_folder/ft_containers/vector/vector.hpp"
+#define VECTOR			"/mnt/s/lastone/vector/vector.hpp"
 // #define STACK			"../../../Stack.hpp"
 // #define MAP			  	"../../../Map.hpp"
 // #define SET			  	"../../../Set.hpp"
