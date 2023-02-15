@@ -1,15 +1,15 @@
 #include "vector.hpp"
 #include <vector>
 
-#define TESTED_TYPE int
 
 int main ()
 {
-	ft::vector<TESTED_TYPE> foo(3, 15);
-	ft::vector<TESTED_TYPE> bar(5, 42);
+	ft::vector<int> foww;
+	ft::vector<int> foo(3, 15);
+	ft::vector<int> bar(5, 42);
 	
-	ft::vector<TESTED_TYPE>::const_iterator it_foo = foo.begin();
-	ft::vector<TESTED_TYPE>::const_iterator it_bar = bar.begin();
+	ft::vector<int>::const_iterator it_foo = foo.begin();
+	ft::vector<int>::const_iterator it_bar = bar.begin();
 
 	std::cout << "BEFORE SWAP" << std::endl;
 
@@ -18,7 +18,7 @@ int main ()
 
 	foo.swap(bar);
 
-	std::cout << "AFTER SWAP" << std::endl;
+	std::cout << "AstdER SWAP" << std::endl;
 
 	std::cout << "foo contains:" << std::endl;
 	std::cout << "bar contains:" << std::endl;

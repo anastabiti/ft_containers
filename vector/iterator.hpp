@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 09:45:02 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/15 09:36:03 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/15 10:12:44 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ class iterator
 		ptr = vec;
 	}
 	template <class U> 
-	iterator(const iterator<U>& u)  : ptr(u.base())/*solve  	ft::vector<int>::const_iterator it_foo = foo.begin(); */
+	iterator(const iterator<U>& u)  : ptr(u.base()) /*solve  	ft::vector<int>::const_iterator it_foo = foo.begin(); */
 	{
 
 	}

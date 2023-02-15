@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/15 09:43:19 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/15 10:46:19 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@ class vector
 	// typedef typename iterator_traits<pointer>::pointer iterator;// problem here	
 	typedef  ft::iterator<pointer> iterator;// problem here	
 	typedef  ft::iterator<const_pointer> const_iterator;
+	// typedef  typename   ft::iterator_traits<const T*>::pointer  const_iterator;
+	
 	// typedef const  ft::iterator<T> const_iterator;
 	typedef ft::reverse_iterator<iterator> reverse_iterator;
 	typedef typename ft::reverse_iterator<const_iterator> const_reverse_iterator;
@@ -215,6 +217,26 @@ void assign(size_type n, const value_type &val) //
 	{
 		return const_iterator(this->start_iter);
 	}
+	// iterator begin()
+// typename vector<T, Allocator>::const_iterator begin()
+// 	{
+// 		return (this->start_iter);
+// 	}
+// typename vector<T, Allocator>::iterator begin()
+// 	{
+// 		return iterator(this->start_iter);
+// 	}
+// typename vector<T, Allocator>::const_iterator begin()
+// 	{
+// 		return const_iterator(this->start_iter);
+// 	}
+	// {
+	// 	return iterator(this->start_iter);
+	// }
+	// const_iterator begin() const
+	// {
+	// 	return const_iterator(this->start_iter);
+	// }
 	iterator end()
 	{
 		return (iterator(&start_iter[this->size_param]));
@@ -768,7 +790,7 @@ bool operator!=(const vector<T, Alloc> &lhs, const vector<T, Alloc> &rhs)
 template <class T, class Alloc>
 void	swap(vector<T, Alloc> &x, vector<T, Alloc> &y)
 {
-	std::cout << "swap is called swap(vector<T, Alloc> &x, vector<T, Alloc> &y) " << std::endl;
+	// std::cout << "swap is called swap(vector<T, Alloc> &x, vector<T, Alloc> &y) " << std::endl;
 	x.swap(y);
 }
 
