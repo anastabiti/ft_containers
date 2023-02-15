@@ -191,12 +191,12 @@ bool operator>=(iterator const &x, iterator const &y)
 {
 	return (x.base() >= y.base());
 }
-template <class iterator>
- bool   operator-( const ft::iterator<iterator>& x, const ft::iterator<iterator>& y)
-{
-	std::cout << "bool   operator-( x, y) is called \n" ;
-	return (x.base() - y.base());
-}
+// template <class iterator> /*this sould be removed*/
+//  bool   operator-( const ft::iterator<iterator>& x, const ft::iterator<iterator>& y)
+// {
+// 	std::cout << "bool   operator-( x, y) is called \n" ;
+// 	return (x.base() - y.base());
+// }
 
 template <class Iterator>
 typename iterator<Iterator>::difference_type operator-( const iterator<Iterator>& x, const iterator<Iterator>& y)
