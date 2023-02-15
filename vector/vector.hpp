@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/14 13:19:16 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/15 09:17:54 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -184,6 +184,7 @@ void assign(size_type n, const value_type &val) //
 	void assign(InputIterator first, InputIterator last, typename ft::enable_if<!ft::is_integral<InputIterator>::value,int>::argument_type  = 0)
 	{
 		size_t i = 0;
+		// size_t dist =  std::distance(first.base(), last.base());
 		size_t dist =  std::distance(first.base(), last.base());
 		if (dist > capacity_param)
 			reserve(dist);
@@ -208,11 +209,11 @@ void assign(size_type n, const value_type &val) //
 	/* -----------------------:----------------------- { Iterators }-----------------------:-----------------------:*/
 	iterator begin()
 	{
-		return iterator(start_iter);
+		return iterator(this->start_iter);
 	}
 	const_iterator begin() const
 	{
-		return (const_iterator(start_iter));
+		return const_iterator(this->start_iter);
 	}
 	iterator end()
 	{
@@ -720,6 +721,8 @@ const_reference	back(void) const;
 		}
  	}
 };
+
+
 template <class T, class Alloc>
 bool operator==(const vector<T, Alloc> &lhs, const vector<T, Alloc> &rhs)
 {
@@ -730,6 +733,7 @@ bool operator==(const vector<T, Alloc> &lhs, const vector<T, Alloc> &rhs)
 	else
 		return (false);
 }
+
 template <class T, class Alloc>
 bool operator<(const vector<T, Alloc> &lhs, const vector<T, Alloc> &rhs)
 {

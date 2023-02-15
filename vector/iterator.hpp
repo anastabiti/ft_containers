@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 09:45:02 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/15 08:40:24 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/15 09:25:54 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,12 +46,18 @@ class iterator
 	{
 		ptr = vec;
 	}
-
-	iterator(const iterator &rhs) // copy
+	template <class U> 
+	iterator(const iterator<U>& u) /*solve  	ft::vector<int>::const_iterator it_foo = foo.begin(); */
 	{
-		// ptr = rhs.ptr;
-		*this = rhs;
+		// this->ptr = u.ptr;
+		*this = u;
 	}
+	
+	// iterator(const iterator &rhs) // copy
+	// {
+	// 	// ptr = rhs.ptr;
+	// 	*this = rhs;
+	// }
 	iterator &operator=(const iterator &rhs)
 	{
 		if (this == &rhs)
@@ -152,6 +158,14 @@ bool operator==(iterator const &x, iterator const &y)
 {
 	return (x.base() == y.base());
 }
+
+
+// template <class Iterator>
+// bool operator==(const iterator<Iterator>& x, const iterator<Iterator>& y)
+// {
+// 	return (x.base() == y.base());	
+// }
+
 template <class iterator>
 bool operator!=(iterator const &x, iterator const &y)
 {
@@ -185,6 +199,19 @@ template <class iterator>
 	return (x.base() - y.base());
 }
 
+template <class Iterator>
+typename iterator<Iterator>::difference_type operator-( const iterator<Iterator>& x, const iterator<Iterator>& y)
+{
+	return x.base() - y.base();
+}
+
+
+template <class Iterator>
+iterator<Iterator> operator+( typename iterator<Iterator>::difference_type n, const iterator<Iterator>& x)
+{
+	return x.base() - n;
+	
+}
 
 
 } // namespace ft
