@@ -24,7 +24,7 @@ int main ()
 	std::cout << "bar contains:" << std::endl;
 
 	std::cout << "Iterator validity:" << std::endl;
-	std::cout << (it_foo == bar.begin()) << std::endl;
+	std::cout << (it_foo ==  bar.begin()) << std::endl;
 	std::cout << (it_bar == foo.begin()) << std::endl;
 
 	return (0);
