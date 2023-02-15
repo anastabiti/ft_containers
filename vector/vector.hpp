@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/15 10:46:19 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/15 14:16:33 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ class vector
 	Constructs a container with n elements. Each element is a copy of val.*/
 	explicit vector(size_type n, const value_type &val = value_type(),
 			const allocator_type &alloc = allocator_type())
-		: start_iter(0), end_iter(0)
+		// : start_iter(0), end_iter(0)
 	{
 		/*	The allocator parameter is copied into a protected member of the container.
 			This private copy can then be used for all subsequent storage management. */
@@ -527,7 +527,6 @@ const_reference	back(void) const;
 	void swap(vector &x)
 	{
 		/* copy them*/
-
 		pointer tmp_start = start_iter;
 		pointer tmp_end = end_iter;
 		size_t tmp_size = size_param;
@@ -737,10 +736,10 @@ const_reference	back(void) const;
 			i++;
 		}
 		
-		if(capacity_param > 0)
-		{
+		// if(capacity_param > 0)
+		// {
 			allocating.deallocate(start_iter, this->capacity_param);
-		}
+		// }
  	}
 };
 
