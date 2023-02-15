@@ -1,0 +1,42 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/15 12:29:31 by atabiti           #+#    #+#             */
+/*   Updated: 2023/02/15 13:03:30 by atabiti          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
+#include <map>
+#include <vector>
+#include <string>
+#include <iostream>
+#include "../vector/vector.hpp"
+int main()
+{
+    // ft::vector< std::pair <int, int> > vecc;
+    ft::vector< int > vecc;
+    size_t  i = 0 ;
+    while (i< 10000000)
+    {
+        vecc.push_back( i*3);
+        // vecc.push_back( std::make_pair(i,i*3));
+        i++;
+    }
+    
+    // std::map< int, int> mapp;
+    // size_t x = 0;
+    // while (x < 10000000)
+    // {
+        
+    //      mapp[x] = x*3;
+    //     x++;
+    // }
+
+    // std::cout << "found " << mapp.find(121311)->second<< std::endl;
+    
+}
