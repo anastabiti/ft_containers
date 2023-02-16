@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/16 13:57:41 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/16 13:59:28 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -253,11 +253,10 @@ public:
     */
 
     if (n < size_param) {
-      for (size_t i = 0; i < n; i++) {
+      for (size_t i = 0; i < n; i++)
+       {
         allocating.destroy(end_iter);
         end_iter--;
-
-        // std::cout << "here n= "<<  n <<std::endl;
         size_param = n;
       }
     }
@@ -576,7 +575,6 @@ const_reference	back(void) const;
         i++;
       }
       size_param = 0;
-      // allocating.deallocate(start_iter, this->capacity_param);
     }
   }
 
