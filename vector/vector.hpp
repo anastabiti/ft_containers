@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/16 08:58:18 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/16 09:18:42 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -375,12 +375,15 @@ const_reference	back(void) const;
       start_iter[size_param] = nb;
       size_param++;
       return;
-    } else if (size_param > 0 && size_param < capacity_param) {
+    } 
+    else if (size_param > 0 && size_param < capacity_param) 
+    {
       start_iter[size_param] = nb;
       end_iter = start_iter + size_param;
       ++size_param;
       return;
-    } else if (size_param == capacity_param) {
+    }
+     else if (size_param == capacity_param) {
       capacity_param = capacity_param * 2;
       copY = allocating.allocate(capacity_param);
       size_t i = 0;
