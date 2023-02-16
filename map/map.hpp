@@ -6,12 +6,14 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 13:10:35 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/16 12:30:15 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/16 12:43:38 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include <memory>
+#include <map>
+#include <__config>
 
 namespace ft
 {
@@ -19,6 +21,8 @@ namespace ft
 template <class Key, class T, class Compare = std::less<Key>, class Allocator = std::allocator<std::pair<const Key, T> > >
 class map 
 {
+private:
+
 public:
 // types:
 typedef Key key_type;
@@ -28,8 +32,8 @@ typedef Compare key_compare;
 typedef Allocator allocator_type;
 typedef typename Allocator::reference reference;
 typedef typename Allocator::const_reference const_reference;
-typedef std::iterator<std::bidirectional_iterator_tag, T> iterator; // See 23.1
-typedef std::iterator<std::bidirectional_iterator_tag,const iterator> const_iterator; // See 23.1
+typedef std::iterator<std::bidirectional_iterator_tag, T> iterator; 
+typedef std::iterator<std::bidirectional_iterator_tag,const iterator> const_iterator;
 // typedef implementation defined size_type; // See 23.1
 // typedef implementation defined difference_type;// See 23.1
 typedef typename Allocator::pointer pointer;
@@ -37,22 +41,24 @@ typedef typename Allocator::const_pointer const_pointer;
 typedef std::reverse_iterator<iterator> reverse_iterator;
 typedef std::reverse_iterator<const_iterator> const_reverse_iterator;
 
-class value_compare: public std::binary_function<value_type,value_type,bool> {
-friend class map;
-protected:
-Compare comp;
-value_compare(Compare c) : comp(c) {}
-public:
-bool operator()(const value_type& x, const value_type& y) const 
+class value_compare: public std::binary_function<value_type,value_type,bool> 
 {
-    return comp(x.first, y.first);
-}
+    friend class map;
+    protected:
+    Compare comp;
+    value_compare(Compare c) : comp(c) {}
+    public:
+    bool operator()(const value_type& x, const value_type& y) const 
+    {
+        return comp(x.first, y.first);
+    }
 
 };
+
 /* Constructs an empty map using the specified comparison object and allocator.  */
 explicit map(const Compare& comp = Compare(), const Allocator& = Allocator())
-{
-    
+{   
+        
 }
 
 // template <class InputIterator>

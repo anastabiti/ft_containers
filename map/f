@@ -1,0 +1,44 @@
+In file included from main.cpp:19:
+./map.hpp:25:18: error: C++ requires a type specifier for all declarations
+    friend  std::__rebind_alloc_helper;
+    ~~~~~~       ^
+./map.hpp:25:18: error: friends can only be classes or functions
+./map.hpp:27:71: error: use of undeclared identifier 'allocator_type'
+    typedef typename std::__rebind_alloc_helper<std::allocator_traits<allocator_type>, __value_type>::type __allocator_type;
+                                                                      ^
+./map.hpp:27:86: error: expected a type
+    typedef typename std::__rebind_alloc_helper<std::allocator_traits<allocator_type>, __value_type>::type __allocator_type;
+                                                                                     ^
+./map.hpp:27:103: error: non-friend class member 'type' cannot have a qualified name
+    typedef typename std::__rebind_alloc_helper<std::allocator_traits<allocator_type>, __value_type>::type __allocator_type;
+                                                                                                    ~~^
+./map.hpp:27:103: error: typedef declarator cannot be qualified
+    typedef typename std::__rebind_alloc_helper<std::allocator_traits<allocator_type>, __value_type>::type __allocator_type;
+                                                                                                    ~~^
+./map.hpp:27:107: error: expected ';' at end of declaration list
+    typedef typename std::__rebind_alloc_helper<std::allocator_traits<allocator_type>, __value_type>::type __allocator_type;
+                                                                                                          ^
+                                                                                                          ;
+./map.hpp:29:50: error: use of undeclared identifier '__allocator_type'; did you mean 'std::__has_allocator_type'?
+    typedef std::__tree<std::__value_type, __vc, __allocator_type>   __base;
+                                                 ^~~~~~~~~~~~~~~~
+                                                 std::__has_allocator_type
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/__functional_base:573:8: note: 'std::__has_allocator_type' declared here
+struct __has_allocator_type
+       ^
+In file included from main.cpp:19:
+./map.hpp:29:50: error: no template named '__allocator_type'; did you mean 'std::__has_allocator_type'?
+    typedef std::__tree<std::__value_type, __vc, __allocator_type>   __base;
+                                                 ^~~~~~~~~~~~~~~~
+                                                 std::__has_allocator_type
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/__functional_base:573:8: note: 'std::__has_allocator_type' declared here
+struct __has_allocator_type
+       ^
+In file included from main.cpp:19:
+./map.hpp:29:30: error: use of class template 'std::__value_type' requires template arguments
+    typedef std::__tree<std::__value_type, __vc, __allocator_type>   __base;
+                             ^
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/map:742:8: note: template is declared here
+struct __value_type
+       ^
+10 errors generated.
