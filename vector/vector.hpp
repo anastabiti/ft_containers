@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/15 14:16:33 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/16 08:58:18 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@
 #include <string>
 namespace ft {
 
-template <typename T, typename Allocator = std::allocator<T>> class vector {
+template <typename T, typename Allocator = std::allocator<T> >
+ class vector {
 public:
   /*________________________________Member
    * types________________________________*/
@@ -71,7 +72,7 @@ public:
           the default allocator, "allocator_type()", is used.*/
   /* Constructs an empty container, with no elements.*/
 
-  explicit vector(const Allocator & = Allocator()) {
+  explicit vector(const Allocator & = Allocator())  {
     this->size_param = 0;
     this->capacity_param = 0;
     start_iter = NULL;
@@ -80,9 +81,7 @@ public:
 
   /* 							fill constructor
   Constructs a container with n elements. Each element is a copy of val.*/
-  explicit vector(size_type n, const value_type &val = value_type(),
-                  const allocator_type &alloc = allocator_type())
-  // : start_iter(0), end_iter(0)
+  explicit vector(size_type n, const value_type &val = value_type(), const allocator_type &alloc = allocator_type())
   {
     /*	The allocator parameter is copied into a protected member of the
        container. This private copy can then be used for all subsequent storage
@@ -101,9 +100,18 @@ public:
     }
   }
   /* 							copy constructor */
-  vector(vector const &rhs) { *this = rhs; }
-  vector &operator=(const vector &x) {
-    // clear();
+  vector(vector const &rhs)   : capacity_param(0), start_iter(), end_iter() , size_param(0)
+  { 
+            *this = rhs; 
+  }
+  
+  vector &operator=(const vector &x)  
+  {
+    if(capacity_param)
+    {
+      
+      this->allocating.deallocate(start_iter, capacity_param);
+    }
     if (this == &x)
       return *this;
     this->allocating = x.allocating;
@@ -118,7 +126,7 @@ public:
     }
     return *this;
   }
-  /*							range constructor
+/*							range constructor
                           Constructs a container with as many elements as the
      range [first,last), with each element constructed from its corresponding
      element in that range, in the same order.
