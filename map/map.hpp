@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 13:10:35 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/16 12:43:38 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/16 12:50:20 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ class value_compare: public std::binary_function<value_type,value_type,bool>
 /* Constructs an empty map using the specified comparison object and allocator.  */
 explicit map(const Compare& comp = Compare(), const Allocator& = Allocator())
 {   
-        
+    std::cout << "map con is called" <<std::endl;
 }
 
 // template <class InputIterator>

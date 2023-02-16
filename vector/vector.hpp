@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 11:00:51 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/16 09:18:42 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/16 13:57:41 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -240,8 +240,10 @@ public:
 
   size_type max_size() const { return (this->allocating.max_size()); }
 
-  void resize(size_type n, value_type val = value_type()) {
-    if (n == 0) {
+  void resize(size_type n, value_type val = value_type()) 
+  {
+    if (n == 0) 
+    {
       clear();
     }
     /*
@@ -402,9 +404,7 @@ const_reference	back(void) const;
   }
 
   void pop_back() {
-    // allocating.deallocate(vec +size_param, 1);
-    // start_iter[this->size_param - 1] = 0;
-    allocating.destroy(start_iter + this->size_param);
+    allocating.destroy(end_iter - 1);
     size_param--;
   }
 
@@ -442,7 +442,6 @@ const_reference	back(void) const;
     size_t j = 0;
     while (j < start_from) {
       start_iter[j] = *(start_iter + i + j);
-      // std::cout << << std::
       j++;
     }
 
@@ -470,34 +469,20 @@ const_reference	back(void) const;
     x.capacity_param = tmp_capacity;
     x.allocating = tmp_allocating;
   }
-  iterator insert(iterator position, const value_type &val) {
-    /*
-    This causes an automatic reallocation of the allocated storage space if
-            -and only if-
-    the  new vector size surpasses the current vector capacity.
+  iterator insert(iterator position, const value_type &val)
+   {
+/*
+    This causes an automatic reallocation of the allocated storage space if and only if- the  new vector size surpasses the current vector capacity.
 */
 
-    /*
-[ 1 ] [ 2 ] [ 3 ] [ 4 ] [ 5 ] [ 6 ] [ 7 ] [ 8 ] [ 9 ] [ 10 ] [ 11 ] [ 12 ] [ 13
-]  [  ]
-
-                                                    | | insert
-from_end [ 1 ] [ 2 ] [ 3 ] [ 4 ] [   ] [ 5 ] [ 6 ] [ 7 ] [ 8 ] [ 9 ] [ 10 ] [ 11
-] [ 12 ] [ 13 ]
-
-*/
-
-    size_t n = 0;
-    for (iterator it = position; it != end(); it++) // from position to end
+    
+    size_t n = std::distance(position, end());
+    if (size() + 1 > capacity_param)
     {
-      n++;
-    }
-    // std::cout << "n "<< n<<std::endl;
-    iterator from_end = this->end() - 1;
-    if (size() + 1 > capacity_param) {
       reserve(capacity_param * 2);
-      from_end = this->end() - 1; /* recalculate it*/
+
     }
+    iterator from_end = this->end() - 1;
     while (n > 0) {
       *(from_end + 1) = *from_end;
       from_end--;
@@ -510,13 +495,9 @@ from_end [ 1 ] [ 2 ] [ 3 ] [ 4 ] [   ] [ 5 ] [ 6 ] [ 7 ] [ 8 ] [ 9 ] [ 10 ] [ 11
     return (from_end);
   }
 
-  void insert(iterator position, size_type n, const value_type &val) {
-    size_t t = 0;
-    for (iterator it = position; it != end(); it++) // from position to end
-    {
-      t++;
-    }
-
+  void insert(iterator position, size_type n, const value_type &val) 
+  {
+    size_t t = std::distance(position, end()) ;
     if ((this->size() + n) > this->capacity()) {
       if ((this->size() + n) < (this->capacity() * 2)) {
         this->reserve(this->capacity() * 2);
@@ -527,7 +508,6 @@ from_end [ 1 ] [ 2 ] [ 3 ] [ 4 ] [   ] [ 5 ] [ 6 ] [ 7 ] [ 8 ] [ 9 ] [ 10 ] [ 11
 
     iterator from_end = this->end() - 1;
     while (t > 0) {
-      // allocating.construct(*(from_end + n), *from_end);
       *(from_end + n) = *from_end;
 
       from_end--;
@@ -535,8 +515,8 @@ from_end [ 1 ] [ 2 ] [ 3 ] [ 4 ] [   ] [ 5 ] [ 6 ] [ 7 ] [ 8 ] [ 9 ] [ 10 ] [ 11
     }
     size_t i = 0;
     from_end++;
-    while (i < n) {
-      // allocating.construct(from_end, val);
+    while (i < n) 
+    {
       *from_end = val;
       from_end++;
 
@@ -550,23 +530,6 @@ from_end [ 1 ] [ 2 ] [ 3 ] [ 4 ] [   ] [ 5 ] [ 6 ] [ 7 ] [ 8 ] [ 9 ] [ 10 ] [ 11
               typename ft::enable_if<!ft::is_integral<InputIterator>::value,
                                      int>::argument_type * = 0) {
 
-    // size_t t = std::distance(position, this->end());
-    /*
-    size_t t = 0;
-    iterator it  = position;
-    while (it != begin())
-    {
-            it--;
-            t++;
-    }
-    for (;first != last;++first)
-    {
-            insert(iterator(start_iter +t), *first);
-            ++t;
-    }
-    */
-    // difference_type t = end() - position;
-    // difference_type t =  position - end(); //problem is here operator - ()
     size_t t = 0;
     iterator it = position;
     while (it != end()) {
@@ -574,12 +537,6 @@ from_end [ 1 ] [ 2 ] [ 3 ] [ 4 ] [   ] [ 5 ] [ 6 ] [ 7 ] [ 8 ] [ 9 ] [ 10 ] [ 11
       t++;
     }
     size_t to_be_inserted = std::distance(first.base(), last.base());
-    //  size_t to_be_inserted = 0;
-    //  while (/* condition */)
-    //  {
-    // 	/* code */
-    //  }
-
     if ((size_param + to_be_inserted) > capacity_param) {
       if ((size_param + to_be_inserted) < (capacity_param * 2)) {
         this->reserve(capacity_param * 2);
@@ -631,7 +588,7 @@ from_end [ 1 ] [ 2 ] [ 3 ] [ 4 ] [   ] [ 5 ] [ 6 ] [ 7 ] [ 8 ] [ 9 ] [ 10 ] [ 11
     size_t i = 0;
     while (i < this->capacity_param) {
       allocating.destroy(start_iter + i);
-      allocating.destroy(end_iter--);
+      // allocating.destroy(end_iter--);
       i++;
     }
 
