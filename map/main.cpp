@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 12:29:31 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/17 11:11:35 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/17 11:18:45 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int main()
     //     i++;
     // }
     
-    ft::avl_tree tes;
+    ft::avl_tree<int, std::less<int>, std::allocator<int> > tes;
     // std::map< int, int> mapp;
     ft::map< int, int> mapp;
     size_t x = 0;
