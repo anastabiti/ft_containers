@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 11:08:00 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/18 14:33:46 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/18 14:36:38 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,54 +45,33 @@ namespace ft
     template <class T, class Compare, class Allocator = std::allocator<T> >
     class avl_tree
     {
-            public:
-
+    public:
         nodes<T> *root;
-        
+
         Allocator alloc_it;
         typedef Compare compare_type;
 
     public:
-        avl_tree() :root(NULL) 
+        avl_tree() : root(NULL)
         {
-            std::cout << "d is called"<< std::endl;
-            
+            std::cout << "d is called" << std::endl;
         }
-        
-       nodes<T> * insert( nodes<T> *r,nodes<T> *new_to_add)
+
+        nodes<T> *insert(nodes<T> *r, nodes<T> *new_to_add)
         {
 
-        
-            
-        if( r == NULL)
-        {
-            r = new_to_add;
-            r->next_left = r->next_right = NULL;
-            std::cout << "insert root sucessfully"<< std::endl;
-            return r;             
+            if (r == NULL)
+            {
+                r = new_to_add;
+                r->next_left = r->next_right = NULL;
+                std::cout << "insert root sucessfully" << std::endl;
+                return r;
+            }
+
+            return r;
+        return r;
         }
-        
-            return r;             
-    }
+
     };
-
-    // template <class T, class Compare, class Allocator>
-    // class avl_tree
-    // {
-    //     private:
-    //     size_t  height;
-    //     avl_tree * left;
-    //     avl_tree * right;
-    //     public:
-    //     typedef T value_type;
-    //     typedef Compare compare_type;
-    //     typedef Allocator  allocator_type;
-
-    //     public:
-    //     avl_tree() : left(), right() ,height(0)
-    //     {
-    //         std::cout << " avl_tree is called " <<std::endl;
-    //     }
-    // };
-
+    
 }
