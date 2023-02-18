@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 11:08:00 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/18 12:35:43 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/18 12:38:30 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,7 +111,6 @@ namespace ft
             {
 
             // nodes<T> *new_node = new nodes<T>;
-
             // new_node->data = data_to_add;
             // new_node->next_right = NULL;
             // new_node->next_left = NULL;
@@ -120,12 +119,10 @@ namespace ft
         {
             nodes<T> *new_node = new nodes<T>;
             new_node->data = data_to_add;
-            new_node->next_right = NULL;
-            new_node->next_left = NULL;
             r = new_node;
             r->next_left = r->next_right = NULL;
-            beg = new_node;
-            end_last = new_node;
+            beg = r;
+            end_last = r;
             return r;             
         }
         
