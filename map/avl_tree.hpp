@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 11:08:00 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/18 12:38:30 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/18 12:44:00 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,49 +125,41 @@ namespace ft
             end_last = r;
             return r;             
         }
+        else
+        {
+            
+            if(data_to_add < r->data)
+            {
+                std::cout << "            if(data_to_add < r->data)"   << std::endl;
+                r->next_left = insert(r->next_left,data_to_add);
+            }
+            else
+            {
+                std::cout << "            if(data_to_add > r->data)"   << std::endl;
+                r->next_right = insert(r->next_right,data_to_add);
+            }
+        }
+
         
-        
-            // if (beg == NULL) // root nodes
-            // {
-            //     beg = new_node;
-            //     end_last = new_node;
-            //     // return ;
-            // }
-           
-            // nodes<T> *iter = beg;
-            // while (iter != NULL)
-            // {
-            //     if (beg->next_left == NULL && data_to_add < iter->data)
-            //     {
-            //         std::cout << "left is NULL  <  data is " << iter->data << std::endl;
-            //         beg->next_left = new_node;
-            //         end_last = new_node;
-            //         // return;
-            //     }
-            //     else if (beg->next_right == NULL && data_to_add > iter->data)
-            //     {
-            //         std::cout << "beg->next_right == NULL  >  data is " << iter->data << std::endl;
-            //         end_last->next_right = new_node;
-            //         end_last = new_node;
-            //         // return;
-            //     }
-            //     if(data_to_add > iter->data)
-            //     iter  =  new_node->next_left;
-    
-            //     if(data_to_add < iter->data)
-            //     iter  =  new_node->next_left;
-            // }
         }
 
         void printer()
         {
             nodes<T> *iter = beg;
+            std::cout << beg->data   << std::endl;
+
+            while (iter != NULL)
+            {
+                std::cout << iter->data   << std::endl;
+                iter = iter->next_left;
+            }
+            iter = beg;
 
             while (iter != NULL)
             {
 
                 std::cout << iter->data   << std::endl;
-                iter = iter->next_left;
+                iter = iter->next_right;
             }
 
         
