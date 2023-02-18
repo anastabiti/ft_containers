@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 11:08:00 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/18 09:30:23 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/18 09:49:40 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,10 @@ class nodes
     public:   
     T data;
     nodes *next;
+    nodes () : data(), next(NULL)
+    {
+        
+    }
     nodes(T  insert_it)
     {
         data  =  insert_it;
@@ -39,10 +43,46 @@ friend std::ostream& operator<<(std::ostream& os, const nodes& dt)
 template <class T>
 class linked_list
 {
-    nodes<T> *head;
-    nodes<T> *tail;
+    nodes<T> *beg;
+    nodes<T> *end_last;
     public:
+    linked_list() : beg(NULL), end_last(NULL) {}
+    void add(T data_to_add)
+    {
+       nodes<T> *new_node = new   nodes<T> ;
+       new_node->data = data_to_add;
+       new_node->next = NULL;
+       if(beg == NULL)
+       {
+        beg = new_node;
+        end_last = new_node;
+       }
+       else
+       {
+        end_last->next = new_node;
+        end_last = new_node;
+       }
+    }
+    
+    void printer()
+    {
+        nodes<T>* iter = beg;
+        while ( iter != NULL)
+        {
+            std::cout << iter->data << std::endl;
+            iter = iter->next;
+        }
+        
+    }
 };
+
+
+
+
+
+
+
+
 
 template <class T, class Compare, class Allocator>
 class avl_tree

@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 12:29:31 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/18 09:27:38 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/18 09:49:50 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,16 +31,22 @@ int main()
     //     i++;
     // }
     
-    ft::avl_tree<int, std::less<int>, std::allocator<int> > tes;
-    // std::map< int, int> mapp;
-    ft::map< int, int> mapp;
-    size_t x = 0;
+    // ft::avl_tree<int, std::less<int>, std::allocator<int> > tes;
+    // // std::map< int, int> mapp;
+    // ft::map< int, int> mapp;
+    // size_t x = 0;
 
 
-    ft::nodes<int> ff(1212);
-    ft::nodes<int> ff1(122);
-    std::cout << ff<< std::endl;
-    std::cout << ff1<< std::endl;
+    // ft::nodes<int> ff(1212);
+    
+    // ft::nodes<int> ff1(122);
+    
+    ft::linked_list<int> lst;
+    lst.add(32);
+    lst.add(2);
+    lst.add(3122);
+    lst.add(43122);
+    lst.printer();
     
     // int f = x;
     // while (x < 10000000)
