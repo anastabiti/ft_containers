@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 11:08:00 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/18 09:49:40 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/18 09:57:10 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,20 @@ template <class T>
 class nodes
 {
     public:   
+    int balance_height;
     T data;
-    nodes *next;
-    nodes () : data(), next(NULL)
+    nodes *next_right;
+    nodes *next_left;
+    
+    nodes () : data(), next_right(NULL) , next_left(NULL)
     {
         
     }
     nodes(T  insert_it)
     {
         data  =  insert_it;
-        next = NULL;   
+        next_right = NULL;   
+        next_left = NULL;   
     }
 friend std::ostream& operator<<(std::ostream& os, const nodes& dt)
 {
@@ -51,7 +55,7 @@ class linked_list
     {
        nodes<T> *new_node = new   nodes<T> ;
        new_node->data = data_to_add;
-       new_node->next = NULL;
+       new_node->next_right = NULL;
        if(beg == NULL)
        {
         beg = new_node;
@@ -59,7 +63,7 @@ class linked_list
        }
        else
        {
-        end_last->next = new_node;
+        end_last->next_right = new_node;
         end_last = new_node;
        }
     }
@@ -70,7 +74,7 @@ class linked_list
         while ( iter != NULL)
         {
             std::cout << iter->data << std::endl;
-            iter = iter->next;
+            iter = iter->next_right;
         }
         
     }
