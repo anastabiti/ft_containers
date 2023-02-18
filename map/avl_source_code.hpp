@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   avl_source_code.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
+/*   By: atabiti <atabiti@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 14:20:38 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/18 14:21:51 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/18 20:05:27 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<iostream>
 
-#define SPACE 10
+#define SPACE 5
 
 using namespace std;
 

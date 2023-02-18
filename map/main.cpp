@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
+/*   By: atabiti <atabiti@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 12:29:31 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/18 14:51:11 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/18 20:30:32 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <string>
 #include <iostream>
 #include "../vector/vector.hpp"
-#include "map.hpp"
+// #include "map.hpp"
 #include "avl_tree.hpp"
 // #include "avl_source_code.hpp"
 // int main() {
@@ -129,22 +129,62 @@ int main()
 
     
     
-    ft::nodes<int> f1(11);
-    ft::nodes<int> f2(2);
-    ft::nodes<int> f3(3);
-    ft::nodes<int> f4(4);
-    ft::nodes<int> *full;
-    ft::nodes<int> *full1;
-    ft::nodes<int> *full2;
-    
+
     // ft::avl_tree<int, std::less<int> , std::allocator<int> > lst;
-    ft::avl_tree<int, std::less<int> , std::allocator<int> > tree;
+    ft::avl_tree<int, std::less<int> , std::allocator<int> > obj;
+      int option, val;
+      val = 10;
+    ft::nodes<int> * new_node = new ft::nodes<int>();
+    new_node -> value = val;
+     obj.root = obj.insert(obj.root, new_node);
+    ft::nodes<int> * new_node1 = new ft::nodes<int>();
+      val = 12;
+    // ft::nodes<int> * new_node = new ft::nodes<int>();
+    new_node1 -> value = val;
+     obj.root = obj.insert(obj.root, new_node1);
+    ft::nodes<int> * new_node2 = new ft::nodes<int>();
+      val = 3;
+    // ft::nodes<int> * new_node = new ft::nodes<int>();
+    new_node2 -> value = val;
+     obj.root = obj.insert(obj.root, new_node2);
+    ft::nodes<int> * new_node3 = new ft::nodes<int>();
+      val = 0;
+    // ft::nodes<int> * new_node = new ft::nodes<int>();
+    new_node3 -> value = val;
+     obj.root = obj.insert(obj.root, new_node3);
     
-    full = tree.insert(tree.root, &f1);
-    //   tree.insert(full, &f2);
-    // tree.insert(full, &f3);
-    // tree.insert(tree.root, &f1);
-    // tree.insert(tree.root, &f2);
-    tree.print2D(full,1);
+    ft::nodes<int> * new_node4 = new ft::nodes<int>();
+      val = -1;
+    // ft::nodes<int> * new_node = new ft::nodes<int>();
+    new_node4 -> value = val;
+     obj.root = obj.insert(obj.root, new_node4);
+    // ft::nodes<int> * new_node4 = new ft::nodes<int>();
+    //   val = -1;
+    // // ft::nodes<int> * new_node = new ft::nodes<int>();
+    // new_node4 -> value = val;
+    //  obj.root = obj.insert(obj.root, new_node4);
+    ft::nodes<int> * new_node5 = new ft::nodes<int>();
+      val = 11;
+    // ft::nodes<int> * new_node = new ft::nodes<int>();
+    new_node5 -> value = val;
+     obj.root = obj.insert(obj.root, new_node5);
+    ft::nodes<int> * new_node6 = new ft::nodes<int>();
+      val = 14;
+    // ft::nodes<int> * new_node = new ft::nodes<int>();
+    new_node6 -> value = val;
+     obj.root = obj.insert(obj.root, new_node6);
+    
+          obj.print2D(obj.root, 5);
+
+
+        //   std::cout <<*obj.root << std::endl;
+
+    // full = tree.insert(tree.root, &f1);
+    // full = tree.insert(tree.root, &f2);
+    // //   tree.insert(full, &f2);
+    // // tree.insert(full, &f3);
+    // // tree.insert(tree.root, &f1);
+    // // tree.insert(tree.root, &f2);
+    // tree.print2D(full,1);
 
 }
