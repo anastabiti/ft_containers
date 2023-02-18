@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 11:08:00 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/18 09:26:51 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/18 09:30:23 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,20 +28,20 @@ class nodes
         data  =  insert_it;
         next = NULL;   
     }
-    // print_them()
-    // {
-        
-    //     while ()
-    //     {
-    //         /* code */
-    //     }
-           
-    // }
 friend std::ostream& operator<<(std::ostream& os, const nodes& dt)
 {
     os  << dt.data;
     return os;
 }
+};
+
+
+template <class T>
+class linked_list
+{
+    nodes<T> *head;
+    nodes<T> *tail;
+    public:
 };
 
 template <class T, class Compare, class Allocator>
