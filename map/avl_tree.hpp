@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 11:08:00 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/18 11:47:27 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/18 12:35:43 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,45 @@
             //         end_last = new_node;
             //    }
             
+*/
+
+/*
+    struct node* insert(struct node *r,int data){
+        
+        if(r==NULL){
+            struct node *n;
+            n = new struct node;
+            n->data = data;
+            r = n;
+            r->left = r->right = NULL;
+            r->height = 1; 
+            return r;             
+        }
+        else{
+            if(data < r->data)
+            r->left = insert(r->left,data);
+            else
+            r->right = insert(r->right,data);
+        }
+
+        r->height = calheight(r);
+
+        if(bf(r)==2 && bf(r->left)==1){
+            r = llrotation(r);
+        }
+        else if(bf(r)==-2 && bf(r->right)==-1){
+            r = rrrotation(r);
+        }
+        else if(bf(r)==-2 && bf(r->right)==1){
+            r = rlrotation(r);
+        }
+        else if(bf(r)==2 && bf(r->left)==-1){
+            r = lrrotation(r);
+        }        
+
+        return r;
+
+        }
 */
 #define MAX_difference 1
 namespace ft
@@ -59,6 +98,8 @@ namespace ft
     template <class T, class Compare, class Allocator = std::allocator<T> >
     class avl_tree
     {
+            public:
+
         nodes<T> *beg;
         nodes<T> *end_last;
         Allocator alloc_it;
@@ -66,45 +107,59 @@ namespace ft
 
     public:
         avl_tree() : beg(NULL), end_last(NULL) {}
-        void add(T data_to_add)
+       nodes<T> * insert( nodes<T> *r,T data_to_add)
+            {
+
+            // nodes<T> *new_node = new nodes<T>;
+
+            // new_node->data = data_to_add;
+            // new_node->next_right = NULL;
+            // new_node->next_left = NULL;
+            
+        if( r == NULL)
         {
-
             nodes<T> *new_node = new nodes<T>;
-
             new_node->data = data_to_add;
             new_node->next_right = NULL;
             new_node->next_left = NULL;
-
-            if (beg == NULL) // root nodes
-            {
-                beg = new_node;
-                end_last = new_node;
-                return ;
-            }
+            r = new_node;
+            r->next_left = r->next_right = NULL;
+            beg = new_node;
+            end_last = new_node;
+            return r;             
+        }
+        
+        
+            // if (beg == NULL) // root nodes
+            // {
+            //     beg = new_node;
+            //     end_last = new_node;
+            //     // return ;
+            // }
            
-            nodes<T> *iter = beg;
-            while (iter != NULL)
-            {
-                if (beg->next_left == NULL && data_to_add < iter->data)
-                {
-                    std::cout << "left is NULL  <  data is " << iter->data << std::endl;
-                    beg->next_left = new_node;
-                    end_last = new_node;
-                    return;
-                }
-                else if (beg->next_right == NULL && data_to_add > iter->data)
-                {
-                    std::cout << "beg->next_right == NULL  >  data is " << iter->data << std::endl;
-                    end_last->next_right = new_node;
-                    end_last = new_node;
-                    return;
-                }
-                if(data_to_add > iter->data)
-                iter  =  new_node->next_left;
+            // nodes<T> *iter = beg;
+            // while (iter != NULL)
+            // {
+            //     if (beg->next_left == NULL && data_to_add < iter->data)
+            //     {
+            //         std::cout << "left is NULL  <  data is " << iter->data << std::endl;
+            //         beg->next_left = new_node;
+            //         end_last = new_node;
+            //         // return;
+            //     }
+            //     else if (beg->next_right == NULL && data_to_add > iter->data)
+            //     {
+            //         std::cout << "beg->next_right == NULL  >  data is " << iter->data << std::endl;
+            //         end_last->next_right = new_node;
+            //         end_last = new_node;
+            //         // return;
+            //     }
+            //     if(data_to_add > iter->data)
+            //     iter  =  new_node->next_left;
     
-                if(data_to_add < iter->data)
-                iter  =  new_node->next_left;
-            }
+            //     if(data_to_add < iter->data)
+            //     iter  =  new_node->next_left;
+            // }
         }
 
         void printer()
@@ -114,18 +169,11 @@ namespace ft
             while (iter != NULL)
             {
 
-                std::cout << iter->data << " left" << std::endl;
+                std::cout << iter->data   << std::endl;
                 iter = iter->next_left;
             }
 
-            iter = beg;
-
-            while (iter != NULL)
-            {
-
-                std::cout << iter->data << " right" << std::endl;
-                iter = iter->next_right;
-            }
+        
         }
     };
 
