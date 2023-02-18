@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 12:29:31 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/18 14:33:36 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/18 14:51:11 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 #include "../vector/vector.hpp"
 #include "map.hpp"
 #include "avl_tree.hpp"
-#include "avl_source_code.hpp"
+// #include "avl_source_code.hpp"
 // int main() {
 //   AVLTree obj;
 //   int option, val;
@@ -127,13 +127,24 @@ int main()
     // size_t x = 0;
 
 
-    ft::nodes<int> ff(1212);
     
-    ft::nodes<int> ff1(122);
+    
+    ft::nodes<int> f1(11);
+    ft::nodes<int> f2(2);
+    ft::nodes<int> f3(3);
+    ft::nodes<int> f4(4);
+    ft::nodes<int> *full;
+    ft::nodes<int> *full1;
+    ft::nodes<int> *full2;
     
     // ft::avl_tree<int, std::less<int> , std::allocator<int> > lst;
     ft::avl_tree<int, std::less<int> , std::allocator<int> > tree;
     
-    tree.insert(tree.root, &ff1);
+    full = tree.insert(tree.root, &f1);
+    //   tree.insert(full, &f2);
+    // tree.insert(full, &f3);
+    // tree.insert(tree.root, &f1);
+    // tree.insert(tree.root, &f2);
+    tree.print2D(full,1);
 
 }

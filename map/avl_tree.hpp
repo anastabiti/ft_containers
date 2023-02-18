@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 11:08:00 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/18 14:39:38 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/18 14:47:52 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 /* AVL trees are binary search trees in which the difference between the height of the left and right subtree is either
 	-1, 0, or +1.*/
 #define MAX_difference 1
+#define SPACE 4
 
 namespace ft
 {
@@ -58,7 +59,7 @@ class avl_tree
 	avl_tree()
 		: root(NULL)
 	{
-		std::cout << "d is called" << std::endl;
+		std::cout << "d.c is called" << std::endl;
 	}
 
 	nodes<T> *insert(nodes<T> *r, nodes<T> *new_to_add)
@@ -72,14 +73,28 @@ class avl_tree
 		}  
         if(new_to_add->data < r->data)
         {
+		std::cout << "new_to_add->data < r->data" << std::endl;
             insert(r->next_left, new_to_add);
         }
         else if(new_to_add->data > r->data)
         {
+		std::cout << "new_to_add->data > r->data" << std::endl;
             insert(r->next_right, new_to_add);
         }           
 		return (r);
 	}
+    void print2D(nodes<T> * r, int space) {
+    if (r == NULL) // Base case  1
+      return;
+    space += SPACE; // Increase distance between levels   2
+    print2D(r->next_right, space); // Process right child first 3 
+    std::cout  << std::endl;
+    for (int i = SPACE; i < space; i++) // 5 
+      std::cout << " "; // 5.1  
+    std::cout  << r -> data << "\n"; // 6
+    print2D(r->next_left, space); // Process left child  7
+  }
+  
 };
 
 } // namespace ft
