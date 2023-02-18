@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 12:29:31 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/18 10:48:27 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/18 11:16:57 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,10 @@ int main()
     // ft::nodes<int> ff1(122);
     
     ft::avl_tree<int, std::less<int> , std::allocator<int> > lst;
-    lst.add(32);
+    lst.add(10);
     lst.add(2);
-    lst.add(3122);
-    lst.add(43122);
+    lst.add(11);
+    lst.add(4);
     lst.printer();
     
     // int f = x;

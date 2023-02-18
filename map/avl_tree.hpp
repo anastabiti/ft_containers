@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 11:08:00 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/18 10:56:41 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/18 11:16:42 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,34 +48,70 @@ template <class T, class Compare, class Allocator = std::allocator<T> >
     nodes<T> *beg;
     nodes<T> *end_last;
     Allocator alloc_it;
+    typedef Compare compare_type;
+
     public:
     
     avl_tree() : beg(NULL), end_last(NULL) {}
     void add(T data_to_add)
     {
+        
+    
        nodes<T> *new_node = new   nodes<T> ;
     //    T new_node = alloc_it.allocate(1);
  
        new_node->data = data_to_add;
        new_node->next_right = NULL;
-       if(beg == NULL)
+       if(beg == NULL) // root nodes
        {
+        std::cout << "i am root  < "<< std::endl; 
         beg = new_node;
         end_last = new_node;
        }
-       else
+       else if(beg->next_left == NULL && data_to_add < beg->data)
        {
+        std::cout << "beg->next_left == NULL  <  data is "<< beg->data<<  std::endl; 
+        end_last->next_left = new_node;
+        end_last = new_node;
+       }
+       else  if(beg->next_right == NULL && data_to_add > beg->data)
+       {
+           std::cout << "beg->next_right == NULL  >  data is "<< beg->data<< std::endl; 
         end_last->next_right = new_node;
         end_last = new_node;
        }
+    //    else if(beg->next_left != NULL && data_to_add < beg->data)
+    //    {
+    //        std::cout << "beg->next_left == NULL  < "<< std::endl; 
+    //     end_last->next_right = new_node;
+    //     end_last = new_node;
+    //    }
+    //    else  if(beg->next_right == NULL && data_to_add > beg->data)
+    //    {
+    //        std::cout << "beg->next_right == NULL  > "<< std::endl; 
+    //     end_last->next_right = new_node;
+    //     end_last = new_node;
+    //    }
+       
     }
     
     void printer()
     {
         nodes<T>* iter = beg;
+        
         while ( iter != NULL)
         {
-            std::cout << iter->data << std::endl;
+            
+            std::cout << iter->data << " left"  << std::endl;
+            iter = iter->next_left;
+        }
+        
+        iter = beg;
+        
+        while ( iter != NULL)
+        {
+            
+            std::cout << iter->data << " right"  << std::endl;
             iter = iter->next_right;
         }
         
