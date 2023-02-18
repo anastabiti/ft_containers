@@ -6,13 +6,43 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 11:08:00 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/17 11:17:42 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/18 09:26:51 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+/* AVL trees are binary search trees in which the difference between the height of the left and right subtree is either -1, 0, or +1.*/
+#define MAX_difference  1
 namespace ft
 {
+
+/* linked list : node */
+template <class T>
+class nodes
+{
+    public:   
+    T data;
+    nodes *next;
+    nodes(T  insert_it)
+    {
+        data  =  insert_it;
+        next = NULL;   
+    }
+    // print_them()
+    // {
+        
+    //     while ()
+    //     {
+    //         /* code */
+    //     }
+           
+    // }
+friend std::ostream& operator<<(std::ostream& os, const nodes& dt)
+{
+    os  << dt.data;
+    return os;
+}
+};
 
 template <class T, class Compare, class Allocator>
 class avl_tree
