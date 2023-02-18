@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 11:08:00 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/18 12:44:00 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/18 13:47:12 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,10 +110,10 @@ namespace ft
        nodes<T> * insert( nodes<T> *r,T data_to_add)
             {
 
-            // nodes<T> *new_node = new nodes<T>;
-            // new_node->data = data_to_add;
-            // new_node->next_right = NULL;
-            // new_node->next_left = NULL;
+            nodes<T> *new_node = new nodes<T>;
+            new_node->data = data_to_add;
+            new_node->next_right = NULL;
+            new_node->next_left = NULL;
             
         if( r == NULL)
         {
@@ -125,20 +125,18 @@ namespace ft
             end_last = r;
             return r;             
         }
-        else
-        {
-            
-            if(data_to_add < r->data)
-            {
-                std::cout << "            if(data_to_add < r->data)"   << std::endl;
-                r->next_left = insert(r->next_left,data_to_add);
-            }
-            else
-            {
-                std::cout << "            if(data_to_add > r->data)"   << std::endl;
-                r->next_right = insert(r->next_right,data_to_add);
-            }
-        }
+        else if(beg->next_left == NULL && data_to_add < end_last->data)
+               {
+                    std::cout << "left is NULL  <  data is "<< end_last->data<<  std::endl;
+                    beg->next_left = new_node;
+                    end_last = new_node;
+               }
+               else  if(beg->next_right == NULL && data_to_add > end_last->data)
+               {
+                    std::cout << "beg->next_right == NULL  >  data is "<< end_last->data<< std::endl;
+                    end_last->next_right = new_node;
+                    end_last = new_node;
+               }
 
         
         }
