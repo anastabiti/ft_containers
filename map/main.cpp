@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: atabiti <atabiti@student.1337.ma>          +#+  +:+       +#+        */
+/*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 12:29:31 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/18 20:30:32 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/19 08:55:09 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,12 +133,12 @@ int main()
     // ft::avl_tree<int, std::less<int> , std::allocator<int> > lst;
     ft::avl_tree<int, std::less<int> , std::allocator<int> > obj;
       int option, val;
-      val = 10;
+      val = 1;
     ft::nodes<int> * new_node = new ft::nodes<int>();
     new_node -> value = val;
      obj.root = obj.insert(obj.root, new_node);
     ft::nodes<int> * new_node1 = new ft::nodes<int>();
-      val = 12;
+      val = 2;
     // ft::nodes<int> * new_node = new ft::nodes<int>();
     new_node1 -> value = val;
      obj.root = obj.insert(obj.root, new_node1);
@@ -148,13 +148,13 @@ int main()
     new_node2 -> value = val;
      obj.root = obj.insert(obj.root, new_node2);
     ft::nodes<int> * new_node3 = new ft::nodes<int>();
-      val = 0;
+      val = 4;
     // ft::nodes<int> * new_node = new ft::nodes<int>();
     new_node3 -> value = val;
      obj.root = obj.insert(obj.root, new_node3);
     
     ft::nodes<int> * new_node4 = new ft::nodes<int>();
-      val = -1;
+      val = 5;
     // ft::nodes<int> * new_node = new ft::nodes<int>();
     new_node4 -> value = val;
      obj.root = obj.insert(obj.root, new_node4);
@@ -164,7 +164,7 @@ int main()
     // new_node4 -> value = val;
     //  obj.root = obj.insert(obj.root, new_node4);
     ft::nodes<int> * new_node5 = new ft::nodes<int>();
-      val = 11;
+      val = 6;
     // ft::nodes<int> * new_node = new ft::nodes<int>();
     new_node5 -> value = val;
      obj.root = obj.insert(obj.root, new_node5);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   avl_tree.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: atabiti <atabiti@student.1337.ma>          +#+  +:+       +#+        */
+/*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 11:08:00 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/18 20:17:54 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/19 08:56:58 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,94 +62,64 @@ class avl_tree
 		std::cout << "d.c is called" << std::endl;
 	}
 
-	// nodes<T> *insert(nodes<T> *r, nodes<T> *new_to_add)
-	// {
-	// 	if (r == NULL)
-	// 	{
-	// 		r = new_to_add;
-	// 		r->left = r->right = NULL;
-	// 		std::cout << "insert root sucessfully" << std::endl;
-	// 		return (r);
-	// 	}  
-    //     if(new_to_add->value < r->value)
-    //     {
-	// 	std::cout << "new_to_add->value < r->value" << std::endl;
-    //         insert(r->left, new_to_add);
-    //     }
-    //     else if(new_to_add->value > r->value)
-    //     {
-	// 	std::cout << "new_to_add->value > r->value" << std::endl;
-    //         insert(r->right, new_to_add);
-    //     }           
-	// 	return (r);
-	// }
-	
-	  	nodes<T> *insert(nodes<T> *r, nodes<T> *new_node)
+	nodes<T> *insert(nodes<T> *root, nodes<T> *new_node)
+	{
+		if (root == NULL)
+		{
+			root = new_node;
+			return (root);
+		}
+    
+		if (new_node->value < root->value)
+		{
+			root->left = insert(root->left, new_node);
+		}
+		else if (new_node->value > root->value)
+		{
+			root->right = insert(root->right, new_node);
+		}
+		else //duplicate
+		{
+			return (root);
+		}
 
- {
-    if (r == NULL) {
-      r = new_node;
-      std::cout << "Value inserted successfully" << std::endl;
-      return r;
-    }
+		// int bf = getBalanceFactor(r);
+		// // Left Left Case
+		// if (bf > 1 && new_node -> value < r -> left -> value)
+		//   return (rightRotate(r));
 
-    if (new_node -> value < r -> value) {
-      r -> left = insert(r -> left, new_node);
-    } else if (new_node -> value > r -> value) {
-      r -> right = insert(r -> right, new_node);
-    } else {
-      std::cout << "No duplicate values allowed!" << std::endl;
-      return r;
-    }
+		// // Right Right Case
+		// if (bf < -1 && new_node -> value > r -> right -> value)
+		//   return (leftRotate(r));
 
-    // int bf = getBalanceFactor(r);
-    // // Left Left Case  
-    // if (bf > 1 && new_node -> value < r -> left -> value)
-    //   return rightRotate(r);
+		// // Left Right Case
+		// if (bf > 1 && new_node -> value > r -> left -> value) {
+		//   r -> left = leftRotate(r -> left);
+		//   return (rightRotate(r));
+		// }
 
-    // // Right Right Case  
-    // if (bf < -1 && new_node -> value > r -> right -> value)
-    //   return leftRotate(r);
+		// // Right Left Case
+		// if (bf < -1 && new_node -> value < r -> right -> value) {
+		//   r -> right = rightRotate(r -> right);
+		//   return (leftRotate(r));
+		// }
 
-    // // Left Right Case  
-    // if (bf > 1 && new_node -> value > r -> left -> value) {
-    //   r -> left = leftRotate(r -> left);
-    //   return rightRotate(r);
-    // }
+		/* return the (unchanged) node pointer */
+		return (root);
+	}
 
-    // // Right Left Case  
-    // if (bf < -1 && new_node -> value < r -> right -> value) {
-    //   r -> right = rightRotate(r -> right);
-    //   return leftRotate(r);
-    // }
-
-    /* return the (unchanged) node pointer */
-    return r;
-
-  }
-
-
-
-
-
-
-
-
-
-
-	
-    void print2D(nodes<T> * r, int space) {
-    if (r == NULL) // Base case  1
-      return;
-    space += SPACE; // Increase distance between levels   2
-    print2D(r->right, space); // Process right child first 3 
-   std::cout  << std::endl;
-    for (int i = SPACE; i < space; i++) // 5 
-    std::cout << " "; // 5.1  
-   std::cout  << r -> value << "\n"; // 6
-    print2D(r->left, space); // Process left child  7
-  }
-  
+	void print2D(nodes<T> *r, int space)
+	{
+		if (r == NULL) // Base case  1
+			return ;
+		space += SPACE;           // Increase distance between levels   2
+		print2D(r->right, space); // Process right child first 3
+		std::cout << std::endl;
+		for (int i = SPACE; i < space; i++) // 5
+			std::cout << " ";               // 5.1
+		std::cout << r->value << "\n";      // 6
+		print2D(r->left, space);            // Process left child  7
+	}
 };
 
 } // namespace ft
