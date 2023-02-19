@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 11:08:00 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/19 09:30:33 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/19 10:45:03 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,27 @@ class avl_tree
 		std::cout << "d.c is called" << std::endl;
 	}
 
+	int get_balance_height(nodes<T> *r)
+	{
+		int i = 0;
+		if (r == NULL)
+			return (-1);
+		else
+		{
+      
+			int rr = get_balance_height(r->right);
+			int l = get_balance_height(r->left);
+      // std::cout << "right : " <<rr<< std::endl;
+      // // std::cout << "______________________" <<rr<< std::endl;
+      
+      // std::cout << "left : " <<l<< std::endl;
+      // // std::cout << "______________________" <<rr<< std::endl;
+			if (rr > l)
+				return (rr + 1);
+			else
+				return (l + 1);
+		}
+	}
 	nodes<T> *insert(nodes<T> *root, nodes<T> *new_node)
 	{
 		if (root == NULL)
@@ -82,7 +103,16 @@ class avl_tree
 		{
 			return (root);
 		}
-
+    int balance_check   = get_balance_height(root);
+    std::cout << "balance_check  = "<< balance_check << std::endl;
+    if(new_node->left != NULL)
+  {
+    if ( balance_check > 1 && new_node != NULL && new_node->value < root->left->value) 
+    {
+      std::cout << "( balance_check > 1 && new_node->value < root->left->value)"<< balance_check << std::endl;      
+    } 
+    }
+    
 		// int bf = getBalanceFactor(r);
 		// // Left Left Case
 		// if (bf > 1 && new_node -> value < r -> left -> value)
@@ -108,27 +138,6 @@ class avl_tree
 		return (root);
 	}
   
-	int get_balance_height(nodes<T> *r)
-	{
-		int i = 0;
-		if (r == NULL)
-			return (-1);
-		else
-		{
-      
-			int rr = get_balance_height(r->right);
-			int l = get_balance_height(r->left);
-      std::cout << "right : " <<rr<< std::endl;
-      // std::cout << "______________________" <<rr<< std::endl;
-      
-      std::cout << "left : " <<l<< std::endl;
-      // std::cout << "______________________" <<rr<< std::endl;
-			if (rr > l)
-				return (rr + 1);
-			else
-				return (l + 1);
-		}
-	}
 
 	void print2D(nodes<T> *r, int space)
 	{
