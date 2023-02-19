@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 11:08:00 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/19 08:56:58 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/19 08:57:37 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ class avl_tree
 	{
 		if (root == NULL)
 		{
-			root = new_node;
+      root = new_node;
 			return (root);
 		}
     

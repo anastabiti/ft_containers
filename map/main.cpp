@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 12:29:31 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/19 08:55:09 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/19 09:09:02 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 #include "avl_tree.hpp"
 // #include "avl_source_code.hpp"
 // int main() {
-//   AVLTree obj;
+//   AVLTree tree_avl;
 //   int option, val;
 
 //   do {
@@ -46,15 +46,15 @@
 //       cout << "Enter VALUE of TREE NODE to INSERT in AVL Tree: ";
 //       cin >> val;
 //       new_node -> value = val;
-//       obj.root = obj.insert(obj.root, new_node);
+//       tree_avl.root = tree_avl.insert(tree_avl.root, new_node);
 //       cout << endl;
 //       break;
 //     case 2:
 //       cout << "SEARCH" << endl;
 //       cout << "Enter VALUE of TREE NODE to SEARCH in AVL Tree: ";
 //       cin >> val;
-//       //new_node = obj.iterativeSearch(val);
-//       new_node = obj.recursiveSearch(obj.root, val);
+//       //new_node = tree_avl.iterativeSearch(val);
+//       new_node = tree_avl.recursiveSearch(tree_avl.root, val);
 //       if (new_node != NULL) {
 //         cout << "Value found" << endl;
 //       } else {
@@ -65,9 +65,9 @@
 //       cout << "DELETE" << endl;
 //       cout << "Enter VALUE of TREE NODE to DELETE in AVL: ";
 //       cin >> val;
-//       new_node = obj.recursiveSearch(obj.root, val);
+//       new_node = tree_avl.recursiveSearch(tree_avl.root, val);
 //       if (new_node != NULL) {
-//         obj.root = obj.deleteNode(obj.root, val);
+//         tree_avl.root = tree_avl.deleteNode(tree_avl.root, val);
 //         cout << "Value Deleted" << endl;
 //       } else {
 //         cout << "Value NOT found" << endl;
@@ -75,23 +75,23 @@
 //       break;
 //     case 4:
 //       cout << "PRINT 2D: " << endl;
-//       obj.print2D(obj.root, 5);
+//       tree_avl.print2D(tree_avl.root, 5);
 //       cout << endl;
 //       //cout <<"Print Level Order BFS: \n";
-//       //obj.printLevelOrderBFS(obj.root);
+//       //tree_avl.printLevelOrderBFS(tree_avl.root);
 //       //cout <<endl;
 //       //	      cout <<"PRE-ORDER: ";
-//       //	      obj.printPreorder(obj.root);
+//       //	      tree_avl.printPreorder(tree_avl.root);
 //       //	      cout<<endl;
 //       //	      cout <<"IN-ORDER: ";
-//       //	      obj.printInorder(obj.root);
+//       //	      tree_avl.printInorder(tree_avl.root);
 //       //	      cout<<endl;
 //       //	      cout <<"POST-ORDER: ";
-//       //	      obj.printPostorder(obj.root);
+//       //	      tree_avl.printPostorder(tree_avl.root);
 //       break;
 //     case 5:
 //       cout << "TREE HEIGHT" << endl;
-//       cout << "Height : " << obj.height(obj.root) << endl;
+//       cout << "Height : " << tree_avl.height(tree_avl.root) << endl;
 //       break;
 //     case 6:
 //       system("cls");
@@ -111,80 +111,21 @@
 
 int main()
 {
-    // ft::vector< std::pair <int, int> > vecc;
-    // std::vector< int > vecc;
-    // size_t  i = 0 ;
-    // while (i< 10000000)
-    // {
-    //     vecc.push_back( i*3);
-    //     // vecc.push_back( std::make_pair(i,i*3));
-    //     i++;
-    // }
-    
-    // ft::avl_tree<int, std::less<int>, std::allocator<int> > tes;
-    // // std::map< int, int> mapp;
-    // ft::map< int, int> mapp;
-    // size_t x = 0;
+    ft::avl_tree<int, std::less<int> , std::allocator<int> > tree_avl;
+    int val;
+    int i   = 0 ;
+    while (i < 10)
+    {
+
+      val = i * 2;
+  
+      ft::nodes<int> * new_node = new ft::nodes<int>();
+      new_node -> value = val;
+      tree_avl.root = tree_avl.insert(tree_avl.root, new_node);      
+      i++;
+    }
 
 
-    
-    
-
-    // ft::avl_tree<int, std::less<int> , std::allocator<int> > lst;
-    ft::avl_tree<int, std::less<int> , std::allocator<int> > obj;
-      int option, val;
-      val = 1;
-    ft::nodes<int> * new_node = new ft::nodes<int>();
-    new_node -> value = val;
-     obj.root = obj.insert(obj.root, new_node);
-    ft::nodes<int> * new_node1 = new ft::nodes<int>();
-      val = 2;
-    // ft::nodes<int> * new_node = new ft::nodes<int>();
-    new_node1 -> value = val;
-     obj.root = obj.insert(obj.root, new_node1);
-    ft::nodes<int> * new_node2 = new ft::nodes<int>();
-      val = 3;
-    // ft::nodes<int> * new_node = new ft::nodes<int>();
-    new_node2 -> value = val;
-     obj.root = obj.insert(obj.root, new_node2);
-    ft::nodes<int> * new_node3 = new ft::nodes<int>();
-      val = 4;
-    // ft::nodes<int> * new_node = new ft::nodes<int>();
-    new_node3 -> value = val;
-     obj.root = obj.insert(obj.root, new_node3);
-    
-    ft::nodes<int> * new_node4 = new ft::nodes<int>();
-      val = 5;
-    // ft::nodes<int> * new_node = new ft::nodes<int>();
-    new_node4 -> value = val;
-     obj.root = obj.insert(obj.root, new_node4);
-    // ft::nodes<int> * new_node4 = new ft::nodes<int>();
-    //   val = -1;
-    // // ft::nodes<int> * new_node = new ft::nodes<int>();
-    // new_node4 -> value = val;
-    //  obj.root = obj.insert(obj.root, new_node4);
-    ft::nodes<int> * new_node5 = new ft::nodes<int>();
-      val = 6;
-    // ft::nodes<int> * new_node = new ft::nodes<int>();
-    new_node5 -> value = val;
-     obj.root = obj.insert(obj.root, new_node5);
-    ft::nodes<int> * new_node6 = new ft::nodes<int>();
-      val = 14;
-    // ft::nodes<int> * new_node = new ft::nodes<int>();
-    new_node6 -> value = val;
-     obj.root = obj.insert(obj.root, new_node6);
-    
-          obj.print2D(obj.root, 5);
-
-
-        //   std::cout <<*obj.root << std::endl;
-
-    // full = tree.insert(tree.root, &f1);
-    // full = tree.insert(tree.root, &f2);
-    // //   tree.insert(full, &f2);
-    // // tree.insert(full, &f3);
-    // // tree.insert(tree.root, &f1);
-    // // tree.insert(tree.root, &f2);
-    // tree.print2D(full,1);
+    tree_avl.print2D(tree_avl.root, 5);
 
 }
