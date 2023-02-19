@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 11:08:00 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/19 08:57:37 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/19 09:22:47 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,10 +66,10 @@ class avl_tree
 	{
 		if (root == NULL)
 		{
-      root = new_node;
+			root = new_node;
 			return (root);
 		}
-    
+
 		if (new_node->value < root->value)
 		{
 			root->left = insert(root->left, new_node);
@@ -106,6 +106,22 @@ class avl_tree
 
 		/* return the (unchanged) node pointer */
 		return (root);
+	}
+	int get_balance_height(nodes<T> *r)
+	{
+		int i = 0;
+		if (r == NULL)
+			return (-1);
+		else
+		{
+			int rr = get_balance_height(r->right);
+
+			int l = get_balance_height(r->left);
+			if (rr > l)
+				return (rr + 1);
+			else
+				return (l + 1);
+		}
 	}
 
 	void print2D(nodes<T> *r, int space)

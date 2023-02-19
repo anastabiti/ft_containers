@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 12:29:31 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/19 09:09:02 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/19 09:14:19 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,5 +127,7 @@ int main()
 
 
     tree_avl.print2D(tree_avl.root, 5);
+    int he = tree_avl.get_balance_height(tree_avl.root);
+    std::cout << "he  = "<< he << std::endl;
 
 }
