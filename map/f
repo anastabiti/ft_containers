@@ -1,11 +1,120 @@
-In file included from main.cpp:19:
-./map.hpp:62:17: error: no matching function for call to object of type 'const std::__1::less<int>'
-    std::cout <<comp() <<std::endl;
-                ^~~~
-main.cpp:33:24: note: in instantiation of member function 'ft::map<int, int, std::__1::less<int>, std::__1::allocator<std::__1::pair<const int, int> > >::map' requested here
-    ft::map< int, int> mapp;
-                       ^
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/__functional_base:54:10: note: candidate function not viable: requires 2 arguments, but 0 were provided
-    bool operator()(const _Tp& __x, const _Tp& __y) const
-         ^
-1 error generated.
+#include <iostream>
+#define MAX_difference 1
+#define SPACE 4
+namespace ft
+{
+template <class T>
+class nodes
+{
+  public:
+    int balance_height;
+    T value;
+    nodes *right;
+    nodes *left;
+
+    nodes()
+        : value(), right(NULL), left(NULL)
+    {
+    }
+
+    nodes(T insert_it)
+    {
+        value = insert_it;
+        right = NULL;
+        left = NULL;
+    }
+};
+
+template <class T, class Compare, class Allocator = std::allocator<T> >
+class avl_tree
+{
+  public:
+    nodes<T> *root;
+
+    Allocator alloc_it;
+    typedef Compare compare_type;
+
+  public:
+    avl_tree()
+        : root(NULL)
+    {
+        std::cout << "d.c is called" << std::endl;
+    }
+
+    nodes<T> *insert(nodes<T> *root, nodes<T> *new_node)
+    {
+        if (root == NULL)
+        {
+            root = new_node;
+            return (root);
+        }
+
+        if (new_node->value < root->value)
+        {
+            root->left = insert(root->left, new_node);
+        }
+        else if (new_node->value > root->value)
+        {
+            root->right = insert(root->right, new_node);
+        }
+        else 
+        {
+            return (root);
+        }
+
+        return (root);
+    }
+  
+    int get_balance_height(nodes<T> *r)
+    {
+        int i = 0;
+        if (r == NULL)
+            return (-1);
+        else
+        {
+
+            int rr = get_balance_height(r->right);
+            int l = get_balance_height(r->left);      
+            if (rr > l)
+                return (rr + 1);
+            else
+                return (l + 1);
+        }
+    }
+
+    void print2D(nodes<T> *r, int space)
+    {
+        if (r == NULL) 
+            return ;
+        space += SPACE;           
+        print2D(r->right, space); 
+        std::cout << std::endl;
+        for (int i = SPACE; i < space; i++) 
+            std::cout << " ";              
+        std::cout << r->value << "\n";     
+    
+        print2D(r->left, space);            
+    }
+};
+
+}
+
+
+int main()
+{
+    ft::avl_tree<int, std::less<int> , std::allocator<int> > tree_avl;
+    int val;
+    int i   = 0 ;
+    while (i < 3)
+    {
+      val = i+1;
+      ft::nodes<int> * new_node = new ft::nodes<int>();
+      new_node -> value = val;
+      tree_avl.root = tree_avl.insert(tree_avl.root, new_node);      
+      i++;
+    }
+    tree_avl.print2D(tree_avl.root, 5);
+    int he = tree_avl.get_balance_height(tree_avl.root);
+    std::cout << "he  = "<< he << std::endl;
+
+}

@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 11:08:00 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/19 09:22:47 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/19 09:30:33 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,6 +107,7 @@ class avl_tree
 		/* return the (unchanged) node pointer */
 		return (root);
 	}
+  
 	int get_balance_height(nodes<T> *r)
 	{
 		int i = 0;
@@ -114,9 +115,14 @@ class avl_tree
 			return (-1);
 		else
 		{
+      
 			int rr = get_balance_height(r->right);
-
 			int l = get_balance_height(r->left);
+      std::cout << "right : " <<rr<< std::endl;
+      // std::cout << "______________________" <<rr<< std::endl;
+      
+      std::cout << "left : " <<l<< std::endl;
+      // std::cout << "______________________" <<rr<< std::endl;
 			if (rr > l)
 				return (rr + 1);
 			else
