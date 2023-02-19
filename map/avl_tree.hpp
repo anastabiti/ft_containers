@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 11:08:00 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/19 10:59:22 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/19 11:40:59 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,21 @@ class avl_tree
 				return (l + 1);
 		}
 	}
+ 	nodes<T> *leftRotate(	nodes<T> *x)
+	{
+			nodes<T>  *y = x->right;
+			nodes<T>  *T2 = y->left;
+    std::cout << "root :" << *x<< std::endl;
+    std::cout << "y :" << *y<< std::endl;
+    // std::cout << "T2 :" << *T2<< std::endl;
+    
+		// Perform rotation
+		y->left = x;
+		x->right = T2;
+
+		return (y);
+	}
+  
 	nodes<T> *insert(nodes<T> *root, nodes<T> *new_node)
 	{
 		if (root == NULL)
@@ -107,7 +122,7 @@ class avl_tree
     int right_balance   = get_balance_height(root->right);
     int sum = left_balance - right_balance;
     
-    std::cout << "sum  = "<< sum << std::endl;
+    // std::cout << "sum  = "<< sum << std::endl;
     
     if ( sum > 1 && new_node->value < root->left->value) 
     {
@@ -116,7 +131,9 @@ class avl_tree
 
     if ( sum < -1  && new_node->value > root->right->value) 
     {
-      std::cout << "( sum < -1  && new_node->value > root->right->value) "<< sum << std::endl;      
+      std::cout << "( sum < -1  && new_node->value > root->right->value) "<< sum << std::endl;  
+      std::cout << " root : "<< *root << std::endl;  
+      return leftRotate(root);
     } 
 
     if ( sum  > 1  && new_node->value > root->left->value) 
