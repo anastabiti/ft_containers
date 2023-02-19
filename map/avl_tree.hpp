@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 11:08:00 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/19 11:55:50 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/19 11:58:00 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ class avl_tree
 				return (l + 1);
 		}
 	}
- 	nodes<T> *leftRotate(	nodes<T> *x)
+ 	nodes<T> *left_Rotation(	nodes<T> *x)
 	{
 			nodes<T>  *y = x->right;
 			nodes<T>  *T2 = y->left;
@@ -97,7 +97,7 @@ class avl_tree
 
 		return (y);
 	}
- 	nodes<T> *rightRotate(	nodes<T> *x)
+ 	nodes<T> *right_Rotation(	nodes<T> *x)
 	{
 			nodes<T>  *y = x->left;
 			nodes<T>  *T2 = y->right;
@@ -145,14 +145,14 @@ class avl_tree
     {
       std::cout << "( sum > 1 && new_node->value < root->left->value)"<< sum << std::endl;  
       std::cout << " root : "<< *root << std::endl;  
-      		return (rightRotate(root));
+      		return (right_Rotation(root));
     } 
 
     if ( sum < -1  && new_node->value > root->right->value) 
     {
       std::cout << "( sum < -1  && new_node->value > root->right->value) "<< sum << std::endl;  
       std::cout << " root : "<< *root << std::endl;  
-      return leftRotate(root);
+      return left_Rotation(root);
     } 
 
     if ( sum  > 1  && new_node->value > root->left->value) 
@@ -169,22 +169,22 @@ class avl_tree
 		// int bf = getBalanceFactor(r);
 		// // Left Left Case
 		// if (bf > 1 && new_node -> value < r -> left -> value)
-		//   return (rightRotate(r));
+		//   return (right_Rotation(r));
 
 		// // Right Right Case
 		// if (bf < -1 && new_node -> value > r -> right -> value)
-		//   return (leftRotate(r));
+		//   return (left_Rotation(r));
 
 		// // Left Right Case
 		// if (bf > 1 && new_node -> value > r -> left -> value) {
-		//   r -> left = leftRotate(r -> left);
-		//   return (rightRotate(r));
+		//   r -> left = left_Rotation(r -> left);
+		//   return (right_Rotation(r));
 		// }
 
 		// // Right Left Case
 		// if (bf < -1 && new_node -> value < r -> right -> value) {
-		//   r -> right = rightRotate(r -> right);
-		//   return (leftRotate(r));
+		//   r -> right = right_Rotation(r -> right);
+		//   return (left_Rotation(r));
 		// }
 
 		/* return the (unchanged) node pointer */
