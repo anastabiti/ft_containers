@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 11:08:00 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/19 12:52:43 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/19 12:59:33 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -143,21 +143,21 @@ class avl_tree
     
     if ( sum > 1 && new_node->value < root->left->value) 
     {
-      std::cout << "( sum > 1 && new_node->value < root->left->value)"<< sum << std::endl;  
-      std::cout << " root : "<< *root << std::endl;  
+      std::cout << "right rotation"<< std::endl;  
+      // std::cout << " root : "<< *root << std::endl;  
       		return (right_Rotation(root));
     } 
 
     if ( sum < -1  && new_node->value > root->right->value) 
     {
-      std::cout << "( sum < -1  && new_node->value > root->right->value) "<< sum << std::endl;  
-      std::cout << " root : "<< *root << std::endl;  
+      std::cout << "left rotation" << std::endl;  
+      // std::cout << " root : "<< *root << std::endl;  
       return left_Rotation(root);
     } 
 
     if ( sum  > 1  && new_node->value > root->left->value) 
     {
-      std::cout << " ( sum  > 1  && new_node->value > root->left->value) "<< sum << std::endl; 
+      std::cout << "left . right rotation"<< sum << std::endl; 
       root -> left = left_Rotation(root->left);
 		  return (right_Rotation(root));
             
