@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 11:08:00 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/19 11:40:59 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/19 11:55:50 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,6 +97,23 @@ class avl_tree
 
 		return (y);
 	}
+ 	nodes<T> *rightRotate(	nodes<T> *x)
+	{
+			nodes<T>  *y = x->left;
+			nodes<T>  *T2 = y->right;
+
+
+      
+    std::cout << "root :" << *x<< std::endl;
+    std::cout << "y :" << *y<< std::endl;
+    // std::cout << "T2 :" << *T2<< std::endl;
+    
+		// Perform rotation
+		y->right = x;
+		x->left = T2;
+
+		return (y);
+	}
   
 	nodes<T> *insert(nodes<T> *root, nodes<T> *new_node)
 	{
@@ -126,7 +143,9 @@ class avl_tree
     
     if ( sum > 1 && new_node->value < root->left->value) 
     {
-      std::cout << "( sum > 1 && new_node->value < root->left->value)"<< sum << std::endl;      
+      std::cout << "( sum > 1 && new_node->value < root->left->value)"<< sum << std::endl;  
+      std::cout << " root : "<< *root << std::endl;  
+      		return (rightRotate(root));
     } 
 
     if ( sum < -1  && new_node->value > root->right->value) 
