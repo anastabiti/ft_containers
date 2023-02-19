@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 12:29:31 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/19 13:01:06 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/19 13:06:40 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,22 +26,22 @@ int main()
     // while (i < 5)
     // {
 
-      val = 3;
+      val = 33;
       ft::nodes<int> * new_node = new ft::nodes<int>();
       new_node->value = val;
       tree_avl.root = tree_avl.insert(tree_avl.root, new_node);      
-      val = 2;
+      val = 43;
       ft::nodes<int> * tr = new ft::nodes<int>();
       tr->value = val;
       tree_avl.root = tree_avl.insert(tree_avl.root, tr);      
-      val = 0;
+      val = 34;
       ft::nodes<int> * tr0 = new ft::nodes<int>();
       tr0->value = val;
       tree_avl.root = tree_avl.insert(tree_avl.root, tr0);      
-      val = 1;
-      ft::nodes<int> * tr1 = new ft::nodes<int>();
-      tr1->value = val;
-      tree_avl.root = tree_avl.insert(tree_avl.root, tr1);      
+      // val = 1;
+      // ft::nodes<int> * tr1 = new ft::nodes<int>();
+      // tr1->value = val;
+      // tree_avl.root = tree_avl.insert(tree_avl.root, tr1);      
       
       // val = 4;
       // ft::nodes<int> * node1 = new ft::nodes<int>();

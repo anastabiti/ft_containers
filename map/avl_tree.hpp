@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 11:08:00 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/19 12:59:33 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/19 13:07:44 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -166,6 +166,8 @@ class avl_tree
     if ( sum  < -1  && new_node->value < root->right->value) 
     {
       std::cout << " ( sum  < -1  && new_node->value < root->right->value)  "<< sum << std::endl;      
+      root -> right = right_Rotation(root->right);
+		  return (left_Rotation(root));
     } 
 
     
