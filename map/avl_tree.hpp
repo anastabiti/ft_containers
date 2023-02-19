@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 11:08:00 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/19 13:32:41 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/19 13:41:18 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ class avl_tree
 	avl_tree()
 		: root(NULL)
 	{
-		std::cout << "d.c is called" << std::endl;
+		// std::cout << "d.c is called" << std::endl;
 	}
 
 	int get_balance_height(nodes<T> *r)
@@ -86,11 +86,8 @@ class avl_tree
 	{
 		nodes<T> *y = x->right;
 		nodes<T> *T2 = y->left;
-		std::cout << "root :" << *x << std::endl;
-		std::cout << "y :" << *y << std::endl;
-		// std::cout << "T2 :" << *T2<< std::endl;
-
-		// Perform rotation
+		// std::cout << "root :" << *x << std::endl;
+		// std::cout << "y :" << *y << std::endl;
 		y->left = x;
 		x->right = T2;
 
@@ -101,11 +98,8 @@ class avl_tree
 		nodes<T> *y = x->left;
 		nodes<T> *T2 = y->right;
 
-		std::cout << "root :" << *x << std::endl;
-		std::cout << "y :" << *y << std::endl;
-		// std::cout << "T2 :" << *T2<< std::endl;
-
-		// Perform rotation
+		// std::cout << "root :" << *x << std::endl;
+		// std::cout << "y :" << *y << std::endl;
 		y->right = x;
 		x->left = T2;
 
