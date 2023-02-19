@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 11:08:00 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/19 10:49:52 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/19 10:59:22 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,37 +103,32 @@ class avl_tree
 		{
 			return (root);
 		}
-    int balance_check   = get_balance_height(root);
-    std::cout << "balance_check  = "<< balance_check << std::endl;
+    int left_balance   = get_balance_height(root->left);
+    int right_balance   = get_balance_height(root->right);
+    int sum = left_balance - right_balance;
     
-  //   if(new_node->left != NULL)
-  // {
-    if ( balance_check > 1 && new_node->value < root->left->value) 
+    std::cout << "sum  = "<< sum << std::endl;
+    
+    if ( sum > 1 && new_node->value < root->left->value) 
     {
-      std::cout << "( balance_check > 1 && new_node->value < root->left->value)"<< balance_check << std::endl;      
+      std::cout << "( sum > 1 && new_node->value < root->left->value)"<< sum << std::endl;      
     } 
-  // }
-  //   if(new_node->right != NULL)
-  // {
-    if ( balance_check < -1  && new_node->value > root->right->value) 
+
+    if ( sum < -1  && new_node->value > root->right->value) 
     {
-      std::cout << "( balance_check < -1  && new_node->value > root->right->value) "<< balance_check << std::endl;      
+      std::cout << "( sum < -1  && new_node->value > root->right->value) "<< sum << std::endl;      
     } 
-  // }
-  //   if(new_node->left != NULL)
-  // {
-    if ( balance_check  > 1  && new_node->value > root->left->value) 
+
+    if ( sum  > 1  && new_node->value > root->left->value) 
     {
-      std::cout << " ( balance_check  > 1  && new_node->value > root->left->value) "<< balance_check << std::endl;      
+      std::cout << " ( sum  > 1  && new_node->value > root->left->value) "<< sum << std::endl;      
     } 
-  // }
-  //   if(new_node->right != NULL)
-  // {
-    if ( balance_check  < -1  && new_node->value < root->right->value) 
+
+    if ( sum  < -1  && new_node->value < root->right->value) 
     {
-      std::cout << " ( balance_check  < -1  && new_node->value < root->right->value)  "<< balance_check << std::endl;      
+      std::cout << " ( sum  < -1  && new_node->value < root->right->value)  "<< sum << std::endl;      
     } 
-  // }
+
     
 		// int bf = getBalanceFactor(r);
 		// // Left Left Case
