@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 12:29:31 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/19 09:56:10 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/19 09:57:07 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,7 +114,7 @@ int main()
     ft::avl_tree<int, std::less<int> , std::allocator<int> > tree_avl;
     int val;
     int i   = 0 ;
-    while (i < 3)
+    while (i < 2)
     {
 
       val = i+3;
