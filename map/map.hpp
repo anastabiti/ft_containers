@@ -6,15 +6,15 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 13:10:35 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/16 12:50:20 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/19 13:44:25 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include <memory>
 #include <map>
-#include <__config>
-
+// #include <__config>
+#include "avl_tree.hpp"
 namespace ft
 {
 
@@ -22,6 +22,8 @@ template <class Key, class T, class Compare = std::less<Key>, class Allocator = 
 class map 
 {
 private:
+typedef Allocator M_alloc;
+ft::avl_tree<T, Compare, M_alloc> a_tree;
 
 public:
 // types:

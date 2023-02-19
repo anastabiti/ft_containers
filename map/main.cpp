@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 12:29:31 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/19 13:40:43 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/19 13:45:51 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,11 @@
 #include <string>
 #include <iostream>
 #include "../vector/vector.hpp"
-// #include "map.hpp"
+#include "map.hpp"
 #include "avl_tree.hpp"
 int main()
 {
+    ft::map<int, std::less<int> , std::allocator<int> > test;
     ft::avl_tree<int, std::less<int> , std::allocator<int> > tree_avl;
     int val;
     int i   = 0 ;

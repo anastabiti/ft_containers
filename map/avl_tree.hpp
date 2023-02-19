@@ -6,10 +6,11 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 11:08:00 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/19 13:41:18 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/19 13:45:24 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
 #include <iostream>
 /* AVL trees are binary search trees in which the difference between the height of the left and right subtree is either
 	-1, 0, or +1.*/
@@ -122,7 +123,7 @@ class avl_tree
 		{
 			root->right = insert(root->right, new_node);
 		}
-		else //duplicate
+		else
 		{
 			return (root);
 		}
