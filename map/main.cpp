@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 12:29:31 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/19 11:50:38 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/19 12:00:00 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int main()
       ft::nodes<int> * new_node = new ft::nodes<int>();
       new_node->value = val;
       tree_avl.root = tree_avl.insert(tree_avl.root, new_node);      
-      val = 3;
+      val = 0;
       ft::nodes<int> * tr = new ft::nodes<int>();
       tr->value = val;
       tree_avl.root = tree_avl.insert(tree_avl.root, tr);      
