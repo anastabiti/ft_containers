@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 13:10:35 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/20 09:59:45 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/20 10:03:08 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ explicit map(const Compare& comp = Compare(), const Allocator& = Allocator())
 std::pair<iterator, bool> insert(const value_type& x)
 {   
         ft::nodes<value_type> *nd;
-        
+        a_tree.insert(a_tree.root,nd);
 }
 // iterator insert(iterator position, const value_type& x);
 // template <class InputIterator>
