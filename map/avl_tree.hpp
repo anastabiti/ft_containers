@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 11:08:00 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/19 13:45:24 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/20 09:58:19 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ template <class T>
 class nodes
 {
   public:
+//   typedef std::pair<const Key , T>
 	int balance_height;
 	T value;
 	nodes *right;
@@ -54,7 +55,7 @@ class avl_tree
 	nodes<T> *root;
 
 	Allocator alloc_it;
-	typedef Compare compare_type;
+	typedef Compare compare_type; 
 
   public:
 	avl_tree()
@@ -165,15 +166,15 @@ class avl_tree
 
 	void print2D(nodes<T> *r, int space)
 	{
-		if (r == NULL) // Base case  1
-			return ;
-		space += SPACE;           // Increase distance between levels   2
-		print2D(r->right, space); // Process right child first 3
-		std::cout << std::endl;
-		for (int i = SPACE; i < space; i++) // 5
-			std::cout << " ";               // 5.1
-		std::cout << r->value << "\n";      // 6
-		print2D(r->left, space);            // Process left child  7
+		// if (r == NULL) // Base case  1
+		// 	return ;
+		// space += SPACE;           // Increase distance between levels   2
+		// print2D(r->right, space); // Process right child first 3
+		// std::cout << std::endl;
+		// for (int i = SPACE; i < space; i++) // 5
+		// 	std::cout << " ";               // 5.1
+		// std::cout << r->value << "\n";      // 6
+		// print2D(r->left, space);            // Process left child  7
 	}
 };
 

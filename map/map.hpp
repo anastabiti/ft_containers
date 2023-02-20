@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 13:10:35 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/19 13:44:25 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/20 09:59:17 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,15 @@ namespace ft
 template <class Key, class T, class Compare = std::less<Key>, class Allocator = std::allocator<std::pair<const Key, T> > >
 class map 
 {
-private:
-typedef Allocator M_alloc;
-ft::avl_tree<T, Compare, M_alloc> a_tree;
+// private:
 
 public:
 // types:
 typedef Key key_type;
 typedef T mapped_type;
 typedef std::pair<const Key, T> value_type;
+
+
 typedef Compare key_compare;
 typedef Allocator allocator_type;
 typedef typename Allocator::reference reference;
@@ -42,6 +42,13 @@ typedef typename Allocator::pointer pointer;
 typedef typename Allocator::const_pointer const_pointer;
 typedef std::reverse_iterator<iterator> reverse_iterator;
 typedef std::reverse_iterator<const_iterator> const_reverse_iterator;
+
+
+typedef Allocator M_alloc;
+
+
+ft::avl_tree<value_type, Compare, M_alloc> a_tree;
+
 
 class value_compare: public std::binary_function<value_type,value_type,bool> 
 {
@@ -82,7 +89,11 @@ explicit map(const Compare& comp = Compare(), const Allocator& = Allocator())
 // size_type size() const;
 // size_type max_size() const;
 // T& operator[](const key_type& x);
-// pair<iterator, bool> insert(const value_type& x);
+
+std::pair<iterator, bool> insert(const value_type& x)
+{   
+        ft::nodes<value_type> *nd;
+}
 // iterator insert(iterator position, const value_type& x);
 // template <class InputIterator>
 // void insert(InputIterator first, InputIterator last);
