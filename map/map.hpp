@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 13:10:35 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/22 09:36:06 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/22 09:50:30 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,6 +95,13 @@ std::pair<iterator, bool> insert(const value_type& x)
 {   
      	     
              a_tree.root =    a_tree.insert(a_tree.root, x);
+             	// a_tree.print2D(&a_tree.root , 5);
+
+        std::cout  << a_tree.root.value->first << std::endl;
+        std::cout  << a_tree.root.value->second << std::endl;
+		
+		
+
 }
 // iterator insert(iterator position, const value_type& x);
 // template <class InputIterator>

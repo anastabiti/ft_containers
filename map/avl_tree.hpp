@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 11:08:00 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/22 09:44:45 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/22 09:49:34 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,14 +113,14 @@ class avl_tree
 
 		nodes<T*>  new_node = alloc_it.allocate(1);
 		alloc_it.construct(new_node.value , x);
-		std::cout  << new_node.value->first << std::endl;
+		// std::cout  << new_node.value->first << std::endl;
+		// std::cout  << new_node.value->second << std::endl;
 		
 		if (root.value == NULL)
 		{
 			root = new_node;
 			return (root);
 		}
-
 		// if (new_node->value < root->value)
 		// {
 		// 	root->left = insert(root->left, new_node,x);
@@ -169,16 +169,16 @@ class avl_tree
 		return (root);
 	}
 
-	void print2D(nodes<T> *r, int space)
+	void print2D(nodes<T*> *r, int space)
 	{
-		if (r == NULL) // Base case  1
+		if (r->value == NULL) // Base case  1
 			return ;
 		space += SPACE;           // Increase distance between levels   2
 		print2D(r->right, space); // Process right child first 3
 		std::cout << std::endl;
 		for (int i = SPACE; i < space; i++) // 5
 			std::cout << " ";               // 5.1
-		std::cout << r->value << "\n";      // 6
+		std::cout << r->value->first  << "hna "<< "\n";      // 6
 		print2D(r->left, space);            // Process left child  7
 	}
 };
