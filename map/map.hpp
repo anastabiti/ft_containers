@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
+/*   By: atabiti <atabiti@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 13:10:35 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/22 13:22:45 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/22 18:37:12 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,16 +73,21 @@ class map
 	explicit map(const Compare &comp = Compare(),
 					const Allocator & = Allocator())
 	{
-		std::cout << "map con is called" << std::endl;
+		// std::cout << "map con is called" << std::endl;
 	}
 
 	std::pair<iterator, bool> insert(const value_type &x)
 	{
-		a_tree.root = a_tree.insert(a_tree.root, x);
-		// a_tree.print2D(&a_tree.root , 5);
+		
+		 a_tree.insert(x);
+		 					// std::cout  <<"i am here" << std::endl;
 
-		std::cout << a_tree.root.value->first << std::endl;
-		std::cout << a_tree.root.value->second << std::endl;
+		// a_tree.root = a_tree.insert(a_tree.root, x);
+		// // a_tree.print2D(&a_tree.root , 5);
+
+		// std::cout << a_tree.root.value->first << std::endl;
+		// std::cout << a_tree.root.value->second << std::endl;
+	
 	}
 };
 

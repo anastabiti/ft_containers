@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   avl_tree.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
+/*   By: atabiti <atabiti@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 11:08:00 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/22 11:11:24 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/22 18:39:38 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ class nodes
 	{
 	}
 
-	nodes(T insert_it)
+	nodes(T insert_it): value(insert_it)
 	{
-		value = insert_it;
+		// value = insert_it;
 		right = NULL;
 		left = NULL;
 	}
@@ -52,16 +52,20 @@ template <class T, class Compare, class Allocator >
 class avl_tree
 {
   public:
-	nodes<T*> root;
-
-	Allocator alloc_it;
+  
+	typedef typename Allocator::template rebind<nodes<T> >::other	rebind_allocator;
+	rebind_allocator alloc_it;
 	typedef Compare compare_type; 
+	typedef nodes<T> node_type; 
+	typedef node_type * node_p; 
+	node_p  root;
+
 
   public:
-	avl_tree()
-		: root(NULL)
+	avl_tree(): root(NULL)
 	{
-		// std::cout << "d.c is called" << std::endl;
+		this->root  = alloc_it.allocate(1) ;
+		std::cout << "d.c is called" << std::endl;
 	}
 
 	int get_balance_height(nodes<T> *r)
@@ -108,19 +112,21 @@ class avl_tree
 		return (y);
 	}
 
-	nodes<T*> insert(nodes<T*> root, T x)
+	node_p insert_a_node(node_p root_node , T x)
 	{
-
-		nodes<T*>  new_node = alloc_it.allocate(1);
-		alloc_it.construct(new_node.value , x);
-		// std::cout  << new_node.value->first << std::endl;
-		// std::cout  << new_node.value->second << std::endl;
 		
-		if (root.value == NULL)
+		if (root_node == NULL)
 		{
-			root = new_node;
-			return (root);
+			node_p new_node = alloc_it.allocate(1);
+			alloc_it.construct(new_node , x);
+		
+			// std::cout  << root_node->value.first << std::endl;
+			// std::cout  <<"i am here" << std::endl;
+			// std::cout  << root_node.value->second << std::endl;
+			// root_node = new_node;
+			return (new_node);
 		}
+	/*
 		
 		if (x.first < root.value->first)
 		{
@@ -167,7 +173,15 @@ class avl_tree
 		// 	root->right = right_Rotation(root->right);
 		// 	return (left_Rotation(root));
 		// }
-		return (root);
+	*/
+
+return root_node;
+	}
+	
+	void insert(T x)
+	{
+		this->root = insert_a_node(this->root,x);
+
 	}
 
 	void print2D(nodes<T*> *r, int space)
