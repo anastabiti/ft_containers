@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 13:10:35 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/22 09:09:21 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/22 09:32:04 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ public:
 // types:
 typedef Key key_type;
 typedef T mapped_type;
+
 typedef std::pair<const Key, T> value_type;
 
 
@@ -43,11 +44,10 @@ typedef typename Allocator::const_pointer const_pointer;
 typedef std::reverse_iterator<iterator> reverse_iterator;
 typedef std::reverse_iterator<const_iterator> const_reverse_iterator;
 
+ Allocator M_alloc;
 
-typedef Allocator M_alloc;
 
-
-ft::avl_tree<value_type, Compare, M_alloc> a_tree;
+ft::avl_tree<value_type, Compare, Allocator> a_tree;
 
 
 class value_compare: public std::binary_function<value_type,value_type,bool> 
@@ -92,10 +92,12 @@ explicit map(const Compare& comp = Compare(), const Allocator& = Allocator())
 
 std::pair<iterator, bool> insert(const value_type& x)
 {   
-     		 nodes<value_type> *new_node = new  nodes<value_type>;
+     		 //nodes<value_type> *new_node = new  nodes<value_type>;
+             nodes<value_type*> new_node = M_alloc.allocate(1);
+             M_alloc.construct(new_node, x);
             //  new_node->value = x.first;
              
-             a_tree.root =    a_tree.insert(a_tree.root,new_node, x);
+            //  a_tree.root =    a_tree.insert(a_tree.root,new_node, x);
         //    a_tree.print2D(a_tree.root, 5);
 }
 // iterator insert(iterator position, const value_type& x);

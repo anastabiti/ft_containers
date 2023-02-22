@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 12:29:31 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/22 09:07:41 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/22 09:30:13 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,10 @@ int main()
 {
 
     ft::map<int, int> mymap;
-    mymap.insert(std::pair<int , int> (1337, 42) );
+    mymap.insert(std::pair< int , int> (1337, 42) );
+    // std::map<int, int> myma2p;
+    // myma2p.insert(std::pair< int , int> (1337, 42) );
+    // myma2p.insert(std::pair< int , int> (1337, 42) );
   
     // ft::map<int, std::less<int> , std::allocator<int> > test;
     // ft::avl_tree<int, std::less<int> , std::allocator<int> > tree_avl;

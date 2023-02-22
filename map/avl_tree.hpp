@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 11:08:00 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/22 09:08:15 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/22 09:28:38 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ class nodes
 	}
 };
 
-template <class T, class Compare, class Allocator = std::allocator<T> >
+template <class T, class Compare, class Allocator >
 class avl_tree
 {
   public:
@@ -108,28 +108,28 @@ class avl_tree
 		return (y);
 	}
 
-	nodes<T> *insert(nodes<T> *root, nodes<T> *new_node, T x)
+	nodes<T>* insert(nodes<T> *root, nodes<T*> new_node, T x)
 	{
 		
 		if (root == NULL)
 		{
-			
-			root = new_node;
+			// alloc_it.construct(root, x)
+			// // root = new_node;
 			return (root);
 		}
 
-		if (new_node->value < root->value)
-		{
-			root->left = insert(root->left, new_node,x);
-		}
-		else if (new_node->value > root->value)
-		{
-			root->right = insert(root->right, new_node,x);
-		}
-		else
-		{
-			return (root);
-		}
+		// if (new_node->value < root->value)
+		// {
+		// 	root->left = insert(root->left, new_node,x);
+		// }
+		// else if (new_node->value > root->value)
+		// {
+		// 	root->right = insert(root->right, new_node,x);
+		// }
+		// else
+		// {
+		// 	return (root);
+		// }
 		// int left_balance = get_balance_height(root->left);
 		// int right_balance = get_balance_height(root->right);
 		// int sum = left_balance - right_balance;
