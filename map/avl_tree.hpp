@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 11:08:00 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/20 10:08:48 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/22 09:08:15 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,59 +108,61 @@ class avl_tree
 		return (y);
 	}
 
-	nodes<T> *insert(nodes<T> *root, nodes<T> *new_node)
+	nodes<T> *insert(nodes<T> *root, nodes<T> *new_node, T x)
 	{
+		
 		if (root == NULL)
 		{
+			
 			root = new_node;
 			return (root);
 		}
 
 		if (new_node->value < root->value)
 		{
-			root->left = insert(root->left, new_node);
+			root->left = insert(root->left, new_node,x);
 		}
 		else if (new_node->value > root->value)
 		{
-			root->right = insert(root->right, new_node);
+			root->right = insert(root->right, new_node,x);
 		}
 		else
 		{
 			return (root);
 		}
-		int left_balance = get_balance_height(root->left);
-		int right_balance = get_balance_height(root->right);
-		int sum = left_balance - right_balance;
+		// int left_balance = get_balance_height(root->left);
+		// int right_balance = get_balance_height(root->right);
+		// int sum = left_balance - right_balance;
 
-		// std::cout << "sum  = "<< sum << std::endl;
+		// // std::cout << "sum  = "<< sum << std::endl;
 
-		if (sum > 1 && new_node->value < root->left->value)
-		{
-			// std::cout << "right rotation" << std::endl;
-			// std::cout << " root : "<< *root << std::endl;
-			return (right_Rotation(root));
-		}
+		// if (sum > 1 && new_node->value < root->left->value)
+		// {
+		// 	// std::cout << "right rotation" << std::endl;
+		// 	// std::cout << " root : "<< *root << std::endl;
+		// 	return (right_Rotation(root));
+		// }
 
-		if (sum < -1 && new_node->value > root->right->value)
-		{
-			// std::cout << "left rotation" << std::endl;
-			// std::cout << " root : "<< *root << std::endl;
-			return (left_Rotation(root));
-		}
+		// if (sum < -1 && new_node->value > root->right->value)
+		// {
+		// 	// std::cout << "left rotation" << std::endl;
+		// 	// std::cout << " root : "<< *root << std::endl;
+		// 	return (left_Rotation(root));
+		// }
 
-		if (sum > 1 && new_node->value > root->left->value)
-		{
-			// std::cout << "left . right rotation" << sum << std::endl;
-			root->left = left_Rotation(root->left);
-			return (right_Rotation(root));
-		}
+		// if (sum > 1 && new_node->value > root->left->value)
+		// {
+		// 	// std::cout << "left . right rotation" << sum << std::endl;
+		// 	root->left = left_Rotation(root->left);
+		// 	return (right_Rotation(root));
+		// }
 
-		if (sum < -1 && new_node->value < root->right->value)
-		{
-			// std::cout << " right . left rotation" << sum << std::endl;
-			root->right = right_Rotation(root->right);
-			return (left_Rotation(root));
-		}
+		// if (sum < -1 && new_node->value < root->right->value)
+		// {
+		// 	// std::cout << " right . left rotation" << sum << std::endl;
+		// 	root->right = right_Rotation(root->right);
+		// 	return (left_Rotation(root));
+		// }
 		return (root);
 	}
 
