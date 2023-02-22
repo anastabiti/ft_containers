@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 13:10:35 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/22 18:37:12 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/22 20:28:41 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,13 +70,13 @@ class map
 	};
 
 	/* Constructs an empty map using the specified comparison object and allocator.  */
-	explicit map(const Compare &comp = Compare(),
-					const Allocator & = Allocator())
-	{
-		// std::cout << "map con is called" << std::endl;
-	}
+	// explicit map(const Compare &comp = Compare(), const Allocator & = Allocator())
+	// {
+	// 	// std::cout << "map con is called" << std::endl;
+	// }
 
-	std::pair<iterator, bool> insert(const value_type &x)
+	// std::pair<iterator, bool> insert(const value_type &x)
+	void  insert(const value_type &x)
 	{
 		
 		 a_tree.insert(x);
