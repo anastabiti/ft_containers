@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 11:08:00 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/22 22:22:52 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/22 22:36:31 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,18 +123,18 @@ class avl_tree
 			// alloc_it.construct(new_node , x);
 		
 			// std::cout  << root_node->value.first << std::endl;
-			// std::cout  <<"i am here" << std::endl;
+			std::cout  <<"(root_node == NULL)" << std::endl;
 			// std::cout  << root_node.value->second << std::endl;
-			root_node = new_node;
+			// root_node = new_node;
 			// std::cout << root->value.first << std::endl;
-			return (root_node);
+			return (new_node);
 		}
 		// std::cout  << root_node->value.first << std::endl;
 
 		if (x.first < root_node->value.first)
 		{
 			root_node->left = insert_a_node(root_node->left,x);
-			// std::cout  <<"i am here" << std::endl;
+			std::cout  <<"(x.first < root_node->value.first)" << std::endl;
 			
 			// std::cout << root_node->value.first << std::endl;
 
@@ -142,7 +142,7 @@ class avl_tree
 		
 		else if  (x.first > root_node->value.first)
 		{
-			// std::cout  <<"i am here" << std::endl;
+			std::cout  <<"(x.first > root_node->value.first)" << std::endl;
 			root_node->right = insert_a_node(root_node->right,x);
 		}
 		else
@@ -192,21 +192,21 @@ return root_node;
 	void insert(T x)
 	{
 		this->root = insert_a_node(this->root,x);
-print2D(root , 5);
 	}
 
 	void print2D(node_p r, int space)
 	{
-		if (r  == NULL) // Base case  1
+		if (r == NULL) 
 			return ;
 		space += SPACE;           // Increase distance between levels   2
 		print2D(r->right, space); // Process right child first 3
 		std::cout << std::endl;
 		for (int i = SPACE; i < space; i++) // 5
-			std::cout << " ";               // 5.1
-		std::cout << r->value.first  << "\n";      // 6
+			std::cout << " ";                    // 5.1
+		std::cout << r->value.first << "\n";           // 6
 		print2D(r->left, space);            // Process left child  7
 	}
+	
 };
 
 } // namespace ft

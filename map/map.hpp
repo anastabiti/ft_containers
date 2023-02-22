@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 13:10:35 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/22 21:24:23 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/22 22:37:30 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,11 +75,11 @@ class map
 	// }
 
 	// std::pair<iterator, bool> insert(const value_type &x)
+
 	void  insert(const value_type &x)
-	{
-		
+	{	
 		 a_tree.insert(x);
-		 					// std::cout  <<"i am here" << std::endl;
+// std::cout  <<"i am here" << std::endl;
 
 		// a_tree.root = a_tree.insert(a_tree.root, x);
 		// a_tree.print2D(&a_tree.root , 5);
