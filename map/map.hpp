@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 13:10:35 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/22 20:28:41 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/22 21:24:23 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,7 @@ class map
 
 	ft::avl_tree<value_type, Compare, Allocator> a_tree;
 
-	class value_compare : public std::binary_function<value_type, value_type,
-		bool>
+	class value_compare : public std::binary_function<value_type, value_type, bool>
 	{
 		friend class map;
 
@@ -83,7 +82,7 @@ class map
 		 					// std::cout  <<"i am here" << std::endl;
 
 		// a_tree.root = a_tree.insert(a_tree.root, x);
-		// // a_tree.print2D(&a_tree.root , 5);
+		// a_tree.print2D(&a_tree.root , 5);
 
 		// std::cout << a_tree.root.value->first << std::endl;
 		// std::cout << a_tree.root.value->second << std::endl;
