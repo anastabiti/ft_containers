@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 11:08:00 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/22 09:28:38 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/22 09:36:50 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,13 +108,16 @@ class avl_tree
 		return (y);
 	}
 
-	nodes<T>* insert(nodes<T> *root, nodes<T*> new_node, T x)
+	nodes<T>* insert(nodes<T> *root, T x)
 	{
+
+		
 		
 		if (root == NULL)
 		{
+			
 			// alloc_it.construct(root, x)
-			// // root = new_node;
+			// root = new_node;
 			return (root);
 		}
 

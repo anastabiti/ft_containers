@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 13:10:35 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/22 09:32:04 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/22 09:36:06 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ typedef std::iterator<std::bidirectional_iterator_tag,const iterator> const_iter
 // typedef implementation defined size_type; // See 23.1
 // typedef implementation defined difference_type;// See 23.1
 typedef typename Allocator::pointer pointer;
+
 typedef typename Allocator::const_pointer const_pointer;
 typedef std::reverse_iterator<iterator> reverse_iterator;
 typedef std::reverse_iterator<const_iterator> const_reverse_iterator;
@@ -92,13 +93,8 @@ explicit map(const Compare& comp = Compare(), const Allocator& = Allocator())
 
 std::pair<iterator, bool> insert(const value_type& x)
 {   
-     		 //nodes<value_type> *new_node = new  nodes<value_type>;
-             nodes<value_type*> new_node = M_alloc.allocate(1);
-             M_alloc.construct(new_node, x);
-            //  new_node->value = x.first;
-             
-            //  a_tree.root =    a_tree.insert(a_tree.root,new_node, x);
-        //    a_tree.print2D(a_tree.root, 5);
+     	     
+             a_tree.root =    a_tree.insert(a_tree.root, x);
 }
 // iterator insert(iterator position, const value_type& x);
 // template <class InputIterator>
