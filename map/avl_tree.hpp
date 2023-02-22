@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 11:08:00 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/22 09:49:34 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/22 11:11:24 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,10 +121,11 @@ class avl_tree
 			root = new_node;
 			return (root);
 		}
-		// if (new_node->value < root->value)
-		// {
-		// 	root->left = insert(root->left, new_node,x);
-		// }
+		
+		if (x.first < root.value->first)
+		{
+			root.left = insert(root.left,x);
+		}
 		// else if (new_node->value > root->value)
 		// {
 		// 	root->right = insert(root->right, new_node,x);
