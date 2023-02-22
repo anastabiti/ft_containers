@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 11:08:00 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/22 09:40:45 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/22 09:44:45 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ template <class T, class Compare, class Allocator >
 class avl_tree
 {
   public:
-	nodes<T> *root;
+	nodes<T*> root;
 
 	Allocator alloc_it;
 	typedef Compare compare_type; 
@@ -108,17 +108,16 @@ class avl_tree
 		return (y);
 	}
 
-	nodes<T>* insert(nodes<T> *root, T x)
+	nodes<T*> insert(nodes<T*> root, T x)
 	{
 
 		nodes<T*>  new_node = alloc_it.allocate(1);
 		alloc_it.construct(new_node.value , x);
 		std::cout  << new_node.value->first << std::endl;
-		if (root == NULL)
+		
+		if (root.value == NULL)
 		{
-			
-			// alloc_it.construct(root, x)
-			// root = new_node;
+			root = new_node;
 			return (root);
 		}
 
