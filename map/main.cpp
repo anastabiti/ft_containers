@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 12:29:31 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/23 13:32:26 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/23 14:50:15 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,11 @@ int main()
     ft::map<int, int> mymap;
     // mymap.insert(std::pair< int , int> (44, 42) );
     // mymap.insert(std::pair< int , int> (3, 4132) );
-    // mymap.insert(std::pair< int , int> (1, 4132) );
+    // mymap.insert(std::pair< int , int> (4, 4132) );
     mymap.insert(std::pair< int , int> (1, 42) );
     mymap.insert(std::pair< int , int> (3, 4132) );
     mymap.insert(std::pair< int , int> (2, 4132) );
-    mymap.insert(std::pair< int , int> (5, 4132) );
+    // mymap.insert(std::pair< int , int> (5, 4132) );
     mymap.a_tree.print2D( mymap.a_tree.root , 6);
     		//  a_tree.print2D(a_tree.root,6);		 
 
