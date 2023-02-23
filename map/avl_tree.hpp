@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 11:08:00 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/23 19:58:15 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/23 20:01:36 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,48 +89,36 @@ public:
     return (y);
   }
 
-  node_p remove_a_node(node_p root_node, T x) 
-  {
-      if(root_node == NULL)
+  node_p remove_a_node(node_p root_node, T x) {
+    if (root_node == NULL)
       return (NULL);
 
-      else if(x.first < root_node->value.first)
-      {
-        root_node->left = remove_a_node(root_node->left, x);
+    else if (x.first < root_node->value.first) {
+      root_node->left = remove_a_node(root_node->left, x);
+    } else if (x.first > root_node->value.first) {
+      root_node->right = remove_a_node(root_node->right, x);
+
+    } else {
+      if (root_node->left == NULL) {
+        node_p tmp = root_node->right;
+        alloc_it.destroy(root_node);
+        return tmp;
+
+      } else if (root_node->right == NULL) {
+        node_p tmp = root_node->left;
+
+        alloc_it.destroy(root_node);
+        return tmp;
       }
-      else if(x.first > root_node->value.first)
-      {
-        root_node->right = remove_a_node(root_node->right, x);
-        
-      }
-      else
-      {
-        if(root_node->left == NULL)
-        {
-          node_p tmp = root_node->right;
-          alloc_it.destroy(root_node);
-          return tmp;
-           
-        }
-        else if(root_node->right == NULL)
-        {
-          node_p tmp = root_node->left;
-           
-          alloc_it.destroy(root_node);
-          return tmp;
-        }
-        // else
-        // {
-        //   return root_node;
-          
-        // }
-        
-      }
-          return root_node;
+      // else
+      // {
+      //   return root_node;
+
+      // }
+    }
+    return root_node;
   }
 
-
-  
   node_p insert_a_node(node_p root_node, T x) {
 
     if (root_node == NULL) {
