@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 11:08:00 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/23 20:01:36 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/23 22:08:01 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,17 @@ public:
     return (y);
   }
 
+	node_p min_node(node_p node)
+	{
+		node_p current = node;
+    
+		while (current->left != NULL)
+		{
+			current = current->left;
+		}
+		return (current);
+	}
+  
   node_p remove_a_node(node_p root_node, T x) {
     if (root_node == NULL)
       return (NULL);
@@ -110,14 +121,86 @@ public:
         alloc_it.destroy(root_node);
         return tmp;
       }
-      // else
-      // {
-      //   return root_node;
-
-      // }
+      else
+      {
+        node_p tmp = min_node(root_node->right);
+          root_node->right = tmp;
+          root_node->right = remove_a_node(root_node->right, x);
+          
+      }
+      
+      
     }
+     int left_balance = get_balance_height(root->left);
+    int right_balance = get_balance_height(root->right);
+    int sum = left_balance - right_balance;
+  
+   
+    
+      
+     if(root_node->left != NULL && sum == 2 && get_balance_height(root_node->left) >= 0)
+    {
+      std::cout << "case 1 " << std::endl;
+      return right_Rotation(root_node);
+    }
+    
+
+   
+     else if(root_node->left != NULL && sum == 2 && get_balance_height(root_node->left) == -1)
+    {
+      std::cout << " case  2" << std::endl;
+      root_node->left = left_Rotation(root_node->left); 
+      return right_Rotation(root_node);
+    }
+    
+       
+
+       
+    else if(root_node->right != NULL && sum == -2 && get_balance_height(root_node->right) <= -0 )
+    {
+      std::cout << " case  3" << std::endl;
+      return left_Rotation(root_node);
+    }
+    
+ 
+
+    else  if( sum == -2 && get_balance_height(root_node->right) == 1)
+    {
+      std::cout << "case  4 " << std::endl;
+      std::cout <<" value  =" << x.first  <<std::endl;
+      root_node->right = right_Rotation(root_node->right); 
+      return left_Rotation(root_node);
+    }
+
+    
+  
     return root_node;
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   node_p insert_a_node(node_p root_node, T x) {
 
