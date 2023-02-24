@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 12:29:31 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/24 10:10:38 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/24 10:21:27 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,16 +40,16 @@ int main()
     std::cout  << "before ______________________________" << std::endl;
 
     mymap.a_tree.remove_a_node(mymap.a_tree.root_parent ,std::pair< int , int> (30, 42) );
-    // mymap.a_tree.remove_a_node(mymap.a_tree.root ,std::pair< int , int> (53, 42) );
-    //
-    // mymap.a_tree.remove_a_node(mymap.a_tree.root ,std::pair< int , int> (53, 42) );
-    // mymap.a_tree.remove_a_node(mymap.a_tree.root ,std::pair< int , int> (3, 42) );
-    // mymap.a_tree.remove_a_node(mymap.a_tree.root ,std::pair< int , int> (2, 42) );
-    // mymap.a_tree.remove_a_node(mymap.a_tree.root ,std::pair< int , int> (1, 42) );
+    mymap.a_tree.remove_a_node(mymap.a_tree.root_parent ,std::pair< int , int> (10, 42) );
+    mymap.a_tree.remove_a_node(mymap.a_tree.root_parent ,std::pair< int , int> (40, 42) );
+    mymap.a_tree.remove_a_node(mymap.a_tree.root_parent ,std::pair< int , int> (20, 42) );
+    // mymap.a_tree.remove_a_node(mymap.a_tree.root_parent ,std::pair< int , int> (3, 42) );
+    // mymap.a_tree.remove_a_node(mymap.a_tree.root_parent ,std::pair< int , int> (2, 42) );
+    // mymap.a_tree.remove_a_node(mymap.a_tree.root_parent ,std::pair< int , int> (1, 42) );
     //
     mymap.a_tree.print2D( mymap.a_tree.root_parent , 6);
     // mymap.erase
-    		//  a_tree.print2D(a_tree.root,6);		 
+    		//  a_tree.print2D(a_tree.root_parent,6);		 
 
     // mymap.insert(std::pair< int , int> (65, 423111) );
     // std::map<int, int> myma2p;
