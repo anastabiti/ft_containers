@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 11:08:00 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/24 13:22:32 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/24 13:32:32 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,6 +94,12 @@ int height_of_each_node(nodes<T> *r)
     // }
     return (height_of_each_node(r->left) - height_of_each_node(r->right));
   }
+
+
+
+
+
+
  node_p left_Rotation(node_p x) 
  {
    node_p y = x->right;
