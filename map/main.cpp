@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 12:29:31 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/24 09:03:52 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/24 09:09:31 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,16 @@ int main()
     
     mymap.a_tree.print2D( mymap.a_tree.root , 6);
     std::cout  << "before ______________________________" << std::endl;
+
+    mymap.a_tree.remove_a_node(mymap.a_tree.root ,std::pair< int , int> (40, 42) );
+    // mymap.a_tree.remove_a_node(mymap.a_tree.root ,std::pair< int , int> (53, 42) );
+    //
     // mymap.a_tree.remove_a_node(mymap.a_tree.root ,std::pair< int , int> (53, 42) );
     // mymap.a_tree.remove_a_node(mymap.a_tree.root ,std::pair< int , int> (3, 42) );
     // mymap.a_tree.remove_a_node(mymap.a_tree.root ,std::pair< int , int> (2, 42) );
     // mymap.a_tree.remove_a_node(mymap.a_tree.root ,std::pair< int , int> (1, 42) );
     //
-    // mymap.a_tree.print2D( mymap.a_tree.root , 6);
+    mymap.a_tree.print2D( mymap.a_tree.root , 6);
     // mymap.erase
     		//  a_tree.print2D(a_tree.root,6);		 
 

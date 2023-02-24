@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 11:08:00 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/24 09:02:54 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/24 09:15:57 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,16 +74,17 @@ public:
         return (l + 1);
     }
   }
-  nodes<T> *left_Rotation(nodes<T> *x) {
-    nodes<T> *y = x->right;
-    nodes<T> *T2 = y->left;
+ node_p left_Rotation(node_p x) {
+   node_p y = x->right;
+    node_p T2 = y->left;
     y->left = x;
     x->right = T2;
     return (y);
   }
-  nodes<T> *right_Rotation(nodes<T> *x) {
-    nodes<T> *y = x->left;
-    nodes<T> *T2 = y->right;
+  
+  node_p right_Rotation(node_p x) {
+    node_p y = x->left;
+  node_p T2 = y->right;
     y->right = x;
     x->left = T2;
     return (y);
@@ -132,9 +133,11 @@ public:
     {
       if (root_node->left == NULL) 
       {
-        node_p tmp = root_node->right;
+        // node_p tmp = root_node->right;
         alloc_it.destroy(root_node);
-        return tmp;
+        // tmp = NULL;
+        return NULL;
+        // return tmp;
 
       }
        else if (root_node->right == NULL) 
@@ -180,9 +183,9 @@ public:
 
 
     */
-     if(root_node->left != NULL && sum == 2 && get_balance_height(root_node->left) >= 0)
+     if( sum == 2 && get_balance_height(root_node->left) >= 0)
     {
-      std::cout << "root_node->left " << root_node->left->value.first << std::endl;
+      // std::cout << "root_node->left " << root_node->left->value.first << std::endl;
       std::cout << "case 1 " << std::endl;
       return right_Rotation(root_node);
     }
