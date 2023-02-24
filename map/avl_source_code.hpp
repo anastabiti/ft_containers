@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   avl_source_code.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: atabiti <atabiti@student.1337.ma>          +#+  +:+       +#+        */
+/*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 14:20:38 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/23 22:03:51 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/24 08:34:03 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -195,13 +195,13 @@ class AVLTree
 			{
 				TreeNode *temp = r->right;
 				delete r;
-				return temp;
+				return (temp);
 			}
 			else if (r->right == NULL)
 			{
 				TreeNode *temp = r->left;
 				delete r;
-				return temp;
+				return (temp);
 			}
 			else
 			{
@@ -219,24 +219,24 @@ class AVLTree
 		int bf = getBalanceFactor(r);
 		// Left Left Imbalance/Case or Right rotation
 		if (bf == 2 && getBalanceFactor(r->left) >= 0)
-			return rightRotate(r);
+			return (rightRotate(r));
 		// Left Right Imbalance/Case or LR rotation
 		else if (bf == 2 && getBalanceFactor(r->left) == -1)
 		{
 			r->left = leftRotate(r->left);
-			return rightRotate(r);
+			return (rightRotate(r));
 		}
 		// Right Right Imbalance/Case or Left rotation
 		else if (bf == -2 && getBalanceFactor(r->right) <= -0)
-			return leftRotate(r);
+			return (leftRotate(r));
 		// Right Left Imbalance/Case or RL rotation
 		else if (bf == -2 && getBalanceFactor(r->right) == 1)
 		{
 			r->right = rightRotate(r->right);
-			return leftRotate(r);
+			return (leftRotate(r));
 		}
 
-		return r;
+		return (r);
 	}
 
 	void print2D(TreeNode *r, int space)
@@ -310,7 +310,7 @@ class AVLTree
 	{
 		if (root == NULL)
 		{
-			return root;
+			return (root);
 		}
 		else
 		{
@@ -319,7 +319,7 @@ class AVLTree
 			{
 				if (v == temp->value)
 				{
-					return temp;
+					return (temp);
 				}
 				else if (v < temp->value)
 				{
@@ -330,19 +330,19 @@ class AVLTree
 					temp = temp->right;
 				}
 			}
-			return NULL;
+			return (NULL);
 		}
 	}
 
 	TreeNode *recursiveSearch(TreeNode *r, int val)
 	{
 		if (r == NULL || r->value == val)
-			return r;
+			return (r);
 
 		else if (val < r->value)
-			return recursiveSearch(r->left, val);
+			return (recursiveSearch(r->left, val));
 
 		else
-			return recursiveSearch(r->right, val);
+			return (recursiveSearch(r->right, val));
 	}
 };

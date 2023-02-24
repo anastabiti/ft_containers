@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   avl_tree.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: atabiti <atabiti@student.1337.ma>          +#+  +:+       +#+        */
+/*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 11:08:00 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/23 22:08:01 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/24 08:54:54 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ public:
 
 template <class T, class Compare, class Allocator> class avl_tree {
 public:
-  typedef typename Allocator::template rebind<nodes<T>>::other rebind_allocator;
+  typedef typename Allocator::template rebind<nodes<T> >::other rebind_allocator;
   rebind_allocator alloc_it;
   typedef Compare compare_type;
   typedef nodes<T> node_type;
@@ -99,23 +99,46 @@ public:
 		}
 		return (current);
 	}
+
+
+
+
+
+
+
+
+
+
+
+
   
-  node_p remove_a_node(node_p root_node, T x) {
+  
+  node_p remove_a_node(node_p root_node, T x) 
+  {
     if (root_node == NULL)
       return (NULL);
+      // return (root_node);
 
-    else if (x.first < root_node->value.first) {
+    else if (x.first < root_node->value.first) 
+    {
       root_node->left = remove_a_node(root_node->left, x);
-    } else if (x.first > root_node->value.first) {
+    } 
+    else if (x.first > root_node->value.first) 
+    {
       root_node->right = remove_a_node(root_node->right, x);
 
-    } else {
-      if (root_node->left == NULL) {
+    } 
+    else 
+    {
+      if (root_node->left == NULL) 
+      {
         node_p tmp = root_node->right;
         alloc_it.destroy(root_node);
         return tmp;
 
-      } else if (root_node->right == NULL) {
+      }
+       else if (root_node->right == NULL) 
+      {
         node_p tmp = root_node->left;
 
         alloc_it.destroy(root_node);
@@ -131,13 +154,23 @@ public:
       
       
     }
-     int left_balance = get_balance_height(root->left);
-    int right_balance = get_balance_height(root->right);
-    int sum = left_balance - right_balance;
-  
-   
+
     
+    int left_balance = get_balance_height(root->left);
+    int right_balance = get_balance_height(root->right);
+    int sum = left_balance - right_balance; 
+    /* if you reomve a node from the right the balance factor will be always 2 */
+    /* if you reomve a node from the left the balance factor will be always - 2 */
+
+    /*
+            [30]                            [30]
+          /     \                            /  
+        [2]      [40] <- to remove         [2]         
+        /                                  /
+      [1]                                [1]
+
       
+    */
      if(root_node->left != NULL && sum == 2 && get_balance_height(root_node->left) >= 0)
     {
       std::cout << "case 1 " << std::endl;
@@ -166,7 +199,7 @@ public:
 
     else  if( sum == -2 && get_balance_height(root_node->right) == 1)
     {
-      std::cout << "case  4 " << std::endl;
+      std::cout << "case  4 " << std::endl; 
       std::cout <<" value  =" << x.first  <<std::endl;
       root_node->right = right_Rotation(root_node->right); 
       return left_Rotation(root_node);
@@ -206,7 +239,7 @@ public:
 
     if (root_node == NULL) {
       node_p new_node = alloc_it.allocate(1);
-      alloc_it.construct(&new_node->value, x);
+      alloc_it.construct(new_node, x);
       // alloc_it.construct(new_node , x);
 
       // std::cout  << root_node->value.first << std::endl;
