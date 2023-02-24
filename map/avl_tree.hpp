@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 11:08:00 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/24 08:56:27 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/24 09:02:54 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -162,48 +162,58 @@ public:
     /* if you reomve a node from the right the balance factor will be always 2 */
     /* if you reomve a node from the left the balance factor will be always - 2 */
     /*
+    case 1
     
-            [30]                            [30]                                  [20]  
+            [30]                            [30]                                  [2]  
           /     \                            /                                    /   \
-        [2]      [40] <- to remove         [2]      -> right_Rotation          [10]   [30]
+        [2]      [40] <- to remove         [2]      -> right_Rotation          [1]   [30]
         /                                  /
       [1]                                [1]
+
+    case 2
+    
+            [30]                              [30]                                   [20]  
+          /     \                            /                                      /   \
+        [20]      [40] <- to remove         [20]      -> right_Rotation           [10]   [30]
+        /   \                               /   \
+      [10]  [25]                          [10]  [25]
 
 
     */
      if(root_node->left != NULL && sum == 2 && get_balance_height(root_node->left) >= 0)
     {
+      std::cout << "root_node->left " << root_node->left->value.first << std::endl;
       std::cout << "case 1 " << std::endl;
       return right_Rotation(root_node);
     }
     
 
    
-     else if(root_node->left != NULL && sum == 2 && get_balance_height(root_node->left) == -1)
-    {
-      std::cout << " case  2" << std::endl;
-      root_node->left = left_Rotation(root_node->left); 
-      return right_Rotation(root_node);
-    }
+    //  else if(root_node->left != NULL && sum == 2 && get_balance_height(root_node->left) == -1)
+    // {
+    //   std::cout << " case  2" << std::endl;
+    //   root_node->left = left_Rotation(root_node->left); 
+    //   return right_Rotation(root_node);
+    // }
     
        
 
        
-    else if(root_node->right != NULL && sum == -2 && get_balance_height(root_node->right) <= -0 )
-    {
-      std::cout << " case  3" << std::endl;
-      return left_Rotation(root_node);
-    }
+    // else if(root_node->right != NULL && sum == -2 && get_balance_height(root_node->right) <= -0 )
+    // {
+    //   std::cout << " case  3" << std::endl;
+    //   return left_Rotation(root_node);
+    // }
     
  
 
-    else  if( sum == -2 && get_balance_height(root_node->right) == 1)
-    {
-      std::cout << "case  4 " << std::endl; 
-      std::cout <<" value  =" << x.first  <<std::endl;
-      root_node->right = right_Rotation(root_node->right); 
-      return left_Rotation(root_node);
-    }
+    // else  if( sum == -2 && get_balance_height(root_node->right) == 1)
+    // {
+    //   std::cout << "case  4 " << std::endl; 
+    //   std::cout <<" value  =" << x.first  <<std::endl;
+    //   root_node->right = right_Rotation(root_node->right); 
+    //   return left_Rotation(root_node);
+    // }
 
     
   
