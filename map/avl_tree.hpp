@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 11:08:00 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/24 09:15:57 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/24 09:16:38 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -187,6 +187,7 @@ public:
     {
       // std::cout << "root_node->left " << root_node->left->value.first << std::endl;
       std::cout << "case 1 " << std::endl;
+      std::cout << "root_node" << *root_node << std::endl;
       return right_Rotation(root_node);
     }
     
