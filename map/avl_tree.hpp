@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 11:08:00 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/24 09:16:56 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/24 10:03:26 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,10 +47,10 @@ public:
   typedef Compare compare_type;
   typedef nodes<T> node_type;
   typedef node_type *node_p;
-  node_p root;
+  node_p root_parent;
 
 public:
-  avl_tree() : root(NULL) {
+  avl_tree() : root_parent(NULL) {
     // this->root  = alloc_it.allocate(1) ;
 
     // std::cout << "d.c is called" << std::endl;
@@ -149,9 +149,19 @@ public:
       }
       else
       {
+        /*
+        TreeNode *temp = minValueNode(r->right);
+				// Copy the inorder successor's content to this node
+				r->value = temp->value;
+				// Delete the inorder successor
+        
+				r->r
+        				r->right = deleteNode(r->right, temp->value);
+
+        */
         node_p tmp = min_node(root_node->right);
-          root_node->right = tmp;
-          root_node->right = remove_a_node(root_node->right, x);
+          root_node = tmp;
+          root_node->right = remove_a_node(root_node->right, tmp->value);
           
       }
       
@@ -159,8 +169,8 @@ public:
     }
 
     
-    int left_balance = get_balance_height(root->left);
-    int right_balance = get_balance_height(root->right);
+    int left_balance = get_balance_height(root_node->left);
+    int right_balance = get_balance_height(root_node->right);
     int sum = left_balance - right_balance; 
     /* if you reomve a node from the right the balance factor will be always 2 */
     /* if you reomve a node from the left the balance factor will be always - 2 */
@@ -280,8 +290,8 @@ public:
       return (root_node);
     }
 
-    int left_balance = get_balance_height(root->left);
-    int right_balance = get_balance_height(root->right);
+    int left_balance = get_balance_height(root_node->left);
+    int right_balance = get_balance_height(root_node->right);
     int sum = left_balance - right_balance;
 
     if (sum > 1) {
@@ -328,7 +338,7 @@ public:
     return root_node;
   }
 
-  void insert(T x) { this->root = insert_a_node(this->root, x); }
+  void insert(T x) { this->root_parent = insert_a_node(this->root_parent, x); }
 
   void print2D(node_p r, int space) {
     if (r == NULL)
