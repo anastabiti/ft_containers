@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
+/*   By: atabiti <atabiti@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 13:10:35 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/24 14:17:34 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/24 17:21:58 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,16 @@ class map
 	typedef Allocator allocator_type;
 	typedef typename Allocator::reference reference;
 	typedef typename Allocator::const_reference const_reference;
-	typedef std::iterator<std::bidirectional_iterator_tag, T> iterator;
+
+
+	
+	// typedef std::iterator<std::bidirectional_iterator_tag, T> iterator;
+	ft::avl_tree<value_type, Compare, Allocator> a_tree;
+	typedef typename ft::avl_tree<value_type, Compare, Allocator>::iterator iterator;
+
+
+
+	
 	typedef std::iterator<std::bidirectional_iterator_tag,
 							const iterator>
 		const_iterator;
@@ -48,7 +57,6 @@ class map
 
 	Allocator M_alloc;
 
-	ft::avl_tree<value_type, Compare, Allocator> a_tree;
 
 	class value_compare : public std::binary_function<value_type, value_type, bool>
 	{
