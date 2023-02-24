@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 11:08:00 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/24 10:17:14 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/24 10:17:32 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -161,7 +161,7 @@ public:
         alloc_it.construct(root_node, tmp->value);
         
         node_p tmp_left = root_node->left;
-        sdt::cot  << << std::endl;
+        sdt::cot  << tmp_left->value.first << std::endl;
         // root_node = remove_a_node(root_node, tmp->value);
 
 
