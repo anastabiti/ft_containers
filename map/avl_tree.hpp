@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 11:08:00 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/24 10:12:10 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/24 10:17:14 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -157,8 +157,11 @@ public:
       else
       {
         
-        // node_p tmp = max_node(root_node->left);
-        // alloc_it.construct(root_node, tmp->value);
+        node_p tmp = max_node(root_node);
+        alloc_it.construct(root_node, tmp->value);
+        
+        node_p tmp_left = root_node->left;
+        sdt::cot  << << std::endl;
         // root_node = remove_a_node(root_node, tmp->value);
 
 
@@ -166,10 +169,10 @@ public:
 
         
        
-        node_p tmp = min_node(root_node->right);
-          // root_node->value = tmp->value;
-                alloc_it.construct(root_node, tmp->value);
-          root_node->right = remove_a_node(root_node->right, tmp->value);
+        // node_p tmp = min_node(root_node->right);
+        //   // root_node->value = tmp->value;
+        //         alloc_it.construct(root_node, tmp->value);  // do initialise left and right in node constructor to avoid this issue here <<<<--------
+        //   root_node->right = remove_a_node(root_node->right, tmp->value);
           
       }
       
