@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 11:08:00 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/24 10:09:53 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/24 10:11:48 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ public:
   {
     std::cout  << "  nodes(T insert_it) : value(insert_it) " << std::endl;
     // value = insert_it;
-    right = NULL;
-    left = NULL;
+    // right = NULL;
+    // left = NULL;
   }
   friend std::ostream &operator<<(std::ostream &os, const nodes &dt) {
     os << dt.value;
@@ -272,6 +272,8 @@ public:
     if (root_node == NULL) {
       node_p new_node = alloc_it.allocate(1);
       alloc_it.construct(new_node, x);
+       new_node->right = NULL;
+    left-> = NULL;
       // alloc_it.construct(new_node , x);
 
       // std::cout  << root_node->value.first << std::endl;
