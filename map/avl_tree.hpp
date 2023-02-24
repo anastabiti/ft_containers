@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 11:08:00 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/24 12:30:25 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/24 12:45:02 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,7 @@ public:
   
   node_p right_Rotation(node_p y) 
   {
+    std::cout  <<" y= inside right rotaion is  " << y->value.first << std::endl;
     node_p x = y->left;
     node_p T2 = x->right;
     x->right = y;
@@ -199,9 +200,9 @@ public:
             [30]                              [30]                                   [20]  
           /     \                            /                                      /   \
         [20]      [40] <- to remove         [20]      -> right_Rotation           [10]   [30]
-        /   \                               /   \
-      [10]  [25]                          [10]  [25]
-
+        /   \                               /   \                                         /
+      [10]  [25]                          [10]  [25]                                   [25]
+  
 
     */
       
