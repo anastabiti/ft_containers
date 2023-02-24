@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 14:20:38 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/24 08:34:03 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/24 11:02:12 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,11 +87,8 @@ class AVLTree
 	{
 		TreeNode *x = y->left;
 		TreeNode *T2 = x->right;
-
-		// Perform rotation
 		x->right = y;
 		y->left = T2;
-
 		return (x);
 	}
 

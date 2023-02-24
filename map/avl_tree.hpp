@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 11:08:00 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/24 10:22:45 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/24 11:28:45 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,6 @@ public:
 
 public:
   avl_tree() : root_parent(NULL) {
-    // this->root  = alloc_it.allocate(1) ;
 
     // std::cout << "d.c is called" << std::endl;
   }
@@ -84,12 +83,14 @@ public:
     return (y);
   }
   
-  node_p right_Rotation(node_p x) {
-    node_p y = x->left;
-  node_p T2 = y->right;
-    y->right = x;
-    x->left = T2;
-    return (y);
+  node_p right_Rotation(node_p y) 
+  {
+    node_p x = y->left;
+    node_p T2 = x->right;
+    x->right = y;
+    y->left = T2;
+    std::cout  <<" x = inside right rotaion is  " << x->value.first << std::endl;
+    return (x);
   }
 
 	node_p min_node(node_p node)
@@ -133,8 +134,10 @@ public:
     } 
     else if (x.first > root_node->value.first) 
     {
+      std::cout << "root_node->right before was  " << root_node->right->value.first << std::endl;
       root_node->right = remove_a_node(root_node->right, x);
-
+      // std::cout << "root_node->right is now  " << root_node->right->value.first  << std::endl;
+      
     } 
     else 
     {
@@ -157,17 +160,18 @@ public:
       else
       {
         
-        node_p tmp = max_node(root_node);
-        alloc_it.construct(root_node, tmp->value);
-        node_p tmp_left = root_node->left->left;
+        // if(root_node->left == NULL && root_node->right == NULL)
+        //             return NULL;
+        // node_p tmp = max_node(root_node);
+        // alloc_it.construct(root_node, tmp->value);
+        // node_p tmp_left = root_node->left->left;
         // std::cout  << tmp_left->value.first << std::endl;
-        alloc_it.destroy(root_node->left);
-        root_node->left = tmp_left;
-         
-        // node_p tmp = min_node(root_node->right);
-        //   // root_node->value = tmp->value;
-        //         alloc_it.construct(root_node, tmp->value);  // do initialise left and right in node constructor to avoid this issue here <<<<--------
-        //   root_node->right = remove_a_node(root_node->right, tmp->value);
+        // alloc_it.destroy(root_node->left);
+        // root_node->left = tmp_left;
+        node_p tmp = min_node(root_node->right);
+          // root_node->value = tmp->value;
+                alloc_it.construct(root_node, tmp->value);  // do initialise left and right in node constructor to avoid this issue here <<<<--------
+          root_node->right = remove_a_node(root_node->right, tmp->value);
           
       }
       
@@ -199,12 +203,16 @@ public:
 
 
     */
+      
      if( sum == 2 && get_balance_height(root_node->left) >= 0)
     {
       // std::cout << "root_node->left " << root_node->left->value.first << std::endl;
       std::cout << "case 1 " << std::endl;
-      std::cout << "root_node" << root_node->value.first << std::endl;
-      return right_Rotation(root_node);
+      std::cout << "root_node " << root_node->value.first << std::endl;
+      print2D( root_node , 6);
+      
+      std::cout << "_=----+++++++_+_+ " << root_node->value.first << std::endl;
+       return (right_Rotation(root_node) );
     }
     
 
@@ -346,7 +354,10 @@ public:
     return root_node;
   }
 
-  void insert(T x) { this->root_parent = insert_a_node(this->root_parent, x); }
+  void insert(T x)
+    { 
+              this->root_parent = insert_a_node(this->root_parent, x); 
+    }
 
   void print2D(node_p r, int space) {
     if (r == NULL)
