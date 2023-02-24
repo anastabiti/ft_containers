@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: atabiti <atabiti@student.1337.ma>          +#+  +:+       +#+        */
+/*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 13:10:35 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/22 22:37:30 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/24 14:14:14 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,16 @@ class map
 		// std::cout << a_tree.root.value->first << std::endl;
 		// std::cout << a_tree.root.value->second << std::endl;
 	
+	}
+
+
+	bool empty() const
+	{
+		if(a_tree.root_parent == NULL)
+		return true;
+		else
+		return false;
+
 	}
 };
 
