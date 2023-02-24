@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 11:08:00 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/24 13:15:31 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/24 13:22:32 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,24 +56,43 @@ public:
 
     // std::cout << "d.c is called" << std::endl;
   }
-
-  int get_balance_height(nodes<T> *r) {
-    int i = 0;
-    if (r == NULL)
+int height_of_each_node(nodes<T> *r)
+{
+  if (r == NULL)
       return (-1);
     else {
-      int rr = get_balance_height(r->right);
-      int l = get_balance_height(r->left);
+      int l = height_of_each_node(r->left);
+      int rr = height_of_each_node(r->right);
       // std::cout << "right : " <<rr<< std::endl;
       // // std::cout << "______________________" <<rr<< std::endl;
 
       // std::cout << "left : " <<l<< std::endl;
       // // std::cout << "______________________" <<rr<< std::endl;
-      if (rr > l)
-        return (rr + 1);
-      else
+      if (l > rr)
         return (l + 1);
+      else
+        return (rr + 1);
     }
+}
+  int get_balance_height(nodes<T> *r) {
+    
+    int i = 0;
+    if (r == NULL)
+      return (-1);
+    // else {
+    //   int rr = get_balance_height(r->right);
+    //   int l = get_balance_height(r->left);
+    //   // std::cout << "right : " <<rr<< std::endl;
+    //   // // std::cout << "______________________" <<rr<< std::endl;
+
+    //   // std::cout << "left : " <<l<< std::endl;
+    //   // // std::cout << "______________________" <<rr<< std::endl;
+    //   if (rr > l)
+    //     return (rr + 1);
+    //   else
+    //     return (l + 1);
+    // }
+    return (height_of_each_node(r->left) - height_of_each_node(r->right));
   }
  node_p left_Rotation(node_p x) 
  {
@@ -195,10 +214,10 @@ public:
     }
 
     
-    int left_balance = get_balance_height(root_node->left);
-    int right_balance = get_balance_height(root_node->right);
-    int sum = left_balance - right_balance; 
-    int left_sum  = get_balance_height(root_node->left);
+    // int left_balance = get_balance_height(root_node->left);
+    // int right_balance = get_balance_height(root_node->right);
+    int sum = get_balance_height(root_node); 
+    // int left_sum  = get_balance_height(root_node->left);
     /* if you reomve a node from the right the balance factor will be always 2 */
     /* if you reomve a node from the left the balance factor will be always - 2 */
     /*
@@ -221,13 +240,12 @@ public:
 
     */
       
-      std::cout << "left_sum  ==== " <<  left_sum  << std::endl;
+      // std::cout << "left_sum  ==== " <<  left_sum  << std::endl;
      if( sum == 2 && get_balance_height(root_node->left) >= 0)
     {
       // std::cout << "root_node->left " << root_node->left->value.first << std::endl;
       std::cout << "case 1 " << std::endl;
       // std::cout << "root_node " << root_node->value.first << std::endl;
-      // print2D( root_node , 6);
       
       // std::cout << "_=----+++++++_+_+ " << root_node->value.first << std::endl;
        return (right_Rotation(root_node)) ;
@@ -246,7 +264,7 @@ public:
     {
       std::cout << " case  2" << std::endl;
       root_node->left = left_Rotation(root_node->left); 
-      // print2D(root_node, 5);
+      print2D(root_node, 5);
       return right_Rotation(root_node);
     }
     
