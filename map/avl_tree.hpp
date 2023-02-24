@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 11:08:00 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/24 11:38:45 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/24 11:42:26 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -210,10 +210,10 @@ public:
     {
       // std::cout << "root_node->left " << root_node->left->value.first << std::endl;
       std::cout << "case 1 " << std::endl;
-      std::cout << "root_node " << root_node->value.first << std::endl;
-      print2D( root_node , 6);
+      // std::cout << "root_node " << root_node->value.first << std::endl;
+      // print2D( root_node , 6);
       
-      std::cout << "_=----+++++++_+_+ " << root_node->value.first << std::endl;
+      // std::cout << "_=----+++++++_+_+ " << root_node->value.first << std::endl;
        return (right_Rotation(root_node)) ;
     }
     
@@ -240,7 +240,7 @@ public:
     else  if( sum == -2 && get_balance_height(root_node->right) == 1)
     {
       std::cout << "case  4 " << std::endl; 
-      std::cout <<" value  =" << x.first  <<std::endl;
+      // std::cout <<" value  =" << x.first  <<std::endl;
       root_node->right = right_Rotation(root_node->right); 
       return left_Rotation(root_node);
     }
