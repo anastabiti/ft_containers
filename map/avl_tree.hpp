@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 11:08:00 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/24 13:46:10 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/24 14:01:05 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,11 @@ public:
   typedef Compare compare_type;
   typedef nodes<T> node_type;
   typedef node_type *node_p;
+
+
+  /* iterator  */
+
+  
   node_p root_parent;
 
 public:
