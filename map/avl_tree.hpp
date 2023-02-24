@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 11:08:00 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/24 12:45:02 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/24 12:54:26 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -191,7 +191,7 @@ public:
     
             [30]                            [30]                                  [2]  
           /     \                            /                                    /   \
-        [2]      [40] <- to remove         [2]      -> right_Rotation          [1]   [30]
+        [2]      [40] <- to remove         [2]      ->              RR          [1]   [30]
         /                                  /
       [1]                                [1]
 
@@ -199,7 +199,7 @@ public:
     
             [30]                              [30]                                   [20]  
           /     \                            /                                      /   \
-        [20]      [40] <- to remove         [20]      -> right_Rotation           [10]   [30]
+        [20]      [40] <- to remove         [20]      -> RR                      [10]   [30]
         /   \                               /   \                                         /
       [10]  [25]                          [10]  [25]                                   [25]
   
@@ -216,9 +216,16 @@ public:
       // std::cout << "_=----+++++++_+_+ " << root_node->value.first << std::endl;
        return (right_Rotation(root_node)) ;
     }
+    /*
+    case 1
     
-
-   
+          [30]                            [30]                                  [25]  
+          /    \                           /                                    /   \
+        [20]      [40] <- to remove     [20]   <- == -1    LRR                  [20]   [30]
+           \                              \
+             [25]                          [25]
+    */
+       
      else if(root_node->left != NULL && sum == 2 && get_balance_height(root_node->left) == -1)
     {
       std::cout << " case  2" << std::endl;
