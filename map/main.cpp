@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
+/*   By: atabiti <atabiti@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 12:29:31 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/24 14:16:08 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/24 20:47:58 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ int main()
     mymap.insert(std::pair< int , int> (25, 4132) );
     
     std::cout  << "empty or not " << mymap.empty() << std::endl;
+    // ft::map<int, int>::iterator it =mymap.begin() ;
+    // std::cout  << "empty or not " << *it << std::endl;
     
     
     // mymap.insert(std::pair< int , int> (10, 4132) );

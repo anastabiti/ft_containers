@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 11:08:00 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/24 17:15:33 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/24 20:48:16 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,13 +61,16 @@ typedef Allocator allocator_type;
   
   typedef ft::tree_iterator<pointer, node_p>  iterator;
 
-
   /* iterator  */
 
   
   node_p root_parent;
 
 public:
+iterator begin()
+{
+  return iterator(min_node(root_parent));
+}
   avl_tree() : root_parent(NULL) {
 
     // std::cout << "d.c is called" << std::endl;

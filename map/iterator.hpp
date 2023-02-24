@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 14:03:41 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/24 17:19:47 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/24 20:46:23 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ The purpose of the base() function is to provide access to the underlying tree_i
 */
   reference operator*() const
    { 
-	    return (reference(ptr->value)); 
+	    return (reference(ptr->value.first)); 
   }
 
 };
