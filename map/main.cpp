@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 12:29:31 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/24 11:36:20 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/24 11:39:02 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@ int main()
     mymap.a_tree.print2D( mymap.a_tree.root_parent , 6);
     std::cout  << "before ______________________________" << std::endl;
 
-    mymap.a_tree.remove_a_node(mymap.a_tree.root_parent ,std::pair< int , int> (30, 42) );
-    // mymap.a_tree.remove_a_node(mymap.a_tree.root_parent ,std::pair< int , int> (10, 42) );
+    // mymap.a_tree.remove_a_node(mymap.a_tree.root_parent ,std::pair< int , int> (30, 42) );
+    mymap.a_tree.remove_a_node(mymap.a_tree.root_parent ,std::pair< int , int> (10, 42) );
     // mymap.a_tree.remove(mymap.a_tree.root_parent ,std::pair< int , int>         (20, 42) ); 
     
 

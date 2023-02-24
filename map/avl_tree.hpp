@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 11:08:00 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/24 11:38:22 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/24 11:38:45 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -168,8 +168,8 @@ public:
         alloc_it.construct(root_node, tmp->value);
         node_p tmp_left = root_node->left->left;
         // std::cout  << tmp_left->value.first << std::endl;
-        // alloc_it.destroy(root_node->left);
-        // root_node->left = tmp_left;
+        alloc_it.destroy(root_node->left);
+        root_node->left = tmp_left;
         // node_p tmp = min_node(root_node->right);
         //   // root_node->value = tmp->value;
         //   alloc_it.construct(root_node, tmp->value);  // do initialise left and right in node constructor to avoid this issue here <<<<--------
