@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 11:08:00 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/24 10:18:55 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/24 10:19:09 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -208,41 +208,41 @@ public:
 
 
     */
-    //  if( sum == 2 && get_balance_height(root_node->left) >= 0)
-    // {
-    //   // std::cout << "root_node->left " << root_node->left->value.first << std::endl;
-    //   std::cout << "case 1 " << std::endl;
-    //   std::cout << "root_node" << root_node->value.first << std::endl;
-    //   return right_Rotation(root_node);
-    // }
+     if( sum == 2 && get_balance_height(root_node->left) >= 0)
+    {
+      // std::cout << "root_node->left " << root_node->left->value.first << std::endl;
+      std::cout << "case 1 " << std::endl;
+      std::cout << "root_node" << root_node->value.first << std::endl;
+      return right_Rotation(root_node);
+    }
     
 
    
-    //  else if(root_node->left != NULL && sum == 2 && get_balance_height(root_node->left) == -1)
-    // {
-    //   std::cout << " case  2" << std::endl;
-    //   root_node->left = left_Rotation(root_node->left); 
-    //   return right_Rotation(root_node);
-    // }
+     else if(root_node->left != NULL && sum == 2 && get_balance_height(root_node->left) == -1)
+    {
+      std::cout << " case  2" << std::endl;
+      root_node->left = left_Rotation(root_node->left); 
+      return right_Rotation(root_node);
+    }
     
        
 
        
-    // else if(root_node->right != NULL && sum == -2 && get_balance_height(root_node->right) <= -0 )
-    // {
-    //   std::cout << " case  3" << std::endl;
-    //   return left_Rotation(root_node);
-    // }
+    else if(root_node->right != NULL && sum == -2 && get_balance_height(root_node->right) <= -0 )
+    {
+      std::cout << " case  3" << std::endl;
+      return left_Rotation(root_node);
+    }
     
  
 
-    // else  if( sum == -2 && get_balance_height(root_node->right) == 1)
-    // {
-    //   std::cout << "case  4 " << std::endl; 
-    //   std::cout <<" value  =" << x.first  <<std::endl;
-    //   root_node->right = right_Rotation(root_node->right); 
-    //   return left_Rotation(root_node);
-    // }
+    else  if( sum == -2 && get_balance_height(root_node->right) == 1)
+    {
+      std::cout << "case  4 " << std::endl; 
+      std::cout <<" value  =" << x.first  <<std::endl;
+      root_node->right = right_Rotation(root_node->right); 
+      return left_Rotation(root_node);
+    }
 
     
   
