@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 12:29:31 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/24 14:15:23 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/24 14:16:08 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,10 @@ int main()
     // mymap.insert(std::pair< int , int> (1, 4132) );
     // mymap.insert(std::pair< int , int> (4, 4132) );
     // mymap.insert(std::pair< int , int> (432, 4132) );
-    // mymap.insert(std::pair< int , int> (30, 4132) );
-    // mymap.insert(std::pair< int , int> (20, 4132) );
-    // mymap.insert(std::pair< int , int> (40, 4132) );
-    // mymap.insert(std::pair< int , int> (25, 4132) );
+    mymap.insert(std::pair< int , int> (30, 4132) );
+    mymap.insert(std::pair< int , int> (20, 4132) );
+    mymap.insert(std::pair< int , int> (40, 4132) );
+    mymap.insert(std::pair< int , int> (25, 4132) );
     
     std::cout  << "empty or not " << mymap.empty() << std::endl;
     
@@ -49,10 +49,10 @@ int main()
     // mymap.insert(std::pair< int , int> (10, 4132) );
 
     
-    // mymap.a_tree.print2D( mymap.a_tree.root_parent , 6);
-    // std::cout  << "before ______________________________" << std::endl;
+    mymap.a_tree.print2D( mymap.a_tree.root_parent , 6);
+    std::cout  << "before ______________________________" << std::endl;
 
-    // mymap.a_tree.remove(mymap.a_tree.root_parent ,std::pair< int , int>         (40, 42) ); 
+    mymap.a_tree.remove(mymap.a_tree.root_parent ,std::pair< int , int>         (40, 42) ); 
     // mymap.a_tree.remove(mymap.a_tree.root_parent ,std::pair< int , int> (30, 42) );
     // mymap.a_tree.remove(mymap.a_tree.root_parent ,std::pair< int , int> (10, 42) );
     // mymap.a_tree.remove(mymap.a_tree.root_parent ,std::pair< int , int>         (4, 42) ); 
