@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 11:08:00 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/24 12:54:26 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/24 13:15:31 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,13 +75,27 @@ public:
         return (l + 1);
     }
   }
- node_p left_Rotation(node_p x) {
+ node_p left_Rotation(node_p x) 
+ {
    node_p y = x->right;
     node_p T2 = y->left;
     y->left = x;
     x->right = T2;
     return (y);
   }
+  
+
+
+
+
+
+
+
+
+
+
+
+
   
   node_p right_Rotation(node_p y) 
   {
@@ -184,6 +198,7 @@ public:
     int left_balance = get_balance_height(root_node->left);
     int right_balance = get_balance_height(root_node->right);
     int sum = left_balance - right_balance; 
+    int left_sum  = get_balance_height(root_node->left);
     /* if you reomve a node from the right the balance factor will be always 2 */
     /* if you reomve a node from the left the balance factor will be always - 2 */
     /*
@@ -206,6 +221,7 @@ public:
 
     */
       
+      std::cout << "left_sum  ==== " <<  left_sum  << std::endl;
      if( sum == 2 && get_balance_height(root_node->left) >= 0)
     {
       // std::cout << "root_node->left " << root_node->left->value.first << std::endl;
@@ -221,15 +237,16 @@ public:
     
           [30]                            [30]                                  [25]  
           /    \                           /                                    /   \
-        [20]      [40] <- to remove     [20]   <- == -1    LRR                  [20]   [30]
+        [20]   [40] <- to remove        [20]   <- == -1    LRR               [20]   [30]
            \                              \
              [25]                          [25]
     */
        
-     else if(root_node->left != NULL && sum == 2 && get_balance_height(root_node->left) == -1)
+     else if(sum == 2 && get_balance_height(root_node->left) == -1)
     {
       std::cout << " case  2" << std::endl;
       root_node->left = left_Rotation(root_node->left); 
+      // print2D(root_node, 5);
       return right_Rotation(root_node);
     }
     
