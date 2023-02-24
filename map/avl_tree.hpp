@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 11:08:00 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/24 08:54:54 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/24 08:56:27 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -161,15 +161,15 @@ public:
     int sum = left_balance - right_balance; 
     /* if you reomve a node from the right the balance factor will be always 2 */
     /* if you reomve a node from the left the balance factor will be always - 2 */
-
     /*
-            [30]                            [30]
-          /     \                            /  
-        [2]      [40] <- to remove         [2]         
+    
+            [30]                            [30]                                  [20]  
+          /     \                            /                                    /   \
+        [2]      [40] <- to remove         [2]      -> right_Rotation          [10]   [30]
         /                                  /
       [1]                                [1]
 
-      
+
     */
      if(root_node->left != NULL && sum == 2 && get_balance_height(root_node->left) >= 0)
     {
