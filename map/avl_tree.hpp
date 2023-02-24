@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 11:08:00 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/24 10:03:26 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/24 10:09:53 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,9 @@ public:
 
   nodes() : value(), right(NULL), left(NULL) {}
 
-  nodes(T insert_it) : value(insert_it) {
+  nodes(T insert_it) : value(insert_it) 
+  {
+    std::cout  << "  nodes(T insert_it) : value(insert_it) " << std::endl;
     // value = insert_it;
     right = NULL;
     left = NULL;
@@ -100,6 +102,13 @@ public:
 		}
 		return (current);
 	}
+	node_p max_node(node_p node)
+	{
+		node_p current = node;
+    
+		
+		return (current->left);
+	}
 
 
 
@@ -118,8 +127,6 @@ public:
   {
     if (root_node == NULL)
       return (NULL);
-      // return (root_node);
-
     else if (x.first < root_node->value.first) 
     {
       root_node->left = remove_a_node(root_node->left, x);
@@ -133,11 +140,11 @@ public:
     {
       if (root_node->left == NULL) 
       {
-        // node_p tmp = root_node->right;
+        node_p tmp = root_node->right;
         alloc_it.destroy(root_node);
         // tmp = NULL;
-        return NULL;
-        // return tmp;
+        // return NULL;
+        return tmp;
 
       }
        else if (root_node->right == NULL) 
@@ -149,18 +156,19 @@ public:
       }
       else
       {
-        /*
-        TreeNode *temp = minValueNode(r->right);
-				// Copy the inorder successor's content to this node
-				r->value = temp->value;
-				// Delete the inorder successor
         
-				r->r
-        				r->right = deleteNode(r->right, temp->value);
+        // node_p tmp = max_node(root_node->left);
+        // alloc_it.construct(root_node, tmp->value);
+        // root_node = remove_a_node(root_node, tmp->value);
 
-        */
+
+
+
+        
+       
         node_p tmp = min_node(root_node->right);
-          root_node = tmp;
+          // root_node->value = tmp->value;
+                alloc_it.construct(root_node, tmp->value);
           root_node->right = remove_a_node(root_node->right, tmp->value);
           
       }
@@ -193,13 +201,13 @@ public:
 
 
     */
-     if( sum == 2 && get_balance_height(root_node->left) >= 0)
-    {
-      // std::cout << "root_node->left " << root_node->left->value.first << std::endl;
-      std::cout << "case 1 " << std::endl;
-      std::cout << "root_node" << root_node->value.first << std::endl;
-      return right_Rotation(root_node);
-    }
+    //  if( sum == 2 && get_balance_height(root_node->left) >= 0)
+    // {
+    //   // std::cout << "root_node->left " << root_node->left->value.first << std::endl;
+    //   std::cout << "case 1 " << std::endl;
+    //   std::cout << "root_node" << root_node->value.first << std::endl;
+    //   return right_Rotation(root_node);
+    // }
     
 
    
