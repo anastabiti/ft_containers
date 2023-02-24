@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 12:29:31 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/24 14:00:26 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/24 14:04:23 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 int main()
 {
 
-    ft ::map<int, int> mymap;
+    ft::map<int, int> mymap;
     // mymap.insert(std::pair< int , int> (44, 42) );
     // mymap.insert(std::pair< int , int> (3, 4132) );
     // mymap.insert(std::pair< int , int> (4, 4132) );

@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 11:08:00 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/24 14:01:05 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/24 14:08:31 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,8 @@ public:
   }
 };
 
-template <class T, class Compare, class Allocator> class avl_tree {
+template <class T, class Compare, class Allocator> class avl_tree 
+{
 public:
   typedef typename Allocator::template rebind<nodes<T> >::other rebind_allocator;
   rebind_allocator alloc_it;
