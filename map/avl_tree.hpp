@@ -3,16 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   avl_tree.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: atabiti <atabiti@student.1337.ma>          +#+  +:+       +#+        */
+/*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 11:08:00 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/24 20:48:16 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/25 09:33:35 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include <iostream>
-#include "iterator.hpp"
 /* AVL trees are binary search trees in which the difference between the height
    of the left and right subtree is either -1, 0, or +1.*/
 #define MAX_difference 1
@@ -29,14 +28,8 @@ public:
   nodes *left;
 
   nodes() : value(), right(NULL), left(NULL) {}
-
-  nodes(T insert_it) : value(insert_it) 
-  {
-    std::cout  << "  nodes(T insert_it) : value(insert_it) " << std::endl;
-    // value = insert_it;
-    // right = NULL;
-    // left = NULL;
-  }
+  nodes(T insert_it) : value(insert_it)  { }
+  
   friend std::ostream &operator<<(std::ostream &os, const nodes &dt) {
     os << dt.value;
     return (os);
@@ -49,28 +42,18 @@ public:
 typedef T value_type;
 typedef Compare key_compare;
 typedef Allocator allocator_type;
-
   typedef typename allocator_type::pointer pointer;
-
   
   typedef typename Allocator::template rebind<nodes<T> >::other rebind_allocator;
   rebind_allocator alloc_it;
   typedef Compare compare_type;
   typedef nodes<T> node_type;
   typedef node_type *node_p;
-  
-  typedef ft::tree_iterator<pointer, node_p>  iterator;
 
-  /* iterator  */
-
-  
   node_p root_parent;
 
 public:
-iterator begin()
-{
-  return iterator(min_node(root_parent));
-}
+
   avl_tree() : root_parent(NULL) {
 
     // std::cout << "d.c is called" << std::endl;
