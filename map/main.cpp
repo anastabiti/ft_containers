@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
+/*   By: atabiti <atabiti@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 12:29:31 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/25 09:46:57 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/25 16:14:46 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,15 @@
 #include "avl_tree.hpp"
 int main()
 {
-  // std::map<char,int> mymap;
+  std::map<char,int> m1ymap;
 
-  // mymap['b'] = 100;
-  // mymap['a'] = 200;
-  // mymap['c'] = 300;
+  m1ymap['b'] = 100;
+  m1ymap['a'] = 200;
+  m1ymap['c'] = 300;
 
-  // // show content:
-  // for (std::map<char,int>::iterator it=mymap.begin(); it!=mymap.end(); ++it)
-  //   std::cout << it->first << " => " << it->second << '\n';
+  // show content:
+  for (std::map<char,int>::iterator it=m1ymap.begin(); it!=m1ymap.end(); ++it)
+    std::cout << it->first << " => " << it->second << '\n';
 
 
 

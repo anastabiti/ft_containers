@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
+/*   By: atabiti <atabiti@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 13:10:35 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/25 10:01:32 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/25 16:17:42 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,26 +21,16 @@ template <class Key, class T, class Compare = std::less<Key>, class Allocator = 
 
 class map
 {
-  public:
-	// types:
-	typedef Key key_type;
-	typedef T mapped_type;
-	typedef std::pair<const Key, T> value_type;
-	typedef Compare key_compare;
-	typedef Allocator allocator_type;
-	typedef typename Allocator::reference reference;
-	typedef typename Allocator::const_reference const_reference;
+  
+
+      public:
+      typedef Key					key_type;
+      typedef T					mapped_type;
+      typedef std::pair<const Key, T>		value_type;
+      typedef Compare					key_compare;
+      typedef Allocator					allocator_type;
+	  /*_______________________________________________*/
 	ft::avl_tree<value_type, Compare, Allocator> a_tree;
-	typedef typename std::map<Key, T>::iterator iterator;	
-	// typedef std::iterator<std::bidirectional_iterator_tag, const iterator> const_iterator;
-	typedef size_t size_type; 
-	typedef ptrdiff_t difference_type;
-	typedef typename Allocator::pointer pointer;
-
-	// typedef typename Allocator::const_pointer const_pointer;
-	// typedef std::reverse_iterator<iterator> reverse_iterator;
-	// typedef std::reverse_iterator<const_iterator> const_reverse_iterator;
-
 	Allocator M_alloc;
 	class value_compare : public std::binary_function<value_type, value_type, bool>
 	{

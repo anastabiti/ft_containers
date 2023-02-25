@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   avl_tree.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
+/*   By: atabiti <atabiti@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 11:08:00 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/25 10:02:32 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/25 16:13:06 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,8 @@
 #define MAX_difference 1
 #define SPACE 4
 
-namespace ft 
-{
-template <class T> class nodes 
-{
+namespace ft {
+template <class T> class nodes {
 public:
   int balance_height;
   T value;
@@ -34,167 +32,97 @@ public:
   }
 };
 
-template <class T, class Compare, class Allocator> class avl_tree 
-{
+template <class T, class Compare, class Allocator> class avl_tree {
 public:
-typedef T value_type;
-typedef Allocator allocator_type;
-typedef Compare value_compare;
-// private:
-typedef typename Allocator::template rebind<nodes<T> >::other rebind_allocator;
-// typedef Allocator rebind_allocator;
-rebind_allocator alloc_it;
-typedef nodes<T>  *node_p;
-node_p root_parent;
-public:
+  typedef T value_type;
+  typedef Allocator allocator_type;
+  typedef Compare value_compare;
+  // private:
+  typedef typename Allocator::template rebind<nodes<T>>::other rebind_allocator;
+  // typedef Allocator rebind_allocator;
+  rebind_allocator alloc_it;
+  typedef nodes<T> *node_p;
+  node_p root_parent;
 
+public:
   avl_tree() : root_parent(NULL) {}
-  
-int height_of_each_node(nodes<T> *r)
-{
-  if (r == NULL)
+
+  int height_of_each_node(nodes<T> *r) {
+    if (r == NULL)
       return (-1);
     else {
       int l = height_of_each_node(r->left);
       int rr = height_of_each_node(r->right);
-      // std::cout << "right : " <<rr<< std::endl;
-      // // std::cout << "______________________" <<rr<< std::endl;
-
-      // std::cout << "left : " <<l<< std::endl;
-      // // std::cout << "______________________" <<rr<< std::endl;
       if (l > rr)
         return (l + 1);
       else
         return (rr + 1);
     }
-}
+  }
   int get_balance_height(nodes<T> *r) {
-    
+
     int i = 0;
     if (r == NULL)
       return (-1);
-    // else {
-    //   int rr = get_balance_height(r->right);
-    //   int l = get_balance_height(r->left);
-    //   // std::cout << "right : " <<rr<< std::endl;
-    //   // // std::cout << "______________________" <<rr<< std::endl;
-
-    //   // std::cout << "left : " <<l<< std::endl;
-    //   // // std::cout << "______________________" <<rr<< std::endl;
-    //   if (rr > l)
-    //     return (rr + 1);
-    //   else
-    //     return (l + 1);
-    // }
     return (height_of_each_node(r->left) - height_of_each_node(r->right));
   }
 
-
-
-
-
-
- node_p left_Rotation(node_p x) 
- {
-   node_p y = x->right;
+  node_p left_Rotation(node_p x) {
+    node_p y = x->right;
     node_p T2 = y->left;
     y->left = x;
     x->right = T2;
     return (y);
   }
-  
 
-
-
-
-
-
-
-
-
-
-
-
-  
-  node_p right_Rotation(node_p y) 
-  {
-    std::cout  <<" y= inside right rotaion is  " << y->value.first << std::endl;
+  node_p right_Rotation(node_p y) {
+    std::cout << " y= inside right rotaion is  " << y->value.first << std::endl;
     node_p x = y->left;
     node_p T2 = x->right;
     x->right = y;
     y->left = T2;
-    std::cout  <<" x = inside right rotaion is  " << x->value.first << std::endl;
+    std::cout << " x = inside right rotaion is  " << x->value.first
+              << std::endl;
     return (x);
   }
 
-	node_p min_node(node_p node)
-	{
-		node_p current = node;
-    
-		while (current->left != NULL)
-		{
-			current = current->left;
-		}
-		return (current);
-	}
-	node_p max_node(node_p node)
-	{
-		node_p current = node;
-    
-		
-		return (current->left);
-	}
+  node_p min_node(node_p node) {
+    node_p current = node;
 
-
-
-
-
-
-
-
-
-
-
-
-  void remove(node_p root_node, T x)
-  {
-      this->root_parent = remove_a_node(root_node, x);
+    while (current->left != NULL) {
+      current = current->left;
+    }
+    return (current);
   }
-  
-  
-  node_p remove_a_node(node_p root_node, T x) 
-  {
+  node_p max_node(node_p node) {
+    node_p current = node;
+
+    return (current->left);
+  }
+
+  void remove(node_p root_node, T x) {
+    this->root_parent = remove_a_node(root_node, x);
+  }
+
+  node_p remove_a_node(node_p root_node, T x) {
     if (root_node == NULL)
       return (NULL);
-    else if (x.first < root_node->value.first) 
-    {
+    else if (x.first < root_node->value.first) {
       root_node->left = remove_a_node(root_node->left, x);
-    } 
-    else if (x.first > root_node->value.first) 
-    {
-      // std::cout << "root_node->right before was  " << root_node->right->value.first << std::endl;
-      root_node->right = remove_a_node(root_node->right, x);      
-    } 
-    else 
-    {
-      if (root_node->left == NULL) 
-      {
+    } else if (x.first > root_node->value.first) {
+      root_node->right = remove_a_node(root_node->right, x);
+    } else {
+      if (root_node->left == NULL) {
         node_p tmp = root_node->right;
         alloc_it.destroy(root_node);
-        // tmp = NULL;
-        // return NULL;
-        return tmp;
+                return tmp;
 
-      }
-       else if (root_node->right == NULL) 
-      {
-          node_p tmp = root_node->left;
-          alloc_it.destroy(root_node);
-          return tmp;
-      }
-      else
-      {
-        
+      } else if (root_node->right == NULL) {
+        node_p tmp = root_node->left;
+        alloc_it.destroy(root_node);
+        return tmp;
+      } else {
+
         // if(root_node->left == NULL && root_node->right == NULL)
         //             return NULL;
         // node_p tmp = max_node(root_node);
@@ -203,151 +131,114 @@ int height_of_each_node(nodes<T> *r)
         // // std::cout  << tmp_left->value.first << std::endl;
         // alloc_it.destroy(root_node->left);
         // root_node->left = tmp_left;
-            node_p tmp = min_node(root_node->right);
-          // root_node->value = tmp->value;
-          alloc_it.construct(root_node, tmp->value);  // do initialise left and right in node constructor to avoid this issue here <<<<--------
-          root_node->right = remove_a_node(root_node->right, tmp->value);
-          
+        node_p tmp = min_node(root_node->right);
+        // root_node->value = tmp->value;
+        alloc_it.construct(
+            root_node,
+            tmp->value); // do initialise left and right in node constructor to
+                         // avoid this issue here <<<<--------
+        root_node->right = remove_a_node(root_node->right, tmp->value);
       }
-      
-      
     }
-
-    
-    // int left_balance = get_balance_height(root_node->left);
-    // int right_balance = get_balance_height(root_node->right);
-    int sum = get_balance_height(root_node); 
+    int sum = get_balance_height(root_node);
     // int left_sum  = get_balance_height(root_node->left);
-    /* if you reomve a node from the right the balance factor will be always 2 */
-    /* if you reomve a node from the left the balance factor will be always - 2 */
+    /* if you reomve a node from the right the balance factor will be always 2
+     */
+    /* if you reomve a node from the left the balance factor will be always - 2
+     */
     /*
     case 1
-    
-            [30]                            [30]                                  [2]  
-          /     \                            /                                    /   \
-        [2]      [40] <- to remove         [2]      ->              RR          [1]   [30]
-        /                                  /
-      [1]                                [1]
+
+            [30]                            [30] [2]
+          /     \                            / /   \ [2]      [40] <- to remove
+    [2]      ->              RR          [1]   [30] / / [1] [1]
 
     case 2
-    
-            [30]                              [30]                                   [20]  
-          /     \                            /                                      /   \
-        [20]      [40] <- to remove         [20]      -> RR                      [10]   [30]
-        /   \                               /   \                                         /
-      [10]  [25]                          [10]  [25]                                   [25]
-  
+
+            [30]                              [30] [20]
+          /     \                            / /   \ [20]      [40] <- to remove
+    [20]      -> RR                      [10]   [30] / \ / \ / [10]  [25] [10]
+    [25]                                   [25]
+
 
     */
-      
-      // std::cout << "left_sum  ==== " <<  left_sum  << std::endl;
-     if( sum == 2 && get_balance_height(root_node->left) >= 0)
-    {
-      // std::cout << "root_node->left " << root_node->left->value.first << std::endl;
+
+    // std::cout << "left_sum  ==== " <<  left_sum  << std::endl;
+    if (sum == 2 && get_balance_height(root_node->left) >= 0) {
+      // std::cout << "root_node->left " << root_node->left->value.first <<
+      // std::endl;
       std::cout << "case 1 " << std::endl;
       // std::cout << "root_node " << root_node->value.first << std::endl;
-      
-      // std::cout << "_=----+++++++_+_+ " << root_node->value.first << std::endl;
-       return (right_Rotation(root_node)) ;
+
+      // std::cout << "_=----+++++++_+_+ " << root_node->value.first <<
+      // std::endl;
+      return (right_Rotation(root_node));
     }
     /*
     case 1
-    
-          [30]                            [30]                                  [25]  
-          /    \                           /                                    /   \
-        [20]   [40] <- to remove        [20]   <- == -1    LRR               [20]   [30]
+
+          [30]                            [30] [25]
+          /    \                           / /   \ [20]   [40] <- to remove [20]
+    <- == -1    LRR               [20]   [30]
            \                              \
              [25]                          [25]
     */
-       
-     else if(sum == 2 && get_balance_height(root_node->left) == -1)
-    {
+
+    else if (sum == 2 && get_balance_height(root_node->left) == -1) {
       std::cout << " case  2" << std::endl;
-      root_node->left = left_Rotation(root_node->left); 
+      root_node->left = left_Rotation(root_node->left);
       print2D(root_node, 5);
       return right_Rotation(root_node);
     }
     /*
     case 1
-    
-              [20]                            [20]                                    [30]
-              /   \                             \                                    /   \
-remove->  [10]     [30]                          [30]             LR               [20]  [40]
+
+              [20]                            [20] [30]
+              / \                             \ /   \ remove->  [10]     [30]
+[30]             LR               [20]  [40]
                     \                               \
                     [40]                            [40]
 
 
-                    
-              [20]                            [20]                                    [30]
-              /   \                             \                                    /   \
-remove->  [10]     [30]                          [30]             LR               [20]  [40]
-                   /  \                          /   \                               \ 
-                [25]    [40]                 [25]     [40]                            [25]
-    */
-    
-       
 
-       
-    else if(root_node->right != NULL && sum == -2 && get_balance_height(root_node->right) <= -0 )
-    {
+              [20]                            [20] [30]
+              / \                             \ /   \ remove->  [10]     [30]
+[30]             LR               [20]  [40]
+                   /  \                          / \ \ [25]    [40] [25] [40]
+[25]
+    */
+
+    else if (root_node->right != NULL && sum == -2 &&
+             get_balance_height(root_node->right) <= -0) {
       std::cout << " case  3" << std::endl;
       return left_Rotation(root_node);
     }
     /*
     case 1
-    
-              [20]                            [20]                                    [25]
-              /   \                              \                                    /   \
-remove->  [10]     [30]                          [30]             RLR               [20]  [30]
-                    /                            /
+
+              [20]                            [20] [25]
+              / \                              \ /   \ remove->  [10]     [30]
+[30]             RLR               [20]  [30] /                            /
                 [25]                           [25]
     */
-    
- 
 
-    else  if( sum == -2 && get_balance_height(root_node->right) == 1)
-    {
-      std::cout << "case  4 " << std::endl; 
+    else if (sum == -2 && get_balance_height(root_node->right) == 1) {
+      std::cout << "case  4 " << std::endl;
       // std::cout <<" value  =" << x.first  <<std::endl;
-      root_node->right = right_Rotation(root_node->right); 
+      root_node->right = right_Rotation(root_node->right);
       return left_Rotation(root_node);
     }
-      
+
     return root_node;
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   node_p insert_a_node(node_p root_node, T x) {
 
     if (root_node == NULL) {
       node_p new_node = alloc_it.allocate(1);
       alloc_it.construct(new_node, x);
-       new_node->right = NULL;
-   new_node ->left = NULL;
+      new_node->right = NULL;
+      new_node->left = NULL;
       // alloc_it.construct(new_node , x);
 
       // std::cout  << root_node->value.first << std::endl;
@@ -422,13 +313,7 @@ remove->  [10]     [30]                          [30]             RLR           
     return root_node;
   }
 
-
-
-
-  void insert(T x)
-    { 
-              this->root_parent = insert_a_node(this->root_parent, x); 
-    }
+  void insert(T x) { this->root_parent = insert_a_node(this->root_parent, x); }
 
   void print2D(node_p r, int space) {
     if (r == NULL)
