@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 13:10:35 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/25 09:58:45 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/25 10:00:39 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,41 +21,25 @@ template <class Key, class T, class Compare = std::less<Key>, class Allocator = 
 
 class map
 {
-	// private:
-
   public:
 	// types:
 	typedef Key key_type;
 	typedef T mapped_type;
-
 	typedef std::pair<const Key, T> value_type;
-
 	typedef Compare key_compare;
 	typedef Allocator allocator_type;
 	typedef typename Allocator::reference reference;
 	typedef typename Allocator::const_reference const_reference;
-
-
-	
-	// typedef std::iterator<std::bidirectional_iterator_tag, T> iterator;
-
 	ft::avl_tree<value_type, Compare, Allocator> a_tree;
-	// typedef typename ft::avl_tree<value_type, Compare, Allocator>::iterator iterator;
-	typedef typename std::map<Key, T>::iterator iterator;
-
-
-
-	
-	typedef std::iterator<std::bidirectional_iterator_tag,
-							const iterator>
-		const_iterator;
-	// typedef implementation defined size_type; // See 23.1
-	// typedef implementation defined difference_type;// See 23.1
+	typedef typename std::map<Key, T>::iterator iterator;	
+	// typedef std::iterator<std::bidirectional_iterator_tag, const iterator> const_iterator;
+	typedef size_t size_type; 
+	typedef ptrdiff_t difference_type;
 	typedef typename Allocator::pointer pointer;
 
-	typedef typename Allocator::const_pointer const_pointer;
-	typedef std::reverse_iterator<iterator> reverse_iterator;
-	typedef std::reverse_iterator<const_iterator> const_reverse_iterator;
+	// typedef typename Allocator::const_pointer const_pointer;
+	// typedef std::reverse_iterator<iterator> reverse_iterator;
+	// typedef std::reverse_iterator<const_iterator> const_reverse_iterator;
 
 	Allocator M_alloc;
 
