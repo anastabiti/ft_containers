@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 13:10:35 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/25 10:00:39 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/25 10:01:27 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,6 @@ class map
 	// typedef std::reverse_iterator<const_iterator> const_reverse_iterator;
 
 	Allocator M_alloc;
-
-
 	class value_compare : public std::binary_function<value_type, value_type, bool>
 	{
 		friend class map;
@@ -63,10 +61,10 @@ class map
 	};
 
 	/* Constructs an empty map using the specified comparison object and allocator.  */
-	// explicit map(const Compare &comp = Compare(), const Allocator & = Allocator())
-	// {
-	// 	// std::cout << "map con is called" << std::endl;
-	// }
+	explicit map(const Compare &comp = Compare(), const Allocator & = Allocator())
+	{
+		// std::cout << "map con is called" << std::endl;
+	}
 
 	// std::pair<iterator, bool> insert(const value_type &x)
 
