@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 11:08:00 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/25 09:58:14 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/25 10:02:32 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ template <class T, class Compare, class Allocator> class avl_tree
 public:
 typedef T value_type;
 typedef Allocator allocator_type;
+typedef Compare value_compare;
+// private:
 typedef typename Allocator::template rebind<nodes<T> >::other rebind_allocator;
 // typedef Allocator rebind_allocator;
 rebind_allocator alloc_it;
