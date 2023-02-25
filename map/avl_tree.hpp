@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 11:08:00 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/25 09:33:35 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/25 09:58:14 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,19 +17,17 @@
 #define MAX_difference 1
 #define SPACE 4
 
-namespace ft {
-/* linked list : node */
-template <class T> class nodes {
+namespace ft 
+{
+template <class T> class nodes 
+{
 public:
-  //   typedef std::pair<const Key , T>
   int balance_height;
   T value;
   nodes *right;
   nodes *left;
-
   nodes() : value(), right(NULL), left(NULL) {}
-  nodes(T insert_it) : value(insert_it)  { }
-  
+  nodes(T insert_it) : value(insert_it) {}
   friend std::ostream &operator<<(std::ostream &os, const nodes &dt) {
     os << dt.value;
     return (os);
@@ -40,24 +38,16 @@ template <class T, class Compare, class Allocator> class avl_tree
 {
 public:
 typedef T value_type;
-typedef Compare key_compare;
 typedef Allocator allocator_type;
-  typedef typename allocator_type::pointer pointer;
-  
-  typedef typename Allocator::template rebind<nodes<T> >::other rebind_allocator;
-  rebind_allocator alloc_it;
-  typedef Compare compare_type;
-  typedef nodes<T> node_type;
-  typedef node_type *node_p;
-
-  node_p root_parent;
-
+typedef typename Allocator::template rebind<nodes<T> >::other rebind_allocator;
+// typedef Allocator rebind_allocator;
+rebind_allocator alloc_it;
+typedef nodes<T>  *node_p;
+node_p root_parent;
 public:
 
-  avl_tree() : root_parent(NULL) {
-
-    // std::cout << "d.c is called" << std::endl;
-  }
+  avl_tree() : root_parent(NULL) {}
+  
 int height_of_each_node(nodes<T> *r)
 {
   if (r == NULL)

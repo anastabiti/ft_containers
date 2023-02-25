@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 13:10:35 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/25 09:33:26 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/25 09:58:45 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ class map
 
 	
 	// typedef std::iterator<std::bidirectional_iterator_tag, T> iterator;
+
 	ft::avl_tree<value_type, Compare, Allocator> a_tree;
 	// typedef typename ft::avl_tree<value_type, Compare, Allocator>::iterator iterator;
 	typedef typename std::map<Key, T>::iterator iterator;
