@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 12:29:31 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/25 16:14:46 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/25 17:01:24 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,9 @@ int main()
     mymap.insert(std::pair< int , int> (25, 4132) );
     
     // std::cout  << "empty or not " << mymap.empty() << std::endl;
-    // ft::map<int, int>::iterator it =mymap.begin() ;
-    // std::cout  << "empty or not " << it->first << std::endl;
+    ft::map<int, int>::iterator it =mymap.begin() ;
+    
+    std::cout  << "empty or not " << it->first << std::endl;
     
     
     // mymap.insert(std::pair< int , int> (10, 4132) );

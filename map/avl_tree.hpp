@@ -6,12 +6,13 @@
 /*   By: atabiti <atabiti@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 11:08:00 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/25 16:41:29 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/25 17:01:53 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include <iostream>
+#include "../vector/ft_type_traits.hpp"
 /* AVL trees are binary search trees in which the difference between the height
    of the left and right subtree is either -1, 0, or +1.*/
 #define MAX_difference 1
@@ -21,9 +22,10 @@ template <class T, class NODE_T> class tree_iterator {
 
 public:
   typedef T value_type;
-  typedef T &reference;
-  typedef T *pointer;
-
+  // typedef T &reference;
+  // typedef T *pointer;
+  typedef typename ft::iterator_traits<T>::pointer pointer; 
+  typedef typename ft::iterator_traits<T>::reference reference; 
   typedef std::bidirectional_iterator_tag iterator_category;
   typedef ptrdiff_t difference_type;
 
@@ -34,8 +36,12 @@ public:
 public:
   tree_iterator() : iter() {}
   tree_iterator(NODE_T a) : iter(a) {}
-
   NODE_T base() const { return this->iter; }
+  reference operator*() const
+  { 
+    return iter->value;
+  }
+ pointer			operator->() const	{ return (&iter->value); };
   
 };
 
@@ -71,6 +77,10 @@ public:
   node_p root_parent;
 
 public:
+iterator begin()
+{
+ return  iterator(min_node(root_parent)); 
+}
   avl_tree() : root_parent(NULL) {}
 
   int height_of_each_node(nodes<T> *r) {

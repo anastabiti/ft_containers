@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 13:10:35 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/25 16:43:13 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/25 16:44:19 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,10 @@ class map
 	
 		// a_tree.root_parent = NULL;
 	}
-
+iterator begin()
+{
+	return a_tree.begin();
+}
 };
 
 } // namespace ft
