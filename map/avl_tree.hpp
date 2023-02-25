@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 11:08:00 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/25 16:13:06 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/25 16:41:29 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,28 @@
    of the left and right subtree is either -1, 0, or +1.*/
 #define MAX_difference 1
 #define SPACE 4
+
+template <class T, class NODE_T> class tree_iterator {
+
+public:
+  typedef T value_type;
+  typedef T &reference;
+  typedef T *pointer;
+
+  typedef std::bidirectional_iterator_tag iterator_category;
+  typedef ptrdiff_t difference_type;
+
+  // typedef tree_iterator::base	_Base_ptr;
+  private:
+  NODE_T iter;
+
+public:
+  tree_iterator() : iter() {}
+  tree_iterator(NODE_T a) : iter(a) {}
+
+  NODE_T base() const { return this->iter; }
+  
+};
 
 namespace ft {
 template <class T> class nodes {
@@ -32,16 +54,20 @@ public:
   }
 };
 
-template <class T, class Compare, class Allocator> class avl_tree {
+template <class T, class Compare, class Allocator = std::allocator<T>>
+class avl_tree {
 public:
   typedef T value_type;
   typedef Allocator allocator_type;
   typedef Compare value_compare;
   // private:
   typedef typename Allocator::template rebind<nodes<T>>::other rebind_allocator;
-  // typedef Allocator rebind_allocator;
+  typedef typename allocator_type::pointer pointer;
   rebind_allocator alloc_it;
   typedef nodes<T> *node_p;
+  typedef tree_iterator<pointer, node_p> iterator;
+
+  // typedef Allocator rebind_allocator;
   node_p root_parent;
 
 public:
@@ -115,7 +141,7 @@ public:
       if (root_node->left == NULL) {
         node_p tmp = root_node->right;
         alloc_it.destroy(root_node);
-                return tmp;
+        return tmp;
 
       } else if (root_node->right == NULL) {
         node_p tmp = root_node->left;

@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 13:10:35 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/25 16:17:42 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/25 16:43:13 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,14 @@ class map
       typedef Compare					key_compare;
       typedef Allocator					allocator_type;
 	  /*_______________________________________________*/
-	ft::avl_tree<value_type, Compare, Allocator> a_tree;
+	typedef ft::avl_tree<value_type, Compare, Allocator> tree_type;
+	 ft::avl_tree<value_type, Compare, Allocator> a_tree;
+	typedef typename tree_type::iterator		 iterator;
+
+
+
+
+	
 	Allocator M_alloc;
 	class value_compare : public std::binary_function<value_type, value_type, bool>
 	{
