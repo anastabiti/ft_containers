@@ -6,17 +6,18 @@
 /*   By: atabiti <atabiti@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 11:08:00 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/25 17:01:53 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/25 18:17:58 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#include <iostream>
 #include "../vector/ft_type_traits.hpp"
+#include <iostream>
 /* AVL trees are binary search trees in which the difference between the height
    of the left and right subtree is either -1, 0, or +1.*/
 #define MAX_difference 1
 #define SPACE 4
+
 
 template <class T, class NODE_T> class tree_iterator {
 
@@ -24,27 +25,22 @@ public:
   typedef T value_type;
   // typedef T &reference;
   // typedef T *pointer;
-  typedef typename ft::iterator_traits<T>::pointer pointer; 
-  typedef typename ft::iterator_traits<T>::reference reference; 
+  typedef typename ft::iterator_traits<T>::pointer pointer;
+  typedef typename ft::iterator_traits<T>::reference reference;
   typedef std::bidirectional_iterator_tag iterator_category;
   typedef ptrdiff_t difference_type;
 
   // typedef tree_iterator::base	_Base_ptr;
-  private:
+private:
   NODE_T iter;
 
 public:
   tree_iterator() : iter() {}
   tree_iterator(NODE_T a) : iter(a) {}
   NODE_T base() const { return this->iter; }
-  reference operator*() const
-  { 
-    return iter->value;
-  }
- pointer			operator->() const	{ return (&iter->value); };
-  
+  reference operator*() const { return iter->value; }
+  pointer operator->() const { return (&iter->value); };
 };
-
 namespace ft {
 template <class T> class nodes {
 public:
@@ -75,12 +71,9 @@ public:
 
   // typedef Allocator rebind_allocator;
   node_p root_parent;
-
+value_compare compare_function;
 public:
-iterator begin()
-{
- return  iterator(min_node(root_parent)); 
-}
+  iterator begin() { return iterator(min_node(root_parent)); }
   avl_tree() : root_parent(NULL) {}
 
   int height_of_each_node(nodes<T> *r) {
@@ -286,7 +279,9 @@ iterator begin()
     }
     // std::cout  << root_node->value.first << std::endl;
 
-    if (x.first < root_node->value.first) {
+    // if (x.first < root_node->value.first) {
+    // if ( x.first < root_node->value.first) {
+    if ( compare_function (x.first , root_node->value.first)) {
       root_node->left = insert_a_node(root_node->left, x);
       // std::cout  <<"( left x.first < root_node->value.first)" << std::endl;
 
@@ -294,7 +289,8 @@ iterator begin()
 
     }
 
-    else if (x.first > root_node->value.first) {
+    // else if (x.first > root_node->value.first) {
+    else if (compare_function ( root_node->value.first, x.first )) {
       // std::cout  <<"right (x.first > root_node->value.first)" << std::endl;
       root_node->right = insert_a_node(root_node->right, x);
     } else {
