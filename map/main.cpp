@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 12:29:31 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/26 11:06:06 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/26 11:11:20 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ int main()
     it2--;
     std::cout  << "real_one->first " << it1->first << std::endl;
     std::cout  << "end real " << it2->first << std::endl;
+     *++it1;
+    // std::cout  << "end_it mine  " << *++it1->first << std::endl;
 
     if(it1 == it2)
     {
@@ -82,6 +84,8 @@ int main()
     end_it--;
     std::cout  << "it mine " << it->first << std::endl;
     std::cout  << "end_it mine  " << end_it->first << std::endl;
+    *++it;
+    // std::cout  << "end_it mine  " << *++it->first << std::endl;
     
     if(it == end_it)
     {
