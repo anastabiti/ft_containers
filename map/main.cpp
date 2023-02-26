@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 12:29:31 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/26 10:50:42 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/26 11:06:06 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,11 @@ int main()
     std::cout  << "equal"<< std::endl;
       
     }
+   if(it1 != it2)
+   {
+    
+    std::cout  << "not equal"<< std::endl;
+   }
     ft::map<int, int> mymap;
     mymap.insert(std::pair< int , int> (200, 42) );
     mymap.insert(std::pair< int , int> (100, 4132) );
@@ -83,6 +88,11 @@ int main()
     std::cout  << "equal"<< std::endl;
       
     }
+   if(it != end_it)
+   {
+    
+    std::cout  << "not equal"<< std::endl;
+   }
     
     // mymap.insert(std::pair< int , int> (10, 4132) );
 
