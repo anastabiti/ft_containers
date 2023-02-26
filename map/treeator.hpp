@@ -6,32 +6,34 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 12:39:29 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/25 12:50:12 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/26 08:38:07 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-template <class T>
-class treeator
-{
-private:
-public:
-  // typedef T iterator_type;
-  // typedef typename ft::iterator_traits<T>::value_type value_type;
-  // typedef typename ft::iterator_traits<T>::pointer pointer;
-  typedef  T* pointer;
-  // typedef typename ft::iterator_traits<T>::reference reference;
-  // typedef ptrdiff_t difference_type;
-  // typedef std::random_access_iterator_tag iterator_category;
 
+
+namespace ft
+{
+  
+template <class T, class NODE_T> class 
+tree_iterator {
+
+public:
+  typedef T value_type;
+  typedef typename ft::iterator_traits<T>::pointer pointer;
+  typedef typename ft::iterator_traits<T>::reference reference;
+  typedef std::bidirectional_iterator_tag iterator_category;
+  typedef ptrdiff_t difference_type;
 private:
-  pointer ptr;
-    iterator(/* args */) :ptr()
-    {
-      
-    }
-    
-    ~iterator(){}
+  NODE_T iter;
+
+public:
+  tree_iterator() : iter() {}
+  tree_iterator(NODE_T a) : iter(a) {}
+  NODE_T base() const { return this->iter; }
+  reference operator*() const { return iter->value; }
+  pointer operator->() const { return (&iter->value); };
 };
 
-
+}

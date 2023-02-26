@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: atabiti <atabiti@student.1337.ma>          +#+  +:+       +#+        */
+/*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 13:10:35 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/25 18:21:18 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/26 08:36:44 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include "avl_tree.hpp"
 namespace ft {
 template <class Key, class T, class Compare = std::less<Key>,
-          class Allocator = std::allocator<std::pair<const Key, T>>> //or use  greater
+          class Allocator = std::allocator<std::pair<const Key, T> > > //or use  greater
 
 class map {
 

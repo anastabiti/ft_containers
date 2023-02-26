@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   avl_tree.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: atabiti <atabiti@student.1337.ma>          +#+  +:+       +#+        */
+/*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 11:08:00 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/25 18:17:58 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/26 08:38:40 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,32 +15,16 @@
 #include <iostream>
 /* AVL trees are binary search trees in which the difference between the height
    of the left and right subtree is either -1, 0, or +1.*/
-#define MAX_difference 1
+   
 #define SPACE 4
+#include "treeator.hpp"
 
 
-template <class T, class NODE_T> class tree_iterator {
 
-public:
-  typedef T value_type;
-  // typedef T &reference;
-  // typedef T *pointer;
-  typedef typename ft::iterator_traits<T>::pointer pointer;
-  typedef typename ft::iterator_traits<T>::reference reference;
-  typedef std::bidirectional_iterator_tag iterator_category;
-  typedef ptrdiff_t difference_type;
 
-  // typedef tree_iterator::base	_Base_ptr;
-private:
-  NODE_T iter;
 
-public:
-  tree_iterator() : iter() {}
-  tree_iterator(NODE_T a) : iter(a) {}
-  NODE_T base() const { return this->iter; }
-  reference operator*() const { return iter->value; }
-  pointer operator->() const { return (&iter->value); };
-};
+
+
 namespace ft {
 template <class T> class nodes {
 public:
@@ -56,14 +40,14 @@ public:
   }
 };
 
-template <class T, class Compare, class Allocator = std::allocator<T>>
+template <class T, class Compare, class Allocator = std::allocator<T> >
 class avl_tree {
 public:
   typedef T value_type;
   typedef Allocator allocator_type;
   typedef Compare value_compare;
   // private:
-  typedef typename Allocator::template rebind<nodes<T>>::other rebind_allocator;
+  typedef typename Allocator::template rebind<nodes<T> >::other rebind_allocator;
   typedef typename allocator_type::pointer pointer;
   rebind_allocator alloc_it;
   typedef nodes<T> *node_p;
