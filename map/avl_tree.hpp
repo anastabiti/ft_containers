@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 11:08:00 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/26 10:27:18 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/26 10:50:08 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,12 @@
 #include <iostream>
 /* AVL trees are binary search trees in which the difference between the height
    of the left and right subtree is either -1, 0, or +1.*/
-   
+
 #define SPACE 4
 #include "treeator.hpp"
 
+namespace ft {
 
-
-
-
-
-
-namespace ft 
-{
-  
 template <class T> class nodes {
 public:
   int balance_height;
@@ -54,24 +47,17 @@ public:
   rebind_allocator alloc_it;
   typedef nodes<T> *node_p;
 
-  // typedef tree_iterator<pointer, node_p> iterator;// is working fine
-  typedef tree_iterator<T*, node_p> iterator;
+  typedef tree_iterator<pointer, node_p> iterator; // is working fine
+  // typedef tree_iterator<T*, node_p> iterator;
   // typedef Allocator rebind_allocator;
   node_p root_parent;
-value_compare compare_function;
-
+  value_compare compare_function;
 
 public:
-
-
-
-
-
-  
   avl_tree() : root_parent(NULL) {}
-  
+
   iterator begin() { return iterator(min_node(root_parent)); }
-  iterator end() { return iterator(biggest_key(root_parent)+1); }
+  iterator end() { return iterator(biggest_key(root_parent) + 1); }
 
   int height_of_each_node(nodes<T> *r) {
     if (r == NULL)
@@ -86,16 +72,6 @@ public:
     }
   }
 
-
-
-
-
-
-
-
-
-
-  
   int get_balance_height(nodes<T> *r) {
 
     int i = 0;
@@ -136,15 +112,12 @@ public:
 
     return (current->left);
   }
-  node_p biggest_key(node_p node) 
-  {
+  node_p biggest_key(node_p node) {
     node_p current = node;
-      while (current->right != NULL)
-      {
-        current = current->right;
-          
-      }
-        return current;
+    while (current->right != NULL) {
+      current = current->right;
+    }
+    return current;
   }
 
   void remove(node_p root_node, T x) {
@@ -299,7 +272,7 @@ public:
 
     // if (x.first < root_node->value.first) {
     // if ( x.first < root_node->value.first) {
-    if ( compare_function (x.first , root_node->value.first)) {
+    if (compare_function(x.first, root_node->value.first)) {
       root_node->left = insert_a_node(root_node->left, x);
       // std::cout  <<"( left x.first < root_node->value.first)" << std::endl;
 
@@ -308,7 +281,7 @@ public:
     }
 
     // else if (x.first > root_node->value.first) {
-    else if (compare_function ( root_node->value.first, x.first )) {
+    else if (compare_function(root_node->value.first, x.first)) {
       // std::cout  <<"right (x.first > root_node->value.first)" << std::endl;
       root_node->right = insert_a_node(root_node->right, x);
     } else {
