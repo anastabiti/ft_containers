@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 11:08:00 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/26 10:57:47 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/26 11:00:27 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,14 +49,10 @@ public:
 
 
 
-  typedef tree_iterator<T*, node_p> iterator; // is working fine
+  typedef tree_iterator<pointer, nodes<T> *> iterator; // is working fine
 
 
 
-
-  
-  // typedef tree_iterator<T*, node_p> iterator;
-  // typedef Allocator rebind_allocator;
   node_p root_parent;
   value_compare compare_function;
 
