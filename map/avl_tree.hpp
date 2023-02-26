@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 11:08:00 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/26 11:18:57 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/26 12:37:37 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ public:
   T value;
   nodes *right;
   nodes *left;
+  nodes *parent;
   nodes() : value(), right(NULL), left(NULL) {}
   nodes(T insert_it) : value(insert_it) {}
   friend std::ostream &operator<<(std::ostream &os, const nodes &dt) {
@@ -61,15 +62,25 @@ public:
 
   iterator begin() 
   { 
-    
             return iterator(min_node(root_parent)); 
   }
 
+    node_p from_small_to_bigger(node_p node) 
+    {
+      node_p current = node;
+
+      while (current->left != NULL) {
+      current = current->left;
+    }
+    return (current);
+  }
+  
   
   iterator end() 
   {
     return iterator(biggest_key(root_parent) + 1); 
   }
+  
 
   int height_of_each_node(nodes<T> *r) {
     if (r == NULL)
@@ -267,16 +278,19 @@ public:
   node_p insert_a_node(node_p root_node, T x) {
 
     if (root_node == NULL) {
+      
       node_p new_node = alloc_it.allocate(1);
       alloc_it.construct(new_node, x);
       new_node->right = NULL;
       new_node->left = NULL;
+      // root_node->parent = root_node;
       // alloc_it.construct(new_node , x);
 
       // std::cout  << root_node->value.first << std::endl;
       // std::cout  <<"(root_node == NULL)" << std::endl;
       // std::cout  << root_node.value->second << std::endl;
       root_node = new_node;
+      // root_node->parent = new_node;
       // std::cout << root->value.first << std::endl;
       return (root_node);
     }
@@ -284,18 +298,21 @@ public:
 
     // if (x.first < root_node->value.first) {
     // if ( x.first < root_node->value.first) {
-    if (compare_function(x.first, root_node->value.first)) {
+    if (compare_function(x.first, root_node->value.first))
+    {
+      
       root_node->left = insert_a_node(root_node->left, x);
+       root_node->left->parent = root_node;
       // std::cout  <<"( left x.first < root_node->value.first)" << std::endl;
-
-      // std::cout << root_node->value.first << std::endl;
-
+      std::cout <<  root_node->left->parent ->value.first << std::endl;
     }
 
     // else if (x.first > root_node->value.first) {
     else if (compare_function(root_node->value.first, x.first)) {
       // std::cout  <<"right (x.first > root_node->value.first)" << std::endl;
       root_node->right = insert_a_node(root_node->right, x);
+            root_node->parent =  root_node->right ;
+
     } else {
       return (root_node);
     }
@@ -348,7 +365,9 @@ public:
     return root_node;
   }
 
-  void insert(T x) { this->root_parent = insert_a_node(this->root_parent, x); }
+  void insert(T x) { 
+                 this->root_parent = insert_a_node(this->root_parent, x);
+                   }
 
   void print2D(node_p r, int space) {
     if (r == NULL)

@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 13:10:35 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/26 09:22:04 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/26 12:32:03 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ public:
 
   void insert(const value_type &x) 
   {
-    a_tree.insert(x);
+      a_tree.insert(x);
   }
 
   bool empty() const {

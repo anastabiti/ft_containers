@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 12:39:29 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/26 11:04:57 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/26 12:26:09 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,11 +52,16 @@ public:
     // std::cout << "iter.first; " << iter->value.first << std::endl;
     return tmp;
   }
-  tree_iterator operator++() {
+  tree_iterator operator++() 
+  {
+    // std::cout << "iter.first; " << iter->value.first << std::endl;
     ++iter;
     return (*this);
   }
-  tree_iterator operator++(int) {
+  tree_iterator operator++(int)
+   {
+    
+    // std::cout << "iter.first; " << iter->value.first << std::endl;
     tree_iterator tmp(*this);
     ++(*this);
     // std::cout << "iter.first; " << iter->value.first << std::endl;

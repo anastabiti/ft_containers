@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 12:29:31 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/26 11:18:09 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/26 12:31:30 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int main()
   // for (std::map<char,int>::iterator it=m1ymap.begin(); it!=m1ymap.end(); ++it)
   //   std::cout << it->first << " => " << it->second << '\n';
 
-    std::map<int, int> real_one;
+    std::map<int, int > real_one;
     real_one.insert(std::pair< int , int> (200, 42) );
     real_one.insert(std::pair< int , int> (100, 4132) );
     real_one.insert(std::pair< int , int> (300, 4132) );
@@ -40,7 +40,7 @@ int main()
     while (it1 != real_one.end())
     {
       
-    std::cout  << "real_one->first " << it1->first << std::endl;
+    // std::cout  << "real_one->first " << it1->first << std::endl;
       ++it1;
     }
     
@@ -66,11 +66,16 @@ int main()
     ft::map<int, int>::iterator it =mymap.begin() ;
     // ft::map<int, int>::iterator end_it =mymap.end() ;
 
- while (it != mymap.end())
-    {
+//  while (it != mymap.end())
+//     {
       std::cout  << "it mine " << it->first << std::endl;
       ++it;
-    }
+      std::cout  << "it mine " << it->first << std::endl;
+      ++it;
+      std::cout  << "it mine " << it->first << std::endl;
+      ++it;
+      std::cout  << "it mine " << it->first << std::endl;
+    // }
         // end_it--;
     // std::cout  << "end_it mine  " << end_it->first << std::endl;
     // *++it;
