@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 11:08:00 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/26 11:00:27 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/26 11:18:57 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,17 @@ public:
 public:
   avl_tree() : root_parent(NULL) {}
 
-  iterator begin() { return iterator(min_node(root_parent)); }
-  iterator end() { return iterator(biggest_key(root_parent) + 1); }
+  iterator begin() 
+  { 
+    
+            return iterator(min_node(root_parent)); 
+  }
+
+  
+  iterator end() 
+  {
+    return iterator(biggest_key(root_parent) + 1); 
+  }
 
   int height_of_each_node(nodes<T> *r) {
     if (r == NULL)
