@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 11:08:00 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/26 08:38:40 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/26 09:23:58 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,9 @@
 
 
 
-namespace ft {
+namespace ft 
+{
+  
 template <class T> class nodes {
 public:
   int balance_height;
@@ -56,9 +58,19 @@ public:
   // typedef Allocator rebind_allocator;
   node_p root_parent;
 value_compare compare_function;
+
+
 public:
-  iterator begin() { return iterator(min_node(root_parent)); }
+
+
+
+
+
+  
   avl_tree() : root_parent(NULL) {}
+  
+  iterator begin() { return iterator(min_node(root_parent)); }
+  iterator end() { return iterator(max_node(root_parent)); }
 
   int height_of_each_node(nodes<T> *r) {
     if (r == NULL)
@@ -72,6 +84,17 @@ public:
         return (rr + 1);
     }
   }
+
+
+
+
+
+
+
+
+
+
+  
   int get_balance_height(nodes<T> *r) {
 
     int i = 0;
