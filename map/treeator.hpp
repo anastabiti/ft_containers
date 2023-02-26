@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 12:39:29 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/26 10:25:50 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/26 10:26:16 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ namespace ft
 {
   
 template <class T, class NODE_T> class 
-tree_iterator :std::iterator<std::bidirectional_iterator_tag, T>
+tree_iterator //:std::iterator<std::bidirectional_iterator_tag, T>
 {
 
 public:
