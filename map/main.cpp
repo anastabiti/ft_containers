@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 12:29:31 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/26 09:23:39 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/26 10:22:22 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <vector>
 #include <string>
 #include <iostream>
-#include "../vector/vector.hpp"
+// #include "../vector/vector.hpp"
 #include "map.hpp"
 #include "avl_tree.hpp"
 int main()
@@ -39,12 +39,16 @@ int main()
 
     
     std::map<int, int>::iterator it1 =real_one.begin() ;
-    std::map<int, int>::iterator it2 =real_one.end();
+    std::map<int, int>::iterator it2 =real_one.begin();
     // it2--;
     std::cout  << "real_one->first " << it1->first << std::endl;
     std::cout  << "end real " << it2->first << std::endl;
 
-    
+    if(it1 == it2)
+    {
+    std::cout  << "equal"<< std::endl;
+      
+    }
     ft::map<int, int> mymap;
     mymap.insert(std::pair< int , int> (200, 42) );
     mymap.insert(std::pair< int , int> (100, 4132) );
@@ -69,11 +73,16 @@ int main()
     
     // std::cout  << "empty or not " << mymap.empty() << std::endl;
     ft::map<int, int>::iterator it =mymap.begin() ;
-    ft::map<int, int>::iterator end_it =mymap.end() ;
+    ft::map<int, int>::iterator end_it =mymap.begin() ;
+    // end_it--;
+    std::cout  << "it mine " << it->first << std::endl;
+    std::cout  << "end_it mine  " << end_it->first << std::endl;
     
-    std::cout  << "it->first " << it->first << std::endl;
-    std::cout  << "end_it real  " << end_it->first << std::endl;
-    
+    if(it == end_it)
+    {
+    std::cout  << "equal"<< std::endl;
+      
+    }
     
     // mymap.insert(std::pair< int , int> (10, 4132) );
 

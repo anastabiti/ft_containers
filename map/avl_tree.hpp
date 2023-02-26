@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 11:08:00 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/26 09:23:58 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/26 09:32:05 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ public:
   avl_tree() : root_parent(NULL) {}
   
   iterator begin() { return iterator(min_node(root_parent)); }
-  iterator end() { return iterator(max_node(root_parent)); }
+  iterator end() { return iterator(biggest_key(root_parent)+1); }
 
   int height_of_each_node(nodes<T> *r) {
     if (r == NULL)
@@ -134,6 +134,16 @@ public:
     node_p current = node;
 
     return (current->left);
+  }
+  node_p biggest_key(node_p node) 
+  {
+    node_p current = node;
+      while (current->right != NULL)
+      {
+        current = current->right;
+          
+      }
+        return current;
   }
 
   void remove(node_p root_node, T x) {
