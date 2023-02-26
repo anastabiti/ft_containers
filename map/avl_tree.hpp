@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 11:08:00 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/26 10:50:08 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/26 10:53:53 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,11 @@ public:
   typedef nodes<T> *node_p;
 
   typedef tree_iterator<pointer, node_p> iterator; // is working fine
+
+
+
+
+  
   // typedef tree_iterator<T*, node_p> iterator;
   // typedef Allocator rebind_allocator;
   node_p root_parent;
