@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 11:08:00 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/26 12:37:37 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/26 12:39:19 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ public:
   nodes *right;
   nodes *left;
   nodes *parent;
-  nodes() : value(), right(NULL), left(NULL) {}
+  nodes() : value(), right(NULL), left(NULL) , parent(){}
   nodes(T insert_it) : value(insert_it) {}
   friend std::ostream &operator<<(std::ostream &os, const nodes &dt) {
     os << dt.value;
@@ -283,7 +283,6 @@ public:
       alloc_it.construct(new_node, x);
       new_node->right = NULL;
       new_node->left = NULL;
-      // root_node->parent = root_node;
       // alloc_it.construct(new_node , x);
 
       // std::cout  << root_node->value.first << std::endl;
@@ -304,14 +303,15 @@ public:
       root_node->left = insert_a_node(root_node->left, x);
        root_node->left->parent = root_node;
       // std::cout  <<"( left x.first < root_node->value.first)" << std::endl;
-      std::cout <<  root_node->left->parent ->value.first << std::endl;
+      std::cout << "root parent is " <<root_node->left->parent ->value.first << std::endl;
+      std::cout << "child  is " << root_node->left->value.first << std::endl;
     }
 
     // else if (x.first > root_node->value.first) {
     else if (compare_function(root_node->value.first, x.first)) {
       // std::cout  <<"right (x.first > root_node->value.first)" << std::endl;
       root_node->right = insert_a_node(root_node->right, x);
-            root_node->parent =  root_node->right ;
+                   root_node->right->parent = root_node;
 
     } else {
       return (root_node);
