@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 12:29:31 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/26 12:40:49 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/26 12:53:52 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int main()
     while (it1 != real_one.end())
     {
       
-    // std::cout  << "real_one->first " << it1->first << std::endl;
+    std::cout  << "real_one->first " << it1->first << std::endl;
       ++it1;
     }
     
@@ -62,7 +62,7 @@ int main()
     mymap.insert(std::pair< int , int> (200, 42) );
     mymap.insert(std::pair< int , int> (100, 4132) );
     mymap.insert(std::pair< int , int> (300, 4132) );
-    mymap.insert(std::pair< int , int> (550, 4132) );
+    // mymap.insert(std::pair< int , int> (550, 4132) );
     // std::cout  << "empty or not " << mymap.empty() << std::endl;
     ft::map<int, int>::iterator it =mymap.begin() ;
     // ft::map<int, int>::iterator end_it =mymap.end() ;

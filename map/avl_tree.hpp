@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 11:08:00 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/26 12:40:16 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/26 12:58:17 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -303,8 +303,8 @@ public:
       root_node->left = insert_a_node(root_node->left, x);
        root_node->left->parent = root_node;
       // std::cout  <<"( left x.first < root_node->value.first)" << std::endl;
-      std::cout << "root parent is " <<root_node->left->parent ->value.first << std::endl;
-      std::cout << "child  is " << root_node->left->value.first << std::endl;
+      // std::cout << "root parent is " <<root_node->left->parent ->value.first << std::endl;
+      // std::cout << "child  is " << root_node->left->value.first << std::endl;
     }
 
     // else if (x.first > root_node->value.first) {
@@ -312,9 +312,8 @@ public:
       // std::cout  <<"right (x.first > root_node->value.first)" << std::endl;
       root_node->right = insert_a_node(root_node->right, x);
                    root_node->right->parent = root_node;
-      std::cout << "root parent is " <<root_node->right->parent ->value.first << std::endl;
-      std::cout << "child  is " << root_node->right->value.first << std::endl;
-
+      // std::cout << "root parent is " <<root_node->right->parent ->value.first << std::endl;
+      // std::cout << "child  is " << root_node->right->value.first << std::endl;
     } else {
       return (root_node);
     }
