@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 12:39:29 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/27 13:11:08 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/27 13:11:56 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,8 +106,8 @@ public:
           std::cout << "value of root is  " << root->value.first <<std::endl;
           std::cout << "for_value of root is  " << for_value->value.first <<std::endl;
           std::cout << "root->left of root is  " << root->left->value.first <<std::endl;
-            return root->left;
-            // root =  root->left;
+            // return root->left;
+            root =  root->left;
             
           }
           
