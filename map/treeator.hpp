@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 12:39:29 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/27 11:46:26 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/27 11:47:24 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,8 @@ public:
   NODE_PTR next_largest(NODE_PTR root, NODE_PTR for_value) {
 
         // NODE_PTR tmp = root;
-    
+    if(root == NULL)
+      return root;
     while (root != NULL) 
     {
       
@@ -96,22 +97,7 @@ public:
           root = root->parent;
         if(for_value->value.first > root->parent->value.first)
           root = root->parent->parent;
-        
-          // if(for_value->value.first > root->value.first  )
-          // {
-            
-          // root = root->parent->parent;
-          // return root;
-          // }
-          // return root;
         }
-        // if (for_value->value.first > root->parent->right->value.first) {
-
-        // std::cout << "> " << std::endl;
-        //   root = root->parent->parent;
-        // return root;
-        // }
-
         return root;
       }
 
