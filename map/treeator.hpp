@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 12:39:29 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/27 11:04:22 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/27 11:23:39 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ public:
 
   tree_iterator operator++() {
 
-    iter = next_largest(iter);
+    iter = next_largest(iter , iter);
     return tree_iterator(iter);
   }
   tree_iterator operator++(int) {
@@ -67,38 +67,45 @@ public:
     return tmp;
   }
 
-  NODE_PTR next_largest(NODE_PTR root) {
+  NODE_PTR next_largest(NODE_PTR root, NODE_PTR for_value) {
 
-    NODE_PTR tmp = root;
-    while (root != NULL) {
-      if (root->right == NULL) {
+        // NODE_PTR tmp = root;
+    
+    while (root != NULL) 
+    {
+      
         std::cout << "value of root is  " << root->value.first << std::endl;
-        // std::cout  <<"value of tmp is  " << tmp->value.first <<std::endl;
-        // std::cout  <<"root->parent->  of tmp is  " <<
-        // root->parent->value.first  <<std::endl;
-        if (root->parent->right != NULL)
-          tmp = root->parent;
-        std::cout << " root->parent->right->value.first   is  "
-                  << root->parent->right->value.first << std::endl;
-        std::cout << " tmp->value.first  " << tmp->value.first << std::endl;
-        // exit(1);
-        if (tmp->value.first <= root->parent->right->value.first) {
-
-          tmp = root->parent->parent;
+      if (root->right == NULL) 
+      {
+      // && for_value->value.first <= root->parent->value.first
+        if (root->parent->right != NULL )
+        {
+        std::cout << "<= " << std::endl;
+        std::cout << "value of root is  " << root->value.first << std::endl;
+        std::cout << "for_value->value.first  is  " <<for_value->value.first<< std::endl;
+        std::cout << "root->parent->value.first  is  " <<root->parent->value.first<< std::endl;
+        
+          root = root->parent;
+          return root;
         }
+        if (for_value->value.first > root->parent->right->value.first) {
 
-        // if( root->right == NULL)
-        // tmp  = root->parent->parent;
-        return tmp;
+        std::cout << "> " << std::endl;
+          root = root->parent->parent;
+        return root;
+        }
+        return root;
       }
 
-      else if (root->right != NULL) {
-        // std::cout  <<"tmp->right not NULL) "<<std::endl;
-        tmp = root->right;
-        return tmp;
+      else if (root->right != NULL) 
+      {
+        root = root->right;
+          
+    return root;
       }
     }
-    return tmp;
+    return root;
+    
   }
 };
 
