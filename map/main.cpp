@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
+/*   By: atabiti <atabiti@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 12:29:31 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/27 13:07:37 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/27 18:49:05 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,8 @@ int main()
     mymap.insert(std::pair< int , int> (50, 42) );
     mymap.insert(std::pair< int , int> (60, 4132) );
     mymap.insert(std::pair< int , int> (47, 4132) );
+    mymap.insert(std::pair< int , int> (60, 4132) );
+    // mymap.insert(std::pair< int , int> (47, 4132) );
     // std::cout  << "empty or not " << mymap.empty() << std::endl;
     ft::map<int, int>::iterator it =mymap.end() ;
     ft::map<int, int>::iterator end_it =mymap.begin();
@@ -88,27 +90,34 @@ int main()
   //   }
 
 
+std::cout  << "______________________________" << std::endl;
 std::cout  << "before [] " << it->first << std::endl;
         --it;
 std::cout  << "[] " << it->first << std::endl;
-std::cout  << "______________________________" << std::endl;
+// std::cout  << "______________________________" << std::endl;
         --it;
 std::cout  << "[] " << it->first << std::endl;
-std::cout  << "______________________________" << std::endl;
+// std::cout  << "______________________________" << std::endl;
         --it;
 std::cout  << "[] " << it->first << std::endl;
-std::cout  << "______________________________" << std::endl;
+// std::cout  << "______________________________" << std::endl;
         --it;
 std::cout  << "[] " << it->first << std::endl;
-std::cout  << "______________________________" << std::endl;
+// std::cout  << "______________________________" << std::endl;
 
         --it;
 std::cout  << "[] " << it->first << std::endl;
-std::cout  << "______________________________" << std::endl;
+// std::cout  << "______________________________" << std::endl;
 
         --it;
 std::cout  << "[] " << it->first << std::endl;
-std::cout  << "______________________________" << std::endl;
+// std::cout  << "______________________________" << std::endl;
+        --it;
+std::cout  << "[] " << it->first << std::endl;
+// std::cout  << "______________________________" << std::endl;
+        --it;
+std::cout  << "[] " << it->first << std::endl;
+// std::cout  << "______________________________" << std::endl;
 //         --it;
 // std::cout  << "[] " << it->first << std::endl;
 // std::cout  << "______________________________" << std::endl;
@@ -143,7 +152,7 @@ std::cout  << "______________________________" << std::endl;
     // mymap.insert(std::pair< int , int> (10, 4132) );
 
     
-    // mymap.a_tree.print2D( mymap.a_tree.root_parent , 6);
+    mymap.a_tree.print2D( mymap.a_tree.root_parent , 6);
     // std::cout  << "before ______________________________" << std::endl;
 
     // mymap.a_tree.remove(mymap.a_tree.root_parent ,std::pair< int , int>         (40, 42) ); 
