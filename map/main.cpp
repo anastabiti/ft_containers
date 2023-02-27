@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 12:29:31 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/27 12:57:43 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/27 13:07:37 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,6 +98,20 @@ std::cout  << "______________________________" << std::endl;
         --it;
 std::cout  << "[] " << it->first << std::endl;
 std::cout  << "______________________________" << std::endl;
+        --it;
+std::cout  << "[] " << it->first << std::endl;
+std::cout  << "______________________________" << std::endl;
+
+        --it;
+std::cout  << "[] " << it->first << std::endl;
+std::cout  << "______________________________" << std::endl;
+
+        --it;
+std::cout  << "[] " << it->first << std::endl;
+std::cout  << "______________________________" << std::endl;
+//         --it;
+// std::cout  << "[] " << it->first << std::endl;
+// std::cout  << "______________________________" << std::endl;
 
 
 
