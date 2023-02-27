@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 12:29:31 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/27 12:29:24 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/27 12:57:43 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,15 +40,15 @@ int main()
     real_one.insert(std::pair< int , int> (50, 42) );
     real_one.insert(std::pair< int , int> (60, 4132) );
     real_one.insert(std::pair< int , int> (47, 4132) );
-    std::map<int, int>::iterator it1 =real_one.begin() ;
-    std::map<int, int>::iterator it2 =real_one.end();
+  
+    std::map<int, int>::iterator it1 =real_one.end() ;
     // it2--;
-    while (it1 != real_one.end())
+    while (it1 != real_one.begin())
     {
       std::cout  << "[] " << it1->first << std::endl;
       
     // std::cout  << "real_one->first " << it1->first << std::endl;
-      it1++;
+      --it1;
     }
     
       std::cout  << "____________________________________"  << std::endl;
@@ -77,15 +77,39 @@ int main()
     mymap.insert(std::pair< int , int> (60, 4132) );
     mymap.insert(std::pair< int , int> (47, 4132) );
     // std::cout  << "empty or not " << mymap.empty() << std::endl;
-    ft::map<int, int>::iterator it =mymap.begin() ;
-    ft::map<int, int>::iterator end_it =mymap.end();
+    ft::map<int, int>::iterator it =mymap.end() ;
+    ft::map<int, int>::iterator end_it =mymap.begin();
 
       // std::cout  << "it end_it " << end_it->first << std::endl;
-  while (it != end_it)
-    {
-      std::cout  << "[] " << it->first << std::endl;
-      it;
-    }
+  // while (it != end_it)
+  //   {
+  //       std::cout  << "[] " << it->first << std::endl;
+  //       --it;
+  //   }
+
+
+std::cout  << "before [] " << it->first << std::endl;
+        --it;
+std::cout  << "[] " << it->first << std::endl;
+std::cout  << "______________________________" << std::endl;
+        --it;
+std::cout  << "[] " << it->first << std::endl;
+std::cout  << "______________________________" << std::endl;
+        --it;
+std::cout  << "[] " << it->first << std::endl;
+std::cout  << "______________________________" << std::endl;
+
+
+
+
+
+
+
+
+
+
+
+        
         // end_it--;
     // std::cout  << "end_it mine  " << end_it->first << std::endl;
     // *++it;

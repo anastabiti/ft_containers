@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 12:39:29 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/27 12:29:26 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/27 12:59:20 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,18 +42,22 @@ public:
   reference operator*() const { return iter->value; }
   pointer operator->() const { return (&iter->value); }
 
-  tree_iterator operator--() {
-    --iter;
-    return (*this);
+  tree_iterator operator--() 
+  {
+     iter = next_smaller(iter, iter);
+    return tree_iterator(iter);
   }
-  tree_iterator operator--(int) {
+  
+  tree_iterator operator--(int) 
+  {
     tree_iterator tmp(*this);
     --(*this);
     // std::cout << "iter.first; " << iter->value.first << std::endl;
     return tmp;
   }
 
-  tree_iterator operator++() {
+  tree_iterator operator++() 
+  {
 
     iter = next_largest(iter, iter);
     return tree_iterator(iter);
@@ -65,9 +69,48 @@ public:
     ++(*this);
     return tmp;
   }
+  
+  NODE_PTR next_smaller(NODE_PTR root, NODE_PTR for_value) 
+  {
+      if(root  == NULL)
+        return root;
+    //  while (root != NULL) 
+    //  {
+          if(root->left == NULL )
+          {
+            if(root->value.first < root->parent->value.first )
+            {
+              return root->parent->parent;
+            }
+          std::cout << "value of root is  " << root->value.first <<std::endl;
+          std::cout << "for_value of root is  " << for_value->value.first <<std::endl;
+          std::cout << "root->parent->value.first  is  " << root->parent->value.first <<std::endl;
+            return root->parent;
+          }
+            
+          if(root->left != NULL )
+          {
+          std::cout << "value of root is  " << root->value.first <<std::endl;
+          std::cout << "for_value of root is  " << for_value->value.first <<std::endl;
+          std::cout << "root->left of root is  " << root->left->value.first <<std::endl;
+            return root->left;
+          }
+          
+    //  }
+  
+    return root;
+  
+      //   if (root == NULL)
+      //   return root;
+      // std::cout << "i am here " << std::endl;
+      // return root;
+      // return root;
+  }
+
 
   NODE_PTR next_largest(NODE_PTR root, NODE_PTR for_value) 
   {
+
 
     if (root == NULL)
       return root;
