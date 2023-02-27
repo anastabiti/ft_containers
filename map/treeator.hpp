@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 12:39:29 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/27 11:55:03 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/27 12:01:02 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,9 +67,9 @@ public:
     return tmp;
   }
 
-  NODE_PTR next_largest(NODE_PTR root, NODE_PTR for_value) {
+  NODE_PTR next_largest(NODE_PTR root, NODE_PTR for_value) 
+  {
 
-    // NODE_PTR tmp = root;
     if (root == NULL)
       return root;
     while (root != NULL) {
