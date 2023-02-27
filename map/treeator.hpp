@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 12:39:29 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/27 11:47:24 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/27 11:53:00 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,18 +85,23 @@ public:
           
       if (root->right == NULL) 
       {
-      // && for_value->value.first <= root->parent->value.first
         if (root->parent->right != NULL )
         {
-        // std::cout << "<= " << std::endl;
-        // std::cout << "value of root is  " << root->value.first << std::endl;
-        // std::cout << "for_value->value.first  is  " <<for_value->value.first<< std::endl;
-        // std::cout << "root->parent->value.first  is  " <<root->parent->value.first<< std::endl;
+        std::cout << "<= " << std::endl;
+        std::cout << "value of root is  " << root->value.first << std::endl;
+        std::cout << "for_value->value.first  is  " <<for_value->value.first<< std::endl;
+        std::cout << "root->parent->value.first  is  " <<root->parent->value.first<< std::endl;
          
         if(for_value->value.first < root->parent->value.first)
+        {
           root = root->parent;
+          return root;
+        }
         if(for_value->value.first > root->parent->value.first)
+        {
           root = root->parent->parent;
+          return root;
+        }
         }
         return root;
       }
