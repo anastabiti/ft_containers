@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 12:39:29 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/27 11:23:39 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/27 11:30:02 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,16 +84,27 @@ public:
         std::cout << "value of root is  " << root->value.first << std::endl;
         std::cout << "for_value->value.first  is  " <<for_value->value.first<< std::endl;
         std::cout << "root->parent->value.first  is  " <<root->parent->value.first<< std::endl;
-        
+         
+        if(for_value->value.first < root->parent->value.first)
           root = root->parent;
+        if(for_value->value.first > root->parent->value.first)
+          root = root->parent->parent;
+        
+         
+          // if(for_value->value.first > root->value.first  )
+          // {
+            
+          // root = root->parent->parent;
+          // return root;
+          // }
           return root;
         }
-        if (for_value->value.first > root->parent->right->value.first) {
+        // if (for_value->value.first > root->parent->right->value.first) {
 
-        std::cout << "> " << std::endl;
-          root = root->parent->parent;
-        return root;
-        }
+        // std::cout << "> " << std::endl;
+        //   root = root->parent->parent;
+        // return root;
+        // }
         return root;
       }
 

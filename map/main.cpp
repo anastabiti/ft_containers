@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 12:29:31 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/27 11:21:47 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/27 11:27:47 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,11 +82,17 @@ int main()
 //  while (it !=end_it)
 //     {
       std::cout  << "[] " << it->first << std::endl;
+      std::cout  << " +++++++++++++++++==========" << std::endl << std::endl;
       ++it;
       std::cout  << " after ++ [] " << it->first << std::endl;
-      std::cout  << " +++++++++++++++++==========" << it->first << std::endl;
+      
+      std::cout  << " +++++++++++++++++==========" << std::endl << std::endl;
       ++it;
-      std::cout  << " after ++ [] " << it->first << std::endl;
+      std::cout  << " after ++ [] " << it->first << std::endl << std::endl;
+      std::cout  << " +++++++++++++++++=========="  << std::endl << std::endl;
+      ++it;
+      std::cout  << " after ++ [] " << it->first << std::endl << std::endl;
+      std::cout  << " +++++++++++++++++=========="  << std::endl << std::endl;
       // ++it;
       // std::cout  << "[] " << it->first << std::endl;
       // ++it;
@@ -112,7 +118,7 @@ int main()
     // mymap.insert(std::pair< int , int> (10, 4132) );
 
     
-    mymap.a_tree.print2D( mymap.a_tree.root_parent , 6);
+    // mymap.a_tree.print2D( mymap.a_tree.root_parent , 6);
     // std::cout  << "before ______________________________" << std::endl;
 
     // mymap.a_tree.remove(mymap.a_tree.root_parent ,std::pair< int , int>         (40, 42) ); 
