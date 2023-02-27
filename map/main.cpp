@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 12:29:31 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/27 09:54:08 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/27 10:45:10 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,11 @@ int main()
 //     {
       std::cout  << "[] " << it->first << std::endl;
       ++it;
-      std::cout  << "[] =" << it->first << std::endl;
+      std::cout  << "[] " << it->first << std::endl;
+      ++it;
+      std::cout  << "[] " << it->first << std::endl;
+      ++it;
+      std::cout  << "[] " << it->first << std::endl;
       ++it;
       std::cout  << "[] " << it->first << std::endl;
       // ++it;

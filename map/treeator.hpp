@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 12:39:29 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/27 10:00:58 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/27 11:04:22 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,16 +52,14 @@ public:
     // std::cout << "iter.first; " << iter->value.first << std::endl;
     return tmp;
   }
-  
-  tree_iterator operator++() 
-  {
+
+  tree_iterator operator++() {
+
     iter = next_largest(iter);
-   
     return tree_iterator(iter);
   }
-  tree_iterator operator++(int)
-   {
-    
+  tree_iterator operator++(int) {
+
     // std::cout << "iter.first; " << iter->value.first << std::endl;
     tree_iterator tmp(*this);
     ++(*this);
@@ -69,58 +67,48 @@ public:
     return tmp;
   }
 
-NODE_PTR next_largest(NODE_PTR root)
-{
-   NODE_PTR is_greater = NULL;
-   NODE_PTR tmp  = root->parent;
+  NODE_PTR next_largest(NODE_PTR root) {
 
-   if(root->right == NULL)
-   {
-        std::cout  <<"tmp->right == NULL) "<<std::endl; 
-        tmp  = root->parent;
-      return tmp;
-   }
-   else if(root->right != NULL)
-   {
-        std::cout  <<"tmp->right not NULL) "<<std::endl; 
-      //   tmp  = root->parent;
-      // return tmp;
-    //  tmp =   next_largest(root->right);
-     tmp =   root->right;
-     return tmp;
-    
-   }
-  //  while (root != NULL)
-  //  {
-  //    if(tmp->value.first >= root->value.first)
-  //   {
-        std::cout  <<"here "<< root->value.first <<std::endl  <<std::endl; 
-        std::cout  <<"tmp  "<<tmp->value.first << std::endl; 
-  //     root = root->right;
-  //   }
-  //   else
-  //   {
-  //       std::cout  <<"here "<< root->value.first << std::endl; 
-  //       std::cout  <<"tmp  "<<tmp->value.first << std::endl; 
-  //     is_greater = root;
-  //     root = root->left;
-  //   }
-     
-  //  }
-  
-   return tmp;
-}
+    NODE_PTR tmp = root;
+    while (root != NULL) {
+      if (root->right == NULL) {
+        std::cout << "value of root is  " << root->value.first << std::endl;
+        // std::cout  <<"value of tmp is  " << tmp->value.first <<std::endl;
+        // std::cout  <<"root->parent->  of tmp is  " <<
+        // root->parent->value.first  <<std::endl;
+        if (root->parent->right != NULL)
+          tmp = root->parent;
+        std::cout << " root->parent->right->value.first   is  "
+                  << root->parent->right->value.first << std::endl;
+        std::cout << " tmp->value.first  " << tmp->value.first << std::endl;
+        // exit(1);
+        if (tmp->value.first <= root->parent->right->value.first) {
 
+          tmp = root->parent->parent;
+        }
+
+        // if( root->right == NULL)
+        // tmp  = root->parent->parent;
+        return tmp;
+      }
+
+      else if (root->right != NULL) {
+        // std::cout  <<"tmp->right not NULL) "<<std::endl;
+        tmp = root->right;
+        return tmp;
+      }
+    }
+    return tmp;
+  }
 };
 
 template <class tree_iterator>
-bool operator==( tree_iterator const &first,  tree_iterator const &second) {
+bool operator==(tree_iterator const &first, tree_iterator const &second) {
   return (first.base() == second.base());
 }
 template <class tree_iterator>
-bool operator!=( tree_iterator const &first,  tree_iterator const & second)
-{
-  return  (!(first == second));
+bool operator!=(tree_iterator const &first, tree_iterator const &second) {
+  return (!(first == second));
 }
 
 } // namespace ft
