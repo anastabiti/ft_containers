@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 12:29:31 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/27 11:55:52 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/27 11:57:07 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,14 +41,15 @@ int main()
     real_one.insert(std::pair< int , int> (60, 4132) );
     real_one.insert(std::pair< int , int> (47, 4132) );
     std::map<int, int>::iterator it1 =real_one.begin() ;
-    // std::map<int, int>::iterator it2 =real_one.end();
+    std::map<int, int>::iterator it2 =real_one.end();
     // it2--;
-    // while (it1 != real_one.end())
-    // {
+    while (it1 != real_one.end())
+    {
+      std::cout  << "[] " << it1->first << std::endl;
       
     // std::cout  << "real_one->first " << it1->first << std::endl;
-    //   ++it1;
-    // }
+      ++it1;
+    }
     
     // std::cout  << "end real " << it2->first << std::endl;
     //  *++it1;
@@ -65,7 +66,7 @@ int main()
   //   std::cout  << "not equal"<< std::endl;
   //  }
     ft::map<int, int> mymap;
-        mymap.insert(std::pair< int , int> (30, 42) );
+    mymap.insert(std::pair< int , int> (30, 42) );
     mymap.insert(std::pair< int , int> (10, 4132) );
     mymap.insert(std::pair< int , int> (40, 4132) );
     mymap.insert(std::pair< int , int> (5, 42) );
@@ -82,39 +83,6 @@ int main()
  while (it !=end_it)
     {
       std::cout  << "[] " << it->first << std::endl;
-      // std::cout  << " +++++++++++++++++==========" << std::endl << std::endl;
-      // ++it;
-      // std::cout  << " after ++ [] " << it->first << std::endl;
-      
-      // std::cout  << " +++++++++++++++++==========" << std::endl << std::endl;
-      // ++it;
-      // std::cout  << " after ++ [] " << it->first << std::endl << std::endl;
-      // std::cout  << " +++++++++++++++++=========="  << std::endl << std::endl;
-      // ++it;
-      // std::cout  << " after ++ [] " << it->first << std::endl << std::endl;
-      // std::cout  << " +++++++++++++++++=========="  << std::endl << std::endl;
-      // ++it;
-      // std::cout  << " after ++ [] " << it->first << std::endl << std::endl;
-      // std::cout  << " +++++++++++++++++=========="  << std::endl << std::endl;
-      // ++it;
-      // std::cout  << " after ++ [] " << it->first << std::endl << std::endl;
-      // std::cout  << " +++++++++++++++++=========="  << std::endl << std::endl;
-      // ++it;
-      // std::cout  << " after ++ [] " << it->first << std::endl << std::endl;
-      // std::cout  << " +++++++++++++++++=========="  << std::endl << std::endl;
-      // ++it;
-      // std::cout  << " after ++ [] " << it->first << std::endl << std::endl;
-      // std::cout  << " +++++++++++++++++=========="  << std::endl << std::endl;
-      // ++it;
-      // std::cout  << " after ++ [] " << it->first << std::endl << std::endl;
-      // std::cout  << " +++++++++++++++++=========="  << std::endl << std::endl;
-      // ++it;
-      // std::cout  << " after ++ [] " << it->first << std::endl << std::endl;
-      // std::cout  << " +++++++++++++++++=========="  << std::endl << std::endl;
-      // ++it;
-      // std::cout  << "[] " << it->first << std::endl;
-      // ++it;
-      // std::cout  << "[] " << it->first << std::endl;
       ++it;
     }
         // end_it--;
