@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 11:08:00 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/26 12:58:17 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/27 11:56:07 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ public:
   
   iterator end() 
   {
-    return iterator(biggest_key(root_parent) + 1); 
+    return iterator(biggest_key(root_parent) ); 
   }
   
 

@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 12:29:31 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/27 11:53:57 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/27 11:55:52 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,38 +76,38 @@ int main()
     mymap.insert(std::pair< int , int> (47, 4132) );
     // std::cout  << "empty or not " << mymap.empty() << std::endl;
     ft::map<int, int>::iterator it =mymap.begin() ;
-    ft::map<int, int>::iterator end_it =mymap.end() ;
+    ft::map<int, int>::iterator end_it =mymap.end();
 
       // std::cout  << "it end_it " << end_it->first << std::endl;
-//  while (it !=end_it)
-//     {
+ while (it !=end_it)
+    {
       std::cout  << "[] " << it->first << std::endl;
-      std::cout  << " +++++++++++++++++==========" << std::endl << std::endl;
-      ++it;
-      std::cout  << " after ++ [] " << it->first << std::endl;
+      // std::cout  << " +++++++++++++++++==========" << std::endl << std::endl;
+      // ++it;
+      // std::cout  << " after ++ [] " << it->first << std::endl;
       
-      std::cout  << " +++++++++++++++++==========" << std::endl << std::endl;
-      ++it;
-      std::cout  << " after ++ [] " << it->first << std::endl << std::endl;
-      std::cout  << " +++++++++++++++++=========="  << std::endl << std::endl;
-      ++it;
-      std::cout  << " after ++ [] " << it->first << std::endl << std::endl;
-      std::cout  << " +++++++++++++++++=========="  << std::endl << std::endl;
-      ++it;
-      std::cout  << " after ++ [] " << it->first << std::endl << std::endl;
-      std::cout  << " +++++++++++++++++=========="  << std::endl << std::endl;
-      ++it;
-      std::cout  << " after ++ [] " << it->first << std::endl << std::endl;
-      std::cout  << " +++++++++++++++++=========="  << std::endl << std::endl;
-      ++it;
-      std::cout  << " after ++ [] " << it->first << std::endl << std::endl;
-      std::cout  << " +++++++++++++++++=========="  << std::endl << std::endl;
-      ++it;
-      std::cout  << " after ++ [] " << it->first << std::endl << std::endl;
-      std::cout  << " +++++++++++++++++=========="  << std::endl << std::endl;
-      ++it;
-      std::cout  << " after ++ [] " << it->first << std::endl << std::endl;
-      std::cout  << " +++++++++++++++++=========="  << std::endl << std::endl;
+      // std::cout  << " +++++++++++++++++==========" << std::endl << std::endl;
+      // ++it;
+      // std::cout  << " after ++ [] " << it->first << std::endl << std::endl;
+      // std::cout  << " +++++++++++++++++=========="  << std::endl << std::endl;
+      // ++it;
+      // std::cout  << " after ++ [] " << it->first << std::endl << std::endl;
+      // std::cout  << " +++++++++++++++++=========="  << std::endl << std::endl;
+      // ++it;
+      // std::cout  << " after ++ [] " << it->first << std::endl << std::endl;
+      // std::cout  << " +++++++++++++++++=========="  << std::endl << std::endl;
+      // ++it;
+      // std::cout  << " after ++ [] " << it->first << std::endl << std::endl;
+      // std::cout  << " +++++++++++++++++=========="  << std::endl << std::endl;
+      // ++it;
+      // std::cout  << " after ++ [] " << it->first << std::endl << std::endl;
+      // std::cout  << " +++++++++++++++++=========="  << std::endl << std::endl;
+      // ++it;
+      // std::cout  << " after ++ [] " << it->first << std::endl << std::endl;
+      // std::cout  << " +++++++++++++++++=========="  << std::endl << std::endl;
+      // ++it;
+      // std::cout  << " after ++ [] " << it->first << std::endl << std::endl;
+      // std::cout  << " +++++++++++++++++=========="  << std::endl << std::endl;
       // ++it;
       // std::cout  << " after ++ [] " << it->first << std::endl << std::endl;
       // std::cout  << " +++++++++++++++++=========="  << std::endl << std::endl;
@@ -115,8 +115,8 @@ int main()
       // std::cout  << "[] " << it->first << std::endl;
       // ++it;
       // std::cout  << "[] " << it->first << std::endl;
-      // ++it;
-    // }
+      ++it;
+    }
         // end_it--;
     // std::cout  << "end_it mine  " << end_it->first << std::endl;
     // *++it;
