@@ -6,12 +6,12 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 12:39:29 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/26 13:19:22 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/27 09:53:33 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-
+#include "avl_tree.hpp"
 namespace ft {
 
 template <class T, class NODE_PTR> class tree_iterator {
@@ -52,22 +52,12 @@ public:
     // std::cout << "iter.first; " << iter->value.first << std::endl;
     return tmp;
   }
+  
   tree_iterator operator++() 
   {
-    // if(iter->parent != NULL )
-    // std::cout << "iter.first; " << iter->parent->value.first << std::endl;
-    std::cout << "  tree_iterator operator++() " << std::endl;
-    // ++iter;
-    if(iter->parent == NULL)
-    {
-     iter  = iter->right; 
-    }
-    else
-    {
-      
-    iter  = iter->parent;
-    }
-    return (*this);
+    iter = next_largest(iter);
+   
+    return tree_iterator(iter);
   }
   tree_iterator operator++(int)
    {
@@ -78,7 +68,34 @@ public:
     // std::cout << "iter.first; " << iter->value.first << std::endl;
     return tmp;
   }
+
+NODE_PTR next_largest(NODE_PTR root)
+{
+   NODE_PTR is_greater = NULL;
+   NODE_PTR tmp  = root->parent;
+
+   
+  //  while (root != NULL)
+  //  {
+  //    if(tmp->value.first >= root->value.first)
+  //   {
+        std::cout  <<"here "<< root->value.first <<std::endl  <<std::endl; 
+        std::cout  <<"tmp  "<<tmp->value.first << std::endl; 
+  //     root = root->right;
+  //   }
+  //   else
+  //   {
+  //       std::cout  <<"here "<< root->value.first << std::endl; 
+  //       std::cout  <<"tmp  "<<tmp->value.first << std::endl; 
+  //     is_greater = root;
+  //     root = root->left;
+  //   }
+     
+  //  }
   
+   return tmp;
+}
+
 };
 
 template <class tree_iterator>

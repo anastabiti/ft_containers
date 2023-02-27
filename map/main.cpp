@@ -6,7 +6,7 @@
 /*   By: atabiti <atabiti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 12:29:31 by atabiti           #+#    #+#             */
-/*   Updated: 2023/02/26 12:53:52 by atabiti          ###   ########.fr       */
+/*   Updated: 2023/02/27 09:54:08 by atabiti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,18 +31,24 @@ int main()
   //   std::cout << it->first << " => " << it->second << '\n';
 
     std::map<int, int > real_one;
-    real_one.insert(std::pair< int , int> (200, 42) );
-    real_one.insert(std::pair< int , int> (100, 4132) );
-    real_one.insert(std::pair< int , int> (300, 4132) );
+    real_one.insert(std::pair< int , int> (30, 42) );
+    real_one.insert(std::pair< int , int> (10, 4132) );
+    real_one.insert(std::pair< int , int> (40, 4132) );
+    real_one.insert(std::pair< int , int> (5, 42) );
+    real_one.insert(std::pair< int , int> (39, 4132) );
+    real_one.insert(std::pair< int , int> (11, 4132) );
+    real_one.insert(std::pair< int , int> (50, 42) );
+    real_one.insert(std::pair< int , int> (60, 4132) );
+    real_one.insert(std::pair< int , int> (47, 4132) );
     std::map<int, int>::iterator it1 =real_one.begin() ;
     // std::map<int, int>::iterator it2 =real_one.end();
     // it2--;
-    while (it1 != real_one.end())
-    {
+    // while (it1 != real_one.end())
+    // {
       
-    std::cout  << "real_one->first " << it1->first << std::endl;
-      ++it1;
-    }
+    // std::cout  << "real_one->first " << it1->first << std::endl;
+    //   ++it1;
+    // }
     
     // std::cout  << "end real " << it2->first << std::endl;
     //  *++it1;
@@ -59,23 +65,28 @@ int main()
   //   std::cout  << "not equal"<< std::endl;
   //  }
     ft::map<int, int> mymap;
-    mymap.insert(std::pair< int , int> (200, 42) );
-    mymap.insert(std::pair< int , int> (100, 4132) );
-    mymap.insert(std::pair< int , int> (300, 4132) );
-    // mymap.insert(std::pair< int , int> (550, 4132) );
+        mymap.insert(std::pair< int , int> (30, 42) );
+    mymap.insert(std::pair< int , int> (10, 4132) );
+    mymap.insert(std::pair< int , int> (40, 4132) );
+    mymap.insert(std::pair< int , int> (5, 42) );
+    mymap.insert(std::pair< int , int> (39, 4132) );
+    mymap.insert(std::pair< int , int> (11, 4132) );
+    mymap.insert(std::pair< int , int> (50, 42) );
+    mymap.insert(std::pair< int , int> (60, 4132) );
+    mymap.insert(std::pair< int , int> (47, 4132) );
     // std::cout  << "empty or not " << mymap.empty() << std::endl;
     ft::map<int, int>::iterator it =mymap.begin() ;
-    // ft::map<int, int>::iterator end_it =mymap.end() ;
+    ft::map<int, int>::iterator end_it =mymap.end() ;
 
-//  while (it != mymap.end())
+      // std::cout  << "it end_it " << end_it->first << std::endl;
+//  while (it !=end_it)
 //     {
-      std::cout  << "it mine " << it->first << std::endl;
+      std::cout  << "[] " << it->first << std::endl;
       ++it;
-      std::cout  << "it mine " << it->first << std::endl;
+      std::cout  << "[] =" << it->first << std::endl;
       ++it;
-      std::cout  << "it mine " << it->first << std::endl;
-      ++it;
-      std::cout  << "it mine " << it->first << std::endl;
+      std::cout  << "[] " << it->first << std::endl;
+      // ++it;
     // }
         // end_it--;
     // std::cout  << "end_it mine  " << end_it->first << std::endl;
@@ -96,7 +107,7 @@ int main()
     // mymap.insert(std::pair< int , int> (10, 4132) );
 
     
-    // mymap.a_tree.print2D( mymap.a_tree.root_parent , 6);
+    mymap.a_tree.print2D( mymap.a_tree.root_parent , 6);
     // std::cout  << "before ______________________________" << std::endl;
 
     // mymap.a_tree.remove(mymap.a_tree.root_parent ,std::pair< int , int>         (40, 42) ); 
@@ -112,7 +123,7 @@ int main()
     // mymap.a_tree.remove(mymap.a_tree.root_parent ,std::pair< int , int> (2, 42) );
     // mymap.a_tree.remove(mymap.a_tree.root_parent ,std::pair< int , int> (1, 42) );
     //
-    mymap.a_tree.print2D( mymap.a_tree.root_parent , 6);
+    // mymap.a_tree.print2D( mymap.a_tree.root_parent , 6);
     // mymap.erase
     		//  a_tree.print2D(a_tree.root_parent,6);		 
 
