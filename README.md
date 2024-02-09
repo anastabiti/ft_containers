@@ -195,6 +195,17 @@ The simplest STL container is the vector, which generalizes and improves upon th
  Unlike an array, a vector has dynamic sizing that allows the container to grow and contract
   to meet the runtime demands of the application.
 ```
+### Vector Size vs Capacity : 
+You can easily observe the difference between the size and capacity of the vectors. Whenever the size of the vector becomes equal to the capacity, the vector will automatically increase its capacity and make it twice as large. 
+There is a difference between size and capacity. The capacity of a vector is the total number of elements it can hold. The total amount of storage is what capacity is, but how much content (elements) are there inside the vector is what the size of a vector represents.
+So, the size of the array is 9 because there are only 9 elements present in the vector although its capacity is 16, which means you are allowed to store up to 16 elements, and once the number of elements becomes equal to capacity it will modify itself and again increase its capacity.
+
+
+ ### Memory Management : (https://stdcxx.apache.org/doc/stdlibug/4-3.html)
+Containers in the C++ Standard Library can maintain a variety of different types of elements. These include the fundamental data types (int, char, and so on), pointers, or user-defined types. Containers cannot hold references. In general, memory management is handled automatically by the standard container classes through the allocator template parameter type.
+An insertion that causes the size to exceed the capacity generally results in a new block of memory being allocated to hold the vector elements. Values are then copied into this new memory using the assignment operator appropriate to the element type, and the old memory is deleted. 
+
+
 
 
 ## Iterators 
@@ -254,6 +265,8 @@ pointer: Of what type must a pointer be in order to point to an item?
 reference: Of what type must a reference be in order to reference an item? 
 iterator_category: Which category does the iterator belong to? 
 The pointer, reference, and difference_type type definitions do not make sense for our num_iterator, as it doesn't iterate over real memory values (we just return int values but they are not persistently available like in an array). Therefore it's better to not define them because if an algorithm depends on those items being referenceable in memory, it might be buggy when combined with our iterator.
+
+
 
 
 
