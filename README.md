@@ -73,7 +73,7 @@ But this time, a Red-Black tree is mandatory.
 ```
 
 
-### i did not complete this project cause of  :
+# I did not complete this project cause of (i did vector and map):
 ```
 On February 28th, 2023, we will start the transition in order to remove ft_containers from the
 Common Core and add a module CPP 09 to use the C++ containers.
@@ -113,3 +113,79 @@ The cpp08 XP is transferred to cpp04.
 cause 2:
  i did not have enough blackhole days , so i decided to do cpp 09 to gain more blackhole days quickly
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+## What Is the STL?
+The Standard Template Library (STL) is a collection of generic data structures and algorithms written in C++.	The main authors of the Standard Template Library are Alexander Stepanov and Meng Lee, both of whom work for Hewlett-Packard. 
+
+## STL Components:
+STL contains five kinds of components: containers, iterators, algorithms, function objects and allocators.
+
+### 1- Allocators:
+
+
+
+<img width="633" alt="Screen Shot 2024-02-09 at 4 09 07 PM" src="https://github.com/anastabiti/ft_containers/assets/79755743/4bc17bad-b04c-45cd-99af-afdc2b990a77">
+
+```
+The C++ standard library uses in several places special objects to handle the allocation and deallocation of memory.
+ Such objects are called allocators. 
+An allocator represents a special memory model. It is used as an abstraction to
+translate the need to use memory into a raw call for memory. The use of different allocator objects at
+the same time allows you to use different memory models in a program. 
+
+Allocators originally were introduced as part of the STL to handle the nasty problem of different pointer types
+ on PCs (such as near, far, and huge pointers -> These are some old concepts used in 16 bit intel architectures
+ in the days of MS DOS). They now serve as a base for technical solutions that use certain memory models, such as shared memory,
+ garbage collection, and object-oriented databases, without changing the interfaces. However, this use is relatively new and
+not yet widely adopted (this will probably change). 
+The C++ standard library defines a default allocator as follows: namespace std
+{
+ template class allocator; 
+}
+
+The default allocator is used as the default value everywhere an allocator can be used as an argument. It does the usual
+ calls for memory allocation and deallocation; that is, it calls the new and delete operators. However, when or how often
+ these operators are called is unspecified. Thus, an implementation of the default allocator might, for example, cache
+ the allocated memory internally. (The default allocator uses a general-purpose allocator accessed via operator new. )
+
+Note that allocators separate the allocation operation from that of construction.
+Allocators provide the methods allocate () and deallocate () for allocating and freeing memory. 
+They also provide the methods construct () and destroy() for the construction and destruction of objects,
+
+```
+
+## Vector:
+<img width="633" alt="Screen Shot 2024-02-09 at 4 11 46 PM" src="https://github.com/anastabiti/ft_containers/assets/79755743/f1100afc-dae9-428c-beaf-fa309b7411fb">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
