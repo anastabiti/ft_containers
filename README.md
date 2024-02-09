@@ -295,7 +295,75 @@ has no children and is a leaf.
 
 # Resources
 
-[Writing your own STL Container](https://stackoverflow.com/questions/7758580/writing-your-own-stl-container)
+- [Writing Your Own STL Container](https://stackoverflow.com/questions/7758580/writing-your-own-stl-container/7759622#7759622)
+- [Writing Custom Iterators in Modern C++](https://www.internalpointers.com/post/writing-custom-iterators-modern-cpp)
+- [Custom Iterators in C++](https://anderberg.me/2016/07/04/c-custom-iterators/)
+- [Typical Use Cases of an Iterator Trait](https://stackoverflow.com/questions/6742008/what-are-the-typical-use-cases-of-an-iterator-trait)
+- [Random Access Iterator](https://www.boost.org/sgi/stl/RandomAccessIterator.html)
+- [Const vs Regular Iterators in C++](https://www.geeksforgeeks.org/const-vs-regular-iterators-in-c-with-examples/)
+- [Correctly Implement Custom Iterators and Const Iterators](https://stackoverflow.com/questions/3582608/how-to-correctly-implement-custom-iterators-and-const-iterators)
+- [C++ Iterator and Const Iterator Problem](https://stackoverflow.com/questions/2844339/c-iterator-and-const-iterator-problem-for-own-container-class)
+- [The Standard Librarian: Defining Iterators](https://www.drdobbs.com/the-standard-librarian-defining-iterato/184401331)
+- [Cast Operator in C++](https://en.cppreference.com/w/cpp/language/cast_operator)
+- [Difference Between const int, const int const, and int const](https://stackoverflow.com/questions/1143262/what-is-the-difference-between-const-int-const-int-const-and-int-const)
+- [Implicit Conversion in C++](https://en.cppreference.com/w/cpp/language/implicit_conversion)
+
+- [Vector - Notion](https://evening-cushion-319.notion.site/vector-f53ef526e55a4dc0a62144cd257584aa)
+- [Containers - Notion](https://ultra-recess-958.notion.site/Containers-90a1a34503194bc782583477ae79dd10)
+- [MindMeister Map - C++ Containers](https://www.mindmeister.com/map/2512496913?t=DjeyxY37vq)
+
+  - [Data Structure Reference Book (PDF)](https://pip.pusan.ac.kr/prof_plan_upload/upload/Data%20Structure%20Reference%20Book.pdf)
+- [AVL Tree Paper (PDF)](https://zhjwpku.com/assets/pdf/AED2-10-avl-paper.pdf)
+- [Oracle Documentation - Data Structures](https://docs.oracle.com/cd/E19422-01/819-3703/16_3.htm)
+- [What does O(log n) mean exactly?](https://stackoverflow.com/questions/2307283/what-does-olog-n-mean-exactly)
+- [CSE 373 Lecture Slides (PDF)](https://courses.cs.washington.edu/courses/cse373/20su/lectures/10.pdf)
+- [More C++ Idioms: enable_if](https://en.wikibooks.org/wiki/More_C%2B%2B_Idioms/enable-if)
+
+  - [Introduction to Algorithms (3rd Edition) PDF](https://edutechlearners.com/download/Introduction_to_algorithms-3rd%20Edition.pdf)
+- [AVL Trees - kukuruku.co](https://kukuruku.co/hub/cpp/avl-trees)
+- [Gnarley Trees - AVL](https://people.ksp.sk/~kuko/gnarley-trees/AVL.html)
+- [Containers for Dummies - The Ultimate Guide](https://containersfordummies.notion.site/THE-ULTIMATE-GUIDE-e7f20768377544409ca8d036b1ab9b7f)
+- [Fluent C++ - Following Conventions in STL](https://www.fluentcpp.com/2018/04/24/following-conventions-stl/)
+- [Medium - How to Write an STL Compatible Container](https://medium.com/@vgasparyan1995/how-to-write-an-stl-compatible-container-fc5b994462c6)
+- [CS.ODU - Vector Implementation](https://www.cs.odu.edu/~zeil/cs361/latest/Public/vectorImpl/index.html)
+- [GeeksforGeeks - std::allocator in C++ with Examples](https://www.geeksforgeeks.org/stdallocator-in-cpp-with-examples/)
+- [CS.SFU - Vector Example](https://www2.cs.sfu.ca/CourseCentral/125/tjd/vector_example.html)
+- [Game Developer - Roll Your Own Vector](https://www.gamedeveloper.com/programming/roll-your-own-vector)
+- [Medium - C++ Templates: What is std::enable_if and How to Use It](https://medium.com/@sidbhasin82/c-templates-what-is-std-enable-if-and-how-to-use-it-fd76d3abbabe)
+- [Eli Bendersky's Website - SFINAE and enable_if](https://eli.thegreenplace.net/2014/sfinae-and-enable_if/)
+- [CodeProject - An Introduction to Iterator Traits](https://www.codeproject.com/Articles/36530/An-Introduction-to-Iterator-Traits)
+- [ModernesCpp - Memory Management with std::allocator](https://www.modernescpp.com/index.php/memory-management-with-std-allocator)
+- [GeeksforGeeks - Program to Create Custom Vector Class in C++](https://www.geeksforgeeks.org/program-to-create-custom-vector-class-in-c/)
+- [Richard H. Nguyen - Rebuilding cpp Vector - Part 2](https://richardhnguyen.com/articles/rebuild-cpp-vector-p2/)
+- [Fluent C++ - std::iterator Deprecated](https://www.fluentcpp.com/2018/05/08/std-iterator-deprecated/)
+- [GNU GCC Libstdc++ Old Releases](https://ftp.mpi-inf.mpg.de/mirrors/gnu/mirror/gcc.gnu.org/pub/gcc/libstdc++/old-releases/?C=M;O=A)
+- [CS.WM - Vectors](https://www.cs.wm.edu/~va/software/Vectors/)
+- [CS.SMU - Vector Container](https://cs.smu.ca/~porter/csc/ref/stl/cont_vector.html)
+- [CS.SMU - STL Reference](https://cs.smu.ca/~porter/csc/ref/stl/)
+- [CS.ODU - Vector](https://www.cs.odu.edu/~zeil/cs361/latest/Public/vector/index.html)
+- [cppreference - Vector](https://en.cppreference.com/w/cpp/container/vector)
+- [University of Utah - Physics Department - Vector](https://web.physics.utah.edu/~detar/lessons/c++/vector/node5.html)
+- [Stack Overflow - Overloading for both pre and post increment](https://stackoverflow.com/questions/15244094/overloading-for-both-pre-and-post-increment)
+- [Programiz - Default Argument in C++](https://www.programiz.com/cpp-programming/default-argument#:~:text=In%20C%2B%2B%20programming%2C%20we%20can,the%20default%20arguments%20are%20ignored.)
+- [GNU GCC Libstdc++ Old Releases](http://mirror.linux-ia64.org/gnu/gcc/libstdc++/old-releases/?C=M;O=A)
+
+
+# Books 
+- **Data structures with C++ using STL**
+- **Designing Components with the C++ STL, Third Edition**
+- **Using the STL: The C++ Standard Template Library 2nd Edition**
+- **STL Tutorial and Reference Guide: C++ Programming with the Standard Template Library (paperback)**
+- **Collection and Container Classes in C++**
+- **Designing Components with the C++ STL, Third Edition**
+- **C++ Pocket Reference**
+- **Using the STL: The C++ Standard Template Library**
+- **Stl Tutorial & Reference Guide_ C++ Programming With the Standard Template Library-Addison-Wesley Professional (2001)**
+
+# Videos 
+- **2) Custom Vector without C++ STL (Only C++)**
+  - [Watch Video](https://www.youtube.com/watch?v=c1VYreXFgbo&ab_channel=KashishMehndiratta)
+- **C++20: Reaching for the Aims of C++ - Bjarne Stroustrup - CppCon 2021**
+  - [Watch Video](https://www.youtube.com/watch?v=15QF2q66NhU&ab_channel=CppCon)
 
 
 
