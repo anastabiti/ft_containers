@@ -204,14 +204,56 @@ The simplest STL container is the vector, which generalizes and improves upon th
    ### Short Story about Iterators
 ```
 Short Story: 
-A container is a data structure that contains zero or more instances of other objects. Usually, these objects are all the same type of object. For example, a basket is a container that can contain many different types of objects. Although you could fill the basket with a mixture of apples and peaches, it is simpler to get two baskets and fill one with apples and the other with peaches. Most of the time, this is more convenient than mixing the two fruits in a single basket. 
-The container makes it much easier to move the fruit around than if you were simply carrying it in your hands. You have a problem, however, when you want to do something with the individual fruits in the basket. Suppose you want to examine each of the apples for worms. You have to reach into the basket, pick up an apple, examine it, and put it back. Now, when you reach for the second apple to check it for worms, you cannot tell which one you already checked. All the apples look alike and the more you check, the worse the problem becomes. You could use another basket to hold the apples you have checked, but baskets cost money and that technique would increase the number of baskets you need. 
-What you really need is an automated tool that will reach into the basket for you, retrieve an apple, hand it to you, then put it back when you are done. This tool would go through the apples in an organized fashion so that each apple was handed to you exactly once. In the world of the fruit picker, no such tool exists; in the world of computer programming, we have such a tool and it is called an iterator.
+A container is a data structure that contains zero or more instances of other objects. Usually,
+ these objects are all the same type of object. For example, a basket is a container that can contain
+ many different types of objects. Although you could fill the basket with a mixture of apples and peaches,
+it is simpler to get two baskets and fill one with apples and the other with peaches. Most of the time,
+this is more convenient than mixing the two fruits in a single basket.
+
+The container makes it much easier to move the fruit around than if you were simply carrying it in your
+ hands. You have a problem, however, when you want to do something with the individual fruits in the basket.
+Suppose you want to examine each of the apples for worms. You have to reach into the basket, pick up an apple,
+ examine it, and put it back. Now, when you reach for the second apple to check it for worms, you cannot tell
+ which one you already checked. All the apples look alike and the more you check, the worse the problem becomes.
+ You could use another basket to hold the apples you have checked, but baskets cost money and that technique
+would increase the number of baskets you need.
+
+What you really need is an automated tool that will reach into the basket for you, retrieve an apple, hand it to you,
+then put it back when you are done. This tool would go through the apples in an organized fashion so that each apple
+was handed to you exactly once. In the world of the fruit picker, no such tool exists; in the world of computer
+programming, we have such a tool and it is called an iterator
 ```
 
 
+<img width="583" alt="Screen Shot 2024-02-09 at 4 23 32 PM" src="https://github.com/anastabiti/ft_containers/assets/79755743/a0e5ca26-290e-4133-a8d6-c8fd613704cb">
 
 
+
+## Input Iterators:
+Input iterators can move only in the forward direction and can be used only to retrieve values, not to output values
+
+## Output iterators:
+Output iterators, like input iterators, can move only in the forward direction but differ in that they can be dereferenced only to assign a value, not to retrieve a value. 
+
+## Forward Iterators:
+	The forward iterators are designed to traverse containers to which values can be written and from which values can be retrieved. The forward iterator relaxes some of the restrictions of the input and output iterators but retains the restriction that it can only move in the forward direction. 
+
+## Bidirectional Iterators:
+	Bidirectional iterators remove the restriction of the forward iterators that movement is possible only in the forward direction. 
+
+
+
+## Random Access Iterators:
+	The random access iterators remove the restriction that the iterator can be moved only to the next or previous element in the container in a single operation. 
+
+## Custom Iterator:
+How it works... Some STL algorithms need to know the characteristics of the iterator type they are used with. Some others need to know the type of items the iterators iterate over. This has different implementation reasons. However, all STL algorithms will access this type information via std::iterator_traits, assuming that the iterator type is my_iterator. This traits class contains up to five different type member definitions:
+ difference_type: What type results from writing it1 - it2? 
+value_type: Of what type is the item which we access with *it (note that this is void for pure output iterators)? 
+pointer: Of what type must a pointer be in order to point to an item? 
+reference: Of what type must a reference be in order to reference an item? 
+iterator_category: Which category does the iterator belong to? 
+The pointer, reference, and difference_type type definitions do not make sense for our num_iterator, as it doesn't iterate over real memory values (we just return int values but they are not persistently available like in an array). Therefore it's better to not define them because if an algorithm depends on those items being referenceable in memory, it might be buggy when combined with our iterator.
 
 
 
