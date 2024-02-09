@@ -267,6 +267,21 @@ iterator_category: Which category does the iterator belong to?
 The pointer, reference, and difference_type type definitions do not make sense for our num_iterator, as it doesn't iterate over real memory values (we just return int values but they are not persistently available like in an array). Therefore it's better to not define them because if an algorithm depends on those items being referenceable in memory, it might be buggy when combined with our iterator.
 
 
+## Iterator_traits
+
+```
+iterator_traits is a structure that contains basic information on iterators that can be used by
+ generic algorithms to determine key attributes of an iterator so that the algorithms can use the iterator
+effectively. iterator_traits provides the following: 
+# value_type:  the type referenced by the iterator.
+# difference_type : a type capable of representing the difference between two iterators.
+# pointer:  the type of a pointer to the type referenced by the iterator.
+# reference : the type of a reference to the type referenced by the iterator.
+# Iterator_category : the category of the iterator.
+```
+
+``` This type information can be used to help a generic algorithm work with an iterator and the type referenced by the iterator. It is common for a generic algorithm to need to temporarily store a copy of the data referenced by an iterator. To do this, it needs to know the type of the data so that the temporary variable can be declared. This information is readily available from iterator_traits. The iterator category can be used to pick the algorithm best suited to the capabilities of the iterator. For example, a given algorithm might be implemented differently if provided with a random_access_iterator than if provided with a forward_iterator. The iterators themselves provide the same information as does iterator_traits, leaving the question of why iterator_traits is required. If the iterator passed to a function is a an iterator rather than a pointer, the function can get the information directly from the iterator. If a pointer is passed, there is a problem with this technique since a pointer will not have a value_type or any of the other attributes associated with an iterator. iterator_trai ts provides a solution to this by providing a basic definition for iterators and a special definition for pointers. ```
+
 
 
 ## map
@@ -312,7 +327,7 @@ has no children and is a leaf.
 - [Containers - Notion](https://ultra-recess-958.notion.site/Containers-90a1a34503194bc782583477ae79dd10)
 - [MindMeister Map - C++ Containers](https://www.mindmeister.com/map/2512496913?t=DjeyxY37vq)
 
-  - [Data Structure Reference Book (PDF)](https://pip.pusan.ac.kr/prof_plan_upload/upload/Data%20Structure%20Reference%20Book.pdf)
+- [Data Structure Reference Book (PDF)](https://pip.pusan.ac.kr/prof_plan_upload/upload/Data%20Structure%20Reference%20Book.pdf)
 - [AVL Tree Paper (PDF)](https://zhjwpku.com/assets/pdf/AED2-10-avl-paper.pdf)
 - [Oracle Documentation - Data Structures](https://docs.oracle.com/cd/E19422-01/819-3703/16_3.htm)
 - [What does O(log n) mean exactly?](https://stackoverflow.com/questions/2307283/what-does-olog-n-mean-exactly)
@@ -346,6 +361,8 @@ has no children and is a leaf.
 - [Stack Overflow - Overloading for both pre and post increment](https://stackoverflow.com/questions/15244094/overloading-for-both-pre-and-post-increment)
 - [Programiz - Default Argument in C++](https://www.programiz.com/cpp-programming/default-argument#:~:text=In%20C%2B%2B%20programming%2C%20we%20can,the%20default%20arguments%20are%20ignored.)
 - [GNU GCC Libstdc++ Old Releases](http://mirror.linux-ia64.org/gnu/gcc/libstdc++/old-releases/?C=M;O=A)
+- [SFINAE and enable_if - Eli Bendersky's Website](https://eli.thegreenplace.net/2014/sfinae-and-enable_if/)
+- [Make SFINAE Pretty: Part 1 - What Value SFINAE Brings to Code](https://www.fluentcpp.com/2018/05/15/make-sfinae-pretty-1-what-value-sfinae-brings-to-code/)
 
 
 # Books 
