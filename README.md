@@ -166,8 +166,52 @@ They also provide the methods construct () and destroy() for the construction an
 
 ```
 
+## sequence containers, adapter containers, and associative containers. 
+```
+The three categories for STL container classes are sequence containers, adapter containers, and associative containers. 
+# A sequence container stores data by position in linear order: first element, second element, and so forth.
+
+# An associative container stores elements by key, such as name, social security number, or part number.
+ A program accesses an element in an associative container by its key, which may bear no relationship
+   to the location of the element in the container.
+# An adapter contains another container as its underlying storage structure. 
+
+```
+<img width="617" alt="Screen Shot 2024-02-09 at 4 15 57 PM" src="https://github.com/anastabiti/ft_containers/assets/79755743/bf3678f9-3af0-48cd-a1d7-5513cf4252f1">
+
+
+
+
+
+
 ## Vector:
 <img width="633" alt="Screen Shot 2024-02-09 at 4 11 46 PM" src="https://github.com/anastabiti/ft_containers/assets/79755743/f1100afc-dae9-428c-beaf-fa309b7411fb">
+
+
+<img width="621" alt="Screen Shot 2024-02-09 at 4 12 31 PM" src="https://github.com/anastabiti/ft_containers/assets/79755743/afbaa782-f4b5-4e87-83e7-f8c581ff5771">
+
+```
+The simplest STL container is the vector, which generalizes and improves upon the C++ array.
+ Unlike an array, a vector has dynamic sizing that allows the container to grow and contract
+  to meet the runtime demands of the application.
+```
+
+
+## Iterators 
+ -  https://stdcxx.apache.org/doc/stdlibug/2-2.html
+ - - https://stackoverflow.com/questions/8054273/how-to-implement-an-stl-style-iterator-and-avoid-common-pitfalls
+  
+   ### Short Story about Iterators
+```
+Short Story: 
+A container is a data structure that contains zero or more instances of other objects. Usually, these objects are all the same type of object. For example, a basket is a container that can contain many different types of objects. Although you could fill the basket with a mixture of apples and peaches, it is simpler to get two baskets and fill one with apples and the other with peaches. Most of the time, this is more convenient than mixing the two fruits in a single basket. 
+The container makes it much easier to move the fruit around than if you were simply carrying it in your hands. You have a problem, however, when you want to do something with the individual fruits in the basket. Suppose you want to examine each of the apples for worms. You have to reach into the basket, pick up an apple, examine it, and put it back. Now, when you reach for the second apple to check it for worms, you cannot tell which one you already checked. All the apples look alike and the more you check, the worse the problem becomes. You could use another basket to hold the apples you have checked, but baskets cost money and that technique would increase the number of baskets you need. 
+What you really need is an automated tool that will reach into the basket for you, retrieve an apple, hand it to you, then put it back when you are done. This tool would go through the apples in an organized fashion so that each apple was handed to you exactly once. In the world of the fruit picker, no such tool exists; in the world of computer programming, we have such a tool and it is called an iterator.
+```
+
+
+
+
 
 
 
