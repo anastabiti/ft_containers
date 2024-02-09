@@ -319,7 +319,7 @@ has no children and is a leaf.
 - [CSE 373 Lecture Slides (PDF)](https://courses.cs.washington.edu/courses/cse373/20su/lectures/10.pdf)
 - [More C++ Idioms: enable_if](https://en.wikibooks.org/wiki/More_C%2B%2B_Idioms/enable-if)
 
-  - [Introduction to Algorithms (3rd Edition) PDF](https://edutechlearners.com/download/Introduction_to_algorithms-3rd%20Edition.pdf)
+- [Introduction to Algorithms (3rd Edition) PDF](https://edutechlearners.com/download/Introduction_to_algorithms-3rd%20Edition.pdf)
 - [AVL Trees - kukuruku.co](https://kukuruku.co/hub/cpp/avl-trees)
 - [Gnarley Trees - AVL](https://people.ksp.sk/~kuko/gnarley-trees/AVL.html)
 - [Containers for Dummies - The Ultimate Guide](https://containersfordummies.notion.site/THE-ULTIMATE-GUIDE-e7f20768377544409ca8d036b1ab9b7f)
