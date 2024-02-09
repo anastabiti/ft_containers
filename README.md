@@ -269,14 +269,33 @@ The pointer, reference, and difference_type type definitions do not make sense f
 
 
 
+## map
+
+​``` Maps are a part of the C++ STL. Maps are associative containers that store elements in a combination of key values and mapped values that follow a specific order. No two mapped values can have the same key values. In C++, maps store the key values in ascending order by default. ```
+
+![image](https://github.com/anastabiti/ft_containers/assets/79755743/d8dcbfc2-2c61-4ba0-af20-55edb1125a84)
+
+![image](https://github.com/anastabiti/ft_containers/assets/79755743/a8cc84b3-e88c-41ae-aad4-1002a1c633d8)
+
+![image](https://github.com/anastabiti/ft_containers/assets/79755743/3728c51f-f22a-4270-82d2-bf5b651f70b4)
 
 
+### trees  : I used AVL tree : 
 
+A tree is a nonlinear data structure that can be much faster to search than a sequential data structure such as a list. 
+The simplest, most common type of tree is the binary tree. A binary tree consists of a collection of nodes joined by branches.
+ Each node has either one or two children and is an internal node, or
+has no children and is a leaf.
 
+```In computer science, an AVL tree is a self-balancing binary search tree, and it was the first such data structure to be invented.[1] In an AVL tree, the heights of the two child subtrees of any node differ by at most one. Lookup, insertion, and deletion all take O(log n) time in both the average and worst cases, where n is the number of nodes in the tree prior to the operation. Insertions and deletions may require the tree to be rebalanced by one or more tree rotations.```
 
+``` An AVL tree is a binary search tree that is height balanced: for each node X, the heights of the left and right subtrees of x differ by at most 1.  (<=1)``` 
 
+![image](https://github.com/anastabiti/ft_containers/assets/79755743/304ada5b-66ba-4907-aa32-6340b028f6ca)
 
+# Resources
 
+[Writing your own STL Container](https://stackoverflow.com/questions/7758580/writing-your-own-stl-container)
 
 
 
